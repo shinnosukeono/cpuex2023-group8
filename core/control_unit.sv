@@ -30,7 +30,7 @@ module control_unit (
     alu_decoder alu_decoder(
         .alu_op(alu_op),
         .funct3(funct3),
-        .op_5(op[5]),
+        .op_5(op_6_0[5]),
         .funct7_5(funct7_5),
         .alu_control(alu_control)
     );

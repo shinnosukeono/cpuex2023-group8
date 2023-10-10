@@ -15,7 +15,7 @@ module control_unit (
     output logic [2:0] alu_control
 );
     logic branch;
-    logic jump
+    logic jump;
     logic [1:0] alu_op;
 
     main_decoder main_decoder(

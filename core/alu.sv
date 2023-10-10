@@ -1,4 +1,5 @@
 `include "lib/mux.sv"
+`include "lib/adder.sv"
 
 module alu #(
     parameter N = 32
@@ -12,15 +13,18 @@ module alu #(
     output logic overflow_flag
 );
     /* add/sub */
-    logic sum[N-1:0];
+    logic [N-1:0] sum;
     logic c_out;
     logic [N-1:0] b_after_mux;
+    logic c_in;
+    assign c_in = alu_control[0] ? 1 : 0;
+
     mux #(.DATAW(N)) b_mux(.data_in({~b, b}), .sel_in(alu_control[0]), .data_out(b_after_mux));
-    assign {c_out, sum} = a + b_after_mux;
+    adder #(.N(N)) adder(.a(a), .b(b_after_mux), .c_in(c_in), .s(sum), .c_out(c_out));
 
     /* slt */
     logic [N-1:0] slt;
-    assign slt = N'('b(overflow_flag ^ sum[N-1:0]));
+    assign slt = {(N){overflow_flag ^ sum[N-1]}};
 
     /* flags */
     // overflow check
@@ -49,7 +53,7 @@ module alu #(
             3'b010: result = a&b;
             3'b011: result = a|b;
             3'b101: result = slt;
-            default: result = N'('bx);  // error
+            default: result = {N{1'bx}};  // error
         endcase
     end
 endmodule

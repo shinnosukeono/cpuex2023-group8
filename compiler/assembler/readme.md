@@ -33,6 +33,21 @@ You will see the following output:
 ```
 Then, you can use check the result with any hex editor.
 by now the binary code is little endian, and the output is big endian.
+# Calling convention table
+| Register | ABI Name | Saver |
+| :------: | :------: | :---: |
+| x0 | zero | - |
+| x1 | ra | caller |
+| x2 | sp | callee |
+| x3 | gp | - |
+| x4 | tp | - |
+| x5-7 | t0-2 | caller |
+| x8 | s0/fp | callee |
+| x9 | s1 | callee |
+| x10-11 | a0-1 | caller |
+| x12-17 | a2-7 | caller |
+| x18-27 | s2-11 | callee |
+| x28-31 | t3-6 | caller |
 # Supported RV32I instructions
 ### R-type instructions
 + [x] add

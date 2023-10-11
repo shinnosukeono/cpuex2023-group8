@@ -14,7 +14,10 @@ sub a0, a0, a1
 xor a0, a0, a2
 sll a0, a0, a2
 srl a0, a0, a1
-...
+lw a0, 0(a0)
+addi a0, a0, 1
+sw a0, 0(a3)
+jal ra, 0
 ```
 Then, run the assembler:
 ```bash
@@ -29,6 +32,11 @@ You will see the following output:
 0x00c54533 xor a0, a0, a2
 0x00c51533 sll a0, a0, a2
 0x00b55533 srl a0, a0, a1
+0x00052503 lw a0, 0(a0)
+0x00150513 addi a0, a0, 1
+0x00a6a023 sw a0, 0(a3)
+0x000000ef jal ra, 0
+
 ...
 ```
 Then, you can use check the result with any hex editor.

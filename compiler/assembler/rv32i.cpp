@@ -41,7 +41,7 @@ namespace Rv32i {
 	std::istream &operator>>(std::istream &is, ABIRegister &reg) {
 		std::string s;
 		is >> std::ws;
-		while (is.peek() != EOF && is.peek() != ',' && !std::isspace(is.peek())) {
+		while (is.peek() != EOF && std::isalnum(is.peek())) {
 			s += is.get();
 		}
 		try {
@@ -64,7 +64,7 @@ namespace Rv32i {
 	std::istream &operator>>(std::istream &is, Register &reg) {
 		std::string s;
 		is >> std::ws;
-		while (is.peek() != EOF && is.peek() != ',' && !std::isspace(is.peek())) {
+		while (is.peek() != EOF && std::isalnum(is.peek())) {
 			s += is.get();
 		}
 		reg = string2reg.at(s);
@@ -75,15 +75,19 @@ namespace Rv32i {
 		return os << reg2string.at(r);
 	}
 
-	std::istream &operator>>(std::istream &is, const CommaSep &c) {
-		char comma;
-		is >> std::ws >> comma;
-		if (comma != ',') {
-			is.setstate(std::ios_base::failbit);
-		}
-		return is;
+#define MAKE_SKIP_TOKEN(classname, what) std::istream &operator>>(std::istream &is, const classname &c) { \
+		char comma; \
+		is >> std::ws >> comma; \
+		if (comma != what) { \
+			is.setstate(std::ios_base::failbit); \
+		} \
+		return is; \
 	}
+	MAKE_SKIP_TOKEN(CommaSep, ',')
+    MAKE_SKIP_TOKEN(LParen, '(')
+    MAKE_SKIP_TOKEN(RParen, ')')
 
+#undef MAKE_SKIP_TOKEN
 	static const std::unordered_set<std::string> isa{
 			"add", "addi", "and", "andi", "auipc", "beq", "bge", "bgeu", "blt", "bltu", "bne", /*"fence", */
 			"jal", "jalr", "lb", "lbu", "lh", "lhu", "lui", "lw", "or", "ori", "sb", "sh", "sll", "slli",
@@ -125,31 +129,36 @@ namespace Rv32i {
 			assert(0);
 		} else if (itype.contains(s)) {
 			ABIRegister rd, rs1;
-			uint32_t imm;
-			is >> rd >> CommaSep{} >> rs1 >> CommaSep{} >> imm;
-			if (s == "slli") return std::make_unique<Slli>(rd, rs1, imm);
-			if (s == "srli") return std::make_unique<Srli>(rd, rs1, imm);
-			if (s == "srai") return std::make_unique<Srai>(rd, rs1, imm);
-			if (s == "addi") return std::make_unique<Addi>(rd, rs1, imm);
-			if (s == "xori") return std::make_unique<Xori>(rd, rs1, imm);
-			if (s == "ori") return std::make_unique<Ori>(rd, rs1, imm);
-			if (s == "andi") return std::make_unique<Andi>(rd, rs1, imm);
-			if (s == "slti") return std::make_unique<Slti>(rd, rs1, imm);
-			if (s == "sltiu") return std::make_unique<Sltiu>(rd, rs1, imm);
-			if (s == "jalr") return std::make_unique<Jalr>(rd, rs1, imm);
-			if (s == "lw") return std::make_unique<Lw>(rd, rs1, imm);
-			if (s == "lh") return std::make_unique<Lh>(rd, rs1, imm);
-			if (s == "lhu") return std::make_unique<Lhu>(rd, rs1, imm);
-			if (s == "lb") return std::make_unique<Lb>(rd, rs1, imm);
-			if (s == "lbu") return std::make_unique<Lbu>(rd, rs1, imm);
+			if (s.starts_with("l")){
+				uint32_t offset;
+				is >> rd >> CommaSep{} >> offset >> LParen{} >> rs1 >> RParen{};
+				if (s == "lw") return std::make_unique<Lw>(rd, rs1, offset);
+				if (s == "lh") return std::make_unique<Lh>(rd, rs1, offset);
+				if (s == "lhu") return std::make_unique<Lhu>(rd, rs1, offset);
+				if (s == "lb") return std::make_unique<Lb>(rd, rs1, offset);
+				if (s == "lbu") return std::make_unique<Lbu>(rd, rs1, offset);
+			} else {
+				uint32_t imm;
+				is >> rd >> CommaSep{} >> rs1 >> CommaSep{} >> imm;
+				if (s == "slli") return std::make_unique<Slli>(rd, rs1, imm);
+				if (s == "srli") return std::make_unique<Srli>(rd, rs1, imm);
+				if (s == "srai") return std::make_unique<Srai>(rd, rs1, imm);
+				if (s == "addi") return std::make_unique<Addi>(rd, rs1, imm);
+				if (s == "xori") return std::make_unique<Xori>(rd, rs1, imm);
+				if (s == "ori") return std::make_unique<Ori>(rd, rs1, imm);
+				if (s == "andi") return std::make_unique<Andi>(rd, rs1, imm);
+				if (s == "slti") return std::make_unique<Slti>(rd, rs1, imm);
+				if (s == "sltiu") return std::make_unique<Sltiu>(rd, rs1, imm);
+				if (s == "jalr") return std::make_unique<Jalr>(rd, rs1, imm);
+			}
 			assert(0);
 		} else if (stype.contains(s)) {
 			ABIRegister rs1, rs2;
-			uint32_t imm;
-			is >> rs2 >> CommaSep{} >> imm >> CommaSep{} >> rs1;
-			if (s == "sb") return std::make_unique<Sb>(rs1, rs2, imm);
-			if (s == "sh") return std::make_unique<Sh>(rs1, rs2, imm);
-			if (s == "sw") return std::make_unique<Sw>(rs1, rs2, imm);
+			uint32_t offset;
+			is >> rs2 >> CommaSep{} >> offset >> LParen{} >> rs1 >> RParen{};
+			if (s == "sb") return std::make_unique<Sb>(rs1, rs2, offset);
+			if (s == "sh") return std::make_unique<Sh>(rs1, rs2, offset);
+			if (s == "sw") return std::make_unique<Sw>(rs1, rs2, offset);
 			assert(0);
 		} else if (btype.contains(s)) {
 			ABIRegister rs1, rs2;

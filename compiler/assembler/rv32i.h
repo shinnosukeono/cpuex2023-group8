@@ -25,6 +25,14 @@ namespace Rv32i {
 		friend std::istream &operator>>(std::istream &is, const CommaSep &c);
 	};
 
+	class LParen {
+		friend std::istream &operator>>(std::istream &is, const LParen &c);
+	};
+
+	class RParen {
+		friend std::istream &operator>>(std::istream &is, const RParen &c);
+	};
+
 	std::istream &operator>>(std::istream &is, ABIRegister &reg);
 
 	std::ostream &operator<<(std::ostream &os, const ABIRegister &r);
@@ -34,6 +42,10 @@ namespace Rv32i {
 	std::ostream &operator<<(std::ostream &os, const Register &r);
 
 	std::istream &operator>>(std::istream &is, const CommaSep &c);
+
+	std::istream &operator>>(std::istream &is, const LParen &c);
+
+	std::istream &operator>>(std::istream &is, const RParen &c);
 
 
 	class Instruction {
@@ -55,11 +67,10 @@ namespace Rv32i {
 
 		virtual std::ostream &out(std::ostream &os) const = 0;
 
-		friend std::ostream &operator<<(std::ostream &os, const Instruction &i){
+		friend std::ostream &operator<<(std::ostream &os, const Instruction &i) {
 			return i.out(os);
 		}
 	};
-
 
 
 	class RType : public Instruction {
@@ -99,6 +110,7 @@ namespace Rv32i {
 	};
 
 	class IType : public Instruction {
+	protected:
 		const ABIRegister rd, rs1;
 		const uint32_t imm, funct3;
 	public:
@@ -131,6 +143,7 @@ namespace Rv32i {
 	};
 
 	class SType : public Instruction {
+	protected:
 		const ABIRegister rs1, rs2;
 		const uint32_t imm, funct3;
 	public:
@@ -643,6 +656,9 @@ namespace Rv32i {
 //	class Ecall;
 
 //	class Ebreak;
+#define MAKE_LOAD_STORE_OUT(a, b) std::ostream &out(std::ostream &os) const override { \
+    return os << name() << " " << a << ", " << imm << "(" << b << ")"; \
+}
 
 	// Load Byte
 	class Lb : public IType, public Opcode_0000011 {
@@ -654,6 +670,8 @@ namespace Rv32i {
 		}
 
 		DEFINE_NAME("lb")
+
+		MAKE_LOAD_STORE_OUT(rd, rs1)
 	};
 
 	// Load Halfword
@@ -664,7 +682,10 @@ namespace Rv32i {
 		Lh(ABIRegister rd, ABIRegister rs1, uint32_t imm) : IType(opcode, funct3, rd, rs1, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("lh")
+
+		MAKE_LOAD_STORE_OUT(rd, rs1)
 	};
 
 	// Load Word
@@ -675,7 +696,10 @@ namespace Rv32i {
 		Lw(ABIRegister rd, ABIRegister rs1, uint32_t imm) : IType(opcode, funct3, rd, rs1, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("lw")
+
+		MAKE_LOAD_STORE_OUT(rd, rs1)
 	};
 
 	// Load Byte Unsigned
@@ -686,7 +710,10 @@ namespace Rv32i {
 		Lbu(ABIRegister rd, ABIRegister rs1, uint32_t imm) : IType(opcode, funct3, rd, rs1, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("lbu")
+
+		MAKE_LOAD_STORE_OUT(rd, rs1)
 	};
 
 	// Load Halfword Unsigned
@@ -699,6 +726,8 @@ namespace Rv32i {
 		}
 
 		DEFINE_NAME("lhu")
+
+		MAKE_LOAD_STORE_OUT(rd, rs1)
 	};
 
 	// Store Byte
@@ -709,7 +738,10 @@ namespace Rv32i {
 		Sb(ABIRegister rs1, ABIRegister rs2, uint32_t imm) : SType(opcode, funct3, rs1, rs2, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("sb")
+
+		MAKE_LOAD_STORE_OUT(rs2, rs1)
 	};
 
 	// Store Halfword
@@ -720,7 +752,9 @@ namespace Rv32i {
 		Sh(ABIRegister rs1, ABIRegister rs2, uint32_t imm) : SType(opcode, funct3, rs1, rs2, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("sh")
+		MAKE_LOAD_STORE_OUT(rs2, rs1)
 	};
 
 	// Store Word
@@ -731,7 +765,9 @@ namespace Rv32i {
 		Sw(ABIRegister rs1, ABIRegister rs2, uint32_t imm) : SType(opcode, funct3, rs1, rs2, imm) {
 			assert(imm < (1 << 12));
 		}
+
 		DEFINE_NAME("sw")
+		MAKE_LOAD_STORE_OUT(rs2, rs1)
 	};
 }
 #endif //RV32IASSEMBLER_RV32I_H

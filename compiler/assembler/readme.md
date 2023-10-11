@@ -36,10 +36,8 @@ You will see the following output:
 0x00150513 addi a0, a0, 1
 0x00a6a023 sw a0, 0(a3)
 0x000000ef jal ra, 0
-
-...
 ```
-Then, you can use check the result with any hex editor.
+Then, you can check the result with any hex editor.
 by now the binary code is little endian, and the output is big endian.
 # Calling convention table
 | Register | ABI Name | Saver |

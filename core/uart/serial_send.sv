@@ -11,7 +11,8 @@ module serial_send # (
     output logic busy
 );
 
-    localparam WAIT_DIV = (CLK_FREQ_MHZ * 100000000) / BAURATE_BPS;  // wait clocks = (seconds per bit) / (T_clk)
+    // localparam WAIT_DIV = (CLK_FREQ_MHZ * 1000000) / BAURATE_BPS;  // wait clocks = (seconds per bit) / (T_clk)
+    localparam WAIT_DIV = 868;
     localparam WAIT_LEN = $clog2(WAIT_DIV);
 
     typedef enum {
@@ -25,17 +26,19 @@ module serial_send # (
     logic [3:0] n_bit_cnt;
     logic [9:0] data_reg, n_data_reg;
 
+    logic wait_rst;
+    assign wait_rst = (state == STATE_SEND) & (n_wait_cnt == WAIT_DIV);
     counter #(
         .N(WAIT_LEN)
     ) wait_cnt (
         .clk(clk),
-        .reset(rst),
+        .reset(rst | wait_rst),
         .q(n_wait_cnt)
     );
 
     logic bit_clk;
     logic bit_rst;
-    assign bit_clk = (n_wait_cnt == WAIT_DIV - 1);
+    assign bit_clk = (n_wait_cnt == WAIT_DIV);
 
     counter #(
         .N(4)

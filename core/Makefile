@@ -3,9 +3,9 @@ VCD=$(basename $(SRC)).vcd
 
 all: $(EXE)
 	vvp $(EXE)
-	if [ -f $(VCD) ]; then \
-		gtkwave $(VCD); \
-	fi
+	# if [ -f $(VCD) ]; then \
+	# 	gtkwave $(VCD); \
+	# fi
 
 $(EXE): $(SRC)
 	iverilog -o $(EXE) $(SRC) -g 2012

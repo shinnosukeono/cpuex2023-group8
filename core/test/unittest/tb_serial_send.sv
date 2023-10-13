@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 10ns/10ns
 `include "uart/serial_send.sv"
 
 module tb_serial_send ();
@@ -8,7 +8,10 @@ module tb_serial_send ();
     logic data_out;
     logic busy;
 
-    serial_send dut(
+    serial_send #(
+        .CLK_FREQ_MHZ(100),
+        .BAURATE_BPS()
+    )dut(
         .clk(clk),
         .rst(reset),
         .data_in(data_in),
@@ -18,7 +21,7 @@ module tb_serial_send ();
     );
 
     always begin
-        clk = 1; #10; clk = 0; #10;  // 100MHz
+        clk = 1; #1; clk = 0; #1;  // 100MHz
     end
 
     initial begin
@@ -27,7 +30,7 @@ module tb_serial_send ();
 
         reset = 1'b1; #10; reset = 1'b0;
         data_in = 8'b10011100; #10;
-        we = 1'b1; #120;
+        we = 1'b1; #10000;
 
         assert (data_out == 1'b1) 
         else   $display("error");

@@ -30,7 +30,7 @@ module tb_serial_send ();
 
         reset = 1'b1; #10; reset = 1'b0;
         data_in = 8'b10011100; #10;
-        we = 1'b1; #10000;
+        we = 1'b1; #10; we = 1'b0; #20000;
 
         assert (data_out == 1'b1) 
         else   $display("error");

@@ -47,41 +47,38 @@ module serial_send # (
 
     assign data_out = data_reg[0];
 
-    always_comb begin
-        busy = 1'b0;
-        n_state = state;
-        n_data_reg = data_reg;
-        if (state == STATE_IDLE) begin
-            if (we) begin
-                n_state = STATE_SEND;
-                n_data_reg = {1'b1, data_in, 1'b0};  // (stop bit, data, start bit)
-            end
-        end else if (state == STATE_SEND) begin
-            busy = 1'b1;
-            if (n_wait_cnt == WAIT_DIV - 1) begin
-                if (n_bit_cnt == 4'd9) begin
-                    n_state = STATE_IDLE;
-                end else begin
-                    n_data_reg = {1'b1, data_reg[9:1]};
-                end
-            end
-        end
-    end
-
     always_ff @ (posedge clk) begin
         if (rst) begin
             state <= STATE_IDLE;
+            busy <= 1'b0;
             data_reg <= 10'h3ff;
             wait_rst <= 1'b0;
             bit_clk <= 1'b0;
             bit_rst <= 1'b0;
         end else begin
-            state <= n_state;
-            data_reg <= n_data_reg;
+            if (state == STATE_IDLE) begin
+                busy <= 1'b0;
+                if (we) begin
+                    state = STATE_SEND;
+                    busy <= 1'b1;
+                    data_reg <= {1'b1, data_in, 1'b0};
+                end
+            end else if (state == STATE_SEND) begin
+                busy <= 1'b1;
+                if (n_wait_cnt == WAIT_DIV - 1) begin
+                    if (n_bit_cnt == 4'd9) begin
+                        state <= STATE_IDLE;
+                        busy <= 1'b0;
+                    end else begin
+                        data_reg <= {1'b1, data_reg[9:1]};
+                    end
+                end
+            end
+
             if (n_wait_cnt == WAIT_DIV - 1) begin
                 // n_wait_cnt == WAIT_DIV - 1の次のクロックエッジではwait_rstも立てたい
                 // そうするとそのクロックエッジでn_wait_cntは0に戻る
-                if (n_state == STATE_SEND) begin
+                if (state == STATE_SEND) begin
                     wait_rst <= 1'b1;
                 end
 

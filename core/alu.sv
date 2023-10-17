@@ -20,7 +20,7 @@ module alu #(
     assign c_in = alu_control[0] ? 1 : 0;
 
     mux #(.DATAW(N)) b_mux(.data_in({~b, b}), .sel_in(alu_control[0]), .data_out(b_after_mux));
-    adder #(.N(N)) adder(.a(a), .b(b_after_mux), .c_in(c_in), .s(sum), .c_out(c_out));
+    adder #(.DATAW(N)) adder(.a(a), .b(b_after_mux), .c_in(c_in), .s(sum), .c_out(c_out));
 
     /* slt */
     logic [N-1:0] slt;

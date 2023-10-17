@@ -15,13 +15,13 @@ module control_unit (
     output logic [2:0] alu_control
 );
     logic branch;
-    logic jump
+    logic jump;
     logic [1:0] alu_op;
 
     main_decoder main_decoder(
         .opecode(op_6_0),
         .branch(branch),
-        .jump(jump)
+        .jump(jump),
         .result_src(result_src),
         .mem_write(mem_write),
         .alu_src(alu_src),

@@ -1,0 +1,46 @@
+BRAMを用いた命令・データ用メモリの導入方法
+
+vivado GUIのsourceウィンドウのDesign Sourcesを右クリック
+
+↓
+
+Add Sourcesからdesign sourcesを追加する
+bram.vとblk_mem_gen_0.xciを追加
+
+↓
+
+Sourcesウィンドウ下部のIP Sourceを選択し、IP下にあるblk_mem_gen_0をダブルクリック
+
+↓
+
+Re-customize IPの画面が出るのでOther Optionsを選び、Memory Initializationの
+Load Init Fileにチェックを入れ,Coe FileのEditを押し、新規作成する(保存する場所は
+デフォルトでOK、ファイル名も適当でOK)
+
+↓
+
+COE File Editorが開くので、memory_initialization_radixに用いるradixを入力(基本16)し、
+memory_initialization_vectorに初期化する値を空白区切りで入力(画面が小さいので
+ファイルに直接書き込むほうがやりやすいかも)。
+入力した値がアドレス0x00000000から順に設定される。
+初期値を変更したい場合は都度COEファイルを編集すれば良い。
+
+↓
+
+セーブして画面を閉じたらRe-customize IPの画面も閉じる。
+
+↓
+
+Synthesisするかみたいな画面が出るが、SkipしてしまってOK
+
+↓
+
+少なくともDiagramでbram.vのモジュールを使おうとするとエラーが出るが、エラーメッセージに
+したがって
+'set_property generate_synth_checkpoint 0 [get_files blk_mem_gen_0.xci]'
+をTcl Consoleで 入力する。(自作モジュールの中でIPコアを使っている為避けられないっぽい)
+Diagramを用いない場合でもこのエラーがどこかのタイミングで出るかも
+
+↓
+
+これでbram.vが使えるようになる。

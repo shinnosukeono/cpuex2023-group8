@@ -1,4 +1,5 @@
 `include "const/const.svh"
+`include "axi/axi_eol_check.sv"
 
 module axi_fsm # (
     parameter AXI_DATAW_BYTE = AXI_DATAW / 8
@@ -11,6 +12,7 @@ module axi_fsm # (
     input logic [AXI_DATAW_BYTE-1:0] wstrb_in,
     input logic [AXI_DATAW-1:0] wdata_in,
     output logic w_success,
+    output logic w_finish,
 
     input logic raddr_en,
     input logic [AXI_ADDRW-1:0] raddr_in,
@@ -41,11 +43,20 @@ module axi_fsm # (
     input logic bvalid,
     output logic bready
 );
+
+    logic eol_detected;
+    axi_eol_check eol_check (
+        .data(n_wdata),
+        .eol_detected(eol_detected)
+    );
+
+    // address write
     typedef enum {
         AW_WAIT,
         AW_SEND,
         AW_RESP_WAIT,
-        AW_SUCCESS
+        AW_SUCCESS,
+        AW_FINISH
     } aw_state_type;
 
     aw_state_type aw_state, n_aw_state;
@@ -99,11 +110,13 @@ module axi_fsm # (
         endcase
     end
 
+    // data write
     typedef enum {
         W_WAIT,
         W_SEND,
         W_RESP_WAIT,
-        W_SUCCESS
+        W_SUCCESS,
+        W_FINISH
     } w_state_type;
 
     w_state_type w_state, n_w_state;
@@ -151,14 +164,20 @@ module axi_fsm # (
             end
             W_SUCCESS: begin
                 if (w_success) begin
-                    n_w_state = W_WAIT;
+                    if (eol_detected) begin
+                        n_w_state = W_FINISH;
+                    end else begin
+                        n_w_state = W_WAIT;
+                    end
                 end
             end
         endcase
     end
 
     assign w_success = (aw_state == AW_SUCCESS) & (w_state == W_SUCCESS);
+    assign w_finish = (w_state == W_FINISH);
 
+    // data read
     typedef enum {
         R_WAIT,
         R_ADDRESS_SEND,

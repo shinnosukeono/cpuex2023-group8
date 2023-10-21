@@ -1,19 +1,23 @@
 `default_nettype none
 
-module bram(
+module sdp_ram #(
+    parameter DATAW = 32,
+    parameter ADDRW = 32,
+    parameter WORD_LEN = 2
+) (
         input wire clk,
         input wire rstn,
         input wire wea,
-        input wire [31:0] addra,
-        input wire [31:0] addrb,
-        input wire [31:0] dina,
-        output wire [31:0] doutb
+        input wire [ADDRW-1:0] addra,
+        input wire [ADDRW-1:0] addrb,
+        input wire [DATAW-1:0] dina,
+        output wire [DATAW-1:0] doutb
     );
 
-    wire [9:0] addra_word_aligned;
-    assign addra = addr[11:2];
-    wire [9:0] addrb_word_aligned;
-    assign addrb = addr[11:2];
+    wire [ADDRW-1-WORD_LEN:0] addra_word_aligned;
+    assign addra = addr[ADDRW-1:WORD_LEN];
+    wire [ADDRW-1-WORD_LEN:0] addrb_word_aligned;
+    assign addrb = addr[ADDRW-1:WORD_LEN];
 
     blk_mem_gen_0 bram_generator (
     .clka(clk),    // input wire clka

@@ -1,4 +1,4 @@
-`include "hw/blk_mem_gen_0.xci"
+`include "hw/sdp_ram.v"
 
 module bram_fifo #(
     parameter DATAW = 32,
@@ -15,13 +15,18 @@ module bram_fifo #(
     output logic empty
 );
     // SDP RAM
-    blk_mem_gen_0 bram_generator (
-        .dina(data_in_a),
-        .addra(fifo_tail),
+    localparam WORD_LEN = $clog2(DATAW>>3);
+    sdp_ram #(
+        .DATAW(DATAW),
+        .ADDRW(ADDR_LEN),
+        .WORD_LEN(WORD_LEN)
+    ) sdp_ram (
+        .clk(clk),
+        .rstn(rst),
         .wea(w_en_a),
-        .clka(clk),
+        .addra(fifo_tail),
         .addrb(fifo_head),
-        .clkb(clk),
+        .dina(data_in_a),
         .doutb(data_out_b)
     );
 

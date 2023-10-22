@@ -15,9 +15,9 @@ module sdp_ram #(
     );
 
     wire [ADDRW-1-WORD_LEN:0] addra_word_aligned;
-    assign addra = addr[ADDRW-1:WORD_LEN];
+    assign addra_word_aligned = addra[ADDRW-1:WORD_LEN];
     wire [ADDRW-1-WORD_LEN:0] addrb_word_aligned;
-    assign addrb = addr[ADDRW-1:WORD_LEN];
+    assign addrb_word_aligned = addrb[ADDRW-1:WORD_LEN];
 
     blk_mem_gen_0 bram_generator (
     .clka(clk),    // input wire clka

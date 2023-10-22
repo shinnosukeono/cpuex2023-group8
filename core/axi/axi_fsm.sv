@@ -1,183 +1,119 @@
 `include "const/const.svh"
-`include "axi/axi_eol_check.sv"
+`include "lib/counter.sv"
 
-module axi_fsm # (
-    parameter AXI_DATAW_BYTE = AXI_DATAW / 8
-) (
+module axi_fsm (
     input logic clk, rst,
 
-    input logic waddr_en,
-    input logic [AXI_ADDRW-1:0] waddr_in,
-    input logic wdata_en,
-    input logic [AXI_DATAW_BYTE-1:0] wstrb_in,
-    input logic [AXI_DATAW-1:0] wdata_in,
-    output logic w_success,
-    output logic w_finish,
-
-    input logic raddr_en,
-    input logic [AXI_ADDRW-1:0] raddr_in,
-    output logic [AXI_DATAW-1:0] rdata_out,
+    input logic re,
     output logic r_success,
+    output logic r_timeout,
 
-    output logic [AXI_ADDRW-1:0] araddr,
-    output logic [2:0] arprot,
-    output logic arvalid,
+    input logic we,
+    output logic w_success,
+
     input logic arready,
+    output logic arvalid,
 
-    input logic [AXI_DATAW-1:0] rdata,
     input logic [1:0] rresp,
     input logic rvalid,
     output logic rready,
 
-    output logic [AXI_ADDRW-1:0] awaddr,
-    output logic [2:0] awprot,
-    output logic awvalid,
     input logic awready,
+    output logic awvalid,
 
-    output logic [AXI_DATAW-1:0] wdata,
-    output logic [AXI_DATAW-1:0] wstrb,
-    output logic wvalid,
     input logic wready,
+    output logic wvalid,
 
     input logic [1:0] bresp,
     input logic bvalid,
     output logic bready
 );
-
-    logic eol_detected;
-    axi_eol_check eol_check (
-        .data(n_wdata),
-        .eol_detected(eol_detected)
-    );
-
     // address write
     typedef enum {
         AW_WAIT,
         AW_SEND,
         AW_RESP_WAIT,
-        AW_SUCCESS,
-        AW_FINISH
+        AW_SUCCESS
     } aw_state_type;
 
-    aw_state_type aw_state, n_aw_state;
+    aw_state_type aw_state, aw_n_state;
 
-    logic [AXI_ADDRW-1:0] n_awaddr;
-    logic [2:0] n_awprot;
-    logic n_awvalid;
-
-    always_ff @( posedge clk ) begin : aw_state_transition
+    // aw next state
+    always_ff @( posedge clk ) begin
         if (rst) begin
             aw_state <= AW_WAIT;
-            awaddr <= {(AXI_ADDRW){1'b0}};
-            awprot <= 3'b000;
-            awvalid <= 1'b0;
         end else begin
-            aw_state <= n_aw_state;
-            awaddr <= n_awaddr;
-            awprot <= n_awprot;
-            awvalid <= n_awvalid;
+            aw_state <= aw_n_state;
         end
     end
 
-    always_comb begin : next_aw_logic
+    always_comb begin
         case (aw_state)
-            AW_WAIT: begin
-                if (waddr_en) begin
-                    n_aw_state = AW_SEND;
-                    n_awaddr = waddr_in;
-                    n_awprot = 3'b000;
-                    n_awvalid = 1'b1;
-                end
-            end
-            AW_SEND: begin
-                if (awready) begin
-                    n_aw_state = AW_RESP_WAIT;
-                    n_awvalid = 1'b0;
-                end
-            end
-            AW_RESP_WAIT: begin
-                if (bresp[1] == 1'b0) begin
-                    n_aw_state = AW_SUCCESS;
-                end else if (bresp[1] == 1'b1) begin
-                    n_aw_state = AW_WAIT;
-                end
-            end
-            AW_SUCCESS: begin
-                if (w_success) begin
-                    n_aw_state = AW_WAIT;
-                end
-            end
+            AW_WAIT: aw_n_state = (we === 1'b1) ? AW_SEND : AW_WAIT;
+            AW_SEND: aw_n_state = (awready === 1'b1) ? AW_RESP_WAIT : AW_WAIT;
+            AW_RESP_WAIT: aw_n_state = (bvalid === 1'b1) ? ((bresp[1] === 1'b0) ? AW_SUCCESS : AW_WAIT) : AW_RESP_WAIT;
+            AW_SUCCESS: aw_n_state = (w_success === 1'b1) ? AW_WAIT : AW_SUCCESS;
         endcase
     end
 
-    // data write
+    // awvalid
+    always_comb begin
+        case (aw_state)
+            AW_SEND: awvalid = 1'b1;  // awreadyがアサートされた次のクロックでvalidは降りる
+            default: awvalid = 1'b0;
+        endcase
+    end
+
+    // write
     typedef enum {
         W_WAIT,
         W_SEND,
         W_RESP_WAIT,
-        W_SUCCESS,
-        W_FINISH
+        W_SUCCESS
     } w_state_type;
 
-    w_state_type w_state, n_w_state;
+    w_state_type w_state, w_n_state;
 
-    logic [AXI_DATAW-1:0] n_wdata;
-    logic [AXI_DATAW_BYTE-1:0] n_wstrb;
-    logic n_wvalid;
-
-    always_ff @( posedge clk ) begin : w_state_transition
+    // w next state
+    always_ff @( posedge clk ) begin
         if (rst) begin
             w_state <= W_WAIT;
-            wdata <= {(AXI_DATAW){1'b0}};
-            wstrb <= {(AXI_DATAW_BYTE){1'b0}};
-            wvalid <= 1'b0;
         end else begin
-            w_state <= n_w_state;
-            wdata <= n_wdata;
-            wstrb <= n_wstrb;
-            wvalid <= n_wvalid;
+            w_state <= w_n_state;
         end
     end
 
-    always_comb begin : next_w_logic
+    always_comb begin
         case (w_state)
-            W_WAIT: begin
-                if (waddr_en) begin
-                    n_w_state = W_SEND;
-                    n_wdata = wdata_in;
-                    n_wstrb = wstrb_in;
-                    n_wvalid = 1'b1;
-                end
-            end
-            W_SEND: begin
-                if (wready) begin
-                    n_w_state = W_RESP_WAIT;
-                    n_wvalid = 1'b0;
-                end
-            end
-            W_RESP_WAIT: begin
-                if (bresp[1] == 1'b0) begin
-                    n_w_state = W_SUCCESS;
-                end else if (bresp[1] == 1'b1) begin
-                    n_w_state = W_WAIT;
-                end
-            end
-            W_SUCCESS: begin
-                if (w_success) begin
-                    if (eol_detected) begin
-                        n_w_state = W_FINISH;
-                    end else begin
-                        n_w_state = W_WAIT;
-                    end
-                end
-            end
+            W_WAIT: w_n_state = (we === 1'b1) ? W_SEND : W_WAIT;
+            W_SEND: w_n_state = (wready === 1'b1) ? W_RESP_WAIT : W_SEND;
+            W_RESP_WAIT: w_n_state = (bvalid === 1'b1) ? ((bresp[1] === 1'b0) ? W_SUCCESS : W_WAIT) : W_RESP_WAIT;
+            W_SUCCESS: w_n_state = (w_success === 1'b1) ? W_WAIT : W_SUCCESS;
         endcase
     end
 
-    assign w_success = (aw_state == AW_SUCCESS) & (w_state == W_SUCCESS);
-    assign w_finish = (w_state == W_FINISH);
+    // wvalid
+    always_comb begin
+        case (w_state)
+            W_SEND: wvalid = 1'b1;
+            default: wvalid = 1'b0;
+        endcase
+    end
 
-    // data read
+    // bready
+    always_comb begin
+        case (w_state)
+            // W_RESP_WAITはbvalidがアサートされた次のクロックで次の状態へ移行する
+            // そのため、この書き方でbreadyがbvalidと同時に1クロックだけアサートされることが保証される
+            W_RESP_WAIT: bready = (bvalid) ? 1'b1 : 1'b0;
+            default: bready = 1'b0;
+        endcase
+    end
+
+    // w_success
+    assign w_success = ((aw_state == AW_SUCCESS) && (w_state == W_SUCCESS)) ? 1'b1 : 1'b0;
+
+    // read
     typedef enum {
         R_WAIT,
         R_ADDRESS_SEND,
@@ -185,61 +121,58 @@ module axi_fsm # (
         R_SUCCESS
     } r_state_type;
 
-    r_state_type r_state, n_r_state;
+    r_state_type r_state, r_n_state;
 
-    logic [AXI_ADDRW-1:0] n_araddr;
-    logic [2:0] n_arprot;
-    logic n_arvalid;
-    logic n_rready;
-
-    always_ff @( posedge clk ) begin : n_state_transition
+    // r next state
+    always_ff @( posedge clk ) begin
         if (rst) begin
             r_state <= R_WAIT;
-            araddr <= {(AXI_ADDRW){1'b0}};
-            arvalid <= 1'b0;
-            rready <= 1'b0;
         end else begin
-            r_state <= n_r_state;
-            araddr <= n_araddr;
-            arvalid <= n_arvalid;
-            rready <= n_rready;
+            r_state <= r_n_state;
         end
     end
 
-    always_comb begin : next_r_logic
+    always_comb begin
         case (r_state)
-            R_WAIT: begin
-                if (raddr_en) begin
-                    n_r_state = R_ADDRESS_SEND;
-                    n_araddr = raddr_in;
-                    n_arprot = 3'b000;
-                    n_arvalid = 1'b1;
-                end
-            end
-            R_ADDRESS_SEND: begin
-                if (arready) begin
-                    n_r_state = R_DATA_WAIT;
-                    n_arvalid = 1'b0;
-                    n_rready = 1'b1;
-                end
-            end
-            R_DATA_WAIT: begin
-                if (rvalid) begin
-                    if (rresp[1] == 1'b0) begin
-                        n_r_state = R_SUCCESS;
-                        n_rready = 1'b0;
-                    end else if (rresp[1] == 1'b1) begin
-                        n_r_state = R_WAIT;
-                        n_rready = 1'b0;
-                    end
-                end
-            end
-            R_SUCCESS: begin
-                n_r_state = R_WAIT;
-            end
+            R_WAIT: r_n_state = (re === 1'b1) ? R_ADDRESS_SEND : R_WAIT;
+            R_ADDRESS_SEND: r_n_state = (arready === 1'b1) ? R_DATA_WAIT : R_ADDRESS_SEND;
+            R_DATA_WAIT: r_n_state = (rvalid === 1'b1) ? ((rresp[1] === 1'b0) ? R_SUCCESS : R_WAIT) : R_DATA_WAIT;
+            R_SUCCESS: r_n_state = R_WAIT;
         endcase
     end
 
-    assign r_success = (r_state == R_SUCCESS);
-    assign rdata_out = rdata;
+    // arvalid
+    always_comb begin
+        case (r_state)
+            R_ADDRESS_SEND: arvalid = 1'b1;
+            default: arvalid = 1'b0;
+        endcase
+    end
+
+    // rready
+    always_comb begin
+        case (r_state)
+            R_DATA_WAIT: rready = (rvalid) ? 1'b1 : 1'b0;
+            default: rready = 1'b0;
+        endcase
+    end
+
+    // r_success
+    assign r_success = (r_state == R_SUCCESS) ? 1'b1 : 1'b0;
+
+    // r_timeout
+    // 100クロック連続でR_WAITだとタイムアウト
+    logic [7:0] wait_count;
+    logic wait_counter_rst;
+    assign wait_counter_rst = rst | ((r_state == R_WAIT) ? 1'b0 : 1'b1);
+
+    counter #(
+        .N(8)
+    ) wait_counter (
+        .clk(clk),
+        .reset(wait_counter_rst),
+        .q(wait_count)
+    );
+
+    assign r_timeout = (wait_count == 8'd100) ? 1'b1 : 1'b0;
 endmodule

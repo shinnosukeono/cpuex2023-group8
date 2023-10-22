@@ -1,0 +1,172 @@
+module delay_2_clocks (
+    input logic clk, rst,
+    input logic din,
+    output logic dout
+);
+    logic d1, d2;
+
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            d1 <= 0;
+            d2 <= 0;
+        end else begin
+            d1 <= din;
+            d2 <= d1;
+        end
+    end
+
+    assign dout = d2;
+endmodule
+
+module io_fsm (
+    input logic clk, rst,
+    input logic fifo_empty,
+    input logic cache_init_done,
+    input logic cache_valid,
+    input logic core_exec_done,
+    input logic axi_r_success,
+    input logic axi_w_success,
+    input logic axi_r_timeout,
+    output logic instr_mem_we,
+    output logic cache_we,
+    output logic axi_re,
+    output logic axi_we,
+    output logic [1:0] axi_sel,
+    output logic fifo_we,
+    output logic fifo_re,
+    output logic core_clk_en
+);
+
+    // BRAM出力はread enableのアサートから2クロック遅れる。
+    // そのため、信号がvalidかの判定にはfifo_emptyを遅延させる必要がある。
+    logic fifo_empty_delayed;
+    delay_2_clocks delay_fifo_empty (
+        .clk(clk),
+        .rst(rst),
+        .din(fifo_empty),
+        .dout(fifo_empty_delayed)
+    );
+
+    typedef enum {
+        INIT,
+        WRITE_99,
+        PROGRAM_RECEIVE,
+        WRITE_aa,
+        DATA_RECEIVE,
+        EXEC,
+        RESULT_WRITE
+    } state_type;
+
+    state_type state, n_state;
+
+    // next state
+
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            state <= INIT;
+        end else begin
+            state <= n_state;
+        end
+    end
+
+    always_comb begin
+        case (state)
+            INIT: n_state = (cache_init_done === 1'b1) ? WRITE_99 : INIT;
+            WRITE_99: n_state = (axi_w_success === 1'b1) ? PROGRAM_RECEIVE : WRITE_99;
+            PROGRAM_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? WRITE_aa : PROGRAM_RECEIVE;
+            WRITE_aa: n_state = (axi_w_success === 1'b1) ? DATA_RECEIVE : WRITE_aa;
+            DATA_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? EXEC : DATA_RECEIVE;
+            EXEC: n_state = (core_exec_done === 1'b1) ? RESULT_WRITE : EXEC;
+            // TODO: ここの制御どうする？
+            // RESULT_WRITE: n_state = 
+            default: n_state = INIT;
+        endcase
+    end
+
+    // axi_we
+    always_comb begin
+        case (state)
+            INIT: axi_we = (cache_init_done) ? 1'b1 : 1'b0;
+            WRITE_99: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
+            PROGRAM_RECEIVE: axi_we = (axi_r_timeout) ? 1'b1 : 1'b0;
+            WRITE_aa: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
+            EXEC: axi_we = (core_exec_done) ? 1'b1 : 1'b0;
+            // TODO: ここの制御どうする？
+            //RESULT_WRITE: axi_we = 
+            default: axi_we = 1'b0;
+        endcase
+    end
+
+    // axi_sel
+    always_comb begin
+        case (state)
+            INIT: axi_sel = 2'b00;
+            WRITE_99: axi_sel = 2'b00;
+            PROGRAM_RECEIVE: axi_sel = 2'b01;
+            WRITE_aa: axi_sel = 2'b01;
+            EXEC: axi_sel = 2'b10;
+            RESULT_WRITE: axi_sel = 2'b10;
+            default: axi_sel = 2'b11;
+        endcase
+    end
+
+    // axi_re
+    always_comb begin
+        case (state)
+            WRITE_99: axi_re = (axi_w_success) ? 1'b1 : 1'b0;
+            PROGRAM_RECEIVE: axi_re = (axi_r_timeout) ? 1'b0 : 1'b1;
+            WRITE_aa: axi_re = (axi_w_success) ? 1'b1 : 1'b0;
+            DATA_RECEIVE: axi_re = (axi_r_timeout) ? 1'b0 : 1'b1;
+            default: axi_re = 1'b0;
+        endcase
+    end
+
+    // fifo_we
+    always_comb begin
+        case (state)
+            // axiからデータの読み取りに成功したクロックでのみfifoに書き込んでよい
+            PROGRAM_RECEIVE: fifo_we = (axi_r_success) ? 1'b1 : 1'b0;
+            DATA_RECEIVE: fifo_we = (axi_r_success) ? 1'b1 : 1'b0;
+            default: fifo_we = 1'b0;
+        endcase
+    end
+
+    // fifo_re
+    always_comb begin
+        case (state)
+            // 実際にfifoからデータが出てくるのは2クロック遅れる。
+            // そのため、この段階でfifo_reをアサートしてもstateが切り替わる前にデータが入ってきてしまうことはない。
+            WRITE_99: fifo_re = (axi_w_success) ? 1'b1 : 1'b0;
+            PROGRAM_RECEIVE: fifo_re = 1'b1;
+            WRITE_aa: fifo_re = (axi_w_success) ? 1'b1 : 1'b0;
+            DATA_RECEIVE: fifo_re = 1'b1;
+            default: fifo_re = 1'b0;
+        endcase
+    end
+
+    // instr_mem_we
+    always_comb begin
+        case (state)
+            // 2クロック前にfifoがemptyでなければfifoからの出力はvalid
+            PROGRAM_RECEIVE: instr_mem_we = (fifo_empty_delayed) ? 1'b0 : 1'b1;
+            default: instr_mem_we = 1'b0;
+        endcase
+    end
+
+    // cache_we
+    always_comb begin
+        case (state)
+        DATA_RECEIVE: cache_we = (fifo_empty_delayed) ? 1'b0: 1'b1;
+        default: cache_we = 1'b0;
+        endcase
+    end
+
+    // core_clk_en
+    always_comb begin
+        case (state)
+            DATA_RECEIVE: core_clk_en = (axi_r_timeout) ? 1'b1 : 1'b0;
+            EXEC: core_clk_en = (core_exec_done) ? 1'b1 : 1'b0;
+            default: core_clk_en = 1'b0;
+        endcase
+    end
+endmodule

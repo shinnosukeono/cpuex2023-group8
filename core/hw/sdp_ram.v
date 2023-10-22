@@ -23,8 +23,8 @@ module sdp_ram #(
     .clka(clk),    // input wire clka
     .wea(wea),      // input wire [0 : 0] wea
     .addra(addra),  // input wire [9 : 0] addra
-    .dina(din),    // input wire [31 : 0] dina
-    .clkb(clkb),
+    .dina(dina),    // input wire [31 : 0] dina
+    .clkb(clk),
     .addrb(addrb),
     .doutb(doutb)  // output wire [31 : 0] douta
     );

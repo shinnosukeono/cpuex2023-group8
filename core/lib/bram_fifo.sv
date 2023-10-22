@@ -50,11 +50,19 @@ module bram_fifo #(
                 if ((fifo_head + 1 == fifo_tail) & ~w_en_a) begin // headがtailに追いつき、かつ書き込みが行われない
                     empty <= 1'b1;
                 end
+
+                if (full) begin
+                    full <= 1'b0;
+                end
             end
             if (w_en_a & ~full) begin
                 fifo_tail <= fifo_tail + 1;
                 if ((fifo_tail + 1 == fifo_head) & ~r_en_b) begin  // tailがheadに追いつき、かつ読み出しが行われない
                     full <= 1'b1;
+                end
+
+                if (empty) begin
+                    empty <= 1'b0;
                 end
             end
         end

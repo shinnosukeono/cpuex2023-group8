@@ -66,7 +66,9 @@ module axi_master #(
     );
 
     assign araddr = araddr_in;
+    assign arprot = 3'b000;
     assign awaddr = awaddr_in;
+    assign awprot = 3'b000;
     assign wdata = wdata_in;
     assign wstrb = wstrb_in;
     assign rdata_out = rdata;

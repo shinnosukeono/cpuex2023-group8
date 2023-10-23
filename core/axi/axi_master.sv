@@ -12,6 +12,7 @@ module axi_master #(
 
     input logic we,
     output logic w_success,
+    output logic w_busy,
 
     input logic [AXI_ADDRW-1:0] araddr_in,
     input logic [AXI_ADDRW-1:0] awaddr_in,
@@ -51,6 +52,7 @@ module axi_master #(
         .r_timeout(r_timeout),
         .we(we),
         .w_success(w_success),
+        .w_busy(w_busy),
         .arready(arready),
         .arvalid(arvalid),
         .rresp(rresp),

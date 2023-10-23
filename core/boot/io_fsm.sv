@@ -1,3 +1,5 @@
+`include "const/const.svh"
+
 module delay_2_clocks (
     input logic clk, rst,
     input logic din,
@@ -24,17 +26,26 @@ module io_fsm (
     input logic cache_init_done,
     input logic cache_valid,
     input logic core_exec_done,
+    input logic [31:0] result_bytes,
     input logic axi_r_success,
-    input logic axi_w_success,
     input logic axi_r_timeout,
+    input logic axi_w_success,
+    input logic axi_w_busy,
+    input logic concat_valid,
+    input logic deconcat_done,
     output logic instr_mem_we,
+    output logic [INST_MEM_ADDRW-1:0] instr_addr,
+    output logic cache_re,
     output logic cache_we,
+    output logic [CACHE_ADDRW-1:0] cache_addr,
     output logic axi_re,
     output logic axi_we,
     output logic [1:0] axi_sel,
+    output logic concat_en,
     output logic fifo_we,
     output logic fifo_re,
-    output logic core_clk_en
+    output logic core_clk_en,
+    output logic deconcat_en
 );
 
     // BRAM出力はread enableのアサートから2クロック遅れる。
@@ -121,12 +132,22 @@ module io_fsm (
         endcase
     end
 
+    // concat_en
+    always_comb begin
+        case (state)
+            // axiからデータの読み取りに成功したクロックでのみconcatに書き込んでよい
+            PROGRAM_RECEIVE: concat_en = (axi_r_success) ? 1'b1 : 1'b0;
+            DATA_RECEIVE: concat_en = (axi_r_success) ? 1'b1 : 1'b0;
+            default: concat_en = 1'b0;
+        endcase
+    end
+
     // fifo_we
     always_comb begin
         case (state)
-            // axiからデータの読み取りに成功したクロックでのみfifoに書き込んでよい
-            PROGRAM_RECEIVE: fifo_we = (axi_r_success) ? 1'b1 : 1'b0;
-            DATA_RECEIVE: fifo_we = (axi_r_success) ? 1'b1 : 1'b0;
+            // BRAMのデータ幅ぶんのデータが揃ったクロックでのみfifoに書き込んでよい
+            PROGRAM_RECEIVE: fifo_we = (concat_valid) ? 1'b1 : 1'b0;
+            DATA_RECEIVE: fifo_we = (concat_valid) ? 1'b1 : 1'b0;
             default: fifo_we = 1'b0;
         endcase
     end
@@ -153,6 +174,8 @@ module io_fsm (
         endcase
     end
 
+    // TODO: instr_mem_addr
+
     // cache_we
     always_comb begin
         case (state)
@@ -161,12 +184,34 @@ module io_fsm (
         endcase
     end
 
+    // cache_re
+    always_comb begin
+        case (state)
+            // EXECの最後のクロックで結果の読み出し開始
+            EXEC: cache_re = (core_exec_done) ? 1'b1 : 1'b0;
+            // reはずっとアサート（deconcat_doneはアドレスのロジックに組み込む）
+            RESULT_WRITE: cache_re = 1'b1;
+            default: cache_re = 1'b0;
+        endcase
+    end
+
+    // TODO: cache_addr
+
     // core_clk_en
     always_comb begin
         case (state)
             DATA_RECEIVE: core_clk_en = (axi_r_timeout) ? 1'b1 : 1'b0;
             EXEC: core_clk_en = (core_exec_done) ? 1'b1 : 1'b0;
             default: core_clk_en = 1'b0;
+        endcase
+    end
+
+    // deconcat_en
+    always_comb begin
+        case (state)
+            // cacheから有効なデータが読み出せていて、axiがbusyでなければ開始
+            RESULT_WRITE: deconcat_en = (cache_valid && ~axi_w_busy) ? 1'b1 : 1'b0;
+            default: deconcat_en = 1'b0;
         endcase
     end
 endmodule

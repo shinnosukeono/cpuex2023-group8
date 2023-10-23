@@ -10,6 +10,7 @@ module axi_fsm (
 
     input logic we,
     output logic w_success,
+    output logic w_busy,
 
     input logic arready,
     output logic arvalid,
@@ -112,6 +113,9 @@ module axi_fsm (
 
     // w_success
     assign w_success = ((aw_state == AW_SUCCESS) && (w_state == W_SUCCESS)) ? 1'b1 : 1'b0;
+
+    // w_busy
+    assign w_busy = ((aw_state == AW_WAIT) && (w_state == W_WAIT)) ? 1'b0 : 1'b1;
 
     // read
     typedef enum {

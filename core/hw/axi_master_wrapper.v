@@ -1,6 +1,8 @@
-`include "const/const.svh"
-
-module axi_master_wrapper (
+module axi_master_wrapper #(
+    parameter AXI_DATAW = 32,
+    parameter AXI_ADDRW = 4,
+    parameter AXI_DATAW_BYTE = AXI_DATAW >> 3
+) (
     input wire clk, rst,
 
     input wire re,

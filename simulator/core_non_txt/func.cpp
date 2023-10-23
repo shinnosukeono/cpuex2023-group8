@@ -7,7 +7,7 @@
 #include <vector>
 #include <fstream>
 
-#define Dsize 4096
+#define Dsize 409600
 
 using Data = std::variant<int, float, unsigned int>;
 using namespace std;
@@ -85,7 +85,7 @@ public:
 	int pc = 0;
 	int addr = 0;  // memory address
 	int count = 0; // count the number of instructions
-	Data Rezisters[32] = {0,-1,Dsize,0,0,0,0,0,0,0,10,0,0,0, // x0-x14
+	Data Rezisters[32] = {0,-1,Dsize,0,0,0,0,0,0,0,33,0,0,0, // x0-x14
 						  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, // x15-x31
 						  0,0}; // f0-f1
 	string Rnames[32] = {"zero(x0)", "ra(x1)", "sp(x2)", "gp(x3)", "tp(x4)", "t0(x5)", "t1(x6)", "t2(x7)", "s0/fp(x8)", "s1(x9)", "a0(x10)", "a1(x11)", "a2(x12)", "a3(x13)", "a4(x14)", "a5(x15)", "a6(x16)",
@@ -100,35 +100,35 @@ public:
 	{
 		while (pc < 4*(int)intrs.size() && pc != -1)
 		{
-			outputFile << "count:[" << count << "], ";
-			outputFile << "pc:[" << pc << "], ";
-			outputFile << "instr:[" << (*intrs[(pc/4)]).name << "], ";
-			cout << (*intrs[(pc/4)]).name << endl; 
+			// outputFile << "count:[" << count << "], ";
+			// outputFile << "pc:[" << pc << "], ";
+			// outputFile << "instr:[" << (*intrs[(pc/4)]).name << "], ";
+			// cout << (*intrs[(pc/4)]).name << endl; 
 
 			(*intrs[(pc/4)]).exec(*this);
 			count++;
 
 			Rezisters[0] = 0;
 
-			outputFile << "Rezisters:{";
-			for (int i = 0; i < 32; i++)
-			{
-				if (i > 0)
-					outputFile << ", ";
-				if (i % 8 == 0)
-					outputFile << endl << "		  ";	
-				outputFile << Rnames[i] << ":[" << get<int>(Rezisters[i]) << "]";
-			}
-			// outputFile << "}" << endl;
-
-			// outputFile << "Memory:{";
-			// for (int i = 0; i < 1024; i++)
+			// outputFile << "Rezisters:{";
+			// for (int i = 0; i < 32; i++)
 			// {
 			// 	if (i > 0)
 			// 		outputFile << ", ";
-			// 	outputFile << i << ":[" << get<int>(mem.load<int>(4*i)) << "]";
+			// 	if (i % 8 == 0)
+			// 		outputFile << endl << "		  ";	
+			// 	outputFile << Rnames[i] << ":[" << get<int>(Rezisters[i]) << "]";
 			// }
-			outputFile << "}" << endl << endl;
+			// // outputFile << "}" << endl;
+
+			// // outputFile << "Memory:{";
+			// // for (int i = 0; i < 1024; i++)
+			// // {
+			// // 	if (i > 0)
+			// // 		outputFile << ", ";
+			// // 	outputFile << i << ":[" << get<int>(mem.load<int>(4*i)) << "]";
+			// // }
+			// outputFile << "}" << endl << endl;
 			// // pc++;
 			
 		};
@@ -511,7 +511,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int8_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xff;
+		int8_t tmp = get<T>(vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3)) & 0xff;
 		int tmp2 = tmp; // 符号拡張
 		vm.Rezisters[operand1] = tmp2;
 		vm.pc += 4;
@@ -531,7 +531,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int16_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xffff;
+		int16_t tmp = get<T>(vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3)) & 0xffff;
 		int tmp2 = tmp; // 符号拡張
 		vm.Rezisters[operand1] = tmp2;
 		vm.pc += 4;
@@ -551,7 +551,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3));
+		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3));
 		vm.pc += 4;
 	}
 };
@@ -569,7 +569,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xff;
+		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3)) & 0xff;
 		vm.pc += 4;
 	}
 };
@@ -587,7 +587,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>((vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3))) & 0xffff;
+		vm.Rezisters[operand1] = get<T>((vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3))) & 0xffff;
 		vm.pc += 4;
 	}
 };
@@ -605,7 +605,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3));
+		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<T>(vm.Rezisters[operand2]) + operand3));
 		vm.pc += 4;
 	}
 };
@@ -796,7 +796,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = (int)((T)(get<int>(vm.Rezisters[operand2])) >> (T)(operand3));
+		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) << (operand3);
 		vm.pc += 4;
 	}
 };

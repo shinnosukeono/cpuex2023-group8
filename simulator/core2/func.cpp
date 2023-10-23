@@ -7,7 +7,8 @@
 #include <vector>
 #include <fstream>
 
-#define Dsize 4096
+#define Dsize 4096000
+#define maxcount 1000000000
 
 using Data = std::variant<int, float, unsigned int>;
 using namespace std;
@@ -80,14 +81,30 @@ public:
 // };
 
 class VirtualMachine
-{
+{	
 public:
 	int pc = 0;
 	int addr = 0;  // memory address
 	int count = 0; // count the number of instructions
-	Data Rezisters[32] = {0,-1,Dsize,0,0,0,0,0,0,0,10,0,0,0, // x0-x14
+	Data IntRezisters[32] = {0,-1,Dsize,0,0,0,0,0,0,0,0,0,0,0, // x0-x14
 						  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, // x15-x31
-						  0,0}; // f0-f1
+						  0,0};
+	Data ReadIntRezisters(int i){
+		if (i == 0) return Data{0};
+		return IntRezisters[i];
+	}
+	Data FloatRezisters[32] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,// f0-f5
+							0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,// f6-f11
+							0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,// f12-f17
+							0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,// f18-f23
+							0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,// f24-f29
+							0.0f,0.0f}; // f30-f31
+
+	Data ReadFloatRezisters(int i){
+		//if (i == 0) return Data{0.0f};
+		return FloatRezisters[i];
+	}
+
 	string Rnames[32] = {"zero(x0)", "ra(x1)", "sp(x2)", "gp(x3)", "tp(x4)", "t0(x5)", "t1(x6)", "t2(x7)", "s0/fp(x8)", "s1(x9)", "a0(x10)", "a1(x11)", "a2(x12)", "a3(x13)", "a4(x14)", "a5(x15)", "a6(x16)",
 						 "a7(x17)", "s2(x18)", "s3(x19)", "s4(x20)", "s5(x21)", "s6(x22)", "s7(x23)", "s8(x24)", "s9(x25)", "s10(x26)",
 						 "s11(x27)", "t3(x28)", "t4(x29)", "t5(x30)", "t6(x31)"};
@@ -98,7 +115,7 @@ public:
 
 	void eval(std::vector<Instruction *> &intrs)
 	{
-		while (pc < 4*(int)intrs.size() && pc != -1)
+		while (pc < 4*(int)intrs.size() && pc != -1 && count < maxcount)
 		{
 			outputFile << "count:[" << count << "], ";
 			outputFile << "pc:[" << pc << "], ";
@@ -108,16 +125,14 @@ public:
 			(*intrs[(pc/4)]).exec(*this);
 			count++;
 
-			Rezisters[0] = 0;
-
-			outputFile << "Rezisters:{";
+			outputFile << "IntRezisters:{";
 			for (int i = 0; i < 32; i++)
 			{
 				if (i > 0)
 					outputFile << ", ";
 				if (i % 8 == 0)
 					outputFile << endl << "		  ";	
-				outputFile << Rnames[i] << ":[" << get<int>(Rezisters[i]) << "]";
+				outputFile << Rnames[i] << ":[" << get<int>(IntRezisters[i]) << "]";
 			}
 			// outputFile << "}" << endl;
 
@@ -129,7 +144,7 @@ public:
 			// 	outputFile << i << ":[" << get<int>(mem.load<int>(4*i)) << "]";
 			// }
 			outputFile << "}" << endl << endl;
-			// // pc++;
+			// pc++;
 			
 		};
 	}
@@ -139,7 +154,7 @@ public:
 // OP = "0110011"
 template <typename T>
 class Add : public Instruction
-{ // add rd, rs1, rs2 || fadd rd, rs1, rs2
+{ // add rd, rs1, rs2
 private:
 	const int operand1, operand2, operand3;
 
@@ -152,19 +167,19 @@ public:
 		}
 		else
 		{
-			name = "Fadd " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			assert(false && "Add instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) + get<T>(vm.Rezisters[operand3]);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) + get<T>(vm.ReadIntRezisters(operand3));
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Sub : public Instruction
-{ // sub rd, rs1, rs2 || fsub rd, rs1, rs2
+{ // sub rd, rs1, rs2
 private:
 	const int operand1, operand2, operand3;
 
@@ -177,22 +192,21 @@ public:
 		}
 		else
 		{
-			name = "Fsub " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			assert(false && "Sub instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) - get<T>(vm.Rezisters[operand3]);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) - get<T>(vm.ReadIntRezisters(operand3));
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Mul : public Instruction
-{ // mul rd, rs1, rs2 || fmul rd, rs1, rs2 || mulu rd, rs1, rs2
+{ // mul rd, rs1, rs2 || mulu rd, rs1, rs2
 private:
 	const int operand1, operand2, operand3;
-
 public:
 	Mul(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
 	{
@@ -200,19 +214,19 @@ public:
 		{
 			name = "Mul " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
 		}
-		else if constexpr (std::is_same_v<T, float>)
+		else if constexpr (std::is_same_v<T, unsigned int>)
 		{
-			name = "Fmul " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			name = "Mulu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
 		}
 		else
 		{
-			name = "Mulu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			assert(false && "Mul instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
 
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) * get<T>(vm.Rezisters[operand3]);
+		vm.IntRezisters[operand1] = (int)((T)get<int>(vm.ReadIntRezisters(operand2)) * (T)get<int>(vm.ReadIntRezisters(operand3)));
 		vm.pc += 4;
 	}
 };
@@ -232,15 +246,15 @@ public:
 		}
 		else
 		{
-			assert(false);
+			assert(false && "Mulh instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		long long a = get<T>(vm.Rezisters[operand2]);
-		long long b = get<T>(vm.Rezisters[operand3]);
+		long long a = get<T>(vm.ReadIntRezisters(operand2));
+		long long b = get<T>(vm.ReadIntRezisters(operand3));
 		long long c = (a * b) >> 32;
-		vm.Rezisters[operand1] = (int)(c & 0xffffffff);
+		vm.IntRezisters[operand1] = (int)(c & 0xffffffff);
 		vm.pc += 4;
 	}
 };
@@ -260,15 +274,15 @@ public:
 		}
 		else
 		{
-			assert(false);
+			assert(false && "Mulhsu instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		long long a = get<int>(vm.Rezisters[operand2]);
-		long long b = get<unsigned int>(vm.Rezisters[operand3]);
+		long long a = get<int>(vm.ReadIntRezisters(operand2));
+		long long b = (unsigned int)get<int>(vm.ReadIntRezisters(operand3));
 		long long c = (a * b) >> 32;
-		vm.Rezisters[operand1] = (int)(c & 0xffffffff);
+		vm.IntRezisters[operand1] = (int)(c & 0xffffffff);
 		vm.pc += 4;
 	}
 };
@@ -284,26 +298,26 @@ public:
 	{
 		if constexpr (std::is_same_v<T, int>)
 		{
-			name = "Mulhu" + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			name = "Mulhu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
 		}
 		else
 		{
-			assert(false);
+			assert(false && "Mulhu instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		unsigned long long a = get<unsigned int>(vm.Rezisters[operand2]);
-		unsigned long long b = get<unsigned int>(vm.Rezisters[operand3]);
+		unsigned long long a = (unsigned int)get<int>(vm.ReadIntRezisters(operand2));
+		unsigned long long b = (unsigned int)get<int>(vm.ReadIntRezisters(operand3));
 		unsigned long long c = (a * b) >> 32;
-		vm.Rezisters[operand1] = (unsigned int)(c & 0xffffffff);
+		vm.IntRezisters[operand1] = (int)(c & 0xffffffff);
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Div : public Instruction
-{ // div rd, rs1, rs2 || fdiv rd, rs1, rs2
+{ // div rd, rs1, rs2
 private:
 	const int operand1, operand2, operand3;
 
@@ -316,17 +330,17 @@ public:
 		}
 		else
 		{
-			name = "Fdiv " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			assert(false && "Div instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		auto a = get<T>(vm.Rezisters[operand3]);
+		auto a = get<T>(vm.ReadIntRezisters(operand3));
 		if (a == 0)
 		{
 			throw std::invalid_argument("Division by zero");
 		}
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) / a;
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) / a;
 		vm.pc += 4;
 	}
 };
@@ -344,26 +358,30 @@ public:
 		{
 			name = "Rem " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
 		}
-		else
+		else if constexpr (std::is_same_v<T, unsigned int>)
 		{
 			name = "Remu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+		}
+		else
+		{
+			assert(false && "Rem instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		auto a = get<T>(vm.Rezisters[operand3]);
+		auto a = (T)get<int>(vm.ReadIntRezisters(operand3));
 		if (a == 0)
 		{
 			throw std::invalid_argument("Division by zero");
 		}
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) % a;
+		vm.IntRezisters[operand1] = (int)((T)get<int>(vm.ReadIntRezisters(operand2)) % a);
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Slt : public Instruction
-{ // slt rd, rs1, rs2 || flt rd, rs1, rs2 || sltu rd, rs1, rs2
+{ // slt rd, rs1, rs2 || sltu rd, rs1, rs2
 private:
 	const int operand1, operand2, operand3;
 
@@ -380,18 +398,18 @@ public:
 		}
 		else
 		{
-			name = "Flt " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+			assert(false && "Slt instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand2]) < get<T>(vm.Rezisters[operand3]))
+		if ((T)get<int>(vm.ReadIntRezisters(operand2)) < (T)get<int>(vm.ReadIntRezisters(operand3)))
 		{
-			vm.Rezisters[operand1] = 1;
+			vm.IntRezisters[operand1] = 1;
 		}
 		else
 		{
-			vm.Rezisters[operand1] = 0;
+			vm.IntRezisters[operand1] = 0;
 		}
 		vm.pc += 4;
 	}
@@ -410,7 +428,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) << (get<T>(vm.Rezisters[operand3]) & 0x1f);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) << (get<T>(vm.ReadIntRezisters(operand3)) & 0x1f);
 		vm.pc += 4;
 	}
 };
@@ -428,14 +446,18 @@ public:
 		{
 			name = "Srl " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
 		}
-		else
+		else if constexpr (std::is_same_v<T, int>)
 		{
 			name = "Sra " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+		}
+		else
+		{
+			assert(false && "Srl instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) << (get<T>(vm.Rezisters[operand3]) & 0x1f);
+		vm.IntRezisters[operand1] = (int)((T)get<int>(vm.ReadIntRezisters(operand2)) << ((T)get<int>(vm.ReadIntRezisters(operand3)) & (T)0x1f));
 		vm.pc += 4;
 	}
 };
@@ -453,7 +475,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) ^ (get<T>(vm.Rezisters[operand3]));
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) ^ (get<T>(vm.ReadIntRezisters(operand3)));
 		vm.pc += 4;
 	}
 };
@@ -471,7 +493,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) | (get<T>(vm.Rezisters[operand3]));
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) | (get<T>(vm.ReadIntRezisters(operand3)));
 		vm.pc += 4;
 	}
 };
@@ -489,7 +511,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) & (get<T>(vm.Rezisters[operand3]));
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) & (get<T>(vm.ReadIntRezisters(operand3)));
 		vm.pc += 4;
 	}
 };
@@ -511,9 +533,9 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int8_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xff;
+		int8_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xff;
 		int tmp2 = tmp; // 符号拡張
-		vm.Rezisters[operand1] = tmp2;
+		vm.IntRezisters[operand1] = tmp2;
 		vm.pc += 4;
 	}
 };
@@ -531,9 +553,9 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int16_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xffff;
+		int16_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xffff;
 		int tmp2 = tmp; // 符号拡張
-		vm.Rezisters[operand1] = tmp2;
+		vm.IntRezisters[operand1] = tmp2;
 		vm.pc += 4;
 	}
 };
@@ -551,7 +573,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3));
+		vm.IntRezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3));
 		vm.pc += 4;
 	}
 };
@@ -569,7 +591,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3)) & 0xff;
+		vm.IntRezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xff;
 		vm.pc += 4;
 	}
 };
@@ -587,37 +609,37 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>((vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3))) & 0xffff;
+		vm.IntRezisters[operand1] = get<T>((vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3))) & 0xffff;
 		vm.pc += 4;
 	}
 };
 
-template <typename T>
-class Flw : public Instruction
-{ // flw rd, offset(rs1) //Flw(rd, rs1, offset)
-private:
-	const int operand1, operand2, operand3;
+// template <typename T>
+// class Flw : public Instruction
+// { // flw rd, offset(rs1) //Flw(rd, rs1, offset)
+// private:
+// 	const int operand1, operand2, operand3;
 
-public:
-	Flw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
-	{
-		name = "Flw " + Rnames[operand1] + ", " + to_string(operand3) + "(" + Rnames[operand2] + ")";
-	}
-	virtual void exec(VirtualMachine &vm) override
-	{
-		vm.Rezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.Rezisters[operand2]) + operand3));
-		vm.pc += 4;
-	}
-};
+// public:
+// 	Flw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
+// 	{
+// 		name = "Flw " + Rnames[operand1] + ", " + to_string(operand3) + "(" + Rnames[operand2] + ")";
+// 	}
+// 	virtual void exec(VirtualMachine &vm) override
+// 	{
+// 		vm.IntRezisters[operand1] = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3));
+// 		vm.pc += 4;
+// 	}
+// };
 
 // OP = "0010011"
 
 template <typename T>
 class Addi : public Instruction
-{ // addi rd, rs1, imm || faddi rd, rs1, imm
+{ // addi rd, rs1, imm || addi rd, rs1, imm
 private:
 	const int operand1, operand2;
-	const T operand3;
+	const int operand3;
 
 public:
 	Addi(int operand1, int operand2, T operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -628,22 +650,22 @@ public:
 		}
 		else
 		{
-			name = "Faddi " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+			assert(false && "Addi instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) + operand3;
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) + operand3;
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Subi : public Instruction
-{ // subi rd, rs1, imm || fsubi rd, rs1, imm
+{ // subi rd, rs1, imm
 private:
 	const int operand1, operand2;
-	const T operand3;
+	const int operand3;
 
 public:
 	Subi(int operand1, int operand2, T operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -654,22 +676,22 @@ public:
 		}
 		else
 		{
-			name = "Fsubi " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+			assert(false && "Subi instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) - operand3;
+		vm.IntRezisters[operand1] = get<int>(vm.ReadIntRezisters(operand2)) - operand3;
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Muli : public Instruction
-{ // muli rd, rs1, imm || fmuli rd, rs1, imm
+{ // muli rd, rs1, imm
 private:
 	const int operand1, operand2;
-	const T operand3;
+	const int operand3;
 
 public:
 	Muli(int operand1, int operand2, T operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -680,22 +702,22 @@ public:
 		}
 		else
 		{
-			name = "Fmuli " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+			assert(false && "Muli instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) * operand3;
+		vm.IntRezisters[operand1] = get<int>(vm.ReadIntRezisters(operand2)) * operand3;
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Divi : public Instruction
-{ // divi rd, rs1, imm || fdivi rd, rs1, imm
+{ // divi rd, rs1, imm
 private:
 	const int operand1, operand2;
-	const T operand3;
+	const int operand3;
 
 public:
 	Divi(int operand1, int operand2, T operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -706,7 +728,7 @@ public:
 		}
 		else
 		{
-			name = "Fdivi " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+			assert(false && "Divi instruction is only for int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
@@ -716,17 +738,17 @@ public:
 		{
 			throw std::invalid_argument("Division by zero");
 		}
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) / a;
+		vm.IntRezisters[operand1] = get<int>(vm.ReadIntRezisters(operand2)) / a;
 		vm.pc += 4;
 	}
 };
 
 template <typename T>
 class Slti : public Instruction
-{ // slti rd, rs1, imm || flti rd, rs1, imm || sltiu rd, rs1, imm
+{ // slti rd, rs1, imm || sltiu rd, rs1, imm
 private:
 	const int operand1, operand2;
-	const T operand3;
+	const int operand3;
 
 public:
 	Slti(int operand1, int operand2, T operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -741,18 +763,18 @@ public:
 		}
 		else
 		{
-			name = "Flti";
+			assert(false && "Slti instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand2]) < operand3)
+		if ((T)get<int>(vm.ReadIntRezisters(operand2)) < (T)operand3)
 		{
-			vm.Rezisters[operand1] = 1;
+			vm.IntRezisters[operand1] = 1;
 		}
 		else
 		{
-			vm.Rezisters[operand1] = 0;
+			vm.IntRezisters[operand1] = 0;
 		}
 		vm.pc += 4;
 	}
@@ -771,7 +793,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) << operand3;
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) << operand3;
 		vm.pc += 4;
 	}
 };
@@ -789,14 +811,16 @@ public:
 		{
 			name = "Srli " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
 		}
-		else
+		else if constexpr (std::is_same_v<T, int>)
 		{
 			name = "Srai " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+		}else{
+			assert(false && "Srli instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = (int)((T)(get<int>(vm.Rezisters[operand2])) >> (T)(operand3));
+		vm.IntRezisters[operand1] = (int)((T)(get<int>(vm.ReadIntRezisters(operand2))) >> (T)(operand3));
 		vm.pc += 4;
 	}
 };
@@ -814,7 +838,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) ^ (operand3);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) ^ (operand3);
 		vm.pc += 4;
 	}
 };
@@ -832,7 +856,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) | (operand3);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) | (operand3);
 		vm.pc += 4;
 	}
 };
@@ -850,7 +874,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = get<T>(vm.Rezisters[operand2]) & (operand3);
+		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) & (operand3);
 		vm.pc += 4;
 	}
 };
@@ -870,8 +894,8 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = vm.pc + 4;
-		vm.pc = get<T>(vm.Rezisters[operand2]) + operand3;
+		vm.IntRezisters[operand1] = vm.pc + 4;
+		vm.pc = get<T>(vm.ReadIntRezisters(operand2)) + operand3;
 	}
 };
 
@@ -891,7 +915,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.Rezisters[operand1]) + operand3, (char *)&vm.Rezisters[operand2], 1);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 1);
 		vm.pc += 4;
 	}
 };
@@ -909,7 +933,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.Rezisters[operand1]) + operand3, (char *)&vm.Rezisters[operand2], 2);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 2);
 		vm.pc += 4;
 	}
 };
@@ -927,28 +951,28 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.Rezisters[operand1]) + operand3, (char *)&vm.Rezisters[operand2], 4);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 4);
 		vm.pc += 4;
 	}
 };
 
-template <typename T>
-class Fsw : public Instruction
-{ // fsw rs2, offset(rs1) //Fsw(rs1, rs2, offset)
-private:
-	const int operand1, operand2, operand3;
+// template <typename T>
+// class Fsw : public Instruction
+// { // fsw rs2, offset(rs1) //Fsw(rs1, rs2, offset)
+// private:
+// 	const int operand1, operand2, operand3;
 
-public:
-	Fsw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
-	{
-		name = "Fsw " + Rnames[operand2] + ", " + to_string(operand3) + "(" + Rnames[operand1] + ")";
-	}
-	virtual void exec(VirtualMachine &vm) override
-	{
-		vm.mem.write(get<T>(vm.Rezisters[operand1]) + operand3, (char *)&vm.Rezisters[operand2], 4);
-		vm.pc += 4;
-	}
-};
+// public:
+// 	Fsw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
+// 	{
+// 		name = "Fsw " + Rnames[operand2] + ", " + to_string(operand3) + "(" + Rnames[operand1] + ")";
+// 	}
+// 	virtual void exec(VirtualMachine &vm) override
+// 	{
+// 		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 4);
+// 		vm.pc += 4;
+// 	}
+// };
 
 //-------------------------------------S-type-------------------------------------//
 //-------------------------------------U-type-------------------------------------//
@@ -966,7 +990,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = vm.pc + operand2;
+		vm.IntRezisters[operand1] = vm.pc + operand2;
 		vm.pc += 4;
 	}
 };
@@ -985,7 +1009,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = operand2;
+		vm.IntRezisters[operand1] = operand2;
 		vm.pc += 4;
 	}
 };
@@ -1006,7 +1030,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand1]) == get<T>(vm.Rezisters[operand2]))
+		if (get<T>(vm.ReadIntRezisters(operand1)) == get<T>(vm.ReadIntRezisters(operand2)))
 		{
 			vm.pc = vm.pc + operand3;
 		}
@@ -1030,7 +1054,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand1]) != get<T>(vm.Rezisters[operand2]))
+		if (get<T>(vm.ReadIntRezisters(operand1)) != get<T>(vm.ReadIntRezisters(operand2)))
 		{
 			vm.pc = vm.pc + operand3;
 		}
@@ -1057,11 +1081,13 @@ public:
 		else if constexpr (std::is_same_v<T, unsigned int>)
 		{
 			name = "Bltu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+		}else{
+			assert(false && "Blt instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand1]) < get<T>(vm.Rezisters[operand2]))
+		if ((T)get<int>(vm.ReadIntRezisters(operand1)) < (T)get<int>(vm.ReadIntRezisters(operand2)))
 		{
 			vm.pc = vm.pc + operand3;
 		}
@@ -1088,11 +1114,13 @@ public:
 		else if constexpr (std::is_same_v<T, unsigned int>)
 		{
 			name = "Bgeu " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + to_string(operand3);
+		}else{
+			assert(false && "Bge instruction is only for int or unsigned int");
 		}
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		if (get<T>(vm.Rezisters[operand1]) >= get<T>(vm.Rezisters[operand2]))
+		if ((T)get<int>(vm.ReadIntRezisters(operand1)) >= (T)get<int>(vm.ReadIntRezisters(operand2)))
 		{
 			vm.pc = vm.pc + operand3;
 		}
@@ -1119,9 +1147,37 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.Rezisters[operand1] = vm.pc + 4;
+		vm.IntRezisters[operand1] = vm.pc + 4;
 		vm.pc = vm.pc + operand2;
 	}
 };
 
 //-------------------------------------J-type-------------------------------------//
+
+//-------------------------------------Floats-------------------------------------//
+
+// // OP = "0110011"
+// template <typename T>
+// class Add : public Instruction
+// { // add rd, rs1, rs2
+// private:
+// 	const int operand1, operand2, operand3;
+
+// public:
+// 	Add(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
+// 	{
+// 		if constexpr (std::is_same_v<T, int>)
+// 		{
+// 			name = "Add " + Rnames[operand1] + ", " + Rnames[operand2] + ", " + Rnames[operand3];
+// 		}
+// 		else
+// 		{
+// 			assert(false && "Add instruction is only for int");
+// 		}
+// 	}
+// 	virtual void exec(VirtualMachine &vm) override
+// 	{
+// 		vm.IntRezisters[operand1] = get<T>(vm.ReadIntRezisters(operand2)) + get<T>(vm.ReadIntRezisters(operand3));
+// 		vm.pc += 4;
+// 	}
+// };

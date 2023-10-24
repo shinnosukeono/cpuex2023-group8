@@ -11,6 +11,7 @@ module axi_master_wrapper #(
 
     input wire we,
     output wire w_success,
+    output wire w_busy,
 
     input wire [AXI_ADDRW-1:0] araddr_in,
     input wire [AXI_ADDRW-1:0] awaddr_in,
@@ -50,6 +51,7 @@ module axi_master_wrapper #(
         .r_timeout(r_timeout),
         .we(we),
         .w_success(w_success),
+        .w_busy(w_busy),
         .araddr_in(araddr_in),
         .awaddr_in(awaddr_in),
         .wdata_in(wdata_in),

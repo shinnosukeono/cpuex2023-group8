@@ -20,6 +20,7 @@ module concat_wrapper #(
     ) concat (
         .clk(clk),
         .rst(rst),
+        .en(en),
         .din(din),
         .dout(dout),
         .valid(valid)

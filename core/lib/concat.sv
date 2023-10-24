@@ -17,15 +17,21 @@ module concat #(
     always_ff @( posedge clk ) begin
         if (rst) begin
             counter <= {(CONCAT_LEN){1'b0}};
+            valid <= 1'b0;
         end else begin
             if (en) begin
                 din_buf[counter] <= din;
                 counter <= counter + 1'b1;
+                if (counter == {(CONCAT_LEN){1'b1}}) begin
+                    valid <= 1'b1;
+                end else begin
+                    valid <= 1'b0;
+                end
+            end else begin
+                valid <= 1'b0;
             end
         end
     end
-
-    assign valid = (counter == {(CONCAT_LEN){1'b1}}) ? 1'b1 : 1'b0;
 
     generate
         for (genvar i = 0; i < CONCAT_NUM; i++) begin

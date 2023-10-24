@@ -187,7 +187,7 @@ module boot #(
         .concat_valid(concat_valid),
         .deconcat_done(deconcat_done),
         .instr_mem_we(instr_we),
-        .instr_mem_addr(instr_addr_in),
+        .instr_addr(instr_addr_in),
         .cache_re(cache_re),
         .cache_we(cache_we),
         .cache_addr(cache_addr_in),

@@ -174,7 +174,21 @@ module io_fsm (
         endcase
     end
 
-    // TODO: instr_mem_addr
+    // instr_addr
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            instr_addr <= INST_MEM_ADDRW'('b0);
+        end else begin
+            if (state == PROGRAM_RECEIVE) begin
+                if (fifo_empty_delayed) begin
+                    // 次に入ってくるデータを格納するアドレス
+                    // ここでのアドレスはbyte addressing
+                    // アドレスのword alignmentはメモリ側で行う
+                    instr_addr <= instr_addr + INST_MEM_ADDRW'(DATAW>>3);
+                end
+            end
+        end
+    end
 
     // cache_we
     always_comb begin
@@ -195,7 +209,19 @@ module io_fsm (
         endcase
     end
 
-    // TODO: cache_addr
+    // cache_addr
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            cache_addr <= CACHE_ADDRW'('b0);
+        end else begin
+            if (state == DATA_RECEIVE) begin
+                if (fifo_empty_delayed) begin
+                    // byte addressing
+                    cache_addr <= cache_addr + CACHE_ADDRW'(DATAW>>3);
+                end
+            end
+        end
+    end
 
     // core_clk_en
     always_comb begin

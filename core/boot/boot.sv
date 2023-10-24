@@ -59,10 +59,13 @@ module boot #(
     logic axi_w_success;
     logic axi_w_busy;
 
-    logic [AXI_ADDRW-1:0] araddr_in; // TODO: set value
-    logic [AXI_ADDRW-1:0] awaddr_in; // TODO: set value
+    logic [AXI_ADDRW-1:0] araddr_in;
+    assign araddr_in = AXI_ADDRW'('h0);
+    logic [AXI_ADDRW-1:0] awaddr_in;
+    assign awaddr_in = AXI_ADDRW'('h4);
     logic [AXI_DATAW-1:0] wdata_in;
-    logic [AXI_DATAW_BYTE-1:0] wstrb_in; // TODO: set value
+    logic [AXI_DATAW_BYTE-1:0] wstrb_in;
+    assign wstrb_in = AXI_DATAW_BYTE'('b1);
     logic [AXI_DATAW-1:0] rdata_out;
 
     axi_master axi_master(

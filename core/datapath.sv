@@ -1,6 +1,6 @@
 `include "lib/adder.sv"
 `include "lib/mux.sv"
-`include "flopr.sv"
+`include "lib/flopr.sv"
 `include "regfile.sv"
 `include "extend.sv"
 `include "alu.sv"

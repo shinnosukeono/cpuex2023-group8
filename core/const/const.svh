@@ -1,6 +1,6 @@
 `ifndef _const_h
 `define _const_h
-localparam AXI_ADDRW = 32;
+localparam AXI_ADDRW = 4;
 localparam AXI_DATAW = 32;
 localparam DATAW = 32;
 localparam UART_ADDR = 0;

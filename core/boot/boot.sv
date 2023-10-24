@@ -5,7 +5,9 @@
 `include "axi/axi_master.sv"
 `include "boot/io_fsm.sv"
 
-module boot (
+module boot #(
+    parameter AXI_DATAW_BYTE = AXI_DATAW >> 3
+) (
     input logic clk, rst,
 
     input logic cache_valid,
@@ -16,7 +18,7 @@ module boot (
     output logic cache_re,
 
     output logic [INST_MEM_ADDRW-1:0] instr_addr_in,
-    output logic [DATAW_IN-1:0] instr_data_in,
+    output logic [DATAW-1:0] instr_data_in,
     output logic instr_we,
 
     input logic core_exec_done,
@@ -48,7 +50,6 @@ module boot (
     output logic bready
 );
     // axi master
-    localparam AXI_DATAW_BYTE = AXI_DATAW >> 3;
 
     logic axi_re;
     logic axi_r_success;

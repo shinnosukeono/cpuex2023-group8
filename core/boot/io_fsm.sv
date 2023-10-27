@@ -38,6 +38,7 @@ module io_fsm (
     output logic cache_re,
     output logic cache_we,
     output logic [CACHE_ADDRW-1:0] cache_addr,
+    output logic cache_sel,
     output logic axi_re,
     output logic axi_we,
     output logic [1:0] axi_sel,
@@ -221,6 +222,15 @@ module io_fsm (
                 end
             end
         end
+    end
+
+    // cache_sel
+    always_comb begin
+        case (state)
+            DATA_RECEIVE: cache_sel = 1'b0;
+            EXEC: cache_sel = 1'b1;  // コア動作中はコアからアドレス、データを取る
+            default: cache_sel = 1'b0;
+        endcase
     end
 
     // core_clk_en

@@ -14,6 +14,7 @@ module boot_wrapper #(
     output wire [DATAW-1:0] cache_data_in,
     output wire cache_we,
     output wire cache_re,
+    output wire cache_sel,
 
     output wire [INST_MEM_ADDRW-1:0] instr_addr_in,
     output wire [DATAW-1:0] instr_data_in,
@@ -56,6 +57,7 @@ module boot_wrapper #(
         .cache_data_in(cache_data_in),
         .cache_we(cache_we),
         .cache_re(cache_re),
+        .cache_sel(cache_sel),
         .instr_addr_in(instr_addr_in),
         .instr_data_in(instr_data_in),
         .instr_we(instr_we),

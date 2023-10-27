@@ -16,6 +16,7 @@ module boot #(
     output logic [DATAW-1:0] cache_data_in,
     output logic cache_we,
     output logic cache_re,
+    output logic cache_sel,
 
     output logic [INST_MEM_ADDRW-1:0] instr_addr_in,
     output logic [DATAW-1:0] instr_data_in,
@@ -194,6 +195,7 @@ module boot #(
         .cache_re(cache_re),
         .cache_we(cache_we),
         .cache_addr(cache_addr_in),
+        .cache_sel(cache_sel),
         .axi_re(axi_re),
         .axi_we(axi_we),
         .axi_sel(axi_sel),

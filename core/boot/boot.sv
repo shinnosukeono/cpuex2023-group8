@@ -21,6 +21,7 @@ module boot #(
     output logic [INST_MEM_ADDRW-1:0] instr_addr_in,
     output logic [DATAW-1:0] instr_data_in,
     output logic instr_we,
+    output logic instr_sel,
 
     input logic core_exec_done,
     input logic [31:0] result_bytes,
@@ -192,6 +193,7 @@ module boot #(
         .deconcat_done(deconcat_done),
         .instr_mem_we(instr_we),
         .instr_addr(instr_addr_in),
+        .instr_sel(instr_sel),
         .cache_re(cache_re),
         .cache_we(cache_we),
         .cache_addr(cache_addr_in),

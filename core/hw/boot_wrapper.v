@@ -1,7 +1,7 @@
 module boot_wrapper #(
     parameter AXI_DATAW = 32,
     parameter AXI_DATAW_BYTE = 4,
-    parameter AXI_ADDRW = 32,
+    parameter AXI_ADDRW = 4,
     parameter CACHE_ADDRW = 32,
     parameter INST_MEM_ADDRW = 32,
     parameter DATAW = 32
@@ -19,6 +19,7 @@ module boot_wrapper #(
     output wire [INST_MEM_ADDRW-1:0] instr_addr_in,
     output wire [DATAW-1:0] instr_data_in,
     output wire instr_we,
+    output wire instr_sel,
 
     input wire core_exec_done,
     input wire [31:0] result_bytes,
@@ -61,6 +62,7 @@ module boot_wrapper #(
         .instr_addr_in(instr_addr_in),
         .instr_data_in(instr_data_in),
         .instr_we(instr_we),
+        .instr_sel(instr_sel),
         .core_exec_done(core_exec_done),
         .result_bytes(result_bytes),
         .core_clk_en(core_clk_en),

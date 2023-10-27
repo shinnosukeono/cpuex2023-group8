@@ -35,6 +35,7 @@ module io_fsm (
     input logic deconcat_done,
     output logic instr_mem_we,
     output logic [INST_MEM_ADDRW-1:0] instr_addr,
+    output logic instr_sel,
     output logic cache_re,
     output logic cache_we,
     output logic [CACHE_ADDRW-1:0] cache_addr,
@@ -189,6 +190,15 @@ module io_fsm (
                 end
             end
         end
+    end
+
+    // instr_sel
+    always_comb begin
+        case (state)
+            PROGRAM_RECEIVE: instr_sel = 1'b0;
+            EXEC: instr_sel = 1'b1;
+            default: instr_sel = 1'b0;
+        endcase
     end
 
     // cache_we

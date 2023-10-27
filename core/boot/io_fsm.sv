@@ -60,6 +60,9 @@ module io_fsm (
         .dout(fifo_empty_delayed)
     );
 
+    // 書き込みバイト数を監視するカウンタ
+    logic [31:0] result_counter;
+
     typedef enum {
         INIT,
         WRITE_99,
@@ -90,8 +93,10 @@ module io_fsm (
             WRITE_aa: n_state = (axi_w_success === 1'b1) ? DATA_RECEIVE : WRITE_aa;
             DATA_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? EXEC : DATA_RECEIVE;
             EXEC: n_state = (core_exec_done === 1'b1) ? RESULT_WRITE : EXEC;
-            // TODO: ここの制御どうする？
-            // RESULT_WRITE: n_state = 
+            // 残りバイト数が1で最後のバイトを読みだしたら終わり
+            RESULT_WRITE: n_state = (result_counter === 32'b1) ?
+                                        (deconcat_en === 1'b1) ? INIT : RESULT_WRITE
+                                        : RESULT_WRITE;
             default: n_state = INIT;
         endcase
     end
@@ -103,9 +108,9 @@ module io_fsm (
             WRITE_99: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
             PROGRAM_RECEIVE: axi_we = (axi_r_timeout) ? 1'b1 : 1'b0;
             WRITE_aa: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
-            EXEC: axi_we = (core_exec_done) ? 1'b1 : 1'b0;
-            // TODO: ここの制御どうする？
-            //RESULT_WRITE: axi_we = 
+            EXEC: axi_we = 1'b0;
+            // 新たにシリアルデータを受け取ったらaxiに書き込み（このときaxiがbusyでないことはdeconcat_en側で保証）
+            RESULT_WRITE: axi_we = (deconcat_en) ? 1'b1 : 1'b0;
             default: axi_we = 1'b0;
         endcase
     end
@@ -214,7 +219,7 @@ module io_fsm (
         case (state)
             // EXECの最後のクロックで結果の読み出し開始
             EXEC: cache_re = (core_exec_done) ? 1'b1 : 1'b0;
-            // reはずっとアサート（deconcat_doneはアドレスのロジックに組み込む）
+            // reはずっとアサート
             RESULT_WRITE: cache_re = 1'b1;
             default: cache_re = 1'b0;
         endcase
@@ -228,6 +233,11 @@ module io_fsm (
             if (state == DATA_RECEIVE) begin
                 if (fifo_empty_delayed) begin
                     // byte addressing
+                    cache_addr <= cache_addr + CACHE_ADDRW'(DATAW>>3);
+                end
+            end else if (state == RESULT_WRITE) begin
+                if (deconcat_done) begin
+                    // 今あるデータのシリアル化が完了したら次のデータを入れる
                     cache_addr <= cache_addr + CACHE_ADDRW'(DATAW>>3);
                 end
             end
@@ -259,5 +269,17 @@ module io_fsm (
             RESULT_WRITE: deconcat_en = (cache_valid && ~axi_w_busy) ? 1'b1 : 1'b0;
             default: deconcat_en = 1'b0;
         endcase
+    end
+
+    // result_counter
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            result_counter <= 32'b0;
+        end else begin
+            if (deconcat_en) begin
+                // 1バイト読み出すごとにデクリメント
+                result_counter <= result_counter - 32'b1;
+            end
+        end
     end
 endmodule

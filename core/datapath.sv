@@ -6,7 +6,7 @@
 `include "alu.sv"
 
 module datapath (
-    input logic clk, reset,
+    input logic clk1, clk2, reset,
     input logic [1:0] result_src,
     input logic pc_src, alu_src,
     input logic reg_write,
@@ -27,13 +27,13 @@ module datapath (
     logic [31:0] result;
 
     // pc logic
-    flopr #(.DATAW(32)) pcreg(clk, reset, pc_next, pc);
+    flopr #(.DATAW(32)) pcreg(clk1, reset, pc_next, pc);
     adder #(.DATAW(32)) pc_add4(pc, 32'd4, pc_plus4);
     adder #(.DATAW(32)) pc_add_branch(pc, imm_ext, pc_target);
     mux #(.DATAW(32)) pc_mux(pc_plus4, pc_target, pc_src, pc_next);
 
     // register file logic
-    regfile rf(clk, reg_write, instr[19:15], instr[24:20], instr[11:7], result, src_a, write_data);
+    regfile rf(clk2, reg_write, instr[19:15], instr[24:20], instr[11:7], result, src_a, write_data);
     extend ext(instr[31:7], imm_src, imm_ext);
 
     // alu logic

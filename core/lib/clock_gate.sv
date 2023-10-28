@@ -1,7 +1,7 @@
 module clock_gate (
-    input clk,
-    input en,
-    output clk_gated
+    input logic clk,
+    input logic en,
+    output logic clk_gated
 );
     logic enable_flop;
     always_ff @( negedge clk ) begin

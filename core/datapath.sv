@@ -7,7 +7,7 @@
 `include "alu.sv"
 
 module datapath (
-    input logic clk1, clk2, reset,
+    input logic clk, reset,
     input logic [1:0] result_src,
     input logic pc_src, alu_src,
     input logic reg_write,

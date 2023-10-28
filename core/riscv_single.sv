@@ -2,7 +2,7 @@
 `include "datapath.sv"
 
 module riscv_single (
-    input logic clk1, clk2, reset,
+    input logic clk, reset,
     output logic [31:0] pc,
     input logic [31:0] instr,
     output logic mem_write,
@@ -33,8 +33,7 @@ module riscv_single (
     );
 
     datapath dp(
-        .clk1(clk1),
-        .clk2(clk2),
+        .clk(clk),
         .reset(reset),
         .result_src(result_src),
         .pc_src(pc_src),

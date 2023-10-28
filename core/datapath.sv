@@ -38,7 +38,7 @@ module datapath (
     mux #(.DATAW(32)) pc_mux({pc_target, pc_plus4}, pc_src, pc_next);
 
     // register file logic
-    regfile rf(clk2, reg_write, instr[19:15], instr[24:20], instr[11:7], result, src_a, write_data);
+    regfile rf(clk, reg_write, instr[19:15], instr[24:20], instr[11:7], result, src_a, write_data);
     extend ext(instr[31:7], imm_src, imm_ext);
 
     // control register file logic 

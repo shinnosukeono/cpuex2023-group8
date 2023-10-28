@@ -10,6 +10,7 @@ module riscv_single (
     input logic [31:0] read_data
 );
     logic alu_src, reg_write, pc_src, negative_flag, zero_flag, carry_out_flag, overflow_flag;
+    logic c_reg_write, c_reg_src;
     logic [1:0] result_src, imm_src;
     logic [2:0] alu_control;
 
@@ -24,7 +25,9 @@ module riscv_single (
         .alu_src(alu_src),
         .imm_src(imm_src),
         .reg_write(reg_write),
-        .alu_control(alu_control)
+        .alu_control(alu_control),
+        .c_reg_write(c_reg_write),
+        .c_reg_src(c_reg_src)
     );
 
     datapath dp(
@@ -37,6 +40,8 @@ module riscv_single (
         .reg_write(reg_write),
         .imm_src(imm_src),
         .alu_control(alu_control),
+        .c_reg_write(c_reg_write),
+        .c_reg_src(c_reg_src),
         .negative_flag(negative_flag),
         .zero_flag(zero_flag),
         .carry_out_flag(carry_out_flag),

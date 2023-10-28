@@ -17,10 +17,11 @@ module sdp_ram #(
         output wire [DATAW-1:0] doutb
     );
 
+    // アドレスはword align済みと仮定（レジスタファイルを想定）
     wire [ADDRW-1-WORD_LEN:0] addra_word_aligned;
-    assign addra_word_aligned = addra[ADDRW-1:WORD_LEN];
+    assign addra_word_aligned = addra[ADDRW-1-WORD_LEN:0];
     wire [ADDRW-1-WORD_LEN:0] addrb_word_aligned;
-    assign addrb_word_aligned = addrb[ADDRW-1:WORD_LEN];
+    assign addrb_word_aligned = addrb[ADDRW-1-WORD_LEN:0];
 
     blk_mem_gen_0 bram_generator (
     .clka(clk),    // input wire clka

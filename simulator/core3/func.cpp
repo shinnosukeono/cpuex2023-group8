@@ -7,7 +7,7 @@
 #include <vector>
 #include <fstream>
 
-#define Dsize 4096
+#define Dsize (1 << 22)
 #define maxcount 1000000000
 
 using Data = std::variant<int, float, unsigned int>;
@@ -83,6 +83,7 @@ public:
 class VirtualMachine
 {	
 public:
+	const int zero = 0;
 	int pc = 0;
 	int addr = 0;  // memory address
 	int count = 0; // count the number of instructions
@@ -103,6 +104,11 @@ public:
 	Data ReadFloatRezisters(int i){
 		//if (i == 0) return Data{0.0f};
 		return FloatRezisters[i];
+	}
+
+	char* ReadIntRezisterAddress(int i){
+		if (i==0) return (char*)&zero;
+		return (char*)&IntRezisters[i];
 	}
 
 	string Rnames[32] = {"zero(x0)", "ra(x1)", "sp(x2)", "gp(x3)", "tp(x4)", "t0(x5)", "t1(x6)", "t2(x7)", "s0/fp(x8)", "s1(x9)", "a0(x10)", "a1(x11)", "a2(x12)", "a3(x13)", "a4(x14)", "a5(x15)", "a6(x16)",
@@ -915,7 +921,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 1);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 1);
 		vm.pc += 4;
 	}
 };
@@ -933,7 +939,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 2);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 2);
 		vm.pc += 4;
 	}
 };
@@ -951,7 +957,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, (char *)&vm.IntRezisters[operand2], 4);
+		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 4);
 		vm.pc += 4;
 	}
 };

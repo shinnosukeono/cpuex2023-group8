@@ -7,7 +7,9 @@ module riscv_single (
     input logic [31:0] instr,
     output logic mem_write,
     output logic [31:0] alu_result, write_data,
-    input logic [31:0] read_data
+    input logic [31:0] read_data,
+    output logic [31:0] status,
+    output logic [31:0] result_bytes
 );
     logic alu_src, reg_write, pc_src, negative_flag, zero_flag, carry_out_flag, overflow_flag;
     logic c_reg_write, c_reg_src;
@@ -50,6 +52,8 @@ module riscv_single (
         .instr(instr),
         .alu_result(alu_result),
         .write_data(write_data),
-        .read_data(read_data)
+        .read_data(read_data),
+        .status(status),
+        .result_bytes(result_bytes)
     );
 endmodule

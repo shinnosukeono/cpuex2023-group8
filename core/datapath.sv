@@ -22,7 +22,9 @@ module datapath (
     output logic [31:0] pc,
     input logic [31:0] instr,
     output logic [31:0] alu_result, write_data,
-    input logic [31:0] read_data
+    input logic [31:0] read_data,
+    output logic [31:0] status,
+    output logic [31:0] result_bytes
 );
     logic [31:0] pc_next, pc_plus4, pc_target;
     logic [31:0] imm_ext;
@@ -42,7 +44,7 @@ module datapath (
     // control register file logic 
     logic [31:0] c_reg_data_in;
     logic [31:0] c_reg_data_out;
-    c_regfile crf(clk2, reset, c_reg_write, c_reg_data_in, imm_ext, c_reg_data_out);
+    c_regfile crf(clk, reset, c_reg_write, c_reg_data_in, imm_ext, c_reg_data_out, status, result_bytes);
     mux #(.DATAW(32)) c_reg_data_mux({32'(instr[19:15]), src_a}, c_reg_src, c_reg_data_in);
 
     // alu logic

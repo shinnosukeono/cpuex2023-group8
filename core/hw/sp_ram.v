@@ -1,6 +1,6 @@
 `default_nettype none
 
-module bram(
+module sp_ram(
         input wire clk,
         input wire rstn,
         input wire we,

@@ -1,6 +1,6 @@
 `default_nettype none
 
-module sdp_ram #(
+module tdp_ram #(
     parameter DATAW = 32,
     parameter ADDRW = 6,
     parameter WORD_LEN = 2

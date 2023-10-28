@@ -32,7 +32,7 @@ module datapath (
     logic [31:0] result;
 
     // pc logic
-    flopr #(.DATAW(32)) pcreg(clk1, reset, pc_next, pc);
+    flopr #(.DATAW(32)) pcreg(clk, reset, pc_next, pc);
     adder #(.DATAW(32)) pc_add4(pc, 32'd4, pc_plus4);
     adder #(.DATAW(32)) pc_add_branch(pc, imm_ext, pc_target);
     mux #(.DATAW(32)) pc_mux({pc_target, pc_plus4}, pc_src, pc_next);

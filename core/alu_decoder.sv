@@ -13,7 +13,13 @@ module alu_decoder (
 
         case (alu_op)
             2'b00: alu_control = 3'b000;  // add (lw, sw)
-            2'b01: alu_control = 3'b001;  // subtract (beq)
+            2'b01: begin  // B instruction
+                case (funct3)
+                    3'b000: alu_control = 3'b001;  // subtract (beq)
+                    3'b100: alu_control = 3'b101;  // set less than (blt)
+                    default: alu_control = 3'bxxx;  // error
+                endcase
+            end
             2'b10: begin  // R or I instruction
                 case (funct3)
                     3'b000: begin

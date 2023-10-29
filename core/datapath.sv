@@ -71,7 +71,7 @@ module datapath (
     logic [31:0] c_reg_data_in;
     logic [31:0] c_reg_data_out;
     c_regfile crf(clk, reset, c_reg_write, c_reg_data_in, imm_ext, c_reg_data_out, status, result_bytes);
-    mux #(.DATAW(32)) c_reg_data_mux({32'(instr[19:15]), src_a}, c_reg_src, c_reg_data_in);
+    mux #(.DATAW(32)) c_reg_data_mux({{{27{instr[19]}}, instr[19:15]}, src_a}, c_reg_src, c_reg_data_in);
 
     // alu logic
     mux #(.DATAW(32)) src_b_mux({imm_ext, write_data}, alu_src, src_b);

@@ -94,7 +94,7 @@ module io_fsm (
             DATA_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? EXEC : DATA_RECEIVE;
             EXEC: n_state = (core_exec_done === 1'b1) ? RESULT_WRITE : EXEC;
             // 残りバイト数が1で最後のバイトを読みだしたら終わり
-            RESULT_WRITE: n_state = (result_counter === 32'b1) ?
+            RESULT_WRITE: n_state = (result_counter === (result_bytes - 32'b1)) ?
                                         (deconcat_en === 1'b1) ? INIT : RESULT_WRITE
                                         : RESULT_WRITE;
             default: n_state = INIT;
@@ -278,7 +278,7 @@ module io_fsm (
         end else begin
             if (deconcat_en) begin
                 // 1バイト読み出すごとにデクリメント
-                result_counter <= result_counter - 32'b1;
+                result_counter <= result_counter + 32'b1;
             end
         end
     end

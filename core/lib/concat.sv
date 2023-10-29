@@ -35,7 +35,7 @@ module concat #(
 
     generate
         for (genvar i = 0; i < CONCAT_NUM; i++) begin
-            assign dout[((i+1)<<DATAW_IN_LEN)-1:i<<DATAW_IN_LEN] = din_buf[CONCAT_NUM-i-1];
+            assign dout[((i+1)<<DATAW_IN_LEN)-1:i<<DATAW_IN_LEN] = din_buf[i];
         end
     endgenerate
 endmodule

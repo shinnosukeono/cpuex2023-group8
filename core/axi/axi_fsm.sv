@@ -1,5 +1,4 @@
 `include "const/const.svh"
-`include "lib/counter.sv"
 
 module axi_fsm (
     input logic clk, rst,
@@ -165,18 +164,22 @@ module axi_fsm (
     assign r_success = (r_state == R_SUCCESS) ? 1'b1 : 1'b0;
 
     // r_timeout
-    // 100クロック連続でR_WAITだとタイムアウト
+    // SLVERRが合計10回でタイムアウト
     logic [7:0] wait_count;
-    logic wait_counter_rst;
-    assign wait_counter_rst = rst | ((r_state == R_WAIT) ? 1'b0 : 1'b1);
 
-    counter #(
-        .N(8)
-    ) wait_counter (
-        .clk(clk),
-        .reset(wait_counter_rst),
-        .q(wait_count)
-    );
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            wait_count <= 8'b0;
+        end else begin
+            if (r_state == R_DATA_WAIT && rvalid == 1'b1) begin
+                if (rresp[1] == 1'b1) begin
+                    wait_count <= wait_count + 8'b1;
+                end else if (rresp[1] == 1'b0) begin
+                    wait_count <= 8'b0;
+                end
+            end
+        end
+    end
 
-    assign r_timeout = (wait_count == 8'd100) ? 1'b1 : 1'b0;
+    assign r_timeout = (wait_count == 8'd10) ? 1'b1 : 1'b0;
 endmodule

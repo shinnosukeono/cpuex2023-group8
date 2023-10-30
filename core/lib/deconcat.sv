@@ -17,7 +17,7 @@ module deconcat #(
 
     always_ff @( posedge clk ) begin
         if (rst) begin
-            counter <= {(DECONCAT_LEN){1'b0}};
+            counter <= {(DECONCAT_LEN){1'b1}};
         end else begin
             if (en) begin
                 counter <= counter + 1'b1;

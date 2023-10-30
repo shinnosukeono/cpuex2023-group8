@@ -50,7 +50,7 @@ module axi_fsm (
     always_comb begin
         case (aw_state)
             AW_WAIT: aw_n_state = (we === 1'b1) ? AW_SEND : AW_WAIT;
-            AW_SEND: aw_n_state = (awready === 1'b1) ? AW_RESP_WAIT : AW_WAIT;
+            AW_SEND: aw_n_state = (awready === 1'b1) ? AW_RESP_WAIT : AW_SEND;
             AW_RESP_WAIT: aw_n_state = (bvalid === 1'b1) ? ((bresp[1] === 1'b0) ? AW_SUCCESS : AW_WAIT) : AW_RESP_WAIT;
             AW_SUCCESS: aw_n_state = (w_success === 1'b1) ? AW_WAIT : AW_SUCCESS;
         endcase

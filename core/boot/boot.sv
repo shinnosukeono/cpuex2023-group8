@@ -12,6 +12,7 @@ module boot #(
 
     input logic cache_valid,
     input logic cache_init_done,
+    input logic [CACHE_LINEW-1:0] cache_data,
     output logic [CACHE_ADDRW-1:0] cache_addr_in,
     output logic [DATAW-1:0] cache_data_in,
     output logic cache_we,
@@ -148,7 +149,6 @@ module boot #(
 
     // deconcat
     logic deconcat_en;
-    logic [CACHE_LINEW-1:0] cache_data;
     logic [7:0] deconcat_data;
     logic deconcat_done;
 
@@ -171,7 +171,7 @@ module boot #(
         case (axi_sel)
             2'b00: wdata_in = AXI_DATAW'('h99);
             2'b01: wdata_in = AXI_DATAW'('haa);
-            2'b10: wdata_in = AXI_DATAW'(deconcat_data);
+            2'b10: wdata_in = {{(AXI_DATAW-8){1'b0}}, deconcat_data};
             default: wdata_in = AXI_DATAW'('b1); // error
         endcase
     end

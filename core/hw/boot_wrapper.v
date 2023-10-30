@@ -2,6 +2,7 @@ module boot_wrapper #(
     parameter AXI_DATAW = 32,
     parameter AXI_DATAW_BYTE = 4,
     parameter AXI_ADDRW = 4,
+    parameter CACHE_LINEW = 32,
     parameter CACHE_ADDRW = 32,
     parameter INST_MEM_ADDRW = 32,
     parameter DATAW = 32
@@ -10,6 +11,7 @@ module boot_wrapper #(
 
     input wire cache_valid,
     input wire cache_init_done,
+    input wire [CACHE_LINEW-1:0] cache_data,
     output wire [CACHE_ADDRW-1:0] cache_addr_in,
     output wire [DATAW-1:0] cache_data_in,
     output wire cache_we,
@@ -54,6 +56,7 @@ module boot_wrapper #(
         .rst(rst),
         .cache_valid(cache_valid),
         .cache_init_done(cache_init_done),
+        .cache_data(cache_data),
         .cache_addr_in(cache_addr_in),
         .cache_data_in(cache_data_in),
         .cache_we(cache_we),

@@ -229,10 +229,12 @@ module io_fsm (
             cache_addr <= CACHE_ADDRW'('b0);
         end else begin
             if (state == DATA_RECEIVE) begin
-                if (fifo_empty_delayed) begin
+                if (~fifo_empty_delayed) begin
                     // byte addressing
                     cache_addr <= cache_addr + CACHE_ADDRW'(DATAW>>3);
                 end
+            end else if (state == EXEC) begin
+                cache_addr <= CACHE_ADDRW'('b0);
             end else if (state == RESULT_WRITE) begin
                 if (deconcat_done) begin
                     // 今あるデータのシリアル化が完了したら次のデータを入れる

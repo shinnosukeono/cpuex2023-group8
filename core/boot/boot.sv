@@ -108,6 +108,8 @@ module boot #(
 
     // concat
     logic concat_en;
+    logic [7:0] concat_data_in;
+    assign concat_data_in = rdata_out[7:0];
     logic [DATAW-1:0] concat_data;
     logic concat_valid;
 
@@ -118,7 +120,7 @@ module boot #(
         .clk(clk),
         .rst(rst),
         .en(concat_en),
-        .din(rdata_out[7:0]),
+        .din(concat_data_in),
         .dout(concat_data),
         .valid(concat_valid)
     );

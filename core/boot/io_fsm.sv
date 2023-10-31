@@ -89,7 +89,7 @@ module io_fsm (
         case (state)
             INIT: n_state = (cache_init_done === 1'b1) ? WRITE_99 : INIT;
             WRITE_99: n_state = (axi_w_success === 1'b1) ? PROGRAM_RECEIVE : WRITE_99;
-            PROGRAM_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? WRITE_aa : PROGRAM_RECEIVE;
+            PROGRAM_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? (instr_addr !== 0) ? WRITE_aa : PROGRAM_RECEIVE : PROGRAM_RECEIVE;
             WRITE_aa: n_state = (axi_w_success === 1'b1) ? DATA_RECEIVE : WRITE_aa;
             DATA_RECEIVE: n_state = (axi_r_timeout === 1'b1) ? EXEC : DATA_RECEIVE;
             EXEC: n_state = (core_exec_done === 1'b1) ? RESULT_WRITE : EXEC;
@@ -106,9 +106,7 @@ module io_fsm (
         case (state)
             INIT: axi_we = (cache_init_done) ? 1'b1 : 1'b0;
             WRITE_99: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
-            PROGRAM_RECEIVE: axi_we = (axi_r_timeout) ? 1'b1 : 1'b0;
             WRITE_aa: axi_we = (axi_w_success) ? 1'b0 : 1'b1;
-            EXEC: axi_we = 1'b0;
             // 新たにシリアルデータを受け取ったらaxiに書き込み（このときaxiがbusyでないことはdeconcat_en側で保証）
             RESULT_WRITE: axi_we = (deconcat_en) ? 1'b1 : 1'b0;
             default: axi_we = 1'b0;
@@ -132,9 +130,9 @@ module io_fsm (
     always_comb begin
         case (state)
             WRITE_99: axi_re = (axi_w_success) ? 1'b1 : 1'b0;
-            PROGRAM_RECEIVE: axi_re = (axi_r_timeout) ? 1'b0 : 1'b1;
+            PROGRAM_RECEIVE: axi_re = 1'b1;
             WRITE_aa: axi_re = (axi_w_success) ? 1'b1 : 1'b0;
-            DATA_RECEIVE: axi_re = (axi_r_timeout) ? 1'b0 : 1'b1;
+            DATA_RECEIVE: axi_re = 1'b1;
             default: axi_re = 1'b0;
         endcase
     end
@@ -187,7 +185,7 @@ module io_fsm (
             instr_addr <= INST_MEM_ADDRW'('b0);
         end else begin
             if (state == PROGRAM_RECEIVE) begin
-                if (fifo_empty_delayed) begin
+                if (~fifo_empty_delayed) begin
                     // 次に入ってくるデータを格納するアドレス
                     // ここでのアドレスはbyte addressing
                     // アドレスのword alignmentはメモリ側で行う

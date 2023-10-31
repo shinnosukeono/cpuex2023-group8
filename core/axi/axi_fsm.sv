@@ -161,25 +161,25 @@ module axi_fsm (
     end
 
     // r_success
-    assign r_success = (r_state == R_SUCCESS) ? 1'b1 : 1'b0;
+    assign r_success = ((r_state == R_DATA_WAIT) && (rvalid == 1'b1) && (rresp[1] == 1'b0)) ? 1'b1 : 1'b0;
 
     // r_timeout
-    // SLVERRが合計10回でタイムアウト
-    logic [7:0] wait_count;
+    // SLVERRが合計10000回でタイムアウト
+    logic [15:0] wait_count;
 
     always_ff @( posedge clk ) begin
         if (rst) begin
-            wait_count <= 8'b0;
+            wait_count <= 16'b0;
         end else begin
             if (r_state == R_DATA_WAIT && rvalid == 1'b1) begin
                 if (rresp[1] == 1'b1) begin
-                    wait_count <= wait_count + 8'b1;
+                    wait_count <= wait_count + 16'b1;
                 end else if (rresp[1] == 1'b0) begin
-                    wait_count <= 8'b0;
+                    wait_count <= 16'b0;
                 end
             end
         end
     end
 
-    assign r_timeout = (wait_count == 8'd10) ? 1'b1 : 1'b0;
+    assign r_timeout = (wait_count == 16'd10000) ? 1'b1 : 1'b0;
 endmodule

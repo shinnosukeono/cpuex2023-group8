@@ -29,4 +29,7 @@ module memory_access (
     assign data_mem_if.read_data = dout;
     assign data_mem_if.rd = data_exec_if.rd;
     assign data_mem_if.pc_plus4 = data_exec_if.pc_plus4;
+    assign data_mem_if.c_reg_data_out = data_exec_if.c_reg_data_out;
+    assign data_mem_if.status = data_exec_if.status;
+    assign data_mem_if.result_bytes = data_exec_if.result_bytes;
 endmodule

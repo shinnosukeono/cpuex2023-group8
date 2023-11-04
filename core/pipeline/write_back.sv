@@ -30,7 +30,7 @@ module write_back (
             2'b00: result_w = data_mem_if.alu_result;
             2'b01: result_w = data_mem_if.read_data;
             2'b10: result_w = data_mem_if.pc_plus4;
-            default: result_w = 32'bx;  // error
+            2'b11: result_w = data_mem_if.c_reg_data_out;
         endcase
     end
 

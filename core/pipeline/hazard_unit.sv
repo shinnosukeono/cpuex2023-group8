@@ -17,7 +17,7 @@ module hazard_unit (
     input logic [4:0] rs1_e,
     input logic [4:0] rs2_e,
     input logic [4:0] rd_e,
-    input logic pr_src_e,
+    input logic pc_src_e,
     input logic result_src_e_0,
 
     // to exec stage
@@ -35,11 +35,11 @@ module hazard_unit (
 );
     // forwarding for data hazard
     always_comb begin
-        if (((rs1_e == rd_m) & reg_write_m) & rs1_e != 5'b0) begin
+        if (((rs1_e == rd_m) & reg_write_m) & (rs1_e != 5'b0)) begin
             // use alu_result from memory access stage
             forward_a_e = 2'b10;
         end
-        else if (((rs1_e == rd_w) & reg_write_w) & rs1_e != 5'b0) begin
+        else if (((rs1_e == rd_w) & reg_write_w) & (rs1_e != 5'b0)) begin
             // use result from write back stage
             forward_a_e = 2'b01;
         end
@@ -50,11 +50,11 @@ module hazard_unit (
     end
 
     always_comb begin
-        if (((rs2_e == rd_m) & reg_write_m) & rs2_e != 5'b0) begin
+        if (((rs2_e == rd_m) & reg_write_m) & (rs2_e != 5'b0)) begin
             // use alu_result from memory access stage
             forward_b_e = 2'b10;
         end
-        else if (((rs2_e == rd_w) & reg_write_w) & rs2_e != 5'b0) begin
+        else if (((rs2_e == rd_w) & reg_write_w) & (rs2_e != 5'b0)) begin
             // use result from write back stage
             forward_b_e = 2'b01;
         end
@@ -71,7 +71,7 @@ module hazard_unit (
     assign stall_d = lw_stall;
 
     // flush in branch or load-oriented bubble
-    assign flush_d = pr_src_e;
-    assign flush_e = lw_stall | pr_src_e;
+    assign flush_d = pc_src_e;
+    assign flush_e = lw_stall | pc_src_e;
 
 endmodule

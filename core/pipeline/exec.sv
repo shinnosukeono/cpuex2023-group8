@@ -82,5 +82,5 @@ module exec (
     assign data_exec_if.pc_plus4 = data_decode_if.pc_plus4;
     assign data_exec_if.c_reg_data_out = data_decode_if.c_reg_data_out;
     assign data_exec_if.status = data_decode_if.status;
-    assign data_exec_if.result_bytes = data_exec_if.result_bytes;
+    assign data_exec_if.result_bytes = data_decode_if.result_bytes;
 endmodule

@@ -10,7 +10,9 @@ module control_unit (
     input logic funct7_5,
 
     control_decode_io control_decode_if,
-    output logic [1:0] imm_src
+    output logic [1:0] imm_src,
+    output logic c_reg_write,
+    output logic c_reg_src
 );
     logic [1:0] alu_op;
 
@@ -24,7 +26,7 @@ module control_unit (
         .imm_src(imm_src),
         .reg_write(control_decode_if.reg_write),
         .alu_op(alu_op),
-        .c_reg_write(control_decode_if.c_reg_write)
+        .c_reg_write(c_reg_write)
     );
 
     alu_decoder alu_decoder(
@@ -37,6 +39,6 @@ module control_unit (
 
     c_reg_decoder c_reg_decoder(
         .funct3(funct3),
-        .c_reg_src(control_decode_if.c_reg_src)
+        .c_reg_src(c_reg_src)
     );
 endmodule

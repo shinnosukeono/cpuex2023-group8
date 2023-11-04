@@ -11,26 +11,28 @@ module instr_decode (
 
     // input
     data_fetch_io data_fetch_if,
-    input logic c_reg_src,
-    input logic c_reg_write,
 
     // output
     control_decode_io control_decode_if,
     data_decode_io data_decode_if,
 
     // from write back stage
-    input logic [31:0] rd_w,
+    input logic [4:0] rd_w,
     input logic [31:0] result_w,
     input logic reg_write_w
 );
     // contrl unit
     logic [1:0] imm_src_d;
+    logic c_reg_src;
+    logic c_reg_write;
     control_unit i_control_unit (
         .op_6_0(data_fetch_if.instr[6:0]),
         .funct3(data_fetch_if.instr[14:12]),
         .funct7_5(data_fetch_if.instr[30]),
         .control_decode_if(control_decode_if),
-        .imm_src(imm_src_d)
+        .imm_src(imm_src_d),
+        .c_reg_write(c_reg_write),
+        .c_reg_src(c_reg_src)
     );
 
     // register file
@@ -59,12 +61,12 @@ module instr_decode (
     mux #(
             .DATAW(32)
         ) c_reg_data_mux (
-            .data_in({{{27{data_fetch_if.instr[19]}}, data_decode_if.instr[19:15]}, data_decode_if.rd1}),
+            .data_in({{{27{data_fetch_if.instr[19]}}, data_fetch_if.instr[19:15]}, data_decode_if.rd1}),
             .sel_in(c_reg_src),
             .data_out(c_reg_data_in)
-        );
+    );
     c_regfile crf (
-        .clk(clk),
+        .clk(~clk),
         .rst(rst),
         .we(c_reg_write),
         .din(c_reg_data_in),

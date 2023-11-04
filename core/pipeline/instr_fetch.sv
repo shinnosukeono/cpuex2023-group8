@@ -2,10 +2,10 @@
 
 module instr_fetch (
     // input
-    data_back_io data_back_if,
+    data_back_io.out data_back_if,
 
     // output
-    data_fetch_io data_fetch_if,
+    data_fetch_io.in data_fetch_if,
 
     // from instr memory
     input logic [31:0] instr,

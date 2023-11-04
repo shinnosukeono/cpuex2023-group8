@@ -10,11 +10,11 @@ module instr_decode (
     input logic clk, rst,
 
     // input
-    data_fetch_io data_fetch_if,
+    data_fetch_io.out data_fetch_if,
 
     // output
-    control_decode_io control_decode_if,
-    data_decode_io data_decode_if,
+    control_decode_io.in control_decode_if,
+    data_decode_io.in data_decode_if,
 
     // from write back stage
     input logic [4:0] rd_w,

@@ -3,12 +3,12 @@
 
 module memory_access (
     // input
-    control_exec_io control_exec_if,
-    data_exec_io data_exec_if,
+    control_exec_io.out control_exec_if,
+    data_exec_io.out data_exec_if,
 
     // output
-    control_mem_io control_mem_if,
-    data_mem_io data_mem_if,
+    control_mem_io.in control_mem_if,
+    data_mem_io.in data_mem_if,
 
     // from data memory
     input logic [31:0] dout,

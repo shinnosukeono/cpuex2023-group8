@@ -9,7 +9,7 @@ module control_unit (
     input logic [2:0] funct3,
     input logic funct7_5,
 
-    control_decode_io control_decode_if,
+    control_decode_io.out control_decode_if,
     output logic [1:0] imm_src,
     output logic c_reg_write,
     output logic c_reg_src

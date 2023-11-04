@@ -3,11 +3,11 @@
 
 module write_back (
     // input
-    control_mem_io control_mem_if,
-    data_mem_io data_mem_if,
+    control_mem_io.out control_mem_if,
+    data_mem_io.out data_mem_if,
 
     // output
-    data_back_io data_back_if,
+    data_back_io.in data_back_if,
 
     // from instr fetch stage
     input logic [31:0] pc_plus4_f,

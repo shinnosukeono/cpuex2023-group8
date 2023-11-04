@@ -4,12 +4,12 @@
 
 module exec (
     // input
-    control_decode_io control_decode_if,
-    data_decode_io data_decode_if,
+    control_decode_io.out control_decode_if,
+    data_decode_io.out data_decode_if,
 
     // output
-    control_exec_io control_exec_if,
-    data_exec_io data_exec_if,
+    control_exec_io.in control_exec_if,
+    data_exec_io.in data_exec_if,
 
     // from memory access stage
     input logic [31:0] alu_result_m,

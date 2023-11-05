@@ -12,7 +12,7 @@ interface data_fetch_io;
         input pc,
         input pc_plus4
     );
-endinterface //data_fetch_io
+endinterface: data_fetch_io //data_fetch_io
 
 interface data_decode_io;
     logic [31:0] rd1;
@@ -52,7 +52,7 @@ interface data_decode_io;
         input status,
         input result_bytes
     );
-endinterface //data_decode_io
+endinterface: data_decode_io //data_decode_io
 
 interface data_exec_io;
     logic [31:0] alu_result;
@@ -80,7 +80,7 @@ interface data_exec_io;
         input status,
         input result_bytes
     );
-endinterface //data_exec_io
+endinterface: data_exec_io //data_exec_io
 
 interface data_mem_io;
     logic [31:0] alu_result;
@@ -108,7 +108,7 @@ interface data_mem_io;
         input status,
         input result_bytes
     );
-endinterface //data_mem_io
+endinterface: data_mem_io //data_mem_io
 
 interface data_back_io;
     logic [31:0] pc;
@@ -118,4 +118,4 @@ interface data_back_io;
     modport out (
         input pc
     );
-endinterface //data_back_io
+endinterface: data_back_io //data_back_io

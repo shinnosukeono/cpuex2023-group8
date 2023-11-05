@@ -250,4 +250,7 @@ module riscv_pipeline (
         .rd_w(rd_w),
         .reg_write_w(control_mem_if_out.reg_write)
     );
+
+    assign status = data_decode_if_in.out.status;
+    assign result_bytes = data_decode_if_in.out.result_bytes;
 endmodule

@@ -21,5 +21,6 @@ module instr_gen (
         (addr == 32'd16) ? 32'h00302023 :  // sw x3, 0(zero)
         (addr == 32'd20) ? 32'h00002203 :  // lw x4, 0(zero)
         (addr == 32'd24) ? 32'h0040f0b3 :  // and x1, x1, x4
+        (addr == 32'd28) ? 32'h000fd073 :  // csrrwi x0, zero, 5'b11111
         32'h0;
 endmodule

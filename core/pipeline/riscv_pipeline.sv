@@ -83,10 +83,10 @@ module riscv_pipeline (
     );
 
     // exec reg
-    control_decode_io control_decode_if_in;
-    data_decode_io data_decode_if_in;
-    control_decode_io control_decode_if_out;
-    data_decode_io data_decode_if_out;
+    control_decode_io control_decode_if_in();
+    data_decode_io data_decode_if_in();
+    control_decode_io control_decode_if_out();
+    data_decode_io data_decode_if_out();
 
     always_ff @( posedge clk ) begin
         if (flush_e) begin

@@ -16,11 +16,15 @@ module memory_access (
     // to data memory
     output logic we,
     output logic [31:0] data_addr,
-    output logic [31:0] din
+    output logic [31:0] din,
+
+    // to exec stage
+    output logic [31:0] alu_result_m
 );
     assign we = control_exec_if.mem_write;
     assign data_addr = data_exec_if.alu_result;
     assign din = data_exec_if.write_data;
+    assign alu_result_m = data_exec_if.alu_result;
 
     assign control_mem_if.reg_write = control_exec_if.reg_write;
     assign control_mem_if.result_src = control_exec_if.result_src;

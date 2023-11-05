@@ -33,7 +33,10 @@ module riscv_pipeline (
     data_back_io data_back_if_out();
 
     always_ff @( posedge clk ) begin
-        if (~stall_f) begin
+        if (rst) begin
+            data_back_if_out.in.pc <= 32'b0;
+        end
+        else if (stall_f === 1'b0) begin
             data_back_if_out.in.pc <= data_back_if_in.out.pc;
         end
     end
@@ -54,12 +57,12 @@ module riscv_pipeline (
     data_fetch_io data_fetch_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_d) begin
+        if (flush_d === 1'b1) begin
             data_fetch_if_out.in.pc <= 32'b0;
             data_fetch_if_out.in.instr <= 32'b0;
             data_fetch_if_out.in.pc_plus4 <= 32'b0;
         end
-        else if (~stall_d) begin
+        else if (stall_d === 1'b0 || stall_d === 1'bx) begin
             data_fetch_if_out.in.pc <= data_fetch_if_in.out.pc;
             data_fetch_if_out.in.instr <= data_fetch_if_in.out.instr;
             data_fetch_if_out.in.pc_plus4 <= data_fetch_if_in.out.pc_plus4;
@@ -89,7 +92,7 @@ module riscv_pipeline (
     data_decode_io data_decode_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_e) begin
+        if (flush_e === 1'b1) begin
             control_decode_if_out.in.reg_write <= 1'b0;
             control_decode_if_out.in.result_src <= 2'b0;
             control_decode_if_out.in.mem_write <= 1'b0;
@@ -184,7 +187,8 @@ module riscv_pipeline (
         .dout(read_data),
         .we(data_we),
         .data_addr(data_addr),
-        .din(din)
+        .din(din),
+        .alu_result_m(alu_result_m)
     );
 
     // write back reg

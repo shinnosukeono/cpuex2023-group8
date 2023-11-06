@@ -34,10 +34,10 @@ module riscv_pipeline (
 
     always_ff @( posedge clk ) begin
         if (rst) begin
-            data_back_if_out.in.pc <= 32'b0;
+            data_back_if_out.pc <= 32'b0;
         end
         else if (stall_f === 1'b0) begin
-            data_back_if_out.in.pc <= data_back_if_in.out.pc;
+            data_back_if_out.pc <= data_back_if_in.pc;
         end
     end
 
@@ -58,14 +58,14 @@ module riscv_pipeline (
 
     always_ff @( posedge clk ) begin
         if (flush_d === 1'b1) begin
-            data_fetch_if_out.in.pc <= 32'b0;
-            data_fetch_if_out.in.instr <= 32'b0;
-            data_fetch_if_out.in.pc_plus4 <= 32'b0;
+            data_fetch_if_out.pc <= 32'b0;
+            data_fetch_if_out.instr <= 32'b0;
+            data_fetch_if_out.pc_plus4 <= 32'b0;
         end
         else if (stall_d === 1'b0 || stall_d === 1'bx) begin
-            data_fetch_if_out.in.pc <= data_fetch_if_in.out.pc;
-            data_fetch_if_out.in.instr <= data_fetch_if_in.out.instr;
-            data_fetch_if_out.in.pc_plus4 <= data_fetch_if_in.out.pc_plus4;
+            data_fetch_if_out.pc <= data_fetch_if_in.pc;
+            data_fetch_if_out.instr <= data_fetch_if_in.instr;
+            data_fetch_if_out.pc_plus4 <= data_fetch_if_in.pc_plus4;
         end
     end
 
@@ -93,46 +93,46 @@ module riscv_pipeline (
 
     always_ff @( posedge clk ) begin
         if (flush_e === 1'b1) begin
-            control_decode_if_out.in.reg_write <= 1'b0;
-            control_decode_if_out.in.result_src <= 2'b0;
-            control_decode_if_out.in.mem_write <= 1'b0;
-            control_decode_if_out.in.jump <= 1'b0;
-            control_decode_if_out.in.branch <= 1'b0;
-            control_decode_if_out.in.alu_control <= 3'b0;
-            control_decode_if_out.in.alu_src <= 1'b0;
+            control_decode_if_out.reg_write <= 1'b0;
+            control_decode_if_out.result_src <= 2'b0;
+            control_decode_if_out.mem_write <= 1'b0;
+            control_decode_if_out.jump <= 1'b0;
+            control_decode_if_out.branch <= 1'b0;
+            control_decode_if_out.alu_control <= 3'b0;
+            control_decode_if_out.alu_src <= 1'b0;
 
-            data_decode_if_out.in.rd1 <= 32'b0;
-            data_decode_if_out.in.rd2 <= 32'b0;
-            data_decode_if_out.in.pc <= 32'b0;
-            data_decode_if_out.in.rs1 <= 5'b0;
-            data_decode_if_out.in.rs2 <= 5'b0;
-            data_decode_if_out.in.rd <= 5'b0;
-            data_decode_if_out.in.imm_ext <= 32'b0;
-            data_decode_if_out.in.pc_plus4 <= 32'b0;
-            data_decode_if_out.in.c_reg_data_out <= 32'b0;
-            data_decode_if_out.in.status <= 32'b0;
-            data_decode_if_out.in.result_bytes <= 32'b0;
+            data_decode_if_out.rd1 <= 32'b0;
+            data_decode_if_out.rd2 <= 32'b0;
+            data_decode_if_out.pc <= 32'b0;
+            data_decode_if_out.rs1 <= 5'b0;
+            data_decode_if_out.rs2 <= 5'b0;
+            data_decode_if_out.rd <= 5'b0;
+            data_decode_if_out.imm_ext <= 32'b0;
+            data_decode_if_out.pc_plus4 <= 32'b0;
+            data_decode_if_out.c_reg_data_out <= 32'b0;
+            data_decode_if_out.status <= 32'b0;
+            data_decode_if_out.result_bytes <= 32'b0;
         end
         else begin
-            control_decode_if_out.in.reg_write <= control_decode_if_in.out.reg_write;
-            control_decode_if_out.in.result_src <= control_decode_if_in.out.result_src;
-            control_decode_if_out.in.mem_write <= control_decode_if_in.out.mem_write;
-            control_decode_if_out.in.jump <= control_decode_if_in.out.jump;
-            control_decode_if_out.in.branch <= control_decode_if_in.out.branch;
-            control_decode_if_out.in.alu_control <= control_decode_if_in.out.alu_control;
-            control_decode_if_out.in.alu_src <= control_decode_if_in.out.alu_src;
+            control_decode_if_out.reg_write <= control_decode_if_in.out.reg_write;
+            control_decode_if_out.result_src <= control_decode_if_in.out.result_src;
+            control_decode_if_out.mem_write <= control_decode_if_in.out.mem_write;
+            control_decode_if_out.jump <= control_decode_if_in.out.jump;
+            control_decode_if_out.branch <= control_decode_if_in.out.branch;
+            control_decode_if_out.alu_control <= control_decode_if_in.out.alu_control;
+            control_decode_if_out.alu_src <= control_decode_if_in.out.alu_src;
 
-            data_decode_if_out.in.rd1 <= data_decode_if_in.out.rd1;
-            data_decode_if_out.in.rd2 <= data_decode_if_in.out.rd2;
-            data_decode_if_out.in.pc <= data_decode_if_in.out.pc;
-            data_decode_if_out.in.rs1 <= data_decode_if_in.out.rs1;
-            data_decode_if_out.in.rs2 <= data_decode_if_in.out.rs2;
-            data_decode_if_out.in.rd <= data_decode_if_in.out.rd;
-            data_decode_if_out.in.imm_ext <= data_decode_if_in.out.imm_ext;
-            data_decode_if_out.in.pc_plus4 <= data_decode_if_in.out.pc_plus4;
-            data_decode_if_out.in.c_reg_data_out <= data_decode_if_in.out.c_reg_data_out;
-            data_decode_if_out.in.status <= data_decode_if_in.out.status;
-            data_decode_if_out.in.result_bytes <= data_decode_if_in.out.result_bytes;
+            data_decode_if_out.rd1 <= data_decode_if_in.rd1;
+            data_decode_if_out.rd2 <= data_decode_if_in.rd2;
+            data_decode_if_out.pc <= data_decode_if_in.pc;
+            data_decode_if_out.rs1 <= data_decode_if_in.rs1;
+            data_decode_if_out.rs2 <= data_decode_if_in.rs2;
+            data_decode_if_out.rd <= data_decode_if_in.rd;
+            data_decode_if_out.imm_ext <= data_decode_if_in.imm_ext;
+            data_decode_if_out.pc_plus4 <= data_decode_if_in.pc_plus4;
+            data_decode_if_out.c_reg_data_out <= data_decode_if_in.c_reg_data_out;
+            data_decode_if_out.status <= data_decode_if_in.status;
+            data_decode_if_out.result_bytes <= data_decode_if_in.result_bytes;
         end
     end
 
@@ -165,17 +165,17 @@ module riscv_pipeline (
     data_exec_io data_exec_if_out();
 
     always_ff @( posedge clk ) begin
-        control_exec_if_out.in.reg_write <= control_exec_if_in.out.reg_write;
-        control_exec_if_out.in.result_src <= control_exec_if_in.out.result_src;
-        control_exec_if_out.in.mem_write <= control_exec_if_in.out.mem_write;
+        control_exec_if_out.reg_write <= control_exec_if_in.reg_write;
+        control_exec_if_out.result_src <= control_exec_if_in.result_src;
+        control_exec_if_out.mem_write <= control_exec_if_in.mem_write;
 
-        data_exec_if_out.in.alu_result <= data_exec_if_in.out.alu_result;
-        data_exec_if_out.in.write_data <= data_exec_if_in.out.write_data;
-        data_exec_if_out.in.rd <= data_exec_if_in.out.rd;
-        data_exec_if_out.in.pc_plus4 <= data_exec_if_in.out.pc_plus4;
-        data_exec_if_out.in.c_reg_data_out <= data_exec_if_in.out.c_reg_data_out;
-        data_exec_if_out.in.status <= data_exec_if_in.out.status;
-        data_exec_if_out.in.result_bytes <= data_exec_if_in.out.result_bytes;
+        data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
+        data_exec_if_out.write_data <= data_exec_if_in.write_data;
+        data_exec_if_out.rd <= data_exec_if_in.rd;
+        data_exec_if_out.pc_plus4 <= data_exec_if_in.pc_plus4;
+        data_exec_if_out.c_reg_data_out <= data_exec_if_in.c_reg_data_out;
+        data_exec_if_out.status <= data_exec_if_in.status;
+        data_exec_if_out.result_bytes <= data_exec_if_in.result_bytes;
     end
 
     // memory access stage
@@ -198,16 +198,16 @@ module riscv_pipeline (
     data_mem_io data_mem_if_out();
 
     always_ff @( posedge clk ) begin
-        control_mem_if_out.in.reg_write <= control_mem_if_in.out.reg_write;
-        control_mem_if_out.in.result_src <= control_mem_if_in.out.result_src;
+        control_mem_if_out.reg_write <= control_mem_if_in.reg_write;
+        control_mem_if_out.result_src <= control_mem_if_in.result_src;
 
-        data_mem_if_out.in.alu_result <= data_mem_if_in.out.alu_result;
-        data_mem_if_out.in.read_data <= data_mem_if_in.out.read_data;
-        data_mem_if_out.in.rd <= data_mem_if_in.out.rd;
-        data_mem_if_out.in.pc_plus4 <= data_mem_if_in.out.pc_plus4;
-        data_mem_if_out.in.c_reg_data_out <= data_mem_if_in.out.c_reg_data_out;
-        data_mem_if_out.in.status <= data_mem_if_in.out.status;
-        data_mem_if_out.in.result_bytes <= data_mem_if_in.out.result_bytes;
+        data_mem_if_out.alu_result <= data_mem_if_in.alu_result;
+        data_mem_if_out.read_data <= data_mem_if_in.read_data;
+        data_mem_if_out.rd <= data_mem_if_in.rd;
+        data_mem_if_out.pc_plus4 <= data_mem_if_in.pc_plus4;
+        data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
+        data_mem_if_out.status <= data_mem_if_in.status;
+        data_mem_if_out.result_bytes <= data_mem_if_in.result_bytes;
     end
 
     // write back stage
@@ -251,6 +251,6 @@ module riscv_pipeline (
         .reg_write_w(control_mem_if_out.reg_write)
     );
 
-    assign status = data_decode_if_in.out.status;
-    assign result_bytes = data_decode_if_in.out.result_bytes;
+    assign status = data_decode_if_in.status;
+    assign result_bytes = data_decode_if_in.result_bytes;
 endmodule

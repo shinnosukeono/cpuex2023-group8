@@ -1,4 +1,5 @@
 module hazard_unit (
+    input logic rst,
     // to instr fetch reg
     output logic stall_f,
 
@@ -67,11 +68,11 @@ module hazard_unit (
     // stall in load hazard
     logic lw_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
-    assign stall_f = lw_stall;
-    assign stall_d = lw_stall;
+    assign stall_f = (lw_stall === 1'bx) ? rst : lw_stall;
+    assign stall_d = (lw_stall === 1'bx) ? rst : lw_stall;
 
     // flush in branch or load-oriented bubble
-    assign flush_d = pc_src_e;
-    assign flush_e = lw_stall | pc_src_e;
+    assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
+    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : (lw_stall | pc_src_e);
 
 endmodule

@@ -3,6 +3,7 @@
 `include "pipeline/if/data_signal.sv"
 
 module exec (
+    input logic rst,
     // input
     control_decode_io.out control_decode_if,
     data_decode_io.out data_decode_if,
@@ -72,7 +73,7 @@ module exec (
 
     assign rs1_e = data_decode_if.rs1;
     assign rs2_e = data_decode_if.rs2;
-    assign pc_src_e = (zero_flag & control_decode_if.branch) | control_decode_if.jump;
+    assign pc_src_e = ((control_decode_if.branch === 1'bx) || (control_decode_if.jump === 1'bx)) ? rst : (zero_flag & control_decode_if.branch) | control_decode_if.jump;
 
     assign control_exec_if.reg_write = control_decode_if.reg_write;
     assign control_exec_if.result_src = control_decode_if.result_src;

@@ -144,6 +144,7 @@ module riscv_pipeline (
     logic pc_src_e;
 
     exec i_exec (
+        .rst(rst),
         .control_decode_if(control_decode_if_out.out),
         .data_decode_if(data_decode_if_out.out),
         .control_exec_if(control_exec_if_in.in),
@@ -232,6 +233,7 @@ module riscv_pipeline (
     logic [1:0] forward_b_e;
 
     hazard_unit i_hazard_unit (
+        .rst(rst),
         .stall_f(stall_f),
         .stall_d(stall_d),
         .flush_d(flush_d),

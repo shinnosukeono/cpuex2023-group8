@@ -5,7 +5,7 @@ module instr_gen (
     output reg [31:0] addr,
     output wire [31:0] dout
 );
-    localparam LEN = 'd29;
+    localparam LEN = 'd30;
     localparam [31:0] INSTR_ARRAY [0:LEN-1] = {
         32'hfe010113,
         32'h00112e23,
@@ -35,7 +35,8 @@ module instr_gen (
         32'h00078513,
         32'h01c12083,
         32'h01812403,
-        32'h02010113
+        32'h02010113,
+        32'h000fd073
     };
 
     assign we = (addr <= 32'b1111100) ? 1'b1 : 1'b0;
@@ -56,5 +57,5 @@ module instr_gen (
     //     (addr == 32'd24) ? 32'h0040f0b3 :  // and x1, x1, x4
     //     (addr == 32'd28) ? 32'h000fd073 :  // csrrwi x0, zero, 5'b11111
     //     32'h0;
-    assign dout = INSTR_ARRAY[(addr >> 2)];
+    assign dout = ((addr>>2) < 'd30) ? INSTR_ARRAY[(addr >> 2)] : 32'b0;
 endmodule

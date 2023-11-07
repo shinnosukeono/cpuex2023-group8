@@ -53,7 +53,7 @@ module alu #(
             3'b010: result = a&b;
             3'b011: result = a|b;
             3'b101: result = slt;
-            default: result = {N{1'bx}};  // error
+            default: result = {N{1'b0}};  // error
         endcase
     end
 endmodule

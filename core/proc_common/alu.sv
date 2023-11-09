@@ -5,7 +5,7 @@ module alu #(
     parameter N = 32
 ) (
     input logic [N-1:0] a, b,
-    input logic [2:0] alu_control,
+    input logic [3:0] alu_control,
     output logic [N-1:0] result,
     output logic negative_flag,
     output logic zero_flag,
@@ -25,6 +25,10 @@ module alu #(
     /* slt */
     logic [N-1:0] slt;
     assign slt = {(N){overflow_flag ^ sum[N-1]}};
+
+    /* sltu */
+    logic [N-1:0] sltu;
+    assign sltu = {(N){~c_out}};
 
     /* flags */
     // overflow check
@@ -48,11 +52,16 @@ module alu #(
     /* result selection */
     always_comb begin
         case (alu_control)
-            3'b000: result = sum;
-            3'b001: result = sum;
-            3'b010: result = a&b;
-            3'b011: result = a|b;
-            3'b101: result = slt;
+            4'b0000: result = sum;  // add
+            4'b0001: result = sum;  // sub
+            4'b0010: result = a&b;  // and
+            4'b0011: result = a|b;  // or
+            4'b0100: result = sltu;  // sltu
+            4'b0101: result = slt;  // slt
+            4'b0110: result = a<<b;  // shift left
+            4'b1000: result = a^b;  // xor
+            4'b1110: result = a>>b;  // shift right logical
+            4'b1111: result = a>>>b;  // shift right arithmetical
             default: result = {N{1'b0}};  // error
         endcase
     end

@@ -32,6 +32,7 @@ module memory_access (
     assign data_mem_if.alu_result = data_exec_if.alu_result;
     assign data_mem_if.read_data = dout;
     assign data_mem_if.rd = data_exec_if.rd;
+    assign data_mem_if.imm_ext = data_exec_if.imm_ext;
     assign data_mem_if.pc_plus4 = data_exec_if.pc_plus4;
     assign data_mem_if.c_reg_data_out = data_exec_if.c_reg_data_out;
     assign data_mem_if.status = data_exec_if.status;

@@ -1,11 +1,13 @@
 interface control_decode_io;
     logic reg_write;
-    logic [1:0] result_src;
+    logic [2:0] result_src;
     logic mem_write;
     logic jump;
     logic branch;
-    logic [2:0] alu_control;
+    logic [3:0] alu_control;
     logic alu_src;
+    logic alu_op_and;
+    logic funct3_0;
     modport in (
         output reg_write,
         output result_src,
@@ -13,7 +15,9 @@ interface control_decode_io;
         output jump,
         output branch,
         output alu_control,
-        output alu_src
+        output alu_src,
+        output alu_op_and,
+        output funct3_0
     );
     modport out (
         input reg_write,
@@ -22,13 +26,15 @@ interface control_decode_io;
         input jump,
         input branch,
         input alu_control,
-        input alu_src
+        input alu_src,
+        input alu_op_and,
+        output funct3_0
     );
 endinterface //control_decode_io
 
 interface control_exec_io;
     logic reg_write;
-    logic [1:0] result_src;
+    logic [2:0] result_src;
     logic mem_write;
     modport in (
         output reg_write,
@@ -44,7 +50,7 @@ endinterface //control_exec_io
 
 interface control_mem_io;
     logic reg_write;
-    logic [1:0] result_src;
+    logic [2:0] result_src;
     modport in (
         output reg_write,
         output result_src

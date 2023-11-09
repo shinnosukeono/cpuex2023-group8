@@ -173,6 +173,7 @@ module riscv_pipeline (
         data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
         data_exec_if_out.write_data <= data_exec_if_in.write_data;
         data_exec_if_out.rd <= data_exec_if_in.rd;
+        data_exec_if_out.imm_ext <= data_exec_if_in.imm_ext;
         data_exec_if_out.pc_plus4 <= data_exec_if_in.pc_plus4;
         data_exec_if_out.c_reg_data_out <= data_exec_if_in.c_reg_data_out;
         data_exec_if_out.status <= data_exec_if_in.status;
@@ -205,6 +206,7 @@ module riscv_pipeline (
         data_mem_if_out.alu_result <= data_mem_if_in.alu_result;
         data_mem_if_out.read_data <= data_mem_if_in.read_data;
         data_mem_if_out.rd <= data_mem_if_in.rd;
+        data_mem_if_out.imm_ext <= data_mem_if_in.imm_ext;
         data_mem_if_out.pc_plus4 <= data_mem_if_in.pc_plus4;
         data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
         data_mem_if_out.status <= data_mem_if_in.status;

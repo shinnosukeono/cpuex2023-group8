@@ -10,7 +10,14 @@ int main()
 {
 	// Create a virtual machine
 	VirtualMachine vm;
-	vm.outputFile.open("output.txt");
+
+	cout << "Do you want to print? {0: no, 1: yes}" << endl;
+
+	cin >> vm.print_mode;
+
+	if (vm.print_mode == 1){
+		vm.outputFile.open("output.txt");
+	}
 	// Execute the instructions
 
 	std::string hexString;
@@ -144,15 +151,21 @@ int main()
 	cout << "Return Code : " << get<int>(vm.IntRezisters[10]) << endl;
 	cout << "hit: " << vm.mem.cache.hit_count << endl;
 	cout << "miss: " << vm.mem.cache.miss_count << endl;
-	vm.outputFile << "count : " << vm.count << endl;
-	vm.outputFile << "hit: " << vm.mem.cache.hit_count << endl;
-	vm.outputFile << "miss: " << vm.mem.cache.miss_count << endl;
+
+	if (vm.print_mode == 1){
+		vm.outputFile << "count : " << vm.count << endl;
+		vm.outputFile << "hit: " << vm.mem.cache.hit_count << endl;
+		vm.outputFile << "miss: " << vm.mem.cache.miss_count << endl;
+
+		for (auto p:vm.pc_map){
+			vm.outputFile << p.first << " : " << p.second << endl;
+		}
+		vm.outputFile.close();
+	}
+
+	cout << "Mips: " << (double)vm.count / (double)nsec * 1000000000.0 / 1000000.0 << endl;
 
 	cout << endl;
-
-	for (auto p:vm.pc_map){
-		vm.outputFile << p.first << " : " << p.second << endl;
-	}
 
 	cout << "Done." << endl;
 

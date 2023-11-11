@@ -143,6 +143,8 @@ int main()
 	cout << "count : " << vm.count << endl;
 	cout << "Return Code : " << get<int>(vm.IntRezisters[10]) << endl;
 	vm.outputFile << "count : " << vm.count << endl;
+	cout << "Mips: " << (double)vm.count / (double)nsec * 1000000000.0 / 1000000.0 << endl;
+
 	cout << endl;
 	cout << "Done." << endl;
 

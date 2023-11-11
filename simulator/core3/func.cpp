@@ -123,24 +123,25 @@ public:
 	{
 		while (pc < 4*(int)intrs.size() && pc != -1 && count < maxcount)
 		{
-			outputFile << "count:[" << count << "], ";
-			outputFile << "pc:[" << pc << "], ";
-			outputFile << "instr:[" << (*intrs[(pc/4)]).name << "], ";
-			cout << (*intrs[(pc/4)]).name << endl; 
+			// outputFile << "count:[" << count << "], ";
+			// outputFile << "pc:[" << pc << "], ";
+			// outputFile << "instr:[" << (*intrs[(pc/4)]).name << "], ";
+			// cout << (*intrs[(pc/4)]).name << endl; 
 
 			(*intrs[(pc/4)]).exec(*this);
 			count++;
 
-			outputFile << "IntRezisters:{";
-			for (int i = 0; i < 32; i++)
-			{
-				if (i > 0)
-					outputFile << ", ";
-				if (i % 8 == 0)
-					outputFile << endl << "		  ";	
-				outputFile << Rnames[i] << ":[" << get<int>(IntRezisters[i]) << "]";
-			}
-			// outputFile << "}" << endl;
+			// outputFile << "IntRezisters:{";
+			// for (int i = 0; i < 32; i++)
+			// {
+			// 	if (i > 0)
+			// 		outputFile << ", ";
+			// 	if (i % 8 == 0)
+			// 		outputFile << endl << "		  ";	
+			// 	outputFile << Rnames[i] << ":[" << get<int>(IntRezisters[i]) << "]";
+			// }
+
+			// outputFile << "}" << endl << endl;
 
 			// outputFile << "Memory:{";
 			// for (int i = 0; i < 1024; i++)
@@ -149,7 +150,7 @@ public:
 			// 		outputFile << ", ";
 			// 	outputFile << i << ":[" << get<int>(mem.load<int>(4*i)) << "]";
 			// }
-			outputFile << "}" << endl << endl;
+			// outputFile << "}" << endl << endl;
 			// pc++;
 			
 		};

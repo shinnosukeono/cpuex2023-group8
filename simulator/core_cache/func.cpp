@@ -374,6 +374,7 @@ public:
 						 "s11(x27)", "t3(x28)", "t4(x29)", "t5(x30)", "t6(x31)"};
 	Memory_and_cache mem;
 	ofstream outputFile; // output file
+	int print_mode = 0;
 	// VirtualMachine(){
 	// 	outputFile.open("output.txt");}
 
@@ -388,25 +389,31 @@ public:
 			}else{
 				pc_map[pc] = 1;
 			}
-			outputFile << "count:[" << count << "], ";
-			outputFile << "pc:[" << pc << "], ";
-			outputFile << "instr:[" << (*intrs[(pc / 4)]).name << "], ";
-			cout << (*intrs[(pc / 4)]).name << endl;
+
+
+			if (print_mode == 1){
+				outputFile << "count:[" << count << "], ";
+				outputFile << "pc:[" << pc << "], ";
+				outputFile << "instr:[" << (*intrs[(pc / 4)]).name << "], ";
+				cout << (*intrs[(pc / 4)]).name << endl;
+			}
 
 			(*intrs[(pc / 4)]).exec(*this);
 			count++;
 
-			outputFile << "IntRezisters:{";
-			for (int i = 0; i < 32; i++)
-			{
-				if (i > 0)
-					outputFile << ", ";
-				if (i % 8 == 0)
-					outputFile << endl
-							   << "		  ";
-				outputFile << Rnames[i] << ":[" << get<int>(IntRezisters[i]) << "]";
+			if (print_mode == 1){
+				outputFile << "IntRezisters:{";
+				for (int i = 0; i < 32; i++)
+				{
+					if (i > 0)
+						outputFile << ", ";
+					if (i % 8 == 0)
+						outputFile << endl
+								<< "		  ";
+					outputFile << Rnames[i] << ":[" << get<int>(IntRezisters[i]) << "]";
+				}
+				outputFile << "}" << endl;
 			}
-			outputFile << "}" << endl;
 
 			// outputFile << "Memory:{";
 			// for (int i = 0; i < 1024; i++)

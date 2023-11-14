@@ -6,7 +6,8 @@ module instr_gen (
     output wire [31:0] dout
 );
     localparam LEN = 'd30;
-    localparam [31:0] INSTR_ARRAY [0:LEN-1] = {
+    logic [31:0] instr_array [0:LEN-1];
+    assign instr_array = {
         32'hfe010113,
         32'h00112e23,
         32'h00812c23,

@@ -80,9 +80,9 @@ module exec (
     logic branch_met;
     always_comb begin
         case (control_decode_if.alu_control)
-            4'b0001: branch_met = funct3_0 ^ zero_flag;  // beq, neq
-            4'b0101: branch_met = funct3_0 ^ data_exec_if.alu_result[0];  // blt, bge
-            4'b0100: branch_met = funct3_0 ^ data_exec_if.alu_result[0];  // bltu, bgeu
+            4'b0001: branch_met = control_decode_if.funct3_0 ^ zero_flag;  // beq, neq
+            4'b0101: branch_met = control_decode_if.funct3_0 ^ data_exec_if.alu_result[0];  // blt, bge
+            4'b0100: branch_met = control_decode_if.funct3_0 ^ data_exec_if.alu_result[0];  // bltu, bgeu
             default: branch_met = 1'b0;
         endcase
     end

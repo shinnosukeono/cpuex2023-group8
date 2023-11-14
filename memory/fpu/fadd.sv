@@ -40,19 +40,23 @@ module fadd
 
     wire [27:0] m_add = is_add ? {1'b0,mb_sup,3'b0} + {1'b0,ms_packed} : {1'b0,mb_sup,3'b0} - {1'b0,ms_packed};
 
-    wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]);
-    wire [7:0] e_add = m_add[27]                ? eb + 8'b1 :
+    wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]) | ~|eb;
+    wire ovf = &eb | (&eb[7:1] & ~eb[0] & m_add[27]); // eb == 255 or (eb == 254 and MSB of m_add is 1)
+    wire s_add = udf ? 1'b0 : s_temp;
+    wire [7:0] e_add = udf                      ? 8'b0 :
+                       ovf                      ? 8'hff :
+                       m_add[27]                ? eb + 8'b1 :                        
                        (~m_add[27] & m_add[26]) ? eb :
-                       udf                      ? 8'b0 :
                                                   es - 8'b1;
-    wire [24:0] m_preproc = m_add[27]                ? m_add[27:3] :
+    wire [24:0] m_preproc = udf                      ? 25'b0 :
+                            ovf                      ? 25'b0 :
+                            m_add[27]                ? m_add[27:3] :
                             (~m_add[27] & m_add[26]) ? m_add[26:2] :
-                            udf                      ? 25'b0 :
                                                        m_add[25:1];
     wire st_temp = m_add[27]                ? |m_add[2:0] :
                    (~m_add[27] & m_add[26]) ? |m_add[1:0] :
                                               m_add[0];
-    wire [34:0] pre_res = {s_temp,e_add,m_preproc,st_temp};
+    wire [34:0] pre_res = {s_add,e_add,m_preproc,st_temp};
 
     // close path
     // used: s_temp, ediff, eb, mb_sup, ms_sup

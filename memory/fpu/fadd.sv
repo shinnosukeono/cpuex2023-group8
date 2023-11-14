@@ -43,6 +43,7 @@ module fadd
     wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]);
     wire [7:0] e_add = m_add[27]                ? eb + 8'b1 :
                        (~m_add[27] & m_add[26]) ? eb :
+                       udf                      ? 8'b0 :
                                                   es - 8'b1;
     wire [24:0] m_preproc = m_add[27]                ? m_add[27:3] :
                             (~m_add[27] & m_add[26]) ? m_add[26:2] :
@@ -51,7 +52,7 @@ module fadd
     wire st_temp = m_add[27]                ? |m_add[2:0] :
                    (~m_add[27] & m_add[26]) ? |m_add[1:0] :
                                               m_add[0];
-    wire pre_res = {s_temp,e_add,m_preproc,st_temp};
+    wire [34:0] pre_res = {s_temp,e_add,m_preproc,st_temp};
 
     // close path
     // used: s_temp, ediff, eb, mb_sup, ms_sup

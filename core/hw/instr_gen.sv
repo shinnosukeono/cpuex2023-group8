@@ -30,7 +30,7 @@ module instr_gen (
         32'hfff78793,
         32'hfef42623,
         32'hfec42783,
-        32'h00f02833,
+        32'h0007a833,
         32'hfc0806e3,
         32'h00000793,
         32'h00078513,
@@ -58,5 +58,5 @@ module instr_gen (
     //     (addr == 32'd24) ? 32'h0040f0b3 :  // and x1, x1, x4
     //     (addr == 32'd28) ? 32'h000fd073 :  // csrrwi x0, zero, 5'b11111
     //     32'h0;
-    assign dout = ((addr>>2) < 'd30) ? INSTR_ARRAY[(addr >> 2)] : 32'b0;
+    assign dout = ((addr>>2) < 'd30) ? instr_array[(addr >> 2)] : 32'b0;
 endmodule

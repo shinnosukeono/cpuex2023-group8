@@ -1,8 +1,10 @@
 `default_nettype none
 
 // this module is made for the cpuex23.
-module fadd
+module fadd_pipe
     (
+        input wire clk,
+        input wire rstn,
         input wire [31:0] x,
         input wire [31:0] y,
         output wire [31:0] res
@@ -33,21 +35,45 @@ module fadd
     wire is_close = ~|ediff[7:1] & ~is_add;
 
     // far path
-    // used: s_temp, ediff, eb, mb_sup, ms_sup, is_add
+    // used: s_temp, ediff, eb, es, mb_sup, ms_sup, is_add
     wire [49:0] ms_extended = {ms_sup,26'b0};
     wire [49:0] ms_shifted = ediff >= 26 ? {26'b0,ms_sup} : ms_extended >> ediff;
     wire [26:0] ms_packed = {ms_shifted[49:24],|ms_shifted[23:0]};
 
-    wire [27:0] m_add = is_add ? {1'b0,mb_sup,3'b0} + {1'b0,ms_packed} : {1'b0,mb_sup,3'b0} - {1'b0,ms_packed};
+    reg is_add_reg;
+    reg [23:0] mb_sup_reg;
+    reg [26:0] ms_packed_reg;
+    reg [7:0] eb_f_reg;
+    reg s_temp_reg;
+    reg [7:0] es_reg;
+    always @(posedge clk) begin
+        if (~rstn) begin
+            is_add_reg <= 1'b0;
+            mb_sup_reg <= 24'b0;
+            ms_packed_reg <= 27'b0;
+            eb_f_reg <= 8'b0;
+            s_temp_reg <= 1'b0;
+            es_reg <= 8'b0;
+        end else begin
+            is_add_reg <= is_add;
+            mb_sup_reg <= mb_sup;
+            ms_packed_reg <= ms_packed;
+            eb_f_reg <= eb;
+            s_temp_reg <= s_temp;
+            es_reg <= es;
+        end
+    end
 
-    wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]) | ~|eb;
-    wire ovf = &eb | (&eb[7:1] & ~eb[0] & m_add[27]); // eb == 255 or (eb == 254 and MSB of m_add is 1)
-    wire s_add = udf ? 1'b0 : s_temp;
+    wire [27:0] m_add = is_add_reg ? {1'b0,mb_sup_reg,3'b0} + {1'b0,ms_packed_reg} : {1'b0,mb_sup_reg,3'b0} - {1'b0,ms_packed_reg};
+
+    wire udf = (~|eb_f_reg[7:1] & eb_f_reg & ~m_add[27] & ~m_add[26]) | ~|eb_f_reg;
+    wire ovf = &eb_f_reg | (&eb_f_reg[7:1] & ~eb_f_reg[0] & m_add[27]); // eb_f_reg == 255 or (eb_f_reg == 254 and MSB of m_add is 1)
+    wire s_add = udf ? 1'b0 : s_temp_reg;
     wire [7:0] e_add = udf                      ? 8'b0 :
                        ovf                      ? 8'hff :
-                       m_add[27]                ? eb + 8'b1 :                        
-                       (~m_add[27] & m_add[26]) ? eb :
-                                                  es - 8'b1;
+                       m_add[27]                ? eb_f_reg + 8'b1 :                        
+                       (~m_add[27] & m_add[26]) ? eb_f_reg :
+                                                  es_reg - 8'b1;
     wire [24:0] m_preproc = udf                      ? 25'b0 :
                             ovf                      ? 25'b0 :
                             m_add[27]                ? m_add[27:3] :
@@ -70,21 +96,45 @@ module fadd
                 myx[25] ? s_temp :
                           1'b0;
 
+    reg [24:0] m_abs_reg;
+    reg [7:0] eb_reg;
+    reg s_res_reg;
+    always @(posedge clk) begin
+        if (~rstn) begin
+            m_abs_reg <= 25'b0;
+            eb_reg <= 8'b0;
+            s_res_reg <= 1'b0;
+        end else begin
+            m_abs_reg <= m_abs;
+            eb_reg <= eb;
+            s_res_reg <= s_res;
+        end
+    end
+
     wire [4:0] shift_count;
     lzc u0(
-        .x(m_abs),
+        .x(m_abs_reg),
         .res(shift_count)
     );
 
-    wire [8:0] e_shifted = {1'b0,eb} - {3'b0,shift_count};
+    wire [8:0] e_shifted = {1'b0,eb_reg} - {3'b0,shift_count};
     wire udf_c = (e_shifted[8] | ~|e_shifted); // e_shifted <= 0
-    wire [24:0] m_c_temp = udf_c ? 25'b0 : m_abs << shift_count;
+    wire [24:0] m_c_temp = udf_c ? 25'b0 : m_abs_reg << shift_count;
     wire [7:0] e_c_temp = udf_c ? 8'b0 : e_shifted[7:0];
-    wire [34:0] pre_res_c = {s_res,e_c_temp,m_c_temp,1'b0};
+    wire [34:0] pre_res_c = {s_res_reg,e_c_temp,m_c_temp,1'b0};
 
     // round
     // used: pre_res, pre_res_c, is_close
-    wire [34:0] res_unrounded = is_close ? pre_res_c : pre_res;
+    reg is_close_reg;
+    always @(posedge clk) begin
+        if (~rstn) begin
+            is_close_reg <= 1'b0;
+        end else begin
+            is_close_reg <= is_close;
+        end
+    end
+
+    wire [34:0] res_unrounded = is_close_reg ? pre_res_c : pre_res;
     wire [24:0] m_unrounded = res_unrounded[25:2];
     wire [7:0] e_unrounded = res_unrounded[33:26];
     wire [24:0] m_rounded = ~res_unrounded[1] ? {1'b0,m_unrounded} :
@@ -97,39 +147,6 @@ module fadd
     assign res = {res_unrounded[34],e_res,m_res};
 
 
-endmodule
-
-module lzc
-    (
-        input wire [24:0] x,
-        output wire [4:0] res
-    );
-    
-    assign res = x[24] ? 5'd0 :
-                 x[23] ? 5'd1 :
-                 x[22] ? 5'd2 :
-                 x[21] ? 5'd3 :
-                 x[20] ? 5'd4 :
-                 x[19] ? 5'd5 :
-                 x[18] ? 5'd6 :
-                 x[17] ? 5'd7 :
-                 x[16] ? 5'd8 :
-                 x[15] ? 5'd9 :
-                 x[14] ? 5'd10 :
-                 x[13] ? 5'd11 :
-                 x[12] ? 5'd12 :
-                 x[11] ? 5'd13 :
-                 x[10] ? 5'd14 :
-                 x[9] ? 5'd15 :
-                 x[8] ? 5'd16 :
-                 x[7] ? 5'd17 :
-                 x[6] ? 5'd18 :
-                 x[5] ? 5'd19 :
-                 x[4] ? 5'd20 :
-                 x[3] ? 5'd21 :
-                 x[2] ? 5'd22 :
-                 x[1] ? 5'd23 :
-                        5'd24;
 endmodule
 
 `default_nettype wire

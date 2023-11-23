@@ -13,7 +13,7 @@ module fsub_pipe
         .clk(clk),
         .rstn(rstn),
         .x(x),
-        .y({1'b1,y[30:0]}),
+        .y({~y[31],y[30:0]}),
         .res(res)
     );
 

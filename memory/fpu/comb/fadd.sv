@@ -47,7 +47,7 @@ module fadd
                        ovf                      ? 8'hff :
                        m_add[27]                ? eb + 8'b1 :                        
                        (~m_add[27] & m_add[26]) ? eb :
-                                                  es - 8'b1;
+                                                  eb - 8'b1;
     wire [24:0] m_preproc = udf                      ? 25'b0 :
                             ovf                      ? 25'b0 :
                             m_add[27]                ? m_add[27:3] :

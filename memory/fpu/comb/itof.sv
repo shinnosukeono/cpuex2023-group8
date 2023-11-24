@@ -16,7 +16,7 @@ module itof
 
     wire is_zero = ~|shift_count;
     wire [31:0] temp_m_res = abs << shift_count;
-    wire ovf = &temp_m_res[30-:23];
+    wire ovf = &temp_m_res[30-:24];
     wire [23:0] m_res_unrounded = temp_m_res[30-:24];
     wire [22:0] m_res = m_res_unrounded[0] ? m_res_unrounded[23:1] + 23'b1 : m_res_unrounded[23:1];
     wire [7:0] e_res_unrounded = 8'd158 - {3'b0,shift_count};

@@ -33,7 +33,7 @@ module itof_pipe
 
     wire is_zero = ~|shift_count_reg;
     wire [31:0] temp_m_res = abs_reg << shift_count_reg;
-    wire ovf = &temp_m_res[30-:23];
+    wire ovf = &temp_m_res[30-:24];
 
     wire [23:0] m_res_unrounded = temp_m_res[30-:24];
     wire [22:0] m_res = m_res_unrounded[0] ? m_res_unrounded[23:1] + 23'b1 : m_res_unrounded[23:1];

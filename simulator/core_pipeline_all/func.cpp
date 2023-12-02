@@ -498,6 +498,7 @@ public:
 			if (EX != nullptr){
 				if ((*EX).name.substr(0,2) == "Sw" || (*EX).name.substr(0,2) == "Lw" || (*EX).name.substr(0,2) == "Lh" || (*EX).name.substr(0,2) == "Lb" || (*EX).name.substr(0,2) == "Sh" || (*EX).name.substr(0,2) == "Sb"){
 					outputFile << "\tMemory acsess occurs" << endl;
+					(*EX).exec(*this);
 				}else{
 					(*EX).exec(*this);
 				}
@@ -946,6 +947,8 @@ class Lb : public Instruction
 { // lb rd, offset(rs1) //Lb(rd, rs1, offset)
 private:
 	const int operand1, operand2, operand3;
+	int op2;
+	bool mode=true;
 
 public:
 	Lb(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -954,9 +957,16 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int8_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xff;
-		int tmp2 = tmp; // 符号拡張
-		vm.WriteIntRezisters(operand1, Data{tmp2});
+		if (mode) {
+			op2 = get<int>(vm.ReadIntRezisters(operand2));
+			mode = false;
+		}
+		else{
+			int8_t tmp = get<T>(vm.mem.load<T>(op2 + operand3)) & 0xff;
+			int tmp2 = tmp; // 符号拡張
+			vm.WriteIntRezisters(operand1, Data{tmp2});
+			mode = true;
+		}
 		//vm.pc += 4;
 	}
 };
@@ -966,6 +976,8 @@ class Lh : public Instruction
 { // lh rd, offset(rs1) //Lh(rd, rs1, offset)
 private:
 	const int operand1, operand2, operand3;
+	int op2;
+	bool mode=true;
 
 public:
 	Lh(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -974,9 +986,16 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		int16_t tmp = get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xffff;
-		int tmp2 = tmp; // 符号拡張
-		vm.WriteIntRezisters(operand1,Data{tmp2});
+		if (mode) {
+			op2 = get<int>(vm.ReadIntRezisters(operand2));
+			mode = false;
+		}
+		else{
+			int16_t tmp = get<T>(vm.mem.load<T>(op2 + operand3)) & 0xffff;
+			int tmp2 = tmp; // 符号拡張
+			vm.WriteIntRezisters(operand1, Data{tmp2});
+			mode = true;
+		}
 		//vm.pc += 4;
 	}
 };
@@ -986,6 +1005,8 @@ class Lw : public Instruction
 { // lw rd, offset(rs1) //Lw(rd, rs1, offset)
 private:
 	const int operand1, operand2, operand3;
+	int op2;
+	bool mode=true;
 
 public:
 	Lw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -994,7 +1015,15 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.WriteIntRezisters(operand1,Data{get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3))});
+		if (mode) {
+			op2 = get<int>(vm.ReadIntRezisters(operand2));
+			mode = false;
+		}
+		else{
+			int tmp = get<T>(vm.mem.load<T>(op2 + operand3));
+			vm.WriteIntRezisters(operand1, Data{tmp});
+			mode = true;
+		}
 		//vm.pc += 4;
 	}
 };
@@ -1004,6 +1033,8 @@ class Lbu : public Instruction
 { // lbu rd, offset(rs1) //Lbu(rd, rs1, offset)
 private:
 	const int operand1, operand2, operand3;
+	int op2;
+	bool mode=true;
 
 public:
 	Lbu(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -1012,7 +1043,15 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.WriteIntRezisters(operand1,Data{get<T>(vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3)) & 0xff});
+		if (mode) {
+			op2 = get<int>(vm.ReadIntRezisters(operand2));
+			mode = false;
+		}
+		else{
+			int8_t tmp = get<T>(vm.mem.load<T>(op2 + operand3)) & 0xff;
+			vm.WriteIntRezisters(operand1, Data{tmp});
+			mode = true;
+		}
 		//vm.pc += 4;
 	}
 };
@@ -1022,6 +1061,8 @@ class Lhu : public Instruction
 { // lhu rd, offset(rs1) //Lhu(rd, rs1, offset)
 private:
 	const int operand1, operand2, operand3;
+	int op2;
+	bool mode=true;
 
 public:
 	Lhu(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -1030,7 +1071,15 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.WriteIntRezisters(operand1,Data{get<T>((vm.mem.load<T>(get<int>(vm.ReadIntRezisters(operand2)) + operand3))) & 0xffff});
+		if (mode) {
+			op2 = get<int>(vm.ReadIntRezisters(operand2));
+			mode = false;
+		}
+		else{
+			int16_t tmp = get<T>(vm.mem.load<T>(op2 + operand3)) & 0xffff;
+			vm.WriteIntRezisters(operand1, Data{tmp});
+			mode = true;
+		}
 		//vm.pc += 4;
 	}
 };
@@ -1330,6 +1379,9 @@ class Sb : public Instruction
 { // sb rs2, offset(rs1) //Sb(rs1, rs2, offset)
 private:
 	const int operand1, operand2, operand3;
+	bool mode=true;
+	Data op1;
+	char* op2;
 
 public:
 	Sb(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -1338,8 +1390,14 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 1);
-		//vm.pc += 4;
+		if (mode){
+			op1 = vm.ReadIntRezisters(operand1);
+			op2 = vm.ReadIntRezisterAddress(operand2);
+			mode = false;
+		}else{
+			vm.mem.write(get<T>(op1) + operand3, op2, 1);
+			mode = true;
+		}
 	}
 };
 
@@ -1348,6 +1406,9 @@ class Sh : public Instruction
 { // sh rs2, offset(rs1) //Sh(rs1, rs2, offset)
 private:
 	const int operand1, operand2, operand3;
+	bool mode=true;
+	Data op1;
+	char* op2;
 
 public:
 	Sh(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
@@ -1356,8 +1417,14 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 2);
-		//vm.pc += 4;
+		if (mode){
+			op1 = vm.ReadIntRezisters(operand1);
+			op2 = vm.ReadIntRezisterAddress(operand2);
+			mode = false;
+		}else{
+			vm.mem.write(get<T>(op1) + operand3, op2, 2);
+			mode = true;
+		}
 	}
 };
 
@@ -1366,16 +1433,26 @@ class Sw : public Instruction
 { // sw rs2, offset(rs1) //Sw(rs1, rs2, offset)
 private:
 	const int operand1, operand2, operand3;
+	bool mode=true;
+	Data op1;
+	char* op2;
 
 public:
 	Sw(int operand1, int operand2, int operand3) : operand1(operand1), operand2(operand2), operand3(operand3)
 	{
 		name = "Sw " + Rnames[operand2] + ", " + to_string(operand3) + "(" + Rnames[operand1] + ")";
 	}
+
 	virtual void exec(VirtualMachine &vm) override
 	{
-		vm.mem.write(get<T>(vm.ReadIntRezisters(operand1)) + operand3, vm.ReadIntRezisterAddress(operand2), 4);
-		//vm.pc += 4;
+		if (mode){
+			op1 = vm.ReadIntRezisters(operand1);
+			op2 = vm.ReadIntRezisterAddress(operand2);
+			mode = false;
+		}else{
+			vm.mem.write(get<T>(op1) + operand3, op2, 4);
+			mode = true;
+		}
 	}
 };
 

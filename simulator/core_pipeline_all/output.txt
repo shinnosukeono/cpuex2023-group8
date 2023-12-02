@@ -29,6 +29,7 @@ IntRezisters:{
 
 cycle:[4], pc:[4], IF:[Addi s0/fp(x8), sp(x2), 16], ID:[Sw s0/fp(x8), 8(sp(x2))], EX:[Sw ra(x1), 12(sp(x2))], MEM:[Addi sp(x2), sp(x2), -16], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194288]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[-1], sp(x2):[4194304], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[0], s1(x9):[0], a0(x10):[0], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[0], a5(x15):[0], 
@@ -100,6 +101,7 @@ IntRezisters:{
 
 cycle:[13], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194256]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[24], sp(x2):[4194288], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194304], s1(x9):[0], a0(x10):[10], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[0], a5(x15):[0], 
@@ -134,6 +136,7 @@ IntRezisters:{
 
 cycle:[17], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194288]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[24], sp(x2):[4194256], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194304], s1(x9):[0], a0(x10):[10], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[0], a5(x15):[0], 
@@ -311,6 +314,7 @@ IntRezisters:{
 
 cycle:[39], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194224]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194256], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194288], s1(x9):[0], a0(x10):[9], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[10], a5(x15):[9], 
@@ -345,6 +349,7 @@ IntRezisters:{
 
 cycle:[43], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194256]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194288], s1(x9):[0], a0(x10):[9], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[10], a5(x15):[9], 
@@ -522,6 +527,7 @@ IntRezisters:{
 
 cycle:[65], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194192]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[0], a0(x10):[8], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[9], a5(x15):[8], 
@@ -556,6 +562,7 @@ IntRezisters:{
 
 cycle:[69], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194224]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[0], a0(x10):[8], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[9], a5(x15):[8], 
@@ -733,6 +740,7 @@ IntRezisters:{
 
 cycle:[91], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[0], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[8], a5(x15):[7], 
@@ -767,6 +775,7 @@ IntRezisters:{
 
 cycle:[95], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[0], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[8], a5(x15):[7], 
@@ -944,6 +953,7 @@ IntRezisters:{
 
 cycle:[117], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[0], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -978,6 +988,7 @@ IntRezisters:{
 
 cycle:[121], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[0], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -1155,6 +1166,7 @@ IntRezisters:{
 
 cycle:[143], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[0], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -1189,6 +1201,7 @@ IntRezisters:{
 
 cycle:[147], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[0], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -1366,6 +1379,7 @@ IntRezisters:{
 
 cycle:[169], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[0], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -1400,6 +1414,7 @@ IntRezisters:{
 
 cycle:[173], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[0], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -1577,6 +1592,7 @@ IntRezisters:{
 
 cycle:[195], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[0], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -1611,6 +1627,7 @@ IntRezisters:{
 
 cycle:[199], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[0], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -1788,6 +1805,7 @@ IntRezisters:{
 
 cycle:[221], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194000]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194064], s1(x9):[0], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -1822,6 +1840,7 @@ IntRezisters:{
 
 cycle:[225], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194032]
 IntRezisters:{
 		  zero(x0):[0], ra(x1):[132], sp(x2):[4194000], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194064], s1(x9):[0], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -2093,6 +2112,7 @@ IntRezisters:{
 
 cycle:[259], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194000]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194064], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -2127,6 +2147,7 @@ IntRezisters:{
 
 cycle:[263], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194000], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194064], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -2437,6 +2458,7 @@ IntRezisters:{
 
 cycle:[302], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -2471,6 +2493,7 @@ IntRezisters:{
 
 cycle:[306], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -2831,6 +2854,7 @@ IntRezisters:{
 
 cycle:[351], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -2865,6 +2889,7 @@ IntRezisters:{
 
 cycle:[355], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -3042,6 +3067,7 @@ IntRezisters:{
 
 cycle:[377], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -3076,6 +3102,7 @@ IntRezisters:{
 
 cycle:[381], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -3347,6 +3374,7 @@ IntRezisters:{
 
 cycle:[415], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -3381,6 +3409,7 @@ IntRezisters:{
 
 cycle:[419], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -3780,6 +3809,7 @@ IntRezisters:{
 
 cycle:[469], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -3814,6 +3844,7 @@ IntRezisters:{
 
 cycle:[473], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -3991,6 +4022,7 @@ IntRezisters:{
 
 cycle:[495], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -4025,6 +4057,7 @@ IntRezisters:{
 
 cycle:[499], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -4202,6 +4235,7 @@ IntRezisters:{
 
 cycle:[521], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -4236,6 +4270,7 @@ IntRezisters:{
 
 cycle:[525], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -4507,6 +4542,7 @@ IntRezisters:{
 
 cycle:[559], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -4541,6 +4577,7 @@ IntRezisters:{
 
 cycle:[563], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -4851,6 +4888,7 @@ IntRezisters:{
 
 cycle:[602], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -4885,6 +4923,7 @@ IntRezisters:{
 
 cycle:[606], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -5334,6 +5373,7 @@ IntRezisters:{
 
 cycle:[662], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -5368,6 +5408,7 @@ IntRezisters:{
 
 cycle:[666], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -5545,6 +5586,7 @@ IntRezisters:{
 
 cycle:[688], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -5579,6 +5621,7 @@ IntRezisters:{
 
 cycle:[692], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -5756,6 +5799,7 @@ IntRezisters:{
 
 cycle:[714], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -5790,6 +5834,7 @@ IntRezisters:{
 
 cycle:[718], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -5967,6 +6012,7 @@ IntRezisters:{
 
 cycle:[740], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -6001,6 +6047,7 @@ IntRezisters:{
 
 cycle:[744], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -6272,6 +6319,7 @@ IntRezisters:{
 
 cycle:[778], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -6306,6 +6354,7 @@ IntRezisters:{
 
 cycle:[782], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -6616,6 +6665,7 @@ IntRezisters:{
 
 cycle:[821], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -6650,6 +6700,7 @@ IntRezisters:{
 
 cycle:[825], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -7010,6 +7061,7 @@ IntRezisters:{
 
 cycle:[870], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -7044,6 +7096,7 @@ IntRezisters:{
 
 cycle:[874], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -7221,6 +7274,7 @@ IntRezisters:{
 
 cycle:[896], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -7255,6 +7309,7 @@ IntRezisters:{
 
 cycle:[900], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -7526,6 +7581,7 @@ IntRezisters:{
 
 cycle:[934], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -7560,6 +7616,7 @@ IntRezisters:{
 
 cycle:[938], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -8048,6 +8105,7 @@ IntRezisters:{
 
 cycle:[999], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[13], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[6], 
@@ -8082,6 +8140,7 @@ IntRezisters:{
 
 cycle:[1003], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[13], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[6], 
@@ -8259,6 +8318,7 @@ IntRezisters:{
 
 cycle:[1025], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[13], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -8293,6 +8353,7 @@ IntRezisters:{
 
 cycle:[1029], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[13], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -8470,6 +8531,7 @@ IntRezisters:{
 
 cycle:[1051], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[13], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -8504,6 +8566,7 @@ IntRezisters:{
 
 cycle:[1055], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[13], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -8681,6 +8744,7 @@ IntRezisters:{
 
 cycle:[1077], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[13], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -8715,6 +8779,7 @@ IntRezisters:{
 
 cycle:[1081], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[13], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -8892,6 +8957,7 @@ IntRezisters:{
 
 cycle:[1103], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[13], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -8926,6 +8992,7 @@ IntRezisters:{
 
 cycle:[1107], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[13], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -9197,6 +9264,7 @@ IntRezisters:{
 
 cycle:[1141], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -9231,6 +9299,7 @@ IntRezisters:{
 
 cycle:[1145], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -9541,6 +9610,7 @@ IntRezisters:{
 
 cycle:[1184], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -9575,6 +9645,7 @@ IntRezisters:{
 
 cycle:[1188], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -9935,6 +10006,7 @@ IntRezisters:{
 
 cycle:[1233], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -9969,6 +10041,7 @@ IntRezisters:{
 
 cycle:[1237], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -10146,6 +10219,7 @@ IntRezisters:{
 
 cycle:[1259], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -10180,6 +10254,7 @@ IntRezisters:{
 
 cycle:[1263], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -10451,6 +10526,7 @@ IntRezisters:{
 
 cycle:[1297], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -10485,6 +10561,7 @@ IntRezisters:{
 
 cycle:[1301], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -10884,6 +10961,7 @@ IntRezisters:{
 
 cycle:[1351], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -10918,6 +10996,7 @@ IntRezisters:{
 
 cycle:[1355], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -11095,6 +11174,7 @@ IntRezisters:{
 
 cycle:[1377], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -11129,6 +11209,7 @@ IntRezisters:{
 
 cycle:[1381], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -11306,6 +11387,7 @@ IntRezisters:{
 
 cycle:[1403], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -11340,6 +11422,7 @@ IntRezisters:{
 
 cycle:[1407], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -11611,6 +11694,7 @@ IntRezisters:{
 
 cycle:[1441], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -11645,6 +11729,7 @@ IntRezisters:{
 
 cycle:[1445], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -11955,6 +12040,7 @@ IntRezisters:{
 
 cycle:[1484], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -11989,6 +12075,7 @@ IntRezisters:{
 
 cycle:[1488], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -12527,6 +12614,7 @@ IntRezisters:{
 
 cycle:[1555], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[21], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[7], 
@@ -12561,6 +12649,7 @@ IntRezisters:{
 
 cycle:[1559], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194224]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[21], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[7], 
@@ -12738,6 +12827,7 @@ IntRezisters:{
 
 cycle:[1581], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[21], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -12772,6 +12862,7 @@ IntRezisters:{
 
 cycle:[1585], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[21], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -12949,6 +13040,7 @@ IntRezisters:{
 
 cycle:[1607], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[21], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -12983,6 +13075,7 @@ IntRezisters:{
 
 cycle:[1611], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[21], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -13160,6 +13253,7 @@ IntRezisters:{
 
 cycle:[1633], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[21], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -13194,6 +13288,7 @@ IntRezisters:{
 
 cycle:[1637], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[21], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -13371,6 +13466,7 @@ IntRezisters:{
 
 cycle:[1659], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[21], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -13405,6 +13501,7 @@ IntRezisters:{
 
 cycle:[1663], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[21], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -13582,6 +13679,7 @@ IntRezisters:{
 
 cycle:[1685], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[21], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -13616,6 +13714,7 @@ IntRezisters:{
 
 cycle:[1689], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[21], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -13887,6 +13986,7 @@ IntRezisters:{
 
 cycle:[1723], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -13921,6 +14021,7 @@ IntRezisters:{
 
 cycle:[1727], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -14231,6 +14332,7 @@ IntRezisters:{
 
 cycle:[1766], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -14265,6 +14367,7 @@ IntRezisters:{
 
 cycle:[1770], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -14625,6 +14728,7 @@ IntRezisters:{
 
 cycle:[1815], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -14659,6 +14763,7 @@ IntRezisters:{
 
 cycle:[1819], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -14836,6 +14941,7 @@ IntRezisters:{
 
 cycle:[1841], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -14870,6 +14976,7 @@ IntRezisters:{
 
 cycle:[1845], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -15141,6 +15248,7 @@ IntRezisters:{
 
 cycle:[1879], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -15175,6 +15283,7 @@ IntRezisters:{
 
 cycle:[1883], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -15574,6 +15683,7 @@ IntRezisters:{
 
 cycle:[1933], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -15608,6 +15718,7 @@ IntRezisters:{
 
 cycle:[1937], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -15785,6 +15896,7 @@ IntRezisters:{
 
 cycle:[1959], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -15819,6 +15931,7 @@ IntRezisters:{
 
 cycle:[1963], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -15996,6 +16109,7 @@ IntRezisters:{
 
 cycle:[1985], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -16030,6 +16144,7 @@ IntRezisters:{
 
 cycle:[1989], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -16301,6 +16416,7 @@ IntRezisters:{
 
 cycle:[2023], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -16335,6 +16451,7 @@ IntRezisters:{
 
 cycle:[2027], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -16645,6 +16762,7 @@ IntRezisters:{
 
 cycle:[2066], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -16679,6 +16797,7 @@ IntRezisters:{
 
 cycle:[2070], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -17128,6 +17247,7 @@ IntRezisters:{
 
 cycle:[2126], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -17162,6 +17282,7 @@ IntRezisters:{
 
 cycle:[2130], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -17339,6 +17460,7 @@ IntRezisters:{
 
 cycle:[2152], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -17373,6 +17495,7 @@ IntRezisters:{
 
 cycle:[2156], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -17550,6 +17673,7 @@ IntRezisters:{
 
 cycle:[2178], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -17584,6 +17708,7 @@ IntRezisters:{
 
 cycle:[2182], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -17761,6 +17886,7 @@ IntRezisters:{
 
 cycle:[2204], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -17795,6 +17921,7 @@ IntRezisters:{
 
 cycle:[2208], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -18066,6 +18193,7 @@ IntRezisters:{
 
 cycle:[2242], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -18100,6 +18228,7 @@ IntRezisters:{
 
 cycle:[2246], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -18410,6 +18539,7 @@ IntRezisters:{
 
 cycle:[2285], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -18444,6 +18574,7 @@ IntRezisters:{
 
 cycle:[2289], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -18804,6 +18935,7 @@ IntRezisters:{
 
 cycle:[2334], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -18838,6 +18970,7 @@ IntRezisters:{
 
 cycle:[2338], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -19015,6 +19148,7 @@ IntRezisters:{
 
 cycle:[2360], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -19049,6 +19183,7 @@ IntRezisters:{
 
 cycle:[2364], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -19320,6 +19455,7 @@ IntRezisters:{
 
 cycle:[2398], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -19354,6 +19490,7 @@ IntRezisters:{
 
 cycle:[2402], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -19931,6 +20068,7 @@ IntRezisters:{
 
 cycle:[2474], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194224]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194256], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194288], s1(x9):[34], a0(x10):[8], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[8], 
@@ -19965,6 +20103,7 @@ IntRezisters:{
 
 cycle:[2478], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194256]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194288], s1(x9):[34], a0(x10):[8], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[8], 
@@ -20142,6 +20281,7 @@ IntRezisters:{
 
 cycle:[2500], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[34], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[8], a5(x15):[7], 
@@ -20176,6 +20316,7 @@ IntRezisters:{
 
 cycle:[2504], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194224]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[34], a0(x10):[7], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[8], a5(x15):[7], 
@@ -20353,6 +20494,7 @@ IntRezisters:{
 
 cycle:[2526], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[34], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -20387,6 +20529,7 @@ IntRezisters:{
 
 cycle:[2530], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[34], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[7], a5(x15):[6], 
@@ -20564,6 +20707,7 @@ IntRezisters:{
 
 cycle:[2552], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[34], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -20598,6 +20742,7 @@ IntRezisters:{
 
 cycle:[2556], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[34], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -20775,6 +20920,7 @@ IntRezisters:{
 
 cycle:[2578], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[34], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -20809,6 +20955,7 @@ IntRezisters:{
 
 cycle:[2582], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[34], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -20986,6 +21133,7 @@ IntRezisters:{
 
 cycle:[2604], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[34], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -21020,6 +21168,7 @@ IntRezisters:{
 
 cycle:[2608], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[34], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -21197,6 +21346,7 @@ IntRezisters:{
 
 cycle:[2630], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[34], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -21231,6 +21381,7 @@ IntRezisters:{
 
 cycle:[2634], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[34], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -21502,6 +21653,7 @@ IntRezisters:{
 
 cycle:[2668], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194032]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -21536,6 +21688,7 @@ IntRezisters:{
 
 cycle:[2672], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194032], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194096], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -21846,6 +21999,7 @@ IntRezisters:{
 
 cycle:[2711], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -21880,6 +22034,7 @@ IntRezisters:{
 
 cycle:[2715], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -22240,6 +22395,7 @@ IntRezisters:{
 
 cycle:[2760], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -22274,6 +22430,7 @@ IntRezisters:{
 
 cycle:[2764], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -22451,6 +22608,7 @@ IntRezisters:{
 
 cycle:[2786], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -22485,6 +22643,7 @@ IntRezisters:{
 
 cycle:[2790], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -22756,6 +22915,7 @@ IntRezisters:{
 
 cycle:[2824], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -22790,6 +22950,7 @@ IntRezisters:{
 
 cycle:[2828], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -23189,6 +23350,7 @@ IntRezisters:{
 
 cycle:[2878], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -23223,6 +23385,7 @@ IntRezisters:{
 
 cycle:[2882], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -23400,6 +23563,7 @@ IntRezisters:{
 
 cycle:[2904], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -23434,6 +23598,7 @@ IntRezisters:{
 
 cycle:[2908], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -23611,6 +23776,7 @@ IntRezisters:{
 
 cycle:[2930], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -23645,6 +23811,7 @@ IntRezisters:{
 
 cycle:[2934], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -23916,6 +24083,7 @@ IntRezisters:{
 
 cycle:[2968], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -23950,6 +24118,7 @@ IntRezisters:{
 
 cycle:[2972], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -24260,6 +24429,7 @@ IntRezisters:{
 
 cycle:[3011], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -24294,6 +24464,7 @@ IntRezisters:{
 
 cycle:[3015], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -24743,6 +24914,7 @@ IntRezisters:{
 
 cycle:[3071], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -24777,6 +24949,7 @@ IntRezisters:{
 
 cycle:[3075], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[8], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[5], 
@@ -24954,6 +25127,7 @@ IntRezisters:{
 
 cycle:[3097], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -24988,6 +25162,7 @@ IntRezisters:{
 
 cycle:[3101], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[8], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -25165,6 +25340,7 @@ IntRezisters:{
 
 cycle:[3123], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -25199,6 +25375,7 @@ IntRezisters:{
 
 cycle:[3127], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[8], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -25376,6 +25553,7 @@ IntRezisters:{
 
 cycle:[3149], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -25410,6 +25588,7 @@ IntRezisters:{
 
 cycle:[3153], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[8], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -25681,6 +25860,7 @@ IntRezisters:{
 
 cycle:[3187], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -25715,6 +25895,7 @@ IntRezisters:{
 
 cycle:[3191], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -26025,6 +26206,7 @@ IntRezisters:{
 
 cycle:[3230], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -26059,6 +26241,7 @@ IntRezisters:{
 
 cycle:[3234], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -26419,6 +26602,7 @@ IntRezisters:{
 
 cycle:[3279], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -26453,6 +26637,7 @@ IntRezisters:{
 
 cycle:[3283], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -26630,6 +26815,7 @@ IntRezisters:{
 
 cycle:[3305], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -26664,6 +26850,7 @@ IntRezisters:{
 
 cycle:[3309], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -26935,6 +27122,7 @@ IntRezisters:{
 
 cycle:[3343], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -26969,6 +27157,7 @@ IntRezisters:{
 
 cycle:[3347], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -27457,6 +27646,7 @@ IntRezisters:{
 
 cycle:[3408], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194224], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[13], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[6], 
@@ -27491,6 +27681,7 @@ IntRezisters:{
 
 cycle:[3412], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194224]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194256], s1(x9):[13], a0(x10):[6], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[6], 
@@ -27668,6 +27859,7 @@ IntRezisters:{
 
 cycle:[3434], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[13], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -27702,6 +27894,7 @@ IntRezisters:{
 
 cycle:[3438], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[13], a0(x10):[5], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[6], a5(x15):[5], 
@@ -27879,6 +28072,7 @@ IntRezisters:{
 
 cycle:[3460], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[13], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -27913,6 +28107,7 @@ IntRezisters:{
 
 cycle:[3464], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[13], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[5], a5(x15):[4], 
@@ -28090,6 +28285,7 @@ IntRezisters:{
 
 cycle:[3486], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[13], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -28124,6 +28320,7 @@ IntRezisters:{
 
 cycle:[3490], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[13], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -28301,6 +28498,7 @@ IntRezisters:{
 
 cycle:[3512], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[13], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -28335,6 +28533,7 @@ IntRezisters:{
 
 cycle:[3516], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[13], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -28606,6 +28805,7 @@ IntRezisters:{
 
 cycle:[3550], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194064]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -28640,6 +28840,7 @@ IntRezisters:{
 
 cycle:[3554], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194064], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194128], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -28950,6 +29151,7 @@ IntRezisters:{
 
 cycle:[3593], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -28984,6 +29186,7 @@ IntRezisters:{
 
 cycle:[3597], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -29344,6 +29547,7 @@ IntRezisters:{
 
 cycle:[3642], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -29378,6 +29582,7 @@ IntRezisters:{
 
 cycle:[3646], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[3], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[3], 
@@ -29555,6 +29760,7 @@ IntRezisters:{
 
 cycle:[3668], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -29589,6 +29795,7 @@ IntRezisters:{
 
 cycle:[3672], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[3], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -29860,6 +30067,7 @@ IntRezisters:{
 
 cycle:[3706], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -29894,6 +30102,7 @@ IntRezisters:{
 
 cycle:[3710], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -30293,6 +30502,7 @@ IntRezisters:{
 
 cycle:[3760], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194192], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -30327,6 +30537,7 @@ IntRezisters:{
 
 cycle:[3764], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194192]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194224], s1(x9):[5], a0(x10):[4], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[4], 
@@ -30504,6 +30715,7 @@ IntRezisters:{
 
 cycle:[3786], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -30538,6 +30750,7 @@ IntRezisters:{
 
 cycle:[3790], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[5], a0(x10):[3], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[4], a5(x15):[3], 
@@ -30715,6 +30928,7 @@ IntRezisters:{
 
 cycle:[3812], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -30749,6 +30963,7 @@ IntRezisters:{
 
 cycle:[3816], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[132], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[5], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[3], a5(x15):[2], 
@@ -31020,6 +31235,7 @@ IntRezisters:{
 
 cycle:[3850], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194096]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -31054,6 +31270,7 @@ IntRezisters:{
 
 cycle:[3854], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194096], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194160], s1(x9):[1], a0(x10):[1], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[2], a5(x15):[1], 
@@ -31364,6 +31581,7 @@ IntRezisters:{
 
 cycle:[3893], pc:[56], IF:[Sw s1(x9), 20(sp(x2))], ID:[Sw s0/fp(x8), 24(sp(x2))], EX:[Sw ra(x1), 28(sp(x2))], MEM:[Addi sp(x2), sp(x2), -32], WB:[], 
 	Memory acsess occurs
+	Forwarding: sp(x2):[4194128]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194160], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 
@@ -31398,6 +31616,7 @@ IntRezisters:{
 
 cycle:[3897], pc:[72], IF:[Addi a5(x15), zero(x0), 1], ID:[Lw a4(x14), -20(s0/fp(x8))], EX:[Sw a0(x10), -20(s0/fp(x8))], MEM:[Addi s0/fp(x8), sp(x2), 32], WB:[Sw s1(x9), 20(sp(x2))], 
 	Memory acsess occurs
+	Forwarding: s0/fp(x8):[4194160]
 IntRezisters:{
 		  zero(x0):[180], ra(x1):[152], sp(x2):[4194128], gp(x3):[0], tp(x4):[0], t0(x5):[0], t1(x6):[0], t2(x7):[0], 
 		  s0/fp(x8):[4194192], s1(x9):[2], a0(x10):[2], a1(x11):[0], a2(x12):[0], a3(x13):[0], a4(x14):[1], a5(x15):[2], 

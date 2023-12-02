@@ -1,2 +1,2 @@
-g++ main.cpp
+g++ -D_GLIBCXX_DEBUG main.cpp
 ./a.out

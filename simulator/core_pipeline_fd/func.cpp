@@ -341,20 +341,42 @@ public:
 	const int zero = 0;
 	int pc = 0;
 	int addr = 0;															// memory address
-	int count = 0;															// count the number of instructions
-	Data IntRezisters[32] = {0, -1, Dsize, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // x0-x14
-							 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	// x15-x31
-							 0, 0};
+	int count = 0;		
+private:													// count the number of instructions
+	array<Data,32> IntRezisters = { 0, -1, Dsize, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // x0-x14
+									0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	// x15-x31
+									0, 0};
+
+	array<Data,32> VirtualIntRezisters_EX = { 0, -1, Dsize, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // x0-x14
+									0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	// x15-x31
+									0, 0};
+
+	array<Data,32> VirtualIntRezisters_MA = { 0, -1, Dsize, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // x0-x14
+									0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	// x15-x31
+									0, 0};
+public:
+	long long forwarding_bit = 0;
+	long long forwarding_bit2 = 0;
+	
 	Data ReadIntRezisters(int i)
 	{
 		if (i == 0)
 			return Data{0};
-		return IntRezisters[i];
+		if (forwarding_bit2 & (1 << i)){
+			outputFile << "\tForwarding: " << Rnames[i] << ":[" << get<int>(VirtualIntRezisters_EX[i]) << "]" << endl;
+			//VirtualIntRezisters_EX[i] = VirtualIntRezisters_MA[i];
+			return VirtualIntRezisters_EX[i];
+		}
+		else {
+			return VirtualIntRezisters_EX[i];
+		}
 	}
 
 	void WriteIntRezisters(int i, Data d)
 	{
-		IntRezisters[i] = d;
+		//IntRezisters[i] = d;
+		VirtualIntRezisters_EX[i] = d;
+		forwarding_bit |= (1 << i);
 	}
 
 	Data FloatRezisters[32] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, // f0-f5
@@ -372,7 +394,13 @@ public:
 
 	char* ReadIntRezisterAddress(int i){
 		if (i==0) return (char*)&zero;
-		return (char*)&IntRezisters[i];
+		if (forwarding_bit2 & (1 << i)){
+			outputFile << "\tForwarding: " << Rnames[i] << ":[" << get<int>(VirtualIntRezisters_EX[i]) << "]" << endl;
+			//VirtualIntRezisters_EX[i] = VirtualIntRezisters_MA[i];
+			return (char*)&VirtualIntRezisters_EX[i];
+		}
+		else
+		return (char*)&VirtualIntRezisters_EX[i];
 	}
 
 	Instruction *IF, *ID, *EX, *MEM, *WB;
@@ -505,6 +533,11 @@ public:
 			// outputFile << "}" << endl
 			// 		   << endl;
 			// pc++;
+			forwarding_bit2 = forwarding_bit;
+			forwarding_bit = 0;
+
+			IntRezisters = VirtualIntRezisters_MA;
+			VirtualIntRezisters_MA = VirtualIntRezisters_EX;
 		};
 	}
 };

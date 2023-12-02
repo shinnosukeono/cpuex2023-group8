@@ -148,7 +148,7 @@ int main()
 
 	cout << "pc : " << vm.pc << endl;
 	cout << "count : " << vm.count << endl;
-	cout << "Return Code : " << get<int>(vm.IntRezisters[10]) << endl;
+	cout << "Return Code : " << get<int>(vm.ReadIntRezisters(10)) << endl;
 	cout << "hit: " << vm.mem.cache.hit_count << endl;
 	cout << "miss: " << vm.mem.cache.miss_count << endl;
 

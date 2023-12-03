@@ -56,12 +56,12 @@ module alu #(
             4'b0001: result = sum;  // sub
             4'b0010: result = a&b;  // and
             4'b0011: result = a|b;  // or
-            4'b0100: result = sltu;  // sltu
+            4'b0111: result = sltu;  // sltu
             4'b0101: result = slt;  // slt
             4'b0110: result = a<<b;  // shift left
             4'b1000: result = a^b;  // xor
             4'b1110: result = a>>b;  // shift right logical
-            4'b1111: result = a>>>b;  // shift right arithmetical
+            4'b1111: result = $signed(a)>>>b;  // shift right arithmetical
             default: result = {N{1'b0}};  // error
         endcase
     end

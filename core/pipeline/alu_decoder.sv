@@ -34,7 +34,7 @@ module alu_decoder (
                     end
                     3'b001: alu_control = 4'b0110;  // shift left (sll, slli)
                     3'b010: alu_control = 4'b0101;  // set less than (slt, slti)
-                    3'b011: alu_control = 4'b0100;  // set less than unsigned (sltu, sltiu)
+                    3'b011: alu_control = 4'b0111;  // set less than unsigned (sltu, sltiu)
                     3'b100: alu_control = 4'b1000;  // xor (xor, xori)
                     3'b101: begin
                         case (funct7_5)

@@ -27,10 +27,12 @@ module write_back (
     // result_w
     always_comb begin
         case (control_mem_if.result_src)
-            2'b00: result_w = data_mem_if.alu_result;
-            2'b01: result_w = data_mem_if.read_data;
-            2'b10: result_w = data_mem_if.pc_plus4;
-            2'b11: result_w = data_mem_if.c_reg_data_out;
+            3'b000: result_w = data_mem_if.alu_result;
+            3'b001: result_w = data_mem_if.read_data;
+            3'b010: result_w = data_mem_if.pc_plus4;
+            3'b011: result_w = data_mem_if.c_reg_data_out;
+            3'b100: result_w = data_mem_if.imm_ext;
+            default: result_w = 32'bx;
         endcase
     end
 

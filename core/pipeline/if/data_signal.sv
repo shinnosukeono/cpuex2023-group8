@@ -58,6 +58,7 @@ interface data_exec_io;
     logic [31:0] alu_result;
     logic [31:0] write_data;
     logic [4:0] rd;
+    logic [31:0] imm_ext;
     logic [31:0] pc_plus4;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
@@ -66,6 +67,7 @@ interface data_exec_io;
         output alu_result,
         output write_data,
         output rd,
+        output imm_ext,
         output pc_plus4,
         output c_reg_data_out,
         output status,
@@ -75,6 +77,7 @@ interface data_exec_io;
         input alu_result,
         input write_data,
         input rd,
+        input imm_ext,
         input pc_plus4,
         input c_reg_data_out,
         input status,
@@ -86,6 +89,7 @@ interface data_mem_io;
     logic [31:0] alu_result;
     logic [31:0] read_data;
     logic [4:0] rd;
+    logic [31:0] imm_ext;
     logic [31:0] pc_plus4;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
@@ -94,6 +98,7 @@ interface data_mem_io;
         output alu_result,
         output read_data,
         output rd,
+        output imm_ext,
         output pc_plus4,
         output c_reg_data_out,
         output status,
@@ -103,6 +108,7 @@ interface data_mem_io;
         input alu_result,
         input read_data,
         input rd,
+        input imm_ext,
         input pc_plus4,
         input c_reg_data_out,
         input status,

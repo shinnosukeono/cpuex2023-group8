@@ -22,7 +22,7 @@ module instr_decode (
     input logic reg_write_w
 );
     // contrl unit
-    logic [1:0] imm_src_d;
+    logic [2:0] imm_src_d;
     logic c_reg_src;
     logic c_reg_write;
     control_unit i_control_unit (

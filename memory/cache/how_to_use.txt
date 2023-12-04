@@ -1,0 +1,38 @@
+・IPの使用方法
+
+zipファイルを適当なところで展開する
+↓
+vivadoのPROJECT MANAGERのSettingsを選択
+↓
+Project SettingsのIP下にあるRepositoryを選択
+↓
+IP Repositoriesの+から先程展開したディレクトリを選択
+↓
+Applyして設定画面を閉じる
+↓
+IPを使用する際はその他のIPを使用する場合と同様に
+Add IPでIPを検索する
+
+
+・それぞれの配線について
+
+入力
+clk: キャッシュコントローラーを駆動するクロック
+resetn: リセット信号
+core_addr: コアからのアドレス入力
+core_din: コアからのデータ入力
+core_we: コアからのライトイネーブル
+core_complete: コアの処理が終了通知(0のときはcore_*が採用され、1のときはio_*が採用される)
+io_addr: IO制御からのアドレス入力
+io_din: IO制御からのデータ入力
+io_we: IO制御からのライトイネーブル
+
+出力
+ddr2_sdram: ddr2用のポートに接続
+(接続の際はBoardウィンドウからDDR2 SDRAMというポートをドラッグアンドドロップでDiagramに持っていく。
+このとき、勝手にMIGが接続されてしまうが、MIGは削除してポートをddr2_sdramに対して接続すればOK)
+core_data_valid: コアへのデータバリッド出力
+core_dout: コアへのデータ出力
+io_data_valid: IO制御へのデータバリッド出力
+io_dout: IO制御へのデータ出力
+io_init_complete: メモリ周辺の初期化完了通知

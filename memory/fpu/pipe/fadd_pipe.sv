@@ -28,8 +28,8 @@ module fadd_pipe
     wire [7:0] ediff = x_bigger ? exy[7:0] : eyx[7:0];
     wire [22:0] mb = x_bigger ? mx : my;
     wire [22:0] ms = x_bigger ? my : mx;
-    wire [23:0] mb_sup = |eb ? {1'b1,mb} : 24'b0;
-    wire [23:0] ms_sup = |es ? {1'b1,ms} : 24'b0;
+    wire [23:0] mb_sup = {1'b1,mb};
+    wire [23:0] ms_sup = {1'b1,ms};
     wire s_temp = x_bigger ? sx : sy;
     wire is_add = ~(sx ^ sy);
     wire is_close = ~|ediff[7:1] & ~is_add;
@@ -67,7 +67,7 @@ module fadd_pipe
     wire [27:0] m_add = is_add_reg ? {1'b0,mb_sup_reg,3'b0} + {1'b0,ms_packed_reg} : {1'b0,mb_sup_reg,3'b0} - {1'b0,ms_packed_reg};
 
     wire udf = (~|eb_f_reg[7:1] & eb_f_reg & ~m_add[27] & ~m_add[26]) | ~|eb_f_reg;
-    wire ovf = &eb_f_reg | (&eb_f_reg[7:1] & ~eb_f_reg[0] & m_add[27]); // eb_f_reg == 255 or (eb_f_reg == 254 and MSB of m_add is 1)
+    wire ovf = (&eb_f_reg & (m_add[27] | m_add[26])) | (&eb_f_reg[7:1] & ~eb_f_reg[0] & m_add[27]); // eb_f_reg == 255 or (eb_f_reg == 254 and MSB of m_add is 1)
     wire s_add = udf ? 1'b0 : s_temp_reg;
     wire [7:0] e_add = udf                      ? 8'b0 :
                        ovf                      ? 8'hff :

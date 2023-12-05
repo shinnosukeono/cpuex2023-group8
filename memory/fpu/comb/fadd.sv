@@ -40,7 +40,7 @@ module fadd
 
     wire [27:0] m_add = is_add ? {1'b0,mb_sup,3'b0} + {1'b0,ms_packed} : {1'b0,mb_sup,3'b0} - {1'b0,ms_packed};
 
-    wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]) | ~|eb;
+    wire udf = (~|eb[7:1] & eb[0] & ~m_add[27] & ~m_add[26]) | (~|eb & ~m_add[27]);
     wire ovf = (&eb & (m_add[27] | m_add[26])) | (&eb[7:1] & ~eb[0] & m_add[27]); // eb == 255 or (eb == 254 and MSB of m_add is 1)
     wire s_add = udf ? 1'b0 : s_temp;
     wire [7:0] e_add = udf                      ? 8'b0 :
@@ -66,9 +66,6 @@ module fadd
     wire [25:0] mxy = {1'b0,mb_sup,1'b0} - ms_c_shifted;
     wire [25:0] myx = ms_c_shifted - {1'b0,mb_sup,1'b0};
     wire [24:0] m_abs = mxy[25] ? myx[24:0] : mxy[24:0];
-    wire s_res = mxy[25] ? ~s_temp :
-                myx[25] ? s_temp :
-                          1'b0;
 
     wire [4:0] shift_count;
     lzc u0(
@@ -78,6 +75,10 @@ module fadd
 
     wire [8:0] e_shifted = {1'b0,eb} - {3'b0,shift_count};
     wire udf_c = (e_shifted[8] | ~|e_shifted); // e_shifted <= 0
+    wire s_res = udf_c ? 1'b0 :
+                 mxy[25] ? ~s_temp :
+                 myx[25] ? s_temp :
+                           1'b0;
     wire [24:0] m_c_temp = udf_c ? 25'b0 : m_abs << shift_count;
     wire [7:0] e_c_temp = udf_c ? 8'b0 : e_shifted[7:0];
     wire [34:0] pre_res_c = {s_res,e_c_temp,m_c_temp,1'b0};

@@ -26,8 +26,8 @@ module fadd
     wire [7:0] ediff = x_bigger ? exy[7:0] : eyx[7:0];
     wire [22:0] mb = x_bigger ? mx : my;
     wire [22:0] ms = x_bigger ? my : mx;
-    wire [23:0] mb_sup = |eb ? {1'b1,mb} : 24'b0;
-    wire [23:0] ms_sup = |es ? {1'b1,ms} : 24'b0;
+    wire [23:0] mb_sup = {1'b1,mb};
+    wire [23:0] ms_sup = {1'b1,ms};
     wire s_temp = x_bigger ? sx : sy;
     wire is_add = ~(sx ^ sy);
     wire is_close = ~|ediff[7:1] & ~is_add;

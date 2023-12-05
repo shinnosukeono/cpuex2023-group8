@@ -92,22 +92,25 @@ module fadd_pipe
     wire [25:0] mxy = {1'b0,mb_sup,1'b0} - ms_c_shifted;
     wire [25:0] myx = ms_c_shifted - {1'b0,mb_sup,1'b0};
     wire [24:0] m_abs = mxy[25] ? myx[24:0] : mxy[24:0];
-    wire s_res = mxy[25] ? ~s_temp :
-                myx[25] ? s_temp :
-                          1'b0;
 
     reg [24:0] m_abs_reg;
     reg [7:0] eb_reg;
-    reg s_res_reg;
+    reg mxy25_reg;
+    reg myx25_reg;
+    reg s_temp_c_reg;
     always @(posedge clk) begin
         if (~rstn) begin
             m_abs_reg <= 25'b0;
             eb_reg <= 8'b0;
-            s_res_reg <= 1'b0;
+            mxy25_reg <= 1'b0;
+            myx25_reg <= 1'b0;
+            s_temp_c_reg <= 1'b0;
         end else begin
             m_abs_reg <= m_abs;
             eb_reg <= eb;
-            s_res_reg <= s_res;
+            mxy25_reg <= mxy[25];
+            myx25_reg <= myx[25];
+            s_temp_c_reg <= s_temp;
         end
     end
 
@@ -119,6 +122,10 @@ module fadd_pipe
 
     wire [8:0] e_shifted = {1'b0,eb_reg} - {3'b0,shift_count};
     wire udf_c = (e_shifted[8] | ~|e_shifted); // e_shifted <= 0
+    wire s_res = udf_c     ? 1'b0 :
+                 mxy25_reg ? ~s_temp_c_reg :
+                 myx25_reg ? s_temp_c_reg :
+                             1'b0;
     wire [24:0] m_c_temp = udf_c ? 25'b0 : m_abs_reg << shift_count;
     wire [7:0] e_c_temp = udf_c ? 8'b0 : e_shifted[7:0];
     wire [34:0] pre_res_c = {s_res_reg,e_c_temp,m_c_temp,1'b0};

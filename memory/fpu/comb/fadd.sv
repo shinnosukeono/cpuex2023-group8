@@ -41,7 +41,7 @@ module fadd
     wire [27:0] m_add = is_add ? {1'b0,mb_sup,3'b0} + {1'b0,ms_packed} : {1'b0,mb_sup,3'b0} - {1'b0,ms_packed};
 
     wire udf = (~|eb[7:1] & eb & ~m_add[27] & ~m_add[26]) | ~|eb;
-    wire ovf = &eb | (&eb[7:1] & ~eb[0] & m_add[27]); // eb == 255 or (eb == 254 and MSB of m_add is 1)
+    wire ovf = (&eb & (m_add[27] | m_add[26])) | (&eb[7:1] & ~eb[0] & m_add[27]); // eb == 255 or (eb == 254 and MSB of m_add is 1)
     wire s_add = udf ? 1'b0 : s_temp;
     wire [7:0] e_add = udf                      ? 8'b0 :
                        ovf                      ? 8'hff :

@@ -1,10 +1,10 @@
-`include "lib/mux.sv"
-`include "proc_common/regfile.sv"
-`include "proc_common/c_regfile.sv"
-`include "pipeline/control_unit.sv"
-`include "pipeline/extend.sv"
-`include "pipeline/if/control_signal.sv"
-`include "pipeline/if/data_signal.sv"
+`include "../lib/mux.sv"
+`include "../proc_common/regfile.sv"
+`include "../proc_common/c_regfile.sv"
+`include "control_unit.sv"
+`include "extend.sv"
+`include "if/control_signal.sv"
+`include "if/data_signal.sv"
 
 module instr_decode (
     input logic clk, rst,

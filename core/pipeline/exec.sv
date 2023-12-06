@@ -1,6 +1,6 @@
-`include "proc_common/alu.sv"
-`include "pipeline/if/control_signal.sv"
-`include "pipeline/if/data_signal.sv"
+`include "../proc_common/alu.sv"
+`include "if/control_signal.sv"
+`include "if/data_signal.sv"
 
 module exec (
     input logic rst,

@@ -1,11 +1,11 @@
-`include "pipeline/instr_fetch.sv"
-`include "pipeline/instr_decode.sv"
-`include "pipeline/exec.sv"
-`include "pipeline/memory_access.sv"
-`include "pipeline/write_back.sv"
-`include "pipeline/hazard_unit.sv"
-`include "pipeline/if/control_signal.sv"
-`include "pipeline/if/data_signal.sv"
+`include "instr_fetch.sv"
+`include "instr_decode.sv"
+`include "exec.sv"
+`include "memory_access.sv"
+`include "write_back.sv"
+`include "hazard_unit.sv"
+`include "if/control_signal.sv"
+`include "if/data_signal.sv"
 
 module riscv_pipeline (
     input logic clk, rst,

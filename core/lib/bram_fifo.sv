@@ -1,4 +1,4 @@
-`include "hw/sdp_ram.v"
+`include "../memory/sdp_ram.v"
 
 module bram_fifo #(
     parameter DATAW = 32,

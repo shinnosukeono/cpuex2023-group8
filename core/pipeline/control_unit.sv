@@ -1,8 +1,8 @@
 //TODO: パイプライン化
 `include "main_decoder.sv"
 `include "alu_decoder.sv"
-`include "proc_common/c_reg_decoder.sv"
-`include "pipeline/if/control_signal.sv"
+`include "../proc_common/c_reg_decoder.sv"
+`include "if/control_signal.sv"
 
 module control_unit (
     input logic [6:0] op_6_0,

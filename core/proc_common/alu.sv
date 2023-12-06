@@ -1,5 +1,5 @@
-`include "lib/mux.sv"
-`include "lib/adder.sv"
+`include "../lib/mux.sv"
+`include "../lib/adder.sv"
 
 module alu #(
     parameter N = 32

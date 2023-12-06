@@ -1,5 +1,5 @@
-`include "pipeline/if/control_signal.sv"
-`include "pipeline/if/data_signal.sv"
+`include "if/control_signal.sv"
+`include "if/data_signal.sv"
 
 module write_back (
     // input

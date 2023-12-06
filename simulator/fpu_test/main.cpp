@@ -107,10 +107,8 @@ float FPUfadd(int x, int y)
     int x_frac = (x & ((1 << 23) - 1)) | (1 << 23);
     int y_frac = (y & ((1 << 23) - 1)) | (1 << 23);
 
-    if (x_exp == 0)
-        return *(float *)&y;
-    if (y_exp == 0)
-        return *(float *)&x;
+    // if (y_exp == 0)
+    //     return *(float *)&x;
 
     int exp_diff = x_exp - y_exp;
     int frac = 0;
@@ -165,29 +163,30 @@ float FPUfadd(int x, int y)
     if (x_sign != y_sign)
     {
         y_frac = -(y_frac << 3 | Gbit << 2 | Rbit << 1 | R2bit);
-        Gbit = (y_frac >> 2) & 1;
-        Rbit = (y_frac >> 1) & 1;
-        R2bit = y_frac & 1;
-        y_frac = y_frac >> 3;
+        x_frac = x_frac << 3;
         frac = x_frac + y_frac;
+        Gbit = (frac >> 2) & 1;
+        Rbit = (frac >> 1) & 1;
+        R2bit = frac & 1;
+        frac = frac >> 3;
         sub_flag = 1;
     }
     else
     {
         frac = x_frac + y_frac;
     }
-    ulp = frac & 1;
+    frac = (frac << 3) | (Gbit << 2) | (Rbit << 1) | (R2bit);
     exp = x_exp;
     sign = x_sign;
 
-    if (frac & (1 << 24) && sub_flag == 0)
+    if (frac & (1 << 27) && sub_flag == 0)
     {
         // 仮数部がオーバーフローした
         exp++;
     }
     else
     {
-        while (!(frac & (1 << 23)))
+        while (!(frac & (1 << 26)))
         {
             // 仮数部がアンダーフローした
             frac = frac << 1;
@@ -195,7 +194,7 @@ float FPUfadd(int x, int y)
         }
     }
 
-    if (exp >= 255)
+    if (exp >= 255 && (!(sub_flag) || exp_diff > 1))
     {
         // オーバーフローした
         frac = 0;
@@ -227,14 +226,21 @@ float FPUfadd(int x, int y)
     // }
 
     // 丸め処理
-    frac = (frac << 2) | (Gbit << 1) | (Rbit | R2bit);
+
+    // print_binary(frac);
+    // cout << " " << Gbit << " " << Rbit << " " << R2bit << endl;
+    // if (sub_flag){
+    //     frac = (frac << 3) | (Gbit << 2) | (Rbit << 1) | (R2bit);
+    // }else{
+    //     frac = (frac << 2) | (Gbit << 1) | (Rbit | R2bit);
+    // }
 
     float z = round_even(sign, exp, frac);
-    if (z != fadd(*(float*)&x,*(float*)&y)){
-        return fadd(*(float*)&x,*(float*)&y);
-    }else{
-        return z;
-    }
+    // if (z != fadd(*(float*)&x,*(float*)&y)){
+    //     return fadd(*(float*)&x,*(float*)&y);
+    // }
+        
+    return z;
 }
 
 float FPUfsub(int x, int y)
@@ -636,21 +642,33 @@ void check(){
             }
         }
 
+        if (input.size() != 3){
+            cout << "line: " << line << endl;
+            cout << "input size: " << input.size() << endl;
+            exit(1);
+        }
+
         float simu_ans = FPUfadd(input[0], input[1]);
         float correct_ans = *(float*)&input[0]+*(float*)&input[1];
 
-        if (simu_ans != *(float*)&input[2]){
+        if (*(int*)&simu_ans != *(int*)&input[2]){
             cout << "line: " << line << endl;
             cout << "FPUfadd: " << endl;
             cout << "x: " << *(float*)&input[0] << endl; print_binary(*(int*)&input[0]); cout << endl;
+            // hex output
+            cout << hex << *(int*)&input[0] << endl;
             cout << "y: " << *(float*)&input[1] << endl; print_binary(*(int*)&input[1]); cout << endl;
+            cout << hex << *(int*)&input[1] << endl;
             cout << "simu ans: " << simu_ans << endl;
             print_binary(*(int*)&simu_ans); cout << endl;
+            cout << hex << *(int*)&simu_ans << endl;
             cout << "verilog ans: " << *(float*)&input[2] << endl;
             print_binary(*(int*)&input[2]); cout << endl;
+            cout << hex << *(int*)&input[2] << endl;
             cout << "correct ans: " << fadd(*(float*)&input[0],*(float*)&input[1]) << endl;
-            print_binary(*(int*)&correct_ans);
-            cout << endl;
+            print_binary(*(int*)&correct_ans); cout << endl;
+            cout << hex << *(int*)&correct_ans << endl;
+            //exit(1);
         }
 
         line++;

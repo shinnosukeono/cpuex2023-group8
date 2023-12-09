@@ -13,7 +13,7 @@ module fdiv
     wire [22:0] mx, my;
     assign {sx,ex,mx} = x;
     assign {sy,ey,my} = y;
-    wire s_res = sx ^ sy;
+    wire s_res_temp = sx ^ sy;
 
     wire [31:0] my_inv;
     finv fdiv_finv(
@@ -36,12 +36,15 @@ module fdiv
                             (e_my_inv[0] & ~e_m_mul[0]) ? ex - ey + 128 :
                             (~e_my_inv[0] & e_m_mul[0]) ? ex - ey + 126 :
                                                           ex - ey + 127;
+    wire udf = e_res_temp[9] & e_res_temp[8];
+    wire ovf = ~e_res_temp[9] & e_res_temp[8];
+    wire [7:0] e_res = udf ? 8'b0 : // underflow
+                       ovf ? 8'hff : // overflow
+                             e_res_temp[7:0];
+    wire s_res = udf ? 1'b0 : s_res_temp;
+    wire [22:0] m_res = (udf | ovf) ? 23'b0 : m_mul[22:0];
 
-    wire [7:0] e_res = (e_res_temp[9] & e_res_temp[8])  ? 8'b0 : // underflow
-                       (~e_res_temp[9] & e_res_temp[8]) ? 8'hff : // overflow
-                                                          e_res_temp[7:0];
-
-    assign res = {s_res,e_res,m_mul[22:0]};
+    assign res = {s_res,e_res,m_res};
 endmodule
 
 `default_nettype wire

@@ -285,6 +285,12 @@ float FPUfmul(int x, int y)
         frac = 0;
     }
 
+    if (exp <= 0){
+        sign = 0;
+        exp = 0;
+        frac = 0;
+    }
+
     int ans = (sign << 31) | (exp << 23) | (frac & (((1 << 23) - 1)));
     return *(float *)&ans;
 }
@@ -335,9 +341,20 @@ float FPUfdiv(int x, int y)
 
     float finv_ans = FPUfinv(y_frac | (0b01111111 << 23));
     float fmul_ans = FPUfmul(x_frac | (0b01111111 << 23), *(int*)&finv_ans);
+    int frac = (*(int*)&fmul_ans & (((1 << 23) - 1)));
 
     exp = exp + ((*(int*)&fmul_ans >> 23) & ((1 << 8) - 1)) - 127;
-    int ans = (sign << 31) | (exp << 23) | (*(int*)&fmul_ans & (((1 << 23) - 1)));
+
+    if (exp > 255){
+        exp = 255;
+        frac = 0;
+    }
+    if (exp < 0){
+        exp = 0;
+        frac = 0;
+        sign = 0;
+    }
+    int ans = (sign << 31) | (exp << 23) | frac;
     return *(float *)&ans;
 }
 
@@ -624,7 +641,7 @@ void check(){
         exit(1);
     }
 
-    int line = 0;
+    int line = 1;
 
     while (getline(ifs, binaryInput))
     {
@@ -648,25 +665,25 @@ void check(){
             exit(1);
         }
 
-        float simu_ans = FPUfadd(input[0], input[1]);
-        float correct_ans = *(float*)&input[0]+*(float*)&input[1];
+        float simu_ans = FPUfdiv(input[0], input[1]);
+        float correct_ans = fdiv(*(float*)&input[0],*(float*)&input[1]);
 
         if (*(int*)&simu_ans != *(int*)&input[2]){
             cout << "line: " << line << endl;
-            cout << "FPUfadd: " << endl;
-            cout << "x: " << *(float*)&input[0] << endl; print_binary(*(int*)&input[0]); cout << endl;
+            cout << "FPUfdiv: " << endl;
+            cout << "x: " << *(float*)&input[0] << endl; print_binary(*(int*)&input[0]); cout << " ";
             // hex output
             cout << hex << *(int*)&input[0] << endl;
-            cout << "y: " << *(float*)&input[1] << endl; print_binary(*(int*)&input[1]); cout << endl;
+            cout << "y: " << *(float*)&input[1] << endl; print_binary(*(int*)&input[1]); cout << " ";
             cout << hex << *(int*)&input[1] << endl;
             cout << "simu ans: " << simu_ans << endl;
-            print_binary(*(int*)&simu_ans); cout << endl;
+            print_binary(*(int*)&simu_ans); cout << " ";
             cout << hex << *(int*)&simu_ans << endl;
             cout << "verilog ans: " << *(float*)&input[2] << endl;
-            print_binary(*(int*)&input[2]); cout << endl;
+            print_binary(*(int*)&input[2]); cout << " ";
             cout << hex << *(int*)&input[2] << endl;
-            cout << "correct ans: " << fadd(*(float*)&input[0],*(float*)&input[1]) << endl;
-            print_binary(*(int*)&correct_ans); cout << endl;
+            cout << "correct ans: " << correct_ans << endl;
+            print_binary(*(int*)&correct_ans); cout << " ";
             cout << hex << *(int*)&correct_ans << endl;
             //exit(1);
         }

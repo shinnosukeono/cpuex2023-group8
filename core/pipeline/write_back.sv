@@ -9,6 +9,9 @@ module write_back (
     // output
     data_back_io.in data_back_if,
 
+    // to instr memoty
+    output logic [31:0] instr_addr,
+
     // from instr fetch stage
     input logic [31:0] pc_plus4_f,
 
@@ -37,4 +40,5 @@ module write_back (
     end
 
     assign data_back_if.pc = (pc_src_e) ? pc_target_e : pc_plus4_f;
+    assign instr_addr = data_back_if.pc;
 endmodule

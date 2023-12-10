@@ -7,6 +7,8 @@ module riscv_pipeline_wrapper (
 
     // to instr memory
     output wire [31:0] pc,
+    output wire en_instr_mem,
+    output wire rst_instr_mem,
 
     // from data memory
     input wire [31:0] read_data,
@@ -25,6 +27,8 @@ module riscv_pipeline_wrapper (
         .rst(rst),
         .instr(instr),
         .pc(pc),
+        .en_instr_mem(en_instr_mem),
+        .rst_instr_mem(rst_instr_mem),
         .read_data(read_data),
         .data_we(data_we),
         .data_addr(data_addr),

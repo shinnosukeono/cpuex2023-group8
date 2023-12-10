@@ -10,14 +10,9 @@ module instr_fetch (
     // from instr memory
     input logic [31:0] instr,
 
-    // to instr memoty
-    output logic [31:0] instr_addr,
-
     // to write back stage
     output [31:0] pc_plus4_f
 );
-
-    assign instr_addr = data_back_if.pc;
 
     assign pc_plus4_f = data_fetch_if.pc_plus4;
 

@@ -15,6 +15,8 @@ module riscv_pipeline (
 
     // to instr memory
     output logic [31:0] pc,
+    output logic en_instr_mem,
+    output logic rst_instr_mem,
 
     // from data memory
     input logic [31:0] read_data,
@@ -48,7 +50,6 @@ module riscv_pipeline (
         .data_back_if(data_back_if_out.out),
         .data_fetch_if(data_fetch_if_in.in),
         .instr(instr),
-        .instr_addr(pc),
         .pc_plus4_f(pc_plus4_f)
     );
 
@@ -222,6 +223,7 @@ module riscv_pipeline (
         .control_mem_if(control_mem_if_out.out),
         .data_mem_if(data_mem_if_out.out),
         .data_back_if(data_back_if_in.in),
+        .instr_addr(pc),
         .pc_plus4_f(pc_plus4_f),
         .reg_write_w(reg_write_w),
         .rd_w(rd_w),
@@ -259,6 +261,9 @@ module riscv_pipeline (
         .reg_write_w(control_mem_if_out.reg_write)
     );
 
+    assign en_instr_mem = ~stall_d;
+    assign rst_instr_mem = flush_d;
+    
     assign status = data_decode_if_in.status;
     assign result_bytes = data_decode_if_in.result_bytes;
 endmodule

@@ -6,13 +6,11 @@ reg[31:0] a;
 reg[31:0] b;
 wire[31:0] c;
 reg[31:0] i;
-integer j=1;
+integer j=5;
 
 fmul and_instance(a, b, c); //オブジェクト指向感
 
 initial begin
-        $dumpfile("test.vcd");
-        $dumpvars(0, and_instance);
 
         a = 32'h7800000; b = 32'h81FFFFFF;
 

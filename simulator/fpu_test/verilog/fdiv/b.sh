@@ -1,3 +1,9 @@
+#!/bin/bash
+
+current=$(pwd)
+
 cd ../..
+sed '1,3d' check.txt > temp_check.txt
+mv temp_check.txt check.txt
 ./a.sh
-cd verilog/fdiv
+cd "$current"

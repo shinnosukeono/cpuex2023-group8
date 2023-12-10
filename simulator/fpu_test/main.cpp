@@ -345,11 +345,11 @@ float FPUfdiv(int x, int y)
 
     exp = exp + ((*(int*)&fmul_ans >> 23) & ((1 << 8) - 1)) - 127;
 
-    if (exp > 255){
+    if (exp >= 255){
         exp = 255;
         frac = 0;
     }
-    if (exp < 0){
+    if (exp <= 0){
         exp = 0;
         frac = 0;
         sign = 0;
@@ -360,14 +360,18 @@ float FPUfdiv(int x, int y)
 
 float FPUfsqrt(int x){
     int x_sign = (x >> 31) & 1;
-    if (x_sign == 1){
-        cerr << "FPUfsqrt: x is negative" << endl;
-        exit(1);
-    }
+    // if (x_sign == 1){
+    //     cerr << "FPUfsqrt: x is negative" << endl;
+    //     exit(1);
+    // }
     int x_exp = (x >> 23) & ((1 << 8) - 1);
     int x_frac = (x) & ((1 << 23) - 1);
     int index = x_frac >> 13;
     // cout << index << endl;
+
+    if (x_exp == 0){
+        return 0;
+    }
 
     int a,b;
 
@@ -404,9 +408,10 @@ float FPUfsqrt(int x){
     return *(float *)&ans;
 }
 
-bool FPUfeq(int x, int y){
-    if (x ^ y) return false;
-    return true;
+float FPUfeq(int x, int y){
+    int one = 1;
+    if (x == y) return *(float*)&one;
+    return 0;
 }
 
 float FPUfhalf(int x){
@@ -425,26 +430,87 @@ float FPUfneg(int x){
     return x ^ 0x80000000;
 }
 
-bool FPUflt(int x, int y){
-    if (x < y) return true;
-    return false;
+float FPUflt(int x, int y){
+    int one = 1;
+    int x_sign = (x >> 31) & 1;
+    int y_sign = (y >> 31) & 1;
+    int x_exp = (x >> 23) & ((1 << 8) - 1);
+    int y_exp = (y >> 23) & ((1 << 8) - 1);
+    int x_frac = (x) & ((1 << 23) - 1);
+    int y_frac = (y) & ((1 << 23) - 1);
+    if (x_sign == 1 && y_sign == 0) return *(float*)&one;
+    if (x_sign == 0 && y_sign == 1) return 0;
+    if (x_sign == 1 && y_sign == 1){
+        if (x_exp > y_exp) return *(float*)&one;
+        if (x_exp < y_exp) return 0;
+        if (x_frac > y_frac) return *(float*)&one;
+        if (x_frac < y_frac) return 0;
+        return 0;
+    }else{
+        if (x_exp < y_exp) return *(float*)&one;
+        if (x_exp > y_exp) return 0;
+        if (x_frac < y_frac) return *(float*)&one;
+        if (x_frac > y_frac) return 0;
+        return 0;
+    }
 }
 
-bool FPUfle(int x, int y){
-    if (x <= y) return true;
-    return false;
+float FPUfle(int x, int y){
+    int one = 1;
+    int x_sign = (x >> 31) & 1;
+    int y_sign = (y >> 31) & 1;
+    int x_exp = (x >> 23) & ((1 << 8) - 1);
+    int y_exp = (y >> 23) & ((1 << 8) - 1);
+    int x_frac = (x) & ((1 << 23) - 1);
+    int y_frac = (y) & ((1 << 23) - 1);
+    if (x_sign == 1 && y_sign == 0) return *(float*)&one;
+    if (x_sign == 0 && y_sign == 1) return 0;
+    if (x_sign == 1 && y_sign == 1){
+        if (x_exp > y_exp) return *(float*)&one;
+        if (x_exp < y_exp) return 0;
+        if (x_frac > y_frac) return *(float*)&one;
+        if (x_frac < y_frac) return 0;
+        return *(float*)&one;
+    }else{
+        if (x_exp < y_exp) return *(float*)&one;
+        if (x_exp > y_exp) return 0;
+        if (x_frac < y_frac) return *(float*)&one;
+        if (x_frac > y_frac) return 0;
+        return *(float*)&one;
+    }
 }
 
-bool FPUfiszero(int x){
+float FPUfiszero(int x){
     return FPUfeq(x, 0);
 }
 
-bool FPUfispos(int x){
+float FPUfispos(int x){
     return FPUflt(0, x);
 }
 
-bool FPUfisneg(int x){
+float FPUfisneg(int x){
     return FPUflt(x, 0);
+}
+
+float FPUfsgnjx(int x, int y){
+    int x_sign = (x >> 31) & 1;
+    int y_sign = (y >> 31) & 1;
+    int sign = x_sign ^ y_sign;
+    int ans = (sign << 31) | (x & 0x7FFFFFFF);
+    return *(float*)&ans;
+}
+
+float FPUfsgnjn(int x,int y){
+    int y_sign = (y >> 31) & 1;
+    int sign = (y_sign ^ 1);
+    int ans = (sign << 31) | (x & 0x7FFFFFFF);
+    return *(float*)&ans;
+}
+
+float FPUfsgnj(int x,int y){
+    int y_sign = (y >> 31) & 1;
+    int ans = (y_sign << 31) | (x & 0x7FFFFFFF);
+    return *(float*)&ans;
 }
 
 int FPUftoi(int x){
@@ -460,10 +526,12 @@ int FPUftoi(int x){
     int res = 0;
 
     if (x_exp > 0){
-        return INT32_MAX;
+        if (x_sign == 0) return 0x7FFFFFFF;
+        else return 0x80000000;
     }else if (x_exp < -31){
         return 0;
     }else if (x_exp == 0){
+        res = x_frac;
         if (x_sign == 1){
             res = -res;
         }
@@ -498,7 +566,7 @@ float FPUitof(int x){
         }
         x_exp--;
         if (x_exp > 23){
-            int LSB = (x_frac >> (x_exp-22)) & 1;
+            int LSB = (x_frac >> (x_exp-24)) & 1;
             x_frac = x_frac >> (x_exp-23);
             if (LSB == 1){
                 x_frac++;
@@ -665,12 +733,12 @@ void check(){
             exit(1);
         }
 
-        float simu_ans = FPUfdiv(input[0], input[1]);
-        float correct_ans = fdiv(*(float*)&input[0],*(float*)&input[1]);
+        auto simu_ans = FPUitof(*(int*)&input[0]);//,*(int*)&input[1]);
+        float correct_ans = fmul(*(float*)&input[0],*(float*)&input[1]);
 
         if (*(int*)&simu_ans != *(int*)&input[2]){
             cout << "line: " << line << endl;
-            cout << "FPUfdiv: " << endl;
+            cout << "FPU: " << endl;
             cout << "x: " << *(float*)&input[0] << endl; print_binary(*(int*)&input[0]); cout << " ";
             // hex output
             cout << hex << *(int*)&input[0] << endl;
@@ -685,7 +753,7 @@ void check(){
             cout << "correct ans: " << correct_ans << endl;
             print_binary(*(int*)&correct_ans); cout << " ";
             cout << hex << *(int*)&correct_ans << endl;
-            //exit(1);
+            exit(1);
         }
 
         line++;

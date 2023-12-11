@@ -74,7 +74,7 @@ module fadd
     );
 
     wire [8:0] e_shifted = {1'b0,eb} - {3'b0,shift_count};
-    wire udf_c = (e_shifted[8] | ~|e_shifted); // e_shifted <= 0
+    wire udf_c = (e_shifted[8] | ~|e_shifted) | ~|m_abs; // e_shifted <= 0 or m_abs == 0
     wire s_res = udf_c ? 1'b0 :
                  mxy[25] ? ~s_temp :
                  myx[25] ? s_temp :

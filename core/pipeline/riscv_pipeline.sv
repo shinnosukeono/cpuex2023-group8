@@ -16,7 +16,6 @@ module riscv_pipeline (
     // to instr memory
     output logic [31:0] pc,
     output logic en_instr_mem,
-    output logic rst_instr_mem,
 
     // from data memory
     input logic [31:0] read_data,
@@ -262,7 +261,6 @@ module riscv_pipeline (
     );
 
     assign en_instr_mem = ~stall_d;
-    assign rst_instr_mem = flush_d;
     
     assign status = data_decode_if_in.status;
     assign result_bytes = data_decode_if_in.result_bytes;

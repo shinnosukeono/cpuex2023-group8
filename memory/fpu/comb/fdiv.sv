@@ -36,7 +36,7 @@ module fdiv
                             (e_my_inv[0] & ~e_m_mul[0]) ? ex - ey + 128 :
                             (~e_my_inv[0] & e_m_mul[0]) ? ex - ey + 126 :
                                                           ex - ey + 127;
-    wire udf = e_res_temp[9] & e_res_temp[8];
+    wire udf = (e_res_temp[9] & e_res_temp[8]) | ~|e_res_temp; // e_res_temp <= 0
     wire ovf = ~e_res_temp[9] & e_res_temp[8];
     wire [7:0] e_res = udf ? 8'b0 : // underflow
                        ovf ? 8'hff : // overflow

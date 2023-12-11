@@ -39,7 +39,7 @@ module main_decoder (
             7'b1100111: controls = 14'b1_000_1_0_010_0_10_1_0;  // jalr
             7'b1101111: controls = 14'b1_011_x_0_010_0_xx_1_0;  // jal, don't care alu_src, alu_op
             7'b1110011: controls = 14'b1_000_x_0_011_0_xx_0_1;  // csrrw
-            default: controls = 14'bx_x_xxx_x_x_xxx_x_xx_x;  // error
+            default: controls = 14'bx_x_xxx_0_x_xxx_x_xx_x;  // error
         endcase
     end
 endmodule

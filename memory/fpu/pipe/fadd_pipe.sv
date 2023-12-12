@@ -128,7 +128,7 @@ module fadd_pipe
                              1'b0;
     wire [24:0] m_c_temp = udf_c ? 25'b0 : m_abs_reg << shift_count;
     wire [7:0] e_c_temp = udf_c ? 8'b0 : e_shifted[7:0];
-    wire [34:0] pre_res_c = {s_res_reg,e_c_temp,m_c_temp,1'b0};
+    wire [34:0] pre_res_c = {s_res,e_c_temp,m_c_temp,1'b0};
 
     // round
     // used: pre_res, pre_res_c, is_close

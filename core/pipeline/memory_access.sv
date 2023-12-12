@@ -13,13 +13,9 @@ module memory_access (
     // from data memory
     input logic [31:0] dout,
 
-    // to data memory
-    output logic we,
-
     // to exec stage
     output logic [31:0] alu_result_m
 );
-    assign we = control_exec_if.mem_write;
     assign alu_result_m = data_exec_if.alu_result;
 
     assign control_mem_if.reg_write = control_exec_if.reg_write;

@@ -16,6 +16,7 @@ module exec (
     // to data memory
     output logic [31:0] data_addr,
     output logic [31:0] data_to_memory,
+    output logic data_memory_we,
 
     // from memory access stage
     input logic [31:0] alu_result_m,
@@ -87,6 +88,7 @@ module exec (
         .result(data_addr)
     );
     assign data_to_memory = data_exec_if.write_data;
+    assign data_memory_we = control_decode_if.mem_write;
 
     assign pc_target_e = data_decode_if.pc + data_decode_if.imm_ext;
 

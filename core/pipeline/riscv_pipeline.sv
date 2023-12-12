@@ -156,6 +156,7 @@ module riscv_pipeline (
         .data_exec_if(data_exec_if_in.in),
         .data_addr(data_addr),
         .data_to_memory(din),
+        .data_memory_we(data_we),
         .alu_result_m(alu_result_m),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
@@ -194,7 +195,6 @@ module riscv_pipeline (
         .control_mem_if(control_mem_if_in.in),
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
-        .we(data_we),
         .alu_result_m(alu_result_m)
     );
 

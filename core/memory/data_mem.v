@@ -33,11 +33,13 @@ module data_mem #(
     reg [31:0] data_mem_reg [63:0];
     reg [5:0] addr_aligned;
     reg [31:0] din_buffered;
+    reg we_buffered;
     
     always @(posedge clk) begin
         addr_aligned <= addr[7:2];
         din_buffered <= din;
-        if (we) begin
+        we_buffered <= we;
+        if (we_buffered) begin
             data_mem_reg[addr_aligned] <= din_buffered;
         end
     end

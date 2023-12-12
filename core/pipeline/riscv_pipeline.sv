@@ -19,6 +19,7 @@ module riscv_pipeline (
 
     // from data memory
     input logic [31:0] read_data,
+    input logic cache_data_valid,
 
     // to data memory
     output logic data_we,
@@ -153,6 +154,8 @@ module riscv_pipeline (
         .data_decode_if(data_decode_if_out.out),
         .control_exec_if(control_exec_if_in.in),
         .data_exec_if(data_exec_if_in.in),
+        .data_addr(data_addr),
+        .data_to_memory(din),
         .alu_result_m(alu_result_m),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
@@ -192,8 +195,6 @@ module riscv_pipeline (
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
         .we(data_we),
-        .data_addr(data_addr),
-        .din(din),
         .alu_result_m(alu_result_m)
     );
 
@@ -256,6 +257,8 @@ module riscv_pipeline (
         .forward_b_e(forward_b_e),
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),
+        .result_src_m_0(control_exec_if_out.result_src[0]),
+        .cache_data_valid(cache_data_valid),
         .rd_w(rd_w),
         .reg_write_w(control_mem_if_out.reg_write)
     );

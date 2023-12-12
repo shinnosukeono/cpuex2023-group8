@@ -29,6 +29,10 @@ module hazard_unit (
     // from memory access stage
     input logic [4:0] rd_m,
     input logic reg_write_m,
+    input logic result_src_m_0,
+
+    // from data memory
+    input logic cache_data_valid,
 
     // from write back stage
     input logic [4:0] rd_w,
@@ -67,9 +71,11 @@ module hazard_unit (
 
     // stall in load hazard
     logic lw_stall;
+    logic cache_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
-    assign stall_f = (lw_stall === 1'bx) ? rst : lw_stall;
-    assign stall_d = (lw_stall === 1'bx) ? rst : lw_stall;
+    assign cache_stall = result_src_m_0 & ~cache_data_valid; 
+    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
+    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
 
     // flush in branch or load-oriented bubble
     assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;

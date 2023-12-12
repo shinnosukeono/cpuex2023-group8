@@ -1,4 +1,5 @@
 `include "../proc_common/alu.sv"
+`include "../proc_common/alu_simplified.sv"
 `include "if/control_signal.sv"
 `include "if/data_signal.sv"
 
@@ -11,6 +12,10 @@ module exec (
     // output
     control_exec_io.in control_exec_if,
     data_exec_io.in data_exec_if,
+
+    // to data memory
+    output logic [31:0] data_addr,
+    output logic [31:0] data_to_memory,
 
     // from memory access stage
     input logic [31:0] alu_result_m,
@@ -71,6 +76,17 @@ module exec (
             default: data_exec_if.write_data = 32'bx;  // error
         endcase
     end
+
+    // to data memory
+    alu_simplified #(
+        .N(32)
+    ) i_alu_simplified (
+        .a(src_a),
+        .b(data_decode_if.imm_ext),
+        .alu_control(control_decode_if.alu_control),
+        .result(data_addr)
+    );
+    assign data_to_memory = data_exec_if.write_data;
 
     assign pc_target_e = data_decode_if.pc + data_decode_if.imm_ext;
 

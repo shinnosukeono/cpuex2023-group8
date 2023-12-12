@@ -2,7 +2,6 @@
 
 module instr_mem (
     input wire clk,
-    input wire rst,
     input wire we,
     input wire en,
     input wire [31:0] addr,
@@ -15,7 +14,6 @@ module instr_mem (
 
     instr_mem_gen_for_pipeline_with_bram i_instr_mem (
         .clka(clk),
-        .rsta(rst),
         .wea(we),
         .ena(en),
         .addra(addra),

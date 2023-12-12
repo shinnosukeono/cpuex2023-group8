@@ -66,7 +66,7 @@ module fadd_pipe
 
     wire [27:0] m_add = is_add_reg ? {1'b0,mb_sup_reg,3'b0} + {1'b0,ms_packed_reg} : {1'b0,mb_sup_reg,3'b0} - {1'b0,ms_packed_reg};
 
-    wire udf = (~|eb_f_reg[7:1] & eb_f_reg & ~m_add[27] & ~m_add[26]) | ~|eb_f_reg;
+    wire udf = (~|eb_f_reg[7:1] & eb_f_reg[0] & ~m_add[27] & ~m_add[26]) | (~|eb_f_reg & ~m_add[27]);
     wire ovf = (&eb_f_reg & (m_add[27] | m_add[26])) | (&eb_f_reg[7:1] & ~eb_f_reg[0] & m_add[27]); // eb_f_reg == 255 or (eb_f_reg == 254 and MSB of m_add is 1)
     wire s_add = udf ? 1'b0 : s_temp_reg;
     wire [7:0] e_add = udf                      ? 8'b0 :
@@ -121,7 +121,7 @@ module fadd_pipe
     );
 
     wire [8:0] e_shifted = {1'b0,eb_reg} - {3'b0,shift_count};
-    wire udf_c = (e_shifted[8] | ~|e_shifted); // e_shifted <= 0
+    wire udf_c = (e_shifted[8] | ~|e_shifted) | ~|m_abs_reg; // e_shifted <= 0 or m_abs_reg == 0
     wire s_res = udf_c     ? 1'b0 :
                  mxy25_reg ? ~s_temp_c_reg :
                  myx25_reg ? s_temp_c_reg :

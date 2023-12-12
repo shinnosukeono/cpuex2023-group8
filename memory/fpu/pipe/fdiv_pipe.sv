@@ -14,7 +14,7 @@ module fdiv_pipe
     wire [22:0] mx, my;
     assign {sx,ex,mx} = x;
     assign {sy,ey,my} = y;
-    wire s_res = sx ^ sy;
+    wire s_res_temp = sx ^ sy;
 
     wire [31:0] my_inv;
     finv_pipe fdiv_finv(
@@ -48,7 +48,7 @@ module fdiv_pipe
             e_my_inv_reg <= e_my_inv;
             ex_reg <= ex;
             ey_reg <= ey;
-            s_res_reg <= s_res;
+            s_res_reg <= s_res_temp;
         end
     end
 
@@ -65,12 +65,15 @@ module fdiv_pipe
                             (e_my_inv_reg[0] & ~e_m_mul[0]) ? ex_reg - ey_reg + 128 :
                             (~e_my_inv_reg[0] & e_m_mul[0]) ? ex_reg - ey_reg + 126 :
                                                           ex_reg - ey_reg + 127;
+    wire udf = (e_res_temp[9] & e_res_temp[8]) | ~|e_res_temp; // e_res_temp <= 0
+    wire ovf = (~e_res_temp[9] & e_res_temp[8]) | (~e_res_temp[9] & ~e_res_temp[8] & &e_res_temp[7:0]); // e_res_temp >= 255
+    wire [7:0] e_res = udf ? 8'b0 : // underflow
+                       ovf ? 8'hff : // overflow
+                             e_res_temp[7:0];
+    wire s_res = udf ? 1'b0 : s_res_reg;
+    wire [22:0] m_res = (udf | ovf) ? 23'b0 : m_mul[22:0];
 
-    wire [7:0] e_res = (e_res_temp[9] & e_res_temp[8])  ? 8'b0 : // underflow
-                       (~e_res_temp[9] & e_res_temp[8]) ? 8'hff : // overflow
-                                                          e_res_temp[7:0];
-
-    assign res = {s_res_reg,e_res,m_mul[22:0]};
+    assign res = {s_res,e_res,m_res};
 endmodule
 
 `default_nettype wire

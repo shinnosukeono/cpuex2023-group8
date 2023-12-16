@@ -1,6 +1,7 @@
 module instr_gen (
     input wire clk,
     input wire [31:0] counter,
+    output reg addr_sel,
     output wire we,
     output reg [31:0] addr,
     output wire [31:0] dout
@@ -78,13 +79,17 @@ module instr_gen (
         32'h000fd073
     };
 
+    always @(posedge clk) begin
+        addr_sel <= we;
+    end
+
     assign we = (counter <= 32'h80) ? 1'b1 : 1'b0;
 
     always @(posedge clk) begin
-        if (counter == 32'h7f) begin
+        if (counter == 32'h80) begin
             addr <= 32'b0;
         end
-        else if (counter < 32'h7f) begin
+        else if (counter < 32'h80) begin
             addr <= (counter >> 2) << 2;
         end
     end

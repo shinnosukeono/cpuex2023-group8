@@ -11,15 +11,20 @@ module c_regfile (
     logic [1:0] addr_aligned;
     assign addr_aligned = addr[1:0];
 
-    always_ff @( posedge clk ) begin
-        if (rst)begin
-            c_reg[0] <= 32'b0;  // status register
-            c_reg[1] <= 32'b0;  // result bytes
-        end
-        begin
-            if (we) begin
-                c_reg[addr_aligned] <= din;
+    //regfile
+    generate
+        for (genvar i = 0; i <= 3; i++) begin
+            always_ff @( posedge clk ) begin
+                if (rst) begin
+                    c_reg[i] <= 32'b0;
+                end
             end
+        end
+    endgenerate
+
+    always_ff @( posedge clk ) begin
+        if (we) begin
+            c_reg[addr_aligned] <= din;
         end
     end
 

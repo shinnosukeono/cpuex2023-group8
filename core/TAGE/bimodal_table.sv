@@ -7,7 +7,7 @@ module bimodal_table #(
     input logic [31:0] pc_e,
     input logic is_taken,
     input logic is_correct,
-    output logic [COUNTER_LEN-1:0] rdata_counter,
+    output logic [COUNTER_LEN-1:0] rdata_counter
 );
     logic signed [COUNTER_LEN-1:0] counter_reg [(1<<INDEX_LEN)-1:0];
 
@@ -26,10 +26,10 @@ module bimodal_table #(
     logic [INDEX_LEN-1:0] w_index;
     assign w_index = pc_e[INDEX_LEN+1:2];
     always @(posedge clk) begin
-        if (is_taken && is_correct && (counter_reg[w_index] != {COUNTER_LEN(1'b1)})) begin
+        if (is_taken && is_correct && (counter_reg[w_index] != {COUNTER_LEN{1'b1}})) begin
             counter_reg[w_index] <= counter_reg[w_index] + 1'b1;
         end
-        else if (is_taken && ~is_correct && (counter_reg[w_index] != {COUNTER_LEN(1'b0)})) begin
+        else if (is_taken && ~is_correct && (counter_reg[w_index] != {COUNTER_LEN{1'b0}})) begin
             counter_reg[w_index] <= counter_reg[w_index] - 1'b1;
         end
         else begin

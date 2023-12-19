@@ -12,7 +12,7 @@ module update_controller #(
     input logic [USEFUL_LEN-1:0] useful_counter [N_COMPONENTS-2:0],
     output logic [N_COMPONENTS-2:0] allocate,
     output logic [N_COMPONENTS-2:0] dec_useful,
-    output logic reset_useful_counter;
+    output logic reset_useful_counter
 );
     // gracefully resetting counter
     logic [RESET_COUNTER_LEN-1:0] counter_reg;
@@ -74,7 +74,7 @@ module update_controller #(
             // if all useful_counter[j] (provider_index < j < N_COMPONENTS) > 0,
             // they should be decremented
             all_nonzero = 1'b1;
-            for (genvar i = provider_index + 1; i <= N_COMPONENTS - 1; i++) begin
+            for (int i = provider_index + 1; i <= N_COMPONENTS - 1; i++) begin
                 if (useful_counter[i] == {USEFUL_LEN{1'b0}}) begin
                     all_nonzero = 1'b0;
                 end
@@ -83,11 +83,13 @@ module update_controller #(
             if (all_nonzero) begin
                 // decrement all useful_counter[j] (provider_index < j < N_COMPONENTS)
                 // no new entry is allocated in this case, so leave allocate[j] unchanged
-                dec_useful = {(N_COMPONENTS - provider_index - 1){1'b1}, (provider_index + 1){1'b0}};
+                for (int i = N_COMPONENTS - 1; i >= provider_index + 1; i--) begin
+                    dec_useful[i] = 1'b1;
+                end
             end
             else begin
                 // find a component to be allocated new entry to
-                for (genvar i = N_COMPONENTS - 1; i >= provider_index + 1; i--) begin
+                for (int i = N_COMPONENTS - 1; i >= provider_index + 1; i--) begin
                     if (useful_counter[i] == {USEFUL_LEN{1'b0}}) begin
                         if (longest == 1'b0) begin
                             longest = i;

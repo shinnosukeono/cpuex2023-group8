@@ -34,7 +34,7 @@ module path_history #(
 
     // read data
     always_comb begin
-        for (genvar i = 0; i < PHIST_LEN; i++) begin
+        for (int i = 0; i < PHIST_LEN; i++) begin
             rdata_phist[i] = history_reg[history_index_reg + i];
         end
     end

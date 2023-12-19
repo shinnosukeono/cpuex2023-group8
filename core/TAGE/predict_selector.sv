@@ -12,7 +12,7 @@ module predict_selector #(
         provider_index = {($clog2(N_COMPONENTS)){1'b0}};
         alternate_index = {($clog2(N_COMPONENTS)){1'b0}};
 
-        for (genvar i = N_COMPONENTS-2; i >= 0; i--) begin
+        for (int i = N_COMPONENTS-2; i >= 0; i--) begin
             if (tag_matched[i]) begin
                 if (provider_index == {($clog2(N_COMPONENTS)){1'b0}}) begin
                     provider_index = i;

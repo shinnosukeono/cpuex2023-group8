@@ -13,9 +13,9 @@ module component #(
     input logic allocate,
     output logic [TAG_LEN-1:0] rdata_tag,
     output logic [USEFUL_LEN-1:0] rdata_useful,
-    output logic [COUNTER_LEN-1:0] rdata_counter,
+    output logic [COUNTER_LEN-1:0] rdata_counter
 );
-    logic signed [COUTNER_LEN-1:0] counter_reg [(1<<INDEX_LEN)-1:0];
+    logic signed [COUNTER_LEN-1:0] counter_reg [(1<<INDEX_LEN)-1:0];
     logic [TAG_LEN-1:0] tag_reg [(1<<INDEX_LEN)-1:0];
     logic [USEFUL_LEN-1:0] useful_reg [(1<<INDEX_LEN)-1:0];
 
@@ -46,7 +46,7 @@ module component #(
             counter_reg[index] <= counter_reg[index];
         end
 
-        if (inc_useful && useful_reg[index] != {INDEX_LEN{1'b1}}) begin
+        if (is_taken && useful_reg[index] != {INDEX_LEN{1'b1}}) begin
             useful_reg[index] <= useful_reg[index] + 1'b1;
         end
         else if (dec_useful && useful_reg[index] != {INDEX_LEN{1'b0}}) begin

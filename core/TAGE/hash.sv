@@ -11,7 +11,7 @@ module hash #(
     output logic [INDEX_LEN-1:0] index
 );
     logic [INDEX_LEN-1:0] path_history_extended;
-    assign path_history_extended = (INDEX_LEN <= PHIST_LEN) ? path_history[INDEX_LEN-1:0] : {(INDEX_LEN-PHIST_LEN){1'b0}, path_history};
+    assign path_history_extended = (INDEX_LEN <= PHIST_LEN) ? path_history[INDEX_LEN-1:0] : {{(INDEX_LEN-PHIST_LEN){1'b0}}, path_history};
 
     // just ignore higher-order bits
     assign index = (pc[INDEX_LEN+1:2] ^ global_history[INDEX_LEN-1:0]) ^ path_history_extended;

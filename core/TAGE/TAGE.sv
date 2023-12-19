@@ -7,7 +7,7 @@
 `include "predict_selector.sv"
 `include "update_controller.sv"
 
-module TAGE #(
+module tage #(
     parameter STORAGE_BUDGET_LEN = 15, // 32KiB
     parameter COUNTER_LEN = 3,
     parameter TAG_LEN = 9,
@@ -29,12 +29,12 @@ module TAGE #(
 
     // retrieve the saved values for the later evaluation
     input logic taken_predicted_e,
-    input [2:0] logic provider_index_e,
-    input [2:0] logic alternate_index_e,
+    input logic [2:0] provider_index_e,
+    input logic [2:0] alternate_index_e,
 
     output logic taken_predicted,
-    output [2:0] logic provider_index,
-    output [2:0] logic alternate_index
+    output logic [2:0] provider_index,
+    output logic [2:0] alternate_index
 );
     logic [GHIST_LEN-1:0] ghist;
 
@@ -183,10 +183,6 @@ module TAGE #(
     assign taken_candidate[4] = (counter[4][COUNTER_LEN-1] == 1'b0);
     assign tag_matched[3] = (pc_f[TAG_LEN+1:2] == tag[3]);
 
-    logic taken_predicted;
-    logic [2:0] provider_index;
-    logic [2:0] alternate_index;
-
     predict_selector #(
         .N_COMPONENTS(5)
     ) i_predict_selector (
@@ -203,7 +199,6 @@ module TAGE #(
         .RESET_COUNTER_LEN(RESET_COUNTER_LEN)
     ) i_update_controller (
         .clk(clk),
-        .rst(rst),
-        .
-    )
+        .rst(rst)
+    );
 endmodule

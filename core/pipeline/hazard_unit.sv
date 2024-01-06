@@ -12,6 +12,7 @@ module hazard_unit (
     input logic [4:0] rs2_d,
 
     // to exec reg
+    output logic stall_e,
     output logic flush_e,
 
     // from exec stage
@@ -25,6 +26,8 @@ module hazard_unit (
     output logic [1:0] forward_a_e,
     output logic [1:0] forward_b_e,
 
+    // to memory access reg
+    output logic stall_m,
 
     // from memory access stage
     input logic [4:0] rd_m,
@@ -33,6 +36,9 @@ module hazard_unit (
 
     // from data memory
     input logic cache_data_valid,
+
+    // to write back reg
+    output logic stall_w,
 
     // from write back stage
     input logic [4:0] rd_w,
@@ -73,12 +79,15 @@ module hazard_unit (
     logic lw_stall;
     logic cache_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
-    assign cache_stall = result_src_m_0 & ~cache_data_valid; 
+    assign cache_stall = (result_src_m_0 === 1'bx) ? ~cache_data_valid : (result_src_m_0 & ~cache_data_valid); 
     assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
     assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
+    assign stall_e = cache_stall;
+    assign stall_m = cache_stall;
+    assign stall_w = cache_stall;
 
     // flush in branch or load-oriented bubble
     assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
-    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : (lw_stall | pc_src_e);
+    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall);
 
 endmodule

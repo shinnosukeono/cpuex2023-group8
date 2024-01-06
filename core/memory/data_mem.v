@@ -23,7 +23,7 @@
 module data_mem #(
     parameter ADDRW = 10
 ) (
-    input wire clk,
+    input wire clk, rst,
     input wire we,
     input wire [31:0] addr,
     input wire [31:0] din,
@@ -35,6 +35,17 @@ module data_mem #(
     reg [31:0] din_buffered;
     reg we_buffered;
     
+    genvar i;
+    generate
+        for (i = 0; i <= 63; i = i + 1) begin
+            always @( posedge clk ) begin
+                if (rst) begin
+                    data_mem_reg[i] <= 32'b0;
+                end
+            end
+        end
+    endgenerate
+
     always @(posedge clk) begin
         addr_aligned <= addr[7:2];
         din_buffered <= din;

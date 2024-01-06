@@ -1,4 +1,4 @@
-`include "const/const.svh"
+`include "../const/const.svh"
 
 module axi_fsm (
     input logic clk, rst,

@@ -1,9 +1,9 @@
-`include "const/const.svh"
-`include "lib/concat.sv"
-`include "lib/deconcat.sv"
-`include "lib/bram_fifo.sv"
-`include "axi/axi_master.sv"
-`include "boot/io_fsm.sv"
+`include "../const/const.svh"
+`include "../lib/concat.sv"
+`include "../lib/deconcat.sv"
+`include "../lib/bram_fifo.sv"
+`include "../axi/axi_master.sv"
+`include "io_fsm.sv"
 
 module boot #(
     parameter AXI_DATAW_BYTE = AXI_DATAW >> 3

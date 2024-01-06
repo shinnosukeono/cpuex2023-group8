@@ -75,7 +75,7 @@ module hazard_unit (
         end
     end
 
-    // stall in load hazard
+    // stall in load/cache hazard
     logic lw_stall;
     logic cache_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
@@ -87,6 +87,11 @@ module hazard_unit (
     assign stall_w = cache_stall;
 
     // flush in branch or load-oriented bubble
+    // NOTE: when both of the lw_stall and cache_stall are asserted on the same
+    // clock (which could happen when the instructions are arranged in the order
+    // of lw/lw/add), the lw_stall should be kept asserted until the cache_stall
+    // is disasserted. As the lw_stall is dependent on the signals from the
+    // exec stage, the exec stage should not be flushed in this case.
     assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
     assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall);
 

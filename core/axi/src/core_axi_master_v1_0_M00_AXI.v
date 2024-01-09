@@ -437,7 +437,7 @@
 	      end
 	    // Signals a new read address is
 	    // available by user logic
-	    else if (start_single_read)
+	    else if (read_resp_success)
 	      begin
 	        read_index <= read_index + 1'b1;
 	      end
@@ -685,8 +685,7 @@
                     end
                     else begin
                         mst_exec_state <= PROGRAM_RECV;
-                        if (~axi_arvalid && ~M_AXI_RVALID && ~last_read &&
-                        ~start_single_read && ~read_issued && ~rx_almost_full) begin
+                        if (~axi_arvalid && ~M_AXI_RVALID && ~start_single_read && ~read_issued && ~rx_almost_full) begin
                             start_single_read <= 1'b1;
                             read_issued <= 1'b1;
                         end
@@ -742,7 +741,7 @@
                         // there is no data any more to read or the rx FIFO
                         // becomes full.
                         if (~rx_almost_full) begin
-                            if (~axi_arvalid && ~M_AXI_RVALID && ~last_read &&
+                            if (~axi_arvalid && ~M_AXI_RVALID &&
                             ~start_single_read && ~read_issued && ~rx_almost_full)  begin
                                 start_single_read <= 1'b1;
                                 read_issued <= 1'b1;
@@ -777,7 +776,7 @@
 
 	    //The last read should be associated with a read address ready response
 	    // else if ((read_index == transaction_num) && transaction_num_valid && (M_AXI_ARREADY) ) begin
-		else if ((read_index > transaction_num) && transaction_num_valid) begin
+		else if ((read_index == (transaction_num - 32'b1)) && transaction_num_valid) begin
 	      last_read <= 1'b1;
 		end
 	    else begin
@@ -798,7 +797,7 @@
 		end
 
 	    //The reads_done should be associated with a read ready response
-	    else if (last_read && M_AXI_RVALID && axi_rready) begin
+	    else if (last_read && read_resp_success) begin
 	      reads_done <= 1'b1;
 		end
 		else begin

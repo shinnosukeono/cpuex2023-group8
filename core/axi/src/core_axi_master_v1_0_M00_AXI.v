@@ -37,6 +37,10 @@
 		output wire [31:0] instr_dout,
         output wire dmem_we,
         output wire imem_we,
+		output reg [31:0] read_index,
+		output reg [31:0] transaction_num,
+		output reg reads_done,
+		output reg last_read,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -179,15 +183,15 @@
 	//flag that marks the completion of write trasactions. The number of write transaction is user selected by the parameter C_M_TRANSACTIONS_NUM.
 	reg  	writes_done;
 	//flag that marks the completion of read trasactions. The number of read transaction is user selected by the parameter C_M_TRANSACTIONS_NUM
-	reg  	reads_done;
+	// reg  	reads_done;
 	//The error register is asserted when any of the write response error, read response error or the data mismatch flags are asserted.
 	reg  	error_reg;
 	//index counter to track the number of write transaction issued
 	reg [31 : 0] 	write_index;
 	//index counter to track the number of read transaction issued
-	reg [31 : 0] 	read_index;
+	// reg [31 : 0] 	read_index;
     // reset signal for read index
-    reg read_index_reset;
+    // reg read_index_reset;
 	// //Expected read data used to compare with the read data.
 	// reg [C_M_AXI_DATA_WIDTH-1 : 0] 	expected_rdata;
 	// //Flag marks the completion of comparison of the read data with the expected read data
@@ -197,7 +201,7 @@
 	//Flag is asserted when the write index reaches the last write transction number
 	reg  	last_write;
 	//Flag is asserted when the read index reaches the last read transction number
-	reg  	last_read;
+	// reg  	last_read;
 	reg  	init_txn_ff;
 	reg  	init_txn_ff2;
 	reg  	init_txn_edge;
@@ -427,15 +431,15 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 || read_index_reset == 1'b1)
+	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
 	      begin
-	        read_index <= 0;
+	        read_index <= 32'b0;
 	      end
 	    // Signals a new read address is
 	    // available by user logic
 	    else if (start_single_read)
 	      begin
-	        read_index <= read_index + 1;
+	        read_index <= read_index + 1'b1;
 	      end
 	  end
 
@@ -598,7 +602,7 @@
 	// the recognition of the length of the instr file
 	reg transaction_num_valid;
 	wire header_concat_valid;
-	reg [31:0] transaction_num;
+	// reg [31:0] transaction_num;
 	wire [31:0] header_concat_dout;
 
 	always @(posedge M_AXI_ACLK) begin
@@ -767,14 +771,18 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1) begin
 	      last_read <= 1'b0;
+		end
 
 	    //The last read should be associated with a read address ready response
-	    else if ((read_index == transaction_num) && transaction_num_valid && (M_AXI_ARREADY) )
+	    // else if ((read_index == transaction_num) && transaction_num_valid && (M_AXI_ARREADY) ) begin
+		else if ((read_index > transaction_num) && transaction_num_valid) begin
 	      last_read <= 1'b1;
-	    else
+		end
+	    else begin
 	      last_read <= last_read;
+		end
 	  end
 
 	/*
@@ -785,14 +793,17 @@
 	 */
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1) begin
 	      reads_done <= 1'b0;
+		end
 
 	    //The reads_done should be associated with a read ready response
-	    else if (last_read && M_AXI_RVALID && axi_rready)
+	    else if (last_read && M_AXI_RVALID && axi_rready) begin
 	      reads_done <= 1'b1;
-	    else
+		end
+		else begin
 	      reads_done <= reads_done;
+		end
 	    end
 
 	// Add user logic here

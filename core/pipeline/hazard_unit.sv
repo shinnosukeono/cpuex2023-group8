@@ -25,6 +25,7 @@ module hazard_unit (
     // to exec stage
     output logic [1:0] forward_a_e,
     output logic [1:0] forward_b_e,
+    output logic cache_stall,
 
     // to memory access reg
     output logic stall_m,
@@ -80,12 +81,10 @@ module hazard_unit (
 
     // stall in load/cache hazard
     logic lw_stall;
-    logic cache_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
     assign cache_stall = (result_src_m_0 === 1'bx) ? ~cache_data_valid : (result_src_m_0 & ~cache_data_valid); 
     assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
     assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
-    // TODO: If the stall_e is asserted because of the cache_stall while the out_issued is asserted in the exec stage, the out_issued unnecessarily keeps asserted until the cache_stall is disasserted.
     assign stall_e = cache_stall | out_stall;
     assign stall_m = cache_stall | out_stall;
     assign stall_w = cache_stall | out_stall;

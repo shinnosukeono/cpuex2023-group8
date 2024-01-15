@@ -148,7 +148,7 @@ module riscv_pipeline (
         end
     end
 
-    assign out_issued = control_decode_if_out.out_issued;
+    assign out_issued = control_decode_if_out.out_issued & ~cache_stall;
 
     // exec stage
     logic [31:0] alu_result_e;
@@ -283,6 +283,7 @@ module riscv_pipeline (
     logic flush_e;
     logic [1:0] forward_a_e;
     logic [1:0] forward_b_e;
+    logic cache_stall;
 
     hazard_unit i_hazard_unit (
         .rst(rst),
@@ -300,6 +301,7 @@ module riscv_pipeline (
         .result_src_e_0(control_decode_if_out.result_src[0]),
         .forward_a_e(forward_a_e),
         .forward_b_e(forward_b_e),
+        .cache_stall(cache_stall),
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),

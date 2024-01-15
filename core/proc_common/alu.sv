@@ -1,4 +1,3 @@
-`include "../lib/mux.sv"
 `include "../lib/adder.sv"
 
 module alu #(
@@ -17,9 +16,9 @@ module alu #(
     logic c_out;
     logic [N-1:0] b_after_mux;
     logic c_in;
-    assign c_in = alu_control[0] ? 1 : 0;
+    assign c_in = alu_control[0] ? 1'b1 : 1'b0;
 
-    mux #(.DATAW(N)) b_mux(.data_in({~b, b}), .sel_in(alu_control[0]), .data_out(b_after_mux));
+    assign b_after_mux = alu_control[0] ? ~b : b;
     adder #(.DATAW(N)) adder(.a(a), .b(b_after_mux), .c_in(c_in), .s(sum), .c_out(c_out));
 
     /* slt */

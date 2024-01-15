@@ -643,6 +643,7 @@
 
 	assign reg_we = (mst_exec_state == CORE_EXEC) ? rx_valid[1] : 1'b0;
 
+	reg first;
 	reg transition_wait;
 	  //implement master command interface state machine
 	  always @ ( posedge M_AXI_ACLK ) begin
@@ -658,6 +659,7 @@
 	        ERROR <= 1'b0;
             core_gating_signal <= 1'b0;
 			imem_addr_rst <= 1'b0;
+			first <= 1'b1;
 	      end
 	    else
 	      begin
@@ -666,8 +668,9 @@
 	            IDLE:
 	            // This state is responsible to initiate
 	            // AXI transaction when cache_init_done is asserted
-	                if ( cache_init_done == 1'b1 ) begin
+	                if ( cache_init_done == 1'b1 && first) begin
 	                    mst_exec_state  <= WRITE_99;
+						first <= 1'b0;
 	                end
 	                else begin
 	                    mst_exec_state  <= IDLE;
@@ -759,6 +762,7 @@
                 WRITE_aa:
                     if (write_resp_success == 1'b1) begin
                         mst_exec_state <= CORE_EXEC;
+						write_issued <= 1'b0;
                     end
                     else begin
                         mst_exec_state <= WRITE_aa;
@@ -774,46 +778,53 @@
                             start_single_write <= 1'b0;
                         end
                     end
-                CORE_EXEC:
-                    if (core_exec_done && tx_empty) begin
-                        mst_exec_state <= IDLE;
+                CORE_EXEC: begin
+                    if (core_exec_done) begin
                         core_gating_signal <= 1'b0;
+						if (tx_empty) begin
+							mst_exec_state <= IDLE;
+						end
+						else begin
+							mst_exec_state <= CORE_EXEC;
+						end
+                    end
+					else begin
+						core_gating_signal <= 1'b1;
+	                    mst_exec_state <= CORE_EXEC;
+					end
+
+                    // if the tx FIFO is not empty, it means there is
+                    // some data to send back.
+                    if (~axi_awvalid && ~axi_wvalid && ~M_AXI_BVALID &&
+                        ~start_single_write && ~write_issued) begin
+                        if (~tx_empty) begin
+                            start_single_write <= 1'b1;
+                            write_issued <= 1'b1;
+                        end
+					end
+                    else if (axi_bready) begin
+                        write_issued <= 1'b0;
                     end
                     else begin
-                        mst_exec_state <= CORE_EXEC;
-                        core_gating_signal <= 1'b1;
-                        // if the tx FIFO is not empty, it means there is
-                        // some data to send back.
-                        if (~tx_empty) begin
-                            if (~axi_awvalid && ~axi_wvalid && ~M_AXI_BVALID &&
-                            ~start_single_write && ~write_issued) begin
-                                start_single_write <= 1'b1;
-                                write_issued <= 1'b1;
-                            end
-                            else if (axi_bready) begin
-                                write_issued <= 1'b0;
-                            end
-                            else begin
-                                start_single_write <= 1'b0;
-                            end
-                        end
-                        // tries to read in advance the data file until
-                        // there is no data any more to read or the rx FIFO
-                        // becomes full.
-                        if (~rx_almost_full) begin
-                            if (~axi_arvalid && ~M_AXI_RVALID &&
-                            ~start_single_read && ~read_issued && ~rx_almost_full)  begin
-                                start_single_read <= 1'b1;
-                                read_issued <= 1'b1;
-                            end
-                            else if (axi_rready) begin
-                                read_issued <= 1'b0;
-                            end
-                            else begin
-                                start_single_read <= 1'b0;
-                            end
-                        end
+                        start_single_write <= 1'b0;
                     end
+                    // tries to read in advance the data file until
+                    // there is no data any more to read or the rx FIFO
+                    // becomes full.
+                    if (~axi_arvalid && ~M_AXI_RVALID &&
+                        ~start_single_read && ~read_issued && ~rx_almost_full)begin
+                        if (~rx_almost_full)  begin
+                            start_single_read <= 1'b1;
+                            read_issued <= 1'b1;
+                        end
+					end
+                    else if (axi_rready) begin
+                        read_issued <= 1'b0;
+                    end
+                    else begin
+                        start_single_read <= 1'b0;
+                    end
+				end
 	            default:
 	                begin
 	                     mst_exec_state <= IDLE;

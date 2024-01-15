@@ -63,7 +63,7 @@ module riscv_pipeline (
     data_fetch_io data_fetch_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_d === 1'b1) begin
+        if (flush_d === 1'b1 || rst) begin
             data_fetch_if_out.pc <= 32'b0;
             data_fetch_if_out.instr <= 32'b0;
             data_fetch_if_out.pc_plus4 <= 32'b0;
@@ -98,7 +98,7 @@ module riscv_pipeline (
     data_decode_io data_decode_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_e === 1'b1) begin
+        if (flush_e === 1'b1 || rst) begin
             control_decode_if_out.reg_write <= 1'b0;
             control_decode_if_out.result_src <= 3'b0;
             control_decode_if_out.mem_write <= 1'b0;
@@ -192,8 +192,26 @@ module riscv_pipeline (
     control_exec_io control_exec_if_out();
     data_exec_io data_exec_if_out();
 
+    // NOTE: Unless the rst signal going into the memory access register, the
+    // result of the first instruction might be (practically) indefinitely
+    // forwarded into the exec stage, which results in the unpredictable state
+    // in the memory access register when the core_gating_signal is asserted.
     always_ff @( posedge clk ) begin
-        if (stall_m === 1'b0) begin
+        if (rst) begin
+            control_exec_if_out.reg_write <= 1'b0;
+            control_exec_if_out.result_src <= 3'b0;
+            control_exec_if_out.mem_write <= 1'b0;
+
+            data_exec_if_out.alu_result <= 32'b0;
+            data_exec_if_out.write_data <= 32'b0;
+            data_exec_if_out.rd <= 5'b0;
+            data_exec_if_out.imm_ext <= 32'b0;
+            data_exec_if_out.pc_plus4 <= 32'b0;
+            data_exec_if_out.c_reg_data_out <= 32'b0;
+            data_exec_if_out.status <= 32'b0;
+            data_exec_if_out.result_bytes <= 32'b0;
+        end
+        else if (stall_m === 1'b0) begin
             control_exec_if_out.reg_write <= control_exec_if_in.reg_write;
             control_exec_if_out.result_src <= control_exec_if_in.result_src;
             control_exec_if_out.mem_write <= control_exec_if_in.mem_write;
@@ -295,6 +313,6 @@ module riscv_pipeline (
 
     assign en_instr_mem = ~stall_d;
 
-    assign status = data_decode_if_in.status;
+    assign status = data_decode_if_out.status;
     assign result_bytes = data_decode_if_in.result_bytes;
 endmodule

@@ -50,7 +50,7 @@ module instr_decode (
 
     // extend unit
     extend i_extend (
-        .instr(data_fetch_if.instr[31:7]),
+        .instr(data_fetch_if.instr),
         .imm_src(imm_src_d),
         .imm_ext(data_decode_if.imm_ext)
     );

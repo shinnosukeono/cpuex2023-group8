@@ -12,18 +12,13 @@ module c_regfile (
     assign addr_aligned = addr[1:0];
 
     //regfile
-    generate
-        for (genvar i = 0; i <= 3; i++) begin
-            always_ff @( posedge clk ) begin
-                if (rst) begin
-                    c_reg[i] <= 32'b0;
-                end
+    always_ff @( posedge clk ) begin
+        if (rst) begin
+            for (int i = 0; i <= 3; i++) begin
+                c_reg[i] <= 32'b0;
             end
         end
-    endgenerate
-
-    always_ff @( posedge clk ) begin
-        if (we) begin
+        else if (we) begin
             c_reg[addr_aligned] <= din;
         end
     end

@@ -34,23 +34,18 @@ module data_mem #(
     reg [5:0] addr_aligned;
     reg [31:0] din_buffered;
     reg we_buffered;
-    
-    genvar i;
-    generate
-        for (i = 0; i <= 63; i = i + 1) begin
-            always @( posedge clk ) begin
-                if (rst) begin
-                    data_mem_reg[i] <= 32'b0;
-                end
-            end
-        end
-    endgenerate
 
+    integer i;
     always @(posedge clk) begin
         addr_aligned <= addr[7:2];
         din_buffered <= din;
         we_buffered <= we;
-        if (we_buffered) begin
+        if (rst) begin
+            for (i = 0; i <= 63; i = i + 1) begin
+                data_mem_reg[i] <= 32'b0;
+            end
+        end
+        else if (we_buffered) begin
             data_mem_reg[addr_aligned] <= din_buffered;
         end
     end

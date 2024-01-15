@@ -8,19 +8,13 @@ module regfile (
 );
     logic [31:0] rf [31:0];
 
-    //regfile
-    generate
-        for (genvar i = 0; i <= 31; i++) begin
-            always_ff @( posedge clk ) begin
-                if (rst) begin
-                    rf[i] <= 32'b0;
-                end
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            for (int i = 0; i < 32; i++) begin
+                rf[i] <= 32'b0;
             end
         end
-    endgenerate
-
-    always_ff @( posedge clk ) begin
-        if (we3) begin
+        else if (we3) begin
             rf[a3] <= wd3;
         end
     end

@@ -18,9 +18,14 @@ module riscv_pipeline_wrapper (
     output wire [31:0] data_addr,
     output wire [31:0] din,
 
+    // from I/O module
+    input wire out_stall,
+
     // to I/O module
     output wire [31:0] status,
-    output wire [31:0] result_bytes
+    output wire [31:0] result_bytes,
+    output wire out_issued,
+    output wire [31:0] out_data
 );
     riscv_pipeline i_riscv_pipeline (
         .clk(clk),
@@ -33,7 +38,10 @@ module riscv_pipeline_wrapper (
         .data_we(data_we),
         .data_addr(data_addr),
         .din(din),
+        .out_stall(out_stall),
         .status(status),
-        .result_bytes(result_bytes)
+        .result_bytes(result_bytes),
+        .out_issued(out_issued),
+        .out_data(out_data)
     );
 endmodule

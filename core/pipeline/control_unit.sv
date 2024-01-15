@@ -27,7 +27,8 @@ module control_unit (
         .imm_src(imm_src),
         .reg_write(control_decode_if.reg_write),
         .alu_op(alu_op),
-        .c_reg_write(c_reg_write)
+        .c_reg_write(c_reg_write),
+        .out_issued(control_decode_if.out_issued)
     );
 
     assign control_decode_if.alu_op_and = &alu_op;

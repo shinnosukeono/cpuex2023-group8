@@ -34,7 +34,10 @@ module exec (
     // to hazard unit
     output logic [4:0] rs1_e,
     output logic [4:0] rs2_e,
-    output pc_src_e
+    output pc_src_e,
+
+    // to I/O module
+    output logic [31:0] out_data
 );
 
     // src_a
@@ -47,6 +50,8 @@ module exec (
             default: src_a_forward = 32'bx;  // error
         endcase
     end
+
+    assign out_data = {24'b0, src_a_forward[7:0]};
 
     logic [31:0] src_a;
     assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : src_a_forward;

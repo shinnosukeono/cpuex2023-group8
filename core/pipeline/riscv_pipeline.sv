@@ -26,9 +26,14 @@ module riscv_pipeline (
     output logic [31:0] data_addr,
     output logic [31:0] din,
 
+    // from I/O module
+    input logic out_stall,
+
     // to I/O module
     output logic [31:0] status,
-    output logic [31:0] result_bytes
+    output logic [31:0] result_bytes,
+    output logic out_issued,
+    output logic [31:0] out_data
 );
     // instr fetch reg
     data_back_io data_back_if_in();
@@ -103,6 +108,7 @@ module riscv_pipeline (
             control_decode_if_out.alu_src <= 1'b0;
             control_decode_if_out.alu_op_and <= 1'b0;
             control_decode_if_out.funct3_0 <= 1'b0;
+            control_decode_if_out.out_issued <= 1'b0;
 
             data_decode_if_out.rd1 <= 32'b0;
             data_decode_if_out.rd2 <= 32'b0;
@@ -126,6 +132,7 @@ module riscv_pipeline (
             control_decode_if_out.alu_src <= control_decode_if_in.alu_src;
             control_decode_if_out.alu_op_and <= control_decode_if_in.alu_op_and;
             control_decode_if_out.funct3_0 <= control_decode_if_in.funct3_0;
+            control_decode_if_out.out_issued <= control_decode_if_in.out_issued;
 
             data_decode_if_out.rd1 <= data_decode_if_in.rd1;
             data_decode_if_out.rd2 <= data_decode_if_in.rd2;
@@ -140,6 +147,8 @@ module riscv_pipeline (
             data_decode_if_out.result_bytes <= data_decode_if_in.result_bytes;
         end
     end
+
+    assign out_issued = control_decode_if_out.out_issued;
 
     // exec stage
     logic [31:0] alu_result_e;
@@ -166,7 +175,8 @@ module riscv_pipeline (
         .forward_b_e(forward_b_e),
         .rs1_e(rs1_e),
         .rs2_e(rs2_e),
-        .pc_src_e(pc_src_e)
+        .pc_src_e(pc_src_e),
+        .out_data(out_data)
     );
 
     // NOTE: the read/write address (and data) entering the data memory must be
@@ -279,11 +289,12 @@ module riscv_pipeline (
         .cache_data_valid(cache_data_valid),
         .stall_w(stall_w),
         .rd_w(rd_w),
-        .reg_write_w(control_mem_if_out.reg_write)
+        .reg_write_w(control_mem_if_out.reg_write),
+        .out_stall(out_stall)
     );
 
     assign en_instr_mem = ~stall_d;
-    
+
     assign status = data_decode_if_in.status;
     assign result_bytes = data_decode_if_in.result_bytes;
 endmodule

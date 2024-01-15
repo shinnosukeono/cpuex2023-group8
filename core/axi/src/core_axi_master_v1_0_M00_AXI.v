@@ -33,10 +33,12 @@
         output reg core_gating_signal,
 		output wire in_stall,
         output wire out_stall,
-        output wire [31:0] rx_dout,
-		output wire [31:0] instr_dout,
+		output wire [31:0] rx_dout,
         output wire dmem_we,
         output wire imem_we,
+		output reg imem_addr_rst,
+		output wire reg_we,
+		output reg [2:0] mst_exec_state,
 		output reg [31:0] read_index,
 		output reg [31:0] transaction_num,
 		output reg reads_done,
@@ -121,35 +123,27 @@
 	// // number of write or read transaction.
 	//  localparam integer TRANS_NUM_BITS = clogb2(C_M_TRANSACTIONS_NUM-1);
 
-	// Example State machine to initialize counter, initialize write transactions,
-	// initialize read transactions and comparison of read data with the
-	// written data words.
-	// parameter [1:0] IDLE = 2'b00, // This state initiates AXI4Lite transaction
-	// 		// after the state machine changes state to INIT_WRITE
-	// 		// when there is 0 to 1 transition on INIT_AXI_TXN
-	// 	INIT_WRITE   = 2'b01, // This state initializes write transaction,
-	// 		// once writes are done, the state machine
-	// 		// changes state to INIT_READ
-	// 	INIT_READ = 2'b10, // This state initializes read transaction
-	// 		// once reads are done, the state machine
-	// 		// changes state to INIT_COMPARE
-	// 	INIT_COMPARE = 2'b11; // This state issues the status of comparison
-	// 		// of the written data with the read data
+	// FSM
     parameter [2:0] IDLE = 3'b000, // This state initiates AXI4Lite transaction
         // aster the FSM changes state to WRITE_99
         // when cache_init_done is asserted
         WRITE_99 = 3'b001, // This state sends 0x99 to the slave.
             // Once a write is done, the FSM changes state to PROGRAM_RECV.
-        PROGRAM_RECV = 3'b010, // This state reads the program binary.
-            // Once read are done or a timeout occurs, the FMS changes state
-            // to WRITE_aa.
-        WRITE_aa = 3'b011,  // This state send 0xaa to the slave.
+        PROGRAM_RECV = 3'b010, // This state reads the code section of program binary.
+            // Once read are done, the FSM changes state to PROGRAM_WRITE.
+		PROGRAM_WRITE = 3'b011, // This states waits the instr memory to read all the data in the rx FIFO.
+		// Once the rx FIFO becomes empty, the FSM changes the state to DATA_RECV.
+		DATA_RECV = 3'b100, // This state reads the data section of the program binary.
+		// Once read are done, the FSM changes state to DATA_WRITE.
+		DATA_WRITE = 3'b101,  // This state waits the data memory to read all the data in the rx FIFO.
+		// Once the rx FIFO becomes empty, the FSM changes the state to WRITE_aa.
+        WRITE_aa = 3'b110,  // This state send 0xaa to the slave.
             // Once a write is done, the FSM changes state to CORE_EXEC.
-        CORE_EXEC = 3'b100; // This state provides the processor with clocks,
+        CORE_EXEC = 3'b111; // This state provides the processor with clocks,
             // processes read transactions in advance, and handles write
             // transactions when out instruction is issued.
 
-	reg [2:0] mst_exec_state;
+	// reg [2:0] mst_exec_state;
 
 	// AXI4LITE signals
 	//write address valid
@@ -429,15 +423,17 @@
 	//start_single_read triggers a new read transaction. read_index is a counter to
 	//keep track with number of read transaction issued/initiated
 
+	reg header_concat_valid;
+
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1)
+	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 || reads_done)
 	      begin
 	        read_index <= 32'b0;
 	      end
 	    // Signals a new read address is
 	    // available by user logic
-	    else if (read_resp_success)
+	    else if (read_resp_success && (mst_exec_state == PROGRAM_RECV || mst_exec_state == DATA_RECV) && header_concat_valid)
 	      begin
 	        read_index <= read_index + 1'b1;
 	      end
@@ -497,7 +493,7 @@
 	  end
 
     // Flag read success
-    assign read_resp_success = (axi_rready & M_AXI_RVALID & ~M_AXI_RRESP[1]);
+    assign read_resp_success = (axi_rready && M_AXI_RVALID && ~M_AXI_RRESP[1]);
 
 
 	//--------------------------------
@@ -562,13 +558,27 @@
 	end
 
 	// rx FIFO control
+	wire concat_valid;
+	wire [31:0] concat_dout;
 
-	assign rx_din = M_AXI_RDATA;
+	concat rx_concat_inst (
+		.clk(M_AXI_ACLK),
+		.rst(~M_AXI_ARESETN),
+		.en(read_resp_success),
+		.din(M_AXI_RDATA[7:0]),
+		.dout(concat_dout),
+		.valid(concat_valid)
+	);
 
-	assign rx_we = read_resp_success;
+	assign rx_din = concat_dout;
+
+	assign rx_we = concat_valid;
 
 	assign rx_re = (
 		(mst_exec_state == PROGRAM_RECV) ||
+		(mst_exec_state == PROGRAM_WRITE) ||
+		(mst_exec_state == DATA_RECV) ||
+		(mst_exec_state == DATA_WRITE) ||
 		((mst_exec_state == CORE_EXEC) && in_issued)
 	) && ~rx_empty;
 
@@ -585,34 +595,29 @@
 		end
 	end
 
-	// instr data generation
-	wire instr_valid;
-
-	concat instr_concat_inst (
-		.clk(M_AXI_ACLK),
-		.rst(~M_AXI_ARESETN),
-		.en((mst_exec_state == PROGRAM_RECV) && rx_valid[1]),
-		.din(rx_dout[7:0]),
-		.dout(instr_dout),
-		.valid(instr_valid)
-	);
-
-	assign dmem_we = (mst_exec_state == CORE_EXEC) && rx_valid[1];
-
 	// the recognition of the length of the instr file
+
 	reg transaction_num_valid;
-	wire header_concat_valid;
-	// reg [31:0] transaction_num;
-	wire [31:0] header_concat_dout;
 
 	always @(posedge M_AXI_ACLK) begin
-		if (M_AXI_ARESETN == 1'b0 || init_txn_pulse == 1'b1) begin
+		if (M_AXI_ARESETN == 1'b0 || init_txn_pulse == 1'b1 || reads_done) begin
             transaction_num_valid <= 1'b0;
 			transaction_num <= 32'b0;
+			if (reads_done) begin
+				header_concat_valid <= header_concat_valid;
+			end
+			else begin
+				header_concat_valid <= 1'b0;
+			end
         end
-		else if (header_concat_valid) begin
-			transaction_num_valid <= 1'b1;
-			transaction_num <= header_concat_dout;
+		else if ((mst_exec_state == PROGRAM_RECV || mst_exec_state == DATA_RECV) && rx_valid[1] && ~transaction_num_valid) begin
+			if (header_concat_valid) begin
+				transaction_num_valid <= 1'b1;
+				transaction_num <= rx_dout;
+			end
+			else begin
+				header_concat_valid <= 1'b1;
+			end
 		end
 		else begin
 			transaction_num_valid <= transaction_num_valid;
@@ -620,17 +625,25 @@
 		end
 	end
 
-	concat header_concat_inst (
-		.clk(M_AXI_ACLK),
-		.rst(~M_AXI_ARESETN),
-		.en((mst_exec_state == PROGRAM_RECV) && rx_valid[1] && ~transaction_num_valid),
-		.din(rx_dout[7:0]),
-		.dout(header_concat_dout),
-		.valid(header_concat_valid)
-	);
+	assign imem_we = (mst_exec_state == PROGRAM_RECV) ?
+		(rx_valid[1] && transaction_num_valid) :
+		(
+			(mst_exec_state == PROGRAM_WRITE) ?
+				rx_valid[1]:
+				1'b0
+		);
 
-	assign imem_we = instr_valid && transaction_num_valid;
+	assign dmem_we = (mst_exec_state == DATA_RECV) ?
+		(rx_valid[1] && transaction_num_valid) :
+		(
+			(mst_exec_state == DATA_WRITE) ?
+				rx_valid[1]:
+				1'b0
+		);
 
+	assign reg_we = (mst_exec_state == CORE_EXEC) ? rx_valid[1] : 1'b0;
+
+	reg transition_wait;
 	  //implement master command interface state machine
 	  always @ ( posedge M_AXI_ACLK ) begin
 	    if (M_AXI_ARESETN == 1'b0)
@@ -644,6 +657,7 @@
 	        read_issued   <= 1'b0;
 	        ERROR <= 1'b0;
             core_gating_signal <= 1'b0;
+			imem_addr_rst <= 1'b0;
 	      end
 	    else
 	      begin
@@ -681,7 +695,7 @@
                     end
                 PROGRAM_RECV:
                     if (reads_done) begin
-                        mst_exec_state <= WRITE_aa;
+                        mst_exec_state <= PROGRAM_WRITE;
                     end
                     else begin
                         mst_exec_state <= PROGRAM_RECV;
@@ -696,6 +710,52 @@
                             start_single_read <= 1'b0;
                         end
                     end
+				PROGRAM_WRITE:
+					if (rx_empty) begin
+						if (transition_wait) begin
+							transition_wait <= 1'b0;
+							imem_addr_rst <= 1'b1;
+							mst_exec_state <= DATA_RECV;
+						end
+						else begin
+							transition_wait <= 1'b1;
+							mst_exec_state <= PROGRAM_WRITE;
+						end
+					end
+					else begin
+						mst_exec_state <= PROGRAM_WRITE;
+					end
+				DATA_RECV:
+					if (reads_done) begin
+						mst_exec_state <= DATA_WRITE;
+					end
+					else begin
+						mst_exec_state <= DATA_RECV;
+						if (~axi_arvalid && ~M_AXI_RVALID && ~start_single_read && ~read_issued && ~rx_almost_full) begin
+                            start_single_read <= 1'b1;
+                            read_issued <= 1'b1;
+                        end
+                        else if (axi_rready) begin
+                            read_issued <= 1'b0;
+                        end
+                        else begin
+                            start_single_read <= 1'b0;
+                        end
+					end
+				DATA_WRITE:
+					if (rx_empty) begin
+						if (transition_wait) begin
+							transition_wait <= 1'b0;
+							mst_exec_state <= WRITE_aa;
+						end
+						else begin
+							transition_wait <= 1'b1;
+							mst_exec_state <= DATA_WRITE;
+						end
+					end
+					else begin
+						mst_exec_state <= DATA_WRITE;
+					end
                 WRITE_aa:
                     if (write_resp_success == 1'b1) begin
                         mst_exec_state <= CORE_EXEC;
@@ -770,7 +830,7 @@
 
 	  always @(posedge M_AXI_ACLK)
 	  begin
-	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1) begin
+	    if (M_AXI_ARESETN == 0 || init_txn_pulse == 1'b1 || reads_done) begin
 	      last_read <= 1'b0;
 		end
 
@@ -800,8 +860,8 @@
 	    else if (last_read && read_resp_success) begin
 	      reads_done <= 1'b1;
 		end
-		else begin
-	      reads_done <= reads_done;
+		else if (reads_done) begin
+	      reads_done <= 1'b0;
 		end
 	    end
 

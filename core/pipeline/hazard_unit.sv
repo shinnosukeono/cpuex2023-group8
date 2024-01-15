@@ -42,7 +42,10 @@ module hazard_unit (
 
     // from write back stage
     input logic [4:0] rd_w,
-    input logic reg_write_w
+    input logic reg_write_w,
+
+    // from I/O module
+    input logic out_stall
 );
     // forwarding for data hazard
     always_comb begin
@@ -80,11 +83,12 @@ module hazard_unit (
     logic cache_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
     assign cache_stall = (result_src_m_0 === 1'bx) ? ~cache_data_valid : (result_src_m_0 & ~cache_data_valid); 
-    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
-    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall);
-    assign stall_e = cache_stall;
-    assign stall_m = cache_stall;
-    assign stall_w = cache_stall;
+    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
+    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
+    // TODO: If the stall_e is asserted because of the cache_stall while the out_issued is asserted in the exec stage, the out_issued unnecessarily keeps asserted until the cache_stall is disasserted.
+    assign stall_e = cache_stall | out_stall;
+    assign stall_m = cache_stall | out_stall;
+    assign stall_w = cache_stall | out_stall;
 
     // flush in branch or load-oriented bubble
     // NOTE: when both of the lw_stall and cache_stall are asserted on the same
@@ -92,6 +96,7 @@ module hazard_unit (
     // of lw/lw/add), the lw_stall should be kept asserted until the cache_stall
     // is disasserted. As the lw_stall is dependent on the signals from the
     // exec stage, the exec stage should not be flushed in this case.
+    // TODO: what happens if the cache_stall is asserted in the memory access stage while a branch instruction is executed in the exec stage? Is it possible the pc_src_e is mistakenly asserted?
     assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
     assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall);
 

@@ -26,9 +26,12 @@
 		output wire in_stall,
         output wire out_stall,
         output wire [31:0] rx_dout,
-		output wire [31:0] instr_dout,
         output wire dmem_we,
+		output reg [31:0] dmem_addr,
         output wire imem_we,
+		output wire reg_we,
+		output reg [31:0] imem_addr,
+		output wire [2:0] mst_exec_state,
 		output wire [31:0] read_index,
 		output wire [31:0] transaction_num,
 		output wire reads_done,
@@ -38,7 +41,6 @@
 
 
 		// Ports of Axi Master Bus Interface M00_AXI
-		input wire  m00_axi_init_axi_txn,
 		output wire  m00_axi_error,
 		output wire  m00_axi_txn_done,
 		input wire  m00_axi_aclk,
@@ -63,7 +65,12 @@
 		input wire  m00_axi_rvalid,
 		output wire  m00_axi_rready
 	);
+	localparam DATA_SECTION_BASE_ADDR = 32'h10000;
+
 // Instantiation of Axi Bus Interface M00_AXI
+	wire m00_axi_init_axi_txn;
+	wire imem_addr_rst;
+
 	core_axi_master_v1_0_M00_AXI # ( 
 		.C_M_START_DATA_VALUE(C_M00_AXI_START_DATA_VALUE),
 		.C_M_TARGET_SLAVE_BASE_ADDR(C_M00_AXI_TARGET_SLAVE_BASE_ADDR),
@@ -79,9 +86,11 @@
 		.in_stall(in_stall),
 		.out_stall(out_stall),
 		.rx_dout(rx_dout),
-		.instr_dout(instr_dout),
 		.dmem_we(dmem_we),
 		.imem_we(imem_we),
+		.imem_addr_rst(imem_addr_rst),
+		.reg_we(reg_we),
+		.mst_exec_state(mst_exec_state),
 		.read_index(read_index),
 		.transaction_num(transaction_num),
 		.reads_done(reads_done),
@@ -114,6 +123,38 @@
 
 	// Add user logic here
 
+	// pulse generation
+	reg first;
+	always @(posedge m00_axi_aclk) begin
+		if (~m00_axi_aresetn) begin
+			first <= 1'b0;
+		end
+		else if (cache_init_done && ~first) begin
+			first <= 1'b1;
+		end
+	end
+
+	assign m00_axi_init_axi_txn = cache_init_done && ~first;
+
+	// instr mem address generation
+	always @(posedge m00_axi_aclk) begin
+		if (~m00_axi_aresetn || imem_addr_rst) begin
+			imem_addr <= 32'b0;
+		end
+		else if (imem_we) begin
+			imem_addr <= imem_addr + 32'h4;
+		end
+	end
+
+	// data mem address generation
+	always @(posedge m00_axi_aclk) begin
+		if (~m00_axi_aresetn) begin
+			dmem_addr <= DATA_SECTION_BASE_ADDR;
+		end
+		else if (dmem_we) begin
+			dmem_addr <= dmem_addr + 32'h4;
+		end
+	end
 	// User logic ends
 
 	endmodule

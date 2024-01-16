@@ -91,10 +91,7 @@ module riscv_pipeline (
         .data_decode_if(data_decode_if_in.in),
         .rd_w(rd_w),
         .result_w(result_w),
-        .reg_write_w(reg_write_w),
-        .stall_d(stall_d),
-        .flash_d(flash_d),
-        .in_issued(in_issued)
+        .reg_write_w(reg_write_w)
     );
 
     // exec reg
@@ -115,6 +112,7 @@ module riscv_pipeline (
             control_decode_if_out.alu_op_and <= 1'b0;
             control_decode_if_out.funct3_0 <= 1'b0;
             control_decode_if_out.out_issued <= 1'b0;
+            control_decode_if_out.in_issued <= 1'b0;
 
             data_decode_if_out.rd1 <= 32'b0;
             data_decode_if_out.rd2 <= 32'b0;
@@ -139,6 +137,7 @@ module riscv_pipeline (
             control_decode_if_out.alu_op_and <= control_decode_if_in.alu_op_and;
             control_decode_if_out.funct3_0 <= control_decode_if_in.funct3_0;
             control_decode_if_out.out_issued <= control_decode_if_in.out_issued;
+            control_decode_if_out.in_issued <= control_decode_if_in.in_issued;
 
             data_decode_if_out.rd1 <= data_decode_if_in.rd1;
             data_decode_if_out.rd2 <= data_decode_if_in.rd2;
@@ -241,8 +240,7 @@ module riscv_pipeline (
         .control_mem_if(control_mem_if_in.in),
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
-        .alu_result_m(alu_result_m),
-        .in_data(in_data)
+        .alu_result_m(alu_result_m)
     );
 
     // write back reg
@@ -264,7 +262,6 @@ module riscv_pipeline (
             data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
             data_mem_if_out.status <= data_mem_if_in.status;
             data_mem_if_out.result_bytes <= data_mem_if_in.result_bytes;
-            data_mem_if_out.in_data <= data_mem_if_in.in_data;
         end
     end
 
@@ -279,7 +276,8 @@ module riscv_pipeline (
         .rd_w(rd_w),
         .result_w(result_w),
         .pc_src_e(pc_src_e),
-        .pc_target_e(pc_target_e)
+        .pc_target_e(pc_target_e),
+        .in_data(in_data)
     );
 
     // hazard unit
@@ -314,7 +312,7 @@ module riscv_pipeline (
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),
-        .result_src_m_0(control_exec_if_out.result_src[0]),
+        .result_src_m(control_exec_if_out.result_src),
         .cache_data_valid(cache_data_valid),
         .stall_w(stall_w),
         .rd_w(rd_w),

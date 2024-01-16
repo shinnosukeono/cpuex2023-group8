@@ -22,7 +22,10 @@ module write_back (
 
     // from exec stage
     input logic pc_src_e,
-    input logic [31:0] pc_target_e
+    input logic [31:0] pc_target_e,
+
+    // from I/O module
+    input logic [31:0] in_data
 );
     assign reg_write_w = control_mem_if.reg_write;
     assign rd_w = data_mem_if.rd;
@@ -30,8 +33,8 @@ module write_back (
     // result_w
     // NOTE: This implementation is based on the premise that the in_issued is
     // asserted at least 2 clocks before the in instruction reaches
-    // the memory access stage, by which it is assured that the in_data
-    // arrives in the memory access stage in time without any special care.
+    // the write back stage, by which it is assured that the in_data
+    // arrives in the write back stage in time without any special care.
     always_comb begin
         case (control_mem_if.result_src)
             3'b000: result_w = data_mem_if.alu_result;
@@ -39,7 +42,7 @@ module write_back (
             3'b010: result_w = data_mem_if.pc_plus4;
             3'b011: result_w = data_mem_if.c_reg_data_out;
             3'b100: result_w = data_mem_if.imm_ext;
-            3'b111: result_w = data_mem_if.in_data;
+            3'b111: result_w = in_data;
             default: result_w = 32'bx;
         endcase
     end

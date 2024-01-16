@@ -30,6 +30,7 @@
 		input wire in_issued,
         input wire out_issued,
         input wire [31:0] out_data,
+		input wire cache_data_valid,
         output reg core_gating_signal,
 		output wire in_stall,
         output wire out_stall,
@@ -558,6 +559,7 @@
 	end
 
 	// rx FIFO control
+	// TODO: wait for the cache write
 	wire concat_valid;
 	wire [31:0] concat_dout;
 

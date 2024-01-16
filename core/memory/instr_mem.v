@@ -4,15 +4,21 @@ module instr_mem (
     input wire clk,
     input wire we,
     input wire en,
-    input wire [31:0] addr,
+    input wire io_sel,
+    input wire [31:0] addr_io,
+    input wire [31:0] addr_proc,
     input wire [31:0] din,
     output wire [31:0] dout
 );
 
-    wire [4:0] addra;
-    assign addra = addr[6:2];
+    wire [31:0] addr;
+    wire [11:0] addra;
 
-    instr_mem_gen_for_pipeline_with_bram i_instr_mem (
+    assign addr = io_sel ? addr_io : addr_proc;
+
+    assign addra = addr[13:2];
+
+    instr_mem_pp_io_1 i_instr_mem (
         .clka(clk),
         .wea(we),
         .ena(en),

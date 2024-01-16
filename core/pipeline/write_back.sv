@@ -28,6 +28,10 @@ module write_back (
     assign rd_w = data_mem_if.rd;
 
     // result_w
+    // NOTE: This implementation is based on the premise that the in_issued is
+    // asserted at least 2 clocks before the in instruction reaches
+    // the memory access stage, by which it is assured that the in_data
+    // arrives in the memory access stage in time without any special care.
     always_comb begin
         case (control_mem_if.result_src)
             3'b000: result_w = data_mem_if.alu_result;
@@ -35,10 +39,20 @@ module write_back (
             3'b010: result_w = data_mem_if.pc_plus4;
             3'b011: result_w = data_mem_if.c_reg_data_out;
             3'b100: result_w = data_mem_if.imm_ext;
+            3'b111: result_w = data_mem_if.in_data;
             default: result_w = 32'bx;
         endcase
     end
 
     assign data_back_if.pc = (pc_src_e) ? pc_target_e : pc_plus4_f;
+
+    // NOTE: the instr_addr is passed directory to the instr memory without
+    // the synchronization by the data back register. However, the instr_addr
+    // keeps consistent while the stall_f is asserted as the pc_plusf_f and
+    // the pc_target_e keep consistent by the effect of the stall_f and
+    // the stall_e in that case.
+    // TODO: How about the case in which the pc_src_e, flush_e are asserted?
+    // This can happen when the stall_f is asserted by the in_stall
+    // and the pc_src_e, flush_e are asserted in the exec stage.
     assign instr_addr = data_back_if.pc;
 endmodule

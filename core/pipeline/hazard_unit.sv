@@ -46,7 +46,8 @@ module hazard_unit (
     input logic reg_write_w,
 
     // from I/O module
-    input logic out_stall
+    input logic out_stall,
+    input logic in_stall
 );
     // forwarding for data hazard
     always_comb begin
@@ -80,23 +81,45 @@ module hazard_unit (
     end
 
     // stall in load/cache hazard
+    // NOTE: As the instr_addr is passed directory to the instr memory without
+    // the synchronization by the data back register, the extreme caution must
+    // be excercised when the stall_f is asserted, during which the pc must be
+    // consistent.
+    // 1. If the stall_f is asserted by the lw_stall, as the lw instruction
+    // is in the exec stage, it is assured that the pc_src_e is disasserted.
+    // So keeping the stall_f asserted is sufficient.
+    // 2. If the stall_f is asserted by the cache_stall, it is possible that
+    // a branch instruction is in the exec stage. However, the cache_stall
+    // causes all the stages to be stalled, the instr_addr is also kept
+    // constant.
+    // 3. If the stall_f is asserted by the out_stall or in_stall, situations
+    // are same as the case 1. As the stall_e is also asserted in these cases,
+    // the consistency of the instr_addr is all the more assured.
+
     logic lw_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
-    assign cache_stall = (result_src_m_0 === 1'bx) ? ~cache_data_valid : (result_src_m_0 & ~cache_data_valid); 
-    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
-    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall);
-    assign stall_e = cache_stall | out_stall;
-    assign stall_m = cache_stall | out_stall;
-    assign stall_w = cache_stall | out_stall;
+    assign cache_stall = (result_src_m_0 === 1'bx) ? ~cache_data_valid : (result_src_m_0 & ~cache_data_valid);
+    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
+    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
+    assign stall_e = cache_stall | out_stall | in_stall;
+    assign stall_m = cache_stall;
+    assign stall_w = cache_stall;
 
     // flush in branch or load-oriented bubble
+
     // NOTE: when both of the lw_stall and cache_stall are asserted on the same
     // clock (which could happen when the instructions are arranged in the order
     // of lw/lw/add), the lw_stall should be kept asserted until the cache_stall
     // is disasserted. As the lw_stall is dependent on the signals from the
     // exec stage, the exec stage should not be flushed in this case.
-    // TODO: what happens if the cache_stall is asserted in the memory access stage while a branch instruction is executed in the exec stage? Is it possible the pc_src_e is mistakenly asserted?
+
+    // NOTE: As the cin_int/float instruction needs 2 clocks for the data
+    // to be available, it must cause the flush in the same way as the lw does.
+    // If the lw_stall and the in_stall are asserted at the same time by the
+    // cin instruction in the exec stage, the flush_e must not be asserted for
+    // keeping the in_issued asserted in the exec stage while the in_stall is
+    // assserted.
     assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
-    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall);
+    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall & ~in_stall);
 
 endmodule

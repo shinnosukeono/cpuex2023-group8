@@ -28,12 +28,15 @@ module riscv_pipeline (
 
     // from I/O module
     input logic out_stall,
+    input logic in_stall,
+    input logic [31:0] in_data,
 
     // to I/O module
     output logic [31:0] status,
     output logic [31:0] result_bytes,
     output logic out_issued,
-    output logic [31:0] out_data
+    output logic [31:0] out_data,
+    output logic in_issued
 );
     // instr fetch reg
     data_back_io data_back_if_in();
@@ -88,7 +91,10 @@ module riscv_pipeline (
         .data_decode_if(data_decode_if_in.in),
         .rd_w(rd_w),
         .result_w(result_w),
-        .reg_write_w(reg_write_w)
+        .reg_write_w(reg_write_w),
+        .stall_d(stall_d),
+        .flash_d(flash_d),
+        .in_issued(in_issued)
     );
 
     // exec reg
@@ -149,6 +155,7 @@ module riscv_pipeline (
     end
 
     assign out_issued = control_decode_if_out.out_issued & ~cache_stall;
+    assign in_issued = control_decode_if_out.in_issued & ~cache_stall;
 
     // exec stage
     logic [31:0] alu_result_e;
@@ -234,7 +241,8 @@ module riscv_pipeline (
         .control_mem_if(control_mem_if_in.in),
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
-        .alu_result_m(alu_result_m)
+        .alu_result_m(alu_result_m),
+        .in_data(in_data)
     );
 
     // write back reg
@@ -256,6 +264,7 @@ module riscv_pipeline (
             data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
             data_mem_if_out.status <= data_mem_if_in.status;
             data_mem_if_out.result_bytes <= data_mem_if_in.result_bytes;
+            data_mem_if_out.in_data <= data_mem_if_in.in_data;
         end
     end
 
@@ -310,7 +319,8 @@ module riscv_pipeline (
         .stall_w(stall_w),
         .rd_w(rd_w),
         .reg_write_w(control_mem_if_out.reg_write),
-        .out_stall(out_stall)
+        .out_stall(out_stall),
+        .in_stall(in_stall)
     );
 
     assign en_instr_mem = ~stall_d;

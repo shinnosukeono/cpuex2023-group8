@@ -9,6 +9,7 @@ interface control_decode_io;
     logic alu_op_and;
     logic funct3_0;
     logic out_issued;
+    logic in_issued;
     modport in (
         output reg_write,
         output result_src,
@@ -19,7 +20,8 @@ interface control_decode_io;
         output alu_src,
         output alu_op_and,
         output funct3_0,
-        output out_issued
+        output out_issued,
+        output in_issued
     );
     modport out (
         input reg_write,
@@ -31,7 +33,8 @@ interface control_decode_io;
         input alu_src,
         input alu_op_and,
         input funct3_0,
-        input out_issued
+        input out_issued,
+        input in_issued
     );
 endinterface //control_decode_io
 

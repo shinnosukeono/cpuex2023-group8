@@ -94,6 +94,7 @@ interface data_mem_io;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
     logic [31:0] result_bytes;
+    logic [31:0] in_data;
     modport in (
         output alu_result,
         output read_data,
@@ -102,7 +103,8 @@ interface data_mem_io;
         output pc_plus4,
         output c_reg_data_out,
         output status,
-        output result_bytes
+        output result_bytes,
+        output in_data
     );
     modport out (
         input alu_result,
@@ -112,7 +114,8 @@ interface data_mem_io;
         input pc_plus4,
         input c_reg_data_out,
         input status,
-        input result_bytes
+        input result_bytes,
+        input in_data
     );
 endinterface: data_mem_io //data_mem_io
 

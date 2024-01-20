@@ -5,15 +5,10 @@ module eight_digit_ssd
     (
         input wire clk,
         input wire rstn,
-        input wire [3:0] bnum0,
-        input wire [3:0] bnum1,
-        input wire [3:0] bnum2,
-        input wire [3:0] bnum3,
-        input wire [3:0] bnum4,
-        input wire [3:0] bnum5,
-        input wire [3:0] bnum6,
-        input wire [3:0] bnum7,
+        input wire [31:0] bnumin,
+        input wire [7:0] dp_sel,
         output wire [6:0] dout,
+        output wire dp,
         output wire [7:0] sel
     );
 
@@ -35,43 +30,45 @@ module eight_digit_ssd
         end
     end
 
+    assign dp = ~&(sel | dp_sel);
+
     reg [7:0] sel_reg;
     always @(posedge clk) begin
         if (~rstn) begin
-            bnum <= bnum0;
+            bnum <= bnumin[3:0];
             sel_reg <= 8'b11111110;
         end else begin
             if (counter == CYCLE_PER_DIGIT - 1) begin
                 if (sel_reg == 8'b11111110) begin
-                    bnum <= bnum1;
+                    bnum <= bnumin[4+:4];
                     sel_reg <= 8'b11111101;
                 end
                 if (sel_reg == 8'b11111101) begin
-                    bnum <= bnum2;
+                    bnum <= bnumin[8+:4];
                     sel_reg <= 8'b11111011;
                 end
                 if (sel_reg == 8'b11111011) begin
-                    bnum <= bnum3;
+                    bnum <= bnumin[12+:4];
                     sel_reg <= 8'b11110111;
                 end
                 if (sel_reg == 8'b11110111) begin
-                    bnum <= bnum4;
+                    bnum <= bnumin[16+:4];
                     sel_reg <= 8'b11101111;
                 end
                 if (sel_reg == 8'b11101111) begin
-                    bnum <= bnum5;
+                    bnum <= bnumin[20+:4];
                     sel_reg <= 8'b11011111;
                 end
                 if (sel_reg == 8'b11011111) begin
-                    bnum <= bnum6;
+                    bnum <= bnumin[24+:4];
                     sel_reg <= 8'b10111111;
                 end
                 if (sel_reg == 8'b10111111) begin
-                    bnum <= bnum7;
+                    bnum <= bnumin[28+:4];
                     sel_reg <= 8'b01111111;
                 end
                 if (sel_reg == 8'b01111111) begin
-                    bnum <= bnum0;
+                    bnum <= bnumin[3:0];
                     sel_reg <= 8'b11111110;
                 end
             end

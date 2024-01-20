@@ -34,6 +34,8 @@ module hazard_unit (
     input logic [4:0] rd_m,
     input logic reg_write_m,
     input logic [2:0] result_src_m,
+    input logic mem_write_m,
+    input logic mem_read_m,
 
     // from data memory
     input logic cache_data_valid,
@@ -100,7 +102,7 @@ module hazard_unit (
 
     logic lw_stall;
     assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
-    assign cache_stall = (result_src_m === 3'bx) ? ~cache_data_valid : ((result_src_m == 3'b001) & ~cache_data_valid);
+    assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
     assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
     assign stall_e = cache_stall | out_stall | in_stall;

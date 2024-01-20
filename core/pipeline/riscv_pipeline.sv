@@ -23,6 +23,7 @@ module riscv_pipeline (
 
     // to data memory
     output logic data_we,
+    output logic data_re,
     output logic [31:0] data_addr,
     output logic [31:0] din,
 
@@ -104,6 +105,7 @@ module riscv_pipeline (
         if (flush_e === 1'b1 || rst) begin
             control_decode_if_out.reg_write <= 1'b0;
             control_decode_if_out.result_src <= 3'b0;
+            control_decode_if_out.mem_read <= 1'b0;
             control_decode_if_out.mem_write <= 1'b0;
             control_decode_if_out.jump <= 1'b0;
             control_decode_if_out.branch <= 1'b0;
@@ -129,6 +131,7 @@ module riscv_pipeline (
         else if (stall_e === 1'b0) begin
             control_decode_if_out.reg_write <= control_decode_if_in.reg_write;
             control_decode_if_out.result_src <= control_decode_if_in.result_src;
+            control_decode_if_out.mem_read <= control_decode_if_in.mem_read;
             control_decode_if_out.mem_write <= control_decode_if_in.mem_write;
             control_decode_if_out.jump <= control_decode_if_in.jump;
             control_decode_if_out.branch <= control_decode_if_in.branch;
@@ -164,6 +167,8 @@ module riscv_pipeline (
     logic [4:0] rs1_e;
     logic [4:0] rs2_e;
     logic pc_src_e;
+    logic data_we_e;
+    logic data_re_e;
 
     exec i_exec (
         .rst(rst),
@@ -173,7 +178,8 @@ module riscv_pipeline (
         .data_exec_if(data_exec_if_in.in),
         .data_addr(alu_result_e),
         .data_to_memory(write_data_e),
-        .data_memory_we(data_we),
+        .data_memory_we(data_we_e),
+        .data_memory_re(data_re_e),
         .alu_result_m(alu_result_m),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
@@ -191,6 +197,8 @@ module riscv_pipeline (
     // taken from the memory access register.
     assign data_addr = (stall_m) ? data_exec_if_out.alu_result : alu_result_e;
     assign din = (stall_m) ? data_exec_if_out.write_data : write_data_e;
+    assign data_we = (stall_m) ? control_exec_if_out.mem_write : control_decode_if_out.mem_write;
+    assign data_re = (stall_m) ? control_exec_if_out.mem_read : control_decode_if_out.mem_read;
 
     // memory access reg
     control_exec_io control_exec_if_in();
@@ -207,6 +215,7 @@ module riscv_pipeline (
             control_exec_if_out.reg_write <= 1'b0;
             control_exec_if_out.result_src <= 3'b0;
             control_exec_if_out.mem_write <= 1'b0;
+            control_exec_if_out.mem_read <= 1'b0;
 
             data_exec_if_out.alu_result <= 32'b0;
             data_exec_if_out.write_data <= 32'b0;
@@ -221,6 +230,7 @@ module riscv_pipeline (
             control_exec_if_out.reg_write <= control_exec_if_in.reg_write;
             control_exec_if_out.result_src <= control_exec_if_in.result_src;
             control_exec_if_out.mem_write <= control_exec_if_in.mem_write;
+            control_exec_if_out.mem_read <= control_decode_if_in.mem_read;
 
             data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
             data_exec_if_out.write_data <= data_exec_if_in.write_data;
@@ -313,6 +323,8 @@ module riscv_pipeline (
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),
         .result_src_m(control_exec_if_out.result_src),
+        .mem_write_m(control_exec_if_out.mem_write),
+        .mem_read_m(control_exec_if_out.mem_read),
         .cache_data_valid(cache_data_valid),
         .stall_w(stall_w),
         .rd_w(rd_w),

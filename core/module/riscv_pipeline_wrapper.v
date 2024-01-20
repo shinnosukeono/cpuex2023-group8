@@ -15,6 +15,7 @@ module riscv_pipeline_wrapper (
 
     // to data memory
     output wire data_we,
+    output wire data_re,
     output wire [31:0] data_addr,
     output wire [31:0] din,
 
@@ -38,6 +39,7 @@ module riscv_pipeline_wrapper (
         .en_instr_mem(en_instr_mem),
         .read_data(read_data),
         .cache_data_valid(cache_data_valid),
+        .data_re(data_re),
         .data_we(data_we),
         .data_addr(data_addr),
         .din(din),

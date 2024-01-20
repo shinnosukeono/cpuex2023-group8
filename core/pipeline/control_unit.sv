@@ -22,6 +22,7 @@ module control_unit (
         .branch(control_decode_if.branch),
         .jump(control_decode_if.jump),
         .result_src(control_decode_if.result_src),
+        .mem_read(control_decode_if.mem_read),
         .mem_write(control_decode_if.mem_write),
         .alu_src(control_decode_if.alu_src),
         .imm_src(imm_src),

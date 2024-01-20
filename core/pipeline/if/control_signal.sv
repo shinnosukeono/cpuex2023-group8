@@ -1,6 +1,7 @@
 interface control_decode_io;
     logic reg_write;
     logic [2:0] result_src;
+    logic mem_read;
     logic mem_write;
     logic jump;
     logic branch;
@@ -13,6 +14,7 @@ interface control_decode_io;
     modport in (
         output reg_write,
         output result_src,
+        output mem_read,
         output mem_write,
         output jump,
         output branch,
@@ -26,6 +28,7 @@ interface control_decode_io;
     modport out (
         input reg_write,
         input result_src,
+        input mem_read,
         input mem_write,
         input jump,
         input branch,
@@ -42,15 +45,18 @@ interface control_exec_io;
     logic reg_write;
     logic [2:0] result_src;
     logic mem_write;
+    logic mem_read;
     modport in (
         output reg_write,
         output result_src,
-        output mem_write
+        output mem_write,
+        output mem_read
     );
     modport out (
         input reg_write,
         input result_src,
-        input mem_write
+        input mem_write,
+        input mem_read
     );
 endinterface //control_exec_io
 

@@ -27,6 +27,7 @@
         output wire out_stall,
         output wire [31:0] rx_dout,
         output wire dmem_we,
+		output wire dmem_re,
 		output reg [31:0] dmem_addr,
         output wire imem_we,
 		output wire reg_we,
@@ -155,6 +156,8 @@
 			dmem_addr <= dmem_addr + 32'h4;
 		end
 	end
+
+	assign dmem_re = 1'b0;
 	// User logic ends
 
 	endmodule

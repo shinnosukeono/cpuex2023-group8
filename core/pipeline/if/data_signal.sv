@@ -26,6 +26,8 @@ interface data_decode_io;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
     logic [31:0] result_bytes;
+    logic [2:0] rm;
+    logic [4:0] funct5;
     modport in (
         output rd1,
         output rd2,
@@ -37,7 +39,9 @@ interface data_decode_io;
         output pc_plus4,
         output c_reg_data_out,
         output status,
-        output result_bytes
+        output result_bytes,
+        output rm,
+        output funct5
     );
     modport out (
         input rd1,
@@ -50,7 +54,9 @@ interface data_decode_io;
         input pc_plus4,
         input c_reg_data_out,
         input status,
-        input result_bytes
+        input result_bytes,
+        input rm,
+        input funct5
     );
 endinterface: data_decode_io //data_decode_io
 

@@ -19,16 +19,22 @@ module write_back (
     output logic reg_write_w,
     output logic [4:0] rd_w,
     output logic [31:0] result_w,
+    output logic fpu_reg_write_w,
+    output logic [31:0] fpu_result_w,
 
     // from exec stage
     input logic pc_src_e,
     input logic [31:0] pc_target_e,
 
     // from I/O module
-    input logic [31:0] in_data
+    input logic [31:0] in_data,
+
+    // from FPU unit
+    input logic [31:0] fpu_result
 );
     assign reg_write_w = control_mem_if.reg_write;
     assign rd_w = data_mem_if.rd;
+    assign fpu_reg_write_w = control_mem_if.fpu_reg_write;
 
     // result_w
     // NOTE: This implementation is based on the premise that the in_issued is
@@ -42,8 +48,16 @@ module write_back (
             3'b010: result_w = data_mem_if.pc_plus4;
             3'b011: result_w = data_mem_if.c_reg_data_out;
             3'b100: result_w = data_mem_if.imm_ext;
+            3'b110: result_w = fpu_result;
             3'b111: result_w = in_data;
             default: result_w = 32'bx;
+        endcase
+    end
+
+    always_comb begin
+        case (control_mem_if.result_src)
+            3'b000: fpu_result_w = fpu_result;
+            3'b001: fpu_result_w = data_mem_if.read_data;
         endcase
     end
 

@@ -24,31 +24,50 @@ module data_mem #(
     parameter ADDRW = 10
 ) (
     input wire clk, rst,
+    input wire re,
     input wire we,
     input wire [31:0] addr,
     input wire [31:0] din,
-    output wire [31:0] dout
+    output wire [31:0] dout,
+    output reg valid
 );
 
-    reg [31:0] data_mem_reg [63:0];
-    reg [5:0] addr_aligned;
-    reg [31:0] din_buffered;
-    reg we_buffered;
+    reg en;
+    reg we_delayed;
 
-    integer i;
     always @(posedge clk) begin
-        addr_aligned <= addr[7:2];
-        din_buffered <= din;
-        we_buffered <= we;
-        if (rst) begin
-            for (i = 0; i <= 63; i = i + 1) begin
-                data_mem_reg[i] <= 32'b0;
-            end
+        if ((re || we) && ~en) begin
+            en <= 1'b1;
         end
-        else if (we_buffered) begin
-            data_mem_reg[addr_aligned] <= din_buffered;
+        else begin
+            en <= 1'b0;
+        end
+
+        if (en) begin
+            valid <= 1'b1;
+        end
+        else begin
+            valid <= 1'b0;
+        end
+
+        if (we) begin
+            we_delayed <= 1'b1;
+        end
+        else begin
+            we_delayed <= 1'b0;
         end
     end
-    
-    assign dout = data_mem_reg[addr_aligned];
+
+    rams_sp_rf_rst #(
+        .DATA_WIDTH(32),
+        .DATA_DEPTH(64)
+    ) i_dmem (
+        .clk(clk),
+        .rst(rst),
+        .en(en),
+        .we(we_delayed),
+        .addr(addr),
+        .din(din),
+        .dout(dout)
+    );
 endmodule

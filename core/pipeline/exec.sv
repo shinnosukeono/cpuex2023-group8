@@ -13,6 +13,9 @@ module exec (
     control_exec_io.in control_exec_if,
     data_exec_io.in data_exec_if,
 
+    // from the fpu register
+    input logic [31:0] fpu_rd2,
+
     // to data memory
     output logic [31:0] data_addr,
     output logic [31:0] data_to_memory,
@@ -58,8 +61,9 @@ module exec (
     assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : src_a_forward;
 
     // src_b
+    logic [31:0] int_write_data;
     logic [31:0] src_b;
-    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : data_exec_if.write_data;
+    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : int_write_data;
 
     // ALU
     logic zero_flag;
@@ -77,12 +81,14 @@ module exec (
     // write_data
     always_comb begin
         case (forward_b_e)
-            2'b00: data_exec_if.write_data = data_decode_if.rd2;
-            2'b01: data_exec_if.write_data = result_w;
-            2'b10: data_exec_if.write_data = alu_result_m;
-            default: data_exec_if.write_data = 32'bx;  // error
+            2'b00: int_write_data = data_decode_if.rd2;
+            2'b01: int_write_data = result_w;
+            2'b10: int_write_data = alu_result_m;
+            default: int_write_data = 32'bx;  // error
         endcase
     end
+
+    assign data_exec_if.write_data = (control_decode_if.write_src) ? fpu_rd2 : int_write_data;
 
     // to data memory
     alu_simplified #(

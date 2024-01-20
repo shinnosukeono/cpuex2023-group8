@@ -29,7 +29,14 @@ module riscv_pipeline_wrapper (
     output wire [31:0] result_bytes,
     output wire out_issued,
     output wire [31:0] out_data,
-    output wire in_issued
+    output wire in_issued,
+
+    input wire [31:0] fpu_result,
+
+    output wire [31:0] fpu_rd1,
+    output wire [31:0] fpu_rd2,
+    output wire [2:0] fpu_rm,
+    output wire [4:0] fpu_funct5
 );
     riscv_pipeline i_riscv_pipeline (
         .clk(clk),
@@ -50,6 +57,10 @@ module riscv_pipeline_wrapper (
         .result_bytes(result_bytes),
         .out_issued(out_issued),
         .out_data(out_data),
-        .in_issued(in_issued)
+        .in_issued(in_issued),
+        .fpu_rd1(fpu_rd1),
+        .fpu_rd2(fpu_rd2),
+        .fpu_rm(fpu_rm),
+        .fpu_funct5(fpu_funct5)
     );
 endmodule

@@ -30,7 +30,10 @@ module control_unit (
         .alu_op(alu_op),
         .c_reg_write(c_reg_write),
         .out_issued(control_decode_if.out_issued),
-        .in_issued(control_decode_if.in_issued)
+        .in_issued(control_decode_if.in_issued),
+        .fpu_dispatch(control_decode_if.fpu_dispatch),
+        .fpu_reg_write(control_decode_if.fpu_reg_write),
+        .write_src(control_decode_if.write_src)
     );
 
     assign control_decode_if.alu_op_and = &alu_op;

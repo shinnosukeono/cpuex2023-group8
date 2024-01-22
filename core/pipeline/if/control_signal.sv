@@ -14,6 +14,7 @@ interface control_decode_io;
     logic fpu_dispatch;
     logic fpu_reg_write;
     logic write_src;
+    logic s_fpu;
     modport in (
         output reg_write,
         output result_src,
@@ -29,7 +30,8 @@ interface control_decode_io;
         output in_issued,
         output fpu_dispatch,
         output fpu_reg_write,
-        output write_src
+        output write_src,
+        output s_fpu
     );
     modport out (
         input reg_write,
@@ -46,7 +48,8 @@ interface control_decode_io;
         input in_issued,
         input fpu_dispatch,
         input fpu_reg_write,
-        input write_src
+        input write_src,
+        input s_fpu
     );
 endinterface //control_decode_io
 

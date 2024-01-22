@@ -58,6 +58,7 @@ module riscv_pipeline_wrapper (
         .out_issued(out_issued),
         .out_data(out_data),
         .in_issued(in_issued),
+        .fpu_result(fpu_result),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
         .fpu_rm(fpu_rm),

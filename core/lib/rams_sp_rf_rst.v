@@ -3,40 +3,39 @@
 
 module rams_sp_rf_rst #(
     parameter DATA_WIDTH = 32,
+    parameter ADDR_WIDTH = 10,
     parameter DATA_DEPTH = 1024
 ) (
-    clk, rst, en, we, addr, di, dout
+    clk, rst, en, we, addr, di, do
 );
-
-function integer log2;
-    input integer addr;
-    begin
-        addr = addr - 1;
-        for (log2=0; addr>0; log2=log2+1)
-            addr = addr >> 1;
-    end
-endfunction
 
 input wire clk;
 input wire en;
 input wire we;
 input wire rst;
-input wire [log2(DATA_DEPTH)-1:0] addr;
+input wire [ADDR_WIDTH-1:0] addr;
 input wire [DATA_WIDTH-1:0] di;
-output reg [DATA_WIDTH-1:0] dout;
+output reg [DATA_WIDTH-1:0] do;
 
 (* ram_style = "block" *) reg [DATA_WIDTH-1:0] ram [DATA_DEPTH-1:0];
 
+integer j;
+initial begin
+    for(j = 0; j < DATA_DEPTH; j = j+1) begin
+        ram[j] = {DATA_WIDTH{1'b0}};
+    end
+end
+
 always @(posedge clk) begin
     if (rst) begin
-        dout <= 0;
+        do <= 0;
     end
     else if (en) begin
         if (we) begin
             ram[addr] <= di;
         end
 
-        dout <= ram[addr];
+        do <= ram[addr];
     end
 end
 

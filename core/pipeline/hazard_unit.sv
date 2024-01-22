@@ -10,6 +10,7 @@ module hazard_unit (
     // from instr decode stage
     input logic [4:0] rs1_d,
     input logic [4:0] rs2_d,
+    input logic s_fpu_d,
 
     // to exec reg
     output logic stall_e,
@@ -21,6 +22,9 @@ module hazard_unit (
     input logic [4:0] rd_e,
     input logic pc_src_e,
     input logic result_src_e_0,
+    input logic s_fpu_e,
+    input logic reg_write_e,
+    input logic fpu_reg_write_e,
 
     // to exec stage
     output logic [1:0] forward_a_e,
@@ -36,6 +40,7 @@ module hazard_unit (
     input logic [2:0] result_src_m,
     input logic mem_write_m,
     input logic mem_read_m,
+    input logic fpu_reg_write_m,
 
     // from data memory
     input logic cache_data_valid,
@@ -46,6 +51,7 @@ module hazard_unit (
     // from write back stage
     input logic [4:0] rd_w,
     input logic reg_write_w,
+    input logic fpu_reg_write_w,
 
     // from I/O module
     input logic out_stall,
@@ -53,11 +59,17 @@ module hazard_unit (
 );
     // forwarding for data hazard
     always_comb begin
-        if (((rs1_e == rd_m) & reg_write_m) & (rs1_e != 5'b0)) begin
-            // use alu_result from memory access stage
-            forward_a_e = 2'b10;
+        if (((rs1_e == rd_m) && ((~s_fpu_e && reg_write_m) || (s_fpu_e && fpu_reg_write_m))) && ((rs1_e != 5'b0) || s_fpu_e)) begin
+            if (result_src_m == 3'b100) begin
+                // use imm_ext from the memory access stage
+                forward_a_e = 2'b11;
+            end
+            else begin
+                // use alu_result from memory access stage
+                forward_a_e = 2'b10;
+            end
         end
-        else if (((rs1_e == rd_w) & reg_write_w) & (rs1_e != 5'b0)) begin
+        else if (((rs1_e == rd_w) && ((~s_fpu_e && reg_write_w) || (s_fpu_e && fpu_reg_write_w))) && ((rs1_e != 5'b0) || s_fpu_e)) begin
             // use result from write back stage
             forward_a_e = 2'b01;
         end
@@ -68,11 +80,17 @@ module hazard_unit (
     end
 
     always_comb begin
-        if (((rs2_e == rd_m) & reg_write_m) & (rs2_e != 5'b0)) begin
-            // use alu_result from memory access stage
-            forward_b_e = 2'b10;
+        if (((rs2_e == rd_m) && ((~s_fpu_e && reg_write_m) || (s_fpu_e && fpu_reg_write_m))) && ((rs2_e != 5'b0) || s_fpu_e)) begin
+            if (result_src_m == 3'b100) begin
+                // use imm_ext from the memory access stage
+                forward_b_e = 2'b11;
+            end
+            else begin
+                // use alu_result from memory access stage
+                forward_b_e = 2'b10;
+            end
         end
-        else if (((rs2_e == rd_w) & reg_write_w) & (rs2_e != 5'b0)) begin
+        else if (((rs2_e == rd_w) & ((~s_fpu_e && reg_write_w) || (s_fpu_e && fpu_reg_write_w))) && ((rs2_e != 5'b0) || s_fpu_e)) begin
             // use result from write back stage
             forward_b_e = 2'b01;
         end
@@ -101,7 +119,7 @@ module hazard_unit (
     // TODO: cache_stall in store word
 
     logic lw_stall;
-    assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)));
+    assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
     assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);

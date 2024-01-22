@@ -14,12 +14,15 @@ module memory_access (
     input logic [31:0] dout,
 
     // to exec stage
-    output logic [31:0] alu_result_m
+    output logic [31:0] alu_result_m,
+    output logic [31:0] imm_ext_m
 );
     assign alu_result_m = data_exec_if.alu_result;
+    assign imm_ext_m = data_exec_if.imm_ext;
 
     assign control_mem_if.reg_write = control_exec_if.reg_write;
     assign control_mem_if.result_src = control_exec_if.result_src;
+    assign control_mem_if.fpu_reg_write = control_exec_if.fpu_reg_write;
 
     assign data_mem_if.alu_result = data_exec_if.alu_result;
     assign data_mem_if.read_data = dout;
@@ -29,4 +32,5 @@ module memory_access (
     assign data_mem_if.c_reg_data_out = data_exec_if.c_reg_data_out;
     assign data_mem_if.status = data_exec_if.status;
     assign data_mem_if.result_bytes = data_exec_if.result_bytes;
+    assign data_mem_if.fpu_result = data_exec_if.fpu_result;
 endmodule

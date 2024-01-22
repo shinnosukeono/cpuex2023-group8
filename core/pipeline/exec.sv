@@ -13,9 +13,6 @@ module exec (
     control_exec_io.in control_exec_if,
     data_exec_io.in data_exec_if,
 
-    // from the fpu register
-    input logic [31:0] fpu_rd2,
-
     // to data memory
     output logic [31:0] data_addr,
     output logic [31:0] data_to_memory,
@@ -24,6 +21,7 @@ module exec (
 
     // from memory access stage
     input logic [31:0] alu_result_m,
+    input logic [31:0] imm_ext_m,
 
     // from write back stage
     input logic [31:0] result_w,
@@ -41,7 +39,10 @@ module exec (
     output pc_src_e,
 
     // to I/O module
-    output logic [31:0] out_data
+    output logic [31:0] out_data,
+
+    // from FPU unit
+    input logic [31:0] fpu_result
 );
 
     // src_a
@@ -51,7 +52,7 @@ module exec (
             2'b00: src_a_forward = data_decode_if.rd1;
             2'b01: src_a_forward = result_w;
             2'b10: src_a_forward = alu_result_m;
-            default: src_a_forward = 32'bx;  // error
+            2'b11: src_a_forward = imm_ext_m;
         endcase
     end
 
@@ -84,11 +85,11 @@ module exec (
             2'b00: int_write_data = data_decode_if.rd2;
             2'b01: int_write_data = result_w;
             2'b10: int_write_data = alu_result_m;
-            default: int_write_data = 32'bx;  // error
+            2'b11: int_write_data = imm_ext_m;
         endcase
     end
 
-    assign data_exec_if.write_data = (control_decode_if.write_src) ? fpu_rd2 : int_write_data;
+    assign data_exec_if.write_data = (control_decode_if.write_src && ~(|forward_b_e)) ? data_decode_if.fpu_rd2 : int_write_data;
 
     // to data memory
     alu_simplified #(
@@ -125,6 +126,8 @@ module exec (
     assign control_exec_if.reg_write = control_decode_if.reg_write;
     assign control_exec_if.result_src = control_decode_if.result_src;
     assign control_exec_if.mem_write = control_decode_if.mem_write;
+    assign control_exec_if.mem_read = control_decode_if.mem_read;
+    assign control_exec_if.fpu_reg_write = control_decode_if.fpu_reg_write;
 
     assign data_exec_if.rd = data_decode_if.rd;
     assign data_exec_if.imm_ext = data_decode_if.imm_ext;
@@ -132,4 +135,5 @@ module exec (
     assign data_exec_if.c_reg_data_out = data_decode_if.c_reg_data_out;
     assign data_exec_if.status = data_decode_if.status;
     assign data_exec_if.result_bytes = data_decode_if.result_bytes;
+    assign data_exec_if.fpu_result = fpu_result;
 endmodule

@@ -33,7 +33,6 @@ module data_mem #(
 );
 
     reg en;
-    reg we_delayed;
 
     always @(posedge clk) begin
         if ((re || we) && ~en) begin
@@ -49,25 +48,19 @@ module data_mem #(
         else begin
             valid <= 1'b0;
         end
-
-        if (we) begin
-            we_delayed <= 1'b1;
-        end
-        else begin
-            we_delayed <= 1'b0;
-        end
     end
 
     rams_sp_rf_rst #(
         .DATA_WIDTH(32),
+        .ADDR_WIDTH(6),
         .DATA_DEPTH(64)
     ) i_dmem (
         .clk(clk),
         .rst(rst),
         .en(en),
-        .we(we_delayed),
-        .addr(addr),
-        .din(din),
-        .dout(dout)
+        .we(we),
+        .addr(addr[7:2]),
+        .di(din),
+        .do(dout)
     );
 endmodule

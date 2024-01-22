@@ -1,13 +1,14 @@
 //TODO: パイプライン化
 `include "main_decoder.sv"
 `include "alu_decoder.sv"
-`include "proc_common/c_reg_decoder.sv"
-`include "pipeline/if/control_signal.sv"
+`include "../proc_common/c_reg_decoder.sv"
+`include "if/control_signal.sv"
 
 module control_unit (
     input logic [6:0] op_6_0,
     input logic [2:0] funct3,
     input logic funct7_5,
+    input logic funct7_6,
 
     control_decode_io.in control_decode_if,
     output logic [2:0] imm_src,
@@ -19,15 +20,23 @@ module control_unit (
     main_decoder main_decoder(
         .opecode(op_6_0),
         .funct3(funct3),
+        .funct7_6(funct7_6),
         .branch(control_decode_if.branch),
         .jump(control_decode_if.jump),
         .result_src(control_decode_if.result_src),
+        .mem_read(control_decode_if.mem_read),
         .mem_write(control_decode_if.mem_write),
         .alu_src(control_decode_if.alu_src),
         .imm_src(imm_src),
         .reg_write(control_decode_if.reg_write),
         .alu_op(alu_op),
-        .c_reg_write(c_reg_write)
+        .c_reg_write(c_reg_write),
+        .out_issued(control_decode_if.out_issued),
+        .in_issued(control_decode_if.in_issued),
+        .fpu_dispatch(control_decode_if.fpu_dispatch),
+        .fpu_reg_write(control_decode_if.fpu_reg_write),
+        .write_src(control_decode_if.write_src),
+        .s_fpu(control_decode_if.s_fpu)
     );
 
     assign control_decode_if.alu_op_and = &alu_op;

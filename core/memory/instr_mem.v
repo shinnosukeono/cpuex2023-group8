@@ -1,20 +1,30 @@
-module instr_mem #(
-    parameter ADDRW = 10
-) (
+`timescale 1ns / 1ps
+
+module instr_mem (
     input wire clk,
     input wire we,
-    input wire [31:0] addr,
+    input wire en,
+    input wire io_sel,
+    input wire [31:0] addr_io,
+    input wire [31:0] addr_proc,
     input wire [31:0] din,
     output wire [31:0] dout
 );
 
-    reg [31:0] instr_mem_reg [31:0];
-    
-    always @(posedge clk) begin
-        if (we) begin
-            instr_mem_reg[addr[6:2]] <= din;
-        end
-    end
-    
-    assign dout = instr_mem_reg[addr[6:2]];
+    wire [31:0] addr;
+    wire [11:0] addra;
+
+    assign addr = io_sel ? addr_io : addr_proc;
+
+    assign addra = addr[13:2];
+
+    instr_mem_pp_io_1 i_instr_mem (
+        .clka(clk),
+        .wea(we),
+        .ena(en),
+        .addra(addra),
+        .dina(din),
+        .douta(dout)
+    );
+
 endmodule

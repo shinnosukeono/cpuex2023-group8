@@ -1,4 +1,4 @@
-`include "const/const.svh"
+`include "../const/const.svh"
 
 module axi_eol_check (
     input  [AXI_DATAW-1:0] data,

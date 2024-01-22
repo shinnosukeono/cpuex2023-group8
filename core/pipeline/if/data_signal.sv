@@ -26,6 +26,10 @@ interface data_decode_io;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
     logic [31:0] result_bytes;
+    logic [31:0] fpu_rd1;
+    logic [31:0] fpu_rd2;
+    logic [2:0] rm;
+    logic [4:0] funct5;
     modport in (
         output rd1,
         output rd2,
@@ -37,7 +41,11 @@ interface data_decode_io;
         output pc_plus4,
         output c_reg_data_out,
         output status,
-        output result_bytes
+        output result_bytes,
+        output fpu_rd1,
+        output fpu_rd2,
+        output rm,
+        output funct5
     );
     modport out (
         input rd1,
@@ -50,7 +58,11 @@ interface data_decode_io;
         input pc_plus4,
         input c_reg_data_out,
         input status,
-        input result_bytes
+        input result_bytes,
+        input fpu_rd1,
+        input fpu_rd2,
+        input rm,
+        input funct5
     );
 endinterface: data_decode_io //data_decode_io
 
@@ -63,6 +75,7 @@ interface data_exec_io;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
     logic [31:0] result_bytes;
+    logic [31:0] fpu_result;
     modport in (
         output alu_result,
         output write_data,
@@ -71,7 +84,8 @@ interface data_exec_io;
         output pc_plus4,
         output c_reg_data_out,
         output status,
-        output result_bytes
+        output result_bytes,
+        output fpu_result
     );
     modport out (
         input alu_result,
@@ -81,7 +95,8 @@ interface data_exec_io;
         input pc_plus4,
         input c_reg_data_out,
         input status,
-        input result_bytes
+        input result_bytes,
+        input fpu_result
     );
 endinterface: data_exec_io //data_exec_io
 
@@ -94,6 +109,8 @@ interface data_mem_io;
     logic [31:0] c_reg_data_out;
     logic [31:0] status;
     logic [31:0] result_bytes;
+    logic [31:0] in_data;
+    logic [31:0] fpu_result;
     modport in (
         output alu_result,
         output read_data,
@@ -102,7 +119,9 @@ interface data_mem_io;
         output pc_plus4,
         output c_reg_data_out,
         output status,
-        output result_bytes
+        output result_bytes,
+        output in_data,
+        output fpu_result
     );
     modport out (
         input alu_result,
@@ -112,7 +131,9 @@ interface data_mem_io;
         input pc_plus4,
         input c_reg_data_out,
         input status,
-        input result_bytes
+        input result_bytes,
+        input in_data,
+        input fpu_result
     );
 endinterface: data_mem_io //data_mem_io
 

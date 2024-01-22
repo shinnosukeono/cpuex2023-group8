@@ -1,4 +1,4 @@
-`include "const/const.svh"
+`include "../const/const.svh"
 
 module delay_2_clocks (
     input logic clk, rst,

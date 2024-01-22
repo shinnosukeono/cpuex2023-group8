@@ -1,6 +1,7 @@
-`include "proc_common/alu.sv"
-`include "pipeline/if/control_signal.sv"
-`include "pipeline/if/data_signal.sv"
+`include "../proc_common/alu.sv"
+`include "../proc_common/alu_simplified.sv"
+`include "if/control_signal.sv"
+`include "if/data_signal.sv"
 
 module exec (
     input logic rst,
@@ -12,8 +13,15 @@ module exec (
     control_exec_io.in control_exec_if,
     data_exec_io.in data_exec_if,
 
+    // to data memory
+    output logic [31:0] data_addr,
+    output logic [31:0] data_to_memory,
+    output logic data_memory_we,
+    output logic data_memory_re,
+
     // from memory access stage
     input logic [31:0] alu_result_m,
+    input logic [31:0] imm_ext_m,
 
     // from write back stage
     input logic [31:0] result_w,
@@ -28,7 +36,13 @@ module exec (
     // to hazard unit
     output logic [4:0] rs1_e,
     output logic [4:0] rs2_e,
-    output pc_src_e
+    output pc_src_e,
+
+    // to I/O module
+    output logic [31:0] out_data,
+
+    // from FPU unit
+    input logic [31:0] fpu_result
 );
 
     // src_a
@@ -38,16 +52,19 @@ module exec (
             2'b00: src_a_forward = data_decode_if.rd1;
             2'b01: src_a_forward = result_w;
             2'b10: src_a_forward = alu_result_m;
-            default: src_a_forward = 32'bx;  // error
+            2'b11: src_a_forward = imm_ext_m;
         endcase
     end
+
+    assign out_data = {24'b0, src_a_forward[7:0]};
 
     logic [31:0] src_a;
     assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : src_a_forward;
 
     // src_b
+    logic [31:0] int_write_data;
     logic [31:0] src_b;
-    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : data_exec_if.write_data;
+    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : int_write_data;
 
     // ALU
     logic zero_flag;
@@ -65,12 +82,27 @@ module exec (
     // write_data
     always_comb begin
         case (forward_b_e)
-            2'b00: data_exec_if.write_data = data_decode_if.rd2;
-            2'b01: data_exec_if.write_data = result_w;
-            2'b10: data_exec_if.write_data = alu_result_m;
-            default: data_exec_if.write_data = 32'bx;  // error
+            2'b00: int_write_data = data_decode_if.rd2;
+            2'b01: int_write_data = result_w;
+            2'b10: int_write_data = alu_result_m;
+            2'b11: int_write_data = imm_ext_m;
         endcase
     end
+
+    assign data_exec_if.write_data = (control_decode_if.write_src && ~(|forward_b_e)) ? data_decode_if.fpu_rd2 : int_write_data;
+
+    // to data memory
+    alu_simplified #(
+        .N(32)
+    ) i_alu_simplified (
+        .a(src_a),
+        .b(data_decode_if.imm_ext),
+        .alu_control(control_decode_if.alu_control),
+        .result(data_addr)
+    );
+    assign data_to_memory = data_exec_if.write_data;
+    assign data_memory_we = control_decode_if.mem_write;
+    assign data_memory_re = control_decode_if.mem_read;
 
     assign pc_target_e = data_decode_if.pc + data_decode_if.imm_ext;
 
@@ -94,6 +126,8 @@ module exec (
     assign control_exec_if.reg_write = control_decode_if.reg_write;
     assign control_exec_if.result_src = control_decode_if.result_src;
     assign control_exec_if.mem_write = control_decode_if.mem_write;
+    assign control_exec_if.mem_read = control_decode_if.mem_read;
+    assign control_exec_if.fpu_reg_write = control_decode_if.fpu_reg_write;
 
     assign data_exec_if.rd = data_decode_if.rd;
     assign data_exec_if.imm_ext = data_decode_if.imm_ext;
@@ -101,4 +135,5 @@ module exec (
     assign data_exec_if.c_reg_data_out = data_decode_if.c_reg_data_out;
     assign data_exec_if.status = data_decode_if.status;
     assign data_exec_if.result_bytes = data_decode_if.result_bytes;
+    assign data_exec_if.fpu_result = fpu_result;
 endmodule

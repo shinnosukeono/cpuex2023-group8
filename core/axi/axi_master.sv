@@ -1,5 +1,5 @@
-`include "const/const.svh"
-`include "axi/axi_fsm.sv"
+`include "../const/const.svh"
+`include "axi_fsm.sv"
 
 module axi_master #(
     parameter AXI_DATAW_BYTE = AXI_DATAW >> 3

@@ -26,7 +26,6 @@ module riscv_pipeline_wrapper (
 
     // to I/O module
     output wire [31:0] status,
-    output wire [31:0] result_bytes,
     output wire out_issued,
     output wire [31:0] out_data,
     output wire in_issued,
@@ -54,7 +53,6 @@ module riscv_pipeline_wrapper (
         .in_stall(in_stall),
         .in_data(in_data),
         .status(status),
-        .result_bytes(result_bytes),
         .out_issued(out_issued),
         .out_data(out_data),
         .in_issued(in_issued),

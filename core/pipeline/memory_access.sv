@@ -29,8 +29,8 @@ module memory_access (
     assign data_mem_if.rd = data_exec_if.rd;
     assign data_mem_if.imm_ext = data_exec_if.imm_ext;
     assign data_mem_if.pc_plus4 = data_exec_if.pc_plus4;
-    assign data_mem_if.c_reg_data_out = data_exec_if.c_reg_data_out;
     assign data_mem_if.status = data_exec_if.status;
-    assign data_mem_if.result_bytes = data_exec_if.result_bytes;
     assign data_mem_if.fpu_result = data_exec_if.fpu_result;
+    assign data_mem_if.rd1 = data_exec_if.rd1;
+    assign data_mem_if.fpu_rd1 = data_exec_if.fpu_rd1;
 endmodule

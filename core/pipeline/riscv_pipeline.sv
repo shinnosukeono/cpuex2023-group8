@@ -34,7 +34,6 @@ module riscv_pipeline (
 
     // to I/O module
     output logic [31:0] status,
-    output logic [31:0] result_bytes,
     output logic out_issued,
     output logic [31:0] out_data,
     output logic in_issued,
@@ -139,9 +138,7 @@ module riscv_pipeline (
             data_decode_if_out.rd <= 5'b0;
             data_decode_if_out.imm_ext <= 32'b0;
             data_decode_if_out.pc_plus4 <= 32'b0;
-            data_decode_if_out.c_reg_data_out <= 32'b0;
             data_decode_if_out.status <= 32'b0;
-            data_decode_if_out.result_bytes <= 32'b0;
             data_decode_if_out.fpu_rd1 <= 32'b0;
             data_decode_if_out.fpu_rd2 <= 32'b0;
             data_decode_if_out.rm <= 3'b0;
@@ -173,9 +170,7 @@ module riscv_pipeline (
             data_decode_if_out.rd <= data_decode_if_in.rd;
             data_decode_if_out.imm_ext <= data_decode_if_in.imm_ext;
             data_decode_if_out.pc_plus4 <= data_decode_if_in.pc_plus4;
-            data_decode_if_out.c_reg_data_out <= data_decode_if_in.c_reg_data_out;
             data_decode_if_out.status <= data_decode_if_in.status;
-            data_decode_if_out.result_bytes <= data_decode_if_in.result_bytes;
             data_decode_if_out.fpu_rd1 <= data_decode_if_in.fpu_rd1;
             data_decode_if_out.fpu_rd2 <= data_decode_if_in.fpu_rd2;
             data_decode_if_out.rm <= data_decode_if_in.rm;
@@ -210,6 +205,8 @@ module riscv_pipeline (
         .data_memory_re(data_re_e),
         .alu_result_m(alu_result_m),
         .imm_ext_m(imm_ext_m),
+        .fpu_result_m(data_exec_if_out.fpu_result),
+        .result_src_m(control_exec_if_out.result_src),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
         .forward_a_e(forward_a_e),
@@ -218,11 +215,11 @@ module riscv_pipeline (
         .rs2_e(rs2_e),
         .pc_src_e(pc_src_e),
         .out_data(out_data),
-        .fpu_result(fpu_result)
+        .fpu_result(fpu_result),
+        .fpu_rd1(fpu_rd1),
+        .fpu_rd2(fpu_rd2)
     );
 
-    assign fpu_rd1 = data_decode_if_out.fpu_rd1;
-    assign fpu_rd2 = data_decode_if_out.fpu_rd2;
     assign fpu_rm = data_decode_if_out.rm;
     assign fpu_funct5 = data_decode_if_out.funct5;
 
@@ -258,10 +255,10 @@ module riscv_pipeline (
             data_exec_if_out.rd <= 5'b0;
             data_exec_if_out.imm_ext <= 32'b0;
             data_exec_if_out.pc_plus4 <= 32'b0;
-            data_exec_if_out.c_reg_data_out <= 32'b0;
             data_exec_if_out.status <= 32'b0;
-            data_exec_if_out.result_bytes <= 32'b0;
             data_exec_if_out.fpu_result <= 32'b0;
+            data_exec_if_out.rd1 <= 32'b0;
+            data_exec_if_out.fpu_rd1 = 32'b0;
         end
         else if (stall_m === 1'b0) begin
             control_exec_if_out.reg_write <= control_exec_if_in.reg_write;
@@ -275,10 +272,10 @@ module riscv_pipeline (
             data_exec_if_out.rd <= data_exec_if_in.rd;
             data_exec_if_out.imm_ext <= data_exec_if_in.imm_ext;
             data_exec_if_out.pc_plus4 <= data_exec_if_in.pc_plus4;
-            data_exec_if_out.c_reg_data_out <= data_exec_if_in.c_reg_data_out;
             data_exec_if_out.status <= data_exec_if_in.status;
-            data_exec_if_out.result_bytes <= data_exec_if_in.result_bytes;
             data_exec_if_out.fpu_result <= data_exec_if_in.fpu_result;
+            data_exec_if_out.rd1 <= data_exec_if_in.rd1;
+            data_exec_if_out.fpu_rd1 <= data_exec_if_in.fpu_rd1;
         end
     end
 
@@ -310,10 +307,10 @@ module riscv_pipeline (
             data_mem_if_out.rd <= data_mem_if_in.rd;
             data_mem_if_out.imm_ext <= data_mem_if_in.imm_ext;
             data_mem_if_out.pc_plus4 <= data_mem_if_in.pc_plus4;
-            data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
             data_mem_if_out.status <= data_mem_if_in.status;
-            data_mem_if_out.result_bytes <= data_mem_if_in.result_bytes;
             data_mem_if_out.fpu_result <= data_mem_if_in.fpu_result;
+            data_mem_if_out.rd1 <= data_mem_if_in.rd1;
+            data_mem_if_out.fpu_rd1 <= data_mem_if_in.fpu_rd1;
         end
     end
 
@@ -359,7 +356,7 @@ module riscv_pipeline (
         .rs2_e(data_decode_if_out.rs2),
         .rd_e(data_decode_if_out.rd),
         .pc_src_e(pc_src_e),
-        .result_src_e_0(control_decode_if_out.result_src[0]),
+        .result_src_e(control_decode_if_out.result_src),
         .s_fpu_e(control_decode_if_out.s_fpu),
         .reg_write_e(control_decode_if_out.reg_write),
         .fpu_reg_write_e(control_decode_if_out.fpu_reg_write),
@@ -384,6 +381,12 @@ module riscv_pipeline (
 
     assign en_instr_mem = ~stall_d;
 
-    assign status = data_decode_if_out.status;
-    assign result_bytes = data_decode_if_in.result_bytes;
+    always @(posedge clk) begin
+        if (rst) begin
+            status <= 32'h0;
+        end
+        else if (data_mem_if_out.status) begin
+            status <= 32'hffffffff;
+        end
+    end
 endmodule

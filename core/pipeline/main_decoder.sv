@@ -1,7 +1,7 @@
 module main_decoder (
     input logic [6:0] opecode,
     input logic [2:0] funct3,
-    input logic funct7_6,
+    input logic [3:0] funct7_3_6,
     output logic branch,
     output logic jump,
     output logic [2:0] result_src,
@@ -59,9 +59,18 @@ module main_decoder (
             7'b1001011: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fnmsub
             7'b1001111: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fnmadd
             7'b1010011: begin
-                case (funct7_6)
-                    1'b0: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fadd, fsub, fmul, fdiv, fsqrt, fsgnj, fsgnjn, fsgnjn, fsgnjx, fmin, fmax
-                    1'b1: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // feq, flt, fle, fclass
+                case (funct7_3_6)
+                    4'b0xxx: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fadd, fsub, fmul, fdiv, fsqrt, fsgnj, fsgnjn, fsgnjn, fsgnjx, fmin, fmax
+                    4'b1010: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // feq, flt, fle
+                    4'b1100: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // fcvt.w.s, fcvt.wu.s
+                    4'b1101: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_0;  // fcvt.s.w, fcvt.s.wu
+                    4'b1110: begin
+                        case (funct3)
+                            3'b001: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // fclass
+                            3'b000: controls = 21'b1_000_0_0_0_011_0_00_0_0_0_0_0_0_0_1;  // fmv.x.w
+                        endcase
+                    end
+                    4'b1111: controls = 21'b0_000_0_0_0_101_0_00_0_0_0_0_0_1_0_0;  // fmv.w.x
                 endcase
             end
             7'b0000111: controls = 21'b0_000_1_1_0_001_0_00_0_0_0_0_0_1_0_0;  // flw

@@ -1,26 +1,24 @@
 //TODO: パイプライン化
 `include "main_decoder.sv"
 `include "alu_decoder.sv"
-`include "../proc_common/c_reg_decoder.sv"
 `include "if/control_signal.sv"
 
 module control_unit (
     input logic [6:0] op_6_0,
     input logic [2:0] funct3,
     input logic funct7_5,
-    input logic funct7_6,
+    input logic [3:0] funct7_3_6,
 
     control_decode_io.in control_decode_if,
     output logic [2:0] imm_src,
-    output logic c_reg_write,
-    output logic c_reg_src
+    output logic c_reg_write
 );
     logic [1:0] alu_op;
 
     main_decoder main_decoder(
         .opecode(op_6_0),
         .funct3(funct3),
-        .funct7_6(funct7_6),
+        .funct7_3_6(funct7_3_6),
         .branch(control_decode_if.branch),
         .jump(control_decode_if.jump),
         .result_src(control_decode_if.result_src),
@@ -48,10 +46,5 @@ module control_unit (
         .op_5_xor_6(op_6_0[5] ^ op_6_0[6]),
         .funct7_5(funct7_5),
         .alu_control(control_decode_if.alu_control)
-    );
-
-    c_reg_decoder c_reg_decoder(
-        .funct3(funct3),
-        .c_reg_src(c_reg_src)
     );
 endmodule

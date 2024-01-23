@@ -21,7 +21,7 @@ module hazard_unit (
     input logic [4:0] rs2_e,
     input logic [4:0] rd_e,
     input logic pc_src_e,
-    input logic result_src_e_0,
+    input logic [2:0] result_src_e,
     input logic s_fpu_e,
     input logic reg_write_e,
     input logic fpu_reg_write_e,
@@ -116,10 +116,9 @@ module hazard_unit (
     // are same as the case 1. As the stall_e is also asserted in these cases,
     // the consistency of the instr_addr is all the more assured.
 
-    // TODO: cache_stall in store word
 
     logic lw_stall;
-    assign lw_stall = (result_src_e_0 & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
+    assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
     assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);

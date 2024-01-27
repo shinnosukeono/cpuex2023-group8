@@ -55,7 +55,9 @@ module hazard_unit (
 
     // from I/O module
     input logic out_stall,
-    input logic in_stall
+    input logic in_stall,
+
+    output logic lw_stall
 );
     // forwarding for data hazard
     always_comb begin
@@ -117,11 +119,11 @@ module hazard_unit (
     // the consistency of the instr_addr is all the more assured.
 
 
-    logic lw_stall;
+    // logic lw_stall;
     assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
-    assign stall_f = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
-    assign stall_d = (lw_stall === 1'bx) ? rst : (lw_stall | cache_stall | out_stall | in_stall);
+    assign stall_f = lw_stall | cache_stall | out_stall | in_stall;
+    assign stall_d = lw_stall | cache_stall | out_stall | in_stall;
     assign stall_e = cache_stall | out_stall | in_stall;
     assign stall_m = cache_stall;
     assign stall_w = cache_stall;
@@ -140,7 +142,7 @@ module hazard_unit (
     // cin instruction in the exec stage, the flush_e must not be asserted for
     // keeping the in_issued asserted in the exec stage while the in_stall is
     // assserted.
-    assign flush_d = (pc_src_e === 1'bx) ? rst : pc_src_e;
-    assign flush_e = ((pc_src_e === 1'bx) || (lw_stall === 1'bx)) ? rst : ((lw_stall | pc_src_e) & ~cache_stall & ~in_stall);
+    assign flush_d = pc_src_e;
+    assign flush_e = (lw_stall | pc_src_e) & ~cache_stall & ~in_stall;
 
 endmodule

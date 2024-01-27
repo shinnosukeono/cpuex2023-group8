@@ -127,10 +127,7 @@ module exec (
             default: branch_met = 1'b0;
         endcase
     end
-    assign pc_src_e =
-        ((control_decode_if.branch === 1'bx) || (control_decode_if.jump === 1'bx)) ?
-        rst :
-        (branch_met & control_decode_if.branch) | control_decode_if.jump;
+    assign pc_src_e = (branch_met & control_decode_if.branch) | control_decode_if.jump;
 
     assign control_exec_if.reg_write = control_decode_if.reg_write;
     assign control_exec_if.result_src = control_decode_if.result_src;

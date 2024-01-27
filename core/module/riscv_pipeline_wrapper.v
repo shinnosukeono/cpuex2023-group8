@@ -35,7 +35,20 @@ module riscv_pipeline_wrapper (
     output wire [31:0] fpu_rd1,
     output wire [31:0] fpu_rd2,
     output wire [2:0] fpu_rm,
-    output wire [4:0] fpu_funct5
+    output wire [4:0] fpu_funct5,
+
+    output wire cache_stall,
+    output wire lw_stall,
+
+    output wire stall_f,
+    output wire stall_d,
+    output wire stall_e,
+    output wire stall_m,
+    output wire stall_w,
+    output wire flush_d,
+    output wire flush_e,
+    output wire pc_src_e,
+    output wire [31:0] pc_plus4_e
 );
     riscv_pipeline i_riscv_pipeline (
         .clk(clk),
@@ -60,6 +73,17 @@ module riscv_pipeline_wrapper (
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
         .fpu_rm(fpu_rm),
-        .fpu_funct5(fpu_funct5)
+        .fpu_funct5(fpu_funct5),
+        .cache_stall(cache_stall),
+        .lw_stall(lw_stall),
+        .stall_f(stall_f),
+        .stall_d(stall_d),
+        .stall_e(stall_e),
+        .stall_m(stall_m),
+        .stall_w(stall_w),
+        .flush_d(flush_d),
+        .flush_e(flush_e),
+        .pc_src_e(pc_src_e),
+        .pc_plus4_e(pc_plus4_e)
     );
 endmodule

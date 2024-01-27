@@ -68,14 +68,16 @@ module main_decoder (
                         case (funct3)
                             3'b001: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // fclass
                             3'b000: controls = 21'b1_000_0_0_0_011_0_00_0_0_0_0_0_0_0_1;  // fmv.x.w
+                            default: controls = 21'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0;  // error
                         endcase
                     end
                     4'b1111: controls = 21'b0_000_0_0_0_101_0_00_0_0_0_0_0_1_0_0;  // fmv.w.x
+                    default: controls = 21'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0;  // error
                 endcase
             end
             7'b0000111: controls = 21'b0_000_1_1_0_001_0_00_0_0_0_0_0_1_0_0;  // flw
             7'b0100111: controls = 21'b0_001_1_0_1_110_0_00_0_0_0_0_0_0_1_1;  // fsw
-            default: controls = 21'bx_xxx_x_0_0_000_x_xx_x_x_0_0_0_0_0_0;  // error
+            default: controls = 21'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0;  // error
         endcase
     end
 endmodule

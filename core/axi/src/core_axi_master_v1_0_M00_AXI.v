@@ -576,11 +576,24 @@
 
 	assign rx_we = concat_valid;
 
+	wire dmem_ready;
+	reg dmem_write_first;
+	always @(posedge M_AXI_ACLK) begin
+		if (~M_AXI_ARESETN || init_txn_pulse) begin
+			dmem_write_first <= 1'b1;
+		end
+		else if (dmem_we && dmem_write_first) begin
+			dmem_write_first <= 1'b0;
+		end
+	end
+
+	assign dmem_ready = (dmem_write_first) ? 1'b1 : cache_data_valid;
+
 	assign rx_re = (
 		(mst_exec_state == PROGRAM_RECV) ||
 		(mst_exec_state == PROGRAM_WRITE) ||
-		(mst_exec_state == DATA_RECV) ||
-		(mst_exec_state == DATA_WRITE) ||
+		((mst_exec_state == DATA_RECV) && dmem_ready) ||
+		((mst_exec_state == DATA_WRITE) && dmem_ready) ||
 		((mst_exec_state == CORE_EXEC) && in_issued)
 	) && ~rx_empty;
 

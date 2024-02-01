@@ -58,7 +58,8 @@ module riscv_pipeline (
     output logic flush_d,
     output logic flush_e,
     output logic [31:0] pc_plus4_e,
-    output logic pc_src_e
+    output logic pc_src_e,
+    output logic [31:0] pc_plus4_m
 );
     // instr fetch reg
     data_back_io data_back_if_in();
@@ -404,4 +405,5 @@ module riscv_pipeline (
     end
 
     assign pc_plus4_e = data_decode_if_out.pc_plus4;
+    assign pc_plus4_m = data_exec_if_out.pc_plus4;
 endmodule

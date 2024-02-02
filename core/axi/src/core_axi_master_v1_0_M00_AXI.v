@@ -44,6 +44,8 @@
 		output reg [31:0] transaction_num,
 		output reg reads_done,
 		output reg last_read,
+		output reg start_single_dmem_write,
+		output reg dmem_write_issued,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -562,6 +564,7 @@
 	// TODO: wait for the cache write
 	wire concat_valid;
 	wire [31:0] concat_dout;
+	reg transaction_num_valid;
 
 	concat rx_concat_inst (
 		.clk(M_AXI_ACLK),
@@ -576,24 +579,53 @@
 
 	assign rx_we = concat_valid;
 
-	wire dmem_ready;
-	reg dmem_write_first;
+	reg read_transaction_num;
+	// reg dmem_write_issued;
+
+	reg dmem_busy;
 	always @(posedge M_AXI_ACLK) begin
 		if (~M_AXI_ARESETN || init_txn_pulse) begin
-			dmem_write_first <= 1'b1;
+			dmem_busy <= 1'b0;
 		end
-		else if (dmem_we && dmem_write_first) begin
-			dmem_write_first <= 1'b0;
+		else if (dmem_we) begin
+			dmem_busy <= 1'b1;
+		end
+		else if (dmem_busy && cache_data_valid) begin
+			dmem_busy <= 1'b0;
 		end
 	end
 
-	assign dmem_ready = (dmem_write_first) ? 1'b1 : cache_data_valid;
+	always @(posedge M_AXI_ACLK) begin
+		if (~M_AXI_ARESETN || init_txn_pulse) begin
+			start_single_dmem_write <= 1'b0;
+			dmem_write_issued <= 1'b0;
+			read_transaction_num <= 1'b1;
+		end
+		else begin
+			if (((mst_exec_state == DATA_RECV) || (mst_exec_state == DATA_WRITE)) && ~rx_empty && ~start_single_dmem_write && ~dmem_write_issued) begin
+				start_single_dmem_write <= 1'b1;
+				dmem_write_issued <= 1'b1;
+			end
+			else if (start_single_dmem_write && read_transaction_num) begin
+				read_transaction_num <= 1'b0;
+				dmem_write_issued <= 1'b0;
+				start_single_dmem_write <= 1'b0;
+			end
+			else if (dmem_busy && cache_data_valid) begin
+				dmem_write_issued <= 1'b0;
+				start_single_dmem_write <= 1'b0;
+			end
+			else begin
+				start_single_dmem_write <= 1'b0;
+			end
+		end
+	end
 
 	assign rx_re = (
 		(mst_exec_state == PROGRAM_RECV) ||
 		(mst_exec_state == PROGRAM_WRITE) ||
-		((mst_exec_state == DATA_RECV) && dmem_ready) ||
-		((mst_exec_state == DATA_WRITE) && dmem_ready) ||
+		((mst_exec_state == DATA_RECV) && start_single_dmem_write) ||
+		((mst_exec_state == DATA_WRITE) && start_single_dmem_write) ||
 		((mst_exec_state == CORE_EXEC) && in_issued)
 	) && ~rx_empty;
 
@@ -611,8 +643,6 @@
 	end
 
 	// the recognition of the length of the instr file
-
-	reg transaction_num_valid;
 
 	always @(posedge M_AXI_ACLK) begin
 		if (M_AXI_ARESETN == 1'b0 || init_txn_pulse == 1'b1 || reads_done) begin
@@ -762,7 +792,7 @@
 					end
 				DATA_WRITE:
 					if (rx_empty) begin
-						if (transition_wait) begin
+						if (transition_wait && cache_data_valid) begin
 							transition_wait <= 1'b0;
 							mst_exec_state <= WRITE_aa;
 						end

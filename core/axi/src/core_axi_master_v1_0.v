@@ -38,6 +38,8 @@
 		output wire [31:0] transaction_num,
 		output wire reads_done,
 		output wire last_read,
+		output wire start_single_dmem_write,
+		output wire dmem_write_issued,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -98,6 +100,8 @@
 		.transaction_num(transaction_num),
 		.reads_done(reads_done),
 		.last_read(last_read),
+		.start_single_dmem_write(start_single_dmem_write),
+		.dmem_write_issued(dmem_write_issued),
 		.INIT_AXI_TXN(m00_axi_init_axi_txn),
 		.ERROR(m00_axi_error),
 		.TXN_DONE(m00_axi_txn_done),

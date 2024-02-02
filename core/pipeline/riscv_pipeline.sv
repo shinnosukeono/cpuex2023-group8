@@ -43,6 +43,7 @@ module riscv_pipeline (
     input logic fpu_valid,
 
     // to FPU unit
+    output wire fpu_en,
     output logic [31:0] fpu_rd1,
     output logic [31:0] fpu_rd2,
     output logic [2:0] fpu_rm,
@@ -69,6 +70,7 @@ module riscv_pipeline (
     logic [2:0] forward_rd2_e;
     logic [1:0] forward_fpu_rd1_e;
     logic [1:0] forward_fpu_rd2_e;
+    wire flush_m;
 
     // instr fetch reg
     data_back_io data_back_if_in();
@@ -277,7 +279,7 @@ module riscv_pipeline (
     // forwarded into the exec stage, which results in the unpredictable state
     // in the memory access register when the core_gating_signal is asserted.
     always_ff @( posedge clk ) begin
-        if (rst) begin
+        if (rst || flush_m) begin
             control_exec_if_out.reg_write <= 1'b0;
             control_exec_if_out.result_src <= 3'b0;
             control_exec_if_out.mem_write <= 1'b0;
@@ -381,6 +383,7 @@ module riscv_pipeline (
     // logic flush_e;
 
     hazard_unit i_hazard_unit (
+        .clk(clk),
         .rst(rst),
         .stall_f(stall_f),
         .stall_d(stall_d),
@@ -404,6 +407,7 @@ module riscv_pipeline (
         .forward_fpu_rd1_e(forward_fpu_rd1_e),
         .forward_fpu_rd2_e(forward_fpu_rd2_e),
         .cache_stall(cache_stall),
+        .flush_m(flush_m),
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),
@@ -419,6 +423,7 @@ module riscv_pipeline (
         .out_stall(out_stall),
         .in_stall(in_stall),
         .fpu_valid(fpu_valid),
+        .fpu_en_pulse(fpu_en),
         .lw_stall(lw_stall)
     );
 

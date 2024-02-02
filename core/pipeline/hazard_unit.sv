@@ -1,5 +1,5 @@
 module hazard_unit (
-    input logic rst,
+    input logic clk, rst,
     // to instr fetch reg
     output logic stall_f,
 
@@ -35,6 +35,7 @@ module hazard_unit (
     output logic cache_stall,
 
     // to memory access reg
+    output logic flush_m,
     output logic stall_m,
 
     // from memory access stage
@@ -62,6 +63,9 @@ module hazard_unit (
 
     // from FPU unit
     input logic fpu_valid,
+
+    // to FPU unit
+    output wire fpu_en_pulse,
 
     output logic lw_stall
 );
@@ -155,16 +159,41 @@ module hazard_unit (
     // 3. If the stall_f is asserted by the out_stall or in_stall, situations
     // are same as the case 1. As the stall_e is also asserted in these cases,
     // the consistency of the instr_addr is all the more assured.
+    // 4. If the stall_f is asserted by the fpu_stall, the situation is same
+    // as the case 1.
 
+    // NOTE: the FPU unit cannot be enabled until the cache_stall is disasserted.
+    wire fpu_en_1;
+    reg fpu_en_2;
+    reg fpu_waiting;
+    wire fpu_stall;
+
+    assign fpu_en_1 = fpu_dispatch_e & ~cache_stall;
+    always @(posedge clk) begin
+        fpu_en_2 <= fpu_en_1;
+    end
+    assign fpu_en_pulse = fpu_en_1 & ~fpu_en_2;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            fpu_waiting <= 1'b0;
+        end
+        else if (fpu_en_pulse) begin
+            fpu_waiting <= 1'b1;
+        end
+        else if (fpu_waiting && fpu_valid) begin
+            fpu_waiting <= 1'b0;
+        end
+    end
+
+    assign fpu_stall = fpu_en_pulse | (fpu_waiting & ~fpu_valid);
 
     // logic lw_stall;
-    logic fpu_stall;
     assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
-    assign fpu_stall = fpu_dispatch_e & ~fpu_valid;
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
-    assign stall_f = lw_stall | cache_stall | out_stall | in_stall;
-    assign stall_d = lw_stall | cache_stall | out_stall | in_stall;
-    assign stall_e = cache_stall | out_stall | in_stall;
+    assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fpu_stall;
+    assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fpu_stall;
+    assign stall_e = cache_stall | out_stall | in_stall | fpu_stall;
     assign stall_m = cache_stall;
     assign stall_w = cache_stall;
 
@@ -182,7 +211,9 @@ module hazard_unit (
     // cin instruction in the exec stage, the flush_e must not be asserted for
     // keeping the in_issued asserted in the exec stage while the in_stall is
     // assserted.
+
     assign flush_d = pc_src_e;
     assign flush_e = (lw_stall | pc_src_e) & ~cache_stall & ~in_stall;
+    assign flush_m = fpu_stall;
 
 endmodule

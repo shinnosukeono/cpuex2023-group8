@@ -35,6 +35,7 @@ module riscv_pipeline_wrapper (
     input wire fpu_valid,
 
     // to FPU unit
+    output wire fpu_en,
     output wire [31:0] fpu_rd1,
     output wire [31:0] fpu_rd2,
     output wire [2:0] fpu_rm,
@@ -75,6 +76,7 @@ module riscv_pipeline_wrapper (
         .in_issued(in_issued),
         .fpu_result(fpu_result),
         .fpu_valid(fpu_valid),
+        .fpu_en(fpu_en),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
         .fpu_rm(fpu_rm),

@@ -62,6 +62,7 @@ endinterface: data_decode_io //data_decode_io
 
 interface data_exec_io;
     logic [31:0] alu_result;
+    logic [31:0] data_addr;
     logic [31:0] write_data;
     logic [4:0] rd;
     logic [31:0] imm_ext;
@@ -72,6 +73,7 @@ interface data_exec_io;
     logic [31:0] fpu_rd1;
     modport in (
         output alu_result,
+        output data_addr,
         output write_data,
         output rd,
         output imm_ext,
@@ -83,6 +85,7 @@ interface data_exec_io;
     );
     modport out (
         input alu_result,
+        input data_addr,
         input write_data,
         input rd,
         input imm_ext,

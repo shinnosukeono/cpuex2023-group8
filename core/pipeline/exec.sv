@@ -21,7 +21,10 @@ module exec (
 
     // from memory access stage
     input logic [31:0] alu_result_m,
+    input logic [31:0] pc_plus4_m,
+    input logic [31:0] rd1_m,
     input logic [31:0] imm_ext_m,
+    input logic [31:0] fpu_rd1_m,
     input logic [31:0] fpu_result_m,
     input logic [2:0] result_src_m,
 
@@ -32,8 +35,10 @@ module exec (
     output logic [31:0] pc_target_e,
 
     // from hazard unit
-    input logic [1:0] forward_a_e,
-    input logic [1:0] forward_b_e,
+    input logic [2:0] forward_rd1_e,
+    input logic [2:0] forward_rd2_e,
+    input logic [1:0] forward_fpu_rd1_e,
+    input logic [1:0] forward_fpu_rd2_e,
 
     // to hazard unit
     output logic [4:0] rs1_e,
@@ -45,32 +50,78 @@ module exec (
 
     // from FPU unit
     input logic [31:0] fpu_result,
+    input logic fpu_valid,
 
     // to FPU unit
     output logic [31:0] fpu_rd1,
     output logic [31:0] fpu_rd2
 );
 
-    // src_a
-    logic [31:0] src_a_forward;
-    always_comb begin
-        case (forward_a_e)
-            2'b00: src_a_forward = data_decode_if.rd1;
-            2'b01: src_a_forward = result_w;
-            2'b10: src_a_forward = (~(|result_src_m)) ? alu_result_m : fpu_result_m;
-            2'b11: src_a_forward = imm_ext_m;
+    // forwarding
+    logic [31:0] rd1_forward;
+    logic [31:0] rd2_forward;
+    logic [31:0] fpu_rd1_forward;
+    logic [31:0] fpu_rd2_forward;
+
+    // rd1
+    always_comb begin : rd1_forwarding
+        case (forward_rd1_e)
+            3'b000: rd1_forward = alu_result_m;
+            3'b001: rd1_forward = result_w;
+            3'b010: rd1_forward = pc_plus4_m;
+            // 3'b011:
+            3'b100: rd1_forward = imm_ext_m;
+            3'b101: rd1_forward = fpu_rd1_m;
+            3'b110: rd1_forward = fpu_result_m;
+            3'b111: rd1_forward = data_decode_if.rd1;
+            default: rd1_forward = data_decode_if.rd1;  // error
         endcase
     end
 
-    assign out_data = {24'b0, src_a_forward[7:0]};
+    // rd2
+    always_comb begin : rd2_forwarding
+        case (forward_rd2_e)
+            3'b000: rd2_forward = alu_result_m;
+            3'b001: rd2_forward = result_w;
+            3'b010: rd2_forward = pc_plus4_m;
+            // 3'b011:
+            3'b100: rd2_forward = imm_ext_m;
+            3'b101: rd2_forward = fpu_rd1_m;
+            3'b110: rd2_forward = fpu_result_m;
+            3'b111: rd2_forward = data_decode_if.rd2;
+            default: rd2_forward = data_decode_if.rd2;  // error
+        endcase
+    end
 
+    // fpu_rd1
+    always_comb begin : fpu_rd1_forwarding
+        case (forward_fpu_rd1_e)
+            2'b00: fpu_rd1_forward = data_decode_if.fpu_rd1;
+            2'b01: fpu_rd1_forward = result_w;
+            2'b10: fpu_rd1_forward = fpu_result_m;
+            2'b11: fpu_rd1_forward = rd1_m;
+            default: fpu_rd1_forward = data_decode_if.fpu_rd1;  // error
+        endcase
+    end
+
+    // fpu_rd2
+    always_comb begin : fpu_rd2_forwarding
+        case (forward_fpu_rd2_e)
+            2'b00: fpu_rd2_forward = data_decode_if.fpu_rd2;
+            2'b01: fpu_rd2_forward = result_w;
+            2'b10: fpu_rd2_forward = fpu_result_m;
+            2'b11: fpu_rd2_forward = rd1_m;
+            default: fpu_rd2_forward = data_decode_if.fpu_rd2;  // error
+        endcase
+    end
+
+    // src_a
     logic [31:0] src_a;
-    assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : src_a_forward;
+    assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : rd1_forward;
 
     // src_b
-    logic [31:0] int_write_data;
     logic [31:0] src_b;
-    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : int_write_data;
+    assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : rd2_forward;
 
     // ALU
     logic zero_flag;
@@ -85,20 +136,12 @@ module exec (
         .overflow_flag()
     );
 
-    // write_data
-    always_comb begin
-        case (forward_b_e)
-            2'b00: int_write_data = data_decode_if.rd2;
-            2'b01: int_write_data = result_w;
-            2'b10: int_write_data = (~(|result_src_m)) ? alu_result_m : fpu_result_m;
-            2'b11: int_write_data = imm_ext_m;
-        endcase
-    end
+    // to FPU
+    assign fpu_rd1 = fpu_rd1_forward;
+    assign fpu_rd2 = fpu_rd2_forward;
 
-    assign data_exec_if.write_data = (control_decode_if.write_src && ~(|forward_b_e)) ? data_decode_if.fpu_rd2 : int_write_data;
-
-    assign fpu_rd1 = (|forward_a_e) ? src_a_forward : data_decode_if.fpu_rd1;
-    assign fpu_rd2 = (|forward_b_e) ? int_write_data : data_decode_if.fpu_rd2;
+    // to I/O module
+    assign out_data = {24'b0, rd1_forward[7:0]};
 
     // to data memory
     alu_simplified #(
@@ -107,14 +150,18 @@ module exec (
         .a(src_a),
         .b(data_decode_if.imm_ext),
         .alu_control(control_decode_if.alu_control),
-        .result(data_addr)
+        .result(data_exec_if.data_addr)
     );
+    assign data_exec_if.write_data = (control_decode_if.write_src) ? fpu_rd2_forward : rd2_forward;
+    assign data_addr = data_exec_if.data_addr;
     assign data_to_memory = data_exec_if.write_data;
     assign data_memory_we = control_decode_if.mem_write;
     assign data_memory_re = control_decode_if.mem_read;
 
+    // to write back stage
     assign pc_target_e = data_decode_if.pc + data_decode_if.imm_ext;
 
+    // to hazard unit
     assign rs1_e = data_decode_if.rs1;
     assign rs2_e = data_decode_if.rs2;
 
@@ -140,6 +187,6 @@ module exec (
     assign data_exec_if.pc_plus4 = data_decode_if.pc_plus4;
     assign data_exec_if.status = data_decode_if.status;
     assign data_exec_if.fpu_result = fpu_result;
-    assign data_exec_if.rd1 = data_decode_if.rd1;
-    assign data_exec_if.fpu_rd1 = data_decode_if.fpu_rd1;
+    assign data_exec_if.rd1 = rd1_forward;
+    assign data_exec_if.fpu_rd1 = fpu_rd1_forward;
 endmodule

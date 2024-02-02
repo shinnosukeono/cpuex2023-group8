@@ -15,10 +15,20 @@ module memory_access (
 
     // to exec stage
     output logic [31:0] alu_result_m,
-    output logic [31:0] imm_ext_m
+    output logic [31:0] pc_plus4_m,
+    output logic [31:0] rd1_m,
+    output logic [31:0] imm_ext_m,
+    output logic [31:0] fpu_rd1_m,
+    output logic [31:0] fpu_result_m,
+    output logic [2:0] result_src_m
 );
+    assign result_src_m = control_exec_if.result_src;
     assign alu_result_m = data_exec_if.alu_result;
+    assign pc_plus4_m = data_exec_if.pc_plus4;
+    assign rd1_m = data_exec_if.rd1;
     assign imm_ext_m = data_exec_if.imm_ext;
+    assign fpu_rd1_m = data_exec_if.fpu_rd1;
+    assign fpu_result_m = data_exec_if.fpu_result;
 
     assign control_mem_if.reg_write = control_exec_if.reg_write;
     assign control_mem_if.result_src = control_exec_if.result_src;

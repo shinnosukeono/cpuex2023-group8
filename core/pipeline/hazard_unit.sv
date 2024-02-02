@@ -25,10 +25,13 @@ module hazard_unit (
     input logic s_fpu_e,
     input logic reg_write_e,
     input logic fpu_reg_write_e,
+    input logic fpu_dispatch_e,
 
     // to exec stage
-    output logic [1:0] forward_a_e,
-    output logic [1:0] forward_b_e,
+    output logic [2:0] forward_rd1_e,
+    output logic [2:0] forward_rd2_e,
+    output logic [1:0] forward_fpu_rd1_e,
+    output logic [1:0] forward_fpu_rd2_e,
     output logic cache_stall,
 
     // to memory access reg
@@ -57,48 +60,83 @@ module hazard_unit (
     input logic out_stall,
     input logic in_stall,
 
+    // from FPU unit
+    input logic fpu_valid,
+
     output logic lw_stall
 );
     // forwarding for data hazard
-    always_comb begin
-        if (((rs1_e == rd_m) && ((~s_fpu_e && reg_write_m) || (s_fpu_e && fpu_reg_write_m))) && ((rs1_e != 5'b0) || s_fpu_e)) begin
-            if (result_src_m == 3'b100) begin
-                // use imm_ext from the memory access stage
-                forward_a_e = 2'b11;
-            end
-            else begin
-                // use alu_result from memory access stage
-                forward_a_e = 2'b10;
-            end
+    // rd1
+    always_comb begin : rd1
+        if ((rs1_e == rd_m) && ~s_fpu_e && reg_write_m && (rs1_e != 5'b0)) begin // forwarding from the memory access stage
+            case (result_src_m)
+                3'b000: forward_rd1_e = 3'b000;  // use alu_result_m
+                3'b010: forward_rd1_e = 3'b010;  // use pc_plus4_m
+                3'b100: forward_rd1_e = 3'b100;  // use imm_ext_m
+                3'b101: forward_rd1_e = 3'b101;  // use fpu_rd1_m
+                3'b110: forward_rd1_e = 3'b110;  // use fpu_result_m
+                default: forward_rd1_e = 3'b000;  // error (lw, in, fmv.w.x can't be the source)
+            endcase
         end
-        else if (((rs1_e == rd_w) && ((~s_fpu_e && reg_write_w) || (s_fpu_e && fpu_reg_write_w))) && ((rs1_e != 5'b0) || s_fpu_e)) begin
-            // use result from write back stage
-            forward_a_e = 2'b01;
+        else if ((rs1_e == rd_w) && ~s_fpu_e && reg_write_w && (rs1_e != 5'b0)) begin // forwarding from the write back stage
+            forward_rd1_e = 3'b001;
         end
         else begin
-            // user rd1 from exec stage (current stage)
-            forward_a_e = 2'b00;
+            forward_rd1_e = 3'b111;  // use the current value
         end
     end
 
-    always_comb begin
-        if (((rs2_e == rd_m) && ((~s_fpu_e && reg_write_m) || (s_fpu_e && fpu_reg_write_m))) && ((rs2_e != 5'b0) || s_fpu_e)) begin
-            if (result_src_m == 3'b100) begin
-                // use imm_ext from the memory access stage
-                forward_b_e = 2'b11;
-            end
-            else begin
-                // use alu_result from memory access stage
-                forward_b_e = 2'b10;
-            end
+    // rd2
+    always_comb begin : rd2
+        if ((rs2_e == rd_m) && ~s_fpu_e && reg_write_m && (rs2_e != 5'b0)) begin // forwarding from the memory access stage
+            case (result_src_m)
+                3'b000: forward_rd2_e = 3'b000;  // use alu_result_m
+                3'b010: forward_rd2_e = 3'b010;  // use pc_plus4_m
+                3'b100: forward_rd2_e = 3'b100;  // use imm_ext_m
+                3'b101: forward_rd2_e = 3'b101;  // use fpu_rd1_m
+                3'b110: forward_rd2_e = 3'b110;  // use fpu_result_m
+                default: forward_rd2_e = 3'b000;  // error (lw, in, fmv.w.x can't be the source)
+            endcase
         end
-        else if (((rs2_e == rd_w) & ((~s_fpu_e && reg_write_w) || (s_fpu_e && fpu_reg_write_w))) && ((rs2_e != 5'b0) || s_fpu_e)) begin
-            // use result from write back stage
-            forward_b_e = 2'b01;
+        else if ((rs2_e == rd_w) && ~s_fpu_e && reg_write_w && (rs2_e != 5'b0)) begin // forwarding from the write back stage
+            forward_rd2_e = 3'b001;
         end
         else begin
-            // user rd2 from exec stage (current stage)
-            forward_b_e = 2'b00;
+            forward_rd2_e = 3'b111;  // use the current value
+        end
+    end
+
+    // fpu_rd1
+    always_comb begin : fpu_rd1
+        if ((rs1_e == rd_m) && s_fpu_e && fpu_reg_write_m) begin
+            case (result_src_m)
+                3'b011: forward_fpu_rd1_e = 2'b11;  // use rd1_m
+                3'b110: forward_fpu_rd1_e = 2'b10;  // use fpu_result_m
+                default: forward_fpu_rd1_e = 2'b00;  // error
+            endcase
+        end
+        else if ((rs1_e == rd_w) && s_fpu_e && fpu_reg_write_w) begin
+            forward_fpu_rd1_e = 2'b01;
+        end
+        else begin
+            forward_fpu_rd1_e = 2'b00;
+        end
+    end
+
+    // fpu_rd2
+    always_comb begin : fpu_rd2
+        if ((rs2_e == rd_m) && s_fpu_e && fpu_reg_write_m) begin
+            case (result_src_m)
+                3'b011: forward_fpu_rd2_e = 2'b11;  // use rd1_m
+                3'b110: forward_fpu_rd2_e = 2'b10;  // use fpu_result_m
+                default: forward_fpu_rd2_e = 2'b00;  // error
+            endcase
+        end
+        else if ((rs2_e == rd_w) && s_fpu_e && fpu_reg_write_w) begin
+            forward_fpu_rd2_e = 2'b01;
+        end
+        else begin
+            forward_fpu_rd2_e = 2'b00;
         end
     end
 
@@ -120,7 +158,9 @@ module hazard_unit (
 
 
     // logic lw_stall;
+    logic fpu_stall;
     assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
+    assign fpu_stall = fpu_dispatch_e & ~fpu_valid;
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = lw_stall | cache_stall | out_stall | in_stall;
     assign stall_d = lw_stall | cache_stall | out_stall | in_stall;

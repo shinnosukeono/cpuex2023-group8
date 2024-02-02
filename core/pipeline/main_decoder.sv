@@ -30,7 +30,7 @@ module main_decoder (
             // result_src set to zero for hazard unit.
             7'b0100011: controls = 21'b0_001_1_0_1_000_0_00_0_0_0_0_0_0_0_0;
             7'b0010100: controls = 21'b1_xxx_x_0_0_111_0_xx_0_0_0_1_0_0_0_0;  // cin_int
-            7'b0010101: controls = 21'b0_xxx_x_0_0_000_0_xx_0_0_1_0_0_0_0_0;  // out
+            7'b0010001: controls = 21'b0_xxx_x_0_0_000_0_xx_0_0_1_0_0_0_0_0;  // out
             7'b0010111: controls = 21'b1_101_1_0_0_000_0_11_0_0_0_0_0_0_0_0;  // auipc
             // R instruction, don't care imm_src, branch.
             // branch set to zero for hazard unit.
@@ -59,19 +59,19 @@ module main_decoder (
             7'b1001011: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fnmsub
             7'b1001111: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fnmadd
             7'b1010011: begin
-                case (funct7_3_6)
-                    4'b0xxx: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fadd, fsub, fmul, fdiv, fsqrt, fsgnj, fsgnjn, fsgnjn, fsgnjx, fmin, fmax
+                casez (funct7_3_6)
+                    4'b0???: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_1;  // fadd, fsub, fmul, fdiv, fsqrt, fsgnj, fsgnjn, fsgnjn, fsgnjx, fmin, fmax
                     4'b1010: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // feq, flt, fle
                     4'b1100: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // fcvt.w.s, fcvt.wu.s
                     4'b1101: controls = 21'b0_000_0_0_0_110_0_00_0_0_0_0_1_1_0_0;  // fcvt.s.w, fcvt.s.wu
                     4'b1110: begin
                         case (funct3)
                             3'b001: controls = 21'b1_000_0_0_0_110_0_00_0_0_0_0_1_0_0_1;  // fclass
-                            3'b000: controls = 21'b1_000_0_0_0_011_0_00_0_0_0_0_0_0_0_1;  // fmv.x.w
+                            3'b000: controls = 21'b1_000_0_0_0_101_0_00_0_0_0_0_0_0_0_1;  // fmv.x.w
                             default: controls = 21'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0;  // error
                         endcase
                     end
-                    4'b1111: controls = 21'b0_000_0_0_0_101_0_00_0_0_0_0_0_1_0_0;  // fmv.w.x
+                    4'b1111: controls = 21'b0_000_0_0_0_011_0_00_0_0_0_0_0_1_0_0;  // fmv.w.x
                     default: controls = 21'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0;  // error
                 endcase
             end

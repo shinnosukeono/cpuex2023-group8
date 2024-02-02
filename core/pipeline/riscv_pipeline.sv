@@ -40,6 +40,7 @@ module riscv_pipeline (
 
     // from FPU unit
     input logic [31:0] fpu_result,
+    input logic fpu_valid,
 
     // to FPU unit
     output logic [31:0] fpu_rd1,
@@ -61,6 +62,14 @@ module riscv_pipeline (
     output logic pc_src_e,
     output logic [31:0] pc_plus4_m
 );
+    // hazard unit signals
+    logic [1:0] forward_a_e;
+    logic [1:0] forward_b_e;
+    logic [2:0] forward_rd1_e;
+    logic [2:0] forward_rd2_e;
+    logic [1:0] forward_fpu_rd1_e;
+    logic [1:0] forward_fpu_rd2_e;
+
     // instr fetch reg
     data_back_io data_back_if_in();
     data_back_io data_back_if_out();
@@ -198,7 +207,12 @@ module riscv_pipeline (
     // exec stage
     logic [31:0] alu_result_e;
     logic [31:0] alu_result_m;
+    // logic [31:0] pc_plus4_m;
+    logic [31:0] rd1_m;
     logic [31:0] imm_ext_m;
+    logic [31:0] fpu_rd1_m;
+    logic [31:0] fpu_result_m;
+    logic [31:0] result_src_m;
     logic [31:0] write_data_e;
     logic [31:0] pc_target_e;
     logic [4:0] rs1_e;
@@ -218,18 +232,24 @@ module riscv_pipeline (
         .data_memory_we(data_we_e),
         .data_memory_re(data_re_e),
         .alu_result_m(alu_result_m),
+        .pc_plus4_m(pc_plus4_m),
+        .rd1_m(rd1_m),
         .imm_ext_m(imm_ext_m),
-        .fpu_result_m(data_exec_if_out.fpu_result),
-        .result_src_m(control_exec_if_out.result_src),
+        .fpu_rd1_m(fpu_rd1_m),
+        .fpu_result_m(fpu_result_m),
+        .result_src_m(result_src_m),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
-        .forward_a_e(forward_a_e),
-        .forward_b_e(forward_b_e),
+        .forward_rd1_e(forward_rd1_e),
+        .forward_rd2_e(forward_rd2_e),
+        .forward_fpu_rd1_e(forward_fpu_rd1_e),
+        .forward_fpu_rd2_e(forward_fpu_rd2_e),
         .rs1_e(rs1_e),
         .rs2_e(rs2_e),
         .pc_src_e(pc_src_e),
         .out_data(out_data),
         .fpu_result(fpu_result),
+        .fpu_valid(fpu_valid),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2)
     );
@@ -241,7 +261,7 @@ module riscv_pipeline (
     // consistent during the search of the cache system. So if stall_m is asserted,
     // which signifies cache_stall is also asserted, the input signals shoule be
     // taken from the memory access register.
-    assign data_addr = (stall_m) ? data_exec_if_out.alu_result : alu_result_e;
+    assign data_addr = (stall_m) ? data_exec_if_out.data_addr : alu_result_e;
     assign din = (stall_m) ? data_exec_if_out.write_data : write_data_e;
     assign data_we = (stall_m) ? control_exec_if_out.mem_write : control_decode_if_out.mem_write;
     assign data_re = (stall_m) ? control_exec_if_out.mem_read : control_decode_if_out.mem_read;
@@ -265,6 +285,7 @@ module riscv_pipeline (
             control_exec_if_out.fpu_reg_write <= 1'b0;
 
             data_exec_if_out.alu_result <= 32'b0;
+            data_exec_if_out.data_addr <= 32'b0;
             data_exec_if_out.write_data <= 32'b0;
             data_exec_if_out.rd <= 5'b0;
             data_exec_if_out.imm_ext <= 32'b0;
@@ -282,6 +303,7 @@ module riscv_pipeline (
             control_exec_if_out.fpu_reg_write <= control_exec_if_in.fpu_reg_write;
 
             data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
+            data_exec_if_out.data_addr <= data_exec_if_in.data_addr;
             data_exec_if_out.write_data <= data_exec_if_in.write_data;
             data_exec_if_out.rd <= data_exec_if_in.rd;
             data_exec_if_out.imm_ext <= data_exec_if_in.imm_ext;
@@ -301,7 +323,12 @@ module riscv_pipeline (
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
         .alu_result_m(alu_result_m),
-        .imm_ext_m(imm_ext_m)
+        .pc_plus4_m(pc_plus4_m),
+        .rd1_m(rd1_m),
+        .imm_ext_m(imm_ext_m),
+        .fpu_rd1_m(fpu_rd1_m),
+        .fpu_result_m(fpu_result_m),
+        .result_src_m(result_src_m)
     );
 
     // write back reg
@@ -352,8 +379,6 @@ module riscv_pipeline (
     // logic stall_w;
     // logic flush_d;
     // logic flush_e;
-    logic [1:0] forward_a_e;
-    logic [1:0] forward_b_e;
 
     hazard_unit i_hazard_unit (
         .rst(rst),
@@ -373,8 +398,11 @@ module riscv_pipeline (
         .s_fpu_e(control_decode_if_out.s_fpu),
         .reg_write_e(control_decode_if_out.reg_write),
         .fpu_reg_write_e(control_decode_if_out.fpu_reg_write),
-        .forward_a_e(forward_a_e),
-        .forward_b_e(forward_b_e),
+        .fpu_dispatch_e(control_decode_if_out.fpu_dispatch),
+        .forward_rd1_e(forward_rd1_e),
+        .forward_rd2_e(forward_rd2_e),
+        .forward_fpu_rd1_e(forward_fpu_rd1_e),
+        .forward_fpu_rd2_e(forward_fpu_rd2_e),
         .cache_stall(cache_stall),
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
@@ -390,6 +418,7 @@ module riscv_pipeline (
         .fpu_reg_write_w(control_mem_if_out.fpu_reg_write),
         .out_stall(out_stall),
         .in_stall(in_stall),
+        .fpu_valid(fpu_valid),
         .lw_stall(lw_stall)
     );
 
@@ -405,5 +434,4 @@ module riscv_pipeline (
     end
 
     assign pc_plus4_e = data_decode_if_out.pc_plus4;
-    assign pc_plus4_m = data_exec_if_out.pc_plus4;
 endmodule

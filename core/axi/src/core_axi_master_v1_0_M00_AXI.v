@@ -792,7 +792,7 @@
 					end
 				DATA_WRITE:
 					if (rx_empty) begin
-						if (transition_wait && cache_data_valid) begin
+						if (transition_wait && dmem_busy && cache_data_valid) begin
 							transition_wait <= 1'b0;
 							mst_exec_state <= WRITE_aa;
 						end

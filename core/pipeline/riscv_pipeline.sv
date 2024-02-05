@@ -214,7 +214,7 @@ module riscv_pipeline (
     logic [31:0] imm_ext_m;
     logic [31:0] fpu_rd1_m;
     logic [31:0] fpu_result_m;
-    logic [31:0] result_src_m;
+    logic [2:0] result_src_m;
     logic [31:0] write_data_e;
     logic [31:0] pc_target_e;
     logic [4:0] rs1_e;

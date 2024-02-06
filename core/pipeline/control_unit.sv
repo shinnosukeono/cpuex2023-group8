@@ -31,7 +31,8 @@ module control_unit (
         .c_reg_write(c_reg_write),
         .out_issued(control_decode_if.out_issued),
         .in_issued(control_decode_if.in_issued),
-        .fpu_dispatch(control_decode_if.fpu_dispatch),
+        .fast_fpu_dispatch(control_decode_if.fast_fpu_dispatch),
+        .slow_fpu_dispatch(control_decode_if.slow_fpu_dispatch),
         .fpu_reg_write(control_decode_if.fpu_reg_write),
         .write_src(control_decode_if.write_src),
         .s_fpu(control_decode_if.s_fpu)

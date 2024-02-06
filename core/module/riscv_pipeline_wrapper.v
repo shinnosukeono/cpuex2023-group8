@@ -31,11 +31,14 @@ module riscv_pipeline_wrapper (
     output wire in_issued,
 
     // from FPU unit
-    input wire [31:0] fpu_result,
-    input wire fpu_valid,
+    input wire [31:0] fast_fpu_result,
+    input wire fast_fpu_valid,
+    input wire [31:0] slow_fpu_result,
+    input wire slow_fpu_valid,
 
     // to FPU unit
-    output wire fpu_en,
+    output wire fast_fpu_en,
+    output wire slow_fpu_en,
     output wire [31:0] fpu_rd1,
     output wire [31:0] fpu_rd2,
     output wire [2:0] fpu_rm,
@@ -74,9 +77,12 @@ module riscv_pipeline_wrapper (
         .out_issued(out_issued),
         .out_data(out_data),
         .in_issued(in_issued),
-        .fpu_result(fpu_result),
-        .fpu_valid(fpu_valid),
-        .fpu_en(fpu_en),
+        .fast_fpu_result(fast_fpu_result),
+        .fast_fpu_valid(fast_fpu_valid),
+        .slow_fpu_result(slow_fpu_result),
+        .slow_fpu_valid(slow_fpu_valid),
+        .fast_fpu_en(fast_fpu_en),
+        .slow_fpu_en(slow_fpu_en),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
         .fpu_rm(fpu_rm),

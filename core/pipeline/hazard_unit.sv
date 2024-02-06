@@ -22,10 +22,12 @@ module hazard_unit (
     input logic [4:0] rd_e,
     input logic pc_src_e,
     input logic [2:0] result_src_e,
+    input logic mem_write_e,
     input logic s_fpu_e,
     input logic reg_write_e,
     input logic fpu_reg_write_e,
-    input logic fpu_dispatch_e,
+    input logic fast_fpu_dispatch_e,
+    input logic slow_fpu_dispatch_e,
 
     // to exec stage
     output logic [2:0] forward_rd1_e,
@@ -62,17 +64,22 @@ module hazard_unit (
     input logic in_stall,
 
     // from FPU unit
-    input logic fpu_valid,
+    input logic fast_fpu_valid,
+    input logic slow_fpu_valid,
 
     // to FPU unit
-    output wire fpu_en_pulse,
+    output wire fast_fpu_en_pulse,
+    output wire slow_fpu_en_pulse,
 
     output logic lw_stall
 );
     // forwarding for data hazard
     // rd1
+    // NOTE: Though the fsw instruction asserts the s_fpu, it uses the integer register rs1 for the
+    // address calculation. So rd1 should be forwarded in this case too, which is why the mem_write_e
+    // is used only for the rdq forwarding block.
     always_comb begin : rd1
-        if ((rs1_e == rd_m) && ~s_fpu_e && reg_write_m && (rs1_e != 5'b0)) begin // forwarding from the memory access stage
+        if ((rs1_e == rd_m) && (~s_fpu_e || mem_write_e) && reg_write_m && (rs1_e != 5'b0)) begin // forwarding from the memory access stage
             case (result_src_m)
                 3'b000: forward_rd1_e = 3'b000;  // use alu_result_m
                 3'b010: forward_rd1_e = 3'b010;  // use pc_plus4_m
@@ -82,7 +89,7 @@ module hazard_unit (
                 default: forward_rd1_e = 3'b000;  // error (lw, in, fmv.w.x can't be the source)
             endcase
         end
-        else if ((rs1_e == rd_w) && ~s_fpu_e && reg_write_w && (rs1_e != 5'b0)) begin // forwarding from the write back stage
+        else if ((rs1_e == rd_w) && (~s_fpu_e || mem_write_e) && reg_write_w && (rs1_e != 5'b0)) begin // forwarding from the write back stage
             forward_rd1_e = 3'b001;
         end
         else begin
@@ -163,37 +170,62 @@ module hazard_unit (
     // as the case 1.
 
     // NOTE: the FPU unit cannot be enabled until the cache_stall is disasserted.
-    wire fpu_en_1;
-    reg fpu_en_2;
-    reg fpu_waiting;
-    wire fpu_stall;
+    wire fast_fpu_en_1;
+    reg fast_fpu_en_2;
+    reg fast_fpu_waiting;
+    wire fast_fpu_stall;
 
-    assign fpu_en_1 = fpu_dispatch_e & ~cache_stall;
+    assign fast_fpu_en_1 = fast_fpu_dispatch_e & ~fast_fpu_valid & ~cache_stall;
     always @(posedge clk) begin
-        fpu_en_2 <= fpu_en_1;
+        fast_fpu_en_2 <= fast_fpu_en_1;
     end
-    assign fpu_en_pulse = fpu_en_1 & ~fpu_en_2;
+    assign fast_fpu_en_pulse = fast_fpu_en_1 & ~fast_fpu_en_2;
 
     always @(posedge clk) begin
         if (rst) begin
-            fpu_waiting <= 1'b0;
+            fast_fpu_waiting <= 1'b0;
         end
-        else if (fpu_en_pulse) begin
-            fpu_waiting <= 1'b1;
+        else if (fast_fpu_en_pulse) begin
+            fast_fpu_waiting <= 1'b1;
         end
-        else if (fpu_waiting && fpu_valid) begin
-            fpu_waiting <= 1'b0;
+        else if (fast_fpu_waiting && fast_fpu_valid) begin
+            fast_fpu_waiting <= 1'b0;
         end
     end
 
-    assign fpu_stall = fpu_en_pulse | (fpu_waiting & ~fpu_valid);
+    assign fast_fpu_stall = fast_fpu_en_pulse | (fast_fpu_waiting & ~fast_fpu_valid);
+
+    wire slow_fpu_en_1;
+    reg slow_fpu_en_2;
+    reg slow_fpu_waiting;
+    wire slow_fpu_stall;
+
+    assign slow_fpu_en_1 = slow_fpu_dispatch_e & ~slow_fpu_valid & ~cache_stall;
+    always @(posedge clk) begin
+        slow_fpu_en_2 <= slow_fpu_en_1;
+    end
+    assign slow_fpu_en_pulse = slow_fpu_en_1 & ~slow_fpu_en_2;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            slow_fpu_waiting <= 1'b0;
+        end
+        else if (slow_fpu_en_pulse) begin
+            slow_fpu_waiting <= 1'b1;
+        end
+        else if (slow_fpu_waiting && slow_fpu_valid) begin
+            slow_fpu_waiting <= 1'b0;
+        end
+    end
+
+    assign slow_fpu_stall = slow_fpu_en_pulse | (slow_fpu_waiting & ~slow_fpu_valid);
 
     // logic lw_stall;
     assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
-    assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fpu_stall;
-    assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fpu_stall;
-    assign stall_e = cache_stall | out_stall | in_stall | fpu_stall;
+    assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_e = cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
     assign stall_m = cache_stall;
     assign stall_w = cache_stall;
 
@@ -214,6 +246,6 @@ module hazard_unit (
 
     assign flush_d = pc_src_e;
     assign flush_e = (lw_stall | pc_src_e) & ~cache_stall & ~in_stall;
-    assign flush_m = fpu_stall;
+    assign flush_m = fast_fpu_stall | slow_fpu_stall;
 
 endmodule

@@ -16,7 +16,7 @@ module alu_decoder (
             2'b01: begin  // B instruction
                 case (funct3)
                     3'b000: alu_control = 4'b0001;  // subtract (beq)
-                    3'b001: alu_control = 4'b0001;  // subtract (neq)
+                    3'b001: alu_control = 4'b0001;  // subtract (bne)
                     3'b100: alu_control = 4'b0101;  // set less than (blt)
                     3'b101: alu_control = 4'b0101;  // set less than (bge)
                     3'b110: alu_control = 4'b0100;  // set less than unsigned (bltu)
@@ -30,7 +30,7 @@ module alu_decoder (
                         if (sub_flag)
                             alu_control = 4'b0001; // subtract (sub)
                         else
-                            alu_control = 4'b0000; // add (add, addi)
+                            alu_control = 4'b0000; // add (add, addi, jalr)
                     end
                     3'b001: alu_control = 4'b0110;  // shift left (sll, slli)
                     3'b010: alu_control = 4'b0101;  // set less than (slt, slti)
@@ -46,7 +46,7 @@ module alu_decoder (
                     3'b111: alu_control = 4'b0010;  // and (and, andi)
                 endcase
             end
-            2'b11: alu_control = 4'b0000;  // add (auipc)
+            2'b11: alu_control = 4'b0000;  // add (auipc, jal)
         endcase
     end
 endmodule

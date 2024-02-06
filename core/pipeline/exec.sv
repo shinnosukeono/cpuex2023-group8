@@ -49,8 +49,10 @@ module exec (
     output logic [31:0] out_data,
 
     // from FPU unit
-    input logic [31:0] fpu_result,
-    input logic fpu_valid,
+    input logic [31:0] fast_fpu_result,
+    input logic fast_fpu_valid,
+    input wire [31:0] slow_fpu_result,
+    input wire slow_fpu_valid,
 
     // to FPU unit
     output logic [31:0] fpu_rd1,
@@ -159,7 +161,7 @@ module exec (
     assign data_memory_re = control_decode_if.mem_read;
 
     // to write back stage
-    assign pc_target_e = data_decode_if.pc + data_decode_if.imm_ext;
+    assign pc_target_e = (control_decode_if.jump) ? (data_exec_if.alu_result) : (data_decode_if.pc + data_decode_if.imm_ext);
 
     // to hazard unit
     assign rs1_e = data_decode_if.rs1;
@@ -168,7 +170,7 @@ module exec (
     logic branch_met;
     always_comb begin
         case (control_decode_if.alu_control)
-            4'b0001: branch_met = control_decode_if.funct3_0 ^ zero_flag;  // beq, neq
+            4'b0001: branch_met = control_decode_if.funct3_0 ^ zero_flag;  // beq, bne
             4'b0101: branch_met = control_decode_if.funct3_0 ^ data_exec_if.alu_result[0];  // blt, bge
             4'b0100: branch_met = control_decode_if.funct3_0 ^ data_exec_if.alu_result[0];  // bltu, bgeu
             default: branch_met = 1'b0;
@@ -186,7 +188,7 @@ module exec (
     assign data_exec_if.imm_ext = data_decode_if.imm_ext;
     assign data_exec_if.pc_plus4 = data_decode_if.pc_plus4;
     assign data_exec_if.status = data_decode_if.status;
-    assign data_exec_if.fpu_result = fpu_result;
+    assign data_exec_if.fpu_result = (control_decode_if.fast_fpu_dispatch) ? fast_fpu_result : slow_fpu_result;
     assign data_exec_if.rd1 = rd1_forward;
     assign data_exec_if.fpu_rd1 = fpu_rd1_forward;
 endmodule

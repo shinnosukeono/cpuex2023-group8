@@ -39,11 +39,14 @@ module riscv_pipeline (
     output logic in_issued,
 
     // from FPU unit
-    input logic [31:0] fpu_result,
-    input logic fpu_valid,
+    input logic [31:0] fast_fpu_result,
+    input logic fast_fpu_valid,
+    input wire [31:0] slow_fpu_result,
+    input wire slow_fpu_valid,
 
     // to FPU unit
-    output wire fpu_en,
+    output wire fast_fpu_en,
+    output wire slow_fpu_en,
     output logic [31:0] fpu_rd1,
     output logic [31:0] fpu_rd2,
     output logic [2:0] fpu_rm,
@@ -150,7 +153,8 @@ module riscv_pipeline (
             control_decode_if_out.funct3_0 <= 1'b0;
             control_decode_if_out.out_issued <= 1'b0;
             control_decode_if_out.in_issued <= 1'b0;
-            control_decode_if_out.fpu_dispatch <= 1'b0;
+            control_decode_if_out.fast_fpu_dispatch <= 1'b0;
+            control_decode_if_out.slow_fpu_dispatch <= 1'b0;
             control_decode_if_out.fpu_reg_write <= 1'b0;
             control_decode_if_out.write_src <= 1'b0;
             control_decode_if_out.s_fpu <= 1'b0;
@@ -182,7 +186,8 @@ module riscv_pipeline (
             control_decode_if_out.funct3_0 <= control_decode_if_in.funct3_0;
             control_decode_if_out.out_issued <= control_decode_if_in.out_issued;
             control_decode_if_out.in_issued <= control_decode_if_in.in_issued;
-            control_decode_if_out.fpu_dispatch <= control_decode_if_in.fpu_dispatch;
+            control_decode_if_out.fast_fpu_dispatch <= control_decode_if_in.fast_fpu_dispatch;
+            control_decode_if_out.slow_fpu_dispatch <= control_decode_if_in.slow_fpu_dispatch;
             control_decode_if_out.fpu_reg_write <= control_decode_if_in.fpu_reg_write;
             control_decode_if_out.write_src <= control_decode_if_in.write_src;
             control_decode_if_out.s_fpu <= control_decode_if_in.s_fpu;
@@ -250,8 +255,10 @@ module riscv_pipeline (
         .rs2_e(rs2_e),
         .pc_src_e(pc_src_e),
         .out_data(out_data),
-        .fpu_result(fpu_result),
-        .fpu_valid(fpu_valid),
+        .fast_fpu_result(fast_fpu_result),
+        .fast_fpu_valid(fast_fpu_valid),
+        .slow_fpu_result(slow_fpu_result),
+        .slow_fpu_valid(slow_fpu_valid),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2)
     );
@@ -398,10 +405,12 @@ module riscv_pipeline (
         .rd_e(data_decode_if_out.rd),
         .pc_src_e(pc_src_e),
         .result_src_e(control_decode_if_out.result_src),
+        .mem_write_e(control_decode_if_out.mem_write),
         .s_fpu_e(control_decode_if_out.s_fpu),
         .reg_write_e(control_decode_if_out.reg_write),
         .fpu_reg_write_e(control_decode_if_out.fpu_reg_write),
-        .fpu_dispatch_e(control_decode_if_out.fpu_dispatch),
+        .fast_fpu_dispatch_e(control_decode_if_out.fast_fpu_dispatch),
+        .slow_fpu_dispatch_e(control_decode_if_out.slow_fpu_dispatch),
         .forward_rd1_e(forward_rd1_e),
         .forward_rd2_e(forward_rd2_e),
         .forward_fpu_rd1_e(forward_fpu_rd1_e),
@@ -422,8 +431,10 @@ module riscv_pipeline (
         .fpu_reg_write_w(control_mem_if_out.fpu_reg_write),
         .out_stall(out_stall),
         .in_stall(in_stall),
-        .fpu_valid(fpu_valid),
-        .fpu_en_pulse(fpu_en),
+        .fast_fpu_valid(fast_fpu_valid),
+        .slow_fpu_valid(slow_fpu_valid),
+        .fast_fpu_en_pulse(fast_fpu_en),
+        .slow_fpu_en_pulse(slow_fpu_en),
         .lw_stall(lw_stall)
     );
 

@@ -16,7 +16,7 @@
 #define Dsize (1 << 30)
 #define maxcount 10000000000
 #define AP_max 4
-#define GP_max 6
+#define GP_max 4
 
 using namespace std;
 using Data = std::variant<int, float, unsigned int>;
@@ -574,8 +574,10 @@ public:
 					ID = IF;
 					ID_pc = IF_pc;
 				}
-				else
+				else{
 					ID = nullptr;
+					ID_pc = -2;
+				}
 				
 				if (IF_next_pc < 4 * (int)intrs.size() && IF_flag) {
 					IF = intrs[(IF_next_pc / 4)];
@@ -653,9 +655,9 @@ public:
 					
 					if (pc == ex_pc)
 					{
-						if (IF != nullptr) {
-							pc += 4;
-						}
+						
+						pc += 4;
+						
 						AdaptiveBranchHistoryTable[ex_pc/4] = (AdaptiveBranchHistoryTable[ex_pc/4] << 1) | 0;
 						GsharePredictorHistoryTable[ex_pc/4] = (GsharePredictorHistoryTable[ex_pc/4] << 1) | 0;
 					}else{

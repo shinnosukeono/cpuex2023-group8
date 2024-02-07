@@ -1,0 +1,100 @@
+1: Addi sp(x2), sp(x2), -32
+2: Sw ra(x1), 28(sp(x2))
+3: Sw s0/fp(x8), 24(sp(x2))
+4: Addi s0/fp(x8), sp(x2), 32
+5: Lui a5(x15), 65536
+6: Flw fa5(f15), 0(a5(x15))
+7: Fsw fa5(f15), -20(s0/fp(x8))
+8: Lui a5(x15), 65536
+9: Flw fa5(f15), 4(a5(x15))
+10: Fsgnj.s fa1(f11), fa5(f15), fa5(f15)
+11: Flw fa0(f10), -20(s0/fp(x8))
+12: Jal ra(x1), 40
+13: Fsw fa0(f10), -24(s0/fp(x8))
+14: Flw fa0(f10), -24(s0/fp(x8))
+15: Jal ra(x1), 196
+16: Addi a5(x15), zero(x0), 0
+17: Addi a0(x10), a5(x15), 0
+18: Lw ra(x1), 28(sp(x2))
+19: Lw s0/fp(x8), 24(sp(x2))
+20: Addi sp(x2), sp(x2), 32
+21: Jalr zero(x0), ra(x1), 0
+22: Addi sp(x2), sp(x2), -48
+23: Sw ra(x1), 44(sp(x2))
+24: Sw s0/fp(x8), 40(sp(x2))
+25: Addi s0/fp(x8), sp(x2), 48
+26: Fsw fa0(f10), -36(s0/fp(x8))
+27: Fsw fa1(f11), -40(s0/fp(x8))
+28: Flw fa4(f14), -36(s0/fp(x8))
+29: Lui a5(x15), 65536
+30: Flw fa5(f15), 0(a5(x15))
+31: Fdiv.s fa5(f15), fa4(f14), fa5(f15)
+32: Fsw fa5(f15), -20(s0/fp(x8))
+33: Jal zero(x0), 40
+34: Flw fa4(f14), -36(s0/fp(x8))
+35: Flw fa5(f15), -20(s0/fp(x8))
+36: Fdiv.s fa4(f14), fa4(f14), fa5(f15)
+37: Flw fa5(f15), -20(s0/fp(x8))
+38: Fadd.s fa4(f14), fa4(f14), fa5(f15)
+39: Lui a5(x15), 65536
+40: Flw fa5(f15), 8(a5(x15))
+41: Fmul.s fa5(f15), fa4(f14), fa5(f15)
+42: Fsw fa5(f15), -20(s0/fp(x8))
+43: Flw fa5(f15), -20(s0/fp(x8))
+44: Fmul.s fa4(f14), fa5(f15), fa5(f15)
+45: Flw fa5(f15), -36(s0/fp(x8))
+46: Fsub.s fa5(f15), fa4(f14), fa5(f15)
+47: Flw fa4(f14), -40(s0/fp(x8))
+48: Flt.s a5(x15), fa4(f14), fa5(f15)
+49: Bne a5(x15), zero(x0), -60
+50: Flw fa5(f15), -20(s0/fp(x8))
+51: Fmul.s fa4(f14), fa5(f15), fa5(f15)
+52: Flw fa5(f15), -36(s0/fp(x8))
+53: Fsub.s fa4(f14), fa4(f14), fa5(f15)
+54: Flw fa5(f15), -40(s0/fp(x8))
+55: Fsgnjn.s fa5(f15), fa5(f15), fa5(f15)
+56: Flt.s a5(x15), fa4(f14), fa5(f15)
+57: Bne a5(x15), zero(x0), -92
+58: Flw fa5(f15), -20(s0/fp(x8))
+59: Fsgnj.s fa0(f10), fa5(f15), fa5(f15)
+60: Lw ra(x1), 44(sp(x2))
+61: Lw s0/fp(x8), 40(sp(x2))
+62: Addi sp(x2), sp(x2), 48
+63: Jalr zero(x0), ra(x1), 0
+64: Addi sp(x2), sp(x2), -48
+65: Sw ra(x1), 44(sp(x2))
+66: Sw s0/fp(x8), 40(sp(x2))
+67: Addi s0/fp(x8), sp(x2), 48
+68: Fsw fa0(f10), -36(s0/fp(x8))
+69: Addi a5(x15), s0/fp(x8), -36
+70: Sw a5(x15), -24(s0/fp(x8))
+71: Lw a5(x15), -24(s0/fp(x8))
+72: Lw a5(x15), 0(a5(x15))
+73: Sw a5(x15), -28(s0/fp(x8))
+74: Addi a5(x15), zero(x0), 31
+75: Sw a5(x15), -20(s0/fp(x8))
+76: Jal zero(x0), 56
+77: Lw a5(x15), -20(s0/fp(x8))
+78: Lw a4(x14), -28(s0/fp(x8))
+79: Srl a5(x15), a4(x14), a5(x15)
+80: Andi a5(x15), a5(x15), 1
+81: Beq a5(x15), zero(x0), 12
+82: Addi a5(x15), zero(x0), 49
+83: Jal zero(x0), 8
+84: Addi a5(x15), zero(x0), 48
+85: Addi a0(x10), a5(x15), 0
+86: Jal ra(x1), 52
+87: Lw a5(x15), -20(s0/fp(x8))
+88: Addi a5(x15), a5(x15), -1
+89: Sw a5(x15), -20(s0/fp(x8))
+90: Lw a5(x15), -20(s0/fp(x8))
+91: Bge a5(x15), zero(x0), -56
+92: Addi a0(x10), zero(x0), 10
+93: Jal ra(x1), 24
+94: Addi zero(x0), zero(x0), 0
+95: Lw ra(x1), 44(sp(x2))
+96: Lw s0/fp(x8), 40(sp(x2))
+97: Addi sp(x2), sp(x2), 48
+98: Jalr zero(x0), ra(x1), 0
+99: Cout.char a0(x10)
+100: Jalr zero(x0), ra(x1), 0

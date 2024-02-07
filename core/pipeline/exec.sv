@@ -39,10 +39,9 @@ module exec (
     input logic [2:0] forward_rd2_e,
     input logic [1:0] forward_fpu_rd1_e,
     input logic [1:0] forward_fpu_rd2_e,
+    input logic [1:0] forward_fpu_rd3_e,
 
     // to hazard unit
-    output logic [4:0] rs1_e,
-    output logic [4:0] rs2_e,
     output pc_src_e,
 
     // to I/O module
@@ -56,7 +55,8 @@ module exec (
 
     // to FPU unit
     output logic [31:0] fpu_rd1,
-    output logic [31:0] fpu_rd2
+    output logic [31:0] fpu_rd2,
+    output wire [31:0] fpu_rd3
 );
 
     // forwarding
@@ -64,6 +64,7 @@ module exec (
     logic [31:0] rd2_forward;
     logic [31:0] fpu_rd1_forward;
     logic [31:0] fpu_rd2_forward;
+    logic [31:0] fpu_rd3_forward;
 
     // rd1
     always_comb begin : rd1_forwarding
@@ -117,6 +118,17 @@ module exec (
         endcase
     end
 
+    // fpu_rd3
+    always_comb begin : fpu_rd3_forwarding
+        case (forward_fpu_rd3_e)
+            2'b00: fpu_rd3_forward = data_decode_if.fpu_rd3;
+            2'b01: fpu_rd3_forward = result_w;
+            2'b10: fpu_rd3_forward = fpu_result_m;
+            2'b11: fpu_rd3_forward = rd1_m;
+            default: fpu_rd3_forward = data_decode_if.fpu_rd3;  // error
+        endcase
+    end
+
     // src_a
     logic [31:0] src_a;
     assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : rd1_forward;
@@ -141,6 +153,7 @@ module exec (
     // to FPU
     assign fpu_rd1 = fpu_rd1_forward;
     assign fpu_rd2 = fpu_rd2_forward;
+    assign fpu_rd3 = fpu_rd3_forward;
 
     // to I/O module
     assign out_data = {24'b0, rd1_forward[7:0]};
@@ -164,9 +177,6 @@ module exec (
     assign pc_target_e = (control_decode_if.jump) ? (data_exec_if.alu_result) : (data_decode_if.pc + data_decode_if.imm_ext);
 
     // to hazard unit
-    assign rs1_e = data_decode_if.rs1;
-    assign rs2_e = data_decode_if.rs2;
-
     logic branch_met;
     always_comb begin
         case (control_decode_if.alu_control)

@@ -81,6 +81,7 @@ module main_decoder (
                     default: controls = 22'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0_0;  // error
                 endcase
             end
+            7'b1010100: controls = 22'b0_xxx_x_0_0_111_0_xx_0_0_0_1_0_0_1_0_0;  // cin_float
             7'b0000111: controls = 22'b0_000_1_1_0_001_0_00_0_0_0_0_0_0_1_0_0;  // flw
             7'b0100111: controls = 22'b0_001_1_0_1_110_0_00_0_0_0_0_0_0_0_1_1;  // fsw
             default: controls = 22'bx_xxx_x_0_0_000_0_xx_0_x_0_0_0_0_0_0_0;  // error

@@ -7,7 +7,7 @@ module control_unit (
     input logic [6:0] op_6_0,
     input logic [2:0] funct3,
     input logic funct7_5,
-    input logic [3:0] funct7_3_6,
+    input logic [4:0] funct7_2_6,
 
     control_decode_io.in control_decode_if,
     output logic [2:0] imm_src,
@@ -18,7 +18,7 @@ module control_unit (
     main_decoder main_decoder(
         .opecode(op_6_0),
         .funct3(funct3),
-        .funct7_3_6(funct7_3_6),
+        .funct7_2_6(funct7_2_6),
         .branch(control_decode_if.branch),
         .jump(control_decode_if.jump),
         .result_src(control_decode_if.result_src),

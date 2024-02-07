@@ -41,6 +41,7 @@ module riscv_pipeline_wrapper (
     output wire slow_fpu_en,
     output wire [31:0] fpu_rd1,
     output wire [31:0] fpu_rd2,
+    output wire [31:0] fpu_rd3,
     output wire [2:0] fpu_rm,
     output wire [4:0] fpu_funct5,
 
@@ -85,6 +86,7 @@ module riscv_pipeline_wrapper (
         .slow_fpu_en(slow_fpu_en),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
+        .fpu_rd3(fpu_rd3),
         .fpu_rm(fpu_rm),
         .fpu_funct5(fpu_funct5),
         .cache_stall(cache_stall),

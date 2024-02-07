@@ -1,6 +1,7 @@
 `include "../lib/mux.sv"
 `include "../proc_common/regfile.sv"
 `include "../proc_common/regfile_bram.sv"
+`include "../proc_common/fpu_regfile_bram.sv"
 `include "../proc_common/c_regfile.sv"
 `include "../proc_common/regfile_bram.sv"
 `include "control_unit.sv"
@@ -32,7 +33,7 @@ module instr_decode (
         .op_6_0(data_fetch_if.instr[6:0]),
         .funct3(data_fetch_if.instr[14:12]),
         .funct7_5(data_fetch_if.instr[30]),
-        .funct7_3_6(data_fetch_if.instr[31:28]),
+        .funct7_2_6(data_fetch_if.instr[31:27]),
         .control_decode_if(control_decode_if),
         .imm_src(imm_src_d),
         .c_reg_write(c_reg_write)
@@ -55,7 +56,7 @@ module instr_decode (
     );
 
     // FPU register file
-    regfile_bram i_fpu_regfile (
+    fpu_regfile_bram i_fpu_regfile (
         .clk(~clk),
         .rst(rst),
         .we3(fpu_reg_write_w),
@@ -63,12 +64,15 @@ module instr_decode (
         .enb(1'b1),
         .rsta(1'b0),
         .rstb(1'b0),
+        .rstc(1'b0),
         .a1(data_fetch_if.instr[19:15]),
         .a2(data_fetch_if.instr[24:20]),
         .a3(rd_w),
+        .a4(data_fetch_if.instr[31:27]),
         .wd3(result_w),
         .rd1(data_decode_if.fpu_rd1),
-        .rd2(data_decode_if.fpu_rd2)
+        .rd2(data_decode_if.fpu_rd2),
+        .rd3(data_decode_if.fpu_rd3)
     );
 
     // extend unit
@@ -85,6 +89,7 @@ module instr_decode (
     assign data_decode_if.pc = data_fetch_if.pc;
     assign data_decode_if.rs1 = data_fetch_if.instr[19:15];
     assign data_decode_if.rs2 = data_fetch_if.instr[24:20];
+    assign data_decode_if.rs3 = data_fetch_if.instr[31:27];  // for R4 instructions
     assign data_decode_if.rd = data_fetch_if.instr[11:7];
     assign data_decode_if.pc_plus4 = data_fetch_if.pc_plus4;
 

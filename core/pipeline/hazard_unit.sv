@@ -11,6 +11,7 @@ module hazard_unit (
     input logic [4:0] rs1_d,
     input logic [4:0] rs2_d,
     input logic s_fpu_d,
+    input wire mem_write_d,
 
     // to exec reg
     output logic stall_e,
@@ -19,6 +20,7 @@ module hazard_unit (
     // from exec stage
     input logic [4:0] rs1_e,
     input logic [4:0] rs2_e,
+    input wire [4:0] rs3_e,
     input logic [4:0] rd_e,
     input logic pc_src_e,
     input logic [2:0] result_src_e,
@@ -34,6 +36,7 @@ module hazard_unit (
     output logic [2:0] forward_rd2_e,
     output logic [1:0] forward_fpu_rd1_e,
     output logic [1:0] forward_fpu_rd2_e,
+    output logic [1:0] forward_fpu_rd3_e,
     output logic cache_stall,
 
     // to memory access reg
@@ -121,7 +124,7 @@ module hazard_unit (
     always_comb begin : fpu_rd1
         if ((rs1_e == rd_m) && s_fpu_e && fpu_reg_write_m) begin
             case (result_src_m)
-                3'b011: forward_fpu_rd1_e = 2'b11;  // use rd1_m
+                3'b011: forward_fpu_rd1_e = 2'b11;  // use rd1_m (fmv.w.x is preceeding)
                 3'b110: forward_fpu_rd1_e = 2'b10;  // use fpu_result_m
                 default: forward_fpu_rd1_e = 2'b00;  // error
             endcase
@@ -148,6 +151,23 @@ module hazard_unit (
         end
         else begin
             forward_fpu_rd2_e = 2'b00;
+        end
+    end
+
+    // fpu_rd3
+    always_comb begin : fpu_rd3
+        if ((rs3_e == rd_m) && s_fpu_e && fpu_reg_write_m) begin
+            case (result_src_m)
+                3'b011: forward_fpu_rd3_e = 2'b11;  // use rd1_m
+                3'b110: forward_fpu_rd3_e = 2'b10;  // use fpu_result_m
+                default: forward_fpu_rd3_e = 2'b00;  // error
+            endcase
+        end
+        else if ((rs3_e == rd_w) && s_fpu_e && fpu_reg_write_w) begin
+            forward_fpu_rd3_e = 2'b01;
+        end
+        else begin
+            forward_fpu_rd3_e = 2'b00;
         end
     end
 
@@ -221,7 +241,7 @@ module hazard_unit (
     assign slow_fpu_stall = slow_fpu_en_pulse | (slow_fpu_waiting & ~slow_fpu_valid);
 
     // logic lw_stall;
-    assign lw_stall = ((result_src_e == 3'b001) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & ((~s_fpu_d & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
+    assign lw_stall = ((result_src_e == 3'b001 | result_src_e == 3'b111) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & (((~s_fpu_d | (s_fpu_d & mem_write_d)) & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
     assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;

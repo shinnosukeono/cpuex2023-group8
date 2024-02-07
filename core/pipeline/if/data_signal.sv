@@ -20,12 +20,14 @@ interface data_decode_io;
     logic [31:0] pc;
     logic [4:0] rs1;
     logic [4:0] rs2;
+    logic [4:0] rs3;
     logic [4:0] rd;
     logic [31:0] imm_ext;
     logic [31:0] pc_plus4;
     logic status;
     logic [31:0] fpu_rd1;
     logic [31:0] fpu_rd2;
+    logic [31:0] fpu_rd3;
     logic [2:0] rm;
     logic [4:0] funct5;
     modport in (
@@ -34,12 +36,14 @@ interface data_decode_io;
         output pc,
         output rs1,
         output rs2,
+        output rs3,
         output rd,
         output imm_ext,
         output pc_plus4,
         output status,
         output fpu_rd1,
         output fpu_rd2,
+        output fpu_rd3,
         output rm,
         output funct5
     );
@@ -49,12 +53,14 @@ interface data_decode_io;
         input pc,
         input rs1,
         input rs2,
+        input rs3,
         input rd,
         input imm_ext,
         input pc_plus4,
         input status,
         input fpu_rd1,
         input fpu_rd2,
+        input fpu_rd3,
         input rm,
         input funct5
     );

@@ -65,7 +65,9 @@ module riscv_pipeline (
     output logic flush_e,
     output logic [31:0] pc_plus4_e,
     output logic pc_src_e,
-    output logic [31:0] pc_plus4_m
+    output logic [31:0] pc_plus4_m,
+    output logic [31:0] src_a,
+    output logic [31:0] src_b
 );
     // hazard unit signals
     logic [1:0] forward_a_e;
@@ -122,6 +124,7 @@ module riscv_pipeline (
     logic [31:0] result_w;
     logic reg_write_w;
     logic fpu_reg_write_w;
+    logic r4_d;
 
     instr_decode i_instr_decode (
         .clk(clk),
@@ -132,7 +135,8 @@ module riscv_pipeline (
         .rd_w(rd_w),
         .result_w(result_w),
         .reg_write_w(reg_write_w),
-        .fpu_reg_write_w(fpu_reg_write_w)
+        .fpu_reg_write_w(fpu_reg_write_w),
+        .r4(r4_d)
     );
 
     // exec reg
@@ -255,6 +259,7 @@ module riscv_pipeline (
         .forward_rd2_e(forward_rd2_e),
         .forward_fpu_rd1_e(forward_fpu_rd1_e),
         .forward_fpu_rd2_e(forward_fpu_rd2_e),
+        .forward_fpu_rd3_e(forward_fpu_rd3_e),
         .pc_src_e(pc_src_e),
         .out_data(out_data),
         .fast_fpu_result(fast_fpu_result),
@@ -263,7 +268,9 @@ module riscv_pipeline (
         .slow_fpu_valid(slow_fpu_valid),
         .fpu_rd1(fpu_rd1),
         .fpu_rd2(fpu_rd2),
-        .fpu_rd3(fpu_rd3)
+        .fpu_rd3(fpu_rd3),
+        .src_a(src_a),
+        .src_b(src_b)
     );
 
     assign fpu_rm = data_decode_if_out.rm;
@@ -400,8 +407,10 @@ module riscv_pipeline (
         .flush_d(flush_d),
         .rs1_d(data_decode_if_in.rs1),
         .rs2_d(data_decode_if_in.rs2),
+        .rs3_d(data_decode_if_in.rs3),
         .s_fpu_d(control_decode_if_in.s_fpu),
         .mem_write_d(control_decode_if_in.mem_write),
+        .r4_d(r4_d),
         .stall_e(stall_e),
         .flush_e(flush_e),
         .rs1_e(data_decode_if_out.rs1),

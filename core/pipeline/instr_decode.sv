@@ -23,7 +23,10 @@ module instr_decode (
     input logic [4:0] rd_w,
     input logic [31:0] result_w,
     input logic reg_write_w,
-    input logic fpu_reg_write_w
+    input logic fpu_reg_write_w,
+
+    // to hazard unit
+    output wire r4
 );
     logic c_reg_write;
 
@@ -36,7 +39,8 @@ module instr_decode (
         .funct7_2_6(data_fetch_if.instr[31:27]),
         .control_decode_if(control_decode_if),
         .imm_src(imm_src_d),
-        .c_reg_write(c_reg_write)
+        .c_reg_write(c_reg_write),
+        .r4(r4)
     );
 
     regfile_bram i_regfile (
@@ -94,5 +98,5 @@ module instr_decode (
     assign data_decode_if.pc_plus4 = data_fetch_if.pc_plus4;
 
     assign data_decode_if.rm = data_fetch_if.instr[14:12];
-    assign data_decode_if.funct5 = data_fetch_if.instr[31:27];
+    assign data_decode_if.funct5 = (r4) ? {data_fetch_if.instr[6:2]} : data_fetch_if.instr[31:27];
 endmodule

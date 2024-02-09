@@ -13,7 +13,7 @@ module tx_fifo (
 
 FIFO18E1 #(
    .ALMOST_EMPTY_OFFSET(13'h0004),    // Sets the almost empty threshold
-   .ALMOST_FULL_OFFSET(13'h0004),     // Sets almost full threshold
+   .ALMOST_FULL_OFFSET(13'h0004),     // Sets almost full threshold (512 - 16 = 496)
    .DATA_WIDTH(36),                    // Sets data width to 4-36
    .DO_REG(1),                        // Enable output register (1-0) Must be 1 if EN_SYN = FALSE
    .EN_SYN("TRUE"),                  // Specifies FIFO as dual-clock (FALSE) or Synchronous (TRUE)

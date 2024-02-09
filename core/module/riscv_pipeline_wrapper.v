@@ -57,7 +57,9 @@ module riscv_pipeline_wrapper (
     output wire flush_e,
     output wire pc_src_e,
     output wire [31:0] pc_plus4_e,
-    output wire [31:0] pc_plus4_m
+    output wire [31:0] pc_plus4_m,
+    output wire [31:0] src_a,
+    output wire [31:0] src_b
 );
     riscv_pipeline i_riscv_pipeline (
         .clk(clk),
@@ -100,6 +102,8 @@ module riscv_pipeline_wrapper (
         .flush_e(flush_e),
         .pc_src_e(pc_src_e),
         .pc_plus4_e(pc_plus4_e),
-        .pc_plus4_m(pc_plus4_m)
+        .pc_plus4_m(pc_plus4_m),
+        .src_a(src_a),
+        .src_b(src_b)
     );
 endmodule

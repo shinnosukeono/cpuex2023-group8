@@ -10,8 +10,10 @@ module hazard_unit (
     // from instr decode stage
     input logic [4:0] rs1_d,
     input logic [4:0] rs2_d,
+    input logic [4:0] rs3_d,
     input logic s_fpu_d,
     input wire mem_write_d,
+    input wire r4_d,
 
     // to exec reg
     output logic stall_e,
@@ -241,7 +243,7 @@ module hazard_unit (
     assign slow_fpu_stall = slow_fpu_en_pulse | (slow_fpu_waiting & ~slow_fpu_valid);
 
     // logic lw_stall;
-    assign lw_stall = ((result_src_e == 3'b001 | result_src_e == 3'b111) & ((rs1_d == rd_e) | (rs2_d == rd_e)) & (((~s_fpu_d | (s_fpu_d & mem_write_d)) & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
+    assign lw_stall = ((result_src_e == 3'b001 | result_src_e == 3'b111) & ((rs1_d == rd_e) | (rs2_d == rd_e) | (r4_d & (rs3_d == rd_e))) & (((~s_fpu_d | (s_fpu_d & mem_write_d)) & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
     assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
     assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;

@@ -11,7 +11,8 @@ module control_unit (
 
     control_decode_io.in control_decode_if,
     output logic [2:0] imm_src,
-    output logic c_reg_write
+    output logic c_reg_write,
+    output logic r4
 );
     logic [1:0] alu_op;
 
@@ -35,7 +36,8 @@ module control_unit (
         .slow_fpu_dispatch(control_decode_if.slow_fpu_dispatch),
         .fpu_reg_write(control_decode_if.fpu_reg_write),
         .write_src(control_decode_if.write_src),
-        .s_fpu(control_decode_if.s_fpu)
+        .s_fpu(control_decode_if.s_fpu),
+        .r4(r4)
     );
 
     assign control_decode_if.alu_op_and = &alu_op;

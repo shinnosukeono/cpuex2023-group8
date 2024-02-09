@@ -40,6 +40,10 @@
 		output wire last_read,
 		output wire start_single_dmem_write,
 		output wire dmem_write_issued,
+		output wire read_status,
+		output wire read_status_ready,
+		output wire tx_empty,
+		output wire start_single_write,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -102,6 +106,10 @@
 		.last_read(last_read),
 		.start_single_dmem_write(start_single_dmem_write),
 		.dmem_write_issued(dmem_write_issued),
+		.read_status(read_status),
+		.read_status_ready(read_status_ready),
+		.tx_empty(tx_empty),
+		.start_single_write(start_single_write),
 		.INIT_AXI_TXN(m00_axi_init_axi_txn),
 		.ERROR(m00_axi_error),
 		.TXN_DONE(m00_axi_txn_done),

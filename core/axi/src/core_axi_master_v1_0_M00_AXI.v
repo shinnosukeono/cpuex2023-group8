@@ -46,6 +46,10 @@
 		output reg last_read,
 		output reg start_single_dmem_write,
 		output reg dmem_write_issued,
+		output reg read_status,
+		output reg read_status_ready,
+		output wire tx_empty,
+		output reg start_single_write,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -61,35 +65,35 @@
 		// AXI active low reset signal
 		input wire  M_AXI_ARESETN,
 		// Master Interface Write Address Channel ports. Write address (issued by master)
-		output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,
+		(* mark_debug = "true" *) output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,
 		// Write channel Protection type.
     // This signal indicates the privilege and security level of the transaction,
     // and whether the transaction is a data access or an instruction access.
-		output wire [2 : 0] M_AXI_AWPROT,
+		(* mark_debug = "true" *) output wire [2 : 0] M_AXI_AWPROT,
 		// Write address valid.
     // This signal indicates that the master signaling valid write address and control information.
-		output wire  M_AXI_AWVALID,
+		(* mark_debug = "true" *) output wire  M_AXI_AWVALID,
 		// Write address ready.
     // This signal indicates that the slave is ready to accept an address and associated control signals.
 		input wire  M_AXI_AWREADY,
 		// Master Interface Write Data Channel ports. Write data (issued by master)
-		output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,
+		(* mark_debug = "true" *) output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,
 		// Write strobes.
     // This signal indicates which byte lanes hold valid data.
     // There is one write strobe bit for each eight bits of the write data bus.
-		output wire [C_M_AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
+		(* mark_debug = "true" *) output wire [C_M_AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
 		// Write valid. This signal indicates that valid write data and strobes are available.
-		output wire  M_AXI_WVALID,
+		(* mark_debug = "true" *) output wire  M_AXI_WVALID,
 		// Write ready. This signal indicates that the slave can accept the write data.
-		input wire  M_AXI_WREADY,
+		(* mark_debug = "true" *) input wire  M_AXI_WREADY,
 		// Master Interface Write Response Channel ports.
     // This signal indicates the status of the write transaction.
-		input wire [1 : 0] M_AXI_BRESP,
+		(* mark_debug = "true" *) input wire [1 : 0] M_AXI_BRESP,
 		// Write response valid.
     // This signal indicates that the channel is signaling a valid write response
-		input wire  M_AXI_BVALID,
+		(* mark_debug = "true" *) input wire  M_AXI_BVALID,
 		// Response ready. This signal indicates that the master can accept a write response.
-		output wire  M_AXI_BREADY,
+		(* mark_debug = "true" *) output wire  M_AXI_BREADY,
 		// Master Interface Read Address Channel ports. Read address (issued by master)
 		output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_ARADDR,
 		// Protection type.
@@ -164,13 +168,13 @@
 	//write data
 	reg [C_M_AXI_DATA_WIDTH-1 : 0] 	axi_wdata;
 	//read addresss
-	wire [C_M_AXI_ADDR_WIDTH-1 : 0] 	axi_araddr;
+	reg [C_M_AXI_ADDR_WIDTH-1 : 0] 	axi_araddr;
     //Asserts when a single write finishes successfully
     wire write_resp_success;
     // Asserts when a single read finishes successfully
     wire read_resp_success;
 	//A pulse to initiate a write transaction
-	reg  	start_single_write;
+	// reg  	start_single_write;
 	//A pulse to initiate a read transaction
 	reg  	start_single_read;
 	//Asserts when a single beat write transaction is issued and remains asserted till the completion of write trasaction.
@@ -204,6 +208,9 @@
 	reg  	init_txn_edge;
 	wire  	init_txn_pulse;
 
+	// AXI STAT_REG read
+	// reg read_status;
+
     // rx FIFO
     wire rx_empty;
     wire rx_almost_full;
@@ -224,7 +231,7 @@
     );
 
     // tx FIFO
-    wire tx_empty;
+    // wire tx_empty;
     wire tx_almost_full;
     wire [31:0] tx_din;
     wire tx_din_sel;
@@ -569,7 +576,7 @@
 	concat rx_concat_inst (
 		.clk(M_AXI_ACLK),
 		.rst(~M_AXI_ARESETN),
-		.en(read_resp_success),
+		.en(read_resp_success & ~read_status),
 		.din(M_AXI_RDATA[7:0]),
 		.dout(concat_dout),
 		.valid(concat_valid)
@@ -690,6 +697,7 @@
 
 	reg first;
 	reg transition_wait;
+	// reg read_status_ready;
 	  //implement master command interface state machine
 	  always @ ( posedge M_AXI_ACLK ) begin
 	    if (M_AXI_ARESETN == 1'b0)
@@ -705,6 +713,9 @@
             core_gating_signal <= 1'b0;
 			imem_addr_rst <= 1'b0;
 			first <= 1'b1;
+			axi_araddr <= 4'h0;
+			read_status <= 1'b0;
+			read_status_ready <= 1'b0;
 	      end
 	    else
 	      begin
@@ -749,6 +760,7 @@
                         mst_exec_state <= PROGRAM_RECV;
                         if (~axi_arvalid && ~M_AXI_RVALID && ~start_single_read && ~read_issued && ~rx_almost_full) begin
                             start_single_read <= 1'b1;
+							axi_araddr <= 4'h0;
                             read_issued <= 1'b1;
                         end
                         else if (axi_rready) begin
@@ -781,6 +793,7 @@
 						mst_exec_state <= DATA_RECV;
 						if (~axi_arvalid && ~M_AXI_RVALID && ~start_single_read && ~read_issued && ~rx_almost_full) begin
                             start_single_read <= 1'b1;
+							axi_araddr <= 4'h0;
                             read_issued <= 1'b1;
                         end
                         else if (axi_rready) begin
@@ -843,8 +856,12 @@
                     if (~axi_awvalid && ~axi_wvalid && ~M_AXI_BVALID &&
                         ~start_single_write && ~write_issued) begin
                         if (~tx_empty) begin
-                            start_single_write <= 1'b1;
-                            write_issued <= 1'b1;
+							read_status_ready <= 1'b1;
+							if (read_status && read_resp_success && ~M_AXI_RDATA[3]) begin
+								start_single_write <= 1'b1;
+								write_issued <= 1'b1;
+								read_status_ready <= 1'b0;
+							end
                         end
 					end
                     else if (axi_bready) begin
@@ -856,15 +873,24 @@
                     // tries to read in advance the data file until
                     // there is no data any more to read or the rx FIFO
                     // becomes full.
-                    if (~axi_arvalid && ~M_AXI_RVALID &&
-                        ~start_single_read && ~read_issued && ~rx_almost_full)begin
-                        if (~rx_almost_full)  begin
+                    if (~axi_arvalid && ~M_AXI_RVALID && ~start_single_read && ~read_issued) begin
+						if (read_status_ready) begin
+							start_single_read <= 1'b1;
+							read_issued <= 1'b1;
+							axi_araddr <= 4'h8;
+							read_status <= 1'b1;
+						end
+                        else if (~rx_almost_full)  begin
                             start_single_read <= 1'b1;
                             read_issued <= 1'b1;
+							axi_araddr <= 4'h0;
                         end
 					end
                     else if (axi_rready) begin
                         read_issued <= 1'b0;
+						if (read_status) begin
+							read_status <= 1'b0;
+						end
                     end
                     else begin
                         start_single_read <= 1'b0;

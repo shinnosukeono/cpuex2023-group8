@@ -56,7 +56,10 @@ module exec (
     // to FPU unit
     output logic [31:0] fpu_rd1,
     output logic [31:0] fpu_rd2,
-    output wire [31:0] fpu_rd3
+    output wire [31:0] fpu_rd3,
+
+    output logic [31:0] src_a,
+    output logic [31:0] src_b
 );
 
     // forwarding
@@ -130,11 +133,11 @@ module exec (
     end
 
     // src_a
-    logic [31:0] src_a;
+    // logic [31:0] src_a;
     assign src_a = (control_decode_if.alu_op_and) ? data_decode_if.pc : rd1_forward;
 
     // src_b
-    logic [31:0] src_b;
+    // logic [31:0] src_b;
     assign src_b = (control_decode_if.alu_src) ? data_decode_if.imm_ext : rd2_forward;
 
     // ALU
@@ -151,7 +154,7 @@ module exec (
     );
 
     // to FPU
-    assign fpu_rd1 = fpu_rd1_forward;
+    assign fpu_rd1 = (data_decode_if.funct5 == 5'b11010) ? rd1_forward : fpu_rd1_forward;
     assign fpu_rd2 = fpu_rd2_forward;
     assign fpu_rd3 = fpu_rd3_forward;
 

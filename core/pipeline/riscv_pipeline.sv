@@ -72,8 +72,8 @@ module riscv_pipeline (
     // hazard unit signals
     logic [1:0] forward_a_e;
     logic [1:0] forward_b_e;
-    logic [2:0] forward_rd1_e;
-    logic [2:0] forward_rd2_e;
+    (* mark_debug = "true" *) logic [2:0] forward_rd1_e;
+    (* mark_debug = "true" *) logic [2:0] forward_rd2_e;
     logic [1:0] forward_fpu_rd1_e;
     logic [1:0] forward_fpu_rd2_e;
     logic [1:0] forward_fpu_rd3_e;
@@ -230,7 +230,7 @@ module riscv_pipeline (
     logic [31:0] fpu_rd1_m;
     logic [31:0] fpu_result_m;
     logic [2:0] result_src_m;
-    logic [31:0] write_data_e;
+    (* mark_debug = "true" *) logic [31:0] write_data_e;
     logic [31:0] pc_target_e;
     // logic pc_src_e;
     logic data_we_e;
@@ -280,6 +280,9 @@ module riscv_pipeline (
     // consistent during the search of the cache system. So if stall_m is asserted,
     // which signifies cache_stall is also asserted, the input signals shoule be
     // taken from the memory access register.
+    (* mark_debug = "true" *) logic [31:0] write_data_m;
+    assign write_data_m = data_exec_if_out.write_data;
+
     assign data_addr = (stall_m) ? data_exec_if_out.data_addr : alu_result_e;
     assign din = (stall_m) ? data_exec_if_out.write_data : write_data_e;
     assign data_we = (stall_m) ? control_exec_if_out.mem_write : control_decode_if_out.mem_write;

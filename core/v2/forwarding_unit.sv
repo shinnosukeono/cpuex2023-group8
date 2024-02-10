@@ -21,6 +21,13 @@ module forwarding_unit (
     input logic [2:0] rs_fpu_dp,
     input logic [3:0] dispatch_unit_dp,
 
+    // to DP stage
+    output logic forward_rd1_dp,
+    output logic forward_rd2_dp,
+    output logic forward_fpu_rd1_dp,
+    output logic forward_fpu_rd2_dp,
+    output logic forward_fpu_rd3_dp,
+
     // to exec reg
     output logic stall_e,
     output logic flush_e,

@@ -3,7 +3,7 @@ module main_decoder (
     input logic [2:0] funct3,
     input logic [4:0] funct7_2_6,
     output logic jump,
-    output logic [2:0] rs_fpu,  // rs_fpu[0] for rs1, 1 for rs2, 2 for rs3. rs_fpu[2] == 0 means it doesn't used.
+    output logic [2:0] rs_fpu,  // rs_fpu[2] for rs1, 1 for rs2, 0 for rs3. rs_fpu[0] == 0 means it isn't used.
     output logic [3:0] dispatch_unit,
     output logic [1:0] alu_op,
     output logic [2:0] imm_src,

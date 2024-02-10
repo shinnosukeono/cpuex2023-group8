@@ -75,5 +75,5 @@ module instr_decode (
     assign data_decode_if.pc_plus4 = data_fetch_if.pc_plus4;
 
     assign data_decode_if.rm = data_fetch_if.instr[14:12];
-    assign data_decode_if.funct5 = data_fetch_if.instr[31:27];
+    assign data_decode_if.funct5 = (control_decode_if.rs_fpu[0]) ? data_decode_if.instr[6:2] : data_fetch_if.instr[31:27];  // use instr[6:2] for R4 instructions
 endmodule

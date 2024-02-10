@@ -38,7 +38,7 @@ module dispatch (
     alu_decoder i_alu_decoder (
         .alu_op(control_decode_if.alu_op),
         .funct3(control_decode_if.funct3),
-        .op_5_xor_6(data_decode_if.instr[5] ^ data_decode_if.instr[6]),
+        .op_5_xor_6(control_decode_if.op_5_xor_6),
         .funct7_5(data_decode_if.instr[30]),
         .alu_control(control_dispatch_if.alu_control)
     );

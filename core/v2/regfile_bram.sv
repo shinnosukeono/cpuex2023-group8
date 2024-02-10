@@ -41,6 +41,6 @@ module regfile_bram (
         .dob(rd2_reg)
     );
 
-    assign rd1 = ((a1 == a3) && we3 && ~rsta) ? wd3 : rd1_reg;
+    assign rd1 = ((a1 == a3) && we3 && ~rsta) ? wd3 : rd1_reg;  // ignore the write for x0
     assign rd2 = ((a2 == a3) && we3 && ~rstb) ? wd3 : rd2_reg;
 endmodule

@@ -156,40 +156,39 @@ scanf_int:                                    # @scanf_int
 	.p2align	1
 	.type	memcpy,@function
 memcpy:
-    addi    sp,sp,-48
-    sw      ra,44(sp)
-    sw      s0,40(sp)
-    addi    s0,sp,48
-    sw      a0,-36(s0)
-    sw      a1,-40(s0)
-    sw      a2,-44(s0)
-    lw      a5,-40(s0)
-    sw      a5,-20(s0)
-    lw      a5,-36(s0)
-    sw      a5,-24(s0)
-    j       .L12
-.L13:
-    lw      a5,-20(s0)
-    addi    a4,a5,1
-    sw      a4,-20(s0)
-    lbu     a4,0(a5)
-    lw      a5,-24(s0)
-    addi    a3,a5,1
-    sw      a3,-24(s0)
-    sb      a4,0(a5)
-.L12:
-    lw      a5,-44(s0)
-    addi    a4,a5,-1
-    sw      a4,-44(s0)
-    snez    a5,a5
-    andi    a5,a5,0xff
-    bne     a5,zero,.L13
-    lw      a5,-40(s0)
-    mv      a0,a5
-    lw      ra,44(sp)
-    lw      s0,40(sp)
-    addi    sp,sp,48
-    jr      ra
+        addi    sp,sp,-48
+        sw      ra,44(sp)
+        sw      s0,40(sp)
+        addi    s0,sp,48
+        sw      a0,-36(s0)
+        sw      a1,-40(s0)
+        sw      a2,-44(s0)
+        lw      a5,-40(s0)
+        sw      a5,-20(s0)
+        lw      a5,-36(s0)
+        sw      a5,-24(s0)
+        j       .L2
+.L3:
+        lw      a4,-20(s0)
+        addi    a5,a4,4
+        sw      a5,-20(s0)
+        lw      a5,-24(s0)
+        addi    a3,a5,4
+        sw      a3,-24(s0)
+        lw      a4,0(a4)
+        sw      a4,0(a5)
+        lw      a5,-44(s0)
+        addi    a5,a5,-4
+        sw      a5,-44(s0)
+.L2:
+        lw      a5,-44(s0)
+        bne     a5,zero,.L3
+        lw      a5,-40(s0)
+        mv      a0,a5
+        lw      ra,44(sp)
+        lw      s0,40(sp)
+        addi    sp,sp,48
+        jr      ra
 # %bb.1:                                # %entry.endif
 	ret
 .Myfunc_end110:
@@ -6189,8 +6188,8 @@ buffer_pos:
 	.size	buffer_pos, 4
 
 buffer:
-	.zero	12000000
-	.size	buffer, 12000000
+	.zero	1600000
+	.size	buffer, 1600000
 
 .L.str:
 	.asciz	"%d"

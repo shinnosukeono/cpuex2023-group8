@@ -3202,6 +3202,31 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		return 0;
 	}
 
+	if (tokens[0] == ".float"){
+		assert(Labels_vec.size() >= 1);
+		if (Labels_pointer[Labels_vec.back()] < data_section_pointer/4){
+			Labels_pointer[Labels_vec.back()] = (data_section_pointer/4) + data_section.size();
+		}
+
+		try {
+			float val = stof(tokens[1]);
+			unsigned int value = *(unsigned int*)&val;
+			data_section.push_back(value);
+		} catch (std::invalid_argument e){
+			if (Labels_pointer.count(tokens[1])){
+				data_section.push_back(Labels_pointer[tokens[1]]*4);
+			}else{
+				cerr << "Invalid data symbol: " << tokens[1] << endl;
+				exit(1);
+			}
+		} catch (std::out_of_range e){
+			cerr << "Out of range: " << tokens[1] << endl;
+			exit(1);
+		}
+
+		return 0;
+	}
+
 	if (tokens[0] == ".comm"){
 		Labels_pointer[tokens[1]] = (data_section_pointer/4) + data_section.size();
 		for (int i=0;i<stoi(tokens[2])/stoi(tokens[3]);i++){

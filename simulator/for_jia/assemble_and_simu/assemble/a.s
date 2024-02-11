@@ -1,9 +1,37 @@
-# ver2
+# ver2 parameter is 345
 	.globl	main                            # -- Begin function main
 	.p2align	2
 	.type	main,@function
 main:                                   # @main
 # %bb.0:
+	li zero, 0
+	li ra, -1
+	li sp, 0x40000000
+	li gp, 0
+	li tp, 0x10000000
+	li t0, 0
+	li t1, 0
+	li t2, 0
+	li s0, 0
+	li s1, 0
+	li a0, 0
+	li a1, 0
+	li a2, 0
+	li a3, 0
+	li a4, 0
+	li a5, 0
+	li a6, 0
+	li a7, 0
+	li s2, 0
+	li s3, 0
+	li s4, 0
+	li s5, 0
+	li s6, 0
+	li s7, 0
+	li s8, 0
+	li s9, 0
+	li s10, 0
+	li s11, 0
 	addi	sp, sp, -16
 	sw	ra, 12(sp)                      # 4-byte Folded Spill
 	sw	s0, 8(sp)                       # 4-byte Folded Spill
@@ -314,7 +342,7 @@ caml_main:                              # @caml_main
 	lw	a0, %lo(size)(a0)
 	lui	a1, %hi(dbg)
 	lw	a1, %lo(dbg)(a1)
-	li	a2, 64
+	li	a2, 0
 	sw	a2, 0(a0)
 	sw	a2, 4(a0)
 	sw	zero, 0(a1)

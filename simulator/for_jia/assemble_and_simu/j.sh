@@ -4,6 +4,7 @@ set -e
 
 
 cp main.s ./assemble/a.s
+cat main_lib.s >> ./assemble/a.s
 cd assemble
 ./a.out < a.txt
 cp output_hex.txt ../make_bin/hex.txt

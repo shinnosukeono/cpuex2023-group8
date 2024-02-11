@@ -11418,8 +11418,9 @@ n_reflections:
 .float 0.8999999761581421
 "%.15578<.LC22>": 
 .float 128.0
+
 .globl caml_floor
-caml_floor:
+caml_floor2:
         fmv.x.s a4,fa0
         li      a2,22
         srai    a5,a4,23

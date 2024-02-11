@@ -266,8 +266,8 @@
     call "%.5641<create_array_0_0>"
     sw a0, 120(gp)
 "%.15863<end_of_call_%.5641<create_array_0_0>>":
-    li a1, 512
-    li a0, 512
+    li a1, 4
+    li a0, 4
     li s0, 3
     li a7, 0
     lw s2, 68(gp)

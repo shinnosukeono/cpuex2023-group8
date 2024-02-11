@@ -1,3 +1,4 @@
+
 .globl caml_floor
 caml_floor:
         fmv.x.s a4,fa0
@@ -42,7 +43,7 @@ caml_floor:
 
 .globl print_int
 print_int:
-	mv a3, ra
+    mv a3, ra
     bgt a0, zero, print_positive
     beq a0, zero, print_zero
     li a1, 45
@@ -138,12 +139,12 @@ print_positive_end_2:
 print_positive_end_1:
     addi a0, a0, 48
     out a0
-	jr a3
+    jr a3
 
 print_zero:
     li a0, 48
     out a0
-	jr a3
+    jr a3
 
 print_INT_MIN:
     li a0, 50 # '2'
@@ -166,7 +167,7 @@ print_INT_MIN:
     out a0
     li a0, 56 # '8'
     out a0
-	jr a3
+    jr a3
     
 divmod_10: # a0: dividend; 0 <= a0 <= 2^31 - 1
     li t0, 10
@@ -202,7 +203,35 @@ divmod_10_loop2_end:
     # a0: remainder; a1: quotient
     ret
 
+	.text
+	.attribute	4, 16
+	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
+	.file	"trigonometric.c"
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function caml_atan
+.LCPI0_0:
+	.word	0xbdb7d66e                      # float -0.0897644609
+.LCPI0_1:
+	.word	0x3d75e7c5                      # float 0.0600354858
+.LCPI0_2:
+	.word	0x3de38e38                      # float 0.111111104
+.LCPI0_3:
+	.word	0xbe124925                      # float -0.142857149
+.LCPI0_4:
+	.word	0x3e4ccccd                      # float 0.200000003
+.LCPI0_5:
+	.word	0xbeaaaaaa                      # float -0.333333313
+.LCPI0_6:
+	.word	0xbfc90fdb                      # float -1.57079637
+.LCPI0_7:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI0_8:
+	.word	0xbf490fdb                      # float -0.785398185
+.LCPI0_9:
+	.word	0x3f490fdb                      # float 0.785398185
+	.text
 	.globl	caml_atan
+	.p2align	2
 	.type	caml_atan,@function
 caml_atan:                           # @caml_atan
 # %bb.0:
@@ -315,7 +344,31 @@ caml_atan:                           # @caml_atan
 .Lfunc_end0:
 	.size	caml_atan, .Lfunc_end0-caml_atan
                                         # -- End function
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function caml_sin
+.LCPI1_0:
+	.word	0x40c90fdb                      # float 6.28318548
+.LCPI1_1:
+	.word	0x40490fdb                      # float 3.14159274
+.LCPI1_2:
+	.word	0xc0490fdb                      # float -3.14159274
+.LCPI1_3:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI1_4:
+	.word	0x3f490fdb                      # float 0.785398185
+.LCPI1_5:
+	.word	0x3c088666                      # float 0.00833282433
+.LCPI1_6:
+	.word	0xb94d64b6                      # float -1.95878412E-4
+.LCPI1_7:
+	.word	0xbe2aaaac                      # float -0.166666687
+.LCPI1_8:
+	.word	0x3d2aa789                      # float 0.0416636802
+.LCPI1_9:
+	.word	0xbab38106                      # float -0.00136950682
+	.text
 	.globl	caml_sin
+	.p2align	2
 	.type	caml_sin,@function
 caml_sin:                            # @caml_sin
 # %bb.0:
@@ -409,7 +462,29 @@ caml_sin:                            # @caml_sin
 .Lfunc_end1:
 	.size	caml_sin, .Lfunc_end1-caml_sin
                                         # -- End function
-
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function caml_cos
+.LCPI2_0:
+	.word	0x40c90fdb                      # float 6.28318548
+.LCPI2_1:
+	.word	0x40490fdb                      # float 3.14159274
+.LCPI2_2:
+	.word	0xc0490fdb                      # float -3.14159274
+.LCPI2_3:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI2_4:
+	.word	0x3f490fdb                      # float 0.785398185
+.LCPI2_5:
+	.word	0x3d2aa789                      # float 0.0416636802
+.LCPI2_6:
+	.word	0xbab38106                      # float -0.00136950682
+.LCPI2_7:
+	.word	0x3c088666                      # float 0.00833282433
+.LCPI2_8:
+	.word	0xb94d64b6                      # float -1.95878412E-4
+.LCPI2_9:
+	.word	0xbe2aaaac                      # float -0.166666687
+	.text
 	.globl	caml_cos
 	.p2align	2
 	.type	caml_cos,@function
@@ -518,65 +593,5 @@ caml_cos:                            # @caml_cos
 .Lfunc_end2:
 	.size	caml_cos, .Lfunc_end2-caml_cos
                                         # -- End function
-
-.data
-.LCPI0_0:
-	.word	0xbdb7d66e                      # float -0.0897644609
-.LCPI0_1:
-	.word	0x3d75e7c5                      # float 0.0600354858
-.LCPI0_2:
-	.word	0x3de38e38                      # float 0.111111104
-.LCPI0_3:
-	.word	0xbe124925                      # float -0.142857149
-.LCPI0_4:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI0_5:
-	.word	0xbeaaaaaa                      # float -0.333333313
-.LCPI0_6:
-	.word	0xbfc90fdb                      # float -1.57079637
-.LCPI0_7:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI0_8:
-	.word	0xbf490fdb                      # float -0.785398185
-.LCPI0_9:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI1_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI1_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI1_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI1_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI1_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI1_5:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI1_6:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI1_7:
-	.word	0xbe2aaaac                      # float -0.166666687
-.LCPI1_8:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI1_9:
-	.word	0xbab38106                      # float -0.00136950682
-.LCPI2_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI2_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI2_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI2_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI2_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI2_5:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI2_6:
-	.word	0xbab38106                      # float -0.00136950682
-.LCPI2_7:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI2_8:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI2_9:
-	.word	0xbe2aaaac                      # float -0.166666687
+	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
+	.section	".note.GNU-stack","",@progbits

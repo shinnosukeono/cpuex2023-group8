@@ -4401,10 +4401,12 @@ int main(){
 		cerr << p.first << " " << p.second << endl;
 	}
 
+	ofstream ofs5("output_labels.txt");
 	for (int i=0; i<Labels_vec.size(); i++){
 		bool flag = true;
 		int pointer = Labels_pointer[Labels_vec[i]];
 		cerr << Labels_vec[i] << " " << pointer << endl;
+		ofs5 << Labels_vec[i] << " " << pointer << endl;
 		if (pointer >= data_section_pointer/4){
 			flag = false;
 		}

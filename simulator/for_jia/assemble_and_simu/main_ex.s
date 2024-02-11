@@ -6,22 +6,17 @@
 "%.15657<main>.func_begin":
     li a0, 1
     li a1, 0
-"%.15784<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 0(gp)
-"%.15785<end_of_call_%.5641<create_array_0_0>>":
     li a0, 0
     fmv.w.x fa0, zero
-"%.15786<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.15787<end_of_call_%.5644<create_array_1_0>>":
     li a1, 60
     li s0, 0
     li a2, 0
     li a3, 0
     li a4, 0
     li a7, 0
-"%.15788<prepare_to_call_%.5647<create_array_0000000_4>>":
     sw a0, -4(sp)
     sw a0, -8(sp)
     sw a0, -12(sp)
@@ -32,45 +27,32 @@
     mv a1, s0
     call "%.5647<create_array_0000000_4>"
     sw a0, 4(gp)
-"%.15789<end_of_call_%.5647<create_array_0000000_4>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15790<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 8(gp)
-"%.15791<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15792<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 12(gp)
-"%.15793<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15794<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 16(gp)
-"%.15795<end_of_call_%.5644<create_array_1_0>>":
     li a0, 1
     flw fa0, 168(gp)
-"%.15796<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 20(gp)
-"%.15797<end_of_call_%.5644<create_array_1_0>>":
     li s0, 50
     li a0, 1
     li a7, 1
     neg a7, a7
     mv a1, a7
-"%.15798<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
-"%.15799<end_of_call_%.5641<create_array_0_0>>":
-"%.15800<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, a0
     mv a0, s0
     call "%.5641<create_array_0_0>"
     sw a0, 24(gp)
-"%.15801<end_of_call_%.5641<create_array_0_0>>":
     li s0, 1
     li a0, 1
     li a1, 0
@@ -78,196 +60,134 @@
     slli a1, a1, 2
     add a1, a7, a1
     lw a1, 0(a1)
-"%.15802<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
-"%.15803<end_of_call_%.5641<create_array_0_0>>":
-"%.15804<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, a0
     mv a0, s0
     call "%.5641<create_array_0_0>"
     sw a0, 28(gp)
-"%.15805<end_of_call_%.5641<create_array_0_0>>":
     li a0, 1
     fmv.w.x fa0, zero
-"%.15806<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 32(gp)
-"%.15807<end_of_call_%.5644<create_array_1_0>>":
     li a0, 1
     li a1, 0
-"%.15808<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 36(gp)
-"%.15809<end_of_call_%.5641<create_array_0_0>>":
     li a0, 1
     flw fa0, 148(gp)
-"%.15810<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 40(gp)
-"%.15811<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15812<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 44(gp)
-"%.15813<end_of_call_%.5644<create_array_1_0>>":
     li a0, 1
     li a1, 0
-"%.15814<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 48(gp)
-"%.15815<end_of_call_%.5641<create_array_0_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15816<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 52(gp)
-"%.15817<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15818<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 56(gp)
-"%.15819<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15820<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 60(gp)
-"%.15821<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15822<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 64(gp)
-"%.15823<end_of_call_%.5644<create_array_1_0>>":
     li a0, 2
     li a1, 0
-"%.15824<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 68(gp)
-"%.15825<end_of_call_%.5641<create_array_0_0>>":
     li a0, 2
     li a1, 0
-"%.15826<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 72(gp)
-"%.15827<end_of_call_%.5641<create_array_0_0>>":
     li a0, 1
     fmv.w.x fa0, zero
-"%.15828<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 76(gp)
-"%.15829<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15830<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 80(gp)
-"%.15831<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15832<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 84(gp)
-"%.15833<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15834<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 88(gp)
-"%.15835<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15836<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 92(gp)
-"%.15837<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15838<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 96(gp)
-"%.15839<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15840<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 100(gp)
-"%.15841<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     fmv.w.x fa0, zero
-"%.15842<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s0, a0
-"%.15843<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
-"%.15844<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s0
     call "%.5641<create_array_0_0>"
-"%.15845<end_of_call_%.5641<create_array_0_0>>":
     li a1, 0
-"%.15846<prepare_to_call_%.5650<create_array_00_0>>":
     mv a2, a0
     mv a0, a1
     mv a1, s0
     call "%.5650<create_array_00_0>"
-"%.15847<end_of_call_%.5650<create_array_00_0>>":
     li a1, 5
-"%.15848<prepare_to_call_%.5641<create_array_0_0>>":
     fmv.w.x ft11, a0
     mv a0, a1
     fmv.x.w a1, ft11
     call "%.5641<create_array_0_0>"
     sw a0, 104(gp)
-"%.15849<end_of_call_%.5641<create_array_0_0>>":
     li a0, 0
     fmv.w.x fa0, zero
-"%.15850<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s0, a0
-"%.15851<end_of_call_%.5644<create_array_1_0>>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.15852<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s1, a0
-"%.15853<end_of_call_%.5644<create_array_1_0>>":
     li a0, 60
-"%.15854<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s0
     call "%.5641<create_array_0_0>"
-"%.15855<end_of_call_%.5641<create_array_0_0>>":
     li a0, 0
     fmv.w.x fa0, zero
-"%.15856<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s0, a0
-"%.15857<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
-"%.15858<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s0
     call "%.5641<create_array_0_0>"
-"%.15859<end_of_call_%.5641<create_array_0_0>>":
     li a1, 180
     li a7, 0
     fmv.w.x fa0, zero
-"%.15860<prepare_to_call_%.5653<create_array_0001_0>>":
     mv a3, a0
     mv a2, s0
     mv a0, a1
     mv a1, a7
     call "%.5653<create_array_0001_0>"
     sw a0, 116(gp)
-"%.15861<end_of_call_%.5653<create_array_0001_0>>":
     li a0, 1
     li a1, 0
-"%.15862<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     sw a0, 120(gp)
-"%.15863<end_of_call_%.5641<create_array_0_0>>":
-    li a1, 4
-    li a0, 4
+    li a1, 512
+    li a0, 512
     li s0, 3
     li a7, 0
     lw s2, 68(gp)
@@ -306,7 +226,6 @@
     slli a7, a7, 2
     add a7, a1, a7
     lw s3, 0(a7)
-"%.15864<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -314,14 +233,11 @@
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw a2, -4(sp)
-"%.15865<end_of_call_create_pixel>":
-"%.15866<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw a2, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s3
     call "%.5656<create_array_0000000_1>"
-"%.15867<end_of_call_%.5656<create_array_0000000_1>>":
     li a2, 0
     mv a7, s2
     slli a2, a2, 2
@@ -330,16 +246,13 @@
     li a7, 2
     sub a7, a2, a7
     mv a1, a7
-"%.15868<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s3, a0
-"%.15869<end_of_call_init_line_elements>":
     li a1, 0
     mv a0, s2
     slli a1, a1, 2
     add a1, a0, a1
     lw s4, 0(a1)
-"%.15870<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -347,14 +260,11 @@
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw a2, -4(sp)
-"%.15871<end_of_call_create_pixel>":
-"%.15872<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw a2, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s4
     call "%.5656<create_array_0000000_1>"
-"%.15873<end_of_call_%.5656<create_array_0000000_1>>":
     li a2, 0
     mv a7, s2
     slli a2, a2, 2
@@ -363,16 +273,13 @@
     li a7, 2
     sub a7, a2, a7
     mv a1, a7
-"%.15874<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s4, a0
-"%.15875<end_of_call_init_line_elements>":
     li a1, 0
     mv a0, s2
     slli a1, a1, 2
     add a1, a0, a1
     lw s5, 0(a1)
-"%.15876<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -380,14 +287,11 @@
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw a2, -4(sp)
-"%.15877<end_of_call_create_pixel>":
-"%.15878<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw a2, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s5
     call "%.5656<create_array_0000000_1>"
-"%.15879<end_of_call_%.5656<create_array_0000000_1>>":
     li a2, 0
     slli a2, a2, 2
     add a2, s2, a2
@@ -395,25 +299,15 @@
     li s2, 2
     sub s2, a2, s2
     mv a1, s2
-"%.15880<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s2, a0
-"%.15881<end_of_call_init_line_elements>":
-"%.15882<prepare_to_call_read_parameter>":
     call read_parameter
-"%.15883<end_of_call_read_parameter>":
-"%.15884<prepare_to_call_write_ppm_header>":
     mv a0, s0
     call write_ppm_header
-"%.15885<end_of_call_write_ppm_header>":
-"%.15886<prepare_to_call_init_dirvecs>":
     call init_dirvecs
-"%.15887<end_of_call_init_dirvecs>":
-"%.15888<prepare_to_call_veccpy>":
     mv a0, s1
     lw a1, 16(gp)
     call veccpy
-"%.15889<end_of_call_veccpy>":
     li s1, 0
     lw s5, 0(gp)
     slli s1, s1, 2
@@ -422,11 +316,9 @@
     li a1, 1
     sub a1, s1, a1
     mv a2, a1
-"%.15890<prepare_to_call_iter_setup_dirvec_constants>":
     lw a0, 108(gp)
     lw a1, 112(gp)
     call iter_setup_dirvec_constants
-"%.15891<end_of_call_iter_setup_dirvec_constants>":
     li a2, 0
     slli a2, a2, 2
     add a2, s5, a2
@@ -434,24 +326,18 @@
     li s5, 1
     sub s5, a2, s5
     mv a0, s5
-"%.15892<prepare_to_call_setup_reflections>":
     call setup_reflections
-"%.15893<end_of_call_setup_reflections>":
     li a1, 0
     li a2, 0
-"%.15894<prepare_to_call_pretrace_line>":
     mv a0, s4
     call pretrace_line
-"%.15895<end_of_call_pretrace_line>":
     li a0, 0
     li a4, 2
-"%.15896<prepare_to_call_scan_line>":
     mv a1, s3
     mv a2, s4
     mv a3, s2
     mv a5, s0
     call scan_line
-"%.15897<end_of_call_scan_line>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -467,38 +353,38 @@ sgn:
 "sgn.func_begin":
     fmv.w.x ft0, zero
     feq.s t0, fa0, ft0
-    beqz t0, "%.15898<else>"
-"%.15899<then>":
+    beqz t0, "%.15784<else>"
+"%.15785<then>":
     fmv.w.x ft0, zero
-    j "%.15900<endif>"
-"%.15898<else>":
+    j "%.15786<endif>"
+"%.15784<else>":
     fmv.w.x ft1, zero
     flt.s t0, fa0, ft1
-    beqz t0, "%.15901<else>"
-"%.15902<then>":
+    beqz t0, "%.15787<else>"
+"%.15788<then>":
     lui t0, 260096 # 0x3f800
     fmv.w.x ft0, t0
-    j "%.15903<endif>"
-"%.15901<else>":
+    j "%.15789<endif>"
+"%.15787<else>":
     lui t0, 260096 # 0x3f800
     fmv.w.x ft1, t0
     fneg.s ft1, ft1
     fmv.s ft0, ft1
-"%.15903<endif>":
-"%.15900<endif>":
+"%.15789<endif>":
+"%.15786<endif>":
     fmv.s fa0, ft0
     ret
 
 .globl fneg_cond
 fneg_cond:
 "fneg_cond.func_begin":
-    beqz a0, "%.15904<else>"
-"%.15905<then>":
+    beqz a0, "%.15790<else>"
+"%.15791<then>":
     fmv.s ft0, fa0
-    j "%.15906<endif>"
-"%.15904<else>":
+    j "%.15792<endif>"
+"%.15790<else>":
     fneg.s ft0, fa0
-"%.15906<endif>":
+"%.15792<endif>":
     fmv.s fa0, ft0
     ret
 
@@ -509,16 +395,16 @@ add_mod5:
     li a0, 5
     mv t0, a1
     slt a0, t0, a0
-    not a0, a0
-    beqz a0, "%.15907<else>"
-"%.15908<then>":
+    seqz a0, a0
+    beqz a0, "%.15793<else>"
+"%.15794<then>":
     li a0, 5
     mv t0, a1
     sub a0, t0, a0
-    j "%.15909<endif>"
-"%.15907<else>":
+    j "%.15795<endif>"
+"%.15793<else>":
     mv a0, a1
-"%.15909<endif>":
+"%.15795<endif>":
     ret
 
 .globl vecset
@@ -565,9 +451,7 @@ vecbzero:
     sw ra, 12(sp)
 "vecbzero.func_begin":
     fmv.w.x fa0, zero
-"%.15910<prepare_to_call_vecfill>":
     call vecfill
-"%.15911<end_of_call_vecfill>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -632,28 +516,28 @@ vecunit_sgn:
     fsqrt.s ft0, ft0
     fmv.w.x ft1, zero
     feq.s t0, ft0, ft1
-    beqz t0, "%.15912<else>"
-"%.15913<then>":
+    beqz t0, "%.15796<else>"
+"%.15797<then>":
     lui t0, 260096 # 0x3f800
     fmv.w.x ft1, t0
-    j "%.15914<endif>"
-"%.15912<else>":
-    beqz a1, "%.15915<else>"
-"%.15916<then>":
+    j "%.15798<endif>"
+"%.15796<else>":
+    beqz a1, "%.15799<else>"
+"%.15800<then>":
     lui t0, 260096 # 0x3f800
     fmv.w.x ft2, t0
     fneg.s ft2, ft2
     fmv.s ft3, ft0
     fdiv.s ft3, ft2, ft3
     fmv.s ft1, ft3
-    j "%.15917<endif>"
-"%.15915<else>":
+    j "%.15801<endif>"
+"%.15799<else>":
     lui t0, 260096 # 0x3f800
     fmv.w.x ft3, t0
     fdiv.s ft0, ft3, ft0
     fmv.s ft1, ft0
-"%.15917<endif>":
-"%.15914<endif>":
+"%.15801<endif>":
+"%.15798<endif>":
     li t0, 0
     li a1, 0
     mv t1, a0
@@ -1438,29 +1322,21 @@ read_screen_settings:
     flw ft1, 124(gp)
     fmul.s ft1, ft0, ft1
     fmv.s fs0, ft1
-"%.15918<prepare_to_call_caml_cos>":
     fmv.s fa0, fs0
-    call caml_cos
+    call mincaml_cos
     fmv.s fs1, fa0
-"%.15919<end_of_call_caml_cos>":
-"%.15920<prepare_to_call_caml_sin>":
     fmv.s fa0, fs0
-    call caml_sin
+    call mincaml_sin
     fmv.s fs0, fa0
-"%.15921<end_of_call_caml_sin>":
     cin.float ft1
     flw ft0, 124(gp)
     fmul.s ft0, ft1, ft0
     fmv.s fs2, ft0
-"%.15922<prepare_to_call_caml_cos>":
     fmv.s fa0, fs2
-    call caml_cos
+    call mincaml_cos
     fmv.s fs3, fa0
-"%.15923<end_of_call_caml_cos>":
-"%.15924<prepare_to_call_caml_sin>":
     fmv.s fa0, fs2
-    call caml_sin
-"%.15925<end_of_call_caml_sin>":
+    call mincaml_sin
     li t0, 0
     fmv.s fs2, fs1
     fmv.s ft0, fa0
@@ -1593,10 +1469,8 @@ read_light:
     flw ft1, 124(gp)
     fmul.s ft1, ft0, ft1
     fmv.s fs0, ft1
-"%.15926<prepare_to_call_caml_sin>":
     fmv.s fa0, fs0
-    call caml_sin
-"%.15927<end_of_call_caml_sin>":
+    call mincaml_sin
     li t0, 1
     fneg.s fa0, fa0
     lw s0, 16(gp)
@@ -1607,15 +1481,11 @@ read_light:
     flw ft1, 124(gp)
     fmul.s ft1, fa0, ft1
     fmv.s fs1, ft1
-"%.15928<prepare_to_call_caml_cos>":
     fmv.s fa0, fs0
-    call caml_cos
+    call mincaml_cos
     fmv.s fs0, fa0
-"%.15929<end_of_call_caml_cos>":
-"%.15930<prepare_to_call_caml_sin>":
     fmv.s fa0, fs1
-    call caml_sin
-"%.15931<end_of_call_caml_sin>":
+    call mincaml_sin
     li t0, 0
     fmv.s ft1, fs0
     fmul.s fa0, ft1, fa0
@@ -1623,10 +1493,8 @@ read_light:
     slli t0, t0, 2
     add t0, t1, t0
     fsw fa0, 0(t0)
-"%.15932<prepare_to_call_caml_cos>":
     fmv.s fa0, fs1
-    call caml_cos
-"%.15933<end_of_call_caml_cos>":
+    call mincaml_cos
     li t0, 2
     fmul.s fa0, fs0, fa0
     slli t0, t0, 2
@@ -1664,54 +1532,42 @@ rotate_quadratic_matrix:
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15934<prepare_to_call_caml_cos>":
-    call caml_cos
+    call mincaml_cos
     fmv.s fs0, fa0
-"%.15935<end_of_call_caml_cos>":
     li t0, 0
     mv t1, s1
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15936<prepare_to_call_caml_sin>":
-    call caml_sin
+    call mincaml_sin
     fmv.s fs1, fa0
-"%.15937<end_of_call_caml_sin>":
     li t0, 1
     mv t1, s1
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15938<prepare_to_call_caml_cos>":
-    call caml_cos
+    call mincaml_cos
     fmv.s fs2, fa0
-"%.15939<end_of_call_caml_cos>":
     li t0, 1
     mv t1, s1
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15940<prepare_to_call_caml_sin>":
-    call caml_sin
+    call mincaml_sin
     fmv.s fs3, fa0
-"%.15941<end_of_call_caml_sin>":
     li t0, 2
     mv t1, s1
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15942<prepare_to_call_caml_cos>":
-    call caml_cos
+    call mincaml_cos
     fmv.s fs4, fa0
-"%.15943<end_of_call_caml_cos>":
     li t0, 2
     mv t1, s1
     slli t0, t0, 2
     add t0, t1, t0
     flw fa0, 0(t0)
-"%.15944<prepare_to_call_caml_sin>":
-    call caml_sin
-"%.15945<end_of_call_caml_sin>":
+    call mincaml_sin
     fmv.s ft0, fs2
     fmv.s ft1, fs4
     fmul.s ft1, ft0, ft1
@@ -1912,18 +1768,16 @@ read_nth_object:
     neg t0, t0
     mv t1, s1
     xor t0, t1, t0
-    not t0, t0
-    beqz t0, "%.15968<else>"
-"%.15969<then>":
+    seqz t0, t0
+    beqz t0, "%.15802<else>"
+"%.15803<then>":
     cin.int s2
     cin.int s3
     cin.int s4
     li a0, 3
     fmv.w.x fa0, zero
-"%.15946<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s5, a0
-"%.15947<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     cin.float fa0
     mv t0, s5
@@ -1944,10 +1798,8 @@ read_nth_object:
     fsw fa0, 0(a0)
     li a0, 3
     fmv.w.x fa0, zero
-"%.15948<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s6, a0
-"%.15949<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     cin.float fa0
     mv t0, s6
@@ -1971,10 +1823,8 @@ read_nth_object:
     flt.s s7, ft0, fa0
     li a0, 2
     fmv.w.x fa0, zero
-"%.15950<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s8, a0
-"%.15951<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     cin.float fa0
     mv t0, s8
@@ -1989,10 +1839,8 @@ read_nth_object:
     fsw fa0, 0(a0)
     li a0, 3
     fmv.w.x fa0, zero
-"%.15952<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s9, a0
-"%.15953<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     cin.float fa0
     mv t0, s9
@@ -2013,16 +1861,14 @@ read_nth_object:
     fsw fa0, 0(a0)
     li a0, 3
     fmv.w.x fa0, zero
-"%.15954<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s10, a0
-"%.15955<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     mv t0, s4
     xor a0, t0, a0
-    not a0, a0
-    beqz a0, "%.15971<else>"
-"%.15972<then>":
+    seqz a0, a0
+    beqz a0, "%.15805<else>"
+"%.15806<then>":
     li a0, 0
     cin.float fa0
     flw ft0, 124(gp)
@@ -2047,23 +1893,21 @@ read_nth_object:
     slli a0, a0, 2
     add a0, t0, a0
     fsw ft0, 0(a0)
-"%.15971<else>":
-"%.15973<endif>":
+"%.15805<else>":
+"%.15807<endif>":
     li a0, 2
     mv t0, s2
     xor a0, t0, a0
-    beqz a0, "%.15974<else>"
-"%.15975<then>":
+    beqz a0, "%.15808<else>"
+"%.15809<then>":
     li s11, 1
-    j "%.15976<endif>"
-"%.15974<else>":
+    j "%.15810<endif>"
+"%.15808<else>":
     mv s11, s7
-"%.15976<endif>":
+"%.15810<endif>":
     li a0, 4
     fmv.w.x fa0, zero
-"%.15956<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.15957<end_of_call_%.5644<create_array_1_0>>":
     lw t0, 4(gp)
     slli s0, s0, 2
     add s0, t0, s0
@@ -2081,8 +1925,8 @@ read_nth_object:
     li s0, 3
     mv a0, s2
     xor s0, a0, s0
-    beqz s0, "%.15977<else>"
-"%.15978<then>":
+    beqz s0, "%.15811<else>"
+"%.15812<then>":
     li s0, 0
     mv a0, s5
     slli s0, s0, 2
@@ -2091,20 +1935,18 @@ read_nth_object:
     li s0, 0
     fmv.w.x fa0, zero
     feq.s a0, fs0, fa0
-    beqz a0, "%.15980<else>"
-"%.15981<then>":
+    beqz a0, "%.15814<else>"
+"%.15815<then>":
     fmv.w.x fa0, zero
-    j "%.15982<endif>"
-"%.15980<else>":
-"%.15958<prepare_to_call_sgn>":
+    j "%.15816<endif>"
+"%.15814<else>":
     fmv.s fa0, fs0
     call sgn
     fmv.s ft0, fa0
-"%.15959<end_of_call_sgn>":
     fmul.s fs0, fs0, fs0
     fdiv.s fs0, ft0, fs0
     fmv.s fa0, fs0
-"%.15982<endif>":
+"%.15816<endif>":
     mv a0, s5
     slli s0, s0, 2
     add s0, a0, s0
@@ -2117,20 +1959,18 @@ read_nth_object:
     li s0, 1
     fmv.w.x fa0, zero
     feq.s a0, fs0, fa0
-    beqz a0, "%.15983<else>"
-"%.15984<then>":
+    beqz a0, "%.15817<else>"
+"%.15818<then>":
     fmv.w.x fa0, zero
-    j "%.15985<endif>"
-"%.15983<else>":
-"%.15960<prepare_to_call_sgn>":
+    j "%.15819<endif>"
+"%.15817<else>":
     fmv.s fa0, fs0
     call sgn
     fmv.s ft0, fa0
-"%.15961<end_of_call_sgn>":
     fmul.s fs0, fs0, fs0
     fdiv.s fs0, ft0, fs0
     fmv.s fa0, fs0
-"%.15985<endif>":
+"%.15819<endif>":
     mv a0, s5
     slli s0, s0, 2
     add s0, a0, s0
@@ -2143,55 +1983,49 @@ read_nth_object:
     li s0, 2
     fmv.w.x fa0, zero
     feq.s a0, fs0, fa0
-    beqz a0, "%.15986<else>"
-"%.15987<then>":
+    beqz a0, "%.15820<else>"
+"%.15821<then>":
     fmv.w.x fa0, zero
-    j "%.15988<endif>"
-"%.15986<else>":
-"%.15962<prepare_to_call_sgn>":
+    j "%.15822<endif>"
+"%.15820<else>":
     fmv.s fa0, fs0
     call sgn
     fmv.s ft0, fa0
-"%.15963<end_of_call_sgn>":
     fmul.s fs0, fs0, fs0
     fdiv.s fs0, ft0, fs0
     fmv.s fa0, fs0
-"%.15988<endif>":
+"%.15822<endif>":
     mv a0, s5
     slli s0, s0, 2
     add s0, a0, s0
     fsw fa0, 0(s0)
-    j "%.15979<endif>"
-"%.15977<else>":
+    j "%.15813<endif>"
+"%.15811<else>":
     li s0, 2
     xor s0, s2, s0
-    beqz s0, "%.15989<else>"
-"%.15990<then>":
-    not a1, s7
-"%.15964<prepare_to_call_vecunit_sgn>":
+    beqz s0, "%.15823<else>"
+"%.15824<then>":
+    seqz a1, s7
     mv a0, s5
     call vecunit_sgn
-"%.15965<end_of_call_vecunit_sgn>":
-"%.15989<else>":
-"%.15991<endif>":
-"%.15979<endif>":
+"%.15823<else>":
+"%.15825<endif>":
+"%.15813<endif>":
     li a1, 0
     xor a1, s4, a1
-    not a1, a1
-    beqz a1, "%.15992<else>"
-"%.15993<then>":
-"%.15966<prepare_to_call_rotate_quadratic_matrix>":
+    seqz a1, a1
+    beqz a1, "%.15826<else>"
+"%.15827<then>":
     mv a0, s5
     mv a1, s10
     call rotate_quadratic_matrix
-"%.15967<end_of_call_rotate_quadratic_matrix>":
-"%.15992<else>":
-"%.15994<endif>":
+"%.15826<else>":
+"%.15828<endif>":
     li a0, 1
-    j "%.15970<endif>"
-"%.15968<else>":
+    j "%.15804<endif>"
+"%.15802<else>":
     li a0, 0
-"%.15970<endif>":
+"%.15804<endif>":
     lw s11, 12(sp)
     lw s10, 16(sp)
     lw s9, 20(sp)
@@ -2219,30 +2053,26 @@ read_object:
     li t0, 60
     mv t1, s0
     slt t0, t1, t0
-    beqz t0, "%.15999<else>"
-"%.16000<then>":
-"%.15995<prepare_to_call_read_nth_object>":
+    beqz t0, "%.15829<else>"
+"%.15830<then>":
     mv a0, s0
     call read_nth_object
-"%.15996<end_of_call_read_nth_object>":
-    beqz a0, "%.16002<else>"
-"%.16003<then>":
+    beqz a0, "%.15832<else>"
+"%.15833<then>":
     li a0, 1
     mv t0, s0
     add a0, t0, a0
-"%.15997<prepare_to_call_read_object>":
     call read_object
-"%.15998<end_of_call_read_object>":
-    j "%.16004<endif>"
-"%.16002<else>":
+    j "%.15834<endif>"
+"%.15832<else>":
     li a0, 0
     lw t0, 0(gp)
     slli a0, a0, 2
     add a0, t0, a0
     sw s0, 0(a0)
-"%.16004<endif>":
-"%.15999<else>":
-"%.16001<endif>":
+"%.15834<endif>":
+"%.15829<else>":
+"%.15831<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -2254,9 +2084,7 @@ read_all_object:
     sw ra, 12(sp)
 "read_all_object.func_begin":
     li a0, 0
-"%.16005<prepare_to_call_read_object>":
     call read_object
-"%.16006<end_of_call_read_object>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -2274,8 +2102,8 @@ read_net_item:
     neg t0, t0
     mv t1, s1
     xor t0, t1, t0
-    beqz t0, "%.16011<else>"
-"%.16012<then>":
+    beqz t0, "%.15835<else>"
+"%.15836<then>":
     li t0, 1
     mv t1, s0
     add t0, t1, t0
@@ -2283,23 +2111,19 @@ read_net_item:
     li t0, 1
     neg t0, t0
     mv a1, t0
-"%.16007<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
-"%.16008<end_of_call_%.5641<create_array_0_0>>":
-    j "%.16013<endif>"
-"%.16011<else>":
+    j "%.15837<endif>"
+"%.15835<else>":
     li a1, 1
     mv a0, s0
     add a1, a0, a1
     mv a0, a1
-"%.16009<prepare_to_call_read_net_item>":
     call read_net_item
-"%.16010<end_of_call_read_net_item>":
     mv a1, a0
     slli s0, s0, 2
     add s0, a1, s0
     sw s1, 0(s0)
-"%.16013<endif>":
+"%.15837<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -2315,10 +2139,8 @@ read_or_network:
 "read_or_network.func_begin":
     mv s0, a0
     li a0, 0
-"%.16014<prepare_to_call_read_net_item>":
     call read_net_item
     mv s1, a0
-"%.16015<end_of_call_read_net_item>":
     li a0, 0
     mv t0, s1
     slli a0, a0, 2
@@ -2327,29 +2149,25 @@ read_or_network:
     li t0, 1
     neg t0, t0
     xor t0, a0, t0
-    beqz t0, "%.16020<else>"
-"%.16021<then>":
+    beqz t0, "%.15838<else>"
+"%.15839<then>":
     li t0, 1
     mv a0, s0
     add t0, a0, t0
     mv a0, t0
-"%.16016<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s1
     call "%.5641<create_array_0_0>"
-"%.16017<end_of_call_%.5641<create_array_0_0>>":
-    j "%.16022<endif>"
-"%.16020<else>":
+    j "%.15840<endif>"
+"%.15838<else>":
     li a0, 1
     mv t0, s0
     add a0, t0, a0
-"%.16018<prepare_to_call_read_or_network>":
     call read_or_network
-"%.16019<end_of_call_read_or_network>":
     mv t0, a0
     slli s0, s0, 2
     add s0, t0, s0
     sw s1, 0(s0)
-"%.16022<endif>":
+"%.15840<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -2364,9 +2182,7 @@ read_and_network:
 "read_and_network.func_begin":
     mv s0, a0
     li a0, 0
-"%.16023<prepare_to_call_read_net_item>":
     call read_net_item
-"%.16024<end_of_call_read_net_item>":
     li t0, 0
     mv t1, a0
     slli t0, t0, 2
@@ -2375,10 +2191,10 @@ read_and_network:
     li t1, 1
     neg t1, t1
     xor t1, t0, t1
-    beqz t1, "%.16027<else>"
-"%.16028<then>":
-    j "%.16029<endif>"
-"%.16027<else>":
+    beqz t1, "%.15841<else>"
+"%.15842<then>":
+    j "%.15843<endif>"
+"%.15841<else>":
     lw t1, 24(gp)
     mv t0, s0
     slli t0, t0, 2
@@ -2387,10 +2203,8 @@ read_and_network:
     li t0, 1
     add t0, s0, t0
     mv a0, t0
-"%.16025<prepare_to_call_read_and_network>":
     call read_and_network
-"%.16026<end_of_call_read_and_network>":
-"%.16029<endif>":
+"%.15843<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -2402,25 +2216,15 @@ read_parameter:
     sw ra, 12(sp)
     sw s0, 8(sp)
 "read_parameter.func_begin":
-"%.16030<prepare_to_call_read_screen_settings>":
     call read_screen_settings
-"%.16031<end_of_call_read_screen_settings>":
-"%.16032<prepare_to_call_read_light>":
     call read_light
-"%.16033<end_of_call_read_light>":
     li a0, 0
-"%.16034<prepare_to_call_read_object>":
     call read_object
-"%.16035<end_of_call_read_object>":
     li a0, 0
-"%.16036<prepare_to_call_read_and_network>":
     call read_and_network
-"%.16037<end_of_call_read_and_network>":
     li s0, 0
     li a0, 0
-"%.16038<prepare_to_call_read_or_network>":
     call read_or_network
-"%.16039<end_of_call_read_or_network>":
     lw t0, 28(gp)
     slli s0, s0, 2
     add s0, t0, s0
@@ -2455,11 +2259,11 @@ solver_rect_surface:
     flw ft0, 0(a0)
     fmv.w.x ft1, zero
     feq.s a0, ft0, ft1
-    beqz a0, "%.16040<else>"
-"%.16041<then>":
+    beqz a0, "%.15844<else>"
+"%.15845<then>":
     li a0, 0
-    j "%.16042<endif>"
-"%.16040<else>":
+    j "%.15846<endif>"
+"%.15844<else>":
     mv a1, a7
     mv t0, a5
     slli t0, t0, 2
@@ -2473,13 +2277,13 @@ solver_rect_surface:
     slli a1, a1, 2
     add a1, a6, a1
     flw ft0, 0(a1)
-    beqz t0, "%.16043<else>"
-"%.16044<then>":
+    beqz t0, "%.15847<else>"
+"%.15848<then>":
     fmv.s ft1, ft0
-    j "%.16045<endif>"
-"%.16043<else>":
+    j "%.15849<endif>"
+"%.15847<else>":
     fneg.s ft1, ft0
-"%.16045<endif>":
+"%.15849<endif>":
     fsub.s fa0, ft1, fa0
     mv a1, a7
     slli a5, a5, 2
@@ -2500,8 +2304,8 @@ solver_rect_surface:
     add a3, a1, a3
     flw fa0, 0(a3)
     flt.s a3, fa1, fa0
-    beqz a3, "%.16046<else>"
-"%.16047<then>":
+    beqz a3, "%.15850<else>"
+"%.15851<then>":
     mv a3, a7
     mv a7, a2
     slli a7, a7, 2
@@ -2516,23 +2320,23 @@ solver_rect_surface:
     add a2, a7, a2
     flw fa0, 0(a2)
     flt.s a2, fa2, fa0
-    beqz a2, "%.16049<else>"
-"%.16050<then>":
+    beqz a2, "%.15853<else>"
+"%.15854<then>":
     li a2, 0
     lw a7, 32(gp)
     slli a2, a2, 2
     add a2, a7, a2
     fsw ft1, 0(a2)
     li a0, 1
-    j "%.16051<endif>"
-"%.16049<else>":
+    j "%.15855<endif>"
+"%.15853<else>":
     li a0, 0
-"%.16051<endif>":
-    j "%.16048<endif>"
-"%.16046<else>":
+"%.15855<endif>":
+    j "%.15852<endif>"
+"%.15850<else>":
     li a0, 0
-"%.16048<endif>":
-"%.16042<endif>":
+"%.15852<endif>":
+"%.15846<endif>":
     addi sp, sp, 32
     ret
 
@@ -2578,7 +2382,6 @@ solver_rect:
     li t0, 0
     li t1, 1
     li t2, 2
-"%.16052<prepare_to_call_solver_rect_surface>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -2598,16 +2401,14 @@ solver_rect:
     sw t1, -8(sp)
     sw t2, -4(sp)
     call solver_rect_surface
-"%.16053<end_of_call_solver_rect_surface>":
-    beqz a0, "%.16058<else>"
-"%.16059<then>":
+    beqz a0, "%.15856<else>"
+"%.15857<then>":
     li a0, 1
-    j "%.16060<endif>"
-"%.16058<else>":
+    j "%.15858<endif>"
+"%.15856<else>":
     li t2, 1
     li t1, 2
     li t0, 0
-"%.16054<prepare_to_call_solver_rect_surface>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -2628,16 +2429,14 @@ solver_rect:
     sw t0, -4(sp)
     call solver_rect_surface
     mv t0, a0
-"%.16055<end_of_call_solver_rect_surface>":
-    beqz t0, "%.16061<else>"
-"%.16062<then>":
+    beqz t0, "%.15859<else>"
+"%.15860<then>":
     li a0, 2
-    j "%.16063<endif>"
-"%.16061<else>":
+    j "%.15861<endif>"
+"%.15859<else>":
     li t0, 2
     li t1, 0
     li t2, 1
-"%.16056<prepare_to_call_solver_rect_surface>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -2658,16 +2457,15 @@ solver_rect:
     sw t2, -4(sp)
     call solver_rect_surface
     mv t2, a0
-"%.16057<end_of_call_solver_rect_surface>":
-    beqz t2, "%.16064<else>"
-"%.16065<then>":
+    beqz t2, "%.15862<else>"
+"%.15863<then>":
     li a0, 3
-    j "%.16066<endif>"
-"%.16064<else>":
+    j "%.15864<endif>"
+"%.15862<else>":
     li a0, 0
-"%.16066<endif>":
-"%.16063<endif>":
-"%.16060<endif>":
+"%.15864<endif>":
+"%.15861<endif>":
+"%.15858<endif>":
     lw s11, 12(sp)
     lw s10, 16(sp)
     lw s9, 20(sp)
@@ -2735,8 +2533,8 @@ solver_surface:
     fadd.s ft0, ft2, ft0
     fmv.w.x ft2, zero
     flt.s a6, ft0, ft2
-    beqz a6, "%.16067<else>"
-"%.16068<then>":
+    beqz a6, "%.15865<else>"
+"%.15866<then>":
     li a6, 0
     li a7, 0
     mv a5, a4
@@ -2764,10 +2562,10 @@ solver_surface:
     add a6, a7, a6
     fsw ft0, 0(a6)
     li a0, 1
-    j "%.16069<endif>"
-"%.16067<else>":
+    j "%.15867<endif>"
+"%.15865<else>":
     li a0, 0
-"%.16069<endif>":
+"%.15867<endif>":
     addi sp, sp, 16
     ret
 
@@ -2805,11 +2603,11 @@ quadratic:
     fadd.s ft0, ft2, ft0
     li a6, 0
     xor a6, a3, a6
-    beqz a6, "%.16070<else>"
-"%.16071<then>":
+    beqz a6, "%.15868<else>"
+"%.15869<then>":
     fmv.s ft2, ft0
-    j "%.16072<endif>"
-"%.16070<else>":
+    j "%.15870<endif>"
+"%.15868<else>":
     fmv.s ft1, fa1
     fmv.s ft3, fa2
     fmul.s ft3, ft1, ft3
@@ -2837,7 +2635,7 @@ quadratic:
     fmul.s fa0, fa1, fa0
     fadd.s fa0, fa2, fa0
     fmv.s ft2, fa0
-"%.16072<endif>":
+"%.15870<endif>":
     fmv.s fa0, ft2
     addi sp, sp, 16
     ret
@@ -2882,11 +2680,11 @@ bilinear:
     fadd.s ft0, ft1, ft0
     li a6, 0
     xor a6, a3, a6
-    beqz a6, "%.16073<else>"
-"%.16074<then>":
+    beqz a6, "%.15871<else>"
+"%.15872<then>":
     fmv.s ft1, ft0
-    j "%.16075<endif>"
-"%.16073<else>":
+    j "%.15873<endif>"
+"%.15871<else>":
     fmv.s ft2, fa2
     fmv.s ft3, fa4
     fmul.s ft3, ft2, ft3
@@ -2927,7 +2725,7 @@ bilinear:
     fmv.s fa4, ft0
     fadd.s fa5, fa4, fa5
     fmv.s ft1, fa5
-"%.16075<endif>":
+"%.15873<endif>":
     fmv.s fa0, ft1
     addi sp, sp, 16
     ret
@@ -2988,7 +2786,6 @@ solver_second:
     slli t0, t0, 2
     add t0, t1, t0
     flw fa2, 0(t0)
-"%.16076<prepare_to_call_quadratic>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -3002,14 +2799,13 @@ solver_second:
     sw s10, -4(sp)
     call quadratic
     fmv.s fs3, fa0
-"%.16077<end_of_call_quadratic>":
     fmv.w.x fa2, zero
     feq.s t0, fs3, fa2
-    beqz t0, "%.16082<else>"
-"%.16083<then>":
+    beqz t0, "%.15874<else>"
+"%.15875<then>":
     li a0, 0
-    j "%.16084<endif>"
-"%.16082<else>":
+    j "%.15876<endif>"
+"%.15874<else>":
     li t0, 0
     mv t1, s11
     slli t0, t0, 2
@@ -3024,7 +2820,6 @@ solver_second:
     slli t0, t0, 2
     add t0, s11, t0
     flw fa2, 0(t0)
-"%.16078<prepare_to_call_bilinear>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -3041,8 +2836,6 @@ solver_second:
     fmv.s fa5, fs2
     call bilinear
     fmv.s fs4, fa0
-"%.16079<end_of_call_bilinear>":
-"%.16080<prepare_to_call_quadratic>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -3058,35 +2851,34 @@ solver_second:
     fmv.s fa1, fs1
     fmv.s fa2, fs2
     call quadratic
-"%.16081<end_of_call_quadratic>":
     li t0, 3
     xor t0, s1, t0
-    beqz t0, "%.16085<else>"
-"%.16086<then>":
+    beqz t0, "%.15877<else>"
+"%.15878<then>":
     lui t0, 260096 # 0x3f800
     fmv.w.x fs2, t0
     fmv.s fs1, fa0
     fsub.s fs2, fs1, fs2
-    j "%.16087<endif>"
-"%.16085<else>":
+    j "%.15879<endif>"
+"%.15877<else>":
     fmv.s fs2, fa0
-"%.16087<endif>":
+"%.15879<endif>":
     fmul.s fa0, fs4, fs4
     fmv.s fs1, fs3
     fmul.s fs2, fs1, fs2
     fsub.s fs2, fa0, fs2
     fmv.w.x fa0, zero
     flt.s t0, fs2, fa0
-    beqz t0, "%.16088<else>"
-"%.16089<then>":
+    beqz t0, "%.15880<else>"
+"%.15881<then>":
     fsqrt.s fa0, fs2
-    beqz s6, "%.16091<else>"
-"%.16092<then>":
+    beqz s6, "%.15883<else>"
+"%.15884<then>":
     fmv.s fs2, fa0
-    j "%.16093<endif>"
-"%.16091<else>":
+    j "%.15885<endif>"
+"%.15883<else>":
     fneg.s fs2, fa0
-"%.16093<endif>":
+"%.15885<endif>":
     li t0, 0
     fsub.s fs4, fs2, fs4
     fdiv.s fs3, fs4, fs3
@@ -3095,11 +2887,11 @@ solver_second:
     add t0, s6, t0
     fsw fs3, 0(t0)
     li a0, 1
-    j "%.16090<endif>"
-"%.16088<else>":
+    j "%.15882<endif>"
+"%.15880<else>":
     li a0, 0
-"%.16090<endif>":
-"%.16084<endif>":
+"%.15882<endif>":
+"%.15876<endif>":
     lw s11, 28(sp)
     lw s10, 32(sp)
     lw s9, 36(sp)
@@ -3178,9 +2970,8 @@ solver:
     li t5, 1
     mv a2, t1
     xor t5, a2, t5
-    beqz t5, "%.16100<else>"
-"%.16101<then>":
-"%.16094<prepare_to_call_solver_rect>":
+    beqz t5, "%.15886<else>"
+"%.15887<then>":
     sw a1, -4(sp)
     sw a0, -8(sp)
     sw t4, -12(sp)
@@ -3189,15 +2980,13 @@ solver:
     mv a1, t1
     mv a0, t0
     call solver_rect
-"%.16095<end_of_call_solver_rect>":
-    j "%.16102<endif>"
-"%.16100<else>":
+    j "%.15888<endif>"
+"%.15886<else>":
     li t5, 2
     mv a2, t1
     xor t5, a2, t5
-    beqz t5, "%.16103<else>"
-"%.16104<then>":
-"%.16096<prepare_to_call_solver_surface>":
+    beqz t5, "%.15889<else>"
+"%.15890<then>":
     sw a1, -4(sp)
     sw a0, -8(sp)
     sw t4, -12(sp)
@@ -3206,10 +2995,8 @@ solver:
     mv a1, t1
     mv a0, t0
     call solver_surface
-"%.16097<end_of_call_solver_surface>":
-    j "%.16105<endif>"
-"%.16103<else>":
-"%.16098<prepare_to_call_solver_second>":
+    j "%.15891<endif>"
+"%.15889<else>":
     sw a1, -4(sp)
     sw a0, -8(sp)
     sw t4, -12(sp)
@@ -3218,9 +3005,8 @@ solver:
     mv a1, t1
     mv a0, t0
     call solver_second
-"%.16099<end_of_call_solver_second>":
-"%.16105<endif>":
-"%.16102<endif>":
+"%.15891<endif>":
+"%.15888<endif>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -3268,8 +3054,8 @@ solver_rect_fast:
     add a5, a3, a5
     flw ft1, 0(a5)
     flt.s a5, ft2, ft1
-    beqz a5, "%.16106<else>"
-"%.16107<then>":
+    beqz a5, "%.15892<else>"
+"%.15893<then>":
     li a5, 2
     mv a3, a7
     slli a5, a5, 2
@@ -3286,8 +3072,8 @@ solver_rect_fast:
     add a5, a3, a5
     flw ft1, 0(a5)
     flt.s a5, ft2, ft1
-    beqz a5, "%.16109<else>"
-"%.16110<then>":
+    beqz a5, "%.15895<else>"
+"%.15896<then>":
     li a5, 1
     mv a3, a6
     slli a5, a5, 2
@@ -3295,25 +3081,25 @@ solver_rect_fast:
     flw ft1, 0(a5)
     fmv.w.x ft2, zero
     feq.s a5, ft1, ft2
-    not a5, a5
-    j "%.16111<endif>"
-"%.16109<else>":
+    seqz a5, a5
+    j "%.15897<endif>"
+"%.15895<else>":
     li a5, 0
-"%.16111<endif>":
-    j "%.16108<endif>"
-"%.16106<else>":
+"%.15897<endif>":
+    j "%.15894<endif>"
+"%.15892<else>":
     li a5, 0
-"%.16108<endif>":
-    beqz a5, "%.16112<else>"
-"%.16113<then>":
+"%.15894<endif>":
+    beqz a5, "%.15898<else>"
+"%.15899<then>":
     li a5, 0
     lw a3, 32(gp)
     slli a5, a5, 2
     add a5, a3, a5
     fsw ft0, 0(a5)
     li a0, 1
-    j "%.16114<endif>"
-"%.16112<else>":
+    j "%.15900<endif>"
+"%.15898<else>":
     li a5, 2
     mv a3, a6
     slli a5, a5, 2
@@ -3343,8 +3129,8 @@ solver_rect_fast:
     add a5, a3, a5
     flw ft1, 0(a5)
     flt.s a5, ft0, ft1
-    beqz a5, "%.16115<else>"
-"%.16116<then>":
+    beqz a5, "%.15901<else>"
+"%.15902<then>":
     li a5, 2
     mv a3, a7
     slli a5, a5, 2
@@ -3361,8 +3147,8 @@ solver_rect_fast:
     add a5, a3, a5
     flw ft1, 0(a5)
     flt.s a5, ft0, ft1
-    beqz a5, "%.16118<else>"
-"%.16119<then>":
+    beqz a5, "%.15904<else>"
+"%.15905<then>":
     li a5, 3
     mv a3, a6
     slli a5, a5, 2
@@ -3370,25 +3156,25 @@ solver_rect_fast:
     flw ft1, 0(a5)
     fmv.w.x ft0, zero
     feq.s a5, ft1, ft0
-    not a5, a5
-    j "%.16120<endif>"
-"%.16118<else>":
+    seqz a5, a5
+    j "%.15906<endif>"
+"%.15904<else>":
     li a5, 0
-"%.16120<endif>":
-    j "%.16117<endif>"
-"%.16115<else>":
+"%.15906<endif>":
+    j "%.15903<endif>"
+"%.15901<else>":
     li a5, 0
-"%.16117<endif>":
-    beqz a5, "%.16121<else>"
-"%.16122<then>":
+"%.15903<endif>":
+    beqz a5, "%.15907<else>"
+"%.15908<then>":
     li a5, 0
     lw a3, 32(gp)
     slli a5, a5, 2
     add a5, a3, a5
     fsw ft2, 0(a5)
     li a0, 2
-    j "%.16123<endif>"
-"%.16121<else>":
+    j "%.15909<endif>"
+"%.15907<else>":
     li a5, 4
     mv a3, a6
     slli a5, a5, 2
@@ -3416,8 +3202,8 @@ solver_rect_fast:
     add a5, a3, a5
     flw fa2, 0(a5)
     flt.s a5, fa0, fa2
-    beqz a5, "%.16124<else>"
-"%.16125<then>":
+    beqz a5, "%.15910<else>"
+"%.15911<then>":
     li a5, 1
     slli a5, a5, 2
     add a5, a7, a5
@@ -3431,37 +3217,37 @@ solver_rect_fast:
     add a5, a4, a5
     flw fa2, 0(a5)
     flt.s a5, fa1, fa2
-    beqz a5, "%.16127<else>"
-"%.16128<then>":
+    beqz a5, "%.15913<else>"
+"%.15914<then>":
     li a5, 5
     slli a5, a5, 2
     add a5, a6, a5
     flw fa2, 0(a5)
     fmv.w.x fa1, zero
     feq.s a5, fa2, fa1
-    not a5, a5
-    j "%.16129<endif>"
-"%.16127<else>":
+    seqz a5, a5
+    j "%.15915<endif>"
+"%.15913<else>":
     li a5, 0
-"%.16129<endif>":
-    j "%.16126<endif>"
-"%.16124<else>":
+"%.15915<endif>":
+    j "%.15912<endif>"
+"%.15910<else>":
     li a5, 0
-"%.16126<endif>":
-    beqz a5, "%.16130<else>"
-"%.16131<then>":
+"%.15912<endif>":
+    beqz a5, "%.15916<else>"
+"%.15917<then>":
     li a5, 0
     lw a6, 32(gp)
     slli a5, a5, 2
     add a5, a6, a5
     fsw ft0, 0(a5)
     li a0, 3
-    j "%.16132<endif>"
-"%.16130<else>":
+    j "%.15918<endif>"
+"%.15916<else>":
     li a0, 0
-"%.16132<endif>":
-"%.16123<endif>":
-"%.16114<endif>":
+"%.15918<endif>":
+"%.15909<endif>":
+"%.15900<endif>":
     addi sp, sp, 32
     ret
 
@@ -3484,8 +3270,8 @@ solver_surface_fast:
     flw ft0, 0(a6)
     fmv.w.x ft1, zero
     flt.s a6, ft1, ft0
-    beqz a6, "%.16133<else>"
-"%.16134<then>":
+    beqz a6, "%.15919<else>"
+"%.15920<then>":
     li a6, 0
     li a5, 1
     mv a4, a7
@@ -3511,10 +3297,10 @@ solver_surface_fast:
     add a6, a5, a6
     fsw fa2, 0(a6)
     li a0, 1
-    j "%.16135<endif>"
-"%.16133<else>":
+    j "%.15921<endif>"
+"%.15919<else>":
     li a0, 0
-"%.16135<endif>":
+"%.15921<endif>":
     addi sp, sp, 16
     ret
 
@@ -3545,11 +3331,11 @@ solver_second_fast:
     flw fs0, 0(t3)
     fmv.w.x ft0, zero
     feq.s t3, fs0, ft0
-    beqz t3, "%.16138<else>"
-"%.16139<then>":
+    beqz t3, "%.15922<else>"
+"%.15923<then>":
     li t3, 0
-    j "%.16140<endif>"
-"%.16138<else>":
+    j "%.15924<endif>"
+"%.15922<else>":
     li t4, 1
     mv t5, s2
     slli t4, t4, 2
@@ -3574,35 +3360,33 @@ solver_second_fast:
     fmul.s ft0, ft1, ft0
     fadd.s ft0, ft2, ft0
     fmv.s fs1, ft0
-"%.16136<prepare_to_call_quadratic>":
     mv a1, s0
     mv a6, s1
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call quadratic
-"%.16137<end_of_call_quadratic>":
     li t4, 3
     xor t4, s0, t4
-    beqz t4, "%.16141<else>"
-"%.16142<then>":
+    beqz t4, "%.15925<else>"
+"%.15926<then>":
     lui t4, 260096 # 0x3f800
     fmv.w.x fa2, t4
     fmv.s fa1, fa0
     fsub.s fa2, fa1, fa2
-    j "%.16143<endif>"
-"%.16141<else>":
+    j "%.15927<endif>"
+"%.15925<else>":
     fmv.s fa2, fa0
-"%.16143<endif>":
+"%.15927<endif>":
     fmul.s fa0, fs1, fs1
     fmul.s fa2, fs0, fa2
     fsub.s fa2, fa0, fa2
     fmv.w.x fa0, zero
     flt.s t4, fa2, fa0
-    beqz t4, "%.16144<else>"
-"%.16145<then>":
-    beqz s1, "%.16147<else>"
-"%.16148<then>":
+    beqz t4, "%.15928<else>"
+"%.15929<then>":
+    beqz s1, "%.15931<else>"
+"%.15932<then>":
     li t4, 0
     fsqrt.s fa0, fa2
     fmv.s fs0, fs1
@@ -3617,8 +3401,8 @@ solver_second_fast:
     slli t4, t4, 2
     add t4, s1, t4
     fsw fs0, 0(t4)
-    j "%.16149<endif>"
-"%.16147<else>":
+    j "%.15933<endif>"
+"%.15931<else>":
     li t4, 0
     fsqrt.s fs0, fa2
     fsub.s fs0, fs1, fs0
@@ -3631,13 +3415,13 @@ solver_second_fast:
     slli t4, t4, 2
     add t4, s1, t4
     fsw fs1, 0(t4)
-"%.16149<endif>":
+"%.15933<endif>":
     li t3, 1
-    j "%.16146<endif>"
-"%.16144<else>":
+    j "%.15930<endif>"
+"%.15928<else>":
     li t3, 0
-"%.16146<endif>":
-"%.16140<endif>":
+"%.15930<endif>":
+"%.15924<endif>":
     mv a0, t3
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -3712,9 +3496,8 @@ solver_fast:
     li s0, 1
     mv a2, t2
     xor s0, a2, s0
-    beqz s0, "%.16156<else>"
-"%.16157<then>":
-"%.16150<prepare_to_call_solver_rect_fast>":
+    beqz s0, "%.15934<else>"
+"%.15935<then>":
     sw a0, -4(sp)
     sw a1, -8(sp)
     sw t1, -12(sp)
@@ -3725,15 +3508,13 @@ solver_fast:
     mv a1, t2
     mv a0, t0
     call solver_rect_fast
-"%.16151<end_of_call_solver_rect_fast>":
-    j "%.16158<endif>"
-"%.16156<else>":
+    j "%.15936<endif>"
+"%.15934<else>":
     li s0, 2
     mv a1, t2
     xor s0, a1, s0
-    beqz s0, "%.16159<else>"
-"%.16160<then>":
-"%.16152<prepare_to_call_solver_surface_fast>":
+    beqz s0, "%.15937<else>"
+"%.15938<then>":
     sw a0, -4(sp)
     sw t1, -8(sp)
     sw t6, -12(sp)
@@ -3743,10 +3524,8 @@ solver_fast:
     mv a1, t2
     mv a0, t0
     call solver_surface_fast
-"%.16153<end_of_call_solver_surface_fast>":
-    j "%.16161<endif>"
-"%.16159<else>":
-"%.16154<prepare_to_call_solver_second_fast>":
+    j "%.15939<endif>"
+"%.15937<else>":
     sw a0, -4(sp)
     sw t1, -8(sp)
     sw t6, -12(sp)
@@ -3756,9 +3535,8 @@ solver_fast:
     mv a1, t2
     mv a0, t0
     call solver_second_fast
-"%.16155<end_of_call_solver_second_fast>":
-"%.16161<endif>":
-"%.16158<endif>":
+"%.15939<endif>":
+"%.15936<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -3786,8 +3564,8 @@ solver_surface_fast2:
     flw fa2, 0(a5)
     fmv.w.x fa1, zero
     flt.s a5, fa1, fa2
-    beqz a5, "%.16162<else>"
-"%.16163<then>":
+    beqz a5, "%.15940<else>"
+"%.15941<then>":
     li a5, 0
     li a4, 0
     slli a4, a4, 2
@@ -3803,10 +3581,10 @@ solver_surface_fast2:
     add a5, a4, a5
     fsw fa2, 0(a5)
     li a0, 1
-    j "%.16164<endif>"
-"%.16162<else>":
+    j "%.15942<endif>"
+"%.15940<else>":
     li a0, 0
-"%.16164<endif>":
+"%.15942<endif>":
     addi sp, sp, 32
     ret
 
@@ -3831,11 +3609,11 @@ solver_second_fast2:
     flw ft0, 0(a4)
     fmv.w.x ft1, zero
     feq.s a4, ft0, ft1
-    beqz a4, "%.16165<else>"
-"%.16166<then>":
+    beqz a4, "%.15943<else>"
+"%.15944<then>":
     li a0, 0
-    j "%.16167<endif>"
-"%.16165<else>":
+    j "%.15945<endif>"
+"%.15943<else>":
     li a4, 1
     mv a3, a7
     slli a4, a4, 2
@@ -3865,10 +3643,10 @@ solver_second_fast2:
     fsub.s fa1, fa0, fa1
     fmv.w.x fa0, zero
     flt.s a4, fa1, fa0
-    beqz a4, "%.16168<else>"
-"%.16169<then>":
-    beqz a6, "%.16171<else>"
-"%.16172<then>":
+    beqz a4, "%.15946<else>"
+"%.15947<then>":
+    beqz a6, "%.15949<else>"
+"%.15950<then>":
     li a4, 0
     fsqrt.s fa0, fa1
     fmv.s ft0, fa2
@@ -3883,8 +3661,8 @@ solver_second_fast2:
     slli a4, a4, 2
     add a4, a6, a4
     fsw ft0, 0(a4)
-    j "%.16173<endif>"
-"%.16171<else>":
+    j "%.15951<endif>"
+"%.15949<else>":
     li a4, 0
     fsqrt.s ft0, fa1
     fsub.s ft0, fa2, ft0
@@ -3897,13 +3675,13 @@ solver_second_fast2:
     slli a4, a4, 2
     add a4, a6, a4
     fsw fa2, 0(a4)
-"%.16173<endif>":
+"%.15951<endif>":
     li a0, 1
-    j "%.16170<endif>"
-"%.16168<else>":
+    j "%.15948<endif>"
+"%.15946<else>":
     li a0, 0
-"%.16170<endif>":
-"%.16167<endif>":
+"%.15948<endif>":
+"%.15945<endif>":
     addi sp, sp, 32
     ret
 
@@ -3950,9 +3728,8 @@ solver_fast2:
     li t6, 1
     mv a2, t2
     xor t6, a2, t6
-    beqz t6, "%.16180<else>"
-"%.16181<then>":
-"%.16174<prepare_to_call_solver_rect_fast>":
+    beqz t6, "%.15952<else>"
+"%.15953<then>":
     sw a0, -4(sp)
     sw a1, -8(sp)
     sw t1, -12(sp)
@@ -3962,15 +3739,13 @@ solver_fast2:
     mv a1, t2
     mv a0, t0
     call solver_rect_fast
-"%.16175<end_of_call_solver_rect_fast>":
-    j "%.16182<endif>"
-"%.16180<else>":
+    j "%.15954<endif>"
+"%.15952<else>":
     li t6, 2
     mv a1, t2
     xor t6, a1, t6
-    beqz t6, "%.16183<else>"
-"%.16184<then>":
-"%.16176<prepare_to_call_solver_surface_fast2>":
+    beqz t6, "%.15955<else>"
+"%.15956<then>":
     sw t1, -4(sp)
     sw a0, -8(sp)
     sw t1, -12(sp)
@@ -3980,10 +3755,8 @@ solver_fast2:
     mv a1, t2
     mv a0, t0
     call solver_surface_fast2
-"%.16177<end_of_call_solver_surface_fast2>":
-    j "%.16185<endif>"
-"%.16183<else>":
-"%.16178<prepare_to_call_solver_second_fast2>":
+    j "%.15957<endif>"
+"%.15955<else>":
     sw t1, -4(sp)
     sw a0, -8(sp)
     sw t1, -12(sp)
@@ -3993,9 +3766,8 @@ solver_fast2:
     mv a1, t2
     mv a0, t0
     call solver_second_fast2
-"%.16179<end_of_call_solver_second_fast2>":
-"%.16185<endif>":
-"%.16182<endif>":
+"%.15957<endif>":
+"%.15954<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -4022,9 +3794,7 @@ setup_rect_table:
     fmv.x.w a6, ft11
     li a0, 6
     fmv.w.x fa0, zero
-"%.16186<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16187<end_of_call_%.5644<create_array_1_0>>":
     li a6, 0
     mv a4, s0
     slli a6, a6, 2
@@ -4032,16 +3802,16 @@ setup_rect_table:
     flw fa0, 0(a6)
     fmv.w.x ft0, zero
     feq.s a6, fa0, ft0
-    beqz a6, "%.16188<else>"
-"%.16189<then>":
+    beqz a6, "%.15958<else>"
+"%.15959<then>":
     li a6, 1
     fmv.w.x ft0, zero
     mv a4, a0
     slli a6, a6, 2
     add a6, a4, a6
     fsw ft0, 0(a6)
-    j "%.16190<endif>"
-"%.16188<else>":
+    j "%.15960<endif>"
+"%.15958<else>":
     li a6, 0
     li a4, 0
     mv a3, s0
@@ -4056,13 +3826,13 @@ setup_rect_table:
     slli a3, a3, 2
     add a3, a2, a3
     flw fa0, 0(a3)
-    beqz a4, "%.16191<else>"
-"%.16192<then>":
+    beqz a4, "%.15961<else>"
+"%.15962<then>":
     fmv.s ft0, fa0
-    j "%.16193<endif>"
-"%.16191<else>":
+    j "%.15963<endif>"
+"%.15961<else>":
     fneg.s ft0, fa0
-"%.16193<endif>":
+"%.15963<endif>":
     mv a3, a0
     slli a6, a6, 2
     add a6, a3, a6
@@ -4080,7 +3850,7 @@ setup_rect_table:
     slli a6, a6, 2
     add a6, a3, a6
     fsw fa0, 0(a6)
-"%.16190<endif>":
+"%.15960<endif>":
     li a6, 1
     mv a3, s0
     slli a6, a6, 2
@@ -4088,16 +3858,16 @@ setup_rect_table:
     flw fa0, 0(a6)
     fmv.w.x ft0, zero
     feq.s a6, fa0, ft0
-    beqz a6, "%.16194<else>"
-"%.16195<then>":
+    beqz a6, "%.15964<else>"
+"%.15965<then>":
     li a6, 3
     fmv.w.x ft0, zero
     mv a3, a0
     slli a6, a6, 2
     add a6, a3, a6
     fsw ft0, 0(a6)
-    j "%.16196<endif>"
-"%.16194<else>":
+    j "%.15966<endif>"
+"%.15964<else>":
     li a6, 2
     li a3, 1
     mv a4, s0
@@ -4112,13 +3882,13 @@ setup_rect_table:
     slli a4, a4, 2
     add a4, a2, a4
     flw fa0, 0(a4)
-    beqz a3, "%.16197<else>"
-"%.16198<then>":
+    beqz a3, "%.15967<else>"
+"%.15968<then>":
     fmv.s ft0, fa0
-    j "%.16199<endif>"
-"%.16197<else>":
+    j "%.15969<endif>"
+"%.15967<else>":
     fneg.s ft0, fa0
-"%.16199<endif>":
+"%.15969<endif>":
     mv a4, a0
     slli a6, a6, 2
     add a6, a4, a6
@@ -4136,7 +3906,7 @@ setup_rect_table:
     slli a6, a6, 2
     add a6, a4, a6
     fsw fa0, 0(a6)
-"%.16196<endif>":
+"%.15966<endif>":
     li a6, 2
     mv a4, s0
     slli a6, a6, 2
@@ -4144,16 +3914,16 @@ setup_rect_table:
     flw fa0, 0(a6)
     fmv.w.x ft0, zero
     feq.s a6, fa0, ft0
-    beqz a6, "%.16200<else>"
-"%.16201<then>":
+    beqz a6, "%.15970<else>"
+"%.15971<then>":
     li a6, 5
     fmv.w.x ft0, zero
     mv a4, a0
     slli a6, a6, 2
     add a6, a4, a6
     fsw ft0, 0(a6)
-    j "%.16202<endif>"
-"%.16200<else>":
+    j "%.15972<endif>"
+"%.15970<else>":
     li a6, 4
     li a4, 2
     mv a3, s0
@@ -4167,13 +3937,13 @@ setup_rect_table:
     slli s2, s2, 2
     add s2, s1, s2
     flw fa0, 0(s2)
-    beqz a4, "%.16203<else>"
-"%.16204<then>":
+    beqz a4, "%.15973<else>"
+"%.15974<then>":
     fmv.s ft0, fa0
-    j "%.16205<endif>"
-"%.16203<else>":
+    j "%.15975<endif>"
+"%.15973<else>":
     fneg.s ft0, fa0
-"%.16205<endif>":
+"%.15975<endif>":
     mv s2, a0
     slli a6, a6, 2
     add a6, s2, a6
@@ -4190,7 +3960,7 @@ setup_rect_table:
     slli a6, a6, 2
     add a6, s2, a6
     fsw fa0, 0(a6)
-"%.16202<endif>":
+"%.15972<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -4217,9 +3987,7 @@ setup_surface_table:
     fmv.x.w a7, ft11
     li a0, 4
     fmv.w.x fa0, zero
-"%.16206<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16207<end_of_call_%.5644<create_array_1_0>>":
     li a7, 0
     mv a6, s0
     slli a7, a7, 2
@@ -4256,8 +4024,8 @@ setup_surface_table:
     fadd.s fa0, ft1, fa0
     fmv.w.x ft1, zero
     flt.s a7, fa0, ft1
-    beqz a7, "%.16208<else>"
-"%.16209<then>":
+    beqz a7, "%.15976<else>"
+"%.15977<then>":
     li a7, 0
     lui s0, 260096 # 0x3f800
     fmv.w.x ft1, s0
@@ -4305,15 +4073,15 @@ setup_surface_table:
     slli a7, a7, 2
     add a7, s0, a7
     fsw fa0, 0(a7)
-    j "%.16210<endif>"
-"%.16208<else>":
+    j "%.15978<endif>"
+"%.15976<else>":
     li a7, 0
     fmv.w.x fa0, zero
     mv s0, a0
     slli a7, a7, 2
     add a7, s0, a7
     fsw fa0, 0(a7)
-"%.16210<endif>":
+"%.15978<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -4357,10 +4125,8 @@ setup_second_table:
     fmv.x.w s11, ft11
     li a0, 5
     fmv.w.x fa0, zero
-"%.16211<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     sw a0, 8(sp)
-"%.16212<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     mv t0, s0
     slli a0, a0, 2
@@ -4376,7 +4142,6 @@ setup_second_table:
     slli a0, a0, 2
     add a0, t0, a0
     flw fa2, 0(a0)
-"%.16213<prepare_to_call_quadratic>":
     mv a0, s1
     mv a1, s2
     mv a2, s3
@@ -4389,7 +4154,6 @@ setup_second_table:
     sw s10, -8(sp)
     sw s11, -4(sp)
     call quadratic
-"%.16214<end_of_call_quadratic>":
     li a0, 0
     mv s11, s0
     slli a0, a0, 2
@@ -4432,9 +4196,9 @@ setup_second_table:
     fsw fa0, 0(a0)
     li a0, 0
     xor a0, s4, a0
-    not a0, a0
-    beqz a0, "%.16215<else>"
-"%.16216<then>":
+    seqz a0, a0
+    beqz a0, "%.15979<else>"
+"%.15980<then>":
     li a0, 1
     li s4, 2
     mv s5, s0
@@ -4532,8 +4296,8 @@ setup_second_table:
     slli a0, a0, 2
     add a0, s4, a0
     fsw fs1, 0(a0)
-    j "%.16217<endif>"
-"%.16215<else>":
+    j "%.15981<endif>"
+"%.15979<else>":
     li a0, 1
     lw s4, 8(sp)
     slli a0, a0, 2
@@ -4549,12 +4313,12 @@ setup_second_table:
     slli a0, a0, 2
     add a0, s4, a0
     fsw ft1, 0(a0)
-"%.16217<endif>":
+"%.15981<endif>":
     fmv.w.x fs1, zero
     feq.s a0, fa0, fs1
-    not a0, a0
-    beqz a0, "%.16218<else>"
-"%.16219<then>":
+    seqz a0, a0
+    beqz a0, "%.15982<else>"
+"%.15983<then>":
     li a0, 4
     lui s4, 260096 # 0x3f800
     fmv.w.x fs1, s4
@@ -4563,8 +4327,8 @@ setup_second_table:
     slli a0, a0, 2
     add a0, s4, a0
     fsw fa0, 0(a0)
-"%.16218<else>":
-"%.16220<endif>":
+"%.15982<else>":
+"%.15984<endif>":
     lw a0, 8(sp)
     lw s11, 12(sp)
     lw s10, 16(sp)
@@ -4598,9 +4362,9 @@ iter_setup_dirvec_constants:
     li t0, 0
     mv t1, s2
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16229<else>"
-"%.16230<then>":
+    seqz t0, t0
+    beqz t0, "%.15985<else>"
+"%.15986<then>":
     lw t0, 4(gp)
     mv t1, s2
     slli t1, t1, 2
@@ -4619,68 +4383,60 @@ iter_setup_dirvec_constants:
     li t4, 1
     mv t5, a2
     xor t4, t5, t4
-    beqz t4, "%.16232<else>"
-"%.16233<then>":
-"%.16221<prepare_to_call_setup_rect_table>":
+    beqz t4, "%.15988<else>"
+"%.15989<then>":
     mv a0, s0
     sw t0, -16(sp)
     sw t2, -12(sp)
     sw t3, -8(sp)
     sw t1, -4(sp)
     call setup_rect_table
-"%.16222<end_of_call_setup_rect_table>":
     mv t4, s1
     mv t5, s2
     slli t5, t5, 2
     add t5, t4, t5
     sw a0, 0(t5)
-    j "%.16234<endif>"
-"%.16232<else>":
+    j "%.15990<endif>"
+"%.15988<else>":
     li t5, 2
     mv a0, a2
     xor t5, a0, t5
-    beqz t5, "%.16235<else>"
-"%.16236<then>":
-"%.16223<prepare_to_call_setup_surface_table>":
+    beqz t5, "%.15991<else>"
+"%.15992<then>":
     mv a0, s0
     sw t0, -16(sp)
     sw t2, -12(sp)
     sw t3, -8(sp)
     sw t1, -4(sp)
     call setup_surface_table
-"%.16224<end_of_call_setup_surface_table>":
     mv t5, s1
     mv t4, s2
     slli t4, t4, 2
     add t4, t5, t4
     sw a0, 0(t4)
-    j "%.16237<endif>"
-"%.16235<else>":
-"%.16225<prepare_to_call_setup_second_table>":
+    j "%.15993<endif>"
+"%.15991<else>":
     mv a0, s0
     sw t0, -16(sp)
     sw t2, -12(sp)
     sw t3, -8(sp)
     sw t1, -4(sp)
     call setup_second_table
-"%.16226<end_of_call_setup_second_table>":
     mv t4, s1
     mv t1, s2
     slli t1, t1, 2
     add t1, t4, t1
     sw a0, 0(t1)
-"%.16237<endif>":
-"%.16234<endif>":
+"%.15993<endif>":
+"%.15990<endif>":
     li t1, 1
     sub t1, s2, t1
     mv a2, t1
-"%.16227<prepare_to_call_iter_setup_dirvec_constants>":
     mv a0, s0
     mv a1, s1
     call iter_setup_dirvec_constants
-"%.16228<end_of_call_iter_setup_dirvec_constants>":
-"%.16229<else>":
-"%.16231<endif>":
+"%.15985<else>":
+"%.15987<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -4701,9 +4457,7 @@ setup_dirvec_constants:
     li t1, 1
     sub t1, t0, t1
     mv a2, t1
-"%.16238<prepare_to_call_iter_setup_dirvec_constants>":
     call iter_setup_dirvec_constants
-"%.16239<end_of_call_iter_setup_dirvec_constants>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -4722,9 +4476,9 @@ setup_startp_constants:
     li t0, 0
     mv t1, s1
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16244<else>"
-"%.16245<then>":
+    seqz t0, t0
+    beqz t0, "%.15994<else>"
+"%.15995<then>":
     lw t0, 4(gp)
     mv t1, s1
     slli t1, t1, 2
@@ -4791,8 +4545,8 @@ setup_startp_constants:
     li t1, 2
     mv t3, s2
     xor t1, t3, t1
-    beqz t1, "%.16247<else>"
-"%.16248<then>":
+    beqz t1, "%.15997<else>"
+"%.15998<then>":
     li t1, 3
     li t3, 0
     mv t4, s3
@@ -4833,13 +4587,13 @@ setup_startp_constants:
     slli t1, t1, 2
     add t1, t3, t1
     fsw ft2, 0(t1)
-    j "%.16249<endif>"
-"%.16247<else>":
+    j "%.15999<endif>"
+"%.15997<else>":
     li t1, 2
     mv t3, s2
     slt t1, t1, t3
-    beqz t1, "%.16250<else>"
-"%.16251<then>":
+    beqz t1, "%.16000<else>"
+"%.16001<then>":
     li t1, 0
     mv t3, s3
     slli t1, t1, 2
@@ -4855,42 +4609,38 @@ setup_startp_constants:
     slli t1, t1, 2
     add t1, t3, t1
     flw fa2, 0(t1)
-"%.16240<prepare_to_call_quadratic>":
     mv a1, s2
     sw t0, -12(sp)
     sw t2, -8(sp)
     sw s3, -4(sp)
     call quadratic
-"%.16241<end_of_call_quadratic>":
     li t1, 3
     li t2, 3
     xor t2, s2, t2
-    beqz t2, "%.16253<else>"
-"%.16254<then>":
+    beqz t2, "%.16003<else>"
+"%.16004<then>":
     lui t2, 260096 # 0x3f800
     fmv.w.x fa2, t2
     fmv.s fa1, fa0
     fsub.s fa2, fa1, fa2
-    j "%.16255<endif>"
-"%.16253<else>":
+    j "%.16005<endif>"
+"%.16003<else>":
     fmv.s fa2, fa0
-"%.16255<endif>":
+"%.16005<endif>":
     mv t2, s3
     slli t1, t1, 2
     add t1, t2, t1
     fsw fa2, 0(t1)
-"%.16250<else>":
-"%.16252<endif>":
-"%.16249<endif>":
+"%.16000<else>":
+"%.16002<endif>":
+"%.15999<endif>":
     li t1, 1
     sub t1, s1, t1
     mv a1, t1
-"%.16242<prepare_to_call_setup_startp_constants>":
     mv a0, s0
     call setup_startp_constants
-"%.16243<end_of_call_setup_startp_constants>":
-"%.16244<else>":
-"%.16246<endif>":
+"%.15994<else>":
+"%.15996<endif>":
     lw s3, 12(sp)
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -4906,11 +4656,9 @@ setup_startp:
     sw s0, 8(sp)
 "setup_startp.func_begin":
     mv s0, a0
-"%.16256<prepare_to_call_veccpy>":
     lw a0, 84(gp)
     mv a1, s0
     call veccpy
-"%.16257<end_of_call_veccpy>":
     li t0, 0
     lw t1, 0(gp)
     slli t0, t0, 2
@@ -4919,10 +4667,8 @@ setup_startp:
     li t1, 1
     sub t1, t0, t1
     mv a1, t1
-"%.16258<prepare_to_call_setup_startp_constants>":
     mv a0, s0
     call setup_startp_constants
-"%.16259<end_of_call_setup_startp_constants>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -4945,8 +4691,8 @@ is_rect_outside:
     add a7, a5, a7
     flw ft0, 0(a7)
     flt.s a7, fa0, ft0
-    beqz a7, "%.16260<else>"
-"%.16261<then>":
+    beqz a7, "%.16006<else>"
+"%.16007<then>":
     fabs.s ft0, fa1
     li a7, 1
     mv a5, a4
@@ -4954,29 +4700,29 @@ is_rect_outside:
     add a7, a5, a7
     flw fa0, 0(a7)
     flt.s a7, ft0, fa0
-    beqz a7, "%.16263<else>"
-"%.16264<then>":
+    beqz a7, "%.16009<else>"
+"%.16010<then>":
     fabs.s fa0, fa2
     li a7, 2
     slli a7, a7, 2
     add a7, a4, a7
     flw ft0, 0(a7)
     flt.s a7, fa0, ft0
-    j "%.16265<endif>"
-"%.16263<else>":
+    j "%.16011<endif>"
+"%.16009<else>":
     li a7, 0
-"%.16265<endif>":
-    j "%.16262<endif>"
-"%.16260<else>":
+"%.16011<endif>":
+    j "%.16008<endif>"
+"%.16006<else>":
     li a7, 0
-"%.16262<endif>":
-    beqz a7, "%.16266<else>"
-"%.16267<then>":
+"%.16008<endif>":
+    beqz a7, "%.16012<else>"
+"%.16013<then>":
     mv a0, a6
-    j "%.16268<endif>"
-"%.16266<else>":
-    not a0, a6
-"%.16268<endif>":
+    j "%.16014<endif>"
+"%.16012<else>":
+    seqz a0, a6
+"%.16014<endif>":
     addi sp, sp, 16
     ret
 
@@ -5012,7 +4758,7 @@ is_plane_outside:
     fmv.w.x fa1, zero
     flt.s a7, fa1, fa2
     xor a7, a6, a7
-    not a0, a7
+    seqz a0, a7
     addi sp, sp, 16
     ret
 
@@ -5031,30 +4777,28 @@ is_second_outside:
     fmv.x.w t1, ft11
     flw ft11, 28(sp)
     fmv.x.w t2, ft11
-"%.16269<prepare_to_call_quadratic>":
     mv a1, s0
     mv a6, s1
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call quadratic
-"%.16270<end_of_call_quadratic>":
     li t2, 3
     xor t2, s0, t2
-    beqz t2, "%.16271<else>"
-"%.16272<then>":
+    beqz t2, "%.16015<else>"
+"%.16016<then>":
     lui t2, 260096 # 0x3f800
     fmv.w.x fa2, t2
     fmv.s fa1, fa0
     fsub.s fa2, fa1, fa2
-    j "%.16273<endif>"
-"%.16271<else>":
+    j "%.16017<endif>"
+"%.16015<else>":
     fmv.s fa2, fa0
-"%.16273<endif>":
+"%.16017<endif>":
     fmv.w.x fa0, zero
     flt.s t2, fa0, fa2
     xor t2, s1, t2
-    not a0, t2
+    seqz a0, t2
     lw s1, 8(sp)
     lw s0, 12(sp)
     lw ra, 16(sp)
@@ -5096,22 +4840,20 @@ is_outside:
     li t3, 1
     mv t4, a1
     xor t3, t4, t3
-    beqz t3, "%.16278<else>"
-"%.16279<then>":
-"%.16274<prepare_to_call_is_rect_outside>":
+    beqz t3, "%.16018<else>"
+"%.16019<then>":
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call is_rect_outside
     mv t3, a0
-"%.16275<end_of_call_is_rect_outside>":
-    j "%.16280<endif>"
-"%.16278<else>":
+    j "%.16020<endif>"
+"%.16018<else>":
     li t3, 2
     mv t4, a1
     xor t3, t4, t3
-    beqz t3, "%.16281<else>"
-"%.16282<then>":
+    beqz t3, "%.16021<else>"
+"%.16022<then>":
     li t3, 0
     mv t4, a4
     slli t3, t3, 2
@@ -5138,18 +4880,16 @@ is_outside:
     fmv.w.x ft2, zero
     flt.s t3, ft2, ft0
     xor t3, a6, t3
-    not t3, t3
-    j "%.16283<endif>"
-"%.16281<else>":
-"%.16276<prepare_to_call_is_second_outside>":
+    seqz t3, t3
+    j "%.16023<endif>"
+"%.16021<else>":
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call is_second_outside
     mv t3, a0
-"%.16277<end_of_call_is_second_outside>":
-"%.16283<endif>":
-"%.16280<endif>":
+"%.16023<endif>":
+"%.16020<endif>":
     mv a0, t3
     lw ra, 0(sp)
     addi sp, sp, 16
@@ -5179,11 +4919,11 @@ check_all_inside:
     neg t0, t0
     mv t2, t1
     xor t0, t2, t0
-    beqz t0, "%.16288<else>"
-"%.16289<then>":
+    beqz t0, "%.16024<else>"
+"%.16025<then>":
     li a0, 1
-    j "%.16290<endif>"
-"%.16288<else>":
+    j "%.16026<endif>"
+"%.16024<else>":
     lw t0, 4(gp)
     slli t1, t1, 2
     add t1, t0, t1
@@ -5198,7 +4938,6 @@ check_all_inside:
     lw t2, 32(t1)
     lw t3, 36(t1)
     lw t1, 40(t1)
-"%.16284<prepare_to_call_is_outside>":
     mv a0, t0
     sw t2, -12(sp)
     sw t3, -8(sp)
@@ -5208,24 +4947,21 @@ check_all_inside:
     fmv.s fa2, fs2
     call is_outside
     mv t1, a0
-"%.16285<end_of_call_is_outside>":
-    beqz t1, "%.16291<else>"
-"%.16292<then>":
+    beqz t1, "%.16027<else>"
+"%.16028<then>":
     li a0, 0
-    j "%.16293<endif>"
-"%.16291<else>":
+    j "%.16029<endif>"
+"%.16027<else>":
     li t1, 1
     add t1, s0, t1
-"%.16286<prepare_to_call_check_all_inside>":
     mv a0, t1
     mv a1, s1
     fmv.s fa0, fs0
     fmv.s fa1, fs1
     fmv.s fa2, fs2
     call check_all_inside
-"%.16287<end_of_call_check_all_inside>":
-"%.16293<endif>":
-"%.16290<endif>":
+"%.16029<endif>":
+"%.16026<endif>":
     lw s1, 20(sp)
     lw s0, 24(sp)
     flw fs2, 8(sp)
@@ -5253,24 +4989,22 @@ shadow_check_and_group:
     li t0, 1
     neg t0, t0
     xor t0, t1, t0
-    beqz t0, "%.16302<else>"
-"%.16303<then>":
+    beqz t0, "%.16030<else>"
+"%.16031<then>":
     li a0, 0
-    j "%.16304<endif>"
-"%.16302<else>":
+    j "%.16032<endif>"
+"%.16030<else>":
     mv t0, s1
     mv t1, s0
     slli t1, t1, 2
     add t1, t0, t1
     lw s2, 0(t1)
-"%.16294<prepare_to_call_solver_fast>":
     mv a0, s2
     lw a1, 108(gp)
     lw a2, 112(gp)
     lw a3, 44(gp)
     call solver_fast
     mv t1, a0
-"%.16295<end_of_call_solver_fast>":
     li t0, 0
     lw t2, 32(gp)
     slli t0, t0, 2
@@ -5278,19 +5012,19 @@ shadow_check_and_group:
     flw ft0, 0(t0)
     li t0, 0
     xor t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16305<else>"
-"%.16306<then>":
+    seqz t0, t0
+    beqz t0, "%.16033<else>"
+"%.16034<then>":
     flw ft1, 136(gp)
     fneg.s ft1, ft1
     fmv.s ft2, ft0
     flt.s t0, ft2, ft1
-    j "%.16307<endif>"
-"%.16305<else>":
+    j "%.16035<endif>"
+"%.16033<else>":
     li t0, 0
-"%.16307<endif>":
-    beqz t0, "%.16308<else>"
-"%.16309<then>":
+"%.16035<endif>":
+    beqz t0, "%.16036<else>"
+"%.16037<then>":
     flw ft1, 140(gp)
     fadd.s ft1, ft0, ft1
     li t0, 0
@@ -5333,28 +5067,24 @@ shadow_check_and_group:
     fadd.s ft0, ft1, ft0
     fmv.s fa2, ft0
     li t0, 0
-"%.16296<prepare_to_call_check_all_inside>":
     mv a0, t0
     mv a1, s1
     call check_all_inside
     mv t0, a0
-"%.16297<end_of_call_check_all_inside>":
-    beqz t0, "%.16311<else>"
-"%.16312<then>":
+    beqz t0, "%.16039<else>"
+"%.16040<then>":
     li a0, 1
-    j "%.16313<endif>"
-"%.16311<else>":
+    j "%.16041<endif>"
+"%.16039<else>":
     li t0, 1
     mv t2, s0
     add t0, t2, t0
-"%.16298<prepare_to_call_shadow_check_and_group>":
     mv a0, t0
     mv a1, s1
     call shadow_check_and_group
-"%.16299<end_of_call_shadow_check_and_group>":
-"%.16313<endif>":
-    j "%.16310<endif>"
-"%.16308<else>":
+"%.16041<endif>":
+    j "%.16038<endif>"
+"%.16036<else>":
     lw t0, 4(gp)
     slli s2, s2, 2
     add s2, t0, s2
@@ -5369,21 +5099,19 @@ shadow_check_and_group:
     lw t2, 32(s2)
     lw t2, 36(s2)
     lw t2, 40(s2)
-    beqz t0, "%.16314<else>"
-"%.16315<then>":
+    beqz t0, "%.16042<else>"
+"%.16043<then>":
     li t2, 1
     add t2, s0, t2
-"%.16300<prepare_to_call_shadow_check_and_group>":
     mv a0, t2
     mv a1, s1
     call shadow_check_and_group
-"%.16301<end_of_call_shadow_check_and_group>":
-    j "%.16316<endif>"
-"%.16314<else>":
+    j "%.16044<endif>"
+"%.16042<else>":
     li a0, 0
-"%.16316<endif>":
-"%.16310<endif>":
-"%.16304<endif>":
+"%.16044<endif>":
+"%.16038<endif>":
+"%.16032<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -5409,35 +5137,31 @@ shadow_check_one_or_group:
     neg t0, t0
     mv t2, t1
     xor t0, t2, t0
-    beqz t0, "%.16321<else>"
-"%.16322<then>":
+    beqz t0, "%.16045<else>"
+"%.16046<then>":
     li a0, 0
-    j "%.16323<endif>"
-"%.16321<else>":
+    j "%.16047<endif>"
+"%.16045<else>":
     lw t0, 24(gp)
     slli t1, t1, 2
     add t1, t0, t1
     lw a1, 0(t1)
     li t1, 0
-"%.16317<prepare_to_call_shadow_check_and_group>":
     mv a0, t1
     call shadow_check_and_group
     mv t1, a0
-"%.16318<end_of_call_shadow_check_and_group>":
-    beqz t1, "%.16324<else>"
-"%.16325<then>":
+    beqz t1, "%.16048<else>"
+"%.16049<then>":
     li a0, 1
-    j "%.16326<endif>"
-"%.16324<else>":
+    j "%.16050<endif>"
+"%.16048<else>":
     li t1, 1
     add t1, s0, t1
-"%.16319<prepare_to_call_shadow_check_one_or_group>":
     mv a0, t1
     mv a1, s1
     call shadow_check_one_or_group
-"%.16320<end_of_call_shadow_check_one_or_group>":
-"%.16326<endif>":
-"%.16323<endif>":
+"%.16050<endif>":
+"%.16047<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -5468,30 +5192,28 @@ shadow_check_one_or_matrix:
     neg t1, t1
     mv t0, a0
     xor t1, t0, t1
-    beqz t1, "%.16337<else>"
-"%.16338<then>":
+    beqz t1, "%.16051<else>"
+"%.16052<then>":
     li t1, 0
-    j "%.16339<endif>"
-"%.16337<else>":
+    j "%.16053<endif>"
+"%.16051<else>":
     li t0, 99
     mv t2, a0
     xor t0, t2, t0
-    beqz t0, "%.16340<else>"
-"%.16341<then>":
+    beqz t0, "%.16054<else>"
+"%.16055<then>":
     li t0, 1
-    j "%.16342<endif>"
-"%.16340<else>":
-"%.16327<prepare_to_call_solver_fast>":
+    j "%.16056<endif>"
+"%.16054<else>":
     lw a1, 108(gp)
     lw a2, 112(gp)
     lw a3, 44(gp)
     call solver_fast
-"%.16328<end_of_call_solver_fast>":
     li t2, 0
     xor t2, a0, t2
-    not t2, t2
-    beqz t2, "%.16343<else>"
-"%.16344<then>":
+    seqz t2, t2
+    beqz t2, "%.16057<else>"
+"%.16058<then>":
     li t2, 0
     lw a0, 32(gp)
     slli t2, t2, 2
@@ -5500,61 +5222,53 @@ shadow_check_one_or_matrix:
     flw ft1, 144(gp)
     fneg.s ft1, ft1
     flt.s t2, ft0, ft1
-    beqz t2, "%.16346<else>"
-"%.16347<then>":
+    beqz t2, "%.16060<else>"
+"%.16061<then>":
     li a0, 1
-"%.16329<prepare_to_call_shadow_check_one_or_group>":
     mv a1, s2
     call shadow_check_one_or_group
-"%.16330<end_of_call_shadow_check_one_or_group>":
-    beqz a0, "%.16349<else>"
-"%.16350<then>":
+    beqz a0, "%.16063<else>"
+"%.16064<then>":
     li t0, 1
-    j "%.16351<endif>"
-"%.16349<else>":
+    j "%.16065<endif>"
+"%.16063<else>":
     li t0, 0
-"%.16351<endif>":
-    j "%.16348<endif>"
-"%.16346<else>":
+"%.16065<endif>":
+    j "%.16062<endif>"
+"%.16060<else>":
     li t0, 0
-"%.16348<endif>":
-    j "%.16345<endif>"
-"%.16343<else>":
+"%.16062<endif>":
+    j "%.16059<endif>"
+"%.16057<else>":
     li t0, 0
-"%.16345<endif>":
-"%.16342<endif>":
-    beqz t0, "%.16352<else>"
-"%.16353<then>":
+"%.16059<endif>":
+"%.16056<endif>":
+    beqz t0, "%.16066<else>"
+"%.16067<then>":
     li a0, 1
-"%.16331<prepare_to_call_shadow_check_one_or_group>":
     mv a1, s2
     call shadow_check_one_or_group
-"%.16332<end_of_call_shadow_check_one_or_group>":
-    beqz a0, "%.16355<else>"
-"%.16356<then>":
+    beqz a0, "%.16069<else>"
+"%.16070<then>":
     li t1, 1
-    j "%.16357<endif>"
-"%.16355<else>":
+    j "%.16071<endif>"
+"%.16069<else>":
     li a0, 1
     mv s2, s0
     add a0, s2, a0
-"%.16333<prepare_to_call_shadow_check_one_or_matrix>":
     mv a1, s1
     call shadow_check_one_or_matrix
     mv t1, a0
-"%.16334<end_of_call_shadow_check_one_or_matrix>":
-"%.16357<endif>":
-    j "%.16354<endif>"
-"%.16352<else>":
+"%.16071<endif>":
+    j "%.16068<endif>"
+"%.16066<else>":
     li a0, 1
     add a0, s0, a0
-"%.16335<prepare_to_call_shadow_check_one_or_matrix>":
     mv a1, s1
     call shadow_check_one_or_matrix
     mv t1, a0
-"%.16336<end_of_call_shadow_check_one_or_matrix>":
-"%.16354<endif>":
-"%.16339<endif>":
+"%.16068<endif>":
+"%.16053<endif>":
     mv a0, t1
     lw s2, 0(sp)
     lw s1, 4(sp)
@@ -5590,23 +5304,21 @@ solve_each_element:
     neg t1, t1
     mv t0, s3
     xor t1, t0, t1
-    beqz t1, "%.16368<else>"
-"%.16369<then>":
-    j "%.16370<endif>"
-"%.16368<else>":
-"%.16358<prepare_to_call_solver>":
+    beqz t1, "%.16072<else>"
+"%.16073<then>":
+    j "%.16074<endif>"
+"%.16072<else>":
     mv a0, s3
     mv a1, s2
     lw a2, 80(gp)
     call solver
     mv s4, a0
-"%.16359<end_of_call_solver>":
     li t1, 0
     mv t0, s4
     xor t1, t0, t1
-    not t1, t1
-    beqz t1, "%.16371<else>"
-"%.16372<then>":
+    seqz t1, t1
+    beqz t1, "%.16075<else>"
+"%.16076<then>":
     li t1, 0
     lw t0, 32(gp)
     slli t1, t1, 2
@@ -5615,8 +5327,8 @@ solve_each_element:
     fmv.w.x ft1, zero
     fmv.s ft2, ft0
     flt.s t1, ft1, ft2
-    beqz t1, "%.16374<else>"
-"%.16375<then>":
+    beqz t1, "%.16078<else>"
+"%.16079<then>":
     li t1, 0
     lw s5, 40(gp)
     slli t1, t1, 2
@@ -5624,8 +5336,8 @@ solve_each_element:
     flw ft2, 0(t1)
     fmv.s ft1, ft0
     flt.s t1, ft1, ft2
-    beqz t1, "%.16377<else>"
-"%.16378<then>":
+    beqz t1, "%.16081<else>"
+"%.16082<then>":
     flw ft2, 140(gp)
     fadd.s ft2, ft0, ft2
     fmv.s fs0, ft2
@@ -5671,26 +5383,22 @@ solve_each_element:
     fadd.s ft2, ft0, ft2
     fmv.s fs3, ft2
     li a0, 0
-"%.16360<prepare_to_call_check_all_inside>":
     mv a1, s1
     fmv.s fa0, fs1
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call check_all_inside
-"%.16361<end_of_call_check_all_inside>":
-    beqz a0, "%.16380<else>"
-"%.16381<then>":
+    beqz a0, "%.16084<else>"
+"%.16085<then>":
     li a0, 0
     slli a0, a0, 2
     add a0, s5, a0
     fsw fs0, 0(a0)
-"%.16362<prepare_to_call_vecset>":
     lw a0, 44(gp)
     fmv.s fa0, fs1
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call vecset
-"%.16363<end_of_call_vecset>":
     li a0, 0
     lw s5, 48(gp)
     slli a0, a0, 2
@@ -5701,22 +5409,20 @@ solve_each_element:
     slli a0, a0, 2
     add a0, s5, a0
     sw s4, 0(a0)
-"%.16380<else>":
-"%.16382<endif>":
-"%.16377<else>":
-"%.16379<endif>":
-"%.16374<else>":
-"%.16376<endif>":
+"%.16084<else>":
+"%.16086<endif>":
+"%.16081<else>":
+"%.16083<endif>":
+"%.16078<else>":
+"%.16080<endif>":
     li a0, 1
     mv s4, s0
     add a0, s4, a0
-"%.16364<prepare_to_call_solve_each_element>":
     mv a1, s1
     mv a2, s2
     call solve_each_element
-"%.16365<end_of_call_solve_each_element>":
-    j "%.16373<endif>"
-"%.16371<else>":
+    j "%.16077<endif>"
+"%.16075<else>":
     lw a0, 4(gp)
     slli s3, s3, 2
     add s3, a0, s3
@@ -5731,20 +5437,18 @@ solve_each_element:
     lw s4, 32(s3)
     lw s4, 36(s3)
     lw s4, 40(s3)
-    beqz a0, "%.16383<else>"
-"%.16384<then>":
+    beqz a0, "%.16087<else>"
+"%.16088<then>":
     li s4, 1
     add s4, s0, s4
     mv a0, s4
-"%.16366<prepare_to_call_solve_each_element>":
     mv a1, s1
     mv a2, s2
     call solve_each_element
-"%.16367<end_of_call_solve_each_element>":
-"%.16383<else>":
-"%.16385<endif>":
-"%.16373<endif>":
-"%.16370<endif>":
+"%.16087<else>":
+"%.16089<endif>":
+"%.16077<endif>":
+"%.16074<endif>":
     lw s5, 20(sp)
     lw s4, 24(sp)
     lw s3, 28(sp)
@@ -5779,27 +5483,23 @@ solve_one_or_network:
     neg t0, t0
     mv t2, t1
     xor t0, t2, t0
-    not t0, t0
-    beqz t0, "%.16390<else>"
-"%.16391<then>":
+    seqz t0, t0
+    beqz t0, "%.16090<else>"
+"%.16091<then>":
     lw t0, 24(gp)
     slli t1, t1, 2
     add t1, t0, t1
     lw a1, 0(t1)
     li a0, 0
-"%.16386<prepare_to_call_solve_each_element>":
     mv a2, s2
     call solve_each_element
-"%.16387<end_of_call_solve_each_element>":
     li a0, 1
     add a0, s0, a0
-"%.16388<prepare_to_call_solve_one_or_network>":
     mv a1, s1
     mv a2, s2
     call solve_one_or_network
-"%.16389<end_of_call_solve_one_or_network>":
-"%.16390<else>":
-"%.16392<endif>":
+"%.16090<else>":
+"%.16092<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -5833,34 +5533,30 @@ trace_or_matrix:
     neg t1, t1
     mv t0, a0
     xor t1, t0, t1
-    beqz t1, "%.16401<else>"
-"%.16402<then>":
-    j "%.16403<endif>"
-"%.16401<else>":
+    beqz t1, "%.16093<else>"
+"%.16094<then>":
+    j "%.16095<endif>"
+"%.16093<else>":
     li t1, 99
     mv t0, a0
     xor t1, t0, t1
-    beqz t1, "%.16404<else>"
-"%.16405<then>":
+    beqz t1, "%.16096<else>"
+"%.16097<then>":
     li t1, 1
-"%.16393<prepare_to_call_solve_one_or_network>":
     mv a0, t1
     mv a1, s3
     mv a2, s2
     call solve_one_or_network
-"%.16394<end_of_call_solve_one_or_network>":
-    j "%.16406<endif>"
-"%.16404<else>":
-"%.16395<prepare_to_call_solver>":
+    j "%.16098<endif>"
+"%.16096<else>":
     mv a1, s2
     lw a2, 80(gp)
     call solver
-"%.16396<end_of_call_solver>":
     li t1, 0
     xor t1, a0, t1
-    not t1, t1
-    beqz t1, "%.16407<else>"
-"%.16408<then>":
+    seqz t1, t1
+    beqz t1, "%.16099<else>"
+"%.16100<then>":
     li t1, 0
     lw a0, 32(gp)
     slli t1, t1, 2
@@ -5872,27 +5568,23 @@ trace_or_matrix:
     add t1, a0, t1
     flw ft1, 0(t1)
     flt.s t1, ft0, ft1
-    beqz t1, "%.16410<else>"
-"%.16411<then>":
+    beqz t1, "%.16102<else>"
+"%.16103<then>":
     li a0, 1
-"%.16397<prepare_to_call_solve_one_or_network>":
     mv a1, s3
     mv a2, s2
     call solve_one_or_network
-"%.16398<end_of_call_solve_one_or_network>":
-"%.16410<else>":
-"%.16412<endif>":
-"%.16407<else>":
-"%.16409<endif>":
-"%.16406<endif>":
+"%.16102<else>":
+"%.16104<endif>":
+"%.16099<else>":
+"%.16101<endif>":
+"%.16098<endif>":
     li a0, 1
     add a0, s0, a0
-"%.16399<prepare_to_call_trace_or_matrix>":
     mv a1, s1
     mv a2, s2
     call trace_or_matrix
-"%.16400<end_of_call_trace_or_matrix>":
-"%.16403<endif>":
+"%.16095<endif>":
     lw s3, 12(sp)
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -5919,11 +5611,9 @@ judge_intersection:
     slli t1, t1, 2
     add t1, t2, t1
     lw a1, 0(t1)
-"%.16413<prepare_to_call_trace_or_matrix>":
     mv a2, a0
     mv a0, t0
     call trace_or_matrix
-"%.16414<end_of_call_trace_or_matrix>":
     li a1, 0
     slli a1, a1, 2
     add a1, s0, a1
@@ -5932,15 +5622,15 @@ judge_intersection:
     fneg.s ft1, ft1
     fmv.s ft2, ft0
     flt.s a1, ft1, ft2
-    beqz a1, "%.16415<else>"
-"%.16416<then>":
+    beqz a1, "%.16105<else>"
+"%.16106<then>":
     flw ft2, 152(gp)
     flt.s a1, ft0, ft2
     mv a0, a1
-    j "%.16417<endif>"
-"%.16415<else>":
+    j "%.16107<endif>"
+"%.16105<else>":
     li a0, 0
-"%.16417<endif>":
+"%.16107<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -5975,23 +5665,21 @@ solve_each_element_fast:
     neg t1, t1
     mv t0, s4
     xor t1, t0, t1
-    beqz t1, "%.16428<else>"
-"%.16429<then>":
-    j "%.16430<endif>"
-"%.16428<else>":
-"%.16418<prepare_to_call_solver_fast2>":
+    beqz t1, "%.16108<else>"
+"%.16109<then>":
+    j "%.16110<endif>"
+"%.16108<else>":
     mv a0, s4
     mv a1, s2
     mv a2, s3
     call solver_fast2
     mv s5, a0
-"%.16419<end_of_call_solver_fast2>":
     li t1, 0
     mv t0, s5
     xor t1, t0, t1
-    not t1, t1
-    beqz t1, "%.16431<else>"
-"%.16432<then>":
+    seqz t1, t1
+    beqz t1, "%.16111<else>"
+"%.16112<then>":
     li t1, 0
     lw t0, 32(gp)
     slli t1, t1, 2
@@ -6000,8 +5688,8 @@ solve_each_element_fast:
     fmv.w.x ft1, zero
     fmv.s ft2, ft0
     flt.s t1, ft1, ft2
-    beqz t1, "%.16434<else>"
-"%.16435<then>":
+    beqz t1, "%.16114<else>"
+"%.16115<then>":
     li t1, 0
     lw s6, 40(gp)
     slli t1, t1, 2
@@ -6009,8 +5697,8 @@ solve_each_element_fast:
     flw ft2, 0(t1)
     fmv.s ft1, ft0
     flt.s t1, ft1, ft2
-    beqz t1, "%.16437<else>"
-"%.16438<then>":
+    beqz t1, "%.16117<else>"
+"%.16118<then>":
     flw ft2, 140(gp)
     fadd.s ft2, ft0, ft2
     fmv.s fs0, ft2
@@ -6056,26 +5744,22 @@ solve_each_element_fast:
     fadd.s ft2, ft0, ft2
     fmv.s fs3, ft2
     li a0, 0
-"%.16420<prepare_to_call_check_all_inside>":
     mv a1, s1
     fmv.s fa0, fs1
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call check_all_inside
-"%.16421<end_of_call_check_all_inside>":
-    beqz a0, "%.16440<else>"
-"%.16441<then>":
+    beqz a0, "%.16120<else>"
+"%.16121<then>":
     li a0, 0
     slli a0, a0, 2
     add a0, s6, a0
     fsw fs0, 0(a0)
-"%.16422<prepare_to_call_vecset>":
     lw a0, 44(gp)
     fmv.s fa0, fs1
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call vecset
-"%.16423<end_of_call_vecset>":
     li a0, 0
     lw s6, 48(gp)
     slli a0, a0, 2
@@ -6086,23 +5770,21 @@ solve_each_element_fast:
     slli a0, a0, 2
     add a0, s6, a0
     sw s5, 0(a0)
-"%.16440<else>":
-"%.16442<endif>":
-"%.16437<else>":
-"%.16439<endif>":
-"%.16434<else>":
-"%.16436<endif>":
+"%.16120<else>":
+"%.16122<endif>":
+"%.16117<else>":
+"%.16119<endif>":
+"%.16114<else>":
+"%.16116<endif>":
     li a0, 1
     mv s5, s0
     add a0, s5, a0
-"%.16424<prepare_to_call_solve_each_element_fast>":
     mv a1, s1
     mv a2, s2
     mv a3, s3
     call solve_each_element_fast
-"%.16425<end_of_call_solve_each_element_fast>":
-    j "%.16433<endif>"
-"%.16431<else>":
+    j "%.16113<endif>"
+"%.16111<else>":
     lw a0, 4(gp)
     slli s4, s4, 2
     add s4, a0, s4
@@ -6117,21 +5799,19 @@ solve_each_element_fast:
     lw s5, 32(s4)
     lw s5, 36(s4)
     lw s5, 40(s4)
-    beqz a0, "%.16443<else>"
-"%.16444<then>":
+    beqz a0, "%.16123<else>"
+"%.16124<then>":
     li s5, 1
     add s5, s0, s5
     mv a0, s5
-"%.16426<prepare_to_call_solve_each_element_fast>":
     mv a1, s1
     mv a2, s2
     mv a3, s3
     call solve_each_element_fast
-"%.16427<end_of_call_solve_each_element_fast>":
-"%.16443<else>":
-"%.16445<endif>":
-"%.16433<endif>":
-"%.16430<endif>":
+"%.16123<else>":
+"%.16125<endif>":
+"%.16113<endif>":
+"%.16110<endif>":
     lw s6, 16(sp)
     lw s5, 20(sp)
     lw s4, 24(sp)
@@ -6169,29 +5849,25 @@ solve_one_or_network_fast:
     neg t0, t0
     mv t2, t1
     xor t0, t2, t0
-    not t0, t0
-    beqz t0, "%.16450<else>"
-"%.16451<then>":
+    seqz t0, t0
+    beqz t0, "%.16126<else>"
+"%.16127<then>":
     lw t0, 24(gp)
     slli t1, t1, 2
     add t1, t0, t1
     lw a1, 0(t1)
     li a0, 0
-"%.16446<prepare_to_call_solve_each_element_fast>":
     mv a2, s2
     mv a3, s3
     call solve_each_element_fast
-"%.16447<end_of_call_solve_each_element_fast>":
     li a0, 1
     add a0, s0, a0
-"%.16448<prepare_to_call_solve_one_or_network_fast>":
     mv a1, s1
     mv a2, s2
     mv a3, s3
     call solve_one_or_network_fast
-"%.16449<end_of_call_solve_one_or_network_fast>":
-"%.16450<else>":
-"%.16452<endif>":
+"%.16126<else>":
+"%.16128<endif>":
     lw s3, 12(sp)
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -6228,35 +5904,31 @@ trace_or_matrix_fast:
     neg t1, t1
     mv t0, a0
     xor t1, t0, t1
-    beqz t1, "%.16461<else>"
-"%.16462<then>":
-    j "%.16463<endif>"
-"%.16461<else>":
+    beqz t1, "%.16129<else>"
+"%.16130<then>":
+    j "%.16131<endif>"
+"%.16129<else>":
     li t1, 99
     mv t0, a0
     xor t1, t0, t1
-    beqz t1, "%.16464<else>"
-"%.16465<then>":
+    beqz t1, "%.16132<else>"
+"%.16133<then>":
     li t1, 1
-"%.16453<prepare_to_call_solve_one_or_network_fast>":
     mv a0, t1
     mv a1, s4
     mv a2, s2
     mv a3, s3
     call solve_one_or_network_fast
-"%.16454<end_of_call_solve_one_or_network_fast>":
-    j "%.16466<endif>"
-"%.16464<else>":
-"%.16455<prepare_to_call_solver_fast2>":
+    j "%.16134<endif>"
+"%.16132<else>":
     mv a1, s2
     mv a2, s3
     call solver_fast2
-"%.16456<end_of_call_solver_fast2>":
     li t1, 0
     xor t1, a0, t1
-    not t1, t1
-    beqz t1, "%.16467<else>"
-"%.16468<then>":
+    seqz t1, t1
+    beqz t1, "%.16135<else>"
+"%.16136<then>":
     li t1, 0
     lw a0, 32(gp)
     slli t1, t1, 2
@@ -6268,29 +5940,25 @@ trace_or_matrix_fast:
     add t1, a0, t1
     flw ft1, 0(t1)
     flt.s t1, ft0, ft1
-    beqz t1, "%.16470<else>"
-"%.16471<then>":
+    beqz t1, "%.16138<else>"
+"%.16139<then>":
     li a0, 1
-"%.16457<prepare_to_call_solve_one_or_network_fast>":
     mv a1, s4
     mv a2, s2
     mv a3, s3
     call solve_one_or_network_fast
-"%.16458<end_of_call_solve_one_or_network_fast>":
-"%.16470<else>":
-"%.16472<endif>":
-"%.16467<else>":
-"%.16469<endif>":
-"%.16466<endif>":
+"%.16138<else>":
+"%.16140<endif>":
+"%.16135<else>":
+"%.16137<endif>":
+"%.16134<endif>":
     li a0, 1
     add a0, s0, a0
-"%.16459<prepare_to_call_trace_or_matrix_fast>":
     mv a1, s1
     mv a2, s2
     mv a3, s3
     call trace_or_matrix_fast
-"%.16460<end_of_call_trace_or_matrix_fast>":
-"%.16463<endif>":
+"%.16131<endif>":
     lw s4, 8(sp)
     lw s3, 12(sp)
     lw s2, 16(sp)
@@ -6318,13 +5986,11 @@ judge_intersection_fast:
     slli t1, t1, 2
     add t1, t2, t1
     lw t1, 0(t1)
-"%.16473<prepare_to_call_trace_or_matrix_fast>":
     mv a3, a1
     mv a2, a0
     mv a1, t1
     mv a0, t0
     call trace_or_matrix_fast
-"%.16474<end_of_call_trace_or_matrix_fast>":
     li t1, 0
     slli t1, t1, 2
     add t1, s0, t1
@@ -6333,15 +5999,15 @@ judge_intersection_fast:
     fneg.s ft1, ft1
     fmv.s ft2, ft0
     flt.s t1, ft1, ft2
-    beqz t1, "%.16475<else>"
-"%.16476<then>":
+    beqz t1, "%.16141<else>"
+"%.16142<then>":
     flw ft2, 152(gp)
     flt.s t1, ft0, ft2
     mv a0, t1
-    j "%.16477<endif>"
-"%.16475<else>":
+    j "%.16143<endif>"
+"%.16141<else>":
     li a0, 0
-"%.16477<endif>":
+"%.16143<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -6362,10 +6028,8 @@ get_nvector_rect:
     add t0, t1, t0
     lw s1, 0(t0)
     fmv.w.x fa0, zero
-"%.16478<prepare_to_call_vecfill>":
     lw a0, 52(gp)
     call vecfill
-"%.16479<end_of_call_vecfill>":
     li t0, 1
     mv t1, s1
     sub t0, t1, t0
@@ -6375,9 +6039,7 @@ get_nvector_rect:
     slli t0, t0, 2
     add t0, s0, t0
     flw fa0, 0(t0)
-"%.16480<prepare_to_call_sgn>":
     call sgn
-"%.16481<end_of_call_sgn>":
     fneg.s fa0, fa0
     lw t0, 52(gp)
     slli s2, s2, 2
@@ -6499,8 +6161,8 @@ get_nvector_second:
     fmul.s ft5, ft6, ft5
     li a2, 0
     xor a2, a3, a2
-    beqz a2, "%.16484<else>"
-"%.16485<then>":
+    beqz a2, "%.16144<else>"
+"%.16145<then>":
     li a2, 0
     lw a3, 52(gp)
     slli a2, a2, 2
@@ -6515,8 +6177,8 @@ get_nvector_second:
     slli a2, a2, 2
     add a2, a3, a2
     fsw ft5, 0(a2)
-    j "%.16486<endif>"
-"%.16484<else>":
+    j "%.16146<endif>"
+"%.16144<else>":
     li a2, 0
     li a3, 2
     mv a4, a7
@@ -6588,12 +6250,10 @@ get_nvector_second:
     slli a2, a2, 2
     add a2, a4, a2
     fsw ft6, 0(a2)
-"%.16486<endif>":
-"%.16482<prepare_to_call_vecunit_sgn>":
+"%.16146<endif>":
     lw a0, 52(gp)
     mv a1, a6
     call vecunit_sgn
-"%.16483<end_of_call_vecunit_sgn>":
     lw ra, 0(sp)
     addi sp, sp, 16
     ret
@@ -6614,35 +6274,29 @@ get_nvector:
     li t4, 1
     mv t5, a1
     xor t4, t5, t4
-    beqz t4, "%.16493<else>"
-"%.16494<then>":
-"%.16487<prepare_to_call_get_nvector_rect>":
+    beqz t4, "%.16147<else>"
+"%.16148<then>":
     mv a0, t3
     call get_nvector_rect
-"%.16488<end_of_call_get_nvector_rect>":
-    j "%.16495<endif>"
-"%.16493<else>":
+    j "%.16149<endif>"
+"%.16147<else>":
     li t4, 2
     mv t3, a1
     xor t4, t3, t4
-    beqz t4, "%.16496<else>"
-"%.16497<then>":
-"%.16489<prepare_to_call_get_nvector_plane>":
+    beqz t4, "%.16150<else>"
+"%.16151<then>":
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call get_nvector_plane
-"%.16490<end_of_call_get_nvector_plane>":
-    j "%.16498<endif>"
-"%.16496<else>":
-"%.16491<prepare_to_call_get_nvector_second>":
+    j "%.16152<endif>"
+"%.16150<else>":
     sw t0, -12(sp)
     sw t1, -8(sp)
     sw t2, -4(sp)
     call get_nvector_second
-"%.16492<end_of_call_get_nvector_second>":
-"%.16498<endif>":
-"%.16495<endif>":
+"%.16152<endif>":
+"%.16149<endif>":
     lw ra, 12(sp)
     addi sp, sp, 32
     ret
@@ -6702,8 +6356,8 @@ utexture:
     li a6, 1
     mv a3, a0
     xor a6, a3, a6
-    beqz a6, "%.16517<else>"
-"%.16518<then>":
+    beqz a6, "%.16153<else>"
+"%.16154<then>":
     li a6, 0
     mv a3, s2
     slli a6, a6, 2
@@ -6720,9 +6374,7 @@ utexture:
     fmv.s ft0, fs0
     fmul.s ft1, ft0, ft1
     fmv.s fa0, ft1
-"%.16499<prepare_to_call_caml_floor>":
-    call caml_floor
-"%.16500<end_of_call_caml_floor>":
+    call mincaml_floor
     flw ft1, 160(gp)
     fmul.s ft1, fa0, ft1
     fsub.s ft1, fs0, ft1
@@ -6745,45 +6397,43 @@ utexture:
     fmv.s fa0, fs0
     fmul.s ft1, fa0, ft1
     fmv.s fa0, ft1
-"%.16501<prepare_to_call_caml_floor>":
-    call caml_floor
-"%.16502<end_of_call_caml_floor>":
+    call mincaml_floor
     flw ft1, 160(gp)
     fmul.s ft1, fa0, ft1
     fsub.s ft1, fs0, ft1
     flw fs0, 164(gp)
     flt.s a6, ft1, fs0
     li a3, 1
-    beqz s4, "%.16520<else>"
-"%.16521<then>":
-    beqz a6, "%.16523<else>"
-"%.16524<then>":
+    beqz s4, "%.16156<else>"
+"%.16157<then>":
+    beqz a6, "%.16159<else>"
+"%.16160<then>":
     flw fs0, 168(gp)
-    j "%.16525<endif>"
-"%.16523<else>":
+    j "%.16161<endif>"
+"%.16159<else>":
     fmv.w.x fs0, zero
-"%.16525<endif>":
-    j "%.16522<endif>"
-"%.16520<else>":
-    beqz a6, "%.16526<else>"
-"%.16527<then>":
+"%.16161<endif>":
+    j "%.16158<endif>"
+"%.16156<else>":
+    beqz a6, "%.16162<else>"
+"%.16163<then>":
     fmv.w.x fs0, zero
-    j "%.16528<endif>"
-"%.16526<else>":
+    j "%.16164<endif>"
+"%.16162<else>":
     flw fs0, 168(gp)
-"%.16528<endif>":
-"%.16522<endif>":
+"%.16164<endif>":
+"%.16158<endif>":
     mv a6, s3
     slli a3, a3, 2
     add a3, a6, a3
     fsw fs0, 0(a3)
-    j "%.16519<endif>"
-"%.16517<else>":
+    j "%.16155<endif>"
+"%.16153<else>":
     li a3, 2
     mv a6, a0
     xor a3, a6, a3
-    beqz a3, "%.16529<else>"
-"%.16530<then>":
+    beqz a3, "%.16165<else>"
+"%.16166<then>":
     li a3, 1
     mv a6, s2
     slli a3, a3, 2
@@ -6792,9 +6442,7 @@ utexture:
     flw ft1, 172(gp)
     fmul.s ft1, fs0, ft1
     fmv.s fa0, ft1
-"%.16503<prepare_to_call_caml_sin>":
-    call caml_sin
-"%.16504<end_of_call_caml_sin>":
+    call mincaml_sin
     fmul.s fa0, fa0, fa0
     li a3, 0
     flw ft1, 168(gp)
@@ -6814,13 +6462,13 @@ utexture:
     slli a3, a3, 2
     add a3, a6, a3
     fsw fa0, 0(a3)
-    j "%.16531<endif>"
-"%.16529<else>":
+    j "%.16167<endif>"
+"%.16165<else>":
     li a3, 3
     mv a6, a0
     xor a3, a6, a3
-    beqz a3, "%.16532<else>"
-"%.16533<then>":
+    beqz a3, "%.16168<else>"
+"%.16169<then>":
     li a3, 0
     mv a6, s2
     slli a3, a3, 2
@@ -6849,17 +6497,13 @@ utexture:
     fsqrt.s ft1, ft1
     flw fs0, 164(gp)
     fdiv.s fs0, ft1, fs0
-"%.16505<prepare_to_call_caml_floor>":
     fmv.s fa0, fs0
-    call caml_floor
-"%.16506<end_of_call_caml_floor>":
+    call mincaml_floor
     fsub.s fa0, fs0, fa0
     flw fs0, 176(gp)
     fmul.s fs0, fa0, fs0
     fmv.s fa0, fs0
-"%.16507<prepare_to_call_caml_cos>":
-    call caml_cos
-"%.16508<end_of_call_caml_cos>":
+    call mincaml_cos
     fmul.s fa0, fa0, fa0
     li a3, 1
     flw fs0, 168(gp)
@@ -6879,12 +6523,12 @@ utexture:
     slli a3, a3, 2
     add a3, a6, a3
     fsw fs0, 0(a3)
-    j "%.16534<endif>"
-"%.16532<else>":
+    j "%.16170<endif>"
+"%.16168<else>":
     li a3, 4
     xor a3, a0, a3
-    beqz a3, "%.16535<else>"
-"%.16536<then>":
+    beqz a3, "%.16171<else>"
+"%.16172<then>":
     li a3, 0
     mv a0, s2
     slli a3, a3, 2
@@ -6928,26 +6572,22 @@ utexture:
     fabs.s ft0, fs0
     flw ft1, 180(gp)
     flt.s a3, ft0, ft1
-    beqz a3, "%.16538<else>"
-"%.16539<then>":
+    beqz a3, "%.16174<else>"
+"%.16175<then>":
     flw fs2, 184(gp)
-    j "%.16540<endif>"
-"%.16538<else>":
+    j "%.16176<endif>"
+"%.16174<else>":
     fdiv.s fs0, fa0, fs0
     fabs.s fa0, fs0
-"%.16509<prepare_to_call_caml_atan>":
-    call caml_atan
-"%.16510<end_of_call_caml_atan>":
+    call mincaml_atan
     flw fs0, 188(gp)
     fmul.s fs0, fa0, fs0
     flw fa0, 176(gp)
     fdiv.s fa0, fs0, fa0
     fmv.s fs2, fa0
-"%.16540<endif>":
-"%.16511<prepare_to_call_caml_floor>":
+"%.16176<endif>":
     fmv.s fa0, fs2
-    call caml_floor
-"%.16512<end_of_call_caml_floor>":
+    call mincaml_floor
     fsub.s fa0, fs2, fa0
     fmv.s fs0, fa0
     li a3, 1
@@ -6968,26 +6608,22 @@ utexture:
     fabs.s fs2, fs1
     flw ft1, 180(gp)
     flt.s a3, fs2, ft1
-    beqz a3, "%.16541<else>"
-"%.16542<then>":
+    beqz a3, "%.16177<else>"
+"%.16178<then>":
     flw fs2, 184(gp)
-    j "%.16543<endif>"
-"%.16541<else>":
+    j "%.16179<endif>"
+"%.16177<else>":
     fdiv.s fs1, fa0, fs1
     fabs.s fa0, fs1
-"%.16513<prepare_to_call_caml_atan>":
-    call caml_atan
-"%.16514<end_of_call_caml_atan>":
+    call mincaml_atan
     flw fs1, 188(gp)
     fmul.s fs1, fa0, fs1
     flw fa0, 176(gp)
     fdiv.s fa0, fs1, fa0
     fmv.s fs2, fa0
-"%.16543<endif>":
-"%.16515<prepare_to_call_caml_floor>":
+"%.16179<endif>":
     fmv.s fa0, fs2
-    call caml_floor
-"%.16516<end_of_call_caml_floor>":
+    call mincaml_floor
     fsub.s fa0, fs2, fa0
     flw fs2, 192(gp)
     lui a3, 258048 # 0x3f000
@@ -7002,13 +6638,13 @@ utexture:
     fsub.s fa0, fs0, fa0
     fmv.w.x fs0, zero
     flt.s a3, fs0, fa0
-    beqz a3, "%.16544<else>"
-"%.16545<then>":
+    beqz a3, "%.16180<else>"
+"%.16181<then>":
     fmv.w.x fs0, zero
-    j "%.16546<endif>"
-"%.16544<else>":
+    j "%.16182<endif>"
+"%.16180<else>":
     fmv.s fs0, fa0
-"%.16546<endif>":
+"%.16182<endif>":
     li a3, 2
     flw fa0, 168(gp)
     fmul.s fs0, fa0, fs0
@@ -7017,11 +6653,11 @@ utexture:
     slli a3, a3, 2
     add a3, s3, a3
     fsw fa0, 0(a3)
-"%.16535<else>":
-"%.16537<endif>":
-"%.16534<endif>":
-"%.16531<endif>":
-"%.16519<endif>":
+"%.16171<else>":
+"%.16173<endif>":
+"%.16170<endif>":
+"%.16167<endif>":
+"%.16155<endif>":
     lw s4, 20(sp)
     lw s3, 28(sp)
     lw s2, 32(sp)
@@ -7045,19 +6681,17 @@ add_light:
     fmv.s fs1, fa2
     fmv.w.x ft0, zero
     flt.s t0, fa0, ft0
-    beqz t0, "%.16549<else>"
-"%.16550<then>":
-"%.16547<prepare_to_call_vecaccum>":
+    beqz t0, "%.16183<else>"
+"%.16184<then>":
     lw a0, 64(gp)
     lw a1, 56(gp)
     call vecaccum
-"%.16548<end_of_call_vecaccum>":
-"%.16549<else>":
-"%.16551<endif>":
+"%.16183<else>":
+"%.16185<endif>":
     fmv.w.x ft0, zero
     flt.s t0, fs0, ft0
-    beqz t0, "%.16552<else>"
-"%.16553<then>":
+    beqz t0, "%.16186<else>"
+"%.16187<then>":
     fmul.s ft0, fs0, fs0
     fmul.s ft0, ft0, ft0
     fmul.s fs1, ft0, fs1
@@ -7096,8 +6730,8 @@ add_light:
     slli t0, t0, 2
     add t0, t1, t0
     fsw fs1, 0(t0)
-"%.16552<else>":
-"%.16554<endif>":
+"%.16186<else>":
+"%.16188<endif>":
     flw fs1, 4(sp)
     flw fs0, 8(sp)
     lw ra, 12(sp)
@@ -7123,9 +6757,9 @@ trace_reflections:
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16563<else>"
-"%.16564<then>":
+    seqz t0, t0
+    beqz t0, "%.16189<else>"
+"%.16190<then>":
     lw t0, 116(gp)
     mv t1, s0
     slli t1, t1, 2
@@ -7134,12 +6768,10 @@ trace_reflections:
     lw s3, 4(t1)
     lw a1, 8(t1)
     flw fs2, 12(t1)
-"%.16555<prepare_to_call_judge_intersection_fast>":
     mv a0, s3
     call judge_intersection_fast
-"%.16556<end_of_call_judge_intersection_fast>":
-    beqz a0, "%.16566<else>"
-"%.16567<then>":
+    beqz a0, "%.16192<else>"
+"%.16193<then>":
     li a0, 0
     lw a1, 48(gp)
     slli a0, a0, 2
@@ -7154,20 +6786,18 @@ trace_reflections:
     lw a0, 0(a0)
     add a0, a1, a0
     xor s2, a0, s2
-    beqz s2, "%.16569<else>"
-"%.16570<then>":
+    beqz s2, "%.16195<else>"
+"%.16196<then>":
     li a0, 0
     li s2, 0
     lw a1, 28(gp)
     slli s2, s2, 2
     add s2, a1, s2
     lw a1, 0(s2)
-"%.16557<prepare_to_call_shadow_check_one_or_matrix>":
     call shadow_check_one_or_matrix
-"%.16558<end_of_call_shadow_check_one_or_matrix>":
-    not a0, a0
-    beqz a0, "%.16572<else>"
-"%.16573<then>":
+    seqz a0, a0
+    beqz a0, "%.16198<else>"
+"%.16199<then>":
     li a0, 0
     lw a1, 52(gp)
     slli a0, a0, 2
@@ -7243,26 +6873,22 @@ trace_reflections:
     fadd.s ft0, ft2, ft0
     fmul.s ft0, fs2, ft0
     fmv.s fa1, ft0
-"%.16559<prepare_to_call_add_light>":
     fmv.s fa2, fs1
     call add_light
-"%.16560<end_of_call_add_light>":
-"%.16572<else>":
-"%.16574<endif>":
-"%.16569<else>":
-"%.16571<endif>":
-"%.16566<else>":
-"%.16568<endif>":
+"%.16198<else>":
+"%.16200<endif>":
+"%.16195<else>":
+"%.16197<endif>":
+"%.16192<else>":
+"%.16194<endif>":
     li a0, 1
     sub a0, s0, a0
-"%.16561<prepare_to_call_trace_reflections>":
     fmv.s fa0, fs0
     fmv.s fa1, fs1
     mv a1, s1
     call trace_reflections
-"%.16562<end_of_call_trace_reflections>":
-"%.16563<else>":
-"%.16565<endif>":
+"%.16189<else>":
+"%.16191<endif>":
     lw s3, 4(sp)
     lw s2, 8(sp)
     lw s1, 12(sp)
@@ -7312,15 +6938,13 @@ trace_ray:
     li t0, 4
     lw t1, 52(sp)
     slt t0, t0, t1
-    not t0, t0
-    beqz t0, "%.16605<else>"
-"%.16606<then>":
-"%.16575<prepare_to_call_judge_intersection>":
+    seqz t0, t0
+    beqz t0, "%.16201<else>"
+"%.16202<then>":
     lw a0, 56(sp)
     call judge_intersection
-"%.16576<end_of_call_judge_intersection>":
-    beqz a0, "%.16608<else>"
-"%.16609<then>":
+    beqz a0, "%.16204<else>"
+"%.16205<then>":
     li a0, 0
     lw t0, 48(gp)
     slli a0, a0, 2
@@ -7349,7 +6973,6 @@ trace_ray:
     fmv.s ft1, fs0
     fmul.s ft1, ft0, ft1
     fmv.s fs2, ft1
-"%.16577<prepare_to_call_get_nvector>":
     mv a0, s11
     mv a1, s1
     mv a2, s0
@@ -7364,13 +6987,9 @@ trace_ray:
     flw ft11, 56(sp)
     fsw ft11, -4(sp)
     call get_nvector
-"%.16578<end_of_call_get_nvector>":
-"%.16579<prepare_to_call_veccpy>":
     lw a0, 80(gp)
     lw a1, 44(gp)
     call veccpy
-"%.16580<end_of_call_veccpy>":
-"%.16581<prepare_to_call_utexture>":
     mv a0, s11
     mv a1, s1
     mv a2, s0
@@ -7385,7 +7004,6 @@ trace_ray:
     flw ft11, 44(gp)
     fsw ft11, -4(sp)
     call utexture
-"%.16582<end_of_call_utexture>":
     li t0, 4
     mul t0, s10, t0
     li s10, 0
@@ -7404,10 +7022,8 @@ trace_ray:
     slli s10, s10, 2
     add s10, s9, s10
     lw a0, 0(s10)
-"%.16583<prepare_to_call_veccpy>":
     lw a1, 44(gp)
     call veccpy
-"%.16584<end_of_call_veccpy>":
     li a0, 0
     mv s10, s6
     slli a0, a0, 2
@@ -7416,16 +7032,16 @@ trace_ray:
     lui a0, 258048 # 0x3f000
     fmv.w.x ft0, a0
     flt.s a0, ft1, ft0
-    beqz a0, "%.16611<else>"
-"%.16612<then>":
+    beqz a0, "%.16207<else>"
+"%.16208<then>":
     li a0, 0
     lw s10, 36(sp)
     lw s9, 52(sp)
     slli s9, s9, 2
     add s9, s10, s9
     sw a0, 0(s9)
-    j "%.16613<endif>"
-"%.16611<else>":
+    j "%.16209<endif>"
+"%.16207<else>":
     li s9, 1
     lw a0, 36(sp)
     lw s10, 52(sp)
@@ -7437,10 +7053,8 @@ trace_ray:
     slli s9, s9, 2
     add s9, s10, s9
     lw a0, 0(s9)
-"%.16585<prepare_to_call_veccpy>":
     lw a1, 56(gp)
     call veccpy
-"%.16586<end_of_call_veccpy>":
     lw a0, 32(sp)
     lw s9, 52(sp)
     slli s9, s9, 2
@@ -7453,19 +7067,15 @@ trace_ray:
     fmv.s ft0, fs2
     fmul.s ft0, ft1, ft0
     fmv.s fa0, ft0
-"%.16587<prepare_to_call_vecscale>":
     call vecscale
-"%.16588<end_of_call_vecscale>":
     lw s9, 20(sp)
     lw a0, 52(sp)
     slli a0, a0, 2
     add a0, s9, a0
     lw a0, 0(a0)
-"%.16589<prepare_to_call_veccpy>":
     lw a1, 52(gp)
     call veccpy
-"%.16590<end_of_call_veccpy>":
-"%.16613<endif>":
+"%.16209<endif>":
     flw fa0, 132(gp)
     fneg.s fa0, fa0
     li a0, 0
@@ -7505,11 +7115,9 @@ trace_ray:
     fadd.s ft0, ft2, ft0
     fmul.s ft0, fa0, ft0
     fmv.s fa0, ft0
-"%.16591<prepare_to_call_vecaccum>":
     lw a0, 56(sp)
     mv a1, s1
     call vecaccum
-"%.16592<end_of_call_vecaccum>":
     li a0, 1
     mv s9, s6
     slli a0, a0, 2
@@ -7524,12 +7132,10 @@ trace_ray:
     slli s9, s9, 2
     add s9, s10, s9
     lw a1, 0(s9)
-"%.16593<prepare_to_call_shadow_check_one_or_matrix>":
     call shadow_check_one_or_matrix
-"%.16594<end_of_call_shadow_check_one_or_matrix>":
-    not a0, a0
-    beqz a0, "%.16614<else>"
-"%.16615<then>":
+    seqz a0, a0
+    beqz a0, "%.16210<else>"
+"%.16211<then>":
     li a0, 0
     mv a1, s1
     slli a0, a0, 2
@@ -7603,17 +7209,13 @@ trace_ray:
     fmul.s ft2, ft0, ft2
     fadd.s ft2, ft1, ft2
     fneg.s fa1, ft2
-"%.16595<prepare_to_call_add_light>":
     fmv.s fa2, fs3
     call add_light
-"%.16596<end_of_call_add_light>":
-"%.16614<else>":
-"%.16616<endif>":
-"%.16597<prepare_to_call_veccpy>":
+"%.16210<else>":
+"%.16212<endif>":
     lw a0, 84(gp)
     lw a1, 44(gp)
     call veccpy
-"%.16598<end_of_call_veccpy>":
     li a0, 0
     lw a1, 0(gp)
     slli a0, a0, 2
@@ -7621,10 +7223,8 @@ trace_ray:
     lw a0, 0(a0)
     li a1, 1
     sub a1, a0, a1
-"%.16599<prepare_to_call_setup_startp_constants>":
     lw a0, 44(gp)
     call setup_startp_constants
-"%.16600<end_of_call_setup_startp_constants>":
     li a1, 0
     lw a0, 120(gp)
     slli a1, a1, 2
@@ -7632,22 +7232,20 @@ trace_ray:
     lw a1, 0(a1)
     li a0, 1
     sub a0, a1, a0
-"%.16601<prepare_to_call_trace_reflections>":
     fmv.s fa0, fs2
     fmv.s fa1, fs3
     lw a1, 56(sp)
     call trace_reflections
-"%.16602<end_of_call_trace_reflections>":
     flw fa1, 144(gp)
     fmv.s fa0, fs0
     flt.s a0, fa1, fa0
-    beqz a0, "%.16617<else>"
-"%.16618<then>":
+    beqz a0, "%.16213<else>"
+"%.16214<then>":
     li a0, 4
     lw a1, 52(sp)
     slt a0, a1, a0
-    beqz a0, "%.16620<else>"
-"%.16621<then>":
+    beqz a0, "%.16216<else>"
+"%.16217<then>":
     li a0, 1
     lw a1, 52(sp)
     add a0, a1, a0
@@ -7657,12 +7255,12 @@ trace_ray:
     slli a0, a0, 2
     add a0, s1, a0
     sw a1, 0(a0)
-"%.16620<else>":
-"%.16622<endif>":
+"%.16216<else>":
+"%.16218<endif>":
     li a0, 2
     xor a0, s0, a0
-    beqz a0, "%.16623<else>"
-"%.16624<then>":
+    beqz a0, "%.16219<else>"
+"%.16220<then>":
     lui a0, 260096 # 0x3f800
     fmv.w.x fa0, a0
     li a0, 0
@@ -7682,7 +7280,6 @@ trace_ray:
     add s6, s0, s6
     flw fa1, 0(s6)
     fadd.s fa1, fs1, fa1
-"%.16603<prepare_to_call_trace_ray>":
     lw a1, 56(sp)
     lw a2, 44(sp)
     lw a3, 40(sp)
@@ -7695,13 +7292,12 @@ trace_ray:
     flw ft11, 20(sp)
     fsw ft11, -4(sp)
     call trace_ray
-"%.16604<end_of_call_trace_ray>":
-"%.16623<else>":
-"%.16625<endif>":
-"%.16617<else>":
-"%.16619<endif>":
-    j "%.16610<endif>"
-"%.16608<else>":
+"%.16219<else>":
+"%.16221<endif>":
+"%.16213<else>":
+"%.16215<endif>":
+    j "%.16206<endif>"
+"%.16204<else>":
     li s6, 1
     neg s6, s6
     lw a0, 48(sp)
@@ -7712,9 +7308,9 @@ trace_ray:
     li s0, 0
     lw s6, 52(sp)
     xor s0, s6, s0
-    not s0, s0
-    beqz s0, "%.16626<else>"
-"%.16627<then>":
+    seqz s0, s0
+    beqz s0, "%.16222<else>"
+"%.16223<then>":
     li s0, 0
     lw s6, 56(sp)
     slli s0, s0, 2
@@ -7752,8 +7348,8 @@ trace_ray:
     fneg.s fa1, fa1
     fmv.w.x fs1, zero
     flt.s s0, fa1, fs1
-    beqz s0, "%.16629<else>"
-"%.16630<then>":
+    beqz s0, "%.16225<else>"
+"%.16226<then>":
     fmul.s fs1, fa1, fa1
     fmul.s fa1, fs1, fa1
     fmul.s fs0, fa1, fs0
@@ -7798,13 +7394,13 @@ trace_ray:
     slli s0, s0, 2
     add s0, s6, s0
     fsw fa1, 0(s0)
-"%.16629<else>":
-"%.16631<endif>":
-"%.16626<else>":
-"%.16628<endif>":
-"%.16610<endif>":
-"%.16605<else>":
-"%.16607<endif>":
+"%.16225<else>":
+"%.16227<endif>":
+"%.16222<else>":
+"%.16224<endif>":
+"%.16206<endif>":
+"%.16201<else>":
+"%.16203<endif>":
     lw s11, 60(sp)
     lw s10, 64(sp)
     lw s9, 72(sp)
@@ -7845,12 +7441,10 @@ trace_diffuse_ray:
 "trace_diffuse_ray.func_begin":
     mv s0, a0
     fmv.s fs0, fa0
-"%.16632<prepare_to_call_judge_intersection_fast>":
     mv a0, s0
     call judge_intersection_fast
-"%.16633<end_of_call_judge_intersection_fast>":
-    beqz a0, "%.16642<else>"
-"%.16643<then>":
+    beqz a0, "%.16228<else>"
+"%.16229<then>":
     li a0, 0
     lw a1, 48(gp)
     slli a0, a0, 2
@@ -7870,7 +7464,6 @@ trace_diffuse_ray:
     lw s9, 32(a0)
     lw s10, 36(a0)
     lw s11, 40(a0)
-"%.16634<prepare_to_call_get_nvector>":
     mv a0, s1
     mv a1, s2
     mv a2, s3
@@ -7884,8 +7477,6 @@ trace_diffuse_ray:
     sw s11, -8(sp)
     sw s0, -4(sp)
     call get_nvector
-"%.16635<end_of_call_get_nvector>":
-"%.16636<prepare_to_call_utexture>":
     mv a0, s1
     mv a1, s2
     mv a2, s3
@@ -7900,19 +7491,16 @@ trace_diffuse_ray:
     flw ft11, 44(gp)
     fsw ft11, -4(sp)
     call utexture
-"%.16637<end_of_call_utexture>":
     li a0, 0
     li s11, 0
     lw s0, 28(gp)
     slli s11, s11, 2
     add s11, s0, s11
     lw a1, 0(s11)
-"%.16638<prepare_to_call_shadow_check_one_or_matrix>":
     call shadow_check_one_or_matrix
-"%.16639<end_of_call_shadow_check_one_or_matrix>":
-    not a0, a0
-    beqz a0, "%.16645<else>"
-"%.16646<then>":
+    seqz a0, a0
+    beqz a0, "%.16231<else>"
+"%.16232<then>":
     li a0, 0
     lw a1, 52(gp)
     slli a0, a0, 2
@@ -7949,13 +7537,13 @@ trace_diffuse_ray:
     fneg.s ft0, ft0
     fmv.w.x ft2, zero
     flt.s a0, ft0, ft2
-    beqz a0, "%.16648<else>"
-"%.16649<then>":
+    beqz a0, "%.16234<else>"
+"%.16235<then>":
     fmv.s ft2, ft0
-    j "%.16650<endif>"
-"%.16648<else>":
+    j "%.16236<endif>"
+"%.16234<else>":
     fmv.w.x ft2, zero
-"%.16650<endif>":
+"%.16236<endif>":
     fmul.s ft2, fs0, ft2
     li a0, 0
     slli a0, a0, 2
@@ -7963,15 +7551,13 @@ trace_diffuse_ray:
     flw fs0, 0(a0)
     fmul.s fs0, ft2, fs0
     fmv.s fa0, fs0
-"%.16640<prepare_to_call_vecaccum>":
     lw a0, 60(gp)
     lw a1, 56(gp)
     call vecaccum
-"%.16641<end_of_call_vecaccum>":
-"%.16645<else>":
-"%.16647<endif>":
-"%.16642<else>":
-"%.16644<endif>":
+"%.16231<else>":
+"%.16233<endif>":
+"%.16228<else>":
+"%.16230<endif>":
     lw s11, 8(sp)
     lw s10, 12(sp)
     lw s9, 16(sp)
@@ -8005,9 +7591,9 @@ iter_trace_diffuse_rays:
     li t0, 0
     mv t1, s3
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16657<else>"
-"%.16658<then>":
+    seqz t0, t0
+    beqz t0, "%.16237<else>"
+"%.16238<then>":
     mv t0, s0
     mv t1, s3
     slli t1, t1, 2
@@ -8050,8 +7636,8 @@ iter_trace_diffuse_rays:
     fadd.s ft0, ft2, ft0
     fmv.w.x ft2, zero
     flt.s t1, ft2, ft0
-    beqz t1, "%.16660<else>"
-"%.16661<then>":
+    beqz t1, "%.16240<else>"
+"%.16241<then>":
     li t1, 1
     mv t0, s3
     add t1, t0, t1
@@ -8065,11 +7651,9 @@ iter_trace_diffuse_rays:
     fmv.s ft1, ft0
     fdiv.s ft2, ft1, ft2
     fmv.s fa0, ft2
-"%.16651<prepare_to_call_trace_diffuse_ray>":
     call trace_diffuse_ray
-"%.16652<end_of_call_trace_diffuse_ray>":
-    j "%.16662<endif>"
-"%.16660<else>":
+    j "%.16242<endif>"
+"%.16240<else>":
     mv a1, s0
     mv a0, s3
     slli a0, a0, 2
@@ -8078,24 +7662,20 @@ iter_trace_diffuse_rays:
     lw a0, 4(a0)
     flw fa0, 204(gp)
     fdiv.s fa0, ft0, fa0
-"%.16653<prepare_to_call_trace_diffuse_ray>":
     fmv.w.x ft11, a0
     mv a0, a1
     fmv.x.w a1, ft11
     call trace_diffuse_ray
-"%.16654<end_of_call_trace_diffuse_ray>":
-"%.16662<endif>":
+"%.16242<endif>":
     li a0, 2
     sub a0, s3, a0
     mv a3, a0
-"%.16655<prepare_to_call_iter_trace_diffuse_rays>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
     call iter_trace_diffuse_rays
-"%.16656<end_of_call_iter_trace_diffuse_rays>":
-"%.16657<else>":
-"%.16659<endif>":
+"%.16237<else>":
+"%.16239<endif>":
     lw s3, 12(sp)
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -8115,11 +7695,9 @@ trace_diffuse_rays:
     mv s0, a0
     mv s1, a1
     mv s2, a2
-"%.16663<prepare_to_call_veccpy>":
     lw a0, 84(gp)
     mv a1, s2
     call veccpy
-"%.16664<end_of_call_veccpy>":
     li t0, 0
     lw t1, 0(gp)
     slli t0, t0, 2
@@ -8128,17 +7706,13 @@ trace_diffuse_rays:
     li t1, 1
     sub t1, t0, t1
     mv a1, t1
-"%.16665<prepare_to_call_setup_startp_constants>":
     mv a0, s2
     call setup_startp_constants
-"%.16666<end_of_call_setup_startp_constants>":
     li a3, 118
-"%.16667<prepare_to_call_iter_trace_diffuse_rays>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
     call iter_trace_diffuse_rays
-"%.16668<end_of_call_iter_trace_diffuse_rays>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -8160,92 +7734,82 @@ trace_diffuse_ray_80percent:
     li t0, 0
     mv t1, s0
     xor t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16679<else>"
-"%.16680<then>":
+    seqz t0, t0
+    beqz t0, "%.16243<else>"
+"%.16244<then>":
     li t0, 0
     lw t1, 104(gp)
     slli t0, t0, 2
     add t0, t1, t0
     lw a0, 0(t0)
-"%.16669<prepare_to_call_trace_diffuse_rays>":
     mv a1, s1
     mv a2, s2
     call trace_diffuse_rays
-"%.16670<end_of_call_trace_diffuse_rays>":
-"%.16679<else>":
-"%.16681<endif>":
+"%.16243<else>":
+"%.16245<endif>":
     li a0, 1
     mv t0, s0
     xor a0, t0, a0
-    not a0, a0
-    beqz a0, "%.16682<else>"
-"%.16683<then>":
+    seqz a0, a0
+    beqz a0, "%.16246<else>"
+"%.16247<then>":
     li a0, 1
     lw t0, 104(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.16671<prepare_to_call_trace_diffuse_rays>":
     mv a1, s1
     mv a2, s2
     call trace_diffuse_rays
-"%.16672<end_of_call_trace_diffuse_rays>":
-"%.16682<else>":
-"%.16684<endif>":
+"%.16246<else>":
+"%.16248<endif>":
     li a0, 2
     mv t0, s0
     xor a0, t0, a0
-    not a0, a0
-    beqz a0, "%.16685<else>"
-"%.16686<then>":
+    seqz a0, a0
+    beqz a0, "%.16249<else>"
+"%.16250<then>":
     li a0, 2
     lw t0, 104(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.16673<prepare_to_call_trace_diffuse_rays>":
     mv a1, s1
     mv a2, s2
     call trace_diffuse_rays
-"%.16674<end_of_call_trace_diffuse_rays>":
-"%.16685<else>":
-"%.16687<endif>":
+"%.16249<else>":
+"%.16251<endif>":
     li a0, 3
     mv t0, s0
     xor a0, t0, a0
-    not a0, a0
-    beqz a0, "%.16688<else>"
-"%.16689<then>":
+    seqz a0, a0
+    beqz a0, "%.16252<else>"
+"%.16253<then>":
     li a0, 3
     lw t0, 104(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.16675<prepare_to_call_trace_diffuse_rays>":
     mv a1, s1
     mv a2, s2
     call trace_diffuse_rays
-"%.16676<end_of_call_trace_diffuse_rays>":
-"%.16688<else>":
-"%.16690<endif>":
+"%.16252<else>":
+"%.16254<endif>":
     li a0, 4
     xor a0, s0, a0
-    not a0, a0
-    beqz a0, "%.16691<else>"
-"%.16692<then>":
+    seqz a0, a0
+    beqz a0, "%.16255<else>"
+"%.16256<then>":
     li a0, 4
     lw s0, 104(gp)
     slli a0, a0, 2
     add a0, s0, a0
     lw a0, 0(a0)
-"%.16677<prepare_to_call_trace_diffuse_rays>":
     mv a1, s1
     mv a2, s2
     call trace_diffuse_rays
-"%.16678<end_of_call_trace_diffuse_rays>":
-"%.16691<else>":
-"%.16693<endif>":
+"%.16255<else>":
+"%.16257<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -8273,10 +7837,8 @@ calc_diffuse_using_1point:
     slli a3, a3, 2
     add a3, a5, a3
     lw a1, 0(a3)
-"%.16694<prepare_to_call_veccpy>":
     lw a0, 60(gp)
     call veccpy
-"%.16695<end_of_call_veccpy>":
     li a1, 0
     slli a1, a1, 2
     add a1, s2, a1
@@ -8289,18 +7851,14 @@ calc_diffuse_using_1point:
     slli s3, s3, 2
     add s3, s0, s3
     lw a2, 0(s3)
-"%.16696<prepare_to_call_trace_diffuse_ray_80percent>":
     call trace_diffuse_ray_80percent
-"%.16697<end_of_call_trace_diffuse_ray_80percent>":
     mv a2, s1
     slli s4, s4, 2
     add s4, a2, s4
     lw a1, 0(s4)
-"%.16698<prepare_to_call_vecaccumv>":
     lw a0, 64(gp)
     lw a2, 60(gp)
     call vecaccumv
-"%.16699<end_of_call_vecaccumv>":
     lw s4, 4(sp)
     lw s3, 8(sp)
     lw s2, 12(sp)
@@ -8393,46 +7951,36 @@ calc_diffuse_using_5points:
     slli a1, a1, 2
     add a1, t1, a1
     lw a1, 0(a1)
-"%.16700<prepare_to_call_veccpy>":
     lw a0, 60(gp)
     call veccpy
-"%.16701<end_of_call_veccpy>":
     mv a1, s3
     mv s3, s2
     slli s3, s3, 2
     add s3, a1, s3
     lw a1, 0(s3)
-"%.16702<prepare_to_call_vecadd>":
     lw a0, 60(gp)
     call vecadd
-"%.16703<end_of_call_vecadd>":
     mv a1, s4
     mv s4, s2
     slli s4, s4, 2
     add s4, a1, s4
     lw a1, 0(s4)
-"%.16704<prepare_to_call_vecadd>":
     lw a0, 60(gp)
     call vecadd
-"%.16705<end_of_call_vecadd>":
     mv a1, s5
     mv s5, s2
     slli s5, s5, 2
     add s5, a1, s5
     lw a1, 0(s5)
-"%.16706<prepare_to_call_vecadd>":
     lw a0, 60(gp)
     call vecadd
-"%.16707<end_of_call_vecadd>":
     mv a1, s6
     mv s6, s2
     slli s6, s6, 2
     add s6, a1, s6
     lw a1, 0(s6)
-"%.16708<prepare_to_call_vecadd>":
     lw a0, 60(gp)
     call vecadd
-"%.16709<end_of_call_vecadd>":
     mv a1, s1
     slli s0, s0, 2
     add s0, a1, s0
@@ -8448,11 +7996,9 @@ calc_diffuse_using_5points:
     slli s2, s2, 2
     add s2, s1, s2
     lw a1, 0(s2)
-"%.16710<prepare_to_call_vecaccumv>":
     lw a0, 64(gp)
     lw a2, 60(gp)
     call vecaccumv
-"%.16711<end_of_call_vecaccumv>":
     lw s6, 0(sp)
     lw s5, 4(sp)
     lw s4, 8(sp)
@@ -8491,9 +8037,9 @@ do_without_neighbors:
     li t0, 4
     mv t1, s8
     slt t0, t0, t1
-    not t0, t0
-    beqz t0, "%.16716<else>"
-"%.16717<then>":
+    seqz t0, t0
+    beqz t0, "%.16258<else>"
+"%.16259<then>":
     mv t0, s2
     mv t1, s8
     slli t1, t1, 2
@@ -8501,17 +8047,16 @@ do_without_neighbors:
     lw t1, 0(t1)
     li t0, 0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16719<else>"
-"%.16720<then>":
+    seqz t0, t0
+    beqz t0, "%.16261<else>"
+"%.16262<then>":
     mv t0, s3
     mv t1, s8
     slli t1, t1, 2
     add t1, t0, t1
     lw t1, 0(t1)
-    beqz t1, "%.16722<else>"
-"%.16723<then>":
-"%.16712<prepare_to_call_calc_diffuse_using_1point>":
+    beqz t1, "%.16264<else>"
+"%.16265<then>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -8522,12 +8067,10 @@ do_without_neighbors:
     mv a7, s7
     sw s8, -4(sp)
     call calc_diffuse_using_1point
-"%.16713<end_of_call_calc_diffuse_using_1point>":
-"%.16722<else>":
-"%.16724<endif>":
+"%.16264<else>":
+"%.16266<endif>":
     li t1, 1
     add t1, s8, t1
-"%.16714<prepare_to_call_do_without_neighbors>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
@@ -8538,11 +8081,10 @@ do_without_neighbors:
     mv a7, s7
     sw t1, -4(sp)
     call do_without_neighbors
-"%.16715<end_of_call_do_without_neighbors>":
-"%.16719<else>":
-"%.16721<endif>":
-"%.16716<else>":
-"%.16718<endif>":
+"%.16261<else>":
+"%.16263<endif>":
+"%.16258<else>":
+"%.16260<endif>":
     lw s8, 4(sp)
     lw s7, 8(sp)
     lw s6, 12(sp)
@@ -8568,12 +8110,12 @@ neighbors_exist:
     add t0, t1, t0
     lw t0, 0(t0)
     slt t0, a2, t0
-    beqz t0, "%.16725<else>"
-"%.16726<then>":
+    beqz t0, "%.16267<else>"
+"%.16268<then>":
     li t0, 0
     slt t0, t0, a1
-    beqz t0, "%.16728<else>"
-"%.16729<then>":
+    beqz t0, "%.16270<else>"
+"%.16271<then>":
     li t0, 1
     mv a1, a0
     add t0, a1, t0
@@ -8582,29 +8124,29 @@ neighbors_exist:
     add a1, t1, a1
     lw a1, 0(a1)
     slt a1, t0, a1
-    beqz a1, "%.16731<else>"
-"%.16732<then>":
+    beqz a1, "%.16273<else>"
+"%.16274<then>":
     li a1, 0
     slt a1, a1, a0
-    beqz a1, "%.16734<else>"
-"%.16735<then>":
+    beqz a1, "%.16276<else>"
+"%.16277<then>":
     li a0, 1
-    j "%.16736<endif>"
-"%.16734<else>":
+    j "%.16278<endif>"
+"%.16276<else>":
     li a0, 0
-"%.16736<endif>":
-    j "%.16733<endif>"
-"%.16731<else>":
+"%.16278<endif>":
+    j "%.16275<endif>"
+"%.16273<else>":
     li a0, 0
-"%.16733<endif>":
-    j "%.16730<endif>"
-"%.16728<else>":
+"%.16275<endif>":
+    j "%.16272<endif>"
+"%.16270<else>":
     li a0, 0
-"%.16730<endif>":
-    j "%.16727<endif>"
-"%.16725<else>":
+"%.16272<endif>":
+    j "%.16269<endif>"
+"%.16267<else>":
     li a0, 0
-"%.16727<endif>":
+"%.16269<endif>":
     ret
 
 .globl get_surface_id
@@ -8657,8 +8199,8 @@ neighbors_are_available:
     lw a1, 0(a1)
     mv t1, t0
     xor t1, a1, t1
-    beqz t1, "%.16737<else>"
-"%.16738<then>":
+    beqz t1, "%.16279<else>"
+"%.16280<then>":
     mv t1, a3
     mv a3, a0
     slli a3, a3, 2
@@ -8678,8 +8220,8 @@ neighbors_are_available:
     lw t1, 0(t1)
     mv a1, t0
     xor a1, t1, a1
-    beqz a1, "%.16740<else>"
-"%.16741<then>":
+    beqz a1, "%.16282<else>"
+"%.16283<then>":
     li a1, 1
     mv t1, a0
     sub a1, t1, a1
@@ -8701,8 +8243,8 @@ neighbors_are_available:
     lw t1, 0(t1)
     mv a3, t0
     xor a3, t1, a3
-    beqz a3, "%.16743<else>"
-"%.16744<then>":
+    beqz a3, "%.16285<else>"
+"%.16286<then>":
     li a3, 1
     add a3, a0, a3
     slli a3, a3, 2
@@ -8720,25 +8262,25 @@ neighbors_are_available:
     add a4, a0, a4
     lw a4, 0(a4)
     xor t0, a4, t0
-    beqz t0, "%.16746<else>"
-"%.16747<then>":
+    beqz t0, "%.16288<else>"
+"%.16289<then>":
     li a0, 1
-    j "%.16748<endif>"
-"%.16746<else>":
+    j "%.16290<endif>"
+"%.16288<else>":
     li a0, 0
-"%.16748<endif>":
-    j "%.16745<endif>"
-"%.16743<else>":
+"%.16290<endif>":
+    j "%.16287<endif>"
+"%.16285<else>":
     li a0, 0
-"%.16745<endif>":
-    j "%.16742<endif>"
-"%.16740<else>":
+"%.16287<endif>":
+    j "%.16284<endif>"
+"%.16282<else>":
     li a0, 0
-"%.16742<endif>":
-    j "%.16739<endif>"
-"%.16737<else>":
+"%.16284<endif>":
+    j "%.16281<endif>"
+"%.16279<else>":
     li a0, 0
-"%.16739<endif>":
+"%.16281<endif>":
     ret
 
 .globl try_exploit_neighbors
@@ -8774,9 +8316,9 @@ try_exploit_neighbors:
     li t2, 4
     mv t1, s5
     slt t2, t2, t1
-    not t2, t2
-    beqz t2, "%.16757<else>"
-"%.16758<then>":
+    seqz t2, t2
+    beqz t2, "%.16291<else>"
+"%.16292<then>":
     mv t2, t0
     mv t0, s5
     slli t0, t0, 2
@@ -8784,50 +8326,44 @@ try_exploit_neighbors:
     lw t0, 0(t0)
     li t2, 0
     slt t2, t0, t2
-    not t2, t2
-    beqz t2, "%.16760<else>"
-"%.16761<then>":
-"%.16749<prepare_to_call_neighbors_are_available>":
+    seqz t2, t2
+    beqz t2, "%.16294<else>"
+"%.16295<then>":
     mv a0, s0
     mv a1, s2
     mv a2, s3
     mv a3, s4
     mv a4, s5
     call neighbors_are_available
-"%.16750<end_of_call_neighbors_are_available>":
-    beqz a0, "%.16763<else>"
-"%.16764<then>":
+    beqz a0, "%.16297<else>"
+"%.16298<then>":
     mv a0, s6
     mv s6, s5
     slli s6, s6, 2
     add s6, a0, s6
     lw s6, 0(s6)
-    beqz s6, "%.16766<else>"
-"%.16767<then>":
-"%.16751<prepare_to_call_calc_diffuse_using_5points>":
+    beqz s6, "%.16300<else>"
+"%.16301<then>":
     mv a0, s0
     mv a1, s2
     mv a2, s3
     mv a3, s4
     mv a4, s5
     call calc_diffuse_using_5points
-"%.16752<end_of_call_calc_diffuse_using_5points>":
-"%.16766<else>":
-"%.16768<endif>":
+"%.16300<else>":
+"%.16302<endif>":
     li s6, 1
     mv a0, s5
     add s6, a0, s6
     mv a5, s6
-"%.16753<prepare_to_call_try_exploit_neighbors>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
     mv a3, s3
     mv a4, s4
     call try_exploit_neighbors
-"%.16754<end_of_call_try_exploit_neighbors>":
-    j "%.16765<endif>"
-"%.16763<else>":
+    j "%.16299<endif>"
+"%.16297<else>":
     mv a5, s3
     slli s0, s0, 2
     add s0, a5, s0
@@ -8839,15 +8375,13 @@ try_exploit_neighbors:
     lw a5, 20(s0)
     lw a6, 24(s0)
     lw a7, 28(s0)
-"%.16755<prepare_to_call_do_without_neighbors>":
     sw s5, -4(sp)
     call do_without_neighbors
-"%.16756<end_of_call_do_without_neighbors>":
-"%.16765<endif>":
-"%.16760<else>":
-"%.16762<endif>":
-"%.16757<else>":
-"%.16759<endif>":
+"%.16299<endif>":
+"%.16294<else>":
+"%.16296<endif>":
+"%.16291<else>":
+"%.16293<endif>":
     lw s6, 0(sp)
     lw s5, 4(sp)
     lw s4, 8(sp)
@@ -8877,24 +8411,18 @@ write_ppm_header:
     slli a0, a0, 2
     add a0, s0, a0
     lw a0, 0(a0)
-"%.16769<prepare_to_call_print_int>":
     call print_int
-"%.16770<end_of_call_print_int>":
     li a0, 32
     out a0
     li a0, 1
     slli a0, a0, 2
     add a0, s0, a0
     lw a0, 0(a0)
-"%.16771<prepare_to_call_print_int>":
     call print_int
-"%.16772<end_of_call_print_int>":
     li a0, 32
     out a0
     li a0, 255
-"%.16773<prepare_to_call_print_int>":
     call print_int
-"%.16774<end_of_call_print_int>":
     li a0, 10
     out a0
     lw s0, 8(sp)
@@ -8911,25 +8439,23 @@ write_rgb_element_int:
     li t1, 255
     mv t2, t0
     slt t1, t1, t2
-    beqz t1, "%.16777<else>"
-"%.16778<then>":
+    beqz t1, "%.16303<else>"
+"%.16304<then>":
     li a0, 255
-    j "%.16779<endif>"
-"%.16777<else>":
+    j "%.16305<endif>"
+"%.16303<else>":
     li t1, 0
     mv t2, t0
     slt t1, t2, t1
-    beqz t1, "%.16780<else>"
-"%.16781<then>":
+    beqz t1, "%.16306<else>"
+"%.16307<then>":
     li a0, 0
-    j "%.16782<endif>"
-"%.16780<else>":
+    j "%.16308<endif>"
+"%.16306<else>":
     mv a0, t0
-"%.16782<endif>":
-"%.16779<endif>":
-"%.16775<prepare_to_call_print_int>":
+"%.16308<endif>":
+"%.16305<endif>":
     call print_int
-"%.16776<end_of_call_print_int>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -8941,22 +8467,22 @@ write_rgb_element_char:
     li t1, 255
     mv t2, t0
     slt t1, t1, t2
-    beqz t1, "%.16783<else>"
-"%.16784<then>":
+    beqz t1, "%.16309<else>"
+"%.16310<then>":
     li t1, 255
-    j "%.16785<endif>"
-"%.16783<else>":
+    j "%.16311<endif>"
+"%.16309<else>":
     li t2, 0
     mv t3, t0
     slt t2, t3, t2
-    beqz t2, "%.16786<else>"
-"%.16787<then>":
+    beqz t2, "%.16312<else>"
+"%.16313<then>":
     li t1, 0
-    j "%.16788<endif>"
-"%.16786<else>":
+    j "%.16314<endif>"
+"%.16312<else>":
     mv t1, t0
-"%.16788<endif>":
-"%.16785<endif>":
+"%.16314<endif>":
+"%.16311<endif>":
     out t1
     ret
 
@@ -8968,8 +8494,8 @@ write_rgb:
 "write_rgb.func_begin":
     li t0, 3
     xor t0, a0, t0
-    beqz t0, "%.16795<else>"
-"%.16796<then>":
+    beqz t0, "%.16315<else>"
+"%.16316<then>":
     li t0, 0
     lw s0, 64(gp)
     slli t0, t0, 2
@@ -8979,25 +8505,23 @@ write_rgb:
     li a0, 255
     mv t1, t0
     slt a0, a0, t1
-    beqz a0, "%.16798<else>"
-"%.16799<then>":
+    beqz a0, "%.16318<else>"
+"%.16319<then>":
     li a0, 255
-    j "%.16800<endif>"
-"%.16798<else>":
+    j "%.16320<endif>"
+"%.16318<else>":
     li t1, 0
     mv t2, t0
     slt t1, t2, t1
-    beqz t1, "%.16801<else>"
-"%.16802<then>":
+    beqz t1, "%.16321<else>"
+"%.16322<then>":
     li a0, 0
-    j "%.16803<endif>"
-"%.16801<else>":
+    j "%.16323<endif>"
+"%.16321<else>":
     mv a0, t0
-"%.16803<endif>":
-"%.16800<endif>":
-"%.16789<prepare_to_call_print_int>":
+"%.16323<endif>":
+"%.16320<endif>":
     call print_int
-"%.16790<end_of_call_print_int>":
     li t1, 32
     out t1
     li t1, 1
@@ -9009,25 +8533,23 @@ write_rgb:
     li a0, 255
     mv t0, t1
     slt a0, a0, t0
-    beqz a0, "%.16804<else>"
-"%.16805<then>":
+    beqz a0, "%.16324<else>"
+"%.16325<then>":
     li a0, 255
-    j "%.16806<endif>"
-"%.16804<else>":
+    j "%.16326<endif>"
+"%.16324<else>":
     li t0, 0
     mv t2, t1
     slt t0, t2, t0
-    beqz t0, "%.16807<else>"
-"%.16808<then>":
+    beqz t0, "%.16327<else>"
+"%.16328<then>":
     li a0, 0
-    j "%.16809<endif>"
-"%.16807<else>":
+    j "%.16329<endif>"
+"%.16327<else>":
     mv a0, t1
-"%.16809<endif>":
-"%.16806<endif>":
-"%.16791<prepare_to_call_print_int>":
+"%.16329<endif>":
+"%.16326<endif>":
     call print_int
-"%.16792<end_of_call_print_int>":
     li t0, 32
     out t0
     li t0, 2
@@ -9038,29 +8560,27 @@ write_rgb:
     li s0, 255
     mv a0, t0
     slt s0, s0, a0
-    beqz s0, "%.16810<else>"
-"%.16811<then>":
+    beqz s0, "%.16330<else>"
+"%.16331<then>":
     li a0, 255
-    j "%.16812<endif>"
-"%.16810<else>":
+    j "%.16332<endif>"
+"%.16330<else>":
     li s0, 0
     mv t1, t0
     slt s0, t1, s0
-    beqz s0, "%.16813<else>"
-"%.16814<then>":
+    beqz s0, "%.16333<else>"
+"%.16334<then>":
     li a0, 0
-    j "%.16815<endif>"
-"%.16813<else>":
+    j "%.16335<endif>"
+"%.16333<else>":
     mv a0, t0
-"%.16815<endif>":
-"%.16812<endif>":
-"%.16793<prepare_to_call_print_int>":
+"%.16335<endif>":
+"%.16332<endif>":
     call print_int
-"%.16794<end_of_call_print_int>":
     li s0, 10
     out s0
-    j "%.16797<endif>"
-"%.16795<else>":
+    j "%.16317<endif>"
+"%.16315<else>":
     li s0, 0
     lw a0, 64(gp)
     slli s0, s0, 2
@@ -9070,22 +8590,22 @@ write_rgb:
     li t0, 255
     mv t1, s0
     slt t0, t0, t1
-    beqz t0, "%.16816<else>"
-"%.16817<then>":
+    beqz t0, "%.16336<else>"
+"%.16337<then>":
     li t0, 255
-    j "%.16818<endif>"
-"%.16816<else>":
+    j "%.16338<endif>"
+"%.16336<else>":
     li t1, 0
     mv t2, s0
     slt t1, t2, t1
-    beqz t1, "%.16819<else>"
-"%.16820<then>":
+    beqz t1, "%.16339<else>"
+"%.16340<then>":
     li t0, 0
-    j "%.16821<endif>"
-"%.16819<else>":
+    j "%.16341<endif>"
+"%.16339<else>":
     mv t0, s0
-"%.16821<endif>":
-"%.16818<endif>":
+"%.16341<endif>":
+"%.16338<endif>":
     out t0
     li t1, 1
     mv t0, a0
@@ -9096,22 +8616,22 @@ write_rgb:
     li t0, 255
     mv s0, t1
     slt t0, t0, s0
-    beqz t0, "%.16822<else>"
-"%.16823<then>":
+    beqz t0, "%.16342<else>"
+"%.16343<then>":
     li t0, 255
-    j "%.16824<endif>"
-"%.16822<else>":
+    j "%.16344<endif>"
+"%.16342<else>":
     li s0, 0
     mv t2, t1
     slt s0, t2, s0
-    beqz s0, "%.16825<else>"
-"%.16826<then>":
+    beqz s0, "%.16345<else>"
+"%.16346<then>":
     li t0, 0
-    j "%.16827<endif>"
-"%.16825<else>":
+    j "%.16347<endif>"
+"%.16345<else>":
     mv t0, t1
-"%.16827<endif>":
-"%.16824<endif>":
+"%.16347<endif>":
+"%.16344<endif>":
     out t0
     li s0, 2
     slli s0, s0, 2
@@ -9121,24 +8641,24 @@ write_rgb:
     li a0, 255
     mv t0, s0
     slt a0, a0, t0
-    beqz a0, "%.16828<else>"
-"%.16829<then>":
+    beqz a0, "%.16348<else>"
+"%.16349<then>":
     li a0, 255
-    j "%.16830<endif>"
-"%.16828<else>":
+    j "%.16350<endif>"
+"%.16348<else>":
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    beqz t0, "%.16831<else>"
-"%.16832<then>":
+    beqz t0, "%.16351<else>"
+"%.16352<then>":
     li a0, 0
-    j "%.16833<endif>"
-"%.16831<else>":
+    j "%.16353<endif>"
+"%.16351<else>":
     mv a0, s0
-"%.16833<endif>":
-"%.16830<endif>":
+"%.16353<endif>":
+"%.16350<endif>":
     out a0
-"%.16797<endif>":
+"%.16317<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -9172,9 +8692,9 @@ pretrace_diffuse_rays:
     li t0, 4
     mv t1, s8
     slt t0, t0, t1
-    not t0, t0
-    beqz t0, "%.16842<else>"
-"%.16843<then>":
+    seqz t0, t0
+    beqz t0, "%.16354<else>"
+"%.16355<then>":
     mv t0, s2
     mv t1, s8
     slli t1, t1, 2
@@ -9182,26 +8702,24 @@ pretrace_diffuse_rays:
     lw t1, 0(t1)
     li t0, 0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16845<else>"
-"%.16846<then>":
+    seqz t0, t0
+    beqz t0, "%.16357<else>"
+"%.16358<then>":
     mv t0, s3
     mv t1, s8
     slli t1, t1, 2
     add t1, t0, t1
     lw t1, 0(t1)
-    beqz t1, "%.16848<else>"
-"%.16849<then>":
+    beqz t1, "%.16360<else>"
+"%.16361<then>":
     li t1, 0
     mv t0, s6
     slli t1, t1, 2
     add t1, t0, t1
     lw s9, 0(t1)
     fmv.w.x fa0, zero
-"%.16834<prepare_to_call_vecfill>":
     lw a0, 60(gp)
     call vecfill
-"%.16835<end_of_call_vecfill>":
     lw t1, 104(gp)
     slli s9, s9, 2
     add s9, t1, s9
@@ -9216,23 +8734,18 @@ pretrace_diffuse_rays:
     slli s9, s9, 2
     add s9, t1, s9
     lw a2, 0(s9)
-"%.16836<prepare_to_call_trace_diffuse_rays>":
     call trace_diffuse_rays
-"%.16837<end_of_call_trace_diffuse_rays>":
     mv a2, s5
     mv a1, s8
     slli a1, a1, 2
     add a1, a2, a1
     lw a0, 0(a1)
-"%.16838<prepare_to_call_veccpy>":
     lw a1, 60(gp)
     call veccpy
-"%.16839<end_of_call_veccpy>":
-"%.16848<else>":
-"%.16850<endif>":
+"%.16360<else>":
+"%.16362<endif>":
     li a0, 1
     add a0, s8, a0
-"%.16840<prepare_to_call_pretrace_diffuse_rays>":
     sw a0, -4(sp)
     mv a7, s7
     mv a6, s6
@@ -9243,11 +8756,10 @@ pretrace_diffuse_rays:
     mv a1, s1
     mv a0, s0
     call pretrace_diffuse_rays
-"%.16841<end_of_call_pretrace_diffuse_rays>":
-"%.16845<else>":
-"%.16847<endif>":
-"%.16842<else>":
-"%.16844<endif>":
+"%.16357<else>":
+"%.16359<endif>":
+"%.16354<else>":
+"%.16356<endif>":
     lw s9, 0(sp)
     lw s8, 4(sp)
     lw s7, 8(sp)
@@ -9283,9 +8795,9 @@ pretrace_pixels:
     li t0, 0
     mv t1, s1
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16867<else>"
-"%.16868<then>":
+    seqz t0, t0
+    beqz t0, "%.16363<else>"
+"%.16364<then>":
     li t0, 0
     lw t1, 76(gp)
     slli t0, t0, 2
@@ -9341,20 +8853,14 @@ pretrace_pixels:
     add t0, t1, t0
     fsw ft1, 0(t0)
     li a1, 0
-"%.16851<prepare_to_call_vecunit_sgn>":
     mv a0, s3
     call vecunit_sgn
-"%.16852<end_of_call_vecunit_sgn>":
     fmv.w.x fa0, zero
-"%.16853<prepare_to_call_vecfill>":
     lw a0, 64(gp)
     call vecfill
-"%.16854<end_of_call_vecfill>":
-"%.16855<prepare_to_call_veccpy>":
     lw a0, 80(gp)
     lw a1, 12(gp)
     call veccpy
-"%.16856<end_of_call_veccpy>":
     li a0, 0
     lui a1, 260096 # 0x3f800
     fmv.w.x fa0, a1
@@ -9371,12 +8877,10 @@ pretrace_pixels:
     lw a1, 24(t0)
     lw t0, 28(t0)
     fmv.w.x fa1, zero
-"%.16857<prepare_to_call_trace_ray>":
     sw t0, -4(sp)
     sw a1, -8(sp)
     mv a1, s3
     call trace_ray
-"%.16858<end_of_call_trace_ray>":
     mv t0, s0
     mv a1, s1
     slli a1, a1, 2
@@ -9389,10 +8893,8 @@ pretrace_pixels:
     lw t0, 20(a1)
     lw t0, 24(a1)
     lw t0, 28(a1)
-"%.16859<prepare_to_call_veccpy>":
     lw a1, 64(gp)
     call veccpy
-"%.16860<end_of_call_veccpy>":
     mv t0, s0
     mv a0, s1
     slli a0, a0, 2
@@ -9422,19 +8924,14 @@ pretrace_pixels:
     lw a6, 24(t0)
     lw a7, 28(t0)
     li t0, 0
-"%.16861<prepare_to_call_pretrace_diffuse_rays>":
     sw t0, -4(sp)
     call pretrace_diffuse_rays
-"%.16862<end_of_call_pretrace_diffuse_rays>":
     li t0, 1
     sub t0, s1, t0
     mv s1, t0
     li a1, 1
-"%.16863<prepare_to_call_add_mod5>":
     mv a0, s2
     call add_mod5
-"%.16864<end_of_call_add_mod5>":
-"%.16865<prepare_to_call_pretrace_pixels>":
     fmv.s fa2, fs2
     fmv.s fa1, fs1
     fmv.s fa0, fs0
@@ -9442,9 +8939,8 @@ pretrace_pixels:
     mv a1, s1
     mv a0, s0
     call pretrace_pixels
-"%.16866<end_of_call_pretrace_pixels>":
-"%.16867<else>":
-"%.16869<endif>":
+"%.16363<else>":
+"%.16365<endif>":
     lw s3, 0(sp)
     lw s2, 16(sp)
     lw s1, 20(sp)
@@ -9521,9 +9017,7 @@ pretrace_line:
     li t1, 1
     sub t1, t0, t1
     mv a1, t1
-"%.16870<prepare_to_call_pretrace_pixels>":
     call pretrace_pixels
-"%.16871<end_of_call_pretrace_pixels>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -9552,8 +9046,8 @@ scan_pixel:
     lw t0, 0(t0)
     mv t1, s0
     slt t0, t1, t0
-    beqz t0, "%.16884<else>"
-"%.16885<then>":
+    beqz t0, "%.16366<else>"
+"%.16367<then>":
     mv t0, s3
     mv t1, s0
     slli t1, t1, 2
@@ -9566,29 +9060,23 @@ scan_pixel:
     lw t0, 20(t1)
     lw t0, 24(t1)
     lw t0, 28(t1)
-"%.16872<prepare_to_call_veccpy>":
     lw a0, 64(gp)
     call veccpy
-"%.16873<end_of_call_veccpy>":
-"%.16874<prepare_to_call_neighbors_exist>":
     mv a0, s0
     mv a1, s1
     mv a2, s4
     call neighbors_exist
-"%.16875<end_of_call_neighbors_exist>":
-    beqz a0, "%.16887<else>"
-"%.16888<then>":
+    beqz a0, "%.16369<else>"
+"%.16370<then>":
     li a5, 0
-"%.16876<prepare_to_call_try_exploit_neighbors>":
     mv a0, s0
     mv a1, s1
     mv a2, s2
     mv a3, s3
     mv a4, s4
     call try_exploit_neighbors
-"%.16877<end_of_call_try_exploit_neighbors>":
-    j "%.16889<endif>"
-"%.16887<else>":
+    j "%.16371<endif>"
+"%.16369<else>":
     mv a5, s3
     mv a0, s0
     slli a0, a0, 2
@@ -9602,29 +9090,23 @@ scan_pixel:
     lw a6, 24(a0)
     lw a7, 28(a0)
     li a0, 0
-"%.16878<prepare_to_call_do_without_neighbors>":
     sw a0, -4(sp)
     mv a0, a5
     mv a5, t0
     call do_without_neighbors
-"%.16879<end_of_call_do_without_neighbors>":
-"%.16889<endif>":
-"%.16880<prepare_to_call_write_rgb>":
+"%.16371<endif>":
     mv a0, s5
     call write_rgb
-"%.16881<end_of_call_write_rgb>":
     li a0, 1
     add a0, s0, a0
-"%.16882<prepare_to_call_scan_pixel>":
     mv a1, s1
     mv a2, s2
     mv a3, s3
     mv a4, s4
     mv a5, s5
     call scan_pixel
-"%.16883<end_of_call_scan_pixel>":
-"%.16884<else>":
-"%.16886<endif>":
+"%.16366<else>":
+"%.16368<endif>":
     lw s5, 4(sp)
     lw s4, 8(sp)
     lw s3, 12(sp)
@@ -9659,8 +9141,8 @@ scan_line:
     lw t0, 0(t0)
     mv t2, s0
     slt t0, t2, t0
-    beqz t0, "%.16898<else>"
-"%.16899<then>":
+    beqz t0, "%.16372<else>"
+"%.16373<then>":
     li t0, 1
     slli t0, t0, 2
     add t0, t1, t0
@@ -9669,37 +9151,30 @@ scan_line:
     sub t1, t0, t1
     mv t0, s0
     slt t1, t0, t1
-    beqz t1, "%.16901<else>"
-"%.16902<then>":
+    beqz t1, "%.16375<else>"
+"%.16376<then>":
     li t1, 1
     mv t0, s0
     add t1, t0, t1
     mv a1, t1
-"%.16890<prepare_to_call_pretrace_line>":
     mv a0, s3
     mv a2, s4
     call pretrace_line
-"%.16891<end_of_call_pretrace_line>":
-"%.16901<else>":
-"%.16903<endif>":
+"%.16375<else>":
+"%.16377<endif>":
     li a0, 0
-"%.16892<prepare_to_call_scan_pixel>":
     mv a1, s0
     mv a2, s1
     mv a3, s2
     mv a4, s3
     mv a5, s5
     call scan_pixel
-"%.16893<end_of_call_scan_pixel>":
     li a0, 1
     add a0, s0, a0
     mv s0, a0
     li a1, 2
-"%.16894<prepare_to_call_add_mod5>":
     mv a0, s4
     call add_mod5
-"%.16895<end_of_call_add_mod5>":
-"%.16896<prepare_to_call_scan_line>":
     mv a5, s5
     mv a4, a0
     mv a3, s1
@@ -9707,9 +9182,8 @@ scan_line:
     mv a1, s2
     mv a0, s0
     call scan_line
-"%.16897<end_of_call_scan_line>":
-"%.16898<else>":
-"%.16900<endif>":
+"%.16372<else>":
+"%.16374<endif>":
     lw s5, 4(sp)
     lw s4, 8(sp)
     lw s3, 12(sp)
@@ -9729,22 +9203,16 @@ create_float5x3array:
 "create_float5x3array.func_begin":
     li a0, 3
     fmv.w.x fa0, zero
-"%.16904<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16905<end_of_call_%.5644<create_array_1_0>>":
     li t0, 5
-"%.16906<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, a0
     mv a0, t0
     call "%.5641<create_array_0_0>"
     mv s0, a0
-"%.16907<end_of_call_%.5641<create_array_0_0>>":
     li s1, 1
     li a0, 3
     fmv.w.x fa0, zero
-"%.16908<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16909<end_of_call_%.5644<create_array_1_0>>":
     mv t0, s0
     slli s1, s1, 2
     add s1, t0, s1
@@ -9752,9 +9220,7 @@ create_float5x3array:
     li s1, 2
     li a0, 3
     fmv.w.x fa0, zero
-"%.16910<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16911<end_of_call_%.5644<create_array_1_0>>":
     mv t0, s0
     slli s1, s1, 2
     add s1, t0, s1
@@ -9762,9 +9228,7 @@ create_float5x3array:
     li s1, 3
     li a0, 3
     fmv.w.x fa0, zero
-"%.16912<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16913<end_of_call_%.5644<create_array_1_0>>":
     mv t0, s0
     slli s1, s1, 2
     add s1, t0, s1
@@ -9772,9 +9236,7 @@ create_float5x3array:
     li s1, 4
     li a0, 3
     fmv.w.x fa0, zero
-"%.16914<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
-"%.16915<end_of_call_%.5644<create_array_1_0>>":
     mv t0, s0
     slli s1, s1, 2
     add s1, t0, s1
@@ -9800,43 +9262,27 @@ create_pixel:
 "create_pixel.func_begin":
     li a0, 3
     fmv.w.x fa0, zero
-"%.16916<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s0, a0
-"%.16917<end_of_call_%.5644<create_array_1_0>>":
-"%.16918<prepare_to_call_create_float5x3array>":
     call create_float5x3array
     mv s1, a0
-"%.16919<end_of_call_create_float5x3array>":
     li a0, 5
     li a1, 0
-"%.16920<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     mv s2, a0
-"%.16921<end_of_call_%.5641<create_array_0_0>>":
     li a0, 5
     li a1, 0
-"%.16922<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     mv s3, a0
-"%.16923<end_of_call_%.5641<create_array_0_0>>":
-"%.16924<prepare_to_call_create_float5x3array>":
     call create_float5x3array
     mv s4, a0
-"%.16925<end_of_call_create_float5x3array>":
-"%.16926<prepare_to_call_create_float5x3array>":
     call create_float5x3array
     mv s5, a0
-"%.16927<end_of_call_create_float5x3array>":
     li a0, 1
     li a1, 0
-"%.16928<prepare_to_call_%.5641<create_array_0_0>>":
     call "%.5641<create_array_0_0>"
     mv s6, a0
-"%.16929<end_of_call_%.5641<create_array_0_0>>":
-"%.16930<prepare_to_call_create_float5x3array>":
     call create_float5x3array
-"%.16931<end_of_call_create_float5x3array>":
     mv a0, s0
     mv a1, s1
     sw s2, 40(sp)
@@ -9868,10 +9314,9 @@ init_line_elements:
     li t0, 0
     mv t1, s1
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16936<else>"
-"%.16937<then>":
-"%.16932<prepare_to_call_create_pixel>":
+    seqz t0, t0
+    beqz t0, "%.16378<else>"
+"%.16379<then>":
     call create_pixel
     lw t0, -24(sp)
     lw t1, -20(sp)
@@ -9879,7 +9324,6 @@ init_line_elements:
     lw t3, -12(sp)
     lw t4, -8(sp)
     lw t5, -4(sp)
-"%.16933<end_of_call_create_pixel>":
     mv t6, s0
     mv a2, s1
     slli a2, a2, 2
@@ -9895,14 +9339,12 @@ init_line_elements:
     li a2, 1
     sub a2, s1, a2
     mv a1, a2
-"%.16934<prepare_to_call_init_line_elements>":
     mv a0, s0
     call init_line_elements
-"%.16935<end_of_call_init_line_elements>":
-    j "%.16938<endif>"
-"%.16936<else>":
+    j "%.16380<endif>"
+"%.16378<else>":
     mv a0, s0
-"%.16938<endif>":
+"%.16380<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -9921,7 +9363,6 @@ create_pixelline:
     slli t0, t0, 2
     add t0, s0, t0
     lw s1, 0(t0)
-"%.16939<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -9929,14 +9370,11 @@ create_pixelline:
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw t0, -4(sp)
-"%.16940<end_of_call_create_pixel>":
-"%.16941<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw t0, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s1
     call "%.5656<create_array_0000000_1>"
-"%.16942<end_of_call_%.5656<create_array_0000000_1>>":
     li t0, 0
     slli t0, t0, 2
     add t0, s0, t0
@@ -9944,9 +9382,7 @@ create_pixelline:
     li s0, 2
     sub s0, t0, s0
     mv a1, s0
-"%.16943<prepare_to_call_init_line_elements>":
     call init_line_elements
-"%.16944<end_of_call_init_line_elements>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -9961,15 +9397,11 @@ tan:
     fsw fs1, 4(sp)
 "tan.func_begin":
     fmv.s fs0, fa0
-"%.16945<prepare_to_call_caml_sin>":
     fmv.s fa0, fs0
-    call caml_sin
+    call mincaml_sin
     fmv.s fs1, fa0
-"%.16946<end_of_call_caml_sin>":
-"%.16947<prepare_to_call_caml_cos>":
     fmv.s fa0, fs0
-    call caml_cos
-"%.16948<end_of_call_caml_cos>":
+    call mincaml_cos
     fdiv.s fa0, fs1, fa0
     flw fs1, 4(sp)
     flw fs0, 8(sp)
@@ -9995,19 +9427,13 @@ adjust_position:
     fmv.w.x ft0, t0
     fmv.s fa0, fs1
     fdiv.s fa0, ft0, fa0
-"%.16949<prepare_to_call_caml_atan>":
-    call caml_atan
-"%.16950<end_of_call_caml_atan>":
+    call mincaml_atan
     fmul.s fs0, fa0, fs0
-"%.16951<prepare_to_call_caml_sin>":
     fmv.s fa0, fs0
-    call caml_sin
+    call mincaml_sin
     fmv.s fs2, fa0
-"%.16952<end_of_call_caml_sin>":
-"%.16953<prepare_to_call_caml_cos>":
     fmv.s fa0, fs0
-    call caml_cos
-"%.16954<end_of_call_caml_cos>":
+    call mincaml_cos
     fdiv.s fa0, fs2, fa0
     fmul.s fs1, fa0, fs1
     fmv.s fa0, fs1
@@ -10040,9 +9466,9 @@ calc_dirvec:
     li t0, 5
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16973<else>"
-"%.16974<then>":
+    seqz t0, t0
+    beqz t0, "%.16381<else>"
+"%.16382<then>":
     fmul.s ft0, fa0, fa0
     fmul.s ft1, fa1, fa1
     fadd.s ft1, ft0, ft1
@@ -10072,12 +9498,10 @@ calc_dirvec:
     add t0, t1, t0
     lw a0, 0(t0)
     lw t0, 4(t0)
-"%.16955<prepare_to_call_vecset>":
     fmv.s fa0, fs2
     fmv.s fa1, fs3
     fmv.s fa2, fs4
     call vecset
-"%.16956<end_of_call_vecset>":
     li t0, 40
     mv a0, s2
     add t0, a0, t0
@@ -10087,11 +9511,9 @@ calc_dirvec:
     lw a0, 0(t0)
     lw t0, 4(t0)
     fneg.s fa2, fs3
-"%.16957<prepare_to_call_vecset>":
     fmv.s fa0, fs2
     fmv.s fa1, fs4
     call vecset
-"%.16958<end_of_call_vecset>":
     li t0, 80
     mv a0, s2
     add t0, a0, t0
@@ -10102,12 +9524,10 @@ calc_dirvec:
     lw t0, 4(t0)
     fneg.s fa2, fs2
     fneg.s ft0, fs3
-"%.16959<prepare_to_call_vecset>":
     fmv.s fa1, fa2
     fmv.s fa2, ft0
     fmv.s fa0, fs4
     call vecset
-"%.16960<end_of_call_vecset>":
     li t0, 1
     mv a0, s2
     add t0, a0, t0
@@ -10119,10 +9539,8 @@ calc_dirvec:
     fneg.s fa0, fs2
     fneg.s ft0, fs3
     fneg.s fa2, fs4
-"%.16961<prepare_to_call_vecset>":
     fmv.s fa1, ft0
     call vecset
-"%.16962<end_of_call_vecset>":
     li t0, 41
     mv a0, s2
     add t0, a0, t0
@@ -10133,11 +9551,9 @@ calc_dirvec:
     lw t0, 4(t0)
     fneg.s fa0, fs2
     fneg.s fa2, fs4
-"%.16963<prepare_to_call_vecset>":
     fmv.s fa1, fa2
     fmv.s fa2, fs3
     call vecset
-"%.16964<end_of_call_vecset>":
     li t0, 81
     mv a0, s2
     add t0, a0, t0
@@ -10146,28 +9562,21 @@ calc_dirvec:
     lw a0, 0(t0)
     lw t0, 4(t0)
     fneg.s fa0, fs4
-"%.16965<prepare_to_call_vecset>":
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call vecset
-"%.16966<end_of_call_vecset>":
-    j "%.16975<endif>"
-"%.16973<else>":
-"%.16967<prepare_to_call_adjust_position>":
+    j "%.16383<endif>"
+"%.16381<else>":
     fmv.s fa0, fa1
     fmv.s fa1, fs0
     call adjust_position
     fmv.s fs2, fa0
-"%.16968<end_of_call_adjust_position>":
     li t0, 1
     add t0, s0, t0
     mv s0, t0
-"%.16969<prepare_to_call_adjust_position>":
     fmv.s fa0, fs2
     fmv.s fa1, fs1
     call adjust_position
-"%.16970<end_of_call_adjust_position>":
-"%.16971<prepare_to_call_calc_dirvec>":
     mv a2, s2
     mv a1, s1
     fmv.s fa3, fs1
@@ -10176,8 +9585,7 @@ calc_dirvec:
     fmv.s fa0, fs2
     mv a0, s0
     call calc_dirvec
-"%.16972<end_of_call_calc_dirvec>":
-"%.16975<endif>":
+"%.16383<endif>":
     lw s3, 8(sp)
     lw s2, 24(sp)
     lw s1, 28(sp)
@@ -10207,9 +9615,9 @@ calc_dirvecs:
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16984<else>"
-"%.16985<then>":
+    seqz t0, t0
+    beqz t0, "%.16384<else>"
+"%.16385<then>":
     fcvt.s.w ft0, s0
     flw ft1, 136(gp)
     fmul.s ft1, ft0, ft1
@@ -10219,12 +9627,10 @@ calc_dirvecs:
     li a0, 0
     fmv.w.x fa0, zero
     fmv.w.x fa1, zero
-"%.16976<prepare_to_call_calc_dirvec>":
     fmv.s fa3, fs0
     mv a1, s1
     mv a2, s2
     call calc_dirvec
-"%.16977<end_of_call_calc_dirvec>":
     fcvt.s.w fa1, s0
     flw fa0, 136(gp)
     fmul.s fa0, fa1, fa0
@@ -10238,28 +9644,22 @@ calc_dirvecs:
     mv t1, s2
     add t0, t1, t0
     mv a2, t0
-"%.16978<prepare_to_call_calc_dirvec>":
     fmv.s fa3, fs0
     mv a1, s1
     call calc_dirvec
-"%.16979<end_of_call_calc_dirvec>":
     li a2, 1
     sub a2, s0, a2
     mv s0, a2
     li a1, 1
-"%.16980<prepare_to_call_add_mod5>":
     mv a0, s1
     call add_mod5
-"%.16981<end_of_call_add_mod5>":
-"%.16982<prepare_to_call_calc_dirvecs>":
     mv a2, s2
     mv a1, a0
     fmv.s fa0, fs0
     mv a0, s0
     call calc_dirvecs
-"%.16983<end_of_call_calc_dirvecs>":
-"%.16984<else>":
-"%.16986<endif>":
+"%.16384<else>":
+"%.16386<endif>":
     lw s2, 12(sp)
     lw s1, 16(sp)
     lw s0, 24(sp)
@@ -10282,9 +9682,9 @@ calc_dirvec_rows:
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.16993<else>"
-"%.16994<then>":
+    seqz t0, t0
+    beqz t0, "%.16387<else>"
+"%.16388<then>":
     fcvt.s.w ft0, s0
     flw ft1, 136(gp)
     fmul.s ft1, ft0, ft1
@@ -10292,29 +9692,23 @@ calc_dirvec_rows:
     fsub.s ft0, ft1, ft0
     fmv.s fa0, ft0
     li a0, 4
-"%.16987<prepare_to_call_calc_dirvecs>":
     mv a1, s1
     mv a2, s2
     call calc_dirvecs
-"%.16988<end_of_call_calc_dirvecs>":
     li a0, 1
     sub a0, s0, a0
     mv s0, a0
     li a1, 2
-"%.16989<prepare_to_call_add_mod5>":
     mv a0, s1
     call add_mod5
-"%.16990<end_of_call_add_mod5>":
     li a1, 4
     add a1, s2, a1
     mv a2, a1
-"%.16991<prepare_to_call_calc_dirvec_rows>":
     mv a1, a0
     mv a0, s0
     call calc_dirvec_rows
-"%.16992<end_of_call_calc_dirvec_rows>":
-"%.16993<else>":
-"%.16995<endif>":
+"%.16387<else>":
+"%.16389<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -10330,19 +9724,15 @@ create_dirvec:
 "create_dirvec.func_begin":
     li a0, 3
     fmv.w.x fa0, zero
-"%.16996<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s0, a0
-"%.16997<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     lw t0, 0(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.16998<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s0
     call "%.5641<create_array_0_0>"
-"%.16999<end_of_call_%.5641<create_array_0_0>>":
     mv a0, s0
     mv a1, a0
     lw s0, 8(sp)
@@ -10363,24 +9753,20 @@ create_dirvec_elements:
     li t0, 0
     mv t1, s1
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.17006<else>"
-"%.17007<then>":
+    seqz t0, t0
+    beqz t0, "%.16390<else>"
+"%.16391<then>":
     li a0, 3
     fmv.w.x fa0, zero
-"%.17000<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s2, a0
-"%.17001<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     lw t0, 0(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.17002<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s2
     call "%.5641<create_array_0_0>"
-"%.17003<end_of_call_%.5641<create_array_0_0>>":
     mv t0, s0
     mv t1, s1
     slli t1, t1, 2
@@ -10390,12 +9776,10 @@ create_dirvec_elements:
     li t1, 1
     sub t1, s1, t1
     mv a1, t1
-"%.17004<prepare_to_call_create_dirvec_elements>":
     mv a0, s0
     call create_dirvec_elements
-"%.17005<end_of_call_create_dirvec_elements>":
-"%.17006<else>":
-"%.17008<endif>":
+"%.16390<else>":
+"%.16392<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -10415,31 +9799,25 @@ create_dirvecs:
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.17019<else>"
-"%.17020<then>":
+    seqz t0, t0
+    beqz t0, "%.16393<else>"
+"%.16394<then>":
     li s1, 120
     li a0, 3
     fmv.w.x fa0, zero
-"%.17009<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s2, a0
-"%.17010<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     lw t0, 0(gp)
     slli a0, a0, 2
     add a0, t0, a0
     lw a0, 0(a0)
-"%.17011<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s2
     call "%.5641<create_array_0_0>"
-"%.17012<end_of_call_%.5641<create_array_0_0>>":
-"%.17013<prepare_to_call_%.5650<create_array_00_0>>":
     mv a2, a0
     mv a1, s2
     mv a0, s1
     call "%.5650<create_array_00_0>"
-"%.17014<end_of_call_%.5650<create_array_00_0>>":
     lw s2, 104(gp)
     mv s1, s0
     slli s1, s1, 2
@@ -10451,17 +9829,13 @@ create_dirvecs:
     add s2, s1, s2
     lw a0, 0(s2)
     li a1, 118
-"%.17015<prepare_to_call_create_dirvec_elements>":
     call create_dirvec_elements
-"%.17016<end_of_call_create_dirvec_elements>":
     li a1, 1
     sub a1, s0, a1
     mv a0, a1
-"%.17017<prepare_to_call_create_dirvecs>":
     call create_dirvecs
-"%.17018<end_of_call_create_dirvecs>":
-"%.17019<else>":
-"%.17021<endif>":
+"%.16393<else>":
+"%.16395<endif>":
     lw s2, 0(sp)
     lw s1, 4(sp)
     lw s0, 8(sp)
@@ -10481,9 +9855,9 @@ init_dirvec_constants:
     li t0, 0
     mv t1, s1
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.17026<else>"
-"%.17027<then>":
+    seqz t0, t0
+    beqz t0, "%.16396<else>"
+"%.16397<then>":
     mv t0, s0
     mv t1, s1
     slli t1, t1, 2
@@ -10498,18 +9872,14 @@ init_dirvec_constants:
     li t0, 1
     sub t0, t1, t0
     mv a2, t0
-"%.17022<prepare_to_call_iter_setup_dirvec_constants>":
     call iter_setup_dirvec_constants
-"%.17023<end_of_call_iter_setup_dirvec_constants>":
     li a2, 1
     sub a2, s1, a2
     mv a1, a2
-"%.17024<prepare_to_call_init_dirvec_constants>":
     mv a0, s0
     call init_dirvec_constants
-"%.17025<end_of_call_init_dirvec_constants>":
-"%.17026<else>":
-"%.17028<endif>":
+"%.16396<else>":
+"%.16398<endif>":
     lw s1, 4(sp)
     lw s0, 8(sp)
     lw ra, 12(sp)
@@ -10526,26 +9896,22 @@ init_vecset_constants:
     li t0, 0
     mv t1, s0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.17033<else>"
-"%.17034<then>":
+    seqz t0, t0
+    beqz t0, "%.16399<else>"
+"%.16400<then>":
     lw t0, 104(gp)
     mv t1, s0
     slli t1, t1, 2
     add t1, t0, t1
     lw a0, 0(t1)
     li a1, 119
-"%.17029<prepare_to_call_init_dirvec_constants>":
     call init_dirvec_constants
-"%.17030<end_of_call_init_dirvec_constants>":
     li a1, 1
     sub a1, s0, a1
     mv a0, a1
-"%.17031<prepare_to_call_init_vecset_constants>":
     call init_vecset_constants
-"%.17032<end_of_call_init_vecset_constants>":
-"%.17033<else>":
-"%.17035<endif>":
+"%.16399<else>":
+"%.16401<endif>":
     lw s0, 8(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -10557,19 +9923,13 @@ init_dirvecs:
     sw ra, 12(sp)
 "init_dirvecs.func_begin":
     li a0, 4
-"%.17036<prepare_to_call_create_dirvecs>":
     call create_dirvecs
-"%.17037<end_of_call_create_dirvecs>":
     li a0, 9
     li a1, 0
     li a2, 0
-"%.17038<prepare_to_call_calc_dirvec_rows>":
     call calc_dirvec_rows
-"%.17039<end_of_call_calc_dirvec_rows>":
     li a0, 4
-"%.17040<prepare_to_call_init_vecset_constants>":
     call init_vecset_constants
-"%.17041<end_of_call_init_vecset_constants>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -10596,27 +9956,21 @@ add_reflection:
     fmv.s fs3, fa3
     li a0, 3
     fmv.w.x fa0, zero
-"%.17042<prepare_to_call_%.5644<create_array_1_0>>":
     call "%.5644<create_array_1_0>"
     mv s2, a0
-"%.17043<end_of_call_%.5644<create_array_1_0>>":
     li a0, 0
     lw s3, 0(gp)
     slli a0, a0, 2
     add a0, s3, a0
     lw a0, 0(a0)
-"%.17044<prepare_to_call_%.5641<create_array_0_0>>":
     mv a1, s2
     call "%.5641<create_array_0_0>"
     mv s4, a0
-"%.17045<end_of_call_%.5641<create_array_0_0>>":
-"%.17046<prepare_to_call_vecset>":
     mv a0, s2
     fmv.s fa0, fs1
     fmv.s fa1, fs2
     fmv.s fa2, fs3
     call vecset
-"%.17047<end_of_call_vecset>":
     li a0, 0
     slli a0, a0, 2
     add a0, s3, a0
@@ -10624,11 +9978,9 @@ add_reflection:
     li s3, 1
     sub s3, a0, s3
     mv a2, s3
-"%.17048<prepare_to_call_iter_setup_dirvec_constants>":
     mv a0, s2
     mv a1, s4
     call iter_setup_dirvec_constants
-"%.17049<end_of_call_iter_setup_dirvec_constants>":
     lw a2, 116(gp)
     slli s0, s0, 2
     add s0, a2, s0
@@ -10713,13 +10065,11 @@ setup_rect_reflection:
     slli a6, a6, 2
     add a6, a7, a6
     flw fa1, 0(a6)
-"%.17050<prepare_to_call_add_reflection>":
     mv a0, s2
     fmv.s fa0, fs0
     fmv.s fa2, fs2
     fmv.s fa3, fs3
     call add_reflection
-"%.17051<end_of_call_add_reflection>":
     li a6, 1
     mv a1, s2
     add a6, a1, a6
@@ -10733,12 +10083,10 @@ setup_rect_reflection:
     slli a6, a6, 2
     add a6, a7, a6
     flw fa2, 0(a6)
-"%.17052<prepare_to_call_add_reflection>":
     fmv.s fa0, fs0
     fmv.s fa1, fs1
     fmv.s fa3, fs3
     call add_reflection
-"%.17053<end_of_call_add_reflection>":
     li a6, 2
     mv a1, s2
     add a6, a1, a6
@@ -10750,12 +10098,10 @@ setup_rect_reflection:
     slli a6, a6, 2
     add a6, s3, a6
     flw fa3, 0(a6)
-"%.17054<prepare_to_call_add_reflection>":
     fmv.s fa0, fs0
     fmv.s fa1, fs1
     fmv.s fa2, fs2
     call add_reflection
-"%.17055<end_of_call_add_reflection>":
     li a6, 0
     li a1, 3
     add a1, s2, a1
@@ -10887,10 +10233,8 @@ setup_surface_reflection:
     flw ft0, 0(a0)
     fsub.s ft0, ft1, ft0
     fmv.s fa3, ft0
-"%.17056<prepare_to_call_add_reflection>":
     mv a0, s1
     call add_reflection
-"%.17057<end_of_call_add_reflection>":
     li a0, 0
     li a1, 1
     add a1, s1, a1
@@ -10911,9 +10255,9 @@ setup_reflections:
     li t0, 0
     mv t1, a0
     slt t0, t1, t0
-    not t0, t0
-    beqz t0, "%.17062<else>"
-"%.17063<then>":
+    seqz t0, t0
+    beqz t0, "%.16402<else>"
+"%.16403<then>":
     lw t0, 4(gp)
     mv t1, a0
     slli t1, t1, 2
@@ -10932,8 +10276,8 @@ setup_reflections:
     li t4, 2
     mv t5, a3
     xor t4, t5, t4
-    beqz t4, "%.17065<else>"
-"%.17066<then>":
+    beqz t4, "%.16405<else>"
+"%.16406<then>":
     li t4, 0
     mv t5, t0
     slli t4, t4, 2
@@ -10942,43 +10286,39 @@ setup_reflections:
     lui t4, 260096 # 0x3f800
     fmv.w.x ft1, t4
     flt.s t4, ft0, ft1
-    beqz t4, "%.17068<else>"
-"%.17069<then>":
+    beqz t4, "%.16408<else>"
+"%.16409<then>":
     li t4, 1
     mv t5, a2
     xor t4, t5, t4
-    beqz t4, "%.17071<else>"
-"%.17072<then>":
-"%.17058<prepare_to_call_setup_rect_reflection>":
+    beqz t4, "%.16411<else>"
+"%.16412<then>":
     sw t0, -16(sp)
     sw t2, -12(sp)
     sw t3, -8(sp)
     sw t1, -4(sp)
     call setup_rect_reflection
-"%.17059<end_of_call_setup_rect_reflection>":
-    j "%.17073<endif>"
-"%.17071<else>":
+    j "%.16413<endif>"
+"%.16411<else>":
     li t4, 2
     mv t5, a2
     xor t4, t5, t4
-    beqz t4, "%.17074<else>"
-"%.17075<then>":
-"%.17060<prepare_to_call_setup_surface_reflection>":
+    beqz t4, "%.16414<else>"
+"%.16415<then>":
     sw t0, -16(sp)
     sw t2, -12(sp)
     sw t3, -8(sp)
     sw t1, -4(sp)
     call setup_surface_reflection
-"%.17061<end_of_call_setup_surface_reflection>":
-"%.17074<else>":
-"%.17076<endif>":
-"%.17073<endif>":
-"%.17068<else>":
-"%.17070<endif>":
-"%.17065<else>":
-"%.17067<endif>":
-"%.17062<else>":
-"%.17064<endif>":
+"%.16414<else>":
+"%.16416<endif>":
+"%.16413<endif>":
+"%.16408<else>":
+"%.16410<endif>":
+"%.16405<else>":
+"%.16407<endif>":
+"%.16402<else>":
+"%.16404<endif>":
     lw ra, 12(sp)
     addi sp, sp, 16
     ret
@@ -11031,7 +10371,6 @@ rt:
     slli t0, t0, 2
     add t0, a0, t0
     lw s2, 0(t0)
-"%.17077<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -11039,14 +10378,11 @@ rt:
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw t0, -4(sp)
-"%.17078<end_of_call_create_pixel>":
-"%.17079<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw t0, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s2
     call "%.5656<create_array_0000000_1>"
-"%.17080<end_of_call_%.5656<create_array_0000000_1>>":
     li t0, 0
     mv a7, s1
     slli t0, t0, 2
@@ -11055,16 +10391,13 @@ rt:
     li a7, 2
     sub a7, t0, a7
     mv a1, a7
-"%.17081<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s2, a0
-"%.17082<end_of_call_init_line_elements>":
     li a1, 0
     mv a0, s1
     slli a1, a1, 2
     add a1, a0, a1
     lw s3, 0(a1)
-"%.17083<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -11072,14 +10405,11 @@ rt:
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw t0, -4(sp)
-"%.17084<end_of_call_create_pixel>":
-"%.17085<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw t0, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s3
     call "%.5656<create_array_0000000_1>"
-"%.17086<end_of_call_%.5656<create_array_0000000_1>>":
     li t0, 0
     mv a7, s1
     slli t0, t0, 2
@@ -11088,16 +10418,13 @@ rt:
     li a7, 2
     sub a7, t0, a7
     mv a1, a7
-"%.17087<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s3, a0
-"%.17088<end_of_call_init_line_elements>":
     li a1, 0
     mv a0, s1
     slli a1, a1, 2
     add a1, a0, a1
     lw s4, 0(a1)
-"%.17089<prepare_to_call_create_pixel>":
     call create_pixel
     lw a3, -24(sp)
     lw a4, -20(sp)
@@ -11105,14 +10432,11 @@ rt:
     lw a6, -12(sp)
     lw a7, -8(sp)
     lw t0, -4(sp)
-"%.17090<end_of_call_create_pixel>":
-"%.17091<prepare_to_call_%.5656<create_array_0000000_1>>":
     sw t0, -4(sp)
     mv a2, a1
     mv a1, a0
     mv a0, s4
     call "%.5656<create_array_0000000_1>"
-"%.17092<end_of_call_%.5656<create_array_0000000_1>>":
     li t0, 0
     slli t0, t0, 2
     add t0, s1, t0
@@ -11120,25 +10444,15 @@ rt:
     li s1, 2
     sub s1, t0, s1
     mv a1, s1
-"%.17093<prepare_to_call_init_line_elements>":
     call init_line_elements
     mv s1, a0
-"%.17094<end_of_call_init_line_elements>":
-"%.17095<prepare_to_call_read_parameter>":
     call read_parameter
-"%.17096<end_of_call_read_parameter>":
-"%.17097<prepare_to_call_write_ppm_header>":
     mv a0, s0
     call write_ppm_header
-"%.17098<end_of_call_write_ppm_header>":
-"%.17099<prepare_to_call_init_dirvecs>":
     call init_dirvecs
-"%.17100<end_of_call_init_dirvecs>":
-"%.17101<prepare_to_call_veccpy>":
     lw a0, 108(gp)
     lw a1, 16(gp)
     call veccpy
-"%.17102<end_of_call_veccpy>":
     li a1, 0
     lw s4, 0(gp)
     slli a1, a1, 2
@@ -11147,11 +10461,9 @@ rt:
     li a0, 1
     sub a0, a1, a0
     mv a2, a0
-"%.17103<prepare_to_call_iter_setup_dirvec_constants>":
     lw a0, 108(gp)
     lw a1, 112(gp)
     call iter_setup_dirvec_constants
-"%.17104<end_of_call_iter_setup_dirvec_constants>":
     li a2, 0
     slli a2, a2, 2
     add a2, s4, a2
@@ -11159,24 +10471,18 @@ rt:
     li s4, 1
     sub s4, a2, s4
     mv a0, s4
-"%.17105<prepare_to_call_setup_reflections>":
     call setup_reflections
-"%.17106<end_of_call_setup_reflections>":
     li a1, 0
     li a2, 0
-"%.17107<prepare_to_call_pretrace_line>":
     mv a0, s3
     call pretrace_line
-"%.17108<end_of_call_pretrace_line>":
     li a0, 0
     li a4, 2
-"%.17109<prepare_to_call_scan_line>":
     mv a1, s2
     mv a2, s3
     mv a3, s1
     mv a5, s0
     call scan_line
-"%.17110<end_of_call_scan_line>":
     lw s4, 8(sp)
     lw s3, 12(sp)
     lw s2, 16(sp)
@@ -11191,14 +10497,14 @@ rt:
 "%.5641<create_array_0_0>.func_begin":
     mv t0, tp
 "%.5643<loop>":
-    beqz a0, "%.17111<else>"
-"%.17112<then>":
+    beqz a0, "%.16417<else>"
+"%.16418<then>":
     sw a1, 0(tp)
     addi tp, tp, 4
     addi a0, a0, -1
     j "%.5643<loop>"
-"%.17111<else>":
-"%.17113<endif>":
+"%.16417<else>":
+"%.16419<endif>":
     mv a0, t0
     ret
 
@@ -11207,14 +10513,14 @@ rt:
 "%.5644<create_array_1_0>.func_begin":
     mv t0, tp
 "%.5646<loop>":
-    beqz a0, "%.17114<else>"
-"%.17115<then>":
+    beqz a0, "%.16420<else>"
+"%.16421<then>":
     fsw fa0, 0(tp)
     addi tp, tp, 4
     addi a0, a0, -1
     j "%.5646<loop>"
-"%.17114<else>":
-"%.17116<endif>":
+"%.16420<else>":
+"%.16422<endif>":
     mv a0, t0
     ret
 
@@ -11228,8 +10534,8 @@ rt:
     lw t3, 8(sp)
     lw t4, 12(sp)
 "%.5649<loop>":
-    beqz a0, "%.17117<else>"
-"%.17118<then>":
+    beqz a0, "%.16423<else>"
+"%.16424<then>":
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -11244,8 +10550,8 @@ rt:
     addi tp, tp, 44
     addi a0, a0, -1
     j "%.5649<loop>"
-"%.17117<else>":
-"%.17119<endif>":
+"%.16423<else>":
+"%.16425<endif>":
     mv a0, t0
     addi sp, sp, 16
     ret
@@ -11255,15 +10561,15 @@ rt:
 "%.5650<create_array_00_0>.func_begin":
     mv t0, tp
 "%.5652<loop>":
-    beqz a0, "%.17120<else>"
-"%.17121<then>":
+    beqz a0, "%.16426<else>"
+"%.16427<then>":
     sw a1, 0(tp)
     sw a2, 4(tp)
     addi tp, tp, 8
     addi a0, a0, -1
     j "%.5652<loop>"
-"%.17120<else>":
-"%.17122<endif>":
+"%.16426<else>":
+"%.16428<endif>":
     mv a0, t0
     ret
 
@@ -11272,8 +10578,8 @@ rt:
 "%.5653<create_array_0001_0>.func_begin":
     mv t0, tp
 "%.5655<loop>":
-    beqz a0, "%.17123<else>"
-"%.17124<then>":
+    beqz a0, "%.16429<else>"
+"%.16430<then>":
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -11281,8 +10587,8 @@ rt:
     addi tp, tp, 16
     addi a0, a0, -1
     j "%.5655<loop>"
-"%.17123<else>":
-"%.17125<endif>":
+"%.16429<else>":
+"%.16431<endif>":
     mv a0, t0
     ret
 
@@ -11293,8 +10599,8 @@ rt:
     mv t0, tp
     lw t1, 12(sp)
 "%.5658<loop>":
-    beqz a0, "%.17126<else>"
-"%.17127<then>":
+    beqz a0, "%.16432<else>"
+"%.16433<then>":
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -11306,8 +10612,8 @@ rt:
     addi tp, tp, 32
     addi a0, a0, -1
     j "%.5658<loop>"
-"%.17126<else>":
-"%.17128<endif>":
+"%.16432<else>":
+"%.16434<endif>":
     mv a0, t0
     addi sp, sp, 16
     ret
@@ -11372,631 +10678,49 @@ reflections:
     .zero 4
 n_reflections:
     .zero 4
-"%.7845<.LC0>": 
-	.float 0.01745329238474369
-"%.7894<.LC1>": 
-	.float 200.0
-"%.8225<.LC2>": 
-	.float 2.0
-"%.11164<.LC3>": 
-.float 0.20000000298023224
-"%.11170<.LC4>": 
-.float 0.009999999776482582
-"%.11327<.LC5>": 
-.float 0.10000000149011612
-"%.11592<.LC6>": 
-.float 1000000000.0
-"%.11610<.LC7>": 
-.float 100000000.0
-"%.12292<.LC8>": 
-.float 0.05000000074505806
-"%.12296<.LC9>": 
-.float 20.0
-"%.12303<.LC10>": 
-.float 10.0
-"%.12330<.LC11>": 
-.float 255.0
-"%.12342<.LC12>": 
-.float 0.25
-"%.12398<.LC13>": 
-.float 3.1415927410125732
-"%.12462<.LC14>": 
-.float 9.999999747378752e-05
-"%.12466<.LC15>": 
-.float 15.0
-"%.12470<.LC16>": 
-.float 30.0
-"%.12513<.LC17>": 
-.float 0.15000000596046448
-"%.12532<.LC18>": 
-.float 0.30000001192092896
-"%.12856<.LC19>": 
-.float 256.0
-"%.13334<.LC20>": 
-.float 150.0
-"%.14906<.LC21>": 
-.float 0.8999999761581421
-"%.15578<.LC22>": 
-.float 128.0
-.globl caml_floor
-caml_floor:
-        fmv.x.s a4,fa0
-        li      a2,22
-        srai    a5,a4,23
-        andi    a5,a5,255
-        addi    a5,a5,-127
-        mv      a3,a4
-        bgt     a5,a2,.L9
-        blt     a5,zero,.L19
-        lui     a1,0x00800
-        addi    a2,a1,-1
-        sra     a2,a2,a5
-        and     a0,a2,a4
-        beq     a0,zero,.L12
-        bge     a4,zero,.L13
-        sra     a1,a1,a5
-        add     a3,a4,a1
-.L13:
-        not     a2,a2
-        and     a4,a2,a3
-.L12:
-        fmv.s.x fa0,a4
-        ret
-.L19:
-        mv      a4,zero
-        bge     a3,zero,.L12
-        slli    a3,a3,1
-        beq     a3,zero,.L20
-        lui     a4,0xbf800
-        j       .L12
-.L9:
-        li      a3,128
-        bne     a5,a3,.L12
-        fadd.s  fa5,fa0,fa0
-        fmv.x.s a4,fa5
-        j       .L12
-.L20:
-        li      a4,-1
-        srli    a4,a4,1
-        j       .L12
-
-.globl print_int
-print_int:
-	mv a3, ra
-    bgt a0, zero, print_positive
-    beq a0, zero, print_zero
-    li a1, 45
-    out a1
-    lui a2, 0x80000
-    beq a0, a2, print_INT_MIN
-    neg a0, a0
-print_positive:
-    call divmod_10
-    beq a1, zero, print_positive_end_1
-    fmv.w.x ft1, a0
-
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_2
-    fmv.w.x ft2, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_3
-    fmv.w.x ft3, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_4
-    fmv.w.x ft4, a0
-
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_5
-    fmv.w.x ft5, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_6
-    fmv.w.x ft6, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_7
-    fmv.w.x ft7, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_8
-    fmv.w.x ft8, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_9
-    addi a1, a1, 48
-    out a1
-print_positive_end_9:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft8
-print_positive_end_8:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft7
-print_positive_end_7:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft6
-print_positive_end_6:
-    addi a0, a0, 48
-    out a0
-    
-    fmv.x.w a0, ft5
-print_positive_end_5:
-    addi a0, a0, 48
-    out a0
-    
-    fmv.x.w a0, ft4
-print_positive_end_4:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft3
-print_positive_end_3:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft2
-print_positive_end_2:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft1
-print_positive_end_1:
-    addi a0, a0, 48
-    out a0
-	jr a3
-
-print_zero:
-    li a0, 48
-    out a0
-	jr a3
-
-print_INT_MIN:
-    li a0, 50 # '2'
-    out a0
-    li a0, 49 # '1'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 55 # '7'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
-    li a0, 51 # '3'
-    out a0
-    li a0, 54 # '6'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
-	jr a3
-    
-divmod_10: # a0: dividend; 0 <= a0 <= 2^31 - 1
-    li t0, 10
-    li t2, 5
-    mv t1, zero
-divmod_10_loop:
-    bge t0, a0, divmod_10_loop_end
-    slli t0, t0, 1
-    slli t2, t2, 1
-    addi t1, t1, 1
-    ble t0, zero, overflow
-    j divmod_10_loop
-overflow:
-    addi t1, t1, -1
-    mv t0, t2
-divmod_10_loop_end:
-    mv a1, zero
-divmod_10_loop2:
-    blt t1, zero, divmod_10_loop2_end
-    blt a0, t0, divmod_10_else
-    sub a0, a0, t0
-    srli t0, t0, 1
-    slli a1, a1, 1
-    ori a1, a1, 1
-    addi t1, t1, -1
-    j divmod_10_loop2
-divmod_10_else:
-    srli t0, t0, 1
-    slli a1, a1, 1
-    addi t1, t1, -1
-    j divmod_10_loop2
-divmod_10_loop2_end:
-    # a0: remainder; a1: quotient
-    ret
-
-	.globl	caml_atan
-	.type	caml_atan,@function
-caml_atan:                           # @caml_atan
-# %bb.0:
-	fabs.s	fa5, fa0
-	fmv.x.w	a1, fa5
-	lui	a0, 257536
-	addi	a0, a0, -1
-	blt	a0, a1, .LBB0_2
-# %bb.1:
-	lui	a0, %hi(.LCPI0_0)
-	flw	fa5, %lo(.LCPI0_0)(a0)
-	lui	a0, %hi(.LCPI0_1)
-	flw	fa4, %lo(.LCPI0_1)(a0)
-	lui	a0, %hi(.LCPI0_2)
-	flw	fa3, %lo(.LCPI0_2)(a0)
-	fmul.s	fa2, fa0, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	fmadd.s	fa5, fa2, fa5, fa3
-	lui	a0, %hi(.LCPI0_3)
-	flw	fa4, %lo(.LCPI0_3)(a0)
-	lui	a0, %hi(.LCPI0_4)
-	flw	fa3, %lo(.LCPI0_4)(a0)
-	lui	a0, %hi(.LCPI0_5)
-	flw	fa1, %lo(.LCPI0_5)(a0)
-	fmadd.s	fa5, fa2, fa5, fa4
-	fmadd.s	fa5, fa2, fa5, fa3
-	fmul.s	fa4, fa2, fa0
-	fmadd.s	fa5, fa2, fa5, fa1
-	fmadd.s	fa0, fa4, fa5, fa0
-	ret
-.LBB0_2:
-	lui	a0, 262592
-	addi	a2, a0, -1
-	fmv.x.w	a0, fa0
-	bltu	a2, a1, .LBB0_5
-# %bb.3:
-	lui	a1, 784384
-	fmv.w.x	fa4, a1
-	fadd.s	fa4, fa5, fa4
-	lui	a1, 260096
-	fmv.w.x	fa3, a1
-	fadd.s	fa5, fa5, fa3
-	lui	a1, %hi(.LCPI0_0)
-	flw	fa3, %lo(.LCPI0_0)(a1)
-	lui	a1, %hi(.LCPI0_1)
-	flw	fa2, %lo(.LCPI0_1)(a1)
-	lui	a1, %hi(.LCPI0_2)
-	flw	fa1, %lo(.LCPI0_2)(a1)
-	fdiv.s	fa5, fa4, fa5
-	fmul.s	fa4, fa5, fa5
-	fmadd.s	fa3, fa4, fa2, fa3
-	fmadd.s	fa3, fa4, fa3, fa1
-	lui	a1, %hi(.LCPI0_3)
-	flw	fa2, %lo(.LCPI0_3)(a1)
-	lui	a1, %hi(.LCPI0_4)
-	flw	fa1, %lo(.LCPI0_4)(a1)
-	lui	a1, %hi(.LCPI0_5)
-	flw	fa0, %lo(.LCPI0_5)(a1)
-	fmadd.s	fa3, fa4, fa3, fa2
-	fmadd.s	fa3, fa4, fa3, fa1
-	fmul.s	fa2, fa5, fa4
-	fmadd.s	fa4, fa4, fa3, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	bltz	a0, .LBB0_7
-# %bb.4:
-	lui	a0, %hi(.LCPI0_9)
-	flw	fa4, %lo(.LCPI0_9)(a0)
-	fadd.s	fa0, fa5, fa4
-	ret
-.LBB0_5:
-	lui	a1, 260096
-	fmv.w.x	fa4, a1
-	lui	a1, %hi(.LCPI0_0)
-	flw	fa3, %lo(.LCPI0_0)(a1)
-	lui	a1, %hi(.LCPI0_1)
-	flw	fa2, %lo(.LCPI0_1)(a1)
-	lui	a1, %hi(.LCPI0_2)
-	flw	fa1, %lo(.LCPI0_2)(a1)
-	fdiv.s	fa5, fa4, fa5
-	fmul.s	fa4, fa5, fa5
-	fmadd.s	fa3, fa4, fa2, fa3
-	fmadd.s	fa3, fa4, fa3, fa1
-	lui	a1, %hi(.LCPI0_3)
-	flw	fa2, %lo(.LCPI0_3)(a1)
-	lui	a1, %hi(.LCPI0_4)
-	flw	fa1, %lo(.LCPI0_4)(a1)
-	lui	a1, %hi(.LCPI0_5)
-	flw	fa0, %lo(.LCPI0_5)(a1)
-	fmadd.s	fa3, fa4, fa3, fa2
-	fmadd.s	fa3, fa4, fa3, fa1
-	fmul.s	fa2, fa5, fa4
-	fmadd.s	fa4, fa4, fa3, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	bltz	a0, .LBB0_8
-# %bb.6:
-	lui	a0, %hi(.LCPI0_7)
-	flw	fa4, %lo(.LCPI0_7)(a0)
-	fsub.s	fa0, fa4, fa5
-	ret
-.LBB0_7:
-	lui	a0, %hi(.LCPI0_8)
-	flw	fa4, %lo(.LCPI0_8)(a0)
-	fsub.s	fa0, fa4, fa5
-	ret
-.LBB0_8:
-	lui	a0, %hi(.LCPI0_6)
-	flw	fa4, %lo(.LCPI0_6)(a0)
-	fadd.s	fa0, fa5, fa4
-	ret
-.Lfunc_end0:
-	.size	caml_atan, .Lfunc_end0-caml_atan
-                                        # -- End function
-	.globl	caml_sin
-	.type	caml_sin,@function
-caml_sin:                            # @caml_sin
-# %bb.0:
-	lui	a0, %hi(.LCPI1_0)
-	flw	fa4, %lo(.LCPI1_0)(a0)
-	fabs.s	fa5, fa0
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB1_9
-.LBB1_1:
-	lui	a0, %hi(.LCPI1_1)
-	flw	fa4, %lo(.LCPI1_1)(a0)
-	fle.s	a0, fa4, fa5
-	fmv.x.w	a1, fa0
-	beqz	a0, .LBB1_3
-# %bb.2:
-	lui	a2, %hi(.LCPI1_2)
-	flw	fa3, %lo(.LCPI1_2)(a2)
-	fadd.s	fa5, fa5, fa3
-.LBB1_3:
-	lui	a2, %hi(.LCPI1_3)
-	flw	fa3, %lo(.LCPI1_3)(a2)
-	fle.s	a2, fa3, fa5
-	srai	a1, a1, 31
-	beqz	a2, .LBB1_5
-# %bb.4:
-	fsub.s	fa5, fa4, fa5
-.LBB1_5:
-	lui	a2, %hi(.LCPI1_4)
-	flw	fa4, %lo(.LCPI1_4)(a2)
-	fle.s	a2, fa5, fa4
-	xor	a0, a1, a0
-	bnez	a2, .LBB1_14
-# %bb.6:
-	lui	a1, %hi(.LCPI1_3)
-	flw	fa4, %lo(.LCPI1_3)(a1)
-	lui	a1, %hi(.LCPI1_8)
-	flw	fa3, %lo(.LCPI1_8)(a1)
-	lui	a1, %hi(.LCPI1_9)
-	flw	fa2, %lo(.LCPI1_9)(a1)
-	fsub.s	fa5, fa4, fa5
-	fmul.s	fa5, fa5, fa5
-	fmadd.s	fa4, fa5, fa2, fa3
-	lui	a1, 782336
-	fmv.w.x	fa3, a1
-	fmadd.s	fa4, fa5, fa4, fa3
-	lui	a1, 260096
-	fmv.w.x	fa3, a1
-	fmadd.s	fa0, fa5, fa4, fa3
-	beqz	a0, .LBB1_8
-.LBB1_7:
-	fneg.s	fa0, fa0
-.LBB1_8:
-	ret
-.LBB1_9:                                # =>This Inner Loop Header: Depth=1
-	fadd.s	fa4, fa4, fa4
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB1_9
-# %bb.10:
-	lui	a0, %hi(.LCPI1_0)
-	flw	fa3, %lo(.LCPI1_0)(a0)
-	fmv.w.x	fa2, zero
-	lui	a0, 258048
-	fmv.w.x	fa1, a0
-	j	.LBB1_12
-.LBB1_11:                               #   in Loop: Header=BB1_12 Depth=1
-	fsub.s	fa5, fa5, ft0
-	fle.s	a0, fa3, fa5
-	fmul.s	fa4, fa4, fa1
-	beqz	a0, .LBB1_1
-.LBB1_12:                               # =>This Inner Loop Header: Depth=1
-	fle.s	a0, fa4, fa5
-	fmv.s	ft0, fa2
-	beqz	a0, .LBB1_11
-# %bb.13:                               #   in Loop: Header=BB1_12 Depth=1
-	fmv.s	ft0, fa4
-	j	.LBB1_11
-.LBB1_14:
-	lui	a1, %hi(.LCPI1_5)
-	flw	fa4, %lo(.LCPI1_5)(a1)
-	lui	a1, %hi(.LCPI1_6)
-	flw	fa3, %lo(.LCPI1_6)(a1)
-	lui	a1, %hi(.LCPI1_7)
-	flw	fa2, %lo(.LCPI1_7)(a1)
-	fmul.s	fa1, fa5, fa5
-	fmul.s	fa0, fa5, fa1
-	fmadd.s	fa4, fa1, fa3, fa4
-	fmadd.s	fa4, fa1, fa4, fa2
-	fmadd.s	fa0, fa0, fa4, fa5
-	bnez	a0, .LBB1_7
-	j	.LBB1_8
-.Lfunc_end1:
-	.size	caml_sin, .Lfunc_end1-caml_sin
-                                        # -- End function
-
-	.globl	caml_cos
-	.p2align	2
-	.type	caml_cos,@function
-caml_cos:                            # @caml_cos
-# %bb.0:
-	lui	a0, %hi(.LCPI2_0)
-	flw	fa4, %lo(.LCPI2_0)(a0)
-	fabs.s	fa5, fa0
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB2_5
-.LBB2_1:
-	lui	a0, %hi(.LCPI2_1)
-	flw	fa3, %lo(.LCPI2_1)(a0)
-	fle.s	a0, fa3, fa5
-	bnez	a0, .LBB2_10
-# %bb.2:
-	fmv.s	fa4, fa5
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fle.s	a0, fa2, fa5
-	beqz	a0, .LBB2_11
-.LBB2_3:
-	fsub.s	fa3, fa3, fa4
-	lui	a0, %hi(.LCPI2_4)
-	flw	fa2, %lo(.LCPI2_4)(a0)
-	fle.s	a0, fa3, fa2
-	beqz	a0, .LBB2_12
-.LBB2_4:
-	lui	a0, %hi(.LCPI2_5)
-	flw	fa2, %lo(.LCPI2_5)(a0)
-	lui	a0, %hi(.LCPI2_6)
-	flw	fa1, %lo(.LCPI2_6)(a0)
-	fmul.s	fa3, fa3, fa3
-	fmadd.s	fa2, fa3, fa1, fa2
-	lui	a0, 782336
-	fmv.w.x	fa1, a0
-	fmadd.s	fa2, fa3, fa2, fa1
-	lui	a0, 260096
-	fmv.w.x	fa1, a0
-	fmadd.s	fa0, fa3, fa2, fa1
-	j	.LBB2_13
-.LBB2_5:                                # =>This Inner Loop Header: Depth=1
-	fadd.s	fa4, fa4, fa4
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB2_5
-# %bb.6:
-	lui	a0, %hi(.LCPI2_0)
-	flw	fa3, %lo(.LCPI2_0)(a0)
-	fmv.w.x	fa2, zero
-	lui	a0, 258048
-	fmv.w.x	fa1, a0
-	j	.LBB2_8
-.LBB2_7:                                #   in Loop: Header=BB2_8 Depth=1
-	fsub.s	fa5, fa5, fa0
-	fle.s	a0, fa3, fa5
-	fmul.s	fa4, fa4, fa1
-	beqz	a0, .LBB2_1
-.LBB2_8:                                # =>This Inner Loop Header: Depth=1
-	fle.s	a0, fa4, fa5
-	fmv.s	fa0, fa2
-	beqz	a0, .LBB2_7
-# %bb.9:                                #   in Loop: Header=BB2_8 Depth=1
-	fmv.s	fa0, fa4
-	j	.LBB2_7
-.LBB2_10:
-	lui	a0, %hi(.LCPI2_2)
-	flw	fa4, %lo(.LCPI2_2)(a0)
-	fadd.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fle.s	a0, fa2, fa4
-	bnez	a0, .LBB2_3
-.LBB2_11:
-	fmv.s	fa3, fa4
-	lui	a0, %hi(.LCPI2_4)
-	flw	fa2, %lo(.LCPI2_4)(a0)
-	fle.s	a0, fa4, fa2
-	bnez	a0, .LBB2_4
-.LBB2_12:
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fsub.s	fa3, fa2, fa3
-	lui	a0, %hi(.LCPI2_7)
-	flw	fa2, %lo(.LCPI2_7)(a0)
-	lui	a0, %hi(.LCPI2_8)
-	flw	fa1, %lo(.LCPI2_8)(a0)
-	lui	a0, %hi(.LCPI2_9)
-	flw	fa0, %lo(.LCPI2_9)(a0)
-	fmul.s	ft0, fa3, fa3
-	fmul.s	ft1, fa3, ft0
-	fmadd.s	fa2, ft0, fa1, fa2
-	fmadd.s	fa2, ft0, fa2, fa0
-	fmadd.s	fa0, ft1, fa2, fa3
-.LBB2_13:
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa3, %lo(.LCPI2_3)(a0)
-	lui	a0, %hi(.LCPI2_1)
-	flw	fa2, %lo(.LCPI2_1)(a0)
-	fle.s	a0, fa3, fa4
-	fle.s	a1, fa2, fa5
-	beq	a1, a0, .LBB2_15
-# %bb.14:
-	fneg.s	fa0, fa0
-.LBB2_15:
-	ret
-.Lfunc_end2:
-	.size	caml_cos, .Lfunc_end2-caml_cos
-                                        # -- End function
-
-.data
-.LCPI0_0:
-	.word	0xbdb7d66e                      # float -0.0897644609
-.LCPI0_1:
-	.word	0x3d75e7c5                      # float 0.0600354858
-.LCPI0_2:
-	.word	0x3de38e38                      # float 0.111111104
-.LCPI0_3:
-	.word	0xbe124925                      # float -0.142857149
-.LCPI0_4:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI0_5:
-	.word	0xbeaaaaaa                      # float -0.333333313
-.LCPI0_6:
-	.word	0xbfc90fdb                      # float -1.57079637
-.LCPI0_7:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI0_8:
-	.word	0xbf490fdb                      # float -0.785398185
-.LCPI0_9:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI1_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI1_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI1_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI1_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI1_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI1_5:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI1_6:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI1_7:
-	.word	0xbe2aaaac                      # float -0.166666687
-.LCPI1_8:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI1_9:
-	.word	0xbab38106                      # float -0.00136950682
-.LCPI2_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI2_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI2_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI2_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI2_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI2_5:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI2_6:
-	.word	0xbab38106                      # float -0.00136950682
-.LCPI2_7:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI2_8:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI2_9:
-	.word	0xbe2aaaac                      # float -0.166666687
+"%.7845<.LC0>":
+    .float 0.01745329238474369
+"%.7894<.LC1>":
+    .float 200.0
+"%.8225<.LC2>":
+    .float 2.0
+"%.11164<.LC3>":
+    .float 0.20000000298023224
+"%.11170<.LC4>":
+    .float 0.009999999776482582
+"%.11327<.LC5>":
+    .float 0.10000000149011612
+"%.11592<.LC6>":
+    .float 1000000000.0
+"%.11610<.LC7>":
+    .float 100000000.0
+"%.12292<.LC8>":
+    .float 0.05000000074505806
+"%.12296<.LC9>":
+    .float 20.0
+"%.12303<.LC10>":
+    .float 10.0
+"%.12330<.LC11>":
+    .float 255.0
+"%.12342<.LC12>":
+    .float 0.25
+"%.12398<.LC13>":
+    .float 3.1415927410125732
+"%.12462<.LC14>":
+    .float 9.999999747378752e-05
+"%.12466<.LC15>":
+    .float 15.0
+"%.12470<.LC16>":
+    .float 30.0
+"%.12513<.LC17>":
+    .float 0.15000000596046448
+"%.12532<.LC18>":
+    .float 0.30000001192092896
+"%.12856<.LC19>":
+    .float 256.0
+"%.13334<.LC20>":
+    .float 150.0
+"%.14906<.LC21>":
+    .float 0.8999999761581421
+"%.15578<.LC22>":
+    .float 128.0

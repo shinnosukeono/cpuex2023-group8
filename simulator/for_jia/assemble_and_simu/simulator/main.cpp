@@ -9,6 +9,8 @@ vector<Instruction *> instrs_case1{};
 
 using namespace std;
 
+#define data_section 0x10000
+
 int main()
 {
 	// Create a virtual machine
@@ -198,10 +200,10 @@ int main()
 			std::istringstream(hexString) >> std::hex >> value;
 
 			if (vm.fast_mode == 0){
-				vm.mem.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 			}else{
-				vm.mem.memory.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.memory.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 			}
 			if (i >= data_counts){
@@ -275,10 +277,10 @@ int main()
 			value = hexes[index++];
 
 			if (vm.fast_mode == 0){
-				vm.mem.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 			}else{
-				vm.mem.memory.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.memory.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 			}
 		}
@@ -301,11 +303,11 @@ int main()
 			std::istringstream(hexString) >> std::hex >> value;
 
 			if (vm.fast_mode == 0){
-				vm.mem.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 				continue;
 			}else{
-				vm.mem.memory.write((0x10000)+4*i, (char*)&value, 4);
+				vm.mem.memory.write((data_section)+4*i, (char*)&value, 4);
 				i++;
 				continue;
 			}

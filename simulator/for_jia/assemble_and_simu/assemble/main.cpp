@@ -4305,7 +4305,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		instructions.push_back(p);
 		return (*p).assembler();
 	}else if (tokens[0] == "fabs.s"){
-		Instruction *p = new Fsgnj<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
+		Instruction *p = new Fsgnjx<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
 	}

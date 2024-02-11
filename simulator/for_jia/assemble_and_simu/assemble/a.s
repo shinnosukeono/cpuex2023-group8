@@ -6,9 +6,9 @@ main:                                   # @main
 # %bb.0:
 	li zero, 0
 	li ra, -1
-	li sp, 0x40000000
+	li sp, 0x4000000
 	li gp, 0
-	li tp, 0x10000000
+	li tp, 0x1000000
 	li t0, 0
 	li t1, 0
 	li t2, 0

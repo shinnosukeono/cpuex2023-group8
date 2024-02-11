@@ -13,7 +13,7 @@
 #include <sstream>
 #include "fpu.h"
 
-#define Dsize (1 << 30)
+#define Dsize (1 << 26)
 #define maxcount 10000000000
 #define AP_max 4
 #define GP_max 4
@@ -2548,7 +2548,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		op1 = get<int>(vm.ReadIntRegisters(operand2));
-		cout << "Cout.int: " << op1 << " [" + Rnames[operand2] + "]"<< endl;
+		cerr << "Cout.int: " << op1 << " [" + Rnames[operand2] + "]"<< endl;
 		//vm.pc += 4;
 	}
 };
@@ -2567,7 +2567,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		op1 = get<float>(vm.ReadFloatRegisters(operand2));
-		cout << "Cout.float: " << op1 << " [" + Fnames[operand2] + "]" << endl;
+		cerr << "Cout.float: " << op1 << " [" + Fnames[operand2] + "]" << endl;
 		//vm.pc += 4;
 	}
 };

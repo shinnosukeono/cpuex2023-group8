@@ -211,6 +211,11 @@
 	// AXI STAT_REG read
 	// reg read_status;
 
+	// FIFO control
+	reg [3:0] fifo_rst_counter;
+	wire fifo_rst;
+	assign fifo_rst = (fifo_rst_counter > 4'b0) ? 1'b1 : ~M_AXI_ARESETN;
+
     // rx FIFO
     wire rx_empty;
     wire rx_almost_full;
@@ -221,7 +226,7 @@
 
     rx_fifo rx_fifo_inst (
         .clk(M_AXI_ACLK),
-        .rst(~M_AXI_ARESETN),
+        .rst(fifo_rst),
         .din(rx_din),
         .we(rx_we),
         .re(rx_re),
@@ -242,7 +247,7 @@
 
     tx_fifo tx_fifo_inst (
         .clk(M_AXI_ACLK),
-        .rst(~M_AXI_ARESETN),
+        .rst(fifo_rst),
         .din(tx_din),
         .we(tx_we),
         .re(tx_re),
@@ -275,7 +280,7 @@
 	//Read and Read Response (R)
 	assign M_AXI_RREADY	= axi_rready;
 	//Example design I/O
-	assign init_txn_pulse = (!init_txn_ff2) && init_txn_ff;
+	assign init_txn_pulse = (!init_txn_ff2) & init_txn_ff;
 
 
 	//Generate a pulse to initiate AXI transaction.
@@ -629,14 +634,14 @@
 	end
 
 	assign rx_re = (
-		(mst_exec_state == PROGRAM_RECV) ||
-		(mst_exec_state == PROGRAM_WRITE) ||
-		((mst_exec_state == DATA_RECV) && start_single_dmem_write) ||
-		((mst_exec_state == DATA_WRITE) && start_single_dmem_write) ||
-		((mst_exec_state == CORE_EXEC) && in_issued)
-	) && ~rx_empty;
+		(mst_exec_state == PROGRAM_RECV) |
+		(mst_exec_state == PROGRAM_WRITE) |
+		((mst_exec_state == DATA_RECV) & start_single_dmem_write) |
+		((mst_exec_state == DATA_WRITE) & start_single_dmem_write) |
+		((mst_exec_state == CORE_EXEC) & in_issued)
+	) & ~rx_empty;
 
-	assign in_stall = in_issued && rx_empty;
+	assign in_stall = in_issued & rx_empty;
 
 	// rx delay control
 	always @(posedge M_AXI_ACLK) begin
@@ -678,7 +683,7 @@
 	end
 
 	assign imem_we = (mst_exec_state == PROGRAM_RECV) ?
-		(rx_valid[1] && transaction_num_valid) :
+		(rx_valid[1] & transaction_num_valid) :
 		(
 			(mst_exec_state == PROGRAM_WRITE) ?
 				rx_valid[1]:
@@ -686,7 +691,7 @@
 		);
 
 	assign dmem_we = (mst_exec_state == DATA_RECV) ?
-		(rx_valid[1] && transaction_num_valid) :
+		(rx_valid[1] & transaction_num_valid) :
 		(
 			(mst_exec_state == DATA_WRITE) ?
 				rx_valid[1]:
@@ -716,6 +721,7 @@
 			axi_araddr <= 4'h0;
 			read_status <= 1'b0;
 			read_status_ready <= 1'b0;
+			fifo_rst_counter <= 4'b0;
 	      end
 	    else
 	      begin
@@ -724,9 +730,18 @@
 	            IDLE:
 	            // This state is responsible to initiate
 	            // AXI transaction when cache_init_done is asserted
-	                if ( cache_init_done == 1'b1 && first) begin
-	                    mst_exec_state  <= WRITE_99;
-						first <= 1'b0;
+	                if ( cache_init_done == 1'b1) begin
+						if (first) begin
+							first <= 1'b0;
+						end
+						else begin
+							fifo_rst_counter <= fifo_rst_counter + 4'b1;
+							mst_exec_state <= IDLE;
+							if (fifo_rst_counter == 4'b1111) begin
+								mst_exec_state <= WRITE_99;
+								fifo_rst_counter <= 4'b0;
+							end
+						end
 	                end
 	                else begin
 	                    mst_exec_state  <= IDLE;

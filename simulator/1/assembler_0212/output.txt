@@ -1,0 +1,4237 @@
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+sw s2 0 sp 01212023
+li a0 50 03200513
+li a1 4 00400593
+li s1 4 00400493
+call calloc 190000ef
+mv s0 a0 00050413
+lui s2 %hi and_net 00190937
+sw a0 %lo and_net s2 18a92823
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+sw a0 0 s0 00a42023
+lui a1 784384 bf8005b7
+sw a1 0 a0 00b52023
+li a0 200 0c800513
+lw a1 %lo and_net s2 19092583
+lw a2 0 a1 0005a603
+add a1 a1 s1 009585b3
+addi s1 s1 4 00448493
+sw a2 0 a1 00c5a023
+bne s1 a0 .LBB22_1 18a49863
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+mv s0 a0 00050413
+lui a0 %hi or_net 00190537
+sw s0 %lo or_net a0 18852823
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+lui a1 %hi and_net 001905b7
+lw a1 %lo and_net a1 1905a583
+sw a0 0 s0 00a42023
+lw a1 0 a1 0005a583
+sw a1 0 a0 00b52023
+call caml_main 190000ef
+lui s0 %hi buffer_pos 00190437
+lw a0 %lo buffer_pos s0 19042503
+beqz a0 .LBB22_5 18050863
+li s1 0 00000493
+lui a0 %hi buffer 00190537
+addi s2 a0 %lo buffer 19050913
+lw a0 0 s2 00092503
+call putchar 190000ef
+lw a0 %lo buffer_pos s0 19042503
+addi s1 s1 1 00148493
+addi s2 s2 4 00490913
+bltu s1 a0 .LBB22_4 18a4e863
+li a0 10 00a00513
+call putchar 190000ef
+li a0 0 00000513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+ret 00008067
+slli a1 a0 2 00251593
+mv a0 tp 00020513
+add tp tp a1 00b20233
+ret 00008067
+addi zero a0 0 00050013
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+fsqrt.s fa5 fa5 5807f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+fadd.s fa5 fa0 fa0 00a577d3
+fsw fa5 0 a1 00f5a027
+ret 00008067
+addi a0 zero 0 00000513
+sw a0 0 a1 00a5a023
+ret 00008067
+addi sp sp -48 fd010113
+sw ra 44 sp 02112623
+sw s0 40 sp 02812423
+addi s0 sp 48 03010413
+sw a0 -36 s0 fca42e23
+sw a1 -40 s0 fcb42c23
+sw a2 -44 s0 fcc42a23
+lw a5 -40 s0 fd842783
+sw a5 -20 s0 fef42623
+lw a5 -36 s0 fdc42783
+sw a5 -24 s0 fef42423
+j .L2 1900006f
+lw a4 -20 s0 fec42703
+addi a5 a4 4 00470793
+sw a5 -20 s0 fef42623
+lw a5 -24 s0 fe842783
+addi a3 a5 4 00478693
+sw a3 -24 s0 fed42423
+lw a4 0 a4 00072703
+sw a4 0 a5 00e7a023
+lw a5 -44 s0 fd442783
+addi a5 a5 -4 ffc78793
+sw a5 -44 s0 fcf42a23
+lw a5 -44 s0 fd442783
+bne a5 zero .L3 18079863
+lw a5 -40 s0 fd842783
+mv a0 a5 00078513
+lw ra 44 sp 02c12083
+lw s0 40 sp 02812403
+addi sp sp 48 03010113
+jr ra 00008067
+ret 00008067
+addi sp sp -48 fd010113
+sw ra 44 sp 02112623
+sw s0 40 sp 02812423
+addi s0 sp 48 03010413
+sw a0 -36 s0 fca42e23
+sw a1 -40 s0 fcb42c23
+sw zero -20 s0 fe042623
+sw zero -24 s0 fe042423
+j .L4 1900006f
+lw a5 -24 s0 fe842783
+lw a4 -40 s0 fd842703
+sra a5 a4 a5 40f757b3
+andi a5 a5 1 0017f793
+beq a5 zero .L5 18078863
+lw a5 -24 s0 fe842783
+lw a4 -36 s0 fdc42703
+sll a5 a4 a5 00f717b3
+lw a4 -20 s0 fec42703
+add a5 a4 a5 00f707b3
+sw a5 -20 s0 fef42623
+lw a5 -24 s0 fe842783
+addi a5 a5 1 00178793
+sw a5 -24 s0 fef42423
+lw a4 -24 s0 fe842703
+li a5 12 00c00793
+ble a4 a5 .L6 18e7d863
+lw a5 -20 s0 fec42783
+mv a0 a5 00078513
+lw ra 44 sp 02c12083
+lw s0 40 sp 02812403
+addi sp sp 48 03010113
+jr ra 00008067
+ret 00008067
+addi sp sp -48 fd010113
+sw ra 44 sp 02112623
+sw s0 40 sp 02812423
+addi s0 sp 48 03010413
+sw a0 -36 s0 fca42e23
+lw a5 -36 s0 fdc42783
+srai a4 a5 3 4037d713
+lw a5 -36 s0 fdc42783
+add a5 a4 a5 00f707b3
+srai a4 a5 1 4017d713
+lw a5 -36 s0 fdc42783
+add a5 a4 a5 00f707b3
+srai a5 a5 4 4047d793
+sw a5 -20 s0 fef42623
+lw a5 -20 s0 fec42783
+slli a4 a5 2 00279713
+lw a5 -20 s0 fec42783
+add a5 a4 a5 00f707b3
+slli a5 a5 1 00179793
+lw a4 -36 s0 fdc42703
+sub a5 a4 a5 40f707b3
+addi a5 a5 1 00178793
+sw a5 -24 s0 fef42423
+lw a5 -24 s0 fe842783
+srai a4 a5 3 4037d713
+lw a5 -24 s0 fe842783
+add a5 a4 a5 00f707b3
+srai a4 a5 1 4017d713
+lw a5 -24 s0 fe842783
+add a5 a4 a5 00f707b3
+srai a5 a5 4 4047d793
+lw a4 -20 s0 fec42703
+add a5 a4 a5 00f707b3
+sw a5 -20 s0 fef42623
+lw a4 -24 s0 fe842703
+li a5 10 00a00793
+bgt a4 a5 .L19 18e7c863
+lw a5 -20 s0 fec42783
+mv a0 a5 00078513
+lw ra 44 sp 02c12083
+lw s0 40 sp 02812403
+addi sp sp 48 03010113
+jr ra 00008067
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+lui a0 %hi size 00190537
+lw a0 %lo size a0 19052503
+lui a1 %hi dbg 001905b7
+lw a1 %lo dbg a1 1905a583
+li a2 256 10000613
+sw a2 0 a0 00c52023
+sw a2 4 a0 00c52223
+sw zero 0 a1 0005a023
+call read_parameter 190000ef
+call scan_start 190000ef
+li a0 0 00000513
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+ret 00008067
+andi a2 a0 1 00157613
+mv a0 a1 00058513
+bnez a2 .LBB1_2 18061863
+ret 00008067
+tail min_caml_not 1900006f
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+lui a0 258048 3f000537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+ret 00008067
+mv a0 a1 00058513
+ret 00008067
+mv a0 a2 00060513
+ret 00008067
+mv a0 a6 00080513
+ret 00008067
+mv a0 a3 00068513
+ret 00008067
+lw a0 0 a4 00072503
+ret 00008067
+lw a0 4 a4 00472503
+ret 00008067
+lw a0 8 a4 00872503
+ret 00008067
+lw a0 0 a5 0007a503
+ret 00008067
+lw a0 4 a5 0047a503
+ret 00008067
+lw a0 8 a5 0087a503
+ret 00008067
+lw a0 0 a7 0008a503
+ret 00008067
+lw a0 4 a7 0048a503
+ret 00008067
+lw a0 0 sp 00012503
+lw a0 0 a0 00052503
+ret 00008067
+lw a0 0 sp 00012503
+lw a0 4 a0 00452503
+ret 00008067
+lw a0 0 sp 00012503
+lw a0 8 a0 00852503
+ret 00008067
+lw a0 4 sp 00412503
+lw a0 0 a0 00052503
+ret 00008067
+lw a0 4 sp 00412503
+lw a0 4 a0 00452503
+ret 00008067
+lw a0 4 sp 00412503
+lw a0 8 a0 00852503
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a0 00050413
+flw fa5 0 a0 00052787
+flw fa4 4 a0 00452707
+mv s1 a1 00058493
+flw fa3 8 a0 00852687
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa3 10d6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+andi s1 s1 1 0014f493
+fmv.w.x fa5 a0 f00507d3
+beqz s1 .LBB23_2 18048863
+fneg.s fa5 fa5 20f797d3
+flw fa4 0 s0 00042707
+flw fa3 4 s0 00442687
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa2 8 s0 00842607
+fsw fa4 0 s0 00e42027
+fdiv.s fa4 fa3 fa5 18f6f753
+fsw fa4 4 s0 00e42227
+fdiv.s fa5 fa2 fa5 18f677d3
+fsw fa5 8 s0 00f42427
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+fmv.w.x fa4 zero f0000753
+flt.s a0 fa4 fa5 a0f71553
+bnez a0 .LBB24_2 18051863
+lui a0 784384 bf800537
+j .LBB24_3 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa5 a0 f00507d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lui a1 %hi .LCPI25_0 001905b7
+flw fa5 %lo .LCPI25_0 a1 1905a787
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa4 fa5 10f777d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+sw s3 12 sp 01312623
+sw s4 8 sp 01412423
+call min_caml_read_float 190000ef
+lui a1 %hi screen 001905b7
+lw s1 %lo screen a1 1905a483
+sw a0 0 s1 00a4a023
+call min_caml_read_float 190000ef
+sw a0 4 s1 00a4a223
+call min_caml_read_float 190000ef
+sw a0 8 s1 00a4a423
+call min_caml_read_float 190000ef
+lui a1 %hi .LCPI26_0 001905b7
+flw fa4 %lo .LCPI26_0 a1 1905a707
+fsw fa4 4 sp 00e12227
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmv.x.w s0 fa5 e0078453
+mv a0 s0 00040513
+call min_caml_cos 190000ef
+lui a1 %hi cos_v 001905b7
+lw s2 %lo cos_v a1 1905a903
+sw a0 0 s2 00a92023
+mv a0 s0 00040513
+call min_caml_sin 190000ef
+lui a1 %hi sin_v 001905b7
+lw s3 %lo sin_v a1 1905a983
+sw a0 0 s3 00a9a023
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 4 sp 00412707
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmv.x.w s0 fa5 e0078453
+mv a0 s0 00040513
+call min_caml_cos 190000ef
+sw a0 4 s2 00a92223
+mv a0 s0 00040513
+call min_caml_sin 190000ef
+sw a0 4 s3 00a9a223
+call min_caml_read_float 190000ef
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 4 sp 00412707
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmv.x.w s0 fa5 e0078453
+mv a0 s0 00040513
+call min_caml_sin 190000ef
+lui a1 %hi light 001905b7
+lw s4 %lo light a1 1905aa03
+lui a1 524288 800005b7
+xor a0 a0 a1 00b54533
+sw a0 4 s4 00aa2223
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 4 sp 00412707
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 0 sp 00f12027
+mv a0 s0 00040513
+call min_caml_cos 190000ef
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 4 sp 00f12227
+flw fa5 0 sp 00012787
+fmv.x.w s0 fa5 e0078453
+mv a0 s0 00040513
+call min_caml_sin 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 4 sp 00412707
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 0 s4 00fa2027
+mv a0 s0 00040513
+call min_caml_cos 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 4 sp 00412707
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 8 s4 00fa2427
+call min_caml_read_float 190000ef
+lui a1 %hi beam 001905b7
+lw a1 %lo beam a1 1905a583
+sw a0 0 a1 00a5a023
+flw fa5 0 s2 00092787
+flw fa4 4 s3 0049a707
+fmul.s fa5 fa5 fa4 10e7f7d3
+lui a0 %hi vp 00190537
+lw a0 %lo vp a0 19052503
+lui a1 799872 c34805b7
+fmv.w.x fa4 a1 f0058753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 0 a0 00f52027
+flw fa3 0 s3 0009a687
+lui a1 275584 434805b7
+fmv.w.x fa2 a1 f0058653
+fmul.s fa3 fa3 fa2 10c6f6d3
+fsw fa3 4 a0 00d52227
+flw fa3 0 s2 00092687
+flw fa2 4 s2 00492607
+fmul.s fa3 fa3 fa2 10c6f6d3
+fmul.s fa4 fa3 fa4 10e6f753
+fsw fa4 8 a0 00e52427
+flw fa4 0 s1 0004a707
+lui a1 %hi view 001905b7
+lw a1 %lo view a1 1905a583
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 0 a1 00f5a027
+flw fa5 4 a0 00452787
+flw fa4 4 s1 0044a707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 4 a1 00f5a227
+flw fa5 8 a0 00852787
+flw fa4 8 s1 0084a707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 8 a1 00f5a427
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+lw s3 12 sp 00c12983
+lw s4 8 sp 00812a03
+addi sp sp 32 02010113
+ret 00008067
+addi sp sp -80 fb010113
+sw ra 76 sp 04112623
+sw s0 72 sp 04812423
+sw s1 68 sp 04912223
+sw s2 64 sp 05212023
+sw s3 60 sp 03312e23
+sw s4 56 sp 03412c23
+sw s5 52 sp 03512a23
+sw s6 48 sp 03612823
+sw s7 44 sp 03712623
+sw s8 40 sp 03812423
+sw s9 36 sp 03912223
+sw s10 32 sp 03a12023
+sw s11 28 sp 01b12e23
+addi s0 sp 80 05010413
+mv s5 a0 00050a93
+call min_caml_read_int 190000ef
+li a1 -1 fff00593
+beq a0 a1 .LBB27_9 18b50863
+mv s6 a0 00050b13
+call min_caml_read_int 190000ef
+mv s4 a0 00050a13
+call min_caml_read_int 190000ef
+sw a0 -60 s0 fca42223
+call min_caml_read_int 190000ef
+mv s3 a0 00050993
+li a0 3 00300513
+li a1 0 00000593
+call min_caml_create_array_float 190000ef
+mv s1 a0 00050493
+call min_caml_read_float 190000ef
+sw a0 0 s1 00a4a023
+call min_caml_read_float 190000ef
+sw a0 4 s1 00a4a223
+call min_caml_read_float 190000ef
+sw a0 8 s1 00a4a423
+li a0 3 00300513
+li a1 0 00000593
+call min_caml_create_array_float 190000ef
+mv s8 a0 00050c13
+call min_caml_read_float 190000ef
+sw a0 0 s8 00ac2023
+call min_caml_read_float 190000ef
+sw a0 4 s8 00ac2223
+call min_caml_read_float 190000ef
+sw a0 8 s8 00ac2423
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 -64 s0 fcf42027
+fmv.w.x fa5 zero f00007d3
+fsw fa5 -56 s0 fcf42427
+li a0 2 00200513
+li s7 2 00200b93
+li a1 0 00000593
+call min_caml_create_array_float 190000ef
+mv s9 a0 00050c93
+call min_caml_read_float 190000ef
+sw a0 0 s9 00aca023
+call min_caml_read_float 190000ef
+sw a0 4 s9 00aca223
+li a0 3 00300513
+li a1 0 00000593
+call min_caml_create_array_float 190000ef
+mv s10 a0 00050d13
+call min_caml_read_float 190000ef
+sw a0 0 s10 00ad2023
+call min_caml_read_float 190000ef
+sw a0 4 s10 00ad2223
+call min_caml_read_float 190000ef
+sw a0 8 s10 00ad2423
+li a0 3 00300513
+li a1 0 00000593
+call min_caml_create_array_float 190000ef
+mv s2 a0 00050913
+beqz s3 .LBB27_3 18098863
+call min_caml_read_float 190000ef
+lui a1 %hi .LCPI27_0 001905b7
+flw fa4 %lo .LCPI27_0 a1 1905a707
+fsw fa4 -68 s0 fae42e27
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 0 s2 00f92027
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 -68 s0 fbc42707
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 4 s2 00f92227
+call min_caml_read_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 -68 s0 fbc42707
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 8 s2 00f92427
+flw fa5 -56 s0 fc842787
+flw fa4 -64 s0 fc042707
+flt.s s11 fa4 fa5 a0f71dd3
+mv a0 s11 000d8513
+bne s4 s7 .LBB27_5 197a1863
+li a0 1 00100513
+mv a1 sp 00010593
+addi s7 a1 -48 fd058b93
+mv sp s7 000b8113
+sw s6 -48 a1 fd65a823
+sw s4 -44 a1 fd45aa23
+lw a2 -60 s0 fc442603
+sw a2 -40 a1 fcc5ac23
+sw s3 -36 a1 fd35ae23
+sw s1 -32 a1 fe95a023
+sw s8 -28 a1 ff85a223
+sw a0 -24 a1 fea5a423
+lui a0 %hi objects 00190537
+lw s6 %lo objects a0 19052b03
+sw s9 -20 a1 ff95a623
+sw s10 -16 a1 ffa5a823
+sw s2 -12 a1 ff25aa23
+li a1 40 02800593
+mv a0 s5 000a8513
+call __mulsi3 190000ef
+add a0 s6 a0 00ab0533
+li a2 40 02800613
+mv a1 s7 000b8593
+call memcpy 190000ef
+li a0 3 00300513
+bne s4 a0 .LBB27_10 18aa1863
+flw fa5 0 s1 0004a787
+flw fa3 -56 s0 fc842687
+feq.s a0 fa5 fa3 a0d7a553
+fmv.s fa4 fa3 20d68753
+bnez a0 .LBB27_16 18051863
+fmv.w.x fa4 zero f0000753
+flt.s a0 fa4 fa5 a0f71553
+bnez a0 .LBB27_14 18051863
+lui a0 784384 bf800537
+j .LBB27_15 1900006f
+li s4 0 00000a13
+j .LBB27_29 1900006f
+li a0 2 00200513
+bne s4 a0 .LBB27_27 18aa1863
+mv a0 s11 000d8513
+call min_caml_not 190000ef
+flw fa5 0 s1 0004a787
+flw fa4 4 s1 0044a707
+mv s4 a0 00050a13
+flw fa3 8 s1 0084a687
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa3 10d6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+andi a1 s4 1 001a7593
+fmv.w.x fa5 a0 f00507d3
+beqz a1 .LBB27_13 18058863
+fneg.s fa5 fa5 20f797d3
+flw fa4 0 s1 0004a707
+flw fa3 4 s1 0044a687
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa2 8 s1 0084a607
+fsw fa4 0 s1 00e4a027
+fdiv.s fa4 fa3 fa5 18f6f753
+fsw fa4 4 s1 00e4a227
+fdiv.s fa3 fa2 fa5 18f676d3
+j .LBB27_26 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa5 10f7f7d3
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa5 4 s1 0044a787
+feq.s a0 fa5 fa3 a0d7a553
+fsw fa4 0 s1 00e4a027
+fmv.s fa4 fa3 20d68753
+bnez a0 .LBB27_21 18051863
+fmv.w.x fa4 zero f0000753
+flt.s a0 fa4 fa5 a0f71553
+bnez a0 .LBB27_19 18051863
+lui a0 784384 bf800537
+j .LBB27_20 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa5 10f7f7d3
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa5 8 s1 0084a787
+feq.s a0 fa5 fa3 a0d7a553
+fsw fa4 4 s1 00e4a227
+bnez a0 .LBB27_26 18051863
+fmv.w.x fa4 zero f0000753
+flt.s a0 fa4 fa5 a0f71553
+bnez a0 .LBB27_24 18051863
+lui a0 784384 bf800537
+j .LBB27_25 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa5 10f7f7d3
+fdiv.s fa3 fa4 fa5 18f776d3
+fsw fa3 8 s1 00d4a427
+li s4 1 00100a13
+beqz s3 .LBB27_29 18098863
+lw a0 0 s2 00092503
+call min_caml_cos 190000ef
+lui a1 %hi cs_temp 001905b7
+lw s3 %lo cs_temp a1 1905a983
+sw a0 40 s3 02a9a423
+lw a0 0 s2 00092503
+call min_caml_sin 190000ef
+sw a0 44 s3 02a9a623
+lw a0 4 s2 00492503
+call min_caml_cos 190000ef
+sw a0 48 s3 02a9a823
+lw a0 4 s2 00492503
+call min_caml_sin 190000ef
+sw a0 52 s3 02a9aa23
+lw a0 8 s2 00892503
+call min_caml_cos 190000ef
+sw a0 56 s3 02a9ac23
+lw a0 8 s2 00892503
+call min_caml_sin 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 48 s3 0309a707
+flw fa3 56 s3 0389a687
+sw a0 60 s3 02a9ae23
+flw fa2 44 s3 02c9a607
+flw fa1 52 s3 0349a587
+fmul.s fa0 fa4 fa3 10d77553
+flw ft0 40 s3 0289a007
+fsw fa0 0 s3 00a9a027
+fmul.s ft1 fa2 fa1 10b670d3
+fmul.s ft2 fa3 ft1 1016f153
+fmul.s ft3 fa5 ft0 1007f1d3
+fsub.s ft2 ft2 ft3 08317153
+fsw ft2 4 s3 0029a227
+fmul.s ft2 fa1 ft0 1005f153
+fmul.s ft3 fa3 ft2 1026f1d3
+fmul.s ft4 fa5 fa2 10c7f253
+fadd.s ft3 ft4 ft3 003271d3
+fsw ft3 8 s3 0039a427
+fmul.s ft3 fa5 fa4 10e7f1d3
+fsw ft3 12 s3 0039a627
+fmul.s ft1 fa5 ft1 1017f0d3
+fmul.s ft4 fa3 ft0 1006f253
+fadd.s ft1 ft1 ft4 0040f0d3
+fsw ft1 16 s3 0019a827
+fmul.s fa5 fa5 ft2 1027f7d3
+fmul.s fa3 fa3 fa2 10c6f6d3
+fsub.s fa5 fa5 fa3 08d7f7d3
+fsw fa5 20 s3 00f9aa27
+fneg.s fa5 fa1 20b597d3
+fsw fa5 24 s3 00f9ac27
+fmul.s fa5 fa4 fa2 10c777d3
+fsw fa5 28 s3 00f9ae27
+fmul.s fa5 fa4 ft0 100777d3
+fsw fa5 32 s3 02f9a027
+flw fa3 0 s1 0004a687
+flw fa4 4 s1 0044a707
+flw fa5 8 s1 0084a787
+fmul.s fa2 fa0 fa0 10a57653
+fmul.s fa2 fa2 fa3 10d67653
+fmul.s fa0 ft3 ft3 1031f553
+fmul.s fa0 fa0 fa4 10e57553
+fadd.s fa2 fa2 fa0 00a67653
+fmul.s fa1 fa1 fa1 10b5f5d3
+fmul.s fa1 fa1 fa5 10f5f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fsw fa2 0 s1 00c4a027
+flw fa2 4 s3 0049a607
+flw fa1 16 s3 0109a587
+fmul.s fa2 fa2 fa2 10c67653
+fmul.s fa2 fa3 fa2 10c6f653
+flw fa0 28 s3 01c9a507
+fmul.s fa1 fa1 fa1 10b5f5d3
+fmul.s fa1 fa4 fa1 10b775d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa1 fa0 fa0 10a575d3
+fmul.s fa1 fa5 fa1 10b7f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fsw fa2 4 s1 00c4a227
+flw fa2 8 s3 0089a607
+flw fa1 20 s3 0149a587
+fmul.s fa2 fa2 fa2 10c67653
+fmul.s fa2 fa3 fa2 10c6f653
+flw fa0 32 s3 0209a507
+fmul.s fa1 fa1 fa1 10b5f5d3
+fmul.s fa1 fa4 fa1 10b775d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa1 fa0 fa0 10a575d3
+fmul.s fa1 fa5 fa1 10b7f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fsw fa2 8 s1 00c4a427
+flw fa2 4 s3 0049a607
+flw fa1 8 s3 0089a587
+flw fa0 16 s3 0109a507
+fmul.s fa2 fa3 fa2 10c6f653
+fmul.s fa2 fa2 fa1 10b67653
+flw fa1 20 s3 0149a587
+fmul.s fa0 fa4 fa0 10a77553
+flw ft0 28 s3 01c9a007
+flw ft1 32 s3 0209a087
+fmul.s fa1 fa0 fa1 10b575d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa1 fa5 ft0 1007f5d3
+fmul.s fa1 fa1 ft1 1015f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fadd.s fa2 fa2 fa2 00c67653
+fsw fa2 0 s2 00c92027
+flw fa2 0 s3 0009a607
+flw fa1 8 s3 0089a587
+flw fa0 12 s3 00c9a507
+fmul.s fa2 fa3 fa2 10c6f653
+fmul.s fa2 fa2 fa1 10b67653
+flw fa1 20 s3 0149a587
+fmul.s fa0 fa4 fa0 10a77553
+flw ft0 24 s3 0189a007
+flw ft1 32 s3 0209a087
+fmul.s fa1 fa0 fa1 10b575d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa1 fa5 ft0 1007f5d3
+fmul.s fa1 fa1 ft1 1015f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fadd.s fa2 fa2 fa2 00c67653
+fsw fa2 4 s2 00c92227
+flw fa2 0 s3 0009a607
+flw fa1 4 s3 0049a587
+flw fa0 12 s3 00c9a507
+fmul.s fa3 fa3 fa2 10c6f6d3
+fmul.s fa3 fa3 fa1 10b6f6d3
+flw fa2 16 s3 0109a607
+fmul.s fa4 fa4 fa0 10a77753
+flw fa1 24 s3 0189a587
+flw fa0 28 s3 01c9a507
+fmul.s fa4 fa4 fa2 10c77753
+fadd.s fa4 fa3 fa4 00e6f753
+fmul.s fa5 fa5 fa1 10b7f7d3
+fmul.s fa5 fa5 fa0 10a7f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+fadd.s fa5 fa5 fa5 00f7f7d3
+fsw fa5 8 s2 00f92427
+mv a0 s4 000a0513
+addi sp s0 -80 fb040113
+lw ra 76 sp 04c12083
+lw s0 72 sp 04812403
+lw s1 68 sp 04412483
+lw s2 64 sp 04012903
+lw s3 60 sp 03c12983
+lw s4 56 sp 03812a03
+lw s5 52 sp 03412a83
+lw s6 48 sp 03012b03
+lw s7 44 sp 02c12b83
+lw s8 40 sp 02812c03
+lw s9 36 sp 02412c83
+lw s10 32 sp 02012d03
+lw s11 28 sp 01c12d83
+addi sp sp 80 05010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+li s1 60 03c00493
+blt s1 a0 .LBB28_3 18a4c863
+mv s0 a0 00050413
+call read_nth_object 190000ef
+andi a0 a0 255 0ff57513
+beqz a0 .LBB28_3 18050863
+addi a0 s0 1 00140513
+bne s0 s1 .LBB28_1 18941863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+li a0 0 00000513
+li s1 60 03c00493
+mv s0 a0 00050413
+call read_nth_object 190000ef
+andi a0 a0 255 0ff57513
+beqz a0 .LBB29_3 18050863
+addi a0 s0 1 00140513
+bne s0 s1 .LBB29_1 18941863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a0 00050413
+call min_caml_read_int 190000ef
+mv s1 a0 00050493
+li a1 -1 fff00593
+addi a0 s0 1 00140513
+beq s1 a1 .LBB30_2 18b48863
+call read_net_item 190000ef
+slli s0 s0 2 00241413
+add s0 a0 s0 00850433
+sw s1 0 s0 00942023
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+li a1 -1 fff00593
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+tail min_caml_create_array_int 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a0 00050413
+li a0 0 00000513
+call read_net_item 190000ef
+mv s1 a0 00050493
+lw a1 0 a0 00052583
+li a2 -1 fff00613
+addi a0 s0 1 00140513
+beq a1 a2 .LBB31_2 18c58863
+call read_or_network 190000ef
+slli s0 s0 2 00241413
+add s0 a0 s0 00850433
+sw s1 0 s0 00942023
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+mv a1 s1 00048593
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+tail min_caml_create_array_int_array 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a0 00050413
+li a0 0 00000513
+call read_net_item 190000ef
+lw a1 0 a0 00052583
+li s1 -1 fff00493
+beq a1 s1 .LBB32_3 18958863
+lui a1 %hi and_net 001905b7
+lw a1 %lo and_net a1 1905a583
+slli s0 s0 2 00241413
+add s0 a1 s0 00858433
+sw a0 0 s0 00a42023
+li a0 0 00000513
+call read_net_item 190000ef
+lw a1 0 a0 00052583
+addi s0 s0 4 00440413
+bne a1 s1 .LBB32_2 18959863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+call read_environ 190000ef
+li a0 0 00000513
+li s1 60 03c00493
+mv s0 a0 00050413
+call read_nth_object 190000ef
+andi a0 a0 255 0ff57513
+beqz a0 .LBB33_3 18050863
+addi a0 s0 1 00140513
+bne s0 s1 .LBB33_1 18941863
+li a0 0 00000513
+call read_net_item 190000ef
+lw a1 0 a0 00052583
+li s0 -1 fff00413
+beq a1 s0 .LBB33_6 18858863
+lui a1 %hi and_net 001905b7
+lw s1 %lo and_net a1 1905a483
+sw a0 0 s1 00a4a023
+li a0 0 00000513
+call read_net_item 190000ef
+lw a1 0 a0 00052583
+addi s1 s1 4 00448493
+bne a1 s0 .LBB33_5 18859863
+li a0 0 00000513
+call read_or_network 190000ef
+lui a1 %hi or_net 001905b7
+lw a1 %lo or_net a1 1905a583
+sw a0 0 a1 00a5a023
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+sw s3 12 sp 01312623
+lw s2 40 sp 02812903
+flw fa5 0 s2 00092787
+fmv.w.x fa4 zero f0000753
+feq.s a0 fa5 fa4 a0e7a553
+mv s1 a6 00080493
+mv s0 a4 00070413
+bnez a0 .LBB34_7 18051863
+andi a1 s1 1 0014f593
+flt.s a0 fa5 fa4 a0e79553
+fsw fa4 4 sp 00e12227
+beqz a1 .LBB34_3 18058863
+call min_caml_not 190000ef
+flw fa5 0 s0 00042787
+andi a0 a0 1 00157513
+bnez a0 .LBB34_5 18051863
+fneg.s fa5 fa5 20f797d3
+lui a0 %hi solver_w_vec 00190537
+lw s3 %lo solver_w_vec a0 19052983
+flw fa4 0 s3 0009a707
+flw fa3 0 s2 00092687
+flw fa2 4 s2 00492607
+flw fa1 4 s3 0049a587
+fsub.s fa5 fa5 fa4 08e7f7d3
+fdiv.s fa5 fa5 fa3 18d7f7d3
+fsw fa5 8 sp 00f12427
+fmul.s fa5 fa5 fa2 10c7f7d3
+fadd.s fa5 fa5 fa1 00b7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 4 s0 00442787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+flw fa4 4 sp 00412707
+bnez a0 .LBB34_7 18051863
+flw fa5 8 s2 00892787
+flw fa4 8 s3 0089a707
+flw fa3 8 sp 00812687
+fmul.s fa5 fa3 fa5 10f6f7d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 8 s0 00842787
+fmv.w.x fa4 a0 f0050753
+flt.s a1 fa4 fa5 a0f715d3
+flw fa4 4 sp 00412707
+li a0 1 00100513
+bnez a1 .LBB34_21 18059863
+flw fa5 4 s2 00492787
+feq.s a0 fa5 fa4 a0e7a553
+bnez a0 .LBB34_14 18051863
+andi a1 s1 1 0014f593
+flt.s a0 fa5 fa4 a0e79553
+fsw fa4 4 sp 00e12227
+beqz a1 .LBB34_10 18058863
+call min_caml_not 190000ef
+flw fa5 4 s0 00442787
+andi a0 a0 1 00157513
+bnez a0 .LBB34_12 18051863
+fneg.s fa5 fa5 20f797d3
+lui a0 %hi solver_w_vec 00190537
+lw s3 %lo solver_w_vec a0 19052983
+flw fa4 4 s3 0049a707
+flw fa3 4 s2 00492687
+flw fa2 8 s2 00892607
+flw fa1 8 s3 0089a587
+fsub.s fa5 fa5 fa4 08e7f7d3
+fdiv.s fa5 fa5 fa3 18d7f7d3
+fsw fa5 8 sp 00f12427
+fmul.s fa5 fa5 fa2 10c7f7d3
+fadd.s fa5 fa5 fa1 00b7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 8 s0 00842787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+flw fa4 4 sp 00412707
+bnez a0 .LBB34_14 18051863
+flw fa5 0 s2 00092787
+flw fa4 0 s3 0009a707
+flw fa3 8 sp 00812687
+fmul.s fa5 fa3 fa5 10f6f7d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 0 s0 00042787
+fmv.w.x fa4 a0 f0050753
+flt.s a1 fa4 fa5 a0f715d3
+flw fa4 4 sp 00412707
+li a0 2 00200513
+bnez a1 .LBB34_21 18059863
+flw fa5 8 s2 00892787
+feq.s a0 fa5 fa4 a0e7a553
+bnez a0 .LBB34_22 18051863
+andi s1 s1 1 0014f493
+flt.s a0 fa5 fa4 a0e79553
+beqz s1 .LBB34_17 18048863
+call min_caml_not 190000ef
+flw fa5 8 s0 00842787
+andi a0 a0 1 00157513
+bnez a0 .LBB34_19 18051863
+fneg.s fa5 fa5 20f797d3
+lui a0 %hi solver_w_vec 00190537
+lw s1 %lo solver_w_vec a0 19052483
+flw fa4 8 s1 0084a707
+flw fa3 8 s2 00892687
+flw fa2 0 s2 00092607
+flw fa1 0 s1 0004a587
+fsub.s fa5 fa5 fa4 08e7f7d3
+fdiv.s fa5 fa5 fa3 18d7f7d3
+fsw fa5 8 sp 00f12427
+fmul.s fa5 fa5 fa2 10c7f7d3
+fadd.s fa5 fa5 fa1 00b7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 0 s0 00042787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB34_22 18051863
+flw fa5 4 s2 00492787
+flw fa4 4 s1 0044a707
+flw fa3 8 sp 00812687
+fmul.s fa5 fa3 fa5 10f6f7d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 4 s0 00442787
+fmv.w.x fa4 a0 f0050753
+flt.s a1 fa4 fa5 a0f715d3
+li a0 3 00300513
+beqz a1 .LBB34_22 18058863
+lui a1 %hi solver_dist 001905b7
+lw a1 %lo solver_dist a1 1905a583
+flw fa5 8 sp 00812787
+fsw fa5 0 a1 00f5a027
+j .LBB34_23 1900006f
+li a0 0 00000513
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+lw s3 12 sp 00c12983
+addi sp sp 32 02010113
+ret 00008067
+lw a0 8 sp 00812503
+flw fa4 0 a0 00052707
+flw fa5 0 a4 00072787
+flw fa1 4 a0 00452587
+flw fa3 4 a4 00472687
+flw fa0 8 a0 00852507
+flw fa2 8 a4 00872607
+fmul.s fa4 fa4 fa5 10f77753
+fmul.s fa1 fa1 fa3 10d5f5d3
+fadd.s fa4 fa4 fa1 00b77753
+fmul.s fa1 fa0 fa2 10c575d3
+fadd.s fa4 fa4 fa1 00b77753
+fmv.w.x fa1 zero f00005d3
+fle.s a0 fa4 fa1 a0b70553
+bnez a0 .LBB35_2 18051863
+lui a0 %hi solver_w_vec 00190537
+lw a0 %lo solver_w_vec a0 19052503
+flw fa1 0 a0 00052587
+flw fa0 4 a0 00452507
+flw ft0 8 a0 00852007
+fmul.s fa5 fa5 fa1 10b7f7d3
+fmul.s fa3 fa3 fa0 10a6f6d3
+fadd.s fa5 fa5 fa3 00d7f7d3
+fmul.s fa3 fa2 ft0 100676d3
+lui a0 %hi solver_dist 00190537
+lw a0 %lo solver_dist a0 19052503
+fadd.s fa5 fa5 fa3 00d7f7d3
+fneg.s fa5 fa5 20f797d3
+fdiv.s fa5 fa5 fa4 18e7f7d3
+fsw fa5 0 a0 00f52027
+li a0 1 00100513
+ret 00008067
+li a0 0 00000513
+ret 00008067
+lw a0 8 sp 00812503
+flw fa5 0 a0 00052787
+flw fa4 0 a4 00072707
+flw fa3 4 a0 00452687
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+flw fa4 4 a4 00472707
+fmul.s fa3 fa3 fa3 10d6f6d3
+flw fa2 8 a0 00852607
+flw fa1 8 a4 00872587
+fmul.s fa4 fa3 fa4 10e6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa2 fa2 10c67753
+fmul.s fa4 fa4 fa1 10b77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lw a0 8 sp 00812503
+lw a1 4 sp 00412583
+flw fa5 4 a0 00452787
+flw fa4 8 a0 00852707
+flw fa3 0 a1 0005a687
+flw fa2 0 a0 00052607
+fmul.s fa1 fa5 fa4 10e7f5d3
+flw fa0 4 a1 0045a507
+fmul.s fa3 fa1 fa3 10d5f6d3
+fmul.s fa4 fa4 fa2 10c77753
+flw fa1 8 a1 0085a587
+fmul.s fa4 fa4 fa0 10a77753
+fadd.s fa4 fa3 fa4 00e6f753
+fmul.s fa5 fa5 fa2 10c7f7d3
+fmul.s fa5 fa5 fa1 10b7f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lui a0 %hi solver_w_vec 00190537
+lw a0 %lo solver_w_vec a0 19052503
+lw a1 8 sp 00812583
+flw fa5 0 a0 00052787
+flw fa4 0 a1 0005a707
+flw fa3 0 a4 00072687
+flw fa2 4 a0 00452607
+flw fa1 4 a1 0045a587
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa5 fa5 fa3 10d7f7d3
+fmul.s fa4 fa2 fa1 10b67753
+flw fa3 4 a4 00472687
+flw fa2 8 a0 00852607
+flw fa1 8 a1 0085a587
+flw fa0 8 a4 00872507
+fmul.s fa4 fa4 fa3 10d77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa2 fa1 10b67753
+fmul.s fa4 fa4 fa0 10a77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lui a0 %hi solver_w_vec 00190537
+lw a0 %lo solver_w_vec a0 19052503
+lw a1 8 sp 00812583
+flw fa5 8 a0 00852787
+flw fa4 4 a1 0045a707
+flw fa3 4 a0 00452687
+flw fa2 8 a1 0085a607
+lw a2 4 sp 00412603
+fmul.s fa1 fa5 fa4 10e7f5d3
+fmul.s fa0 fa3 fa2 10c6f553
+flw ft0 0 a2 00062007
+fadd.s fa1 fa1 fa0 00a5f5d3
+flw fa0 0 a0 00052507
+flw ft1 0 a1 0005a087
+fmul.s fa1 ft0 fa1 10b075d3
+flw ft0 4 a2 00462007
+fmul.s fa2 fa2 fa0 10a67653
+fmul.s fa5 fa5 ft1 1017f7d3
+fadd.s fa5 fa2 fa5 00f677d3
+fmul.s fa5 ft0 fa5 10f077d3
+fadd.s fa5 fa1 fa5 00f5f7d3
+flw fa2 8 a2 00862607
+fmul.s fa4 fa4 fa0 10a77753
+fmul.s fa3 fa3 ft1 1016f6d3
+fadd.s fa4 fa4 fa3 00d77753
+fmul.s fa4 fa4 fa2 10c77753
+fadd.s fa5 fa4 fa5 00f777d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+lw a2 24 sp 01812603
+flw fa1 0 a2 00062587
+flw fa4 0 a4 00072707
+lw a0 20 sp 01412503
+flw fa0 4 a2 00462507
+fmul.s fa5 fa1 fa1 10b5f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+flw fa3 4 a4 00472687
+fmul.s ft0 fa0 fa0 10a57053
+flw ft2 8 a2 00862107
+flw fa2 8 a4 00872607
+fmul.s ft0 ft0 fa3 10d07053
+fadd.s fa5 fa5 ft0 0007f7d3
+fmul.s ft0 ft2 ft2 10217053
+fmul.s ft0 ft0 fa2 10c07053
+fadd.s ft7 fa5 ft0 0007f3d3
+beqz a3 .LBB40_2 18068863
+flw fa5 0 a0 00052787
+fmul.s ft0 fa0 ft2 10257053
+flw ft1 4 a0 00452087
+fmul.s fa5 ft0 fa5 10f077d3
+fmul.s ft0 fa1 ft2 1025f053
+flw ft3 8 a0 00852187
+fmul.s ft0 ft0 ft1 10107053
+fadd.s fa5 fa5 ft0 0007f7d3
+fmul.s ft0 fa1 fa0 10a5f053
+fmul.s ft0 ft0 ft3 10307053
+fadd.s fa5 fa5 ft0 0007f7d3
+fadd.s ft7 ft7 fa5 00f3f3d3
+fmv.w.x fa5 zero f00007d3
+feq.s a2 ft7 fa5 a0f3a653
+bnez a2 .LBB40_13 18061863
+lui a2 %hi solver_w_vec 00190637
+lw a2 %lo solver_w_vec a2 19062603
+flw ft0 0 a2 00062007
+flw ft1 4 a2 00462087
+fmul.s ft3 fa1 ft0 1005f1d3
+fmul.s ft4 fa4 ft3 10377253
+flw ft3 8 a2 00862187
+fmul.s ft5 fa0 ft1 101572d3
+fmul.s ft5 fa3 ft5 1056f2d3
+fadd.s ft4 ft4 ft5 00527253
+fmul.s ft5 ft2 ft3 103172d3
+fmul.s ft5 fa2 ft5 105672d3
+fadd.s ft4 ft4 ft5 00527253
+fadd.s fa6 ft4 ft4 00427853
+beqz a3 .LBB40_5 18068863
+flw ft4 0 a0 00052207
+fmul.s ft5 fa0 ft3 103572d3
+fmul.s ft6 ft2 ft1 10117353
+fadd.s ft5 ft6 ft5 005372d3
+fmul.s ft4 ft5 ft4 1042f253
+flw ft5 4 a0 00452287
+fmul.s ft2 ft2 ft0 10017153
+fmul.s ft6 fa1 ft3 1035f353
+fadd.s ft2 ft2 ft6 00617153
+fmul.s ft2 ft2 ft5 10517153
+fadd.s ft2 ft4 ft2 00227153
+flw ft4 8 a0 00852207
+fmul.s fa0 fa0 ft0 10057553
+fmul.s fa1 fa1 ft1 1015f5d3
+fadd.s fa1 fa0 fa1 00b575d3
+fmul.s fa1 fa1 ft4 1045f5d3
+fadd.s fa1 fa1 ft2 0025f5d3
+fadd.s fa6 fa6 fa1 00b87853
+fmul.s fa1 ft0 ft0 100075d3
+fmul.s fa4 fa4 fa1 10b77753
+fmul.s fa1 ft1 ft1 1010f5d3
+fmul.s fa3 fa3 fa1 10b6f6d3
+fadd.s fa4 fa4 fa3 00d77753
+fmul.s fa3 ft3 ft3 1031f6d3
+fmul.s fa3 fa2 fa3 10d676d3
+fadd.s fa4 fa4 fa3 00d77753
+beqz a3 .LBB40_7 18068863
+flw fa3 0 a0 00052687
+fmul.s fa2 ft1 ft3 1030f653
+flw fa1 4 a0 00452587
+fmul.s fa3 fa2 fa3 10d676d3
+fmul.s fa2 ft0 ft3 10307653
+flw fa0 8 a0 00852507
+fmul.s fa2 fa2 fa1 10b67653
+fadd.s fa3 fa3 fa2 00c6f6d3
+fmul.s fa2 ft0 ft1 10107653
+fmul.s fa2 fa2 fa0 10a67653
+fadd.s fa3 fa3 fa2 00c6f6d3
+fadd.s fa4 fa4 fa3 00d77753
+li a0 3 00300513
+bne a1 a0 .LBB40_9 18a59863
+lui a0 784384 bf800537
+fmv.w.x fa3 a0 f00506d3
+fadd.s fa4 fa4 fa3 00d77753
+lui a0 788480 c0800537
+fmv.w.x fa3 a0 f00506d3
+fmul.s fa3 ft7 fa3 10d3f6d3
+fmul.s fa4 fa3 fa4 10e6f753
+fmul.s fa3 fa6 fa6 110876d3
+fadd.s fa4 fa3 fa4 00e6f753
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB40_13 18051863
+fsw fa6 0 sp 01012027
+fsw ft7 4 sp 00712227
+fmv.x.w a0 fa4 e0070553
+mv s0 a6 00080413
+call min_caml_sqrt 190000ef
+andi s0 s0 1 00147413
+fmv.w.x fa5 a0 f00507d3
+bnez s0 .LBB40_12 18041863
+fneg.s fa5 fa5 20f797d3
+flw fa3 4 sp 00412687
+flw fa4 0 sp 00012707
+fsub.s fa5 fa5 fa4 08e7f7d3
+lui a0 258048 3f000537
+lui a1 %hi solver_dist 001905b7
+lw a1 %lo solver_dist a1 1905a583
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fdiv.s fa5 fa5 fa3 18d7f7d3
+fsw fa5 0 a1 00f5a027
+li a0 1 00100513
+j .LBB40_14 1900006f
+li a0 0 00000513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+lui a3 %hi objects 001906b7
+lw s2 %lo objects a3 1906a903
+mv s1 a2 00060493
+mv s0 a1 00058413
+li a1 40 02800593
+call __mulsi3 190000ef
+add a0 s2 a0 00a90533
+lw t0 36 a0 02452283
+lw t1 32 a0 02052303
+lw a7 28 a0 01c52883
+lw a6 24 a0 01852803
+lw a4 16 a0 01052703
+lw a5 20 a0 01452783
+lw a3 12 a0 00c52683
+lw a2 8 a0 00852603
+flw fa5 0 s1 0004a787
+flw fa4 0 a5 0007a707
+lui a1 %hi solver_w_vec 001905b7
+lw t2 %lo solver_w_vec a1 1905a383
+lw a1 4 a0 00452583
+lw a0 0 a0 00052503
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 0 t2 00f3a027
+flw fa4 4 s1 0044a707
+flw fa3 4 a5 0047a687
+fsub.s fa4 fa4 fa3 08d77753
+fsw fa4 4 t2 00e3a227
+flw fa3 8 s1 0084a687
+flw fa2 8 a5 0087a607
+fsub.s fa3 fa3 fa2 08c6f6d3
+li t3 2 00200e13
+fsw fa3 8 t2 00d3a427
+beq a1 t3 .LBB41_3 19c58863
+li t2 1 00100393
+bne a1 t2 .LBB41_5 18759863
+sw s0 8 sp 00812423
+sw t1 0 sp 00612023
+sw t0 4 sp 00512223
+call solver_rect 190000ef
+j .LBB41_7 1900006f
+flw fa1 0 s0 00042587
+flw fa2 0 a4 00072607
+flw ft1 4 s0 00442087
+flw fa0 4 a4 00472507
+flw ft2 8 s0 00842107
+flw ft0 8 a4 00872007
+fmul.s fa1 fa1 fa2 10c5f5d3
+fmul.s ft1 ft1 fa0 10a0f0d3
+fadd.s fa1 fa1 ft1 0015f5d3
+fmul.s ft1 ft2 ft0 100170d3
+fadd.s fa1 fa1 ft1 0015f5d3
+fmv.w.x ft1 zero f00000d3
+fle.s a0 fa1 ft1 a0158553
+bnez a0 .LBB41_6 18051863
+fmul.s fa5 fa5 fa2 10c7f7d3
+fmul.s fa4 fa4 fa0 10a77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 ft0 1006f753
+lui a0 %hi solver_dist 00190537
+lw a0 %lo solver_dist a0 19052503
+fadd.s fa5 fa5 fa4 00e7f7d3
+fneg.s fa5 fa5 20f797d3
+fdiv.s fa5 fa5 fa1 18b7f7d3
+fsw fa5 0 a0 00f52027
+li a0 1 00100513
+j .LBB41_7 1900006f
+sw s0 8 sp 00812423
+sw t1 0 sp 00612023
+sw t0 4 sp 00512223
+call solver_second 190000ef
+j .LBB41_7 1900006f
+li a0 0 00000513
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+addi sp sp 32 02010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+sw s2 0 sp 01212023
+lui a0 %hi isoutside_q 00190537
+lw s2 %lo isoutside_q a0 19052903
+lw a0 0 s2 00092503
+mv s0 a6 00080413
+mv s1 a4 00070493
+call min_caml_abs_float 190000ef
+flw fa5 0 s1 0004a787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB42_4 18051863
+lw a0 4 s2 00492503
+call min_caml_abs_float 190000ef
+flw fa5 4 s1 0044a787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB42_4 18051863
+lw a0 8 s2 00892503
+call min_caml_abs_float 190000ef
+flw fa5 8 s1 0084a787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB42_4 18051863
+mv a0 s0 00040513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+ret 00008067
+mv a0 s0 00040513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+tail min_caml_not 1900006f
+lui a0 %hi isoutside_q 00190537
+lw a0 %lo isoutside_q a0 19052503
+flw fa5 0 a4 00072787
+flw fa4 0 a0 00052707
+flw fa3 4 a4 00472687
+flw fa2 4 a0 00452607
+flw fa1 8 a4 00872587
+flw fa0 8 a0 00852507
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa4 fa3 fa2 10c6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa1 fa0 10a5f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.w.x fa4 zero f0000753
+andi a1 a6 1 00187593
+flt.s a0 fa5 fa4 a0e79553
+beqz a1 .LBB43_2 18058863
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+call min_caml_not 190000ef
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+tail min_caml_not 1900006f
+lui a0 %hi isoutside_q 00190537
+lw a0 %lo isoutside_q a0 19052503
+flw fa5 0 a0 00052787
+flw fa3 0 a4 00072687
+flw fa4 4 a0 00452707
+fmul.s fa2 fa5 fa5 10f7f653
+fmul.s fa3 fa2 fa3 10d676d3
+flw fa1 4 a4 00472587
+fmul.s fa0 fa4 fa4 10e77553
+flw fa2 8 a0 00852607
+flw ft0 8 a4 00872007
+fmul.s fa1 fa0 fa1 10b575d3
+fadd.s fa3 fa3 fa1 00b6f6d3
+fmul.s fa1 fa2 fa2 10c675d3
+fmul.s fa1 fa1 ft0 1005f5d3
+li a0 3 00300513
+fadd.s fa3 fa3 fa1 00b6f6d3
+bne a1 a0 .LBB44_2 18a59863
+lui a0 784384 bf800537
+fmv.w.x fa1 a0 f00505d3
+fadd.s fa3 fa3 fa1 00b6f6d3
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+beqz a3 .LBB44_4 18068863
+lw a0 20 sp 01412503
+flw fa1 0 a0 00052587
+fmul.s fa0 fa4 fa2 10c77553
+flw ft0 4 a0 00452007
+fmul.s fa1 fa0 fa1 10b575d3
+fmul.s fa2 fa5 fa2 10c7f653
+flw fa0 8 a0 00852507
+fmul.s fa2 fa2 ft0 10067653
+fadd.s fa2 fa1 fa2 00c5f653
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa5 fa5 fa0 10a7f7d3
+fadd.s fa5 fa2 fa5 00f677d3
+fadd.s fa3 fa3 fa5 00f6f6d3
+fmv.w.x fa5 zero f00007d3
+andi a1 a6 1 00187593
+flt.s a0 fa3 fa5 a0f69553
+beqz a1 .LBB44_6 18058863
+call min_caml_not 190000ef
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+tail min_caml_not 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+sw s2 0 sp 01212023
+lui a0 %hi chkinside_p 00190537
+lw a2 %lo chkinside_p a0 19052603
+flw fa5 0 a2 00062787
+flw fa4 0 a5 0007a707
+lui a0 %hi isoutside_q 00190537
+lw s2 %lo isoutside_q a0 19052903
+lw a0 20 sp 01412503
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 0 s2 00f92027
+flw fa4 4 a2 00462707
+flw fa3 4 a5 0047a687
+fsub.s fa4 fa4 fa3 08d77753
+fsw fa4 4 s2 00e92227
+flw fa3 8 a2 00862687
+flw fa2 8 a5 0087a607
+mv s0 a4 00070413
+fsub.s fa3 fa3 fa2 08c6f6d3
+li a2 2 00200613
+fsw fa3 8 s2 00d92427
+beq a1 a2 .LBB45_6 18c58863
+li a2 1 00100613
+bne a1 a2 .LBB45_7 18c59863
+mv s1 a6 00080493
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+flw fa5 0 s0 00042787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB45_13 18051863
+lw a0 4 s2 00492503
+call min_caml_abs_float 190000ef
+flw fa5 4 s0 00442787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB45_13 18051863
+lw a0 8 s2 00892503
+call min_caml_abs_float 190000ef
+flw fa5 8 s0 00842787
+fmv.w.x fa4 a0 f0050753
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB45_13 18051863
+mv a0 s1 00048513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+ret 00008067
+flw fa2 0 s0 00042607
+flw fa1 4 s0 00442587
+flw fa0 8 s0 00842507
+fmul.s fa5 fa5 fa2 10c7f7d3
+fmul.s fa4 fa4 fa1 10b77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa0 10a6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.w.x fa4 zero f0000753
+andi a1 a6 1 00187593
+flt.s a0 fa5 fa4 a0e79553
+bnez a1 .LBB45_12 18059863
+j .LBB45_14 1900006f
+flw fa2 0 s0 00042607
+fmul.s fa1 fa5 fa5 10f7f5d3
+flw fa0 4 s0 00442507
+fmul.s fa2 fa1 fa2 10c5f653
+fmul.s fa1 fa4 fa4 10e775d3
+flw ft0 8 s0 00842007
+fmul.s fa1 fa1 fa0 10a5f5d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa1 fa3 fa3 10d6f5d3
+fmul.s fa1 fa1 ft0 1005f5d3
+li a2 3 00300613
+fadd.s fa2 fa2 fa1 00b67653
+bne a1 a2 .LBB45_9 18c59863
+lui a1 784384 bf8005b7
+fmv.w.x fa1 a1 f00585d3
+fadd.s fa2 fa2 fa1 00b67653
+beqz a3 .LBB45_11 18068863
+flw fa1 0 a0 00052587
+fmul.s fa0 fa4 fa3 10d77553
+flw ft0 4 a0 00452007
+fmul.s fa1 fa0 fa1 10b575d3
+fmul.s fa3 fa5 fa3 10d7f6d3
+flw fa0 8 a0 00852507
+fmul.s fa3 fa3 ft0 1006f6d3
+fadd.s fa3 fa1 fa3 00d5f6d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa5 fa5 fa0 10a7f7d3
+fadd.s fa5 fa3 fa5 00f6f7d3
+fadd.s fa2 fa2 fa5 00f67653
+fmv.w.x fa5 zero f00007d3
+andi a1 a6 1 00187593
+flt.s a0 fa2 fa5 a0f61553
+beqz a1 .LBB45_14 18058863
+call min_caml_not 190000ef
+j .LBB45_14 1900006f
+mv a0 s1 00048513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+tail min_caml_not 1900006f
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+sw s3 12 sp 01312623
+slli a0 a0 2 00251513
+add a1 a1 a0 00a585b3
+lw a0 0 a1 0005a503
+li s1 -1 fff00493
+li s0 1 00100413
+beq a0 s1 .LBB46_5 18950863
+lui a2 %hi objects 00190637
+lw s2 %lo objects a2 19062903
+addi s3 a1 4 00458993
+li a1 40 02800593
+call __mulsi3 190000ef
+add a6 s2 a0 00a90833
+lw a7 28 a6 01c82883
+lw a5 20 a6 01482783
+lw a4 16 a6 01082703
+lw a3 12 a6 00c82683
+lw a2 8 a6 00882603
+lw a1 4 a6 00482583
+lw a0 0 a6 00082503
+lw t0 32 a6 02082283
+lw t1 36 a6 02482303
+lw a6 24 a6 01882803
+sw t1 4 sp 00612223
+sw t0 0 sp 00512023
+call is_outside 190000ef
+andi a0 a0 1 00157513
+bnez a0 .LBB46_4 18051863
+lw a0 0 s3 0009a503
+addi s3 s3 4 00498993
+bne a0 s1 .LBB46_2 18951863
+j .LBB46_5 1900006f
+li s0 0 00000413
+mv a0 s0 00040513
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+lw s3 12 sp 00c12983
+addi sp sp 32 02010113
+ret 00008067
+addi sp sp -64 fc010113
+sw ra 60 sp 02112e23
+sw s0 56 sp 02812c23
+sw s1 52 sp 02912a23
+sw s2 48 sp 03212823
+sw s3 44 sp 03312623
+sw s4 40 sp 03412423
+sw s5 36 sp 03512223
+sw s6 32 sp 03612023
+sw s7 28 sp 01712e23
+sw s8 24 sp 01812c23
+sw s9 20 sp 01912a23
+sw s10 16 sp 01a12823
+mv s1 a0 00050493
+slli a0 a0 2 00251513
+add a0 a1 a0 00a58533
+lw s4 0 a0 00052a03
+li s5 -1 fff00a93
+beq s4 s5 .LBB47_9 195a0863
+mv s0 a1 00058413
+mv s2 a2 00060913
+lui a0 %hi light 00190537
+lw s3 %lo light a0 19052983
+lui a0 %hi solver_dist 00190537
+lw s6 %lo solver_dist a0 19052b03
+lui a0 %hi objects 00190537
+lw s7 %lo objects a0 19052b83
+lui a0 %hi chkinside_p 00190537
+lw s8 %lo chkinside_p a0 19052c03
+lui a0 %hi .LCPI47_0 00190537
+flw fa5 %lo .LCPI47_0 a0 19052787
+fsw fa5 12 sp 00f12627
+lui a0 %hi .LCPI47_1 00190537
+flw fa5 %lo .LCPI47_1 a0 19052787
+fsw fa5 8 sp 00f12427
+addi s9 a1 4 00458c93
+mv a0 s4 000a0513
+mv a1 s3 00098593
+mv a2 s2 00090613
+call solver 190000ef
+beqz a0 .LBB47_7 18050863
+flw fa5 0 s6 000b2787
+flw fa4 12 sp 00c12707
+flt.s a0 fa5 fa4 a0e79553
+beqz a0 .LBB47_7 18050863
+flw fa4 0 s3 0009a707
+flw fa3 0 s2 00092687
+flw fa2 8 sp 00812607
+fadd.s fa5 fa5 fa2 00c7f7d3
+fmul.s fa4 fa5 fa4 10e7f753
+fadd.s fa4 fa4 fa3 00d77753
+fsw fa4 0 s8 00ec2027
+flw fa4 4 s3 0049a707
+flw fa3 4 s2 00492687
+fmul.s fa4 fa5 fa4 10e7f753
+fadd.s fa4 fa4 fa3 00d77753
+fsw fa4 4 s8 00ec2227
+flw fa4 8 s3 0089a707
+flw fa3 8 s2 00892687
+fmul.s fa5 fa5 fa4 10e7f7d3
+fadd.s fa5 fa5 fa3 00d7f7d3
+fsw fa5 8 s8 00fc2427
+lw a0 0 s0 00042503
+li s4 1 00100a13
+mv s10 s9 000c8d13
+beq a0 s5 .LBB47_10 19550863
+li a1 40 02800593
+call __mulsi3 190000ef
+add a6 s7 a0 00ab8833
+lw a7 28 a6 01c82883
+lw a5 20 a6 01482783
+lw a4 16 a6 01082703
+lw a3 12 a6 00c82683
+lw a2 8 a6 00882603
+lw a1 4 a6 00482583
+lw a0 0 a6 00082503
+lw t0 32 a6 02082283
+lw t1 36 a6 02482303
+lw a6 24 a6 01882803
+sw t1 4 sp 00612223
+sw t0 0 sp 00512023
+call is_outside 190000ef
+andi a0 a0 1 00157513
+bnez a0 .LBB47_8 18051863
+lw a0 0 s10 000d2503
+addi s10 s10 4 004d0d13
+bne a0 s5 .LBB47_5 19551863
+j .LBB47_10 1900006f
+li a1 40 02800593
+mv a0 s4 000a0513
+call __mulsi3 190000ef
+add a0 s7 a0 00ab8533
+lw a0 24 a0 01852503
+andi a0 a0 1 00157513
+beqz a0 .LBB47_9 18050863
+addi s1 s1 1 00148493
+slli a0 s1 2 00249513
+add a0 s0 a0 00a40533
+lw s4 0 a0 00052a03
+bne s4 s5 .LBB47_2 195a1863
+li s4 0 00000a13
+mv a0 s4 000a0513
+lw ra 60 sp 03c12083
+lw s0 56 sp 03812403
+lw s1 52 sp 03412483
+lw s2 48 sp 03012903
+lw s3 44 sp 02c12983
+lw s4 40 sp 02812a03
+lw s5 36 sp 02412a83
+lw s6 32 sp 02012b03
+lw s7 28 sp 01c12b83
+lw s8 24 sp 01812c03
+lw s9 20 sp 01412c83
+lw s10 16 sp 01012d03
+addi sp sp 64 04010113
+ret 00008067
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+sw s3 12 sp 01312623
+slli a0 a0 2 00251513
+add a1 a1 a0 00a585b3
+lw a0 0 a1 0005a503
+li s1 -1 fff00493
+beq a0 s1 .LBB48_4 18950863
+mv s0 a2 00060413
+lui a2 %hi and_net 00190637
+lw s2 %lo and_net a2 19062903
+addi s3 a1 4 00458993
+slli a0 a0 2 00251513
+add a0 s2 a0 00a90533
+lw a1 0 a0 00052583
+li a0 0 00000513
+mv a2 s0 00040613
+call shadow_check_and_group 190000ef
+andi a0 a0 255 0ff57513
+bnez a0 .LBB48_5 18051863
+lw a0 0 s3 0009a503
+addi s3 s3 4 00498993
+bne a0 s1 .LBB48_2 18951863
+li a0 0 00000513
+j .LBB48_6 1900006f
+li a0 1 00100513
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+lw s3 12 sp 00c12983
+addi sp sp 32 02010113
+ret 00008067
+addi sp sp -48 fd010113
+sw ra 44 sp 02112623
+sw s0 40 sp 02812423
+sw s1 36 sp 02912223
+sw s2 32 sp 03212023
+sw s3 28 sp 01312e23
+sw s4 24 sp 01412c23
+sw s5 20 sp 01512a23
+sw s6 16 sp 01612823
+sw s7 12 sp 01712623
+sw s8 8 sp 01812423
+lui a3 %hi and_net 001906b7
+lw s4 %lo and_net a3 1906aa03
+lui a3 %hi light 001906b7
+lw s0 %lo light a3 1906a403
+lui a3 %hi solver_dist 001906b7
+lw s5 %lo solver_dist a3 1906aa83
+lui a3 %hi .LCPI49_0 001906b7
+flw fa5 %lo .LCPI49_0 a3 1906a787
+fsw fa5 4 sp 00f12227
+mv s1 a2 00060493
+mv s2 a1 00058913
+mv s3 a0 00050993
+li s6 99 06300b13
+li s7 -1 fff00b93
+j .LBB49_2 1900006f
+addi s3 s3 1 00198993
+slli a0 s3 2 00299513
+add a0 s2 a0 00a90533
+lw s8 0 a0 00052c03
+lw a0 0 s8 000c2503
+beq a0 s6 .LBB49_10 19650863
+beq a0 s7 .LBB49_16 19750863
+mv a1 s0 00040593
+mv a2 s1 00048613
+call solver 190000ef
+beqz a0 .LBB49_1 18050863
+flw fa5 0 s5 000aa787
+flw fa4 4 sp 00412707
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB49_1 18051863
+lw a0 4 s8 004c2503
+beq a0 s7 .LBB49_1 19750863
+addi s8 s8 8 008c0c13
+slli a0 a0 2 00251513
+add a0 s4 a0 00aa0533
+lw a1 0 a0 00052583
+li a0 0 00000513
+mv a2 s1 00048613
+call shadow_check_and_group 190000ef
+andi a0 a0 255 0ff57513
+bnez a0 .LBB49_14 18051863
+lw a0 0 s8 000c2503
+addi s8 s8 4 004c0c13
+bne a0 s7 .LBB49_8 19751863
+j .LBB49_1 1900006f
+lw a0 4 s8 004c2503
+beq a0 s7 .LBB49_1 19750863
+addi s8 s8 8 008c0c13
+slli a0 a0 2 00251513
+add a0 s4 a0 00aa0533
+lw a1 0 a0 00052583
+li a0 0 00000513
+mv a2 s1 00048613
+call shadow_check_and_group 190000ef
+andi a0 a0 255 0ff57513
+bnez a0 .LBB49_14 18051863
+lw a0 0 s8 000c2503
+addi s8 s8 4 004c0c13
+bne a0 s7 .LBB49_12 19751863
+j .LBB49_1 1900006f
+li a0 1 00100513
+lw ra 44 sp 02c12083
+lw s0 40 sp 02812403
+lw s1 36 sp 02412483
+lw s2 32 sp 02012903
+lw s3 28 sp 01c12983
+lw s4 24 sp 01812a03
+lw s5 20 sp 01412a83
+lw s6 16 sp 01012b03
+lw s7 12 sp 00c12b83
+lw s8 8 sp 00812c03
+addi sp sp 48 03010113
+ret 00008067
+li a0 0 00000513
+j .LBB49_15 1900006f
+addi sp sp -96 fa010113
+sw ra 92 sp 04112e23
+sw s0 88 sp 04812c23
+sw s1 84 sp 04912a23
+sw s2 80 sp 05212823
+sw s3 76 sp 05312623
+sw s4 72 sp 05412423
+sw s5 68 sp 05512223
+sw s6 64 sp 05612023
+sw s7 60 sp 03712e23
+sw s8 56 sp 03812c23
+sw s9 52 sp 03912a23
+sw s10 48 sp 03a12823
+sw s11 44 sp 03b12623
+mv s1 a0 00050493
+slli a0 a0 2 00251513
+add a0 a1 a0 00a58533
+lw s4 0 a0 00052a03
+li s6 -1 fff00b13
+beq s4 s6 .LBB50_13 196a0863
+mv s0 a1 00058413
+lui a0 %hi vscan 00190537
+lw s2 %lo vscan a0 19052903
+lui a0 %hi viewpoint 00190537
+lw s3 %lo viewpoint a0 19052983
+lui a0 %hi solver_dist 00190537
+lw s7 %lo solver_dist a0 19052b83
+lui a0 %hi tmin 00190537
+lw a0 %lo tmin a0 19052503
+sw a0 36 sp 02a12223
+lui a0 %hi chkinside_p 00190537
+lw s9 %lo chkinside_p a0 19052c83
+lui a0 %hi objects 00190537
+lw s10 %lo objects a0 19052d03
+lui a0 %hi crashed_point 00190537
+lw a0 %lo crashed_point a0 19052503
+sw a0 20 sp 00a12a23
+lui a0 %hi intsec_rectside 00190537
+lw a0 %lo intsec_rectside a0 19052503
+sw a0 16 sp 00a12823
+lui a0 %hi crashed_object 00190537
+lw a0 %lo crashed_object a0 19052503
+sw a0 12 sp 00a12623
+lui a0 %hi end_flag 00190537
+lw s11 %lo end_flag a0 19052d83
+lui a0 %hi .LCPI50_0 00190537
+flw fa5 %lo .LCPI50_0 a0 19052787
+fsw fa5 40 sp 02f12427
+lui a0 %hi .LCPI50_1 00190537
+flw fa5 %lo .LCPI50_1 a0 19052787
+fsw fa5 28 sp 00f12e27
+addi a0 a1 4 00458513
+sw a0 24 sp 00a12c23
+mv a0 s4 000a0513
+mv a1 s2 00090593
+mv a2 s3 00098613
+call solver 190000ef
+beqz a0 .LBB50_9 18050863
+mv s5 a0 00050a93
+flw fa5 0 s7 000ba787
+flw fa4 40 sp 02812707
+flt.s a0 fa4 fa5 a0f71553
+beqz a0 .LBB50_11 18050863
+lw a0 36 sp 02412503
+flw fa4 0 a0 00052707
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB50_11 18051863
+flw fa4 0 s2 00092707
+flw fa3 0 s3 0009a687
+flw fa2 28 sp 01c12607
+fadd.s fa2 fa5 fa2 00c7f653
+fmul.s fa5 fa2 fa4 10e677d3
+fadd.s fa5 fa5 fa3 00d7f7d3
+fsw fa5 0 s9 00fca027
+flw fa5 4 s2 00492787
+flw fa4 4 s3 0049a707
+fmul.s fa5 fa2 fa5 10f677d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 4 s9 00fca227
+flw fa5 8 s2 00892787
+flw fa4 8 s3 0089a707
+fsw fa2 32 sp 02c12027
+fmul.s fa5 fa2 fa5 10f677d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 8 s9 00fca427
+lw a0 0 s0 00042503
+lw s8 24 sp 01812c03
+beq a0 s6 .LBB50_8 19650863
+li a1 40 02800593
+call __mulsi3 190000ef
+add a6 s10 a0 00ad0833
+lw a7 28 a6 01c82883
+lw a5 20 a6 01482783
+lw a4 16 a6 01082703
+lw a3 12 a6 00c82683
+lw a2 8 a6 00882603
+lw a1 4 a6 00482583
+lw a0 0 a6 00082503
+lw t0 32 a6 02082283
+lw t1 36 a6 02482303
+lw a6 24 a6 01882803
+sw t1 4 sp 00612223
+sw t0 0 sp 00512023
+call is_outside 190000ef
+andi a0 a0 1 00157513
+bnez a0 .LBB50_11 18051863
+lw a0 0 s8 000c2503
+addi s8 s8 4 004c0c13
+bne a0 s6 .LBB50_6 19651863
+lw a0 36 sp 02412503
+flw fa5 32 sp 02012787
+fsw fa5 0 a0 00f52027
+flw fa5 0 s9 000ca787
+lw a0 20 sp 01412503
+fsw fa5 0 a0 00f52027
+flw fa5 4 s9 004ca787
+fsw fa5 4 a0 00f52227
+flw fa5 8 s9 008ca787
+fsw fa5 8 a0 00f52427
+lw a0 16 sp 01012503
+sw s5 0 a0 01552023
+lw a0 12 sp 00c12503
+sw s4 0 a0 01452023
+j .LBB50_11 1900006f
+li a1 40 02800593
+mv a0 s4 000a0513
+call __mulsi3 190000ef
+add a0 s10 a0 00ad0533
+lw a0 24 a0 01852503
+andi a0 a0 1 00157513
+bnez a0 .LBB50_11 18051863
+li a0 1 00100513
+sw a0 0 s11 00ada023
+lw a0 0 s11 000da503
+call min_caml_not 190000ef
+andi a0 a0 1 00157513
+beqz a0 .LBB50_13 18050863
+addi s1 s1 1 00148493
+slli a0 s1 2 00249513
+add a0 s0 a0 00a40533
+lw s4 0 a0 00052a03
+bne s4 s6 .LBB50_2 196a1863
+lw ra 92 sp 05c12083
+lw s0 88 sp 05812403
+lw s1 84 sp 05412483
+lw s2 80 sp 05012903
+lw s3 76 sp 04c12983
+lw s4 72 sp 04812a03
+lw s5 68 sp 04412a83
+lw s6 64 sp 04012b03
+lw s7 60 sp 03c12b83
+lw s8 56 sp 03812c03
+lw s9 52 sp 03412c83
+lw s10 48 sp 03012d03
+lw s11 44 sp 02c12d83
+addi sp sp 96 06010113
+ret 00008067
+addi sp sp -32 fe010113
+sw ra 28 sp 00112e23
+sw s0 24 sp 00812c23
+sw s1 20 sp 00912a23
+sw s2 16 sp 01212823
+sw s3 12 sp 01312623
+slli a0 a0 2 00251513
+add a1 a1 a0 00a585b3
+lw a0 0 a1 0005a503
+li s0 -1 fff00413
+beq a0 s0 .LBB51_3 18850863
+lui a2 %hi and_net 00190637
+lw s1 %lo and_net a2 19062483
+lui a2 %hi end_flag 00190637
+lw s2 %lo end_flag a2 19062903
+addi s3 a1 4 00458993
+slli a0 a0 2 00251513
+add a0 s1 a0 00a48533
+lw a1 0 a0 00052583
+sw zero 0 s2 00092023
+li a0 0 00000513
+call solve_each_element 190000ef
+lw a0 0 s3 0009a503
+addi s3 s3 4 00498993
+bne a0 s0 .LBB51_2 18851863
+lw ra 28 sp 01c12083
+lw s0 24 sp 01812403
+lw s1 20 sp 01412483
+lw s2 16 sp 01012903
+lw s3 12 sp 00c12983
+addi sp sp 32 02010113
+ret 00008067
+addi sp sp -48 fd010113
+sw ra 44 sp 02112623
+sw s0 40 sp 02812423
+sw s1 36 sp 02912223
+sw s2 32 sp 03212023
+sw s3 28 sp 01312e23
+sw s4 24 sp 01412c23
+sw s5 20 sp 01512a23
+sw s6 16 sp 01612823
+sw s7 12 sp 01712623
+sw s8 8 sp 01812423
+sw s9 4 sp 01912223
+sw s10 0 sp 01a12023
+lui a2 %hi and_net 00190637
+lw s4 %lo and_net a2 19062a03
+lui a2 %hi end_flag 00190637
+lw s5 %lo end_flag a2 19062a83
+lui a2 %hi vscan 00190637
+lw s0 %lo vscan a2 19062403
+lui a2 %hi viewpoint 00190637
+lw s1 %lo viewpoint a2 19062483
+lui a2 %hi solver_dist 00190637
+lw s6 %lo solver_dist a2 19062b03
+lui a2 %hi tmin 00190637
+lw s7 %lo tmin a2 19062b83
+mv s2 a1 00058913
+mv s3 a0 00050993
+li s8 99 06300c13
+li s9 -1 fff00c93
+j .LBB52_2 1900006f
+addi s3 s3 1 00198993
+slli a0 s3 2 00299513
+add a0 s2 a0 00a90533
+lw s10 0 a0 00052d03
+lw a0 0 s10 000d2503
+beq a0 s8 .LBB52_9 19850863
+beq a0 s9 .LBB52_12 19950863
+mv a1 s0 00040593
+mv a2 s1 00048613
+call solver 190000ef
+beqz a0 .LBB52_1 18050863
+flw fa5 0 s6 000b2787
+flw fa4 0 s7 000ba707
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB52_1 18051863
+lw a0 4 s10 004d2503
+beq a0 s9 .LBB52_1 19950863
+addi s10 s10 8 008d0d13
+slli a0 a0 2 00251513
+add a0 s4 a0 00aa0533
+lw a1 0 a0 00052583
+sw zero 0 s5 000aa023
+li a0 0 00000513
+call solve_each_element 190000ef
+lw a0 0 s10 000d2503
+addi s10 s10 4 004d0d13
+bne a0 s9 .LBB52_8 19951863
+j .LBB52_1 1900006f
+lw a0 4 s10 004d2503
+beq a0 s9 .LBB52_1 19950863
+addi s10 s10 8 008d0d13
+slli a0 a0 2 00251513
+add a0 s4 a0 00aa0533
+lw a1 0 a0 00052583
+sw zero 0 s5 000aa023
+li a0 0 00000513
+call solve_each_element 190000ef
+lw a0 0 s10 000d2503
+addi s10 s10 4 004d0d13
+bne a0 s9 .LBB52_11 19951863
+j .LBB52_1 1900006f
+lw ra 44 sp 02c12083
+lw s0 40 sp 02812403
+lw s1 36 sp 02412483
+lw s2 32 sp 02012903
+lw s3 28 sp 01c12983
+lw s4 24 sp 01812a03
+lw s5 20 sp 01412a83
+lw s6 16 sp 01012b03
+lw s7 12 sp 00c12b83
+lw s8 8 sp 00812c03
+lw s9 4 sp 00412c83
+lw s10 0 sp 00012d03
+addi sp sp 48 03010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+lui a0 %hi tmin 00190537
+lw s0 %lo tmin a0 19052403
+lui a0 %hi or_net 00190537
+lw a0 %lo or_net a0 19052503
+lui a1 321255 4e6e75b7
+addi a1 a1 -1240 b2858593
+sw a1 0 s0 00b42023
+lw a1 0 a0 00052583
+li a0 0 00000513
+call trace_or_matrix 190000ef
+flw fa5 0 s0 00042787
+lui a0 %hi .LCPI53_0 00190537
+flw fa4 %lo .LCPI53_0 a0 19052707
+lui a0 %hi .LCPI53_1 00190537
+flw fa3 %lo .LCPI53_1 a0 19052687
+flt.s a0 fa4 fa5 a0f71553
+flt.s a1 fa5 fa3 a0d795d3
+and a0 a0 a1 00b57533
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+ret 00008067
+lui a0 %hi intsec_rectside 00190537
+lw a0 %lo intsec_rectside a0 19052503
+lw a0 0 a0 00052503
+li a1 3 00300593
+beq a0 a1 .LBB54_7 18b50863
+li a1 2 00200593
+beq a0 a1 .LBB54_5 18b50863
+li a1 1 00100593
+bne a0 a1 .LBB54_16 18b51863
+lui a0 %hi vscan 00190537
+lw a0 %lo vscan a0 19052503
+flw fa4 0 a0 00052707
+fmv.w.x fa5 zero f00007d3
+flt.s a0 fa5 fa4 a0e79553
+bnez a0 .LBB54_13 18051863
+lui a0 784384 bf800537
+j .LBB54_14 1900006f
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+lui a1 %hi vscan 001905b7
+lw a1 %lo vscan a1 1905a583
+sw zero 0 a0 00052023
+flw fa4 4 a1 0045a707
+fmv.w.x fa5 zero f00007d3
+flt.s a1 fa5 fa4 a0e795d3
+bnez a1 .LBB54_9 18059863
+lui a1 784384 bf8005b7
+j .LBB54_10 1900006f
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+lui a1 %hi vscan 001905b7
+lw a1 %lo vscan a1 1905a583
+sw zero 0 a0 00052023
+sw zero 4 a0 00052223
+flw fa5 8 a1 0085a787
+fmv.w.x fa4 zero f0000753
+flt.s a1 fa4 fa5 a0f715d3
+bnez a1 .LBB54_11 18059863
+lui a1 784384 bf8005b7
+j .LBB54_12 1900006f
+lui a1 260096 3f8005b7
+fmv.w.x fa4 a1 f0058753
+fneg.s fa4 fa4 20e71753
+fsw fa4 4 a0 00e52227
+j .LBB54_15 1900006f
+lui a1 260096 3f8005b7
+fmv.w.x fa5 a1 f00587d3
+fneg.s fa5 fa5 20f797d3
+j .LBB54_15 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa4 a0 f0050753
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+fneg.s fa4 fa4 20e71753
+fsw fa4 0 a0 00e52027
+sw zero 4 a0 00052223
+fsw fa5 8 a0 00f52427
+ret 00008067
+flw fa5 0 a4 00072787
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+fneg.s fa5 fa5 20f797d3
+fsw fa5 0 a0 00f52027
+flw fa5 4 a4 00472787
+fneg.s fa5 fa5 20f797d3
+fsw fa5 4 a0 00f52227
+flw fa5 8 a4 00872787
+fneg.s fa5 fa5 20f797d3
+fsw fa5 8 a0 00f52427
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+lw a0 24 sp 01812503
+flw fa5 0 a0 00052787
+flw fa4 0 a5 0007a707
+flw fa3 0 a4 00072687
+lui a1 %hi nvector 001905b7
+lw s1 %lo nvector a1 1905a483
+fsub.s fa5 fa5 fa4 08e7f7d3
+fmul.s fa5 fa5 fa3 10d7f7d3
+fsw fa5 0 s1 00f4a027
+flw fa4 4 a0 00452707
+flw fa3 4 a5 0047a687
+flw fa2 4 a4 00472607
+fsub.s fa4 fa4 fa3 08d77753
+fmul.s fa4 fa4 fa2 10c77753
+fsw fa4 4 s1 00e4a227
+flw fa3 8 a0 00852687
+flw fa2 8 a5 0087a607
+flw fa1 8 a4 00872587
+mv s0 a6 00080413
+fsub.s fa3 fa3 fa2 08c6f6d3
+fmul.s fa3 fa3 fa1 10b6f6d3
+fsw fa3 8 s1 00d4a427
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa3 10d6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+andi s0 s0 1 00147413
+fmv.w.x fa5 a0 f00507d3
+beqz s0 .LBB56_2 18040863
+fneg.s fa5 fa5 20f797d3
+flw fa4 0 s1 0004a707
+flw fa3 4 s1 0044a687
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa2 8 s1 0084a607
+fsw fa4 0 s1 00e4a027
+fdiv.s fa4 fa3 fa5 18f6f753
+fsw fa4 4 s1 00e4a227
+fdiv.s fa5 fa2 fa5 18f677d3
+fsw fa5 8 s1 00f4a427
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+lw a0 24 sp 01812503
+flw fa5 0 a0 00052787
+flw fa4 0 a5 0007a707
+lui a1 %hi nvector_w 001905b7
+lw a1 %lo nvector_w a1 1905a583
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 0 a1 00f5a027
+flw fa4 4 a0 00452707
+flw fa3 4 a5 0047a687
+fsub.s fa4 fa4 fa3 08d77753
+fsw fa4 4 a1 00e5a227
+flw fa3 8 a0 00852687
+flw fa2 8 a5 0087a607
+lw a0 20 sp 01412503
+fsub.s fa3 fa3 fa2 08c6f6d3
+fsw fa3 8 a1 00d5a427
+flw fa2 0 a4 00072607
+flw fa1 8 a0 00852587
+flw fa0 4 a0 00452507
+fmul.s fa5 fa5 fa2 10c7f7d3
+fmul.s fa4 fa4 fa1 10b77753
+fmul.s fa3 fa3 fa0 10a6f6d3
+fadd.s fa4 fa4 fa3 00d77753
+lui a2 258048 3f000637
+lui a3 %hi nvector 001906b7
+lw s1 %lo nvector a3 1906a483
+fmv.w.x fa3 a2 f00606d3
+fmul.s fa4 fa4 fa3 10d77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 0 s1 00f4a027
+flw fa4 4 a1 0045a707
+flw fa2 4 a4 00472607
+flw fa1 0 a1 0005a587
+flw fa0 8 a0 00852507
+flw ft0 8 a1 0085a007
+flw ft1 0 a0 00052087
+fmul.s fa4 fa4 fa2 10c77753
+fmul.s fa2 fa1 fa0 10a5f653
+fmul.s fa1 ft0 ft1 101075d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa2 fa2 fa3 10d67653
+fadd.s fa4 fa4 fa2 00c77753
+fsw fa4 4 s1 00e4a227
+flw fa2 8 a1 0085a607
+flw fa1 8 a4 00872587
+flw fa0 0 a1 0005a507
+flw ft0 4 a0 00452007
+flw ft1 4 a1 0045a087
+flw ft2 0 a0 00052107
+mv s0 a6 00080413
+fmul.s fa2 fa2 fa1 10b67653
+fmul.s fa1 fa0 ft0 100575d3
+fmul.s fa0 ft1 ft2 1020f553
+fadd.s fa1 fa1 fa0 00a5f5d3
+fmul.s fa3 fa1 fa3 10d5f6d3
+fadd.s fa3 fa2 fa3 00d676d3
+fsw fa3 8 s1 00d4a427
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa3 10d6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+andi s0 s0 1 00147413
+fmv.w.x fa5 a0 f00507d3
+beqz s0 .LBB57_2 18040863
+fneg.s fa5 fa5 20f797d3
+flw fa4 0 s1 0004a707
+flw fa3 4 s1 0044a687
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa2 8 s1 0084a607
+fsw fa4 0 s1 00e4a027
+fdiv.s fa4 fa3 fa5 18f6f753
+fsw fa4 4 s1 00e4a227
+fdiv.s fa5 fa2 fa5 18f677d3
+fsw fa5 8 s1 00f4a427
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+li a0 2 00200513
+beq a1 a0 .LBB58_7 18a58863
+li a0 1 00100513
+bne a1 a0 .LBB58_10 18a59863
+lui a0 %hi intsec_rectside 00190537
+lw a0 %lo intsec_rectside a0 19052503
+lw a0 0 a0 00052503
+li a1 3 00300593
+beq a0 a1 .LBB58_19 18b50863
+li a1 2 00200593
+beq a0 a1 .LBB58_17 18b50863
+li a1 1 00100593
+bne a0 a1 .LBB58_16 18b51863
+lui a0 %hi vscan 00190537
+lw a0 %lo vscan a0 19052503
+flw fa4 0 a0 00052707
+fmv.w.x fa5 zero f00007d3
+flt.s a0 fa5 fa4 a0e79553
+bnez a0 .LBB58_25 18051863
+lui a0 784384 bf800537
+j .LBB58_26 1900006f
+flw fa5 0 a4 00072787
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+fneg.s fa5 fa5 20f797d3
+fsw fa5 0 a0 00f52027
+flw fa5 4 a4 00472787
+fneg.s fa5 fa5 20f797d3
+fsw fa5 4 a0 00f52227
+flw fa5 8 a4 00872787
+fneg.s fa5 fa5 20f797d3
+fsw fa5 8 a0 00f52427
+j .LBB58_16 1900006f
+mv s0 a6 00080413
+lw a0 24 sp 01812503
+flw fa5 0 a0 00052787
+flw fa4 0 a5 0007a707
+fsub.s fa5 fa5 fa4 08e7f7d3
+beqz a3 .LBB58_12 18068863
+lui a1 %hi nvector_w 001905b7
+lw a1 %lo nvector_w a1 1905a583
+fsw fa5 0 a1 00f5a027
+flw fa4 4 a0 00452707
+flw fa3 4 a5 0047a687
+fsub.s fa4 fa4 fa3 08d77753
+fsw fa4 4 a1 00e5a227
+flw fa3 8 a0 00852687
+flw fa2 8 a5 0087a607
+lw a0 20 sp 01412503
+fsub.s fa3 fa3 fa2 08c6f6d3
+fsw fa3 8 a1 00d5a427
+flw fa2 0 a4 00072607
+flw fa1 8 a0 00852587
+flw fa0 4 a0 00452507
+fmul.s fa5 fa5 fa2 10c7f7d3
+fmul.s fa4 fa4 fa1 10b77753
+fmul.s fa3 fa3 fa0 10a6f6d3
+fadd.s fa4 fa4 fa3 00d77753
+lui a2 258048 3f000637
+lui a3 %hi nvector 001906b7
+lw s1 %lo nvector a3 1906a483
+fmv.w.x fa3 a2 f00606d3
+fmul.s fa4 fa4 fa3 10d77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 0 s1 00f4a027
+flw fa4 4 a1 0045a707
+flw fa2 4 a4 00472607
+flw fa1 0 a1 0005a587
+flw fa0 8 a0 00852507
+flw ft0 8 a1 0085a007
+flw ft1 0 a0 00052087
+fmul.s fa4 fa4 fa2 10c77753
+fmul.s fa2 fa1 fa0 10a5f653
+fmul.s fa1 ft0 ft1 101075d3
+fadd.s fa2 fa2 fa1 00b67653
+fmul.s fa2 fa2 fa3 10d67653
+fadd.s fa4 fa4 fa2 00c77753
+fsw fa4 4 s1 00e4a227
+flw fa2 8 a1 0085a607
+flw fa1 8 a4 00872587
+flw fa0 0 a1 0005a507
+flw ft0 4 a0 00452007
+flw ft1 4 a1 0045a087
+flw ft2 0 a0 00052107
+fmul.s fa2 fa2 fa1 10b67653
+fmul.s fa1 fa0 ft0 100575d3
+fmul.s fa0 ft1 ft2 1020f553
+fadd.s fa1 fa1 fa0 00a5f5d3
+fmul.s fa3 fa1 fa3 10d5f6d3
+fadd.s fa3 fa2 fa3 00d676d3
+j .LBB58_13 1900006f
+flw fa4 0 a4 00072707
+lui a1 %hi nvector 001905b7
+lw s1 %lo nvector a1 1905a483
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 0 s1 00f4a027
+flw fa4 4 a0 00452707
+flw fa3 4 a5 0047a687
+flw fa2 4 a4 00472607
+fsub.s fa4 fa4 fa3 08d77753
+fmul.s fa4 fa4 fa2 10c77753
+fsw fa4 4 s1 00e4a227
+flw fa3 8 a0 00852687
+flw fa2 8 a5 0087a607
+flw fa1 8 a4 00872587
+fsub.s fa3 fa3 fa2 08c6f6d3
+fmul.s fa3 fa3 fa1 10b6f6d3
+fsw fa3 8 s1 00d4a427
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa3 fa3 10d6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+andi s0 s0 1 00147413
+fmv.w.x fa5 a0 f00507d3
+beqz s0 .LBB58_15 18040863
+fneg.s fa5 fa5 20f797d3
+flw fa4 0 s1 0004a707
+flw fa3 4 s1 0044a687
+fdiv.s fa4 fa4 fa5 18f77753
+flw fa2 8 s1 0084a607
+fsw fa4 0 s1 00e4a027
+fdiv.s fa4 fa3 fa5 18f6f753
+fsw fa4 4 s1 00e4a227
+fdiv.s fa5 fa2 fa5 18f677d3
+fsw fa5 8 s1 00f4a427
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+lui a1 %hi vscan 001905b7
+lw a1 %lo vscan a1 1905a583
+sw zero 0 a0 00052023
+flw fa4 4 a1 0045a707
+fmv.w.x fa5 zero f00007d3
+flt.s a1 fa5 fa4 a0e795d3
+bnez a1 .LBB58_21 18059863
+lui a1 784384 bf8005b7
+j .LBB58_22 1900006f
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+lui a1 %hi vscan 001905b7
+lw a1 %lo vscan a1 1905a583
+sw zero 0 a0 00052023
+sw zero 4 a0 00052223
+flw fa5 8 a1 0085a787
+fmv.w.x fa4 zero f0000753
+flt.s a1 fa4 fa5 a0f715d3
+bnez a1 .LBB58_23 18059863
+lui a1 784384 bf8005b7
+j .LBB58_24 1900006f
+lui a1 260096 3f8005b7
+fmv.w.x fa4 a1 f0058753
+fneg.s fa4 fa4 20e71753
+fsw fa4 4 a0 00e52227
+j .LBB58_9 1900006f
+lui a1 260096 3f8005b7
+fmv.w.x fa5 a1 f00587d3
+j .LBB58_8 1900006f
+lui a0 260096 3f800537
+fmv.w.x fa4 a0 f0050753
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+fneg.s fa4 fa4 20e71753
+fsw fa4 0 a0 00e52027
+sw zero 4 a0 00052223
+j .LBB58_9 1900006f
+addi sp sp -64 fc010113
+sw ra 60 sp 02112e23
+sw s0 56 sp 02812c23
+sw s1 52 sp 02912a23
+sw s2 48 sp 03212823
+sw s3 44 sp 03312623
+sw s4 40 sp 03412423
+sw s5 36 sp 03512223
+lw a1 64 sp 04012583
+flw fa5 0 a1 0005a787
+lui a2 %hi texture_color 00190637
+lw s3 %lo texture_color a2 19062983
+fsw fa5 0 s3 00f9a027
+flw fa5 4 a1 0045a787
+fsw fa5 4 s3 00f9a227
+flw fa5 8 a1 0085a787
+lw s4 72 sp 04812a03
+mv s0 a5 00078413
+li a1 2 00200593
+fsw fa5 8 s3 00f9a427
+blt a1 a0 .LBB59_4 18a5c863
+li a1 1 00100593
+beq a0 a1 .LBB59_13 18b50863
+li a1 2 00200593
+bne a0 a1 .LBB59_19 18b51863
+flw fa5 4 s4 004a2787
+lui a0 256000 3e800537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sin 190000ef
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+lui a0 276464 437f0537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa3 fa5 fa4 10e7f6d3
+fsw fa3 0 s3 00d9a027
+lui a0 260096 3f800537
+fmv.w.x fa3 a0 f00506d3
+fsub.s fa5 fa3 fa5 08f6f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 4 s3 00f9a227
+j .LBB59_19 1900006f
+li a1 3 00300593
+beq a0 a1 .LBB59_15 18b50863
+li a1 4 00400593
+bne a0 a1 .LBB59_19 18b51863
+flw fa5 0 s4 000a2787
+flw fa4 0 s0 00042707
+lw a0 0 a4 00072503
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 32 sp 02f12027
+mv s1 a4 00070493
+call min_caml_sqrt 190000ef
+flw fa5 8 s4 008a2787
+flw fa4 8 s0 00842707
+mv s5 s1 00048a93
+lw a1 8 s1 0084a583
+fmv.w.x fa3 a0 f00506d3
+flw fa2 32 sp 02012607
+fmul.s fa3 fa2 fa3 10d676d3
+fsw fa3 32 sp 02d12027
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 28 sp 00f12e27
+mv a0 a1 00058513
+call min_caml_sqrt 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 28 sp 01c12707
+fmul.s fa4 fa4 fa5 10f77753
+flw fa5 32 sp 02012787
+fmul.s fa5 fa5 fa5 10f7f7d3
+fsw fa4 20 sp 00e12a27
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+mv s1 a0 00050493
+flw fa5 32 sp 02012787
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+lui a1 %hi .LCPI59_0 001905b7
+flw fa4 %lo .LCPI59_0 a1 1905a707
+fmv.w.x fa5 a0 f00507d3
+fsw fa4 24 sp 00e12c27
+flt.s a0 fa5 fa4 a0e79553
+lui a1 268032 417005b7
+fmv.w.x fa5 a1 f00587d3
+fsw fa5 28 sp 00f12e27
+bnez a0 .LBB59_8 18051863
+flw fa5 32 sp 02012787
+flw fa4 20 sp 01412707
+fdiv.s fa5 fa4 fa5 18f777d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+call min_caml_atan 190000ef
+lui a1 %hi .LCPI59_1 001905b7
+flw fa5 %lo .LCPI59_1 a1 1905a787
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 32 sp 02f12027
+fmv.x.w s2 fa5 e0078953
+mv a0 s2 00090513
+call min_caml_floor 190000ef
+flw fa5 4 s4 004a2787
+fsw fa5 16 sp 00f12827
+flw fa5 4 s0 00442787
+fsw fa5 12 sp 00f12627
+lw a1 4 s5 004aa583
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 20 sp 00f12a27
+mv a0 a1 00058513
+call min_caml_sqrt 190000ef
+mv s0 a0 00050413
+mv a0 s2 00090513
+call min_caml_abs_float 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 24 sp 01812707
+flt.s a0 fa5 fa4 a0e79553
+bnez a0 .LBB59_10 18051863
+fmv.w.x fa5 s1 f00487d3
+fmv.w.x fa4 s0 f0040753
+flw fa3 16 sp 01012687
+flw fa2 12 sp 00c12607
+fsub.s fa3 fa3 fa2 08c6f6d3
+fmul.s fa4 fa3 fa4 10e6f753
+fdiv.s fa5 fa4 fa5 18f777d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_abs_float 190000ef
+call min_caml_atan 190000ef
+lui a1 %hi .LCPI59_1 001905b7
+flw fa5 %lo .LCPI59_1 a1 1905a787
+fmv.w.x fa4 a0 f0050753
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 28 sp 00f12e27
+flw fa5 28 sp 01c12787
+fmv.x.w a0 fa5 e0078553
+call min_caml_floor 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 32 sp 02012707
+flw fa3 20 sp 01412687
+fsub.s fa4 fa3 fa4 08e6f753
+lui a0 %hi .LCPI59_2 00190537
+flw fa3 %lo .LCPI59_2 a0 19052687
+lui a0 258048 3f000537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa4 fa4 fa2 00c77753
+fmul.s fa4 fa4 fa4 10e77753
+fsub.s fa4 fa3 fa4 08e6f753
+flw fa3 28 sp 01c12687
+fsub.s fa5 fa5 fa3 08d7f7d3
+fadd.s fa5 fa5 fa2 00c7f7d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+fsub.s fa4 fa4 fa5 08f77753
+fmv.w.x fa5 zero f00007d3
+flt.s a0 fa5 fa4 a0e79553
+beqz a0 .LBB59_12 18050863
+lui a0 %hi .LCPI59_3 00190537
+flw fa5 %lo .LCPI59_3 a0 19052787
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 8 s3 00f9a427
+j .LBB59_19 1900006f
+flw fa5 0 s4 000a2787
+flw fa4 0 s0 00042707
+lui a0 %hi .LCPI59_5 00190537
+flw fa3 %lo .LCPI59_5 a0 19052687
+fsw fa3 32 sp 02d12027
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsw fa5 24 sp 00f12c27
+fmul.s fa5 fa5 fa3 10d7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_floor 190000ef
+fmv.w.x fa5 a0 f00507d3
+lui a0 268800 41a00537
+fmv.w.x fa4 a0 f0050753
+fsw fa4 28 sp 00e12e27
+fmul.s fa5 fa5 fa4 10e7f7d3
+flw fa4 24 sp 01812707
+fsub.s fa5 fa4 fa5 08f777d3
+flw fa4 8 s4 008a2707
+flw fa3 8 s0 00842687
+lui a0 266752 41200537
+fmv.w.x fa2 a0 f0050653
+fsw fa2 24 sp 00c12c27
+flt.s s0 fa5 fa2 a0c79453
+fsub.s fa4 fa4 fa3 08d77753
+fsw fa4 20 sp 00e12a27
+flw fa5 32 sp 02012787
+fmul.s fa5 fa4 fa5 10f777d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_floor 190000ef
+fmv.w.x fa5 a0 f00507d3
+flw fa4 28 sp 01c12707
+fmul.s fa5 fa5 fa4 10e7f7d3
+flw fa4 20 sp 01412707
+fsub.s fa5 fa4 fa5 08f777d3
+flw fa4 24 sp 01812707
+flt.s a0 fa5 fa4 a0e79553
+lui a1 276464 437f05b7
+fmv.w.x fa5 a1 f00587d3
+fmv.w.x fa3 zero f00006d3
+bnez a0 .LBB59_16 18051863
+fmv.s fa4 fa3 20d68753
+beqz s0 .LBB59_17 18040863
+j .LBB59_18 1900006f
+flw fa5 0 s4 000a2787
+flw fa4 0 s0 00042707
+flw fa3 8 s4 008a2687
+flw fa2 8 s0 00842607
+fsub.s fa5 fa5 fa4 08e7f7d3
+fsub.s fa4 fa3 fa2 08c6f753
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa4 fa4 fa4 10e77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+fmv.w.x fa5 a0 f00507d3
+lui a0 266752 41200537
+fmv.w.x fa4 a0 f0050753
+fdiv.s fa5 fa5 fa4 18e7f7d3
+fsw fa5 32 sp 02f12027
+fmv.x.w a0 fa5 e0078553
+call min_caml_floor 190000ef
+lui a1 %hi .LCPI59_4 001905b7
+flw fa5 %lo .LCPI59_4 a1 1905a787
+fmv.w.x fa4 a0 f0050753
+flw fa3 32 sp 02012687
+fsub.s fa4 fa3 fa4 08e6f753
+fmul.s fa5 fa4 fa5 10f777d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_cos 190000ef
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+lui a0 276464 437f0537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa3 fa5 fa4 10e7f6d3
+fsw fa3 4 s3 00d9a227
+lui a0 260096 3f800537
+fmv.w.x fa3 a0 f00506d3
+fsub.s fa5 fa3 fa5 08f6f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 8 s3 00f9a427
+j .LBB59_19 1900006f
+fmv.s fa4 fa5 20f78753
+fmv.s fa5 fa3 20d687d3
+bnez s0 .LBB59_18 18041863
+fmv.s fa4 fa5 20f78753
+fsw fa4 4 s3 00e9a227
+lw ra 60 sp 03c12083
+lw s0 56 sp 03812403
+lw s1 52 sp 03412483
+lw s2 48 sp 03012903
+lw s3 44 sp 02c12983
+lw s4 40 sp 02812a03
+lw s5 36 sp 02412a83
+addi sp sp 64 04010113
+ret 00008067
+flw fa5 0 a0 00052787
+flw fa4 0 a1 0005a707
+flw fa3 4 a0 00452687
+flw fa2 4 a1 0045a607
+flw fa1 8 a0 00852587
+flw fa0 8 a1 0085a507
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa4 fa3 fa2 10c6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa1 fa0 10a5f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+flw fa5 0 a1 0005a787
+flw fa4 0 a0 00052707
+fmv.w.x fa3 a2 f00606d3
+fmul.s fa5 fa5 fa3 10d7f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 0 a0 00f52027
+flw fa5 4 a1 0045a787
+flw fa4 4 a0 00452707
+fmul.s fa5 fa5 fa3 10d7f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 4 a0 00f52227
+flw fa5 8 a1 0085a787
+flw fa4 8 a0 00852707
+fmul.s fa5 fa5 fa3 10d7f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 8 a0 00f52427
+ret 00008067
+addi sp sp -160 f6010113
+sw ra 156 sp 08112e23
+sw s0 152 sp 08812c23
+sw s1 148 sp 08912a23
+sw s2 144 sp 09212823
+sw s3 140 sp 09312623
+sw s4 136 sp 09412423
+sw s5 132 sp 09512223
+sw s6 128 sp 09612023
+sw s7 124 sp 07712e23
+sw s8 120 sp 07812c23
+sw s9 116 sp 07912a23
+sw s10 112 sp 07a12823
+sw s11 108 sp 07b12623
+mv s0 a0 00050413
+fmv.w.x fa5 a1 f00587d3
+fsw fa5 104 sp 06f12427
+lui a0 %hi tmin 00190537
+lw a0 %lo tmin a0 19052503
+sw a0 72 sp 04a12423
+lui a0 %hi or_net 00190537
+lw a0 %lo or_net a0 19052503
+sw a0 96 sp 06a12023
+lui a0 %hi vscan 00190537
+lw s11 %lo vscan a0 19052d83
+lui a0 %hi light 00190537
+lw a0 %lo light a0 19052503
+sw a0 28 sp 00a12e23
+lui a0 %hi beam 00190537
+lw a0 %lo beam a0 19052503
+sw a0 20 sp 00a12a23
+lui a0 %hi rgb 00190537
+lw a0 %lo rgb a0 19052503
+sw a0 76 sp 04a12623
+lui a0 %hi crashed_object 00190537
+lw a0 %lo crashed_object a0 19052503
+sw a0 56 sp 02a12c23
+lui a0 %hi objects 00190537
+lw a0 %lo objects a0 19052503
+sw a0 52 sp 02a12a23
+lui a0 %hi crashed_point 00190537
+lw a1 %lo crashed_point a0 19052583
+lui a0 %hi nvector 00190537
+lw a0 %lo nvector a0 19052503
+sw a0 80 sp 04a12823
+lui a0 %hi texture_color 00190537
+lw a0 %lo texture_color a0 19052503
+sw a0 48 sp 02a12823
+lui a0 %hi viewpoint 00190537
+lw a0 %lo viewpoint a0 19052503
+sw a0 36 sp 02a12223
+lui a0 321255 4e6e7537
+addi a0 a0 -1240 b2850513
+sw a0 68 sp 04a12223
+lui a0 %hi .LCPI62_0 00190537
+flw fa5 %lo .LCPI62_0 a0 19052787
+fsw fa5 64 sp 04f12027
+lui a0 %hi .LCPI62_1 00190537
+flw fa5 %lo .LCPI62_1 a0 19052787
+fsw fa5 60 sp 02f12e27
+fmv.w.x fa5 zero f00007d3
+fsw fa5 92 sp 04f12e27
+lui a0 %hi .LCPI62_2 00190537
+flw fa5 %lo .LCPI62_2 a0 19052787
+fsw fa5 24 sp 00f12c27
+lui a0 %hi .LCPI62_3 00190537
+flw fa5 %lo .LCPI62_3 a0 19052787
+fsw fa5 44 sp 02f12627
+lui a0 786432 c0000537
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 40 sp 02f12427
+lui a0 260096 3f800537
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 32 sp 02f12027
+sw a1 100 sp 06b12223
+lw s1 72 sp 04812483
+lw a0 68 sp 04412503
+sw a0 0 s1 00a4a023
+lw a0 96 sp 06012503
+lw a1 0 a0 00052583
+li a0 0 00000513
+call trace_or_matrix 190000ef
+flw fa5 0 s1 0004a787
+flw fa4 64 sp 04012707
+flt.s a0 fa4 fa5 a0f71553
+flw fa4 60 sp 03c12707
+flt.s a1 fa5 fa4 a0e795d3
+and s2 a0 a1 00b57933
+mv a0 s2 00090513
+call min_caml_not 190000ef
+beqz s0 .LBB62_5 18040863
+andi a0 a0 1 00157513
+beqz a0 .LBB62_5 18050863
+flw fa5 0 s11 000da787
+lw a0 28 sp 01c12503
+flw fa4 0 a0 00052707
+flw fa3 4 s11 004da687
+flw fa2 4 a0 00452607
+flw fa1 8 s11 008da587
+flw fa0 8 a0 00852507
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa4 fa3 fa2 10c6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa1 fa0 10a5f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+flw fa4 92 sp 05c12707
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB62_5 18051863
+fneg.s fa4 fa5 20f79753
+fmul.s fa5 fa5 fa5 10f7f7d3
+lw a0 20 sp 01412503
+flw fa3 0 a0 00052687
+fmul.s fa5 fa5 fa4 10e7f7d3
+lw a0 76 sp 04c12503
+flw fa4 0 a0 00052707
+flw fa2 104 sp 06812607
+fmul.s fa5 fa2 fa5 10f677d3
+fmul.s fa5 fa5 fa3 10d7f7d3
+flw fa3 4 a0 00452687
+fadd.s fa4 fa5 fa4 00e7f753
+flw fa2 8 a0 00852607
+fsw fa4 0 a0 00e52027
+fadd.s fa4 fa5 fa3 00d7f753
+fsw fa4 4 a0 00e52227
+fadd.s fa5 fa5 fa2 00c7f7d3
+fsw fa5 8 a0 00f52427
+beqz s2 .LBB62_18 18090863
+sw s0 88 sp 04812c23
+lw a0 56 sp 03812503
+lw a0 0 a0 00052503
+li a1 40 02800593
+call __mulsi3 190000ef
+lw a1 52 sp 03412583
+add a0 a1 a0 00a58533
+lw s2 28 a0 01c52903
+lw s4 24 a0 01852a03
+lw s5 20 a0 01452a83
+lw s6 16 a0 01052b03
+lw s7 12 a0 00c52b83
+lw s3 8 a0 00852983
+lw s8 4 a0 00452c03
+lw s9 0 a0 00052c83
+lw s1 32 a0 02052483
+lw s0 36 a0 02452403
+lw s10 100 sp 06412d03
+sw s10 8 sp 01a12423
+sw s0 4 sp 00812223
+sw s1 0 sp 00912023
+mv a0 s9 000c8513
+mv a1 s8 000c0593
+mv a2 s3 00098613
+mv a3 s7 000b8693
+mv a4 s6 000b0713
+mv a5 s5 000a8793
+mv a6 s4 000a0813
+mv a7 s2 00090893
+call get_nvector 190000ef
+lw a0 96 sp 06012503
+lw a1 0 a0 00052583
+li a0 0 00000513
+mv a2 s10 000d0613
+call shadow_check_one_or_matrix 190000ef
+andi a0 a0 255 0ff57513
+flw fa5 92 sp 05c12787
+bnez a0 .LBB62_10 18051863
+lw a1 80 sp 05012583
+flw fa5 0 a1 0005a787
+lw a0 28 sp 01c12503
+flw fa4 0 a0 00052707
+flw fa3 4 a1 0045a687
+flw fa2 4 a0 00452607
+flw fa1 8 a1 0085a587
+flw fa0 8 a0 00852507
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa4 fa3 fa2 10c6f753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa4 fa1 fa0 10a5f753
+fadd.s fa4 fa5 fa4 00e7f753
+flw fa5 92 sp 05c12787
+flt.s a0 fa5 fa4 a0e79553
+flw fa5 24 sp 01812787
+bnez a0 .LBB62_9 18051863
+flw fa5 24 sp 01812787
+fsub.s fa5 fa5 fa4 08e7f7d3
+flw fa4 0 s2 00092707
+flw fa3 104 sp 06812687
+fmul.s fa5 fa3 fa5 10f6f7d3
+fmul.s fa5 fa4 fa5 10f777d3
+lw s10 100 sp 06412d03
+fsw fa5 84 sp 04f12a27
+sw s10 8 sp 01a12423
+sw s1 0 sp 00912023
+sw s0 4 sp 00812223
+mv a0 s9 000c8513
+mv a1 s8 000c0593
+mv a2 s3 00098613
+mv a3 s7 000b8693
+mv a4 s6 000b0713
+mv a5 s5 000a8793
+mv a6 s4 000a0813
+mv a7 s2 00090893
+call utexture 190000ef
+flw ft2 84 sp 05412107
+lw a1 48 sp 03012583
+flw fa5 0 a1 0005a787
+lw a0 76 sp 04c12503
+flw fa4 0 a0 00052707
+fmul.s fa5 ft2 fa5 10f177d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 0 a0 00f52027
+flw fa5 4 a1 0045a787
+flw fa4 4 a0 00452707
+fmul.s fa5 ft2 fa5 10f177d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 4 a0 00f52227
+flw fa5 8 a1 0085a787
+flw fa4 8 a0 00852707
+fmul.s fa5 ft2 fa5 10f177d3
+fadd.s fa5 fa4 fa5 00f777d3
+fsw fa5 8 a0 00f52427
+lw s0 88 sp 05812403
+li a0 4 00400513
+blt a0 s0 .LBB62_18 18854863
+flw fa5 104 sp 06812787
+flw fa4 44 sp 02c12707
+flt.s a0 fa4 fa5 a0f71553
+beqz a0 .LBB62_18 18050863
+flw fa5 0 s11 000da787
+lw a0 80 sp 05012503
+flw fa4 0 a0 00052707
+flw fa3 4 s11 004da687
+flw fa2 4 a0 00452607
+flw fa1 8 s11 008da587
+flw fa0 8 a0 00852507
+fmul.s ft0 fa5 fa4 10e7f053
+fmul.s fa2 fa3 fa2 10c6f653
+fadd.s fa2 ft0 fa2 00c07653
+fmul.s fa0 fa1 fa0 10a5f553
+fadd.s fa2 fa2 fa0 00a67653
+flw fa0 40 sp 02812507
+fmul.s fa2 fa2 fa0 10a67653
+fmul.s fa4 fa4 fa2 10c77753
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 0 s11 00fda027
+flw fa4 4 a0 00452707
+fmul.s fa4 fa4 fa2 10c77753
+fadd.s fa3 fa3 fa4 00e6f6d3
+fsw fa3 4 s11 00dda227
+flw fa4 8 a0 00852707
+fmul.s fa4 fa2 fa4 10e67753
+fadd.s fa2 fa1 fa4 00e5f653
+fsw fa2 8 s11 00cda427
+li a0 2 00200513
+bne s3 a0 .LBB62_14 18a99863
+lw a1 100 sp 06412583
+flw fa5 0 a1 0005a787
+lw a0 36 sp 02412503
+fsw fa5 0 a0 00f52027
+flw fa5 4 a1 0045a787
+fsw fa5 4 a0 00f52227
+flw fa5 8 a1 0085a787
+fsw fa5 8 a0 00f52427
+flw fa5 0 s2 00092787
+flw fa4 32 sp 02012707
+fsub.s fa5 fa4 fa5 08f777d3
+flw fa4 104 sp 06812707
+fmul.s fa4 fa4 fa5 10f77753
+fsw fa4 104 sp 06e12427
+addi s0 s0 1 00140413
+j .LBB62_1 1900006f
+li a0 1 00100513
+bne s3 a0 .LBB62_18 18a99863
+flw fa4 4 s2 00492707
+fmv.w.x fa1 zero f00005d3
+feq.s a0 fa4 fa1 a0b72553
+bnez a0 .LBB62_18 18051863
+lw a0 28 sp 01c12503
+flw fa0 0 a0 00052507
+flw ft0 4 a0 00452007
+flw ft1 8 a0 00852087
+fmul.s fa5 fa5 fa0 10a7f7d3
+fmul.s fa3 fa3 ft0 1006f6d3
+fadd.s fa5 fa5 fa3 00d7f7d3
+fmul.s fa3 fa2 ft1 101676d3
+fadd.s fa5 fa5 fa3 00d7f7d3
+fle.s a0 fa1 fa5 a0f58553
+bnez a0 .LBB62_18 18051863
+fmul.s fa5 fa5 fa5 10f7f7d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+flw fa3 104 sp 06812687
+fmul.s fa5 fa3 fa5 10f6f7d3
+lw a0 76 sp 04c12503
+flw fa3 0 a0 00052687
+fmul.s fa5 ft2 fa5 10f177d3
+fmul.s fa5 fa4 fa5 10f777d3
+flw fa4 4 a0 00452707
+fadd.s fa3 fa5 fa3 00d7f6d3
+flw fa2 8 a0 00852607
+fsw fa3 0 a0 00d52027
+fadd.s fa4 fa5 fa4 00e7f753
+fsw fa4 4 a0 00e52227
+fadd.s fa5 fa5 fa2 00c7f7d3
+fsw fa5 8 a0 00f52427
+lw ra 156 sp 09c12083
+lw s0 152 sp 09812403
+lw s1 148 sp 09412483
+lw s2 144 sp 09012903
+lw s3 140 sp 08c12983
+lw s4 136 sp 08812a03
+lw s5 132 sp 08412a83
+lw s6 128 sp 08012b03
+lw s7 124 sp 07c12b83
+lw s8 120 sp 07812c03
+lw s9 116 sp 07412c83
+lw s10 112 sp 07012d03
+lw s11 108 sp 06c12d83
+addi sp sp 160 0a010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+lui a0 %hi rgb 00190537
+lw s0 %lo rgb a0 19052403
+lw a0 0 s0 00042503
+call min_caml_int_of_float 190000ef
+li s1 255 0ff00493
+blt a0 s1 .LBB63_2 18954863
+li a0 255 0ff00513
+call min_caml_print_byte 190000ef
+lw a0 4 s0 00442503
+call min_caml_int_of_float 190000ef
+blt a0 s1 .LBB63_4 18954863
+li a0 255 0ff00513
+call min_caml_print_byte 190000ef
+lw a0 8 s0 00842503
+call min_caml_int_of_float 190000ef
+blt a0 s1 .LBB63_6 18954863
+li a0 255 0ff00513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+tail min_caml_print_byte 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+li a0 80 05000513
+call min_caml_print_byte 190000ef
+li a0 54 03600513
+call min_caml_print_byte 190000ef
+li a0 10 00a00513
+call min_caml_print_byte 190000ef
+lui a0 %hi size 00190537
+lw s0 %lo size a0 19052403
+lw a0 0 s0 00042503
+call min_caml_print_int 190000ef
+li a0 32 02000513
+call min_caml_print_byte 190000ef
+lw a0 4 s0 00442503
+call min_caml_print_int 190000ef
+li a0 10 00a00513
+call min_caml_print_byte 190000ef
+li a0 255 0ff00513
+call min_caml_print_int 190000ef
+li a0 10 00a00513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+tail min_caml_print_byte 1900006f
+addi sp sp -64 fc010113
+sw ra 60 sp 02112e23
+sw s0 56 sp 02812c23
+sw s1 52 sp 02912a23
+sw s2 48 sp 03212823
+sw s3 44 sp 03312623
+sw s4 40 sp 03412423
+sw s5 36 sp 03512223
+sw s6 32 sp 03612023
+sw s7 28 sp 01712e23
+sw s8 24 sp 01812c23
+sw s9 20 sp 01912a23
+sw s10 16 sp 01a12823
+sw s11 12 sp 01b12623
+lui a1 %hi size 001905b7
+lw a1 %lo size a1 1905a583
+sw a1 8 sp 00b12423
+lw a1 0 a1 0005a583
+bge a0 a1 .LBB65_9 18b55863
+mv s0 a0 00050413
+lui a0 %hi scan_offset 00190537
+lw a0 %lo scan_offset a0 19052503
+sw a0 4 sp 00a12223
+lui a0 %hi scan_d 00190537
+lw a0 %lo scan_d a0 19052503
+sw a0 0 sp 00a12023
+lui a0 %hi cos_v 00190537
+lw s4 %lo cos_v a0 19052a03
+lui a0 %hi wscan 00190537
+lw s5 %lo wscan a0 19052a83
+lui a0 %hi vscan 00190537
+lw s6 %lo vscan a0 19052b03
+lui a0 %hi scan_sscany 00190537
+lw s7 %lo scan_sscany a0 19052b83
+lui a0 %hi vp 00190537
+lw s8 %lo vp a0 19052c03
+lui a0 %hi sin_v 00190537
+lw s9 %lo sin_v a0 19052c83
+lui a0 %hi scan_met1 00190537
+lw s10 %lo scan_met1 a0 19052d03
+lui a0 %hi view 00190537
+lw s11 %lo view a0 19052d83
+lui a0 %hi viewpoint 00190537
+lw s2 %lo viewpoint a0 19052903
+lui a0 %hi rgb 00190537
+lw s3 %lo rgb a0 19052983
+li s1 255 0ff00493
+j .LBB65_3 1900006f
+call min_caml_print_byte 190000ef
+lw a0 8 sp 00812503
+lw a0 0 a0 00052503
+addi s0 s0 1 00140413
+bge s0 a0 .LBB65_9 18a45863
+mv a0 s0 00040513
+call min_caml_float_of_int 190000ef
+fmv.w.x fa5 a0 f00507d3
+lw a0 4 sp 00412503
+flw fa4 0 a0 00052707
+lw a0 0 sp 00012503
+flw fa3 0 a0 00052687
+flw fa2 4 s4 004a2607
+flw fa1 0 s5 000aa587
+fsub.s fa5 fa5 fa4 08e7f7d3
+fmul.s fa5 fa5 fa3 10d7f7d3
+fmul.s fa4 fa5 fa2 10c7f753
+fadd.s fa4 fa4 fa1 00b77753
+fsw fa4 0 s6 00eb2027
+flw fa4 0 s7 000ba707
+flw fa3 0 s4 000a2687
+flw fa2 4 s8 004c2607
+fmul.s fa4 fa4 fa3 10d77753
+fsub.s fa4 fa4 fa2 08c77753
+fsw fa4 4 s6 00eb2227
+flw fa4 4 s9 004ca707
+flw fa3 8 s5 008aa687
+fmul.s fa4 fa5 fa4 10e7f753
+fsub.s fa4 fa3 fa4 08e6f753
+fsw fa4 8 s6 00eb2427
+flw fa4 0 s10 000d2707
+fmul.s fa5 fa5 fa5 10f7f7d3
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmv.x.w a0 fa5 e0078553
+call min_caml_sqrt 190000ef
+flw fa5 0 s6 000b2787
+fmv.w.x fa4 a0 f0050753
+flw fa3 4 s6 004b2687
+fdiv.s fa5 fa5 fa4 18e7f7d3
+flw fa2 8 s6 008b2607
+fsw fa5 0 s6 00fb2027
+fdiv.s fa5 fa3 fa4 18e6f7d3
+fsw fa5 4 s6 00fb2227
+fdiv.s fa5 fa2 fa4 18e677d3
+fsw fa5 8 s6 00fb2427
+flw fa5 0 s11 000da787
+fsw fa5 0 s2 00f92027
+flw fa5 4 s11 004da787
+fsw fa5 4 s2 00f92227
+flw fa5 8 s11 008da787
+fsw fa5 8 s2 00f92427
+sw zero 0 s3 0009a023
+sw zero 4 s3 0009a223
+sw zero 8 s3 0009a423
+lui a1 260096 3f8005b7
+li a0 0 00000513
+call raytracing 190000ef
+lw a0 0 s3 0009a503
+call min_caml_int_of_float 190000ef
+blt a0 s1 .LBB65_5 18954863
+li a0 255 0ff00513
+call min_caml_print_byte 190000ef
+lw a0 4 s3 0049a503
+call min_caml_int_of_float 190000ef
+blt a0 s1 .LBB65_7 18954863
+li a0 255 0ff00513
+call min_caml_print_byte 190000ef
+lw a0 8 s3 0089a503
+call min_caml_int_of_float 190000ef
+blt a0 s1 .LBB65_2 18954863
+li a0 255 0ff00513
+j .LBB65_2 1900006f
+lw ra 60 sp 03c12083
+lw s0 56 sp 03812403
+lw s1 52 sp 03412483
+lw s2 48 sp 03012903
+lw s3 44 sp 02c12983
+lw s4 40 sp 02812a03
+lw s5 36 sp 02412a83
+lw s6 32 sp 02012b03
+lw s7 28 sp 01c12b83
+lw s8 24 sp 01812c03
+lw s9 20 sp 01412c83
+lw s10 16 sp 01012d03
+lw s11 12 sp 00c12d83
+addi sp sp 64 04010113
+ret 00008067
+addi sp sp -64 fc010113
+sw ra 60 sp 02112e23
+sw s0 56 sp 02812c23
+sw s1 52 sp 02912a23
+sw s2 48 sp 03212823
+sw s3 44 sp 03312623
+sw s4 40 sp 03412423
+sw s5 36 sp 03512223
+sw s6 32 sp 03612023
+sw s7 28 sp 01712e23
+sw s8 24 sp 01812c23
+sw s9 20 sp 01912a23
+lui a1 %hi size 001905b7
+lw s1 %lo size a1 1905a483
+lw a1 0 s1 0004a583
+bge a0 a1 .LBB66_3 18b55863
+mv s0 a0 00050413
+lui a0 %hi scan_offset 00190537
+lw s2 %lo scan_offset a0 19052903
+lui a0 %hi scan_d 00190537
+lw s3 %lo scan_d a0 19052983
+lui a0 %hi scan_sscany 00190537
+lw s4 %lo scan_sscany a0 19052a03
+lui a0 %hi scan_met1 00190537
+lw s5 %lo scan_met1 a0 19052a83
+lui a0 %hi sin_v 00190537
+lw s6 %lo sin_v a0 19052b03
+lui a0 %hi vp 00190537
+lw s7 %lo vp a0 19052b83
+lui a0 %hi wscan 00190537
+lw s8 %lo wscan a0 19052c03
+lui a0 %hi cos_v 00190537
+lw s9 %lo cos_v a0 19052c83
+lui a0 784384 bf800537
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 12 sp 00f12627
+lui a0 291268 471c4537
+fmv.w.x fa5 a0 f00507d3
+fsw fa5 8 sp 00f12427
+flw fa5 0 s2 00092787
+flw fa4 12 sp 00c12707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 16 sp 00f12827
+mv a0 s0 00040513
+call min_caml_float_of_int 190000ef
+flw fa5 0 s3 0009a787
+fmv.w.x fa4 a0 f0050753
+flw fa3 16 sp 01012687
+fsub.s fa4 fa3 fa4 08e6f753
+fmul.s fa5 fa4 fa5 10f777d3
+fsw fa5 0 s4 00fa2027
+fmul.s fa5 fa5 fa5 10f7f7d3
+flw fa4 8 sp 00812707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fsw fa5 0 s5 00faa027
+flw fa5 0 s4 000a2787
+flw fa4 0 s6 000b2707
+flw fa3 4 s6 004b2687
+flw fa2 0 s7 000ba607
+fmul.s fa5 fa5 fa4 10e7f7d3
+fmul.s fa4 fa5 fa3 10d7f753
+fsub.s fa4 fa4 fa2 08c77753
+fsw fa4 0 s8 00ec2027
+flw fa4 4 s9 004ca707
+flw fa3 8 s7 008ba687
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsub.s fa5 fa5 fa3 08d7f7d3
+fsw fa5 8 s8 00fc2427
+li a0 0 00000513
+call scan_point 190000ef
+lw a0 0 s1 0004a503
+addi s0 s0 1 00140413
+blt s0 a0 .LBB66_2 18a44863
+lw ra 60 sp 03c12083
+lw s0 56 sp 03812403
+lw s1 52 sp 03412483
+lw s2 48 sp 03012903
+lw s3 44 sp 02c12983
+lw s4 40 sp 02812a03
+lw s5 36 sp 02412a83
+lw s6 32 sp 02012b03
+lw s7 28 sp 01c12b83
+lw s8 24 sp 01812c03
+lw s9 20 sp 01412c83
+addi sp sp 64 04010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+li a0 80 05000513
+call min_caml_print_byte 190000ef
+li a0 54 03600513
+call min_caml_print_byte 190000ef
+li a0 10 00a00513
+call min_caml_print_byte 190000ef
+lui a0 %hi size 00190537
+lw s0 %lo size a0 19052403
+lw a0 0 s0 00042503
+call min_caml_print_int 190000ef
+li a0 32 02000513
+call min_caml_print_byte 190000ef
+lw a0 4 s0 00442503
+call min_caml_print_int 190000ef
+li a0 10 00a00513
+call min_caml_print_byte 190000ef
+li a0 255 0ff00513
+call min_caml_print_int 190000ef
+li a0 10 00a00513
+call min_caml_print_byte 190000ef
+lw a0 0 s0 00042503
+call min_caml_float_of_int 190000ef
+fmv.w.x fa5 a0 f00507d3
+lui a0 %hi scan_d 00190537
+lw a0 %lo scan_d a0 19052503
+lui a1 274432 430005b7
+fmv.w.x fa4 a1 f0058753
+fdiv.s fa4 fa4 fa5 18f77753
+fsw fa4 0 a0 00e52027
+lui a0 %hi scan_offset 00190537
+lw a0 %lo scan_offset a0 19052503
+lui a1 258048 3f0005b7
+fmv.w.x fa4 a1 f0058753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fsw fa5 0 a0 00f52027
+li a0 0 00000513
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+tail scan_line 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+lui a3 %hi size 001906b7
+lw a3 %lo size a3 1906a683
+lui a4 %hi dbg 00190737
+lw a4 %lo dbg a4 19072703
+sw a0 0 a3 00a6a023
+sw a1 4 a3 00b6a223
+sw a2 0 a4 00c72023
+call read_parameter 190000ef
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+tail scan_start 1900006f
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+sw s2 0 sp 01212023
+li a0 50 03200513
+li a1 4 00400593
+li s1 4 00400493
+call calloc 190000ef
+mv s0 a0 00050413
+lui s2 %hi and_net 00190937
+sw a0 %lo and_net s2 18a92823
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+sw a0 0 s0 00a42023
+lui a1 784384 bf8005b7
+sw a1 0 a0 00b52023
+li a0 200 0c800513
+lw a1 %lo and_net s2 19092583
+lw a2 0 a1 0005a603
+add a1 a1 s1 009585b3
+addi s1 s1 4 00448493
+sw a2 0 a1 00c5a023
+bne s1 a0 .LBB0_1 18a49863
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+mv s0 a0 00050413
+lui a0 %hi or_net 00190537
+sw s0 %lo or_net a0 18852823
+li a0 1 00100513
+li a1 4 00400593
+call calloc 190000ef
+lui a1 %hi and_net 001905b7
+lw a1 %lo and_net a1 1905a583
+sw a0 0 s0 00a42023
+lw a1 0 a1 0005a583
+sw a1 0 a0 00b52023
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+ret 00008067
+seqz a0 a0 00153513
+ret 00008067
+lui a1 %hi buffer_pos 001905b7
+lw a2 %lo buffer_pos a1 1905a603
+addi a3 a2 1 00160693
+sw a3 %lo buffer_pos a1 18d5a823
+lui a1 %hi buffer 001905b7
+addi a1 a1 %lo buffer 19058593
+slli a2 a2 2 00261613
+add a1 a1 a2 00c585b3
+sw a0 0 a1 00a5a023
+ret 00008067
+beqz a0 .LBB3_8 18050863
+addi sp sp -80 fb010113
+sw ra 76 sp 04112623
+sw s0 72 sp 04812423
+sw s1 68 sp 04912223
+sw s2 64 sp 05212023
+sw s3 60 sp 03312e23
+sw s4 56 sp 03412c23
+mv s0 a0 00050413
+bgez a0 .LBB3_3 18055863
+lui a0 %hi buffer_pos 00190537
+lw a1 %lo buffer_pos a0 19052583
+addi a2 a1 1 00158613
+sw a2 %lo buffer_pos a0 18c52823
+lui a0 %hi buffer 00190537
+addi a0 a0 %lo buffer 19050513
+slli a1 a1 2 00259593
+add a0 a0 a1 00b50533
+li a1 45 02d00593
+sw a1 0 a0 00b52023
+neg s0 s0 40800433
+li s2 1 00100913
+addi a0 sp 4 00410513
+li s3 10 00a00993
+mv s1 s0 00040493
+mv s4 a0 00050a13
+li a1 10 00a00593
+mv a0 s0 00040513
+call __udivsi3 190000ef
+mv s0 a0 00050413
+li a1 10 00a00593
+call __mulsi3 190000ef
+sub a0 s1 a0 40a48533
+ori a1 a0 48 03056593
+addi a0 s4 4 004a0513
+sw a1 4 s4 00ba2223
+addi s2 s2 1 00190913
+bgeu s1 s3 .LBB3_4 1934f863
+lui a1 %hi buffer_pos 001905b7
+lw a1 %lo buffer_pos a1 1905a583
+slli a2 a1 2 00259613
+lui a3 %hi buffer 001906b7
+addi a3 a3 %lo buffer 19068693
+add a2 a3 a2 00c68633
+li a3 1 00100693
+lw a4 0 a0 00052703
+addi a1 a1 1 00158593
+sw a4 0 a2 00e62023
+addi s2 s2 -1 fff90913
+addi a0 a0 -4 ffc50513
+addi a2 a2 4 00460613
+bltu a3 s2 .LBB3_6 1926e863
+lui a0 %hi buffer_pos 00190537
+sw a1 %lo buffer_pos a0 18b52823
+lw ra 76 sp 04c12083
+lw s0 72 sp 04812403
+lw s1 68 sp 04412483
+lw s2 64 sp 04012903
+lw s3 60 sp 03c12983
+lw s4 56 sp 03812a03
+addi sp sp 80 05010113
+ret 00008067
+lui a0 %hi buffer_pos 00190537
+lw a1 %lo buffer_pos a0 19052583
+addi a2 a1 1 00158613
+sw a2 %lo buffer_pos a0 18c52823
+lui a0 %hi buffer 00190537
+addi a0 a0 %lo buffer 19050513
+slli a1 a1 2 00259593
+add a0 a0 a1 00b50533
+li a1 48 03000593
+sw a1 0 a0 00b52023
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+lui a0 %hi .L.str 00190537
+addi a0 a0 %lo .L.str 19050513
+addi a1 sp 8 00810593
+call scanf_int 190000ef
+lw a0 8 sp 00812503
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+ret 00008067
+fcvt.s.w fa5 a0 d00577d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+slli a0 a0 1 00151513
+srli a0 a0 1 00155513
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+fcvt.w.s a0 fa5 rtz c0079553
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a1 00058413
+mv s1 a0 00050493
+li a1 4 00400593
+call calloc 190000ef
+blez s1 .LBB8_3 18905863
+mv a1 a0 00050593
+sw s0 0 a1 0085a023
+addi s1 s1 -1 fff48493
+addi a1 a1 4 00458593
+bnez s1 .LBB8_2 18049863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s0 a1 00058413
+mv s1 a0 00050493
+li a1 4 00400593
+call calloc 190000ef
+blez s1 .LBB9_3 18905863
+mv a1 a0 00050593
+sw s0 0 a1 0085a023
+addi s1 s1 -1 fff48493
+addi a1 a1 4 00458593
+bnez s1 .LBB9_2 18049863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+mv s1 a1 00058493
+mv s0 a0 00050413
+li a1 4 00400593
+call calloc 190000ef
+blez s0 .LBB10_3 18805863
+fmv.w.x fa5 s1 f00487d3
+mv a1 a0 00050593
+fsw fa5 0 a1 00f5a027
+addi s0 s0 -1 fff40413
+addi a1 a1 4 00458593
+bnez s0 .LBB10_2 18041863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+addi sp sp 16 01010113
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+lui a0 %hi .L.str.32 00190537
+addi a0 a0 %lo .L.str.32 19050513
+addi a1 sp 8 00810593
+call scanf_float 190000ef
+lw a0 8 sp 00812503
+lw ra 12 sp 00c12083
+addi sp sp 16 01010113
+ret 00008067
+lui a0 %hi buffer_pos 00190537
+lw a1 %lo buffer_pos a0 19052583
+addi a2 a1 1 00158613
+sw a2 %lo buffer_pos a0 18c52823
+lui a0 %hi buffer 00190537
+addi a0 a0 %lo buffer 19050513
+slli a1 a1 2 00259593
+add a0 a0 a1 00b50533
+li a1 10 00a00593
+sw a1 0 a0 00b52023
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa4 fa5 fa5 10f7f753
+fmv.w.x fa3 zero f00006d3
+lui a0 %hi .LCPI13_0 00190537
+flw fa2 %lo .LCPI13_0 a0 19052607
+fadd.s fa3 fa5 fa3 00d7f6d3
+lui a0 %hi .LCPI13_1 00190537
+flw fa1 %lo .LCPI13_1 a0 19052587
+fmul.s fa2 fa4 fa2 10c77653
+fmul.s fa5 fa2 fa5 10f677d3
+fadd.s fa3 fa3 fa5 00f6f6d3
+fmul.s fa2 fa4 fa1 10b77653
+fmul.s fa5 fa5 fa2 10c7f7d3
+lui a0 %hi .LCPI13_2 00190537
+flw fa2 %lo .LCPI13_2 a0 19052607
+fadd.s fa3 fa3 fa5 00f6f6d3
+lui a0 %hi .LCPI13_3 00190537
+flw fa1 %lo .LCPI13_3 a0 19052587
+fmul.s fa2 fa4 fa2 10c77653
+fmul.s fa5 fa5 fa2 10c7f7d3
+fadd.s fa3 fa3 fa5 00f6f6d3
+fmul.s fa4 fa4 fa1 10b77753
+fmul.s fa5 fa5 fa4 10e7f7d3
+fadd.s fa5 fa3 fa5 00f6f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+lui a0 782336 bf000537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa4 fa5 fa4 10e7f753
+lui a0 %hi .LCPI14_0 00190537
+flw fa3 %lo .LCPI14_0 a0 19052687
+lui a0 260096 3f800537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa2 fa4 fa2 00c77653
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa4 fa3 10d77753
+lui a0 %hi .LCPI14_1 00190537
+flw fa3 %lo .LCPI14_1 a0 19052687
+fadd.s fa2 fa2 fa4 00e67653
+lui a0 %hi .LCPI14_2 00190537
+flw fa1 %lo .LCPI14_2 a0 19052587
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa4 fa3 10d77753
+fadd.s fa3 fa2 fa4 00e676d3
+fmul.s fa5 fa5 fa1 10b7f7d3
+fmul.s fa5 fa4 fa5 10f777d3
+fadd.s fa5 fa3 fa5 00f6f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+fmv.w.x fa5 a0 f00507d3
+fmv.w.x fa4 zero f0000753
+fle.s a0 fa4 fa5 a0f70553
+bnez a0 .LBB15_2 18051863
+fmv.x.w a0 fa5 e0078553
+lui s0 524288 80000437
+xor a0 a0 s0 00854533
+call min_caml_sin 190000ef
+xor a0 a0 s0 00854533
+fmv.w.x fa5 a0 f00507d3
+j .LBB15_16 1900006f
+lui a0 %hi .LCPI15_0 00190537
+flw fa3 %lo .LCPI15_0 a0 19052687
+flt.s a0 fa3 fa5 a0f69553
+beqz a0 .LBB15_5 18050863
+lui a0 %hi .LCPI15_1 00190537
+flw fa2 %lo .LCPI15_1 a0 19052607
+fadd.s fa5 fa5 fa2 00c7f7d3
+flt.s a0 fa3 fa5 a0f69553
+bnez a0 .LBB15_4 18051863
+lui a0 %hi .LCPI15_2 00190537
+flw fa3 %lo .LCPI15_2 a0 19052687
+flt.s a0 fa5 fa3 a0d79553
+beqz a0 .LBB15_7 18050863
+fmul.s fa3 fa5 fa5 10f7f6d3
+lui a0 %hi .LCPI15_11 00190537
+flw fa2 %lo .LCPI15_11 a0 19052607
+fadd.s fa4 fa5 fa4 00e7f753
+lui a0 %hi .LCPI15_12 00190537
+flw fa1 %lo .LCPI15_12 a0 19052587
+fmul.s fa2 fa3 fa2 10c6f653
+fmul.s fa5 fa5 fa2 10c7f7d3
+fadd.s fa4 fa4 fa5 00f77753
+fmul.s fa2 fa3 fa1 10b6f653
+fmul.s fa5 fa2 fa5 10f677d3
+lui a0 %hi .LCPI15_13 00190537
+flw fa2 %lo .LCPI15_13 a0 19052607
+fadd.s fa4 fa4 fa5 00f77753
+lui a0 %hi .LCPI15_14 00190537
+flw fa1 %lo .LCPI15_14 a0 19052587
+fmul.s fa2 fa3 fa2 10c6f653
+fmul.s fa5 fa2 fa5 10f677d3
+fadd.s fa4 fa4 fa5 00f77753
+fmul.s fa3 fa3 fa1 10b6f6d3
+fmul.s fa5 fa3 fa5 10f6f7d3
+fadd.s fa5 fa4 fa5 00f777d3
+j .LBB15_16 1900006f
+lui a0 %hi .LCPI15_3 00190537
+flw fa4 %lo .LCPI15_3 a0 19052707
+flt.s a0 fa5 fa4 a0e79553
+beqz a0 .LBB15_9 18050863
+fsub.s fa5 fa4 fa5 08f777d3
+j .LBB15_11 1900006f
+lui a0 %hi .LCPI15_4 00190537
+flw fa4 %lo .LCPI15_4 a0 19052707
+flt.s a0 fa5 fa4 a0e79553
+beqz a0 .LBB15_12 18050863
+lui a0 %hi .LCPI15_10 00190537
+flw fa4 %lo .LCPI15_10 a0 19052707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+lui a0 782336 bf000537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa4 fa5 fa4 10e7f753
+lui a0 %hi .LCPI15_7 00190537
+flw fa3 %lo .LCPI15_7 a0 19052687
+lui a0 260096 3f800537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa2 fa4 fa2 00c77653
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa4 fa3 10d77753
+lui a0 %hi .LCPI15_8 00190537
+flw fa3 %lo .LCPI15_8 a0 19052687
+fadd.s fa2 fa2 fa4 00e67653
+lui a0 %hi .LCPI15_9 00190537
+flw fa1 %lo .LCPI15_9 a0 19052587
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa3 fa4 10e6f753
+fadd.s fa3 fa2 fa4 00e676d3
+fmul.s fa5 fa5 fa1 10b7f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fadd.s fa5 fa3 fa5 00f6f7d3
+j .LBB15_16 1900006f
+lui a0 %hi .LCPI15_5 00190537
+flw fa4 %lo .LCPI15_5 a0 19052707
+flt.s a0 fa5 fa4 a0e79553
+beqz a0 .LBB15_14 18050863
+fsub.s fa5 fa4 fa5 08f777d3
+j .LBB15_15 1900006f
+lui a0 %hi .LCPI15_6 00190537
+flw fa4 %lo .LCPI15_6 a0 19052707
+fadd.s fa5 fa5 fa4 00e7f7d3
+fmul.s fa5 fa5 fa5 10f7f7d3
+lui a0 782336 bf000537
+fmv.w.x fa4 a0 f0050753
+fmul.s fa4 fa5 fa4 10e7f753
+lui a0 %hi .LCPI15_7 00190537
+flw fa3 %lo .LCPI15_7 a0 19052687
+lui a0 260096 3f800537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa2 fa4 fa2 00c77653
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa4 fa3 10d77753
+lui a0 %hi .LCPI15_8 00190537
+flw fa3 %lo .LCPI15_8 a0 19052687
+fadd.s fa2 fa2 fa4 00e67653
+lui a0 %hi .LCPI15_9 00190537
+flw fa1 %lo .LCPI15_9 a0 19052587
+fmul.s fa3 fa5 fa3 10d7f6d3
+fmul.s fa4 fa3 fa4 10e6f753
+fadd.s fa3 fa2 fa4 00e676d3
+fmul.s fa5 fa5 fa1 10b7f7d3
+fmul.s fa5 fa5 fa4 10e7f7d3
+fadd.s fa5 fa3 fa5 00f6f7d3
+fneg.s fa5 fa5 20f797d3
+fmv.x.w a0 fa5 e0078553
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+ret 00008067
+lui a1 %hi .LCPI16_0 001905b7
+flw fa5 %lo .LCPI16_0 a1 1905a787
+fmv.w.x fa4 a0 f0050753
+fadd.s fa5 fa4 fa5 00f777d3
+fmv.x.w a0 fa5 e0078553
+tail min_caml_sin 1900006f
+fmv.w.x fa5 a0 f00507d3
+fsqrt.s fa4 fa5 5807f753
+feq.s a0 fa4 fa4 a0e72553
+beqz a0 .LBB17_2 18050863
+fmv.x.w a0 fa4 e0070553
+ret 00008067
+fmv.x.w a0 fa5 e0078553
+tail sqrtf 1900006f
+fmv.w.x fa5 a0 f00507d3
+fmul.s fa4 fa5 fa5 10f7f753
+lui a0 %hi .LCPI18_0 00190537
+flw fa3 %lo .LCPI18_0 a0 19052687
+fmv.w.x fa2 zero f0000653
+fadd.s fa2 fa5 fa2 00c7f653
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa3 fa2 60d7f6c3
+lui a0 %hi .LCPI18_1 00190537
+flw fa2 %lo .LCPI18_1 a0 19052607
+lui a0 %hi .LCPI18_2 00190537
+flw fa1 %lo .LCPI18_2 a0 19052587
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa2 fa3 68c7f6c3
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa1 fa3 68b7f6c3
+lui a0 %hi .LCPI18_3 00190537
+flw fa2 %lo .LCPI18_3 a0 19052607
+lui a0 %hi .LCPI18_4 00190537
+flw fa1 %lo .LCPI18_4 a0 19052587
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa2 fa3 68c7f6c3
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa1 fa3 68b7f6c3
+lui a0 %hi .LCPI18_5 00190537
+flw fa2 %lo .LCPI18_5 a0 19052607
+lui a0 %hi .LCPI18_6 00190537
+flw fa1 %lo .LCPI18_6 a0 19052587
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa2 fa3 68c7f6c3
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa1 fa3 68b7f6c3
+lui a0 %hi .LCPI18_7 00190537
+flw fa2 %lo .LCPI18_7 a0 19052607
+lui a0 %hi .LCPI18_8 00190537
+flw fa1 %lo .LCPI18_8 a0 19052587
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa3 fa5 fa2 fa3 68c7f6c3
+fmul.s fa5 fa4 fa5 10f777d3
+fmadd.s fa5 fa5 fa1 fa3 68b7f7c3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+fmv.w.x fa4 a0 f0050753
+fmv.w.x fa5 zero f00007d3
+fle.s a0 fa5 fa4 a0e78553
+bnez a0 .LBB19_2 18051863
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+fmv.x.w a0 fa4 e0070553
+lui s0 524288 80000437
+xor a0 a0 s0 00854533
+call min_caml_atan 190000ef
+xor a0 a0 s0 00854533
+fmv.w.x fa5 a0 f00507d3
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+addi sp sp 16 01010113
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lui a0 %hi .LCPI19_0 00190537
+flw fa3 %lo .LCPI19_0 a0 19052687
+flt.s a0 fa4 fa3 a0d71553
+beqz a0 .LBB19_4 18050863
+lui a0 %hi .LCPI19_2 00190537
+flw fa3 %lo .LCPI19_2 a0 19052687
+fmul.s fa2 fa4 fa4 10e77653
+fadd.s fa5 fa4 fa5 00f777d3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+lui a0 %hi .LCPI19_3 00190537
+flw fa3 %lo .LCPI19_3 a0 19052687
+lui a0 %hi .LCPI19_4 00190537
+flw fa1 %lo .LCPI19_4 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_5 00190537
+flw fa3 %lo .LCPI19_5 a0 19052687
+lui a0 %hi .LCPI19_6 00190537
+flw fa1 %lo .LCPI19_6 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_7 00190537
+flw fa3 %lo .LCPI19_7 a0 19052687
+lui a0 %hi .LCPI19_8 00190537
+flw fa1 %lo .LCPI19_8 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_9 00190537
+flw fa3 %lo .LCPI19_9 a0 19052687
+lui a0 %hi .LCPI19_10 00190537
+flw fa1 %lo .LCPI19_10 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+lui a0 260096 3f800537
+fmv.w.x fa3 a0 f00506d3
+flt.s a0 fa4 fa3 a0d71553
+beqz a0 .LBB19_6 18050863
+lui a0 784384 bf800537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa2 fa4 fa2 00c77653
+fadd.s fa4 fa4 fa3 00d77753
+fdiv.s fa4 fa2 fa4 18e67753
+lui a0 %hi .LCPI19_2 00190537
+flw fa3 %lo .LCPI19_2 a0 19052687
+fmul.s fa2 fa4 fa4 10e77653
+fadd.s fa5 fa4 fa5 00f777d3
+fmul.s fa4 fa4 fa2 10c77753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+lui a0 %hi .LCPI19_3 00190537
+flw fa3 %lo .LCPI19_3 a0 19052687
+lui a0 %hi .LCPI19_4 00190537
+flw fa1 %lo .LCPI19_4 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_5 00190537
+flw fa3 %lo .LCPI19_5 a0 19052687
+lui a0 %hi .LCPI19_6 00190537
+flw fa1 %lo .LCPI19_6 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_7 00190537
+flw fa3 %lo .LCPI19_7 a0 19052687
+lui a0 %hi .LCPI19_8 00190537
+flw fa1 %lo .LCPI19_8 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+fmul.s fa4 fa2 fa4 10e67753
+lui a0 %hi .LCPI19_9 00190537
+flw fa3 %lo .LCPI19_9 a0 19052687
+lui a0 %hi .LCPI19_10 00190537
+flw fa1 %lo .LCPI19_10 a0 19052587
+lui a0 %hi .LCPI19_12 00190537
+flw fa0 %lo .LCPI19_12 a0 19052507
+j .LBB19_10 1900006f
+lui a0 %hi .LCPI19_1 00190537
+flw fa3 %lo .LCPI19_1 a0 19052687
+flt.s a0 fa4 fa3 a0d71553
+beqz a0 .LBB19_8 18050863
+lui a0 784384 bf800537
+fmv.w.x fa3 a0 f00506d3
+fadd.s fa3 fa4 fa3 00d776d3
+lui a0 260096 3f800537
+fmv.w.x fa2 a0 f0050653
+fadd.s fa4 fa4 fa2 00c77753
+j .LBB19_9 1900006f
+lui a0 784384 bf800537
+fmv.w.x fa3 a0 f00506d3
+fdiv.s fa4 fa3 fa4 18e6f753
+lui a0 %hi .LCPI19_2 00190537
+flw fa3 %lo .LCPI19_2 a0 19052687
+fmul.s fa2 fa4 fa4 10e77653
+fadd.s fa5 fa4 fa5 00f777d3
+fmul.s fa4 fa4 fa2 10c77753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+lui a0 %hi .LCPI19_3 00190537
+flw fa3 %lo .LCPI19_3 a0 19052687
+lui a0 %hi .LCPI19_4 00190537
+flw fa1 %lo .LCPI19_4 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_5 00190537
+flw fa3 %lo .LCPI19_5 a0 19052687
+lui a0 %hi .LCPI19_6 00190537
+flw fa1 %lo .LCPI19_6 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+lui a0 %hi .LCPI19_7 00190537
+flw fa3 %lo .LCPI19_7 a0 19052687
+lui a0 %hi .LCPI19_8 00190537
+flw fa1 %lo .LCPI19_8 a0 19052587
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+fmul.s fa4 fa2 fa4 10e67753
+lui a0 %hi .LCPI19_9 00190537
+flw fa3 %lo .LCPI19_9 a0 19052687
+lui a0 %hi .LCPI19_10 00190537
+flw fa1 %lo .LCPI19_10 a0 19052587
+lui a0 %hi .LCPI19_11 00190537
+flw fa0 %lo .LCPI19_11 a0 19052507
+fmadd.s fa5 fa4 fa3 fa5 78d777c3
+fmul.s fa4 fa2 fa4 10e67753
+fmadd.s fa5 fa4 fa1 fa5 78b777c3
+fadd.s fa5 fa5 fa0 00a7f7d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+fmv.w.x fa4 a0 f0050753
+fcvt.w.s a0 fa4 rtz c0071553
+fcvt.s.w fa5 a0 d00577d3
+flt.s a1 fa4 fa5 a0f715d3
+beqz a1 .LBB20_2 18058863
+addi a0 a0 -1 fff50513
+fcvt.s.w fa5 a0 d00577d3
+fmv.x.w a0 fa5 e0078553
+ret 00008067
+addi sp sp -16 ff010113
+sw ra 12 sp 00112623
+sw s0 8 sp 00812423
+sw s1 4 sp 00912223
+sw s2 0 sp 01212023
+lui s0 %hi buffer_pos 00190437
+lw a0 %lo buffer_pos s0 19042503
+beqz a0 .LBB21_3 18050863
+li s1 0 00000493
+lui a0 %hi buffer 00190537
+addi s2 a0 %lo buffer 19050913
+lw a0 0 s2 00092503
+call putchar 190000ef
+lw a0 %lo buffer_pos s0 19042503
+addi s1 s1 1 00148493
+addi s2 s2 4 00490913
+bltu s1 a0 .LBB21_2 18a4e863
+lw ra 12 sp 00c12083
+lw s0 8 sp 00812403
+lw s1 4 sp 00412483
+lw s2 0 sp 00012903
+addi sp sp 16 01010113
+ret 00008067
+add 29
+addi ba
+and 2
+andi 20
+beq 1e
+beqz 32
+bge 3
+bgeu 1
+bgez 1
+bgt 1
+ble 1
+blez 3
+blt a
+bltu 3
+bne 22
+bnez 3e
+call c0
+fadd.s b5
+fcvt.s.w 3
+fcvt.w.s 2
+fdiv.s 21
+feq.s 9
+fle.s 13
+flt.s 2c
+flw 21e
+fmadd.s 22
+fmul.s 188
+fmv.s 6
+fmv.w.x 90
+fmv.x.w 36
+fneg.s 19
+fsqrt.s 2
+fsub.s 31
+fsw b8
+j 35
+jr 3
+li a6
+lui 12d
+lw 262
+mv 8d
+neg 1
+ori 1
+ret 61
+seqz 1
+sll 1
+slli 1b
+sra 1
+srai 6
+srli 1
+sub 2
+sw 17b
+tail d
+xor 5

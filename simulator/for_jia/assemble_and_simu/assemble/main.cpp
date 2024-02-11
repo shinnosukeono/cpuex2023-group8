@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,6 +13,9 @@
 #include <sstream>
 #include <ostream>
 #include <cctype>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
 
 using ui = unsigned int;
 using Data = std::variant<int, unsigned int, float, double>;

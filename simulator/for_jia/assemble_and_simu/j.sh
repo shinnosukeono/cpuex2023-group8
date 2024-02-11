@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -e
+
+
 cp main.s ./assemble/a.s
 cd assemble
 ./a.out < a.txt

@@ -2403,7 +2403,7 @@ Instruction* bynary_exec(ui result)
 				exit(1);
 				break;
 			default: // no code
-				cerr << "No such instruction. Code: " << opcode << "\n";
+				cerr << endl << endl << "No such instruction. Code: " << opcode << "\n";
 				exit(1);
 				break;
 			}
@@ -3144,7 +3144,9 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 	if (tokens.size() == 0) return 0;
 	if (tokens[0][tokens[0].size()-1] == ':' && tokens.size() == 1){
 		if (Labels_pointer.count(tokens[0].substr(0, tokens[0].size()-1))){
+			cerr << endl << endl;
 			cerr << "Label " << tokens[0].substr(0, tokens[0].size()-1) << " is already defined.\n";
+			cerr << endl << endl;
 			exit(1);
 		}
 		Labels_pointer[tokens[0].substr(0, tokens[0].size()-1)] = instructions.size();
@@ -3280,7 +3282,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3302,7 +3304,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3320,7 +3322,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3338,7 +3340,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3360,7 +3362,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3378,7 +3380,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3396,7 +3398,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3410,7 +3412,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[2][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -3424,7 +3426,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%hi"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_hi[2][tokens[3]].push_back(instructions.size());
@@ -3450,7 +3452,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			try{
 			stoi(tokens[3]);
 			} catch (std::invalid_argument e){
-				cerr << "Invalid argument: " << tokens[3] << endl;
+				cerr << "Label is here:  " << tokens[3] << endl;
 				Label_assign[3][tokens[3]].push_back(instructions.size());
 				tokens[3] = "400";
 			} catch (std::out_of_range e){
@@ -3466,7 +3468,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			try{
 				stoi(tokens[1]);
 			} catch (std::invalid_argument e){
-				cerr << "Invalid argument: " << tokens[1] << endl;
+				cerr << "Label is here:  " << tokens[1] << endl;
 				Label_assign[1][tokens[1]].push_back(instructions.size());
 				tokens[1] = "400";
 			} catch (std::out_of_range e){
@@ -3480,7 +3482,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			try{
 				stoi(tokens[2]);
 			} catch (std::invalid_argument e){
-				cerr << "Invalid argument: " << tokens[2] << endl;
+				cerr << "Label is here:  " << tokens[2] << endl;
 				Label_assign[2][tokens[2]].push_back(instructions.size());
 				tokens[2] = "400";
 			} catch (std::out_of_range e){
@@ -3495,7 +3497,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3509,7 +3511,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3523,7 +3525,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3537,7 +3539,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3551,7 +3553,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3565,7 +3567,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3579,7 +3581,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3601,7 +3603,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3623,7 +3625,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3645,7 +3647,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3667,7 +3669,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3689,7 +3691,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3711,7 +3713,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3733,7 +3735,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -3755,7 +3757,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3];
+			cerr << "Label is here:  " << tokens[3];
 			if (tokens[3] == "%lo"){
 				cerr << " " << tokens[4] << endl;
 				Label_assign_lo[3][tokens[4]].push_back(instructions.size());
@@ -3776,7 +3778,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3790,7 +3792,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3804,7 +3806,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3818,7 +3820,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3832,7 +3834,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3846,7 +3848,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3860,7 +3862,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3874,7 +3876,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -3940,7 +3942,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		Instruction *p = new Fclass<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
-	}else if (tokens[0] == "fmv.x.w"){
+	}else if (tokens[0] == "fmv.x.w" || tokens[0] == "fmv.x.s"){
 		Instruction *p = new Fmvxw<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
@@ -3960,7 +3962,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		Instruction *p = new Fcvtswu<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
-	}else if (tokens[0] == "fmv.w.x"){
+	}else if (tokens[0] == "fmv.w.x" || tokens[0] == "fmv.s.x"){
 		Instruction *p = new Fmvwx<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
@@ -4004,7 +4006,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2];
+			cerr << "Label is here:  " << tokens[2];
 			if (tokens[2] == "%lo"){
 				cerr << " " << tokens[3] << endl;
 				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
@@ -4026,7 +4028,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4048,7 +4050,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[2][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4106,7 +4108,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4120,7 +4122,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4134,7 +4136,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4148,7 +4150,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4162,7 +4164,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4176,7 +4178,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[2] << endl;
+			cerr << "Label is here:  " << tokens[2] << endl;
 			Label_assign[3][tokens[2]].push_back(instructions.size());
 			tokens[2] = "400";
 		} catch (std::out_of_range e){
@@ -4190,7 +4192,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -4204,7 +4206,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -4218,7 +4220,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -4232,7 +4234,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[3]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[3] << endl;
+			cerr << "Label is here:  " << tokens[3] << endl;
 			Label_assign[3][tokens[3]].push_back(instructions.size());
 			tokens[3] = "400";
 		} catch (std::out_of_range e){
@@ -4246,7 +4248,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[1]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[1] << endl;
+			cerr << "Label is here:  " << tokens[1] << endl;
 			Label_assign[2][tokens[1]].push_back(instructions.size());
 			tokens[1] = "400";
 		} catch (std::out_of_range e){
@@ -4268,7 +4270,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[1]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[1] << endl;
+			cerr << "Label is here:  " << tokens[1] << endl;
 			Label_assign[2][tokens[1]].push_back(instructions.size());
 			tokens[1] = "400";
 		} catch (std::out_of_range e){
@@ -4282,7 +4284,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[1]);
 		} catch (std::invalid_argument e){
-			cerr << "Invalid argument: " << tokens[1] << endl;
+			cerr << "Label is here:  " << tokens[1] << endl;
 			Label_assign[2][tokens[1]].push_back(instructions.size());
 			tokens[1] = "400";
 		} catch (std::out_of_range e){
@@ -4300,9 +4302,15 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		Instruction *p = new Fsgnj<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
 		return (*p).assembler();
+	}else if (tokens[0] == "fabs.s"){
+		Instruction *p = new Fsgnj<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
+		instructions.push_back(p);
+		return (*p).assembler();
 	}
 	else{
+		cerr << endl << endl;
 		cerr << "No such instruction. Code: " << tokens[0] << "\n";
+		cerr << endl << endl;
 		exit(1);
 	}
 
@@ -4485,6 +4493,7 @@ int main(){
 		ofs << setw(8) << setfill('0') << hex << result << endl;
 	}
 
+	cerr << "Labels:" << endl;
 	for (auto itr = label_assign_set.begin(); itr != label_assign_set.end(); ++itr) {
 		cerr << "Label not found: " << itr->first << " " << itr->second << endl;
 	}

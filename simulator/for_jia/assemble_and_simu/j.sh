@@ -10,3 +10,4 @@ cp output.bin ../core.bin
 cd ../simulator
 ./main < a.txt
 cp output.ppm ../out.ppm
+cp inst.txt ../core_inst.txt

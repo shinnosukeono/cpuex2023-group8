@@ -4583,7 +4583,7 @@ write_ppm_header:                       # @write_ppm_header
 	lw	s0, %lo(size)(a0)
 	lw	a0, 0(s0)
 	call	min_caml_print_int@plt
-	li	a0, 32
+	li	a0, 0
 	call	min_caml_print_byte@plt
 	lw	a0, 4(s0)
 	call	min_caml_print_int@plt

@@ -4495,9 +4495,15 @@ int main(){
 		ofs << setw(8) << setfill('0') << hex << result << endl;
 	}
 
-	cerr << "Labels:" << endl;
+	bool flag = false;
 	for (auto itr = label_assign_set.begin(); itr != label_assign_set.end(); ++itr) {
-		cerr << "Label not found: " << itr->first << " " << itr->second << endl;
+		cerr << "Error label not found: " << itr->first << " " << itr->second << endl;
+		flag = true;
+	}
+
+	if (flag){
+		cerr << "Error" << endl;
+		exit(1);
 	}
 
 	return 0;

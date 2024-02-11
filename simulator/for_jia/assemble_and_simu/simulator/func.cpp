@@ -17,6 +17,7 @@
 #define maxcount 10000000000
 #define AP_max 4
 #define GP_max 4
+#define ways 4
 
 using namespace std;
 using Data = std::variant<int, float, unsigned int>;
@@ -107,7 +108,7 @@ public:
 	vector<vector<Data>> tag;
 	vector<vector<vector<char>>> data;
 
-	SetAssociativeCache(int cache_size = 512 * 64, int block_size = 64, int associativity = 2)
+	SetAssociativeCache(int cache_size = 512 * 64, int block_size = 64, int associativity = ways)
 	{
 		this->cache_size = cache_size;									   // 512*64
 		this->block_size = block_size;									   // 64

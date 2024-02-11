@@ -338,10 +338,14 @@ int main()
 	cout << "EX_count : " << vm.EX_count << endl;
 	cout << "cycle : " << vm.cycle << endl;
 	cout << "Return Code : " << get<int>(vm.ReadIntRegisters(10)) << endl;
-	cout << "hit: " << vm.mem.cache.hit_count << endl;
-	cout << "miss: " << vm.mem.cache.miss_count << endl;
-	cout << "stall: " << vm.stall_count << endl;
-	cout << "flush: " << vm.flush_count << endl;
+
+	if (vm.fast_mode == 0){
+		cout << "hit: " << vm.mem.cache.hit_count << endl;
+		cout << "miss: " << vm.mem.cache.miss_count << endl;
+		cout << "hit rate: " << (double)vm.mem.cache.hit_count / (double)(vm.mem.cache.hit_count + vm.mem.cache.miss_count) << endl;
+		cout << "stall: " << vm.stall_count << endl;
+		cout << "flush: " << vm.flush_count << endl;
+	}
 
 	if (vm.print_mode > 0){
 		vm.outputFile << "cycle : " << vm.cycle << endl;

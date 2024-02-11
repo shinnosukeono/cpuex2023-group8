@@ -11992,7 +11992,8 @@ caml_cos:                            # @caml_cos
 	.word	0x3f490fdb                      # float 0.785398185
 .LCPI2_5:
 	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI2_6:.word	0xbab38106                      # float -0.00136950682
+.LCPI2_6:
+	.word	0xbab38106                      # float -0.00136950682
 .LCPI2_7:
 	.word	0x3c088666                      # float 0.00833282433
 .LCPI2_8:

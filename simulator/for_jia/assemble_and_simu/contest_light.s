@@ -1,3 +1,4 @@
+# parameter is 77
 	.globl	main                            # -- Begin function main
 	.p2align	2
 	.type	main,@function
@@ -55,7 +56,6 @@ main:                                   # @main
 .vLfunc_end21:
 	.size	main, .vLfunc_end21-main
                                         # -- End function
-
 	.text
 	.attribute	4, 16
 	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
@@ -74,7 +74,7 @@ caml_main:                              # @caml_main
 	lw	a0, %lo(size)(a0)
 	lui	a1, %hi(dbg)
 	lw	a1, %lo(dbg)(a1)
-	li	a2, 2
+	li	a2, 4
 	sw	a2, 0(a0)
 	sw	a2, 4(a0)
 	sb	zero, 0(a1)

@@ -30,6 +30,11 @@ public:
 	// public:
 	void write(size_t addr, const char *src, size_t length)
 	{ // Write 32bits data to memory normally little endian
+		if (addr + length > Dsize){
+			cout << "Memory out of range" << endl;
+			cout << "addr: " << addr << endl;
+			exit(1);
+		}
 		std::copy(src, src + length, data + addr);
 	}
 	template <typename T, bool little_endian = true>
@@ -37,7 +42,12 @@ public:
 	{ // little_endian = true -> little endian
 	  // Load 32bits data from memory
 		static_assert(std::is_same_v<T, int> || std::is_same_v<T, float> || std::is_same_v<T, unsigned int>, "T must be int or float or unsigned int");
-		assert(addr < Dsize);
+		
+		if (addr >= Dsize){
+			cout << "Memory out of range" << endl;
+			cout << "addr: " << addr << endl;
+			exit(1);
+		}
 		union
 		{
 			struct

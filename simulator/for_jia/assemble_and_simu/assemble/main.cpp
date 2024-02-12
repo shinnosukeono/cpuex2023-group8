@@ -3151,11 +3151,19 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			cerr << endl << endl;
 			exit(1);
 		}
+		if (Labels_pointer.empty()){
+			if (tokens[0].substr(0, tokens[0].size()-1) != "main"){
+				cerr << endl << endl;
+				cerr << "The first label must be 'main'.\n";
+				cerr << endl << endl;
+				exit(1);
+			}
+		}
 		Labels_pointer[tokens[0].substr(0, tokens[0].size()-1)] = instructions.size();
 		Labels_vec.push_back(tokens[0].substr(0, tokens[0].size()-1));
 		return 0;
 	}
-	if (tokens[0] == ".section" || tokens[0] == ".ident" || tokens[0] == ".attribute" || tokens[0] == ".string" || tokens[0] == ".local" || tokens[0] == ".data" || tokens[0] == ".size" || tokens[0] == ".global" || tokens[0] == ".section" || tokens[0] == ".type" || tokens[0] == ".bss" || tokens[0] == ".align" || tokens[0] == ".file" || tokens[0] == ".text" || tokens[0] == ".ident" || tokens[0] == ".section" || tokens[0] == ".p2align" || tokens[0] == ".asciz" || tokens[0] == ".byte" || tokens[0] == ".globl"){
+	if (tokens[0] == ".addrsig_sym" || tokens[0] == ".addrsig" || tokens[0] == ".section" || tokens[0] == ".ident" || tokens[0] == ".attribute" || tokens[0] == ".string" || tokens[0] == ".local" || tokens[0] == ".data" || tokens[0] == ".size" || tokens[0] == ".global" || tokens[0] == ".section" || tokens[0] == ".type" || tokens[0] == ".bss" || tokens[0] == ".align" || tokens[0] == ".file" || tokens[0] == ".text" || tokens[0] == ".ident" || tokens[0] == ".section" || tokens[0] == ".p2align" || tokens[0] == ".asciz" || tokens[0] == ".byte" || tokens[0] == ".globl"){
 		return 0;
 	}
 	if (tokens[0].substr(0, 4) == ".cfi"){

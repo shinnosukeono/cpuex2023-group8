@@ -77,6 +77,7 @@ interface data_exec_io;
     logic [31:0] fpu_result;
     logic [31:0] rd1;
     logic [31:0] fpu_rd1;
+    logic [31:0] out_data;
     modport in (
         output alu_result,
         output data_addr,
@@ -87,7 +88,8 @@ interface data_exec_io;
         output status,
         output fpu_result,
         output rd1,
-        output fpu_rd1
+        output fpu_rd1,
+        output out_data
     );
     modport out (
         input alu_result,
@@ -99,7 +101,8 @@ interface data_exec_io;
         input status,
         input fpu_result,
         input rd1,
-        input fpu_rd1
+        input fpu_rd1,
+        input out_data
     );
 endinterface: data_exec_io //data_exec_io
 

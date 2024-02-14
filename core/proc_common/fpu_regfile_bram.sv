@@ -9,13 +9,14 @@ module fpu_regfile_bram (
 );
     reg [31:0] rd1_reg, rd2_reg, rd3_reg;
 
-    rams_sdp_one_clock #(
+    rams_sdp_one_clock_no_initial #(
         .DATA_WIDTH(32),
         .ADDR_WIDTH(5),
         .DATA_DEPTH(32)
     ) i_regfile1 (
         .clk(clk),
-        .rst(rst | rsta),
+        .hwrst(rst),
+        .rst(rsta),
         .ena(ena),
         .enb(enb),
         .wea(we3),
@@ -25,12 +26,13 @@ module fpu_regfile_bram (
         .dob(rd1_reg)
     );
 
-    rams_sdp_one_clock #(
+    rams_sdp_one_clock_no_initial #(
         .DATA_WIDTH(32),
         .ADDR_WIDTH(5),
         .DATA_DEPTH(32)
     ) i_regfile2 (
         .clk(clk),
+        .hwrst(rst),
         .rst(rst | rstb),
         .ena(ena),
         .enb(enb),
@@ -41,13 +43,14 @@ module fpu_regfile_bram (
         .dob(rd2_reg)
     );
 
-    rams_sdp_one_clock #(
+    rams_sdp_one_clock_no_initial #(
         .DATA_WIDTH(32),
         .ADDR_WIDTH(5),
         .DATA_DEPTH(32)
     ) i_regfile_3 (
         .clk(clk),
-        .rst(rst | rstc),
+        .hwrst(rst),
+        .rst(rstc),
         .ena(ena),
         .enb(enb),
         .wea(we3),

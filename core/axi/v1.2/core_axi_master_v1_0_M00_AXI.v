@@ -67,35 +67,35 @@
 		// AXI active low reset signal
 		input wire  M_AXI_ARESETN,
 		// Master Interface Write Address Channel ports. Write address (issued by master)
-		(* mark_debug = "true" *) output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,
+		output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_AWADDR,
 		// Write channel Protection type.
     // This signal indicates the privilege and security level of the transaction,
     // and whether the transaction is a data access or an instruction access.
-		(* mark_debug = "true" *) output wire [2 : 0] M_AXI_AWPROT,
+		output wire [2 : 0] M_AXI_AWPROT,
 		// Write address valid.
     // This signal indicates that the master signaling valid write address and control information.
-		(* mark_debug = "true" *) output wire  M_AXI_AWVALID,
+		output wire  M_AXI_AWVALID,
 		// Write address ready.
     // This signal indicates that the slave is ready to accept an address and associated control signals.
 		input wire  M_AXI_AWREADY,
 		// Master Interface Write Data Channel ports. Write data (issued by master)
-		(* mark_debug = "true" *) output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,
+		output wire [C_M_AXI_DATA_WIDTH-1 : 0] M_AXI_WDATA,
 		// Write strobes.
     // This signal indicates which byte lanes hold valid data.
     // There is one write strobe bit for each eight bits of the write data bus.
-		(* mark_debug = "true" *) output wire [C_M_AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
+		output wire [C_M_AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
 		// Write valid. This signal indicates that valid write data and strobes are available.
-		(* mark_debug = "true" *) output wire  M_AXI_WVALID,
+		output wire  M_AXI_WVALID,
 		// Write ready. This signal indicates that the slave can accept the write data.
-		(* mark_debug = "true" *) input wire  M_AXI_WREADY,
+		input wire  M_AXI_WREADY,
 		// Master Interface Write Response Channel ports.
     // This signal indicates the status of the write transaction.
-		(* mark_debug = "true" *) input wire [1 : 0] M_AXI_BRESP,
+		input wire [1 : 0] M_AXI_BRESP,
 		// Write response valid.
     // This signal indicates that the channel is signaling a valid write response
-		(* mark_debug = "true" *) input wire  M_AXI_BVALID,
+		input wire  M_AXI_BVALID,
 		// Response ready. This signal indicates that the master can accept a write response.
-		(* mark_debug = "true" *) output wire  M_AXI_BREADY,
+		output wire  M_AXI_BREADY,
 		// Master Interface Read Address Channel ports. Read address (issued by master)
 		output wire [C_M_AXI_ADDR_WIDTH-1 : 0] M_AXI_ARADDR,
 		// Protection type.

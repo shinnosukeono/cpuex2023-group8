@@ -26,8 +26,19 @@ module instr_decode (
     input logic fpu_reg_write_w,
 
     // to hazard unit
-    output wire r4
+    output wire r4,
+
+    // from I/O module
+    input logic io_we,
+    input logic [31:0] io_reg_init_data,
+    input logic [4:0] io_rd
 );
+    logic [4:0] regfile_rd;
+    logic [31:0] regfile_wd;
+
+    assign regfile_rd = (io_we) ? io_rd : rd_w;
+    assign regfile_wd = (io_we) ? io_reg_init_data : result_w;
+
     logic c_reg_write;
 
     // contrl unit
@@ -46,15 +57,15 @@ module instr_decode (
     regfile_bram i_regfile (
         .clk(~clk),
         .rst(rst),
-        .we3(reg_write_w),
+        .we3(reg_write_w | io_we),
         .ena(1'b1),
         .enb(1'b1),
         .rsta(~(|data_fetch_if.instr[19:15])),
         .rstb(~(|data_fetch_if.instr[24:20])),
         .a1(data_fetch_if.instr[19:15]),
         .a2(data_fetch_if.instr[24:20]),
-        .a3(rd_w),
-        .wd3(result_w),
+        .a3(regfile_rd),
+        .wd3(regfile_wd),
         .rd1(data_decode_if.rd1),
         .rd2(data_decode_if.rd2)
     );

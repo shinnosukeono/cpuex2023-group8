@@ -23,6 +23,9 @@ module riscv_pipeline_wrapper (
     input wire out_stall,
     input wire in_stall,
     input wire [31:0] in_data,
+    input wire reg_we,
+    input wire [31:0] reg_init_data,
+    input wire [4:0] rd,
 
     // to I/O module
     output wire [31:0] status,
@@ -76,6 +79,9 @@ module riscv_pipeline_wrapper (
         .out_stall(out_stall),
         .in_stall(in_stall),
         .in_data(in_data),
+        .reg_we(reg_we),
+        .reg_init_data(reg_init_data),
+        .rd(rd),
         .status(status),
         .out_issued(out_issued),
         .out_data(out_data),

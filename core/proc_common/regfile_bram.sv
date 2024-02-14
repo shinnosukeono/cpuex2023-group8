@@ -15,7 +15,8 @@ module regfile_bram (
         .DATA_DEPTH(32)
     ) i_regfile1 (
         .clk(clk),
-        .rst(rst | rsta),
+        .hwrst(rst),
+        .rst(rsta),
         .ena(ena),
         .enb(enb),
         .wea(we3),
@@ -31,7 +32,8 @@ module regfile_bram (
         .DATA_DEPTH(32)
     ) i_regfile2 (
         .clk(clk),
-        .rst(rst | rstb),
+        .hwrst(rst),
+        .rst(rstb),
         .ena(ena),
         .enb(enb),
         .wea(we3),

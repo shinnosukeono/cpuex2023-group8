@@ -160,6 +160,7 @@ module exec (
 
     // to I/O module
     assign out_data = {24'b0, rd1_forward[7:0]};
+    assign data_exec_if.out_data = {24'b0, rd1_forward[7:0]};
 
     // to data memory
     alu_simplified #(
@@ -196,6 +197,7 @@ module exec (
     assign control_exec_if.mem_write = control_decode_if.mem_write;
     assign control_exec_if.mem_read = control_decode_if.mem_read;
     assign control_exec_if.fpu_reg_write = control_decode_if.fpu_reg_write;
+    assign control_exec_if.out_issued = control_decode_if.out_issued;
 
     assign data_exec_if.rd = data_decode_if.rd;
     assign data_exec_if.imm_ext = data_decode_if.imm_ext;

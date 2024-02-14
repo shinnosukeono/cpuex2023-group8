@@ -346,6 +346,10 @@ float FPUfdiv(int x, int y)
         exp = 255;
         frac = 0;
     }
+    if (exp == 0 && (frac & (1 << 22))){
+        exp = 1;
+        frac = 0;
+    }
     if (exp <= 0){
         exp = 0;
         frac = 0;

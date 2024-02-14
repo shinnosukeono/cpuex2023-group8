@@ -23,6 +23,8 @@ using namespace std;
 
 #define data_section_pointer 0x10000
 
+int line_number = 0;
+
 struct Int12
 {
 	int v : 12;
@@ -64,44 +66,71 @@ public:
 		if (imm >= -2048 && imm <= 2047)
 		return (opcode << 0) | (rd << 7) | (funct3 << 12) | (rs1 << 15) | (imm << 20);
 		else {
-			cerr << imm << endl;
+			cerr << "Line: " << line_number << " " << "Immediate value out of range" << endl;
+			cerr << "Immediate value should be in range -2048 to 2047" << endl;
+			cerr << "Immediate value is " << imm << endl;
 			exit(1);
 		}
 	}
 	unsigned int S_type(unsigned int opcode, unsigned int rs2, unsigned int rs1, int imm, unsigned int funct3)
 	{
-		assert(imm >= -2048 && imm <= 2047);
-		unsigned int imm_11_5 = (imm >> 5) & 0x7f;
-		unsigned int imm_4_0 = imm & 0x1f;
-		return (opcode << 0) | (imm_4_0 << 7) | (funct3 << 12) | (rs1 << 15) | (rs2 << 20) | (imm_11_5 << 25);
+		if (imm >= -2048 && imm <= 2047){
+			unsigned int imm_11_5 = (imm >> 5) & 0x7f;
+			unsigned int imm_4_0 = imm & 0x1f;
+			return (opcode << 0) | (imm_4_0 << 7) | (funct3 << 12) | (rs1 << 15) | (rs2 << 20) | (imm_11_5 << 25);
+		}else{
+			cerr << "Line: " << line_number << " " << "Immediate value out of range" << endl;
+			cerr << "Immediate value should be in range -2048 to 2047" << endl;
+			cerr << "Immediate value is " << imm << endl;
+			exit(1);
+		}
 	}
 
 	unsigned int B_type(unsigned int opcode, unsigned int rs1, unsigned int rs2, int imm, unsigned int funct3)
 	{
-		assert(imm >= -4096 && imm <= 4095 && !(imm&1) );
-		unsigned int imm_12 = (imm >> 12) & 1;
-		unsigned int imm_11 = (imm >> 11) & 1;
-		unsigned int imm_10_5 = (imm >> 5) & 0x3f;
-		unsigned int imm_4_1 = (imm >> 1) & 0xf;
-		return (opcode << 0) | (imm_11 << 7) | (imm_4_1 << 8) | (funct3 << 12) | (rs1 << 15) | (rs2 << 20) | (imm_10_5 << 25) | (imm_12 << 31);
+		if (imm >= -4096 && imm <= 4095 && !(imm&1) ){
+			unsigned int imm_12 = (imm >> 12) & 1;
+			unsigned int imm_11 = (imm >> 11) & 1;
+			unsigned int imm_10_5 = (imm >> 5) & 0x3f;
+			unsigned int imm_4_1 = (imm >> 1) & 0xf;
+			return (opcode << 0) | (imm_11 << 7) | (imm_4_1 << 8) | (funct3 << 12) | (rs1 << 15) | (rs2 << 20) | (imm_10_5 << 25) | (imm_12 << 31);
+		}else{
+			cerr << "Line: " << line_number << " " << "Immediate value out of range" << endl;
+			cerr << "Immediate value should be in range -4096 to 4095" << endl;
+			cerr << "Immediate value is " << imm << endl;
+			exit(1);
+		}
 	}
 
 	unsigned int U_type(unsigned int opcode, unsigned int rd, int imm)
 	{
 		
-		assert(imm >= -1048576 && imm <= 1048575);
-		unsigned int imm_31_12 = imm & 0xfffff;
-		return (opcode << 0) | (rd << 7) | (imm_31_12 << 12);
+		if (imm >= -1048576 && imm <= 1048575){
+			unsigned int imm_31_12 = imm & 0xfffff;
+			return (opcode << 0) | (rd << 7) | (imm_31_12 << 12);
+		}else{
+			cerr << "Line: " << line_number << " " << "Immediate value out of range" << endl;
+			cerr << "Immediate value should be in range -1048576 to 1048575" << endl;
+			cerr << "Immediate value is " << imm << endl;
+			exit(1);
+		
+		}
 	}
 
 	unsigned int J_type(unsigned int opcode, unsigned int rd, int imm)
 	{
-		assert(imm >= -1048576 && imm <= 1048575 && !(imm&1));
-		unsigned int imm_20 = (imm >> 20) & 1;
-		unsigned int imm_10_1 = (imm >> 1) & 0x3ff;
-		unsigned int imm_11 = (imm >> 11) & 1;
-		unsigned int imm_19_12 = (imm >> 12) & 0xff;
-		return (opcode << 0) | (rd << 7) | (imm_19_12 << 12) | (imm_11 << 20) | (imm_10_1 << 21) | (imm_20 << 31);
+		if (imm >= -1048576 && imm <= 1048575 && !(imm&1)){
+			unsigned int imm_20 = (imm >> 20) & 1;
+			unsigned int imm_10_1 = (imm >> 1) & 0x3ff;
+			unsigned int imm_11 = (imm >> 11) & 1;
+			unsigned int imm_19_12 = (imm >> 12) & 0xff;
+			return (opcode << 0) | (rd << 7) | (imm_19_12 << 12) | (imm_11 << 20) | (imm_10_1 << 21) | (imm_20 << 31);
+		}else{
+			cerr << "Line: " << line_number << " " << "Immediate value out of range" << endl;
+			cerr << "Immediate value should be in range -1048576 to 1048575" << endl;
+			cerr << "Immediate value is " << imm << endl;
+			exit(1);
+		}
 	}
 
 	unsigned int R4_type(unsigned int opcode, unsigned int fd, unsigned int fs1, unsigned int fs2, unsigned int fs3, unsigned int funct2, unsigned int funct3)
@@ -3116,6 +3145,7 @@ Instruction* bynary_exec(ui result)
 int mode;
 map<string, int> inst;
 vector<Instruction*> instructions;
+vector<int> instructions_line;
 unordered_map<string, int> Labels_pointer;
 unordered_map<string, vector<int>> Label_assign[4], Label_assign_hi[4], Label_assign_lo[4];
 vector<string> Labels_vec;
@@ -3279,14 +3309,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 	if (tokens[0] == "add"){
 		Instruction *p = new Add<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sub"){
 		Instruction *p = new Sub<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "mul"){
 		Instruction *p = new Mul<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "slli"){
 		try{
@@ -3301,14 +3334,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slli<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sll"){
 		Instruction *p = new Sll<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "slt"){
 		Instruction *p = new Slt<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "slti"){
 		try{
@@ -3323,10 +3359,12 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slti<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sltu"){
 		Instruction *p = new Slt<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sltiu"){
 		try{
@@ -3341,10 +3379,12 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slti<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "xor"){
 		Instruction *p = new Xor<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "xori"){
 		try{
@@ -3359,14 +3399,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Xori<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "srl"){
 		Instruction *p = new Srl<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sra"){
 		Instruction *p = new Sra<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "srli"){
 		try{
@@ -3381,10 +3424,12 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Srli<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "or"){
 		Instruction *p = new Or<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "ori"){
 		try{
@@ -3399,10 +3444,12 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Ori<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "and"){
 		Instruction *p = new And<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "andi"){
 		try{
@@ -3417,6 +3464,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Andi<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "auipc"){
 		try{
@@ -3431,6 +3479,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Auipc<int>(RFnames.at(tokens[1]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lui"){
 		try{
@@ -3452,11 +3501,13 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lui<int>(RFnames.at(tokens[1]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "jalr"){
 		if (tokens.size() == 2){
 			Instruction *p = new Jalr<int>(1, RFnames.at(tokens[1]), 0);
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			return (*p).assembler();
 		}else{
 			try{
@@ -3471,6 +3522,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			}
 			Instruction *p = new Jalr<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			return (*p).assembler();
 		}
 	}else if (tokens[0] == "jal"){
@@ -3487,6 +3539,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			}
 			Instruction *p = new Jal<int>(1, stoi(tokens[1]));
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			return (*p).assembler();
 		}else{
 			try{
@@ -3501,6 +3554,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			}
 			Instruction *p = new Jal<int>(RFnames.at(tokens[1]), stoi(tokens[2]));
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			return (*p).assembler();
 		}
 	}else if (tokens[0] == "beq"){
@@ -3516,6 +3570,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Beq<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bne"){
 		try{
@@ -3530,6 +3585,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bne<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "blt"){
 		try{
@@ -3544,6 +3600,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bge"){
 		try{
@@ -3558,6 +3615,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bltu"){
 		try{
@@ -3572,6 +3630,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bgeu"){
 		try{
@@ -3586,6 +3645,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lb"){
 		try{
@@ -3608,6 +3668,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lb<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lh"){
 		try{
@@ -3630,6 +3691,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lh<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lw"){
 		try{
@@ -3652,6 +3714,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lw<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lbu"){
 		try{
@@ -3674,6 +3737,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lbu<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "lhu"){
 		try{
@@ -3696,6 +3760,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Lhu<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sb"){
 		try{
@@ -3718,6 +3783,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Sb<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sh"){
 		try{
@@ -3740,6 +3806,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Sh<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sw"){
 		try{
@@ -3762,6 +3829,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Sw<int>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "addi"){
 		try{
@@ -3783,6 +3851,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Addi<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "slli"){
 		try{
@@ -3797,6 +3866,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slli<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "slti"){
 		try{
@@ -3811,6 +3881,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slti<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sltiu"){
 		try{
@@ -3825,6 +3896,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Slti<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "xori"){
 		try{
@@ -3839,6 +3911,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Xori<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "srli"){
 		try{
@@ -3853,6 +3926,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Srli<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "srai"){
 		try{
@@ -3867,6 +3941,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Srli<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "ori"){
 		try{
@@ -3881,6 +3956,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Ori<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "andi"){
 		try{
@@ -3895,122 +3971,152 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Andi<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fadd.s"){
 		Instruction *p = new Fadd<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsub.s"){
 		Instruction *p = new Fsub<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmul.s"){
 		Instruction *p = new Fmul<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fdiv.s"){
 		Instruction *p = new Fdiv<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsqrt.s"){
 		Instruction *p = new Fsqrt<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsgnj.s"){
 		Instruction *p = new Fsgnj<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsgnjn.s"){
 		Instruction *p = new Fsgnjn<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsgnjx.s"){
 		Instruction *p = new Fsgnjx<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmin.s"){
 		Instruction *p = new Fmin<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmax.s"){
 		Instruction *p = new Fmax<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "feq.s"){
 		Instruction *p = new Feq<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "flt.s"){
 		Instruction *p = new Flt<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fle.s"){
 		Instruction *p = new Fle<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fclass.s"){
 		Instruction *p = new Fclass<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmv.x.w" || tokens[0] == "fmv.x.s"){
 		Instruction *p = new Fmvxw<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fcvt.w.s"){
 		Instruction *p = new Fcvtws<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fcvt.wu.s"){
 		Instruction *p = new Fcvtwus<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fcvt.s.w"){
 		Instruction *p = new Fcvtsw<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fcvt.s.wu"){
 		Instruction *p = new Fcvtswu<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmv.w.x" || tokens[0] == "fmv.s.x"){
 		Instruction *p = new Fmvwx<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmadd.s"){
 		Instruction *p = new Fmadd<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]), RFnames.at(tokens[4]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmsub.s"){
 		Instruction *p = new Fmsub<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]), RFnames.at(tokens[4]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fnmadd.s"){
 		Instruction *p = new Fnmadd<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]), RFnames.at(tokens[4]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fnmsub.s"){
 		Instruction *p = new Fnmsub<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]), RFnames.at(tokens[4]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "cin.int"){
 		Instruction *p = new Cin_int<int>(RFnames.at(tokens[1]), 0,0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "cout.int"){
 		Instruction *p = new Cout_int<int>(0,RFnames.at(tokens[1]),0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "cin.float"){
 		Instruction *p = new Cin_float<float>(RFnames.at(tokens[1]), 0,0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "cout.float"){
 		Instruction *p = new Cout_float<float>(0,RFnames.at(tokens[1]),0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "cout.char" || tokens[0] == "out"){
 		Instruction *p = new Cout_char<int>(0,RFnames.at(tokens[1]),0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "flw"){
 		try{
@@ -4033,6 +4139,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Flw<float>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fsw"){
 		try{
@@ -4047,14 +4154,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Fsw<float>(RFnames.at(tokens[1]), RFnames.at(tokens[3]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "div"){
 		Instruction *p = new Div<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "nop"){
 		Instruction *p = new Addi<int>(0,0,0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "li"){
 		try{
@@ -4079,40 +4189,50 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 			}
 			long long q2 = (*q).assembler();
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			instructions.push_back(q);
+			instructions_line.push_back(line_number);
 			return (*p).assembler() | (q2 << 32ll);
 		}else{
 			Instruction *p = new Addi<int>(RFnames.at(tokens[1]), 0, imm);
 			instructions.push_back(p);
+			instructions_line.push_back(line_number);
 			return (*p).assembler();
 		}
 	}else if (tokens[0] == "mv"){
 		Instruction *p = new Addi<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), 0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "not"){
 		Instruction *p = new Xori<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), -1);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "neg"){
 		Instruction *p = new Sub<int>(RFnames.at(tokens[1]), 0, RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "seqz"){
 		Instruction *p = new Slti<unsigned int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), 1);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "snez"){
 		Instruction *p = new Slt<unsigned int>(RFnames.at(tokens[1]), 0, RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sltz"){
 		Instruction *p = new Slt<int>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), 0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "sgtz"){
 		Instruction *p = new Slt<int>(RFnames.at(tokens[1]), 0, RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "beqz"){
 		try{
@@ -4127,6 +4247,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Beq<int>(RFnames.at(tokens[1]), 0, stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bnez"){
 		try{
@@ -4141,6 +4262,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bne<int>(RFnames.at(tokens[1]), 0, stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "blez"){
 		try{
@@ -4155,6 +4277,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<int>(0, RFnames.at(tokens[1]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bgez"){
 		try{
@@ -4169,6 +4292,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<int>(RFnames.at(tokens[1]), 0, stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bltz"){
 		try{
@@ -4183,6 +4307,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<int>(RFnames.at(tokens[1]), 0, stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bgtz"){
 		try{
@@ -4197,6 +4322,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<int>(0, RFnames.at(tokens[1]), stoi(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "ble"){
 		try{
@@ -4211,6 +4337,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<int>(RFnames.at(tokens[2]), RFnames.at(tokens[1]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bgt"){
 		try{
@@ -4225,6 +4352,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<int>(RFnames.at(tokens[2]), RFnames.at(tokens[1]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bleu"){
 		try{
@@ -4239,6 +4367,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Bge<unsigned int>(RFnames.at(tokens[2]), RFnames.at(tokens[1]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "bgtu"){
 		try{
@@ -4253,6 +4382,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Blt<unsigned int>(RFnames.at(tokens[2]), RFnames.at(tokens[1]), stoi(tokens[3]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "j"){
 		try{
@@ -4267,14 +4397,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Jal<int>(0, stoi(tokens[1]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "jr"){
 		Instruction *p = new Jalr<int>(0, RFnames.at(tokens[1]), 0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "ret"){
 		Instruction *p = new Jalr<int>(0, 1, 0);
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "call"){
 		try{
@@ -4289,6 +4422,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Jal<int>(1, stoi(tokens[1]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "tail"){
 		try{
@@ -4303,18 +4437,22 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		}
 		Instruction *p = new Jal<int>(0, stoi(tokens[1]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fneg.s"){
 		Instruction *p = new Fsgnjn<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fmv.s"){
 		Instruction *p = new Fsgnj<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}else if (tokens[0] == "fabs.s"){
 		Instruction *p = new Fsgnjx<float>(RFnames.at(tokens[1]), RFnames.at(tokens[2]), RFnames.at(tokens[2]));
 		instructions.push_back(p);
+		instructions_line.push_back(line_number);
 		return (*p).assembler();
 	}
 	else{
@@ -4351,8 +4489,11 @@ int main(){
 		return -1;
 	}
 
+	line_number = 0;
+
 	// 1行ずつ読み込む
 	while (getline(ifs, line)) {
+		line_number++;
 		// 1行ずつ出力
 		long long result = assemble(line,RFnames);
 		if (result == 0) continue;
@@ -4501,6 +4642,7 @@ int main(){
 	}
 	ofstream ofs("output_hex.txt");
 	for (int i=0; i<instructions.size(); i++){
+		line_number = instructions_line[i];
 		int result = (*instructions[i]).assembler();
 		ofs << setw(8) << setfill('0') << hex << result << endl;
 	}
@@ -4586,5 +4728,4 @@ void init(unordered_map<string,int> &RFnames){
 	RFnames["ft9"] = 29;
 	RFnames["ft10"] = 30;
 	RFnames["ft11"] = 31;
-	RFnames["ft12"] = 32;
 } // init

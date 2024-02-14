@@ -36,6 +36,8 @@ module fmul_pipe
     reg [23:0] hylx_reg;
     reg [9:0] e_res_unshifted_reg;
     reg temp_s_res_reg;
+    reg [31:0] x_reg;
+    reg [31:0] y_reg;
     always @(posedge clk) begin
         if (~rstn) begin
             hxhy_reg <= 26'b0;
@@ -43,26 +45,31 @@ module fmul_pipe
             hylx_reg <= 24'b0;
             e_res_unshifted_reg <= 10'b0;
             temp_s_res_reg <= 1'b0;
+            x_reg <= '0;
+            y_reg <= '0;
         end else begin
             hxhy_reg <= hxhy;
             hxly_reg <= hxly;
             hylx_reg <= hylx;
             e_res_unshifted_reg <= e_res_unshifted;
             temp_s_res_reg <= temp_s_res;
+            x_reg <= x;
+            y_reg <= y;
         end
     end
 
     wire [25:0] m_res_long = hxhy_reg + (hxly_reg >> 11) + (hylx_reg >> 11) + 2;
     wire [9:0] e_res_shifted = e_res_unshifted_reg + 1;
 
-    wire [7:0] e_res = m_res_long[25] ? (e_res_shifted[9] ? 8'b0 :           // e_res_shifted < 0
+    wire [7:0] e_res_pre = m_res_long[25] ? (e_res_shifted[9] ? 8'b0 :           // e_res_shifted < 0
                                          e_res_shifted[8] ? 8'hff :          // e_res_shifted > 255
                                                             e_res_shifted) :
                                         (e_res_unshifted_reg[9] ? 8'b0 :         // e_res_unshifted < 0
                                          e_res_unshifted_reg[8] ? 8'hff :        // e_res_unshifted > 255
                                                               e_res_unshifted_reg);
-    wire is_zero = ~(|e_res);
-    wire ovf = &e_res;
+    wire is_zero = ~|x_reg | ~|y_reg | ~|e_res_pre;
+    wire ovf = &e_res_pre;
+    wire [7:0] e_res = is_zero ? '0 : e_res_pre;
     wire [22:0] m_res = (is_zero | ovf)  ? 23'b0 : // e_res == 0
                         (m_res_long[25]) ? m_res_long[24-:23] :
                                            m_res_long[23-:23];

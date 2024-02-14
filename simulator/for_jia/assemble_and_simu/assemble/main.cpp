@@ -21,7 +21,7 @@ using ui = unsigned int;
 using Data = std::variant<int, unsigned int, float, double>;
 using namespace std;
 
-#define data_section_pointer 0x10000
+#define data_section_pointer 0x40000
 
 int line_number = 0;
 
@@ -4548,6 +4548,15 @@ int main(){
 
 	for (auto p: label_assign_set){
 		cerr << p.first << " " << p.second << endl;
+	}
+
+	if (4*instructions.size() > data_section_pointer){
+		cerr << endl << endl;
+		cerr << "Instructions are too long" << endl;
+		cerr << "You must change the data_section_pointer in the assembler.cpp and simulator.cpp more than " << 4*instructions.size() << endl;
+		cerr << "The current value is " << data_section_pointer << endl;
+		cerr << endl << endl;
+		exit(1);
 	}
 
 	ofstream ofs5("output_labels.txt");

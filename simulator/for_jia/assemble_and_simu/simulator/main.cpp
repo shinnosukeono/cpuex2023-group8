@@ -9,7 +9,7 @@ vector<Instruction *> instrs_case1{};
 
 using namespace std;
 
-#define data_section 0x10000
+#define data_section 0x40000
 
 int main()
 {

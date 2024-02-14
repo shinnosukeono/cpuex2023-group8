@@ -1,4 +1,4 @@
-.globl "%.12394<main>"
+.globl main
 main:
     li gp, 0x10000
     addi sp, sp, -848
@@ -330,9 +330,9 @@ main:
     lw a1, 468(sp)
     call "%.5692<create_array_0_0>"
     sw a0, 120(gp) 	# n_reflections
-    li t0, 512
+    li t0, 4
     sw t0, 464(sp)
-    li t0, 512
+    li t0, 4
     sw t0, 460(sp)
     li t0, 3
     sw t0, 456(sp)
@@ -784,7 +784,7 @@ sgn:
     flw ft1, 36(sp)
     feq.s t2, ft0, ft1
     sw t2, 32(sp)
-    lw t0, 27(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12482<else0>"
     j "%.12483<then>"
 "%.12482<else0>":
@@ -798,7 +798,7 @@ sgn:
     flw ft1, 24(sp)
     flt.s t2, ft0, ft1
     sw t2, 20(sp)
-    lw t0, 30(sp)
+    lw t0, 20(sp)
     beqz t0, "%.12486<else0>"
     j "%.12487<then>"
 "%.12486<else0>":
@@ -879,7 +879,7 @@ fneg_cond:
 "fneg_cond.func_begin":
     sw a0, 8(sp)
     fsw fa0, 4(sp)
-    lw t0, 25(sp)
+    lw t0, 8(sp)
     beqz t0, "%.12490<else0>"
     j "%.12491<then>"
 "%.12490<else0>":
@@ -966,7 +966,7 @@ add_mod5:
     lw t0, 24(sp)
     seqz t0, t0
     sw t0, 20(sp)
-    lw t0, 30(sp)
+    lw t0, 20(sp)
     beqz t0, "%.12494<else0>"
     j "%.12495<then>"
 "%.12494<else0>":
@@ -1477,7 +1477,7 @@ vecunit_sgn:
     flw ft1, 136(sp)
     feq.s t2, ft0, ft1
     sw t2, 132(sp)
-    lw t0, 46(sp)
+    lw t0, 132(sp)
     beqz t0, "%.12498<else0>"
     j "%.12499<then>"
 "%.12498<else0>":
@@ -1489,7 +1489,7 @@ vecunit_sgn:
     fsw ft11, 124(sp)
     j "%.12500<endif>"
 "%.12497<else>":
-    lw t0, 26(sp)
+    lw t0, 212(sp)
     beqz t0, "%.12502<else0>"
     j "%.12503<then>"
 "%.12502<else0>":
@@ -6400,7 +6400,7 @@ read_nth_object:
     lw t1, 572(sp)
     xor t2, t0, t1
     sw t2, 568(sp)
-    lw t0, 29(sp)
+    lw t0, 568(sp)
     beqz t0, "%.12506<else0>"
     j "%.12507<then>"
 "%.12506<else0>":
@@ -6603,7 +6603,7 @@ read_nth_object:
     lw t1, 304(sp)
     xor t2, t0, t1
     sw t2, 300(sp)
-    lw t0, 96(sp)
+    lw t0, 300(sp)
     beqz t0, "%.12510<else0>"
     j "%.12511<then>"
 "%.12510<else0>":
@@ -6677,7 +6677,7 @@ read_nth_object:
     lw t0, 220(sp)
     seqz t0, t0
     sw t0, 216(sp)
-    lw t0, 117(sp)
+    lw t0, 216(sp)
     beqz t0, "%.12514<else0>"
     j "%.12515<then>"
 "%.12514<else0>":
@@ -6737,7 +6737,7 @@ read_nth_object:
     lw t0, 180(sp)
     seqz t0, t0
     sw t0, 176(sp)
-    lw t0, 127(sp)
+    lw t0, 176(sp)
     beqz t0, "%.12518<else0>"
     j "%.12519<then>"
 "%.12518<else0>":
@@ -6761,7 +6761,7 @@ read_nth_object:
     flw ft1, 152(sp)
     feq.s t2, ft0, ft1
     sw t2, 148(sp)
-    lw t0, 134(sp)
+    lw t0, 148(sp)
     beqz t0, "%.12522<else0>"
     j "%.12523<then>"
 "%.12522<else0>":
@@ -6809,7 +6809,7 @@ read_nth_object:
     flw ft1, 104(sp)
     feq.s t2, ft0, ft1
     sw t2, 100(sp)
-    lw t0, 146(sp)
+    lw t0, 100(sp)
     beqz t0, "%.12526<else0>"
     j "%.12527<then>"
 "%.12526<else0>":
@@ -6857,7 +6857,7 @@ read_nth_object:
     flw ft1, 56(sp)
     feq.s t2, ft0, ft1
     sw t2, 52(sp)
-    lw t0, 158(sp)
+    lw t0, 52(sp)
     beqz t0, "%.12530<else0>"
     j "%.12531<then>"
 "%.12530<else0>":
@@ -6898,7 +6898,7 @@ read_nth_object:
     lw t0, 24(sp)
     seqz t0, t0
     sw t0, 20(sp)
-    lw t0, 166(sp)
+    lw t0, 20(sp)
     beqz t0, "%.12534<else0>"
     j "%.12535<then>"
 "%.12534<else0>":
@@ -6919,7 +6919,7 @@ read_nth_object:
     lw t1, 12(sp)
     xor t2, t0, t1
     sw t2, 8(sp)
-    lw t0, 169(sp)
+    lw t0, 8(sp)
     beqz t0, "%.12538<else0>"
     j "%.12539<then>"
 "%.12538<else0>":
@@ -7002,7 +7002,7 @@ read_object:
     lw t1, 36(sp)
     slt t2, t0, t1
     sw t2, 32(sp)
-    lw t0, 27(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12542<else0>"
     j "%.12543<then>"
 "%.12542<else0>":
@@ -7176,7 +7176,7 @@ read_net_item:
     lw t0, 56(sp)
     seqz t0, t0
     sw t0, 52(sp)
-    lw t0, 30(sp)
+    lw t0, 52(sp)
     beqz t0, "%.12550<else0>"
     j "%.12551<then>"
 "%.12550<else0>":
@@ -7307,7 +7307,7 @@ read_or_network:
     lw t0, 36(sp)
     seqz t0, t0
     sw t0, 32(sp)
-    lw t0, 35(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12554<else0>"
     j "%.12555<then>"
 "%.12554<else0>":
@@ -7433,7 +7433,7 @@ read_and_network:
     lw t0, 36(sp)
     seqz t0, t0
     sw t0, 32(sp)
-    lw t0, 35(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12558<else0>"
     j "%.12559<then>"
 "%.12558<else0>":
@@ -7642,7 +7642,7 @@ solver_rect_surface:
     flw ft1, 168(sp)
     feq.s t2, ft0, ft1
     sw t2, 164(sp)
-    lw t0, 47(sp)
+    lw t0, 164(sp)
     beqz t0, "%.12562<else0>"
     j "%.12563<then>"
 "%.12562<else0>":
@@ -7679,7 +7679,7 @@ solver_rect_surface:
     sw t2, 128(sp)
     flw ft11, 128(sp)
     fsw ft11, 124(sp)
-    lw t0, 54(sp)
+    lw t0, 136(sp)
     beqz t0, "%.12566<else0>"
     j "%.12567<then>"
 "%.12566<else0>":
@@ -7743,7 +7743,7 @@ solver_rect_surface:
     flw ft1, 64(sp)
     flt.s t2, ft0, ft1
     sw t2, 60(sp)
-    lw t0, 73(sp)
+    lw t0, 60(sp)
     beqz t0, "%.12570<else0>"
     j "%.12571<then>"
 "%.12570<else0>":
@@ -7782,7 +7782,7 @@ solver_rect_surface:
     flw ft1, 24(sp)
     flt.s t2, ft0, ft1
     sw t2, 20(sp)
-    lw t0, 83(sp)
+    lw t0, 20(sp)
     beqz t0, "%.12574<else0>"
     j "%.12575<then>"
 "%.12574<else0>":
@@ -7924,7 +7924,7 @@ solver_rect:
     fsw ft11, -4(sp)
     call solver_rect_surface
     sw a0, 48(sp)
-    lw t0, 43(sp)
+    lw t0, 48(sp)
     beqz t0, "%.12578<else0>"
     j "%.12579<then>"
 "%.12578<else0>":
@@ -7967,7 +7967,7 @@ solver_rect:
     fsw ft11, -4(sp)
     call solver_rect_surface
     sw a0, 28(sp)
-    lw t0, 48(sp)
+    lw t0, 28(sp)
     beqz t0, "%.12582<else0>"
     j "%.12583<then>"
 "%.12582<else0>":
@@ -8010,7 +8010,7 @@ solver_rect:
     fsw ft11, -4(sp)
     call solver_rect_surface
     sw a0, 12(sp)
-    lw t0, 52(sp)
+    lw t0, 12(sp)
     beqz t0, "%.12586<else0>"
     j "%.12587<then>"
 "%.12586<else0>":
@@ -8193,7 +8193,7 @@ solver_surface:
     flw ft1, 104(sp)
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
-    lw t0, 70(sp)
+    lw t0, 100(sp)
     beqz t0, "%.12590<else0>"
     j "%.12591<then>"
 "%.12590<else0>":
@@ -8428,7 +8428,7 @@ quadratic:
     lw t0, 96(sp)
     seqz t0, t0
     sw t0, 92(sp)
-    lw t0, 61(sp)
+    lw t0, 92(sp)
     beqz t0, "%.12594<else0>"
     j "%.12595<then>"
 "%.12594<else0>":
@@ -8660,7 +8660,7 @@ bilinear:
     lw t0, 132(sp)
     seqz t0, t0
     sw t0, 128(sp)
-    lw t0, 64(sp)
+    lw t0, 128(sp)
     beqz t0, "%.12598<else0>"
     j "%.12599<then>"
 "%.12598<else0>":
@@ -8906,7 +8906,7 @@ solver_second:
     flw ft1, 152(sp)
     feq.s t2, ft0, ft1
     sw t2, 148(sp)
-    lw t0, 54(sp)
+    lw t0, 148(sp)
     beqz t0, "%.12602<else0>"
     j "%.12603<then>"
 "%.12602<else0>":
@@ -8999,7 +8999,7 @@ solver_second:
     lw t0, 80(sp)
     seqz t0, t0
     sw t0, 76(sp)
-    lw t0, 72(sp)
+    lw t0, 76(sp)
     beqz t0, "%.12606<else0>"
     j "%.12607<then>"
 "%.12606<else0>":
@@ -9035,7 +9035,7 @@ solver_second:
     flw ft1, 48(sp)
     flt.s t2, ft0, ft1
     sw t2, 44(sp)
-    lw t0, 80(sp)
+    lw t0, 44(sp)
     beqz t0, "%.12610<else0>"
     j "%.12611<then>"
 "%.12610<else0>":
@@ -9044,7 +9044,7 @@ solver_second:
     flw ft0, 52(sp)
     fsqrt.s ft0, ft0
     fsw ft0, 40(sp)
-    lw t0, 31(sp)
+    lw t0, 240(sp)
     beqz t0, "%.12614<else0>"
     j "%.12615<then>"
 "%.12614<else0>":
@@ -9266,7 +9266,7 @@ solver:
     lw t0, 20(sp)
     seqz t0, t0
     sw t0, 16(sp)
-    lw t0, 71(sp)
+    lw t0, 16(sp)
     beqz t0, "%.12618<else0>"
     j "%.12619<then>"
 "%.12618<else0>":
@@ -9304,7 +9304,7 @@ solver:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 74(sp)
+    lw t0, 4(sp)
     beqz t0, "%.12622<else0>"
     j "%.12623<then>"
 "%.12622<else0>":
@@ -9502,7 +9502,7 @@ solver_rect_fast:
     flw ft1, 468(sp)
     flt.s t2, ft0, ft1
     sw t2, 464(sp)
-    lw t0, 62(sp)
+    lw t0, 464(sp)
     beqz t0, "%.12626<else0>"
     j "%.12627<then>"
 "%.12626<else0>":
@@ -9545,7 +9545,7 @@ solver_rect_fast:
     flw ft1, 420(sp)
     flt.s t2, ft0, ft1
     sw t2, 416(sp)
-    lw t0, 74(sp)
+    lw t0, 416(sp)
     beqz t0, "%.12630<else0>"
     j "%.12631<then>"
 "%.12630<else0>":
@@ -9580,7 +9580,7 @@ solver_rect_fast:
     li t0, 0
     sw t0, 388(sp)
 "%.12628<endif>":
-    lw t0, 81(sp)
+    lw t0, 388(sp)
     beqz t0, "%.12634<else0>"
     j "%.12635<then>"
 "%.12634<else0>":
@@ -9670,7 +9670,7 @@ solver_rect_fast:
     flw ft1, 284(sp)
     flt.s t2, ft0, ft1
     sw t2, 280(sp)
-    lw t0, 108(sp)
+    lw t0, 280(sp)
     beqz t0, "%.12638<else0>"
     j "%.12639<then>"
 "%.12638<else0>":
@@ -9713,7 +9713,7 @@ solver_rect_fast:
     flw ft1, 236(sp)
     flt.s t2, ft0, ft1
     sw t2, 232(sp)
-    lw t0, 120(sp)
+    lw t0, 232(sp)
     beqz t0, "%.12642<else0>"
     j "%.12643<then>"
 "%.12642<else0>":
@@ -9748,7 +9748,7 @@ solver_rect_fast:
     li t0, 0
     sw t0, 204(sp)
 "%.12640<endif>":
-    lw t0, 127(sp)
+    lw t0, 204(sp)
     beqz t0, "%.12646<else0>"
     j "%.12647<then>"
 "%.12646<else0>":
@@ -9838,7 +9838,7 @@ solver_rect_fast:
     flw ft1, 104(sp)
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
-    lw t0, 153(sp)
+    lw t0, 100(sp)
     beqz t0, "%.12650<else0>"
     j "%.12651<then>"
 "%.12650<else0>":
@@ -9881,7 +9881,7 @@ solver_rect_fast:
     flw ft1, 56(sp)
     flt.s t2, ft0, ft1
     sw t2, 52(sp)
-    lw t0, 165(sp)
+    lw t0, 52(sp)
     beqz t0, "%.12654<else0>"
     j "%.12655<then>"
 "%.12654<else0>":
@@ -9916,7 +9916,7 @@ solver_rect_fast:
     li t0, 0
     sw t0, 24(sp)
 "%.12652<endif>":
-    lw t0, 172(sp)
+    lw t0, 24(sp)
     beqz t0, "%.12658<else0>"
     j "%.12659<then>"
 "%.12658<else0>":
@@ -10037,7 +10037,7 @@ solver_surface_fast:
     flw ft1, 96(sp)
     flt.s t2, ft0, ft1
     sw t2, 88(sp)
-    lw t0, 45(sp)
+    lw t0, 88(sp)
     beqz t0, "%.12662<else0>"
     j "%.12663<then>"
 "%.12662<else0>":
@@ -10209,7 +10209,7 @@ solver_second_fast:
     flw ft1, 220(sp)
     feq.s t2, ft0, ft1
     sw t2, 216(sp)
-    lw t0, 45(sp)
+    lw t0, 216(sp)
     beqz t0, "%.12666<else0>"
     j "%.12667<then>"
 "%.12666<else0>":
@@ -10300,7 +10300,7 @@ solver_second_fast:
     lw t0, 132(sp)
     seqz t0, t0
     sw t0, 128(sp)
-    lw t0, 67(sp)
+    lw t0, 128(sp)
     beqz t0, "%.12670<else0>"
     j "%.12671<then>"
 "%.12670<else0>":
@@ -10336,13 +10336,13 @@ solver_second_fast:
     flw ft1, 100(sp)
     flt.s t2, ft0, ft1
     sw t2, 96(sp)
-    lw t0, 75(sp)
+    lw t0, 96(sp)
     beqz t0, "%.12674<else0>"
     j "%.12675<then>"
 "%.12674<else0>":
     j "%.12673<else>"
 "%.12675<then>":
-    lw t0, 31(sp)
+    lw t0, 272(sp)
     beqz t0, "%.12678<else0>"
     j "%.12679<then>"
 "%.12678<else0>":
@@ -10618,7 +10618,7 @@ solver_fast:
     lw t0, 20(sp)
     seqz t0, t0
     sw t0, 16(sp)
-    lw t0, 75(sp)
+    lw t0, 16(sp)
     beqz t0, "%.12682<else0>"
     j "%.12683<then>"
 "%.12682<else0>":
@@ -10658,7 +10658,7 @@ solver_fast:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 78(sp)
+    lw t0, 4(sp)
     beqz t0, "%.12686<else0>"
     j "%.12687<then>"
 "%.12686<else0>":
@@ -10805,7 +10805,7 @@ solver_surface_fast2:
     flw ft1, 72(sp)
     flt.s t2, ft0, ft1
     sw t2, 64(sp)
-    lw t0, 46(sp)
+    lw t0, 64(sp)
     beqz t0, "%.12690<else0>"
     j "%.12691<then>"
 "%.12690<else0>":
@@ -10952,7 +10952,7 @@ solver_second_fast2:
     flw ft1, 212(sp)
     feq.s t2, ft0, ft1
     sw t2, 208(sp)
-    lw t0, 46(sp)
+    lw t0, 208(sp)
     beqz t0, "%.12694<else0>"
     j "%.12695<then>"
 "%.12694<else0>":
@@ -11043,13 +11043,13 @@ solver_second_fast2:
     flw ft1, 104(sp)
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
-    lw t0, 73(sp)
+    lw t0, 100(sp)
     beqz t0, "%.12698<else0>"
     j "%.12699<then>"
 "%.12698<else0>":
     j "%.12697<else>"
 "%.12699<then>":
-    lw t0, 31(sp)
+    lw t0, 268(sp)
     beqz t0, "%.12702<else0>"
     j "%.12703<then>"
 "%.12702<else0>":
@@ -11279,7 +11279,7 @@ solver_fast2:
     lw t0, 20(sp)
     seqz t0, t0
     sw t0, 16(sp)
-    lw t0, 59(sp)
+    lw t0, 16(sp)
     beqz t0, "%.12706<else0>"
     j "%.12707<then>"
 "%.12706<else0>":
@@ -11319,7 +11319,7 @@ solver_fast2:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 62(sp)
+    lw t0, 4(sp)
     beqz t0, "%.12710<else0>"
     j "%.12711<then>"
 "%.12710<else0>":
@@ -11472,7 +11472,7 @@ setup_rect_table:
     flw ft1, 412(sp)
     feq.s t2, ft0, ft1
     sw t2, 408(sp)
-    lw t0, 45(sp)
+    lw t0, 408(sp)
     beqz t0, "%.12714<else0>"
     j "%.12715<then>"
 "%.12714<else0>":
@@ -11525,7 +11525,7 @@ setup_rect_table:
     sw t2, 348(sp)
     flw ft11, 348(sp)
     fsw ft11, 344(sp)
-    lw t0, 57(sp)
+    lw t0, 360(sp)
     beqz t0, "%.12718<else0>"
     j "%.12719<then>"
 "%.12718<else0>":
@@ -11595,7 +11595,7 @@ setup_rect_table:
     flw ft1, 272(sp)
     feq.s t2, ft0, ft1
     sw t2, 268(sp)
-    lw t0, 80(sp)
+    lw t0, 268(sp)
     beqz t0, "%.12722<else0>"
     j "%.12723<then>"
 "%.12722<else0>":
@@ -11648,7 +11648,7 @@ setup_rect_table:
     sw t2, 208(sp)
     flw ft11, 208(sp)
     fsw ft11, 204(sp)
-    lw t0, 92(sp)
+    lw t0, 220(sp)
     beqz t0, "%.12726<else0>"
     j "%.12727<then>"
 "%.12726<else0>":
@@ -11718,7 +11718,7 @@ setup_rect_table:
     flw ft1, 132(sp)
     feq.s t2, ft0, ft1
     sw t2, 128(sp)
-    lw t0, 115(sp)
+    lw t0, 128(sp)
     beqz t0, "%.12730<else0>"
     j "%.12731<then>"
 "%.12730<else0>":
@@ -11771,7 +11771,7 @@ setup_rect_table:
     sw t2, 68(sp)
     flw ft11, 68(sp)
     fsw ft11, 64(sp)
-    lw t0, 127(sp)
+    lw t0, 80(sp)
     beqz t0, "%.12734<else0>"
     j "%.12735<then>"
 "%.12734<else0>":
@@ -11997,7 +11997,7 @@ setup_surface_table:
     flw ft1, 168(sp)
     flt.s t2, ft0, ft1
     sw t2, 164(sp)
-    lw t0, 70(sp)
+    lw t0, 164(sp)
     beqz t0, "%.12738<else0>"
     j "%.12739<then>"
 "%.12738<else0>":
@@ -12364,7 +12364,7 @@ setup_second_table:
     lw t1, 388(sp)
     xor t2, t0, t1
     sw t2, 384(sp)
-    lw t0, 87(sp)
+    lw t0, 384(sp)
     beqz t0, "%.12742<else0>"
     j "%.12743<then>"
 "%.12742<else0>":
@@ -12651,7 +12651,7 @@ setup_second_table:
     lw t0, 28(sp)
     seqz t0, t0
     sw t0, 24(sp)
-    lw t0, 177(sp)
+    lw t0, 24(sp)
     beqz t0, "%.12746<else0>"
     j "%.12747<then>"
 "%.12746<else0>":
@@ -12748,7 +12748,7 @@ iter_setup_dirvec_constants:
     lw t0, 136(sp)
     seqz t0, t0
     sw t0, 132(sp)
-    lw t0, 30(sp)
+    lw t0, 132(sp)
     beqz t0, "%.12750<else0>"
     j "%.12751<then>"
 "%.12750<else0>":
@@ -12794,7 +12794,7 @@ iter_setup_dirvec_constants:
     lw t0, 68(sp)
     seqz t0, t0
     sw t0, 64(sp)
-    lw t0, 47(sp)
+    lw t0, 64(sp)
     beqz t0, "%.12754<else0>"
     j "%.12755<then>"
 "%.12754<else0>":
@@ -12838,7 +12838,7 @@ iter_setup_dirvec_constants:
     lw t0, 44(sp)
     seqz t0, t0
     sw t0, 40(sp)
-    lw t0, 53(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12758<else0>"
     j "%.12759<then>"
 "%.12758<else0>":
@@ -13064,7 +13064,7 @@ setup_startp_constants:
     lw t0, 460(sp)
     seqz t0, t0
     sw t0, 456(sp)
-    lw t0, 29(sp)
+    lw t0, 456(sp)
     beqz t0, "%.12762<else0>"
     j "%.12763<then>"
 "%.12762<else0>":
@@ -13221,7 +13221,7 @@ setup_startp_constants:
     lw t0, 248(sp)
     seqz t0, t0
     sw t0, 244(sp)
-    lw t0, 82(sp)
+    lw t0, 244(sp)
     beqz t0, "%.12766<else0>"
     j "%.12767<then>"
 "%.12766<else0>":
@@ -13332,7 +13332,7 @@ setup_startp_constants:
     lw t1, 436(sp)
     slt t2, t0, t1
     sw t2, 108(sp)
-    lw t0, 116(sp)
+    lw t0, 108(sp)
     beqz t0, "%.12770<else0>"
     j "%.12771<then>"
 "%.12770<else0>":
@@ -13401,7 +13401,7 @@ setup_startp_constants:
     lw t0, 44(sp)
     seqz t0, t0
     sw t0, 40(sp)
-    lw t0, 133(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12774<else0>"
     j "%.12775<then>"
 "%.12774<else0>":
@@ -13618,7 +13618,7 @@ is_rect_outside:
     flw ft1, 68(sp)
     flt.s t2, ft0, ft1
     sw t2, 64(sp)
-    lw t0, 44(sp)
+    lw t0, 64(sp)
     beqz t0, "%.12778<else0>"
     j "%.12779<then>"
 "%.12778<else0>":
@@ -13642,7 +13642,7 @@ is_rect_outside:
     flw ft1, 44(sp)
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
-    lw t0, 50(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12782<else0>"
     j "%.12783<then>"
 "%.12782<else0>":
@@ -13676,7 +13676,7 @@ is_rect_outside:
     li t0, 0
     sw t0, 16(sp)
 "%.12780<endif>":
-    lw t0, 56(sp)
+    lw t0, 16(sp)
     beqz t0, "%.12786<else0>"
     j "%.12787<then>"
 "%.12786<else0>":
@@ -13933,7 +13933,7 @@ is_second_outside:
     lw t0, 44(sp)
     seqz t0, t0
     sw t0, 40(sp)
-    lw t0, 42(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12790<else0>"
     j "%.12791<then>"
 "%.12790<else0>":
@@ -14093,7 +14093,7 @@ is_outside:
     lw t0, 100(sp)
     seqz t0, t0
     sw t0, 96(sp)
-    lw t0, 56(sp)
+    lw t0, 96(sp)
     beqz t0, "%.12794<else0>"
     j "%.12795<then>"
 "%.12794<else0>":
@@ -14129,7 +14129,7 @@ is_outside:
     lw t0, 88(sp)
     seqz t0, t0
     sw t0, 84(sp)
-    lw t0, 59(sp)
+    lw t0, 84(sp)
     beqz t0, "%.12798<else0>"
     j "%.12799<then>"
 "%.12798<else0>":
@@ -14307,7 +14307,7 @@ check_all_inside:
     lw t0, 80(sp)
     seqz t0, t0
     sw t0, 76(sp)
-    lw t0, 36(sp)
+    lw t0, 76(sp)
     beqz t0, "%.12802<else0>"
     j "%.12803<then>"
 "%.12802<else0>":
@@ -14367,7 +14367,7 @@ check_all_inside:
     flw fa2, 104(sp)
     call is_outside
     sw a0, 12(sp)
-    lw t0, 52(sp)
+    lw t0, 12(sp)
     beqz t0, "%.12806<else0>"
     j "%.12807<then>"
 "%.12806<else0>":
@@ -14473,7 +14473,7 @@ shadow_check_and_group:
     lw t0, 300(sp)
     seqz t0, t0
     sw t0, 296(sp)
-    lw t0, 33(sp)
+    lw t0, 296(sp)
     beqz t0, "%.12810<else0>"
     j "%.12811<then>"
 "%.12810<else0>":
@@ -14517,7 +14517,7 @@ shadow_check_and_group:
     lw t1, 252(sp)
     xor t2, t0, t1
     sw t2, 248(sp)
-    lw t0, 45(sp)
+    lw t0, 248(sp)
     beqz t0, "%.12814<else0>"
     j "%.12815<then>"
 "%.12814<else0>":
@@ -14537,7 +14537,7 @@ shadow_check_and_group:
     li t0, 0
     sw t0, 236(sp)
 "%.12816<endif>":
-    lw t0, 48(sp)
+    lw t0, 236(sp)
     beqz t0, "%.12818<else0>"
     j "%.12819<then>"
 "%.12818<else0>":
@@ -14660,7 +14660,7 @@ shadow_check_and_group:
     flw fa2, 84(sp)
     call check_all_inside
     sw a0, 76(sp)
-    lw t0, 88(sp)
+    lw t0, 76(sp)
     beqz t0, "%.12822<else0>"
     j "%.12823<then>"
 "%.12822<else0>":
@@ -14714,7 +14714,7 @@ shadow_check_and_group:
     fsw ft11, 16(sp)
     flw ft11, 56(sp)
     fsw ft11, 12(sp)
-    lw t0, 100(sp)
+    lw t0, 28(sp)
     beqz t0, "%.12826<else0>"
     j "%.12827<then>"
 "%.12826<else0>":
@@ -14818,7 +14818,7 @@ shadow_check_one_or_group:
     lw t0, 44(sp)
     seqz t0, t0
     sw t0, 40(sp)
-    lw t0, 33(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12830<else0>"
     j "%.12831<then>"
 "%.12830<else0>":
@@ -14845,7 +14845,7 @@ shadow_check_one_or_group:
     lw a1, 20(sp)
     call shadow_check_and_group
     sw a0, 12(sp)
-    lw t0, 40(sp)
+    lw t0, 12(sp)
     beqz t0, "%.12834<else0>"
     j "%.12835<then>"
 "%.12834<else0>":
@@ -14959,7 +14959,7 @@ shadow_check_one_or_matrix:
     lw t0, 108(sp)
     seqz t0, t0
     sw t0, 104(sp)
-    lw t0, 37(sp)
+    lw t0, 104(sp)
     beqz t0, "%.12838<else0>"
     j "%.12839<then>"
 "%.12838<else0>":
@@ -14978,7 +14978,7 @@ shadow_check_one_or_matrix:
     lw t0, 92(sp)
     seqz t0, t0
     sw t0, 88(sp)
-    lw t0, 41(sp)
+    lw t0, 88(sp)
     beqz t0, "%.12842<else0>"
     j "%.12843<then>"
 "%.12842<else0>":
@@ -15000,7 +15000,7 @@ shadow_check_one_or_matrix:
     lw t1, 76(sp)
     xor t2, t0, t1
     sw t2, 72(sp)
-    lw t0, 45(sp)
+    lw t0, 72(sp)
     beqz t0, "%.12846<else0>"
     j "%.12847<then>"
 "%.12846<else0>":
@@ -15028,7 +15028,7 @@ shadow_check_one_or_matrix:
     flw ft1, 44(sp)
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
-    lw t0, 53(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12850<else0>"
     j "%.12851<then>"
 "%.12850<else0>":
@@ -15040,7 +15040,7 @@ shadow_check_one_or_matrix:
     lw a1, 136(sp)
     call shadow_check_one_or_group
     sw a0, 32(sp)
-    lw t0, 55(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12854<else0>"
     j "%.12855<then>"
 "%.12854<else0>":
@@ -15064,7 +15064,7 @@ shadow_check_one_or_matrix:
     sw t0, 84(sp)
 "%.12848<endif>":
 "%.12844<endif>":
-    lw t0, 42(sp)
+    lw t0, 84(sp)
     beqz t0, "%.12858<else0>"
     j "%.12859<then>"
 "%.12858<else0>":
@@ -15076,7 +15076,7 @@ shadow_check_one_or_matrix:
     lw a1, 136(sp)
     call shadow_check_one_or_group
     sw a0, 24(sp)
-    lw t0, 57(sp)
+    lw t0, 24(sp)
     beqz t0, "%.12862<else0>"
     j "%.12863<then>"
 "%.12862<else0>":
@@ -15193,7 +15193,7 @@ solve_each_element:
     lw t0, 344(sp)
     seqz t0, t0
     sw t0, 340(sp)
-    lw t0, 34(sp)
+    lw t0, 340(sp)
     beqz t0, "%.12866<else0>"
     j "%.12867<then>"
 "%.12866<else0>":
@@ -15212,7 +15212,7 @@ solve_each_element:
     lw t1, 332(sp)
     xor t2, t0, t1
     sw t2, 328(sp)
-    lw t0, 37(sp)
+    lw t0, 328(sp)
     beqz t0, "%.12870<else0>"
     j "%.12871<then>"
 "%.12870<else0>":
@@ -15236,7 +15236,7 @@ solve_each_element:
     flw ft1, 308(sp)
     flt.s t2, ft0, ft1
     sw t2, 300(sp)
-    lw t0, 44(sp)
+    lw t0, 300(sp)
     beqz t0, "%.12874<else0>"
     j "%.12875<then>"
 "%.12874<else0>":
@@ -15259,7 +15259,7 @@ solve_each_element:
     flw ft1, 280(sp)
     flt.s t2, ft0, ft1
     sw t2, 276(sp)
-    lw t0, 50(sp)
+    lw t0, 276(sp)
     beqz t0, "%.12878<else0>"
     j "%.12879<then>"
 "%.12878<else0>":
@@ -15376,7 +15376,7 @@ solve_each_element:
     flw fa2, 136(sp)
     call check_all_inside
     sw a0, 128(sp)
-    lw t0, 87(sp)
+    lw t0, 128(sp)
     beqz t0, "%.12882<else0>"
     j "%.12883<then>"
 "%.12882<else0>":
@@ -15475,7 +15475,7 @@ solve_each_element:
     fsw ft11, 20(sp)
     flw ft11, 60(sp)
     fsw ft11, 16(sp)
-    lw t0, 111(sp)
+    lw t0, 32(sp)
     beqz t0, "%.12886<else0>"
     j "%.12887<then>"
 "%.12886<else0>":
@@ -15573,7 +15573,7 @@ solve_one_or_network:
     lw t1, 44(sp)
     xor t2, t0, t1
     sw t2, 40(sp)
-    lw t0, 33(sp)
+    lw t0, 40(sp)
     beqz t0, "%.12890<else0>"
     j "%.12891<then>"
 "%.12890<else0>":
@@ -15700,7 +15700,7 @@ trace_or_matrix:
     lw t0, 88(sp)
     seqz t0, t0
     sw t0, 84(sp)
-    lw t0, 38(sp)
+    lw t0, 84(sp)
     beqz t0, "%.12894<else0>"
     j "%.12895<then>"
 "%.12894<else0>":
@@ -15717,7 +15717,7 @@ trace_or_matrix:
     lw t0, 76(sp)
     seqz t0, t0
     sw t0, 72(sp)
-    lw t0, 41(sp)
+    lw t0, 72(sp)
     beqz t0, "%.12898<else0>"
     j "%.12899<then>"
 "%.12898<else0>":
@@ -15742,7 +15742,7 @@ trace_or_matrix:
     lw t1, 60(sp)
     xor t2, t0, t1
     sw t2, 56(sp)
-    lw t0, 45(sp)
+    lw t0, 56(sp)
     beqz t0, "%.12902<else0>"
     j "%.12903<then>"
 "%.12902<else0>":
@@ -15778,7 +15778,7 @@ trace_or_matrix:
     flw ft1, 16(sp)
     flt.s t2, ft0, ft1
     sw t2, 12(sp)
-    lw t0, 56(sp)
+    lw t0, 12(sp)
     beqz t0, "%.12906<else0>"
     j "%.12907<then>"
 "%.12906<else0>":
@@ -15920,7 +15920,7 @@ judge_intersection:
     flw ft1, 24(sp)
     flt.s t2, ft0, ft1
     sw t2, 12(sp)
-    lw t0, 44(sp)
+    lw t0, 12(sp)
     beqz t0, "%.12910<else0>"
     j "%.12911<then>"
 "%.12910<else0>":
@@ -16020,7 +16020,7 @@ solve_each_element_fast:
     lw t0, 340(sp)
     seqz t0, t0
     sw t0, 336(sp)
-    lw t0, 35(sp)
+    lw t0, 336(sp)
     beqz t0, "%.12914<else0>"
     j "%.12915<then>"
 "%.12914<else0>":
@@ -16039,7 +16039,7 @@ solve_each_element_fast:
     lw t1, 328(sp)
     xor t2, t0, t1
     sw t2, 324(sp)
-    lw t0, 38(sp)
+    lw t0, 324(sp)
     beqz t0, "%.12918<else0>"
     j "%.12919<then>"
 "%.12918<else0>":
@@ -16063,7 +16063,7 @@ solve_each_element_fast:
     flw ft1, 304(sp)
     flt.s t2, ft0, ft1
     sw t2, 296(sp)
-    lw t0, 45(sp)
+    lw t0, 296(sp)
     beqz t0, "%.12922<else0>"
     j "%.12923<then>"
 "%.12922<else0>":
@@ -16086,7 +16086,7 @@ solve_each_element_fast:
     flw ft1, 276(sp)
     flt.s t2, ft0, ft1
     sw t2, 272(sp)
-    lw t0, 51(sp)
+    lw t0, 272(sp)
     beqz t0, "%.12926<else0>"
     j "%.12927<then>"
 "%.12926<else0>":
@@ -16203,7 +16203,7 @@ solve_each_element_fast:
     flw fa2, 132(sp)
     call check_all_inside
     sw a0, 124(sp)
-    lw t0, 88(sp)
+    lw t0, 124(sp)
     beqz t0, "%.12930<else0>"
     j "%.12931<then>"
 "%.12930<else0>":
@@ -16303,7 +16303,7 @@ solve_each_element_fast:
     fsw ft11, 16(sp)
     flw ft11, 56(sp)
     fsw ft11, 12(sp)
-    lw t0, 112(sp)
+    lw t0, 28(sp)
     beqz t0, "%.12934<else0>"
     j "%.12935<then>"
 "%.12934<else0>":
@@ -16403,7 +16403,7 @@ solve_one_or_network_fast:
     lw t1, 40(sp)
     xor t2, t0, t1
     sw t2, 36(sp)
-    lw t0, 34(sp)
+    lw t0, 36(sp)
     beqz t0, "%.12938<else0>"
     j "%.12939<then>"
 "%.12938<else0>":
@@ -16533,7 +16533,7 @@ trace_or_matrix_fast:
     lw t0, 100(sp)
     seqz t0, t0
     sw t0, 96(sp)
-    lw t0, 39(sp)
+    lw t0, 96(sp)
     beqz t0, "%.12942<else0>"
     j "%.12943<then>"
 "%.12942<else0>":
@@ -16550,7 +16550,7 @@ trace_or_matrix_fast:
     lw t0, 88(sp)
     seqz t0, t0
     sw t0, 84(sp)
-    lw t0, 42(sp)
+    lw t0, 84(sp)
     beqz t0, "%.12946<else0>"
     j "%.12947<then>"
 "%.12946<else0>":
@@ -16576,7 +16576,7 @@ trace_or_matrix_fast:
     lw t1, 72(sp)
     xor t2, t0, t1
     sw t2, 68(sp)
-    lw t0, 46(sp)
+    lw t0, 68(sp)
     beqz t0, "%.12950<else0>"
     j "%.12951<then>"
 "%.12950<else0>":
@@ -16612,7 +16612,7 @@ trace_or_matrix_fast:
     flw ft1, 28(sp)
     flt.s t2, ft0, ft1
     sw t2, 24(sp)
-    lw t0, 57(sp)
+    lw t0, 24(sp)
     beqz t0, "%.12954<else0>"
     j "%.12955<then>"
 "%.12954<else0>":
@@ -16758,7 +16758,7 @@ judge_intersection_fast:
     flw ft1, 20(sp)
     flt.s t2, ft0, ft1
     sw t2, 8(sp)
-    lw t0, 45(sp)
+    lw t0, 8(sp)
     beqz t0, "%.12958<else0>"
     j "%.12959<then>"
 "%.12958<else0>":
@@ -17250,7 +17250,7 @@ get_nvector_second:
     lw t0, 280(sp)
     seqz t0, t0
     sw t0, 276(sp)
-    lw t0, 83(sp)
+    lw t0, 276(sp)
     beqz t0, "%.12962<else0>"
     j "%.12963<then>"
 "%.12962<else0>":
@@ -17560,7 +17560,7 @@ get_nvector:
     lw t0, 20(sp)
     seqz t0, t0
     sw t0, 16(sp)
-    lw t0, 39(sp)
+    lw t0, 16(sp)
     beqz t0, "%.12966<else0>"
     j "%.12967<then>"
 "%.12966<else0>":
@@ -17579,7 +17579,7 @@ get_nvector:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 42(sp)
+    lw t0, 4(sp)
     beqz t0, "%.12970<else0>"
     j "%.12971<then>"
 "%.12970<else0>":
@@ -17650,66 +17650,26 @@ get_nvector:
 .globl utexture
 utexture:
     addi sp, sp, -1120
-    li t6, 1100 	# utexture
-    add t6, sp, t6 	# utexture
-    sw ra, 0(t6) 	# utexture
-    li t6, 1096 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s0, 0(t6) 	# utexture
-    li t6, 1092 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s1, 0(t6) 	# utexture
-    li t6, 1088 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s2, 0(t6) 	# utexture
-    li t6, 1084 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s3, 0(t6) 	# utexture
-    li t6, 1080 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s4, 0(t6) 	# utexture
-    li t6, 1076 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s5, 0(t6) 	# utexture
-    li t6, 1072 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s6, 0(t6) 	# utexture
-    li t6, 1068 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s7, 0(t6) 	# utexture
-    li t6, 1064 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s8, 0(t6) 	# utexture
-    li t6, 1060 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s9, 0(t6) 	# utexture
-    li t6, 1056 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s10, 0(t6) 	# utexture
-    li t6, 1052 	# utexture
-    add t6, sp, t6 	# utexture
-    sw s11, 0(t6) 	# utexture
-    li t6, 1048 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs0, 0(t6) 	# utexture
-    li t6, 1044 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs1, 0(t6) 	# utexture
-    li t6, 1040 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs2, 0(t6) 	# utexture
-    li t6, 1036 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs3, 0(t6) 	# utexture
-    li t6, 1032 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs4, 0(t6) 	# utexture
-    li t6, 1028 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs5, 0(t6) 	# utexture
-    li t6, 1024 	# utexture
-    add t6, sp, t6 	# utexture
-    fsw fs6, 0(t6) 	# utexture
+    sw ra, 1100(sp) 	# utexture
+    sw s0, 1096(sp) 	# utexture
+    sw s1, 1092(sp) 	# utexture
+    sw s2, 1088(sp) 	# utexture
+    sw s3, 1084(sp) 	# utexture
+    sw s4, 1080(sp) 	# utexture
+    sw s5, 1076(sp) 	# utexture
+    sw s6, 1072(sp) 	# utexture
+    sw s7, 1068(sp) 	# utexture
+    sw s8, 1064(sp) 	# utexture
+    sw s9, 1060(sp) 	# utexture
+    sw s10, 1056(sp) 	# utexture
+    sw s11, 1052(sp) 	# utexture
+    fsw fs0, 1048(sp) 	# utexture
+    fsw fs1, 1044(sp) 	# utexture
+    fsw fs2, 1040(sp) 	# utexture
+    fsw fs3, 1036(sp) 	# utexture
+    fsw fs4, 1032(sp) 	# utexture
+    fsw fs5, 1028(sp) 	# utexture
+    fsw fs6, 1024(sp) 	# utexture
     fsw fs7, 1020(sp) 	# utexture
     fsw fs8, 1016(sp) 	# utexture
     fsw fs9, 1012(sp) 	# utexture
@@ -17724,21 +17684,13 @@ utexture:
     sw a5, 980(sp)
     sw a6, 976(sp)
     sw a7, 972(sp)
-    li t6, 1104
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1104(sp)
     fsw ft11, 968(sp)
-    li t6, 1108
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1108(sp)
     fsw ft11, 964(sp)
-    li t6, 1112
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1112(sp)
     fsw ft11, 960(sp)
-    li t6, 1116
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1116(sp)
     fsw ft11, 956(sp)
     li t0, 0
     sw t0, 952(sp)
@@ -17821,7 +17773,7 @@ utexture:
     lw t0, 852(sp)
     seqz t0, t0
     sw t0, 848(sp)
-    lw t0, 63(sp)
+    lw t0, 848(sp)
     beqz t0, "%.12974<else0>"
     j "%.12975<then>"
 "%.12974<else0>":
@@ -17931,13 +17883,13 @@ utexture:
     sw t2, 712(sp)
     li t0, 1
     sw t0, 708(sp)
-    lw t0, 80(sp)
+    lw t0, 780(sp)
     beqz t0, "%.12978<else0>"
     j "%.12979<then>"
 "%.12978<else0>":
     j "%.12977<else>"
 "%.12979<then>":
-    lw t0, 97(sp)
+    lw t0, 712(sp)
     beqz t0, "%.12982<else0>"
     j "%.12983<then>"
 "%.12982<else0>":
@@ -17951,7 +17903,7 @@ utexture:
 "%.12984<endif>":
     j "%.12980<endif>"
 "%.12977<else>":
-    lw t0, 97(sp)
+    lw t0, 712(sp)
     beqz t0, "%.12986<else0>"
     j "%.12987<then>"
 "%.12986<else0>":
@@ -17986,7 +17938,7 @@ utexture:
     lw t0, 684(sp)
     seqz t0, t0
     sw t0, 680(sp)
-    lw t0, 105(sp)
+    lw t0, 680(sp)
     beqz t0, "%.12990<else0>"
     j "%.12991<then>"
 "%.12990<else0>":
@@ -18073,7 +18025,7 @@ utexture:
     lw t0, 580(sp)
     seqz t0, t0
     sw t0, 576(sp)
-    lw t0, 131(sp)
+    lw t0, 576(sp)
     beqz t0, "%.12994<else0>"
     j "%.12995<then>"
 "%.12994<else0>":
@@ -18229,7 +18181,7 @@ utexture:
     lw t0, 388(sp)
     seqz t0, t0
     sw t0, 384(sp)
-    lw t0, 179(sp)
+    lw t0, 384(sp)
     beqz t0, "%.12998<else0>"
     j "%.12999<then>"
 "%.12998<else0>":
@@ -18344,7 +18296,7 @@ utexture:
     flw ft1, 244(sp)
     flt.s t2, ft0, ft1
     sw t2, 240(sp)
-    lw t0, 215(sp)
+    lw t0, 240(sp)
     beqz t0, "%.13002<else0>"
     j "%.13003<then>"
 "%.13002<else0>":
@@ -18437,7 +18389,7 @@ utexture:
     flw ft1, 136(sp)
     flt.s t2, ft0, ft1
     sw t2, 132(sp)
-    lw t0, 242(sp)
+    lw t0, 132(sp)
     beqz t0, "%.13006<else0>"
     j "%.13007<then>"
 "%.13006<else0>":
@@ -18516,7 +18468,7 @@ utexture:
     flw ft1, 52(sp)
     flt.s t2, ft0, ft1
     sw t2, 44(sp)
-    lw t0, 264(sp)
+    lw t0, 44(sp)
     beqz t0, "%.13010<else0>"
     j "%.13011<then>"
 "%.13010<else0>":
@@ -18558,71 +18510,31 @@ utexture:
 "%.12996<endif>":
 "%.12992<endif>":
 "%.12976<endif>":
-    li t6, 1052
-    add t6, sp, t6
-    lw s11, 0(t6)
-    li t6, 1056
-    add t6, sp, t6
-    lw s10, 0(t6)
-    li t6, 1060
-    add t6, sp, t6
-    lw s9, 0(t6)
-    li t6, 1064
-    add t6, sp, t6
-    lw s8, 0(t6)
-    li t6, 1068
-    add t6, sp, t6
-    lw s7, 0(t6)
-    li t6, 1072
-    add t6, sp, t6
-    lw s6, 0(t6)
-    li t6, 1076
-    add t6, sp, t6
-    lw s5, 0(t6)
-    li t6, 1080
-    add t6, sp, t6
-    lw s4, 0(t6)
-    li t6, 1084
-    add t6, sp, t6
-    lw s3, 0(t6)
-    li t6, 1088
-    add t6, sp, t6
-    lw s2, 0(t6)
-    li t6, 1092
-    add t6, sp, t6
-    lw s1, 0(t6)
-    li t6, 1096
-    add t6, sp, t6
-    lw s0, 0(t6)
+    lw s11, 1052(sp)
+    lw s10, 1056(sp)
+    lw s9, 1060(sp)
+    lw s8, 1064(sp)
+    lw s7, 1068(sp)
+    lw s6, 1072(sp)
+    lw s5, 1076(sp)
+    lw s4, 1080(sp)
+    lw s3, 1084(sp)
+    lw s2, 1088(sp)
+    lw s1, 1092(sp)
+    lw s0, 1096(sp)
     flw fs11, 1004(sp)
     flw fs10, 1008(sp)
     flw fs9, 1012(sp)
     flw fs8, 1016(sp)
     flw fs7, 1020(sp)
-    li t6, 1024
-    add t6, sp, t6
-    flw fs6, 0(t6)
-    li t6, 1028
-    add t6, sp, t6
-    flw fs5, 0(t6)
-    li t6, 1032
-    add t6, sp, t6
-    flw fs4, 0(t6)
-    li t6, 1036
-    add t6, sp, t6
-    flw fs3, 0(t6)
-    li t6, 1040
-    add t6, sp, t6
-    flw fs2, 0(t6)
-    li t6, 1044
-    add t6, sp, t6
-    flw fs1, 0(t6)
-    li t6, 1048
-    add t6, sp, t6
-    flw fs0, 0(t6)
-    li t6, 1100
-    add t6, sp, t6
-    lw ra, 0(t6)
+    flw fs6, 1024(sp)
+    flw fs5, 1028(sp)
+    flw fs4, 1032(sp)
+    flw fs3, 1036(sp)
+    flw fs2, 1040(sp)
+    flw fs1, 1044(sp)
+    flw fs0, 1048(sp)
+    lw ra, 1100(sp)
     addi sp, sp, 1120
     ret
 
@@ -18663,7 +18575,7 @@ add_light:
     flw ft1, 156(sp)
     flt.s t2, ft0, ft1
     sw t2, 152(sp)
-    lw t0, 29(sp)
+    lw t0, 152(sp)
     beqz t0, "%.13014<else0>"
     j "%.13015<then>"
 "%.13014<else0>":
@@ -18680,7 +18592,7 @@ add_light:
     flw ft1, 148(sp)
     flt.s t2, ft0, ft1
     sw t2, 144(sp)
-    lw t0, 31(sp)
+    lw t0, 144(sp)
     beqz t0, "%.13018<else0>"
     j "%.13019<then>"
 "%.13018<else0>":
@@ -18860,7 +18772,7 @@ trace_reflections:
     lw t0, 404(sp)
     seqz t0, t0
     sw t0, 400(sp)
-    lw t0, 31(sp)
+    lw t0, 400(sp)
     beqz t0, "%.13022<else0>"
     j "%.13023<then>"
 "%.13022<else0>":
@@ -18887,7 +18799,7 @@ trace_reflections:
     lw a1, 376(sp)
     call judge_intersection_fast
     sw a0, 368(sp)
-    lw t0, 39(sp)
+    lw t0, 368(sp)
     beqz t0, "%.13026<else0>"
     j "%.13027<then>"
 "%.13026<else0>":
@@ -18936,7 +18848,7 @@ trace_reflections:
     lw t0, 312(sp)
     seqz t0, t0
     sw t0, 308(sp)
-    lw t0, 54(sp)
+    lw t0, 308(sp)
     beqz t0, "%.13030<else0>"
     j "%.13031<then>"
 "%.13030<else0>":
@@ -18964,7 +18876,7 @@ trace_reflections:
     lw t0, 280(sp)
     seqz t0, t0
     sw t0, 276(sp)
-    lw t0, 62(sp)
+    lw t0, 276(sp)
     beqz t0, "%.13034<else0>"
     j "%.13035<then>"
 "%.13034<else0>":
@@ -19214,621 +19126,263 @@ trace_reflections:
 .globl trace_ray
 trace_ray:
     addi sp, sp, -1392
-    li t6, 1380 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw ra, 0(t6) 	# trace_ray
-    li t6, 1376 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s0, 0(t6) 	# trace_ray
-    li t6, 1372 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s1, 0(t6) 	# trace_ray
-    li t6, 1368 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s2, 0(t6) 	# trace_ray
-    li t6, 1364 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s3, 0(t6) 	# trace_ray
-    li t6, 1360 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s4, 0(t6) 	# trace_ray
-    li t6, 1356 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s5, 0(t6) 	# trace_ray
-    li t6, 1352 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s6, 0(t6) 	# trace_ray
-    li t6, 1348 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s7, 0(t6) 	# trace_ray
-    li t6, 1344 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s8, 0(t6) 	# trace_ray
-    li t6, 1340 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s9, 0(t6) 	# trace_ray
-    li t6, 1336 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s10, 0(t6) 	# trace_ray
-    li t6, 1332 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    sw s11, 0(t6) 	# trace_ray
-    li t6, 1328 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs0, 0(t6) 	# trace_ray
-    li t6, 1324 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs1, 0(t6) 	# trace_ray
-    li t6, 1320 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs2, 0(t6) 	# trace_ray
-    li t6, 1316 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs3, 0(t6) 	# trace_ray
-    li t6, 1312 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs4, 0(t6) 	# trace_ray
-    li t6, 1308 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs5, 0(t6) 	# trace_ray
-    li t6, 1304 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs6, 0(t6) 	# trace_ray
-    li t6, 1300 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs7, 0(t6) 	# trace_ray
-    li t6, 1296 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs8, 0(t6) 	# trace_ray
-    li t6, 1292 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs9, 0(t6) 	# trace_ray
-    li t6, 1288 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs10, 0(t6) 	# trace_ray
-    li t6, 1284 	# trace_ray
-    add t6, sp, t6 	# trace_ray
-    fsw fs11, 0(t6) 	# trace_ray
+    sw ra, 1380(sp) 	# trace_ray
+    sw s0, 1376(sp) 	# trace_ray
+    sw s1, 1372(sp) 	# trace_ray
+    sw s2, 1368(sp) 	# trace_ray
+    sw s3, 1364(sp) 	# trace_ray
+    sw s4, 1360(sp) 	# trace_ray
+    sw s5, 1356(sp) 	# trace_ray
+    sw s6, 1352(sp) 	# trace_ray
+    sw s7, 1348(sp) 	# trace_ray
+    sw s8, 1344(sp) 	# trace_ray
+    sw s9, 1340(sp) 	# trace_ray
+    sw s10, 1336(sp) 	# trace_ray
+    sw s11, 1332(sp) 	# trace_ray
+    fsw fs0, 1328(sp) 	# trace_ray
+    fsw fs1, 1324(sp) 	# trace_ray
+    fsw fs2, 1320(sp) 	# trace_ray
+    fsw fs3, 1316(sp) 	# trace_ray
+    fsw fs4, 1312(sp) 	# trace_ray
+    fsw fs5, 1308(sp) 	# trace_ray
+    fsw fs6, 1304(sp) 	# trace_ray
+    fsw fs7, 1300(sp) 	# trace_ray
+    fsw fs8, 1296(sp) 	# trace_ray
+    fsw fs9, 1292(sp) 	# trace_ray
+    fsw fs10, 1288(sp) 	# trace_ray
+    fsw fs11, 1284(sp) 	# trace_ray
 "trace_ray.func_begin":
-    li t6, 1280
-    add t6, sp, t6
-    sw a0, 0(t6)
-    li t6, 1276
-    add t6, sp, t6
-    fsw fa0, 0(t6)
-    li t6, 1272
-    add t6, sp, t6
-    sw a1, 0(t6)
-    li t6, 1268
-    add t6, sp, t6
-    sw a2, 0(t6)
-    li t6, 1264
-    add t6, sp, t6
-    sw a3, 0(t6)
-    li t6, 1260
-    add t6, sp, t6
-    sw a4, 0(t6)
-    li t6, 1256
-    add t6, sp, t6
-    sw a5, 0(t6)
-    li t6, 1252
-    add t6, sp, t6
-    sw a6, 0(t6)
-    li t6, 1248
-    add t6, sp, t6
-    sw a7, 0(t6)
-    li t6, 1384
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1244
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1388
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1240
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1236
-    add t6, sp, t6
-    fsw fa1, 0(t6)
+    sw a0, 1280(sp)
+    fsw fa0, 1276(sp)
+    sw a1, 1272(sp)
+    sw a2, 1268(sp)
+    sw a3, 1264(sp)
+    sw a4, 1260(sp)
+    sw a5, 1256(sp)
+    sw a6, 1252(sp)
+    sw a7, 1248(sp)
+    flw ft11, 1384(sp)
+    fsw ft11, 1244(sp)
+    flw ft11, 1388(sp)
+    fsw ft11, 1240(sp)
+    fsw fa1, 1236(sp)
     li t0, 4
-    li t6, 1232
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1232
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1280
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1232(sp)
+    lw t0, 1232(sp)
+    lw t1, 1280(sp)
     slt t2, t0, t1
-    li t6, 1228
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1228
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t2, 1228(sp)
+    lw t0, 1228(sp)
     seqz t0, t0
-    li t6, 1224
-    add t6, sp, t6
-    sw t0, 0(t6)
-    lw t0, 39(sp)
+    sw t0, 1224(sp)
+    lw t0, 1224(sp)
     beqz t0, "%.13038<else0>"
     j "%.13039<then>"
 "%.13038<else0>":
     j "%.13037<else>"
 "%.13039<then>":
-    li t6, 1272
-    add t6, sp, t6
-    lw a0, 0(t6)
+    lw a0, 1272(sp)
     call judge_intersection
-    li t6, 1220
-    add t6, sp, t6
-    sw a0, 0(t6)
-    lw t0, 40(sp)
+    sw a0, 1220(sp)
+    lw t0, 1220(sp)
     beqz t0, "%.13042<else0>"
     j "%.13043<then>"
 "%.13042<else0>":
     j "%.13041<else>"
 "%.13043<then>":
     li t0, 0
-    li t6, 1216
-    add t6, sp, t6
-    sw t0, 0(t6)
+    sw t0, 1216(sp)
     flw ft11, 48(gp) 	# intersected_object_id
-    li t6, 1212
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1216
-    add t6, sp, t6
-    lw t0, 0(t6)
+    fsw ft11, 1212(sp)
+    lw t0, 1216(sp)
     slli t0, t0, 2
-    li t6, 1208
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1212
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1208
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1208(sp)
+    lw t0, 1212(sp)
+    lw t1, 1208(sp)
     add t2, t0, t1
-    li t6, 1204
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1204
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1200
-    add t6, sp, t6
-    fsw ft11, 0(t6)
+    sw t2, 1204(sp)
+    flw ft11, 1204(sp)
+    fsw ft11, 1200(sp)
     flw ft11, 4(gp) 	# objects
-    li t6, 1196
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1200
-    add t6, sp, t6
-    lw t0, 0(t6)
+    fsw ft11, 1196(sp)
+    lw t0, 1200(sp)
     slli t0, t0, 2
-    li t6, 1192
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1196
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1192
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1192(sp)
+    lw t0, 1196(sp)
+    lw t1, 1192(sp)
     add t2, t0, t1
-    li t6, 1188
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1184
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1180
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1176
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1172
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1168
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1164
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1160
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1156
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1152
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1148
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1188
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1144
-    add t6, sp, t6
-    fsw ft11, 0(t6)
+    sw t2, 1188(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1184(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1180(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1176(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1172(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1168(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1164(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1160(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1156(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1152(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1148(sp)
+    flw ft11, 1188(sp)
+    fsw ft11, 1144(sp)
     li t0, 0
-    li t6, 1140
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1140
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t0, 1140(sp)
+    lw t0, 1140(sp)
     slli t0, t0, 2
-    li t6, 1136
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1156
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1136
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1136(sp)
+    lw t0, 1156(sp)
+    lw t1, 1136(sp)
     add t2, t0, t1
-    li t6, 1132
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1132
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1128
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1128
-    add t6, sp, t6
-    flw ft0, 0(t6)
-    li t6, 1276
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    sw t2, 1132(sp)
+    flw ft11, 1132(sp)
+    fsw ft11, 1128(sp)
+    flw ft0, 1128(sp)
+    flw ft1, 1276(sp)
     fmul.s ft2, ft0, ft1
-    li t6, 1124
-    add t6, sp, t6
-    fsw ft2, 0(t6)
-    li t6, 1184
-    add t6, sp, t6
-    lw a0, 0(t6)
-    li t6, 1180
-    add t6, sp, t6
-    lw a1, 0(t6)
-    li t6, 1176
-    add t6, sp, t6
-    lw a2, 0(t6)
-    li t6, 1172
-    add t6, sp, t6
-    lw a3, 0(t6)
-    li t6, 1168
-    add t6, sp, t6
-    lw a4, 0(t6)
-    li t6, 1164
-    add t6, sp, t6
-    lw a5, 0(t6)
-    li t6, 1160
-    add t6, sp, t6
-    lw a6, 0(t6)
-    li t6, 1156
-    add t6, sp, t6
-    lw a7, 0(t6)
-    li t6, 1152
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    fsw ft2, 1124(sp)
+    lw a0, 1184(sp)
+    lw a1, 1180(sp)
+    lw a2, 1176(sp)
+    lw a3, 1172(sp)
+    lw a4, 1168(sp)
+    lw a5, 1164(sp)
+    lw a6, 1160(sp)
+    lw a7, 1156(sp)
+    flw ft11, 1152(sp)
     fsw ft11, -16(sp)
-    li t6, 1148
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1148(sp)
     fsw ft11, -12(sp)
-    li t6, 1144
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1144(sp)
     fsw ft11, -8(sp)
-    li t6, 1272
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1272(sp)
     fsw ft11, -4(sp)
     call get_nvector
     lw a0, 80(gp) # startp
     lw a1, 44(gp) # intersection_point
     call veccpy
-    li t6, 1184
-    add t6, sp, t6
-    lw a0, 0(t6)
-    li t6, 1180
-    add t6, sp, t6
-    lw a1, 0(t6)
-    li t6, 1176
-    add t6, sp, t6
-    lw a2, 0(t6)
-    li t6, 1172
-    add t6, sp, t6
-    lw a3, 0(t6)
-    li t6, 1168
-    add t6, sp, t6
-    lw a4, 0(t6)
-    li t6, 1164
-    add t6, sp, t6
-    lw a5, 0(t6)
-    li t6, 1160
-    add t6, sp, t6
-    lw a6, 0(t6)
-    li t6, 1156
-    add t6, sp, t6
-    lw a7, 0(t6)
-    li t6, 1152
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    lw a0, 1184(sp)
+    lw a1, 1180(sp)
+    lw a2, 1176(sp)
+    lw a3, 1172(sp)
+    lw a4, 1168(sp)
+    lw a5, 1164(sp)
+    lw a6, 1160(sp)
+    lw a7, 1156(sp)
+    flw ft11, 1152(sp)
     fsw ft11, -16(sp)
-    li t6, 1148
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1148(sp)
     fsw ft11, -12(sp)
-    li t6, 1144
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1144(sp)
     fsw ft11, -8(sp)
     flw ft11, 44(gp) 	# intersection_point
     fsw ft11, -4(sp)
     call utexture
     li t0, 4
-    li t6, 1120
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1200
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1120
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1120(sp)
+    lw t0, 1200(sp)
+    lw t1, 1120(sp)
     mul t2, t0, t1
-    li t6, 1116
-    add t6, sp, t6
-    sw t2, 0(t6)
+    sw t2, 1116(sp)
     li t0, 0
-    li t6, 1112
-    add t6, sp, t6
-    sw t0, 0(t6)
+    sw t0, 1112(sp)
     flw ft11, 36(gp) 	# intsec_rectside
-    li t6, 1108
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1112
-    add t6, sp, t6
-    lw t0, 0(t6)
+    fsw ft11, 1108(sp)
+    lw t0, 1112(sp)
     slli t0, t0, 2
-    li t6, 1104
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1108
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1104
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1104(sp)
+    lw t0, 1108(sp)
+    lw t1, 1104(sp)
     add t2, t0, t1
-    li t6, 1100
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1100
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1096
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1116
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1096
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t2, 1100(sp)
+    flw ft11, 1100(sp)
+    fsw ft11, 1096(sp)
+    lw t0, 1116(sp)
+    lw t1, 1096(sp)
     add t2, t0, t1
-    li t6, 1092
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t2, 1092(sp)
+    lw t0, 1280(sp)
     slli t0, t0, 2
-    li t6, 1088
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1260
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1088
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1088(sp)
+    lw t0, 1260(sp)
+    lw t1, 1088(sp)
     add t2, t0, t1
-    li t6, 1084
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1092
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1084
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t2, 1084(sp)
+    flw ft11, 1092(sp)
+    fsw ft11, 1084(sp)
+    lw t0, 1280(sp)
     slli t0, t0, 2
-    li t6, 1080
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1264
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1080
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1080(sp)
+    lw t0, 1264(sp)
+    lw t1, 1080(sp)
     add t2, t0, t1
-    li t6, 1076
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1076
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1072
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1072
-    add t6, sp, t6
-    lw a0, 0(t6)
+    sw t2, 1076(sp)
+    flw ft11, 1076(sp)
+    fsw ft11, 1072(sp)
+    lw a0, 1072(sp)
     lw a1, 44(gp) # intersection_point
     call veccpy
     li t0, 0
-    li t6, 1068
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1068
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t0, 1068(sp)
+    lw t0, 1068(sp)
     slli t0, t0, 2
-    li t6, 1064
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1156
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1064
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1064(sp)
+    lw t0, 1156(sp)
+    lw t1, 1064(sp)
     add t2, t0, t1
-    li t6, 1060
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1060
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1056
-    add t6, sp, t6
-    fsw ft11, 0(t6)
+    sw t2, 1060(sp)
+    flw ft11, 1060(sp)
+    fsw ft11, 1056(sp)
     lui t6, 258048 # 0x3f000
-    li t6, 1052
-    add t6, sp, t6
-    sw t6, 0(t6)
-    li t6, 1052
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1048
-    add t6, sp, t6
-    fsw ft11, 0(t6)
-    li t6, 1056
-    add t6, sp, t6
-    flw ft0, 0(t6)
-    li t6, 1048
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    sw t6, 1052(sp)
+    flw ft11, 1052(sp)
+    fsw ft11, 1048(sp)
+    flw ft0, 1056(sp)
+    flw ft1, 1048(sp)
     flt.s t2, ft0, ft1
-    li t6, 1044
-    add t6, sp, t6
-    sw t2, 0(t6)
-    lw t0, 84(sp)
+    sw t2, 1044(sp)
+    lw t0, 1044(sp)
     beqz t0, "%.13046<else0>"
     j "%.13047<then>"
 "%.13046<else0>":
     j "%.13045<else>"
 "%.13047<then>":
     li t0, 0
-    li t6, 1040
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t0, 1040(sp)
+    lw t0, 1280(sp)
     slli t0, t0, 2
-    li t6, 1036
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1256
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1036
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1036(sp)
+    lw t0, 1256(sp)
+    lw t1, 1036(sp)
     add t2, t0, t1
-    li t6, 1032
-    add t6, sp, t6
-    sw t2, 0(t6)
-    li t6, 1040
-    add t6, sp, t6
-    flw ft11, 0(t6)
-    li t6, 1032
-    add t6, sp, t6
-    fsw ft11, 0(t6)
+    sw t2, 1032(sp)
+    flw ft11, 1040(sp)
+    fsw ft11, 1032(sp)
     j "%.13048<endif>"
 "%.13045<else>":
     li t0, 1
-    li t6, 1028
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    sw t0, 1028(sp)
+    lw t0, 1280(sp)
     slli t0, t0, 2
-    li t6, 1024
-    add t6, sp, t6
-    sw t0, 0(t6)
-    li t6, 1256
-    add t6, sp, t6
-    lw t0, 0(t6)
-    li t6, 1024
-    add t6, sp, t6
-    lw t1, 0(t6)
+    sw t0, 1024(sp)
+    lw t0, 1256(sp)
+    lw t1, 1024(sp)
     add t2, t0, t1
     sw t2, 1020(sp)
-    li t6, 1028
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1028(sp)
     fsw ft11, 1020(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     slli t0, t0, 2
     sw t0, 1016(sp)
-    li t6, 1252
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1252(sp)
     lw t1, 1016(sp)
     add t2, t0, t1
     sw t2, 1012(sp)
@@ -19837,14 +19391,10 @@ trace_ray:
     lw a0, 1008(sp)
     lw a1, 56(gp) # texture_color
     call veccpy
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     slli t0, t0, 2
     sw t0, 1004(sp)
-    li t6, 1252
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1252(sp)
     lw t1, 1004(sp)
     add t2, t0, t1
     sw t2, 1000(sp)
@@ -19861,22 +19411,16 @@ trace_ray:
     fdiv.s ft2, ft0, ft1
     fsw ft2, 980(sp)
     flw ft0, 980(sp)
-    li t6, 1124
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    flw ft1, 1124(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 976(sp)
     lw a0, 996(sp)
     flw fa0, 976(sp)
     call vecscale
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     slli t0, t0, 2
     sw t0, 972(sp)
-    li t6, 1240
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1240(sp)
     lw t1, 972(sp)
     add t2, t0, t1
     sw t2, 968(sp)
@@ -19896,9 +19440,7 @@ trace_ray:
     lw t0, 952(sp)
     slli t0, t0, 2
     sw t0, 948(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 948(sp)
     add t2, t0, t1
     sw t2, 944(sp)
@@ -19926,9 +19468,7 @@ trace_ray:
     lw t0, 912(sp)
     slli t0, t0, 2
     sw t0, 908(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 908(sp)
     add t2, t0, t1
     sw t2, 904(sp)
@@ -19960,9 +19500,7 @@ trace_ray:
     lw t0, 868(sp)
     slli t0, t0, 2
     sw t0, 864(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 864(sp)
     add t2, t0, t1
     sw t2, 860(sp)
@@ -19993,9 +19531,7 @@ trace_ray:
     flw ft1, 828(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 824(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw a0, 0(t6)
+    lw a0, 1272(sp)
     flw fa0, 824(sp)
     lw a1, 52(gp) # nvector
     call vecaccum
@@ -20004,17 +19540,13 @@ trace_ray:
     lw t0, 820(sp)
     slli t0, t0, 2
     sw t0, 816(sp)
-    li t6, 1156
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1156(sp)
     lw t1, 816(sp)
     add t2, t0, t1
     sw t2, 812(sp)
     flw ft11, 812(sp)
     fsw ft11, 808(sp)
-    li t6, 1276
-    add t6, sp, t6
-    flw ft0, 0(t6)
+    flw ft0, 1276(sp)
     flw ft1, 808(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 804(sp)
@@ -20040,7 +19572,7 @@ trace_ray:
     lw t0, 776(sp)
     seqz t0, t0
     sw t0, 772(sp)
-    lw t0, 152(sp)
+    lw t0, 772(sp)
     beqz t0, "%.13050<else0>"
     j "%.13051<then>"
 "%.13050<else0>":
@@ -20148,9 +19680,7 @@ trace_ray:
     fneg.s ft0, ft0
     fsw ft0, 628(sp)
     flw ft0, 628(sp)
-    li t6, 1124
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    flw ft1, 1124(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 624(sp)
     li t0, 0
@@ -20158,9 +19688,7 @@ trace_ray:
     lw t0, 620(sp)
     slli t0, t0, 2
     sw t0, 616(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 616(sp)
     add t2, t0, t1
     sw t2, 612(sp)
@@ -20188,9 +19716,7 @@ trace_ray:
     lw t0, 580(sp)
     slli t0, t0, 2
     sw t0, 576(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 576(sp)
     add t2, t0, t1
     sw t2, 572(sp)
@@ -20222,9 +19748,7 @@ trace_ray:
     lw t0, 536(sp)
     slli t0, t0, 2
     sw t0, 532(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 532(sp)
     add t2, t0, t1
     sw t2, 528(sp)
@@ -20305,23 +19829,17 @@ trace_ray:
     sub t2, t0, t1
     sw t2, 436(sp)
     lw a0, 436(sp)
-    li t6, 1124
-    add t6, sp, t6
-    flw fa0, 0(t6)
+    flw fa0, 1124(sp)
     flw fa1, 804(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw a1, 0(t6)
+    lw a1, 1272(sp)
     call trace_reflections
     flw ft11, 144(gp) 	# %.9604<.LC5>
     fsw ft11, 432(sp)
     flw ft0, 432(sp)
-    li t6, 1276
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    flw ft1, 1276(sp)
     flt.s t2, ft0, ft1
     sw t2, 428(sp)
-    lw t0, 238(sp)
+    lw t0, 428(sp)
     beqz t0, "%.13054<else0>"
     j "%.13055<then>"
 "%.13054<else0>":
@@ -20329,13 +19847,11 @@ trace_ray:
 "%.13055<then>":
     li t0, 4
     sw t0, 424(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     lw t1, 424(sp)
     slt t2, t0, t1
     sw t2, 420(sp)
-    lw t0, 240(sp)
+    lw t0, 420(sp)
     beqz t0, "%.13058<else0>"
     j "%.13059<then>"
 "%.13058<else0>":
@@ -20343,9 +19859,7 @@ trace_ray:
 "%.13059<then>":
     li t0, 1
     sw t0, 416(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     lw t1, 416(sp)
     add t2, t0, t1
     sw t2, 412(sp)
@@ -20357,9 +19871,7 @@ trace_ray:
     lw t0, 412(sp)
     slli t0, t0, 2
     sw t0, 400(sp)
-    li t6, 1260
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1260(sp)
     lw t1, 400(sp)
     add t2, t0, t1
     sw t2, 396(sp)
@@ -20369,16 +19881,14 @@ trace_ray:
 "%.13060<endif>":
     li t0, 2
     sw t0, 392(sp)
-    li t6, 1176
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1176(sp)
     lw t1, 392(sp)
     xor t2, t0, t1
     sw t2, 388(sp)
     lw t0, 388(sp)
     seqz t0, t0
     sw t0, 384(sp)
-    lw t0, 249(sp)
+    lw t0, 384(sp)
     beqz t0, "%.13062<else0>"
     j "%.13063<then>"
 "%.13062<else0>":
@@ -20393,9 +19903,7 @@ trace_ray:
     lw t0, 372(sp)
     slli t0, t0, 2
     sw t0, 368(sp)
-    li t6, 1156
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1156(sp)
     lw t1, 368(sp)
     add t2, t0, t1
     sw t2, 364(sp)
@@ -20405,17 +19913,13 @@ trace_ray:
     flw ft1, 360(sp)
     fsub.s ft2, ft0, ft1
     fsw ft2, 356(sp)
-    li t6, 1276
-    add t6, sp, t6
-    flw ft0, 0(t6)
+    flw ft0, 1276(sp)
     flw ft1, 356(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 352(sp)
     li t0, 1
     sw t0, 348(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     lw t1, 348(sp)
     add t2, t0, t1
     sw t2, 344(sp)
@@ -20432,42 +19936,22 @@ trace_ray:
     sw t2, 328(sp)
     flw ft11, 328(sp)
     fsw ft11, 324(sp)
-    li t6, 1236
-    add t6, sp, t6
-    flw ft0, 0(t6)
+    flw ft0, 1236(sp)
     flw ft1, 324(sp)
     fadd.s ft2, ft0, ft1
     fsw ft2, 320(sp)
     lw a0, 344(sp)
     flw fa0, 352(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw a1, 0(t6)
-    li t6, 1268
-    add t6, sp, t6
-    lw a2, 0(t6)
-    li t6, 1264
-    add t6, sp, t6
-    lw a3, 0(t6)
-    li t6, 1260
-    add t6, sp, t6
-    lw a4, 0(t6)
-    li t6, 1256
-    add t6, sp, t6
-    lw a5, 0(t6)
-    li t6, 1252
-    add t6, sp, t6
-    lw a6, 0(t6)
-    li t6, 1248
-    add t6, sp, t6
-    lw a7, 0(t6)
-    li t6, 1244
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    lw a1, 1272(sp)
+    lw a2, 1268(sp)
+    lw a3, 1264(sp)
+    lw a4, 1260(sp)
+    lw a5, 1256(sp)
+    lw a6, 1252(sp)
+    lw a7, 1248(sp)
+    flw ft11, 1244(sp)
     fsw ft11, -8(sp)
-    li t6, 1240
-    add t6, sp, t6
-    flw ft11, 0(t6)
+    flw ft11, 1240(sp)
     fsw ft11, -4(sp)
     flw fa1, 320(sp)
     call trace_ray
@@ -20482,14 +19966,10 @@ trace_ray:
     lw t0, 316(sp)
     neg t0, t0
     sw t0, 312(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     slli t0, t0, 2
     sw t0, 308(sp)
-    li t6, 1260
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1260(sp)
     lw t1, 308(sp)
     add t2, t0, t1
     sw t2, 304(sp)
@@ -20497,13 +19977,11 @@ trace_ray:
     fsw ft11, 304(sp)
     li t0, 0
     sw t0, 300(sp)
-    li t6, 1280
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1280(sp)
     lw t1, 300(sp)
     xor t2, t0, t1
     sw t2, 296(sp)
-    lw t0, 271(sp)
+    lw t0, 296(sp)
     beqz t0, "%.13066<else0>"
     j "%.13067<then>"
 "%.13066<else0>":
@@ -20514,9 +19992,7 @@ trace_ray:
     lw t0, 292(sp)
     slli t0, t0, 2
     sw t0, 288(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 288(sp)
     add t2, t0, t1
     sw t2, 284(sp)
@@ -20544,9 +20020,7 @@ trace_ray:
     lw t0, 252(sp)
     slli t0, t0, 2
     sw t0, 248(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 248(sp)
     add t2, t0, t1
     sw t2, 244(sp)
@@ -20578,9 +20052,7 @@ trace_ray:
     lw t0, 208(sp)
     slli t0, t0, 2
     sw t0, 204(sp)
-    li t6, 1272
-    add t6, sp, t6
-    lw t0, 0(t6)
+    lw t0, 1272(sp)
     lw t1, 204(sp)
     add t2, t0, t1
     sw t2, 200(sp)
@@ -20615,7 +20087,7 @@ trace_ray:
     flw ft1, 160(sp)
     flt.s t2, ft0, ft1
     sw t2, 156(sp)
-    lw t0, 306(sp)
+    lw t0, 156(sp)
     beqz t0, "%.13070<else0>"
     j "%.13071<then>"
 "%.13070<else0>":
@@ -20630,9 +20102,7 @@ trace_ray:
     fmul.s ft2, ft0, ft1
     fsw ft2, 148(sp)
     flw ft0, 148(sp)
-    li t6, 1276
-    add t6, sp, t6
-    flw ft1, 0(t6)
+    flw ft1, 1276(sp)
     fmul.s ft2, ft0, ft1
     fsw ft2, 144(sp)
     li t0, 0
@@ -20749,81 +20219,31 @@ trace_ray:
 "%.13044<endif>":
 "%.13037<else>":
 "%.13040<endif>":
-    li t6, 1332
-    add t6, sp, t6
-    lw s11, 0(t6)
-    li t6, 1336
-    add t6, sp, t6
-    lw s10, 0(t6)
-    li t6, 1340
-    add t6, sp, t6
-    lw s9, 0(t6)
-    li t6, 1344
-    add t6, sp, t6
-    lw s8, 0(t6)
-    li t6, 1348
-    add t6, sp, t6
-    lw s7, 0(t6)
-    li t6, 1352
-    add t6, sp, t6
-    lw s6, 0(t6)
-    li t6, 1356
-    add t6, sp, t6
-    lw s5, 0(t6)
-    li t6, 1360
-    add t6, sp, t6
-    lw s4, 0(t6)
-    li t6, 1364
-    add t6, sp, t6
-    lw s3, 0(t6)
-    li t6, 1368
-    add t6, sp, t6
-    lw s2, 0(t6)
-    li t6, 1372
-    add t6, sp, t6
-    lw s1, 0(t6)
-    li t6, 1376
-    add t6, sp, t6
-    lw s0, 0(t6)
-    li t6, 1284
-    add t6, sp, t6
-    flw fs11, 0(t6)
-    li t6, 1288
-    add t6, sp, t6
-    flw fs10, 0(t6)
-    li t6, 1292
-    add t6, sp, t6
-    flw fs9, 0(t6)
-    li t6, 1296
-    add t6, sp, t6
-    flw fs8, 0(t6)
-    li t6, 1300
-    add t6, sp, t6
-    flw fs7, 0(t6)
-    li t6, 1304
-    add t6, sp, t6
-    flw fs6, 0(t6)
-    li t6, 1308
-    add t6, sp, t6
-    flw fs5, 0(t6)
-    li t6, 1312
-    add t6, sp, t6
-    flw fs4, 0(t6)
-    li t6, 1316
-    add t6, sp, t6
-    flw fs3, 0(t6)
-    li t6, 1320
-    add t6, sp, t6
-    flw fs2, 0(t6)
-    li t6, 1324
-    add t6, sp, t6
-    flw fs1, 0(t6)
-    li t6, 1328
-    add t6, sp, t6
-    flw fs0, 0(t6)
-    li t6, 1380
-    add t6, sp, t6
-    lw ra, 0(t6)
+    lw s11, 1332(sp)
+    lw s10, 1336(sp)
+    lw s9, 1340(sp)
+    lw s8, 1344(sp)
+    lw s7, 1348(sp)
+    lw s6, 1352(sp)
+    lw s5, 1356(sp)
+    lw s4, 1360(sp)
+    lw s3, 1364(sp)
+    lw s2, 1368(sp)
+    lw s1, 1372(sp)
+    lw s0, 1376(sp)
+    flw fs11, 1284(sp)
+    flw fs10, 1288(sp)
+    flw fs9, 1292(sp)
+    flw fs8, 1296(sp)
+    flw fs7, 1300(sp)
+    flw fs6, 1304(sp)
+    flw fs5, 1308(sp)
+    flw fs4, 1312(sp)
+    flw fs3, 1316(sp)
+    flw fs2, 1320(sp)
+    flw fs1, 1324(sp)
+    flw fs0, 1328(sp)
+    lw ra, 1380(sp)
     addi sp, sp, 1392
     ret
 
@@ -20863,7 +20283,7 @@ trace_diffuse_ray:
     lw a1, 308(sp)
     call judge_intersection_fast
     sw a0, 300(sp)
-    lw t0, 28(sp)
+    lw t0, 300(sp)
     beqz t0, "%.13074<else0>"
     j "%.13075<then>"
 "%.13074<else0>":
@@ -20969,7 +20389,7 @@ trace_diffuse_ray:
     lw t0, 196(sp)
     seqz t0, t0
     sw t0, 192(sp)
-    lw t0, 55(sp)
+    lw t0, 192(sp)
     beqz t0, "%.13078<else0>"
     j "%.13079<then>"
 "%.13078<else0>":
@@ -21081,7 +20501,7 @@ trace_diffuse_ray:
     flw ft1, 44(sp)
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
-    lw t0, 93(sp)
+    lw t0, 40(sp)
     beqz t0, "%.13082<else0>"
     j "%.13083<then>"
 "%.13082<else0>":
@@ -21190,7 +20610,7 @@ iter_trace_diffuse_rays:
     lw t0, 212(sp)
     seqz t0, t0
     sw t0, 208(sp)
-    lw t0, 31(sp)
+    lw t0, 208(sp)
     beqz t0, "%.13086<else0>"
     j "%.13087<then>"
 "%.13086<else0>":
@@ -21298,7 +20718,7 @@ iter_trace_diffuse_rays:
     flw ft1, 76(sp)
     flt.s t2, ft0, ft1
     sw t2, 68(sp)
-    lw t0, 66(sp)
+    lw t0, 68(sp)
     beqz t0, "%.13090<else0>"
     j "%.13091<then>"
 "%.13090<else0>":
@@ -21529,7 +20949,7 @@ trace_diffuse_ray_80percent:
     lw t1, 140(sp)
     xor t2, t0, t1
     sw t2, 136(sp)
-    lw t0, 29(sp)
+    lw t0, 136(sp)
     beqz t0, "%.13094<else0>"
     j "%.13095<then>"
 "%.13094<else0>":
@@ -21560,7 +20980,7 @@ trace_diffuse_ray_80percent:
     lw t1, 112(sp)
     xor t2, t0, t1
     sw t2, 108(sp)
-    lw t0, 36(sp)
+    lw t0, 108(sp)
     beqz t0, "%.13098<else0>"
     j "%.13099<then>"
 "%.13098<else0>":
@@ -21591,7 +21011,7 @@ trace_diffuse_ray_80percent:
     lw t1, 84(sp)
     xor t2, t0, t1
     sw t2, 80(sp)
-    lw t0, 43(sp)
+    lw t0, 80(sp)
     beqz t0, "%.13102<else0>"
     j "%.13103<then>"
 "%.13102<else0>":
@@ -21622,7 +21042,7 @@ trace_diffuse_ray_80percent:
     lw t1, 56(sp)
     xor t2, t0, t1
     sw t2, 52(sp)
-    lw t0, 50(sp)
+    lw t0, 52(sp)
     beqz t0, "%.13106<else0>"
     j "%.13107<then>"
 "%.13106<else0>":
@@ -21653,7 +21073,7 @@ trace_diffuse_ray_80percent:
     lw t1, 28(sp)
     xor t2, t0, t1
     sw t2, 24(sp)
-    lw t0, 57(sp)
+    lw t0, 24(sp)
     beqz t0, "%.13110<else0>"
     j "%.13111<then>"
 "%.13110<else0>":
@@ -22164,7 +21584,7 @@ do_without_neighbors:
     lw t0, 60(sp)
     seqz t0, t0
     sw t0, 56(sp)
-    lw t0, 36(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13114<else0>"
     j "%.13115<then>"
 "%.13114<else0>":
@@ -22188,7 +21608,7 @@ do_without_neighbors:
     lw t0, 36(sp)
     seqz t0, t0
     sw t0, 32(sp)
-    lw t0, 42(sp)
+    lw t0, 32(sp)
     beqz t0, "%.13118<else0>"
     j "%.13119<then>"
 "%.13118<else0>":
@@ -22203,7 +21623,7 @@ do_without_neighbors:
     sw t2, 24(sp)
     flw ft11, 24(sp)
     fsw ft11, 20(sp)
-    lw t0, 45(sp)
+    lw t0, 20(sp)
     beqz t0, "%.13122<else0>"
     j "%.13123<then>"
 "%.13122<else0>":
@@ -22326,7 +21746,7 @@ neighbors_exist:
     lw t1, 68(sp)
     slt t2, t0, t1
     sw t2, 64(sp)
-    lw t0, 35(sp)
+    lw t0, 64(sp)
     beqz t0, "%.13126<else0>"
     j "%.13127<then>"
 "%.13126<else0>":
@@ -22338,7 +21758,7 @@ neighbors_exist:
     lw t1, 100(sp)
     slt t2, t0, t1
     sw t2, 56(sp)
-    lw t0, 37(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13130<else0>"
     j "%.13131<then>"
 "%.13130<else0>":
@@ -22367,7 +21787,7 @@ neighbors_exist:
     lw t1, 28(sp)
     slt t2, t0, t1
     sw t2, 24(sp)
-    lw t0, 45(sp)
+    lw t0, 24(sp)
     beqz t0, "%.13134<else0>"
     j "%.13135<then>"
 "%.13134<else0>":
@@ -22379,7 +21799,7 @@ neighbors_exist:
     lw t1, 104(sp)
     slt t2, t0, t1
     sw t2, 16(sp)
-    lw t0, 47(sp)
+    lw t0, 16(sp)
     beqz t0, "%.13138<else0>"
     j "%.13139<then>"
 "%.13138<else0>":
@@ -22618,7 +22038,7 @@ neighbors_are_available:
     lw t0, 204(sp)
     seqz t0, t0
     sw t0, 200(sp)
-    lw t0, 57(sp)
+    lw t0, 200(sp)
     beqz t0, "%.13142<else0>"
     j "%.13143<then>"
 "%.13142<else0>":
@@ -22663,7 +22083,7 @@ neighbors_are_available:
     lw t0, 144(sp)
     seqz t0, t0
     sw t0, 140(sp)
-    lw t0, 72(sp)
+    lw t0, 140(sp)
     beqz t0, "%.13146<else0>"
     j "%.13147<then>"
 "%.13146<else0>":
@@ -22714,7 +22134,7 @@ neighbors_are_available:
     lw t0, 76(sp)
     seqz t0, t0
     sw t0, 72(sp)
-    lw t0, 89(sp)
+    lw t0, 72(sp)
     beqz t0, "%.13150<else0>"
     j "%.13151<then>"
 "%.13150<else0>":
@@ -22765,7 +22185,7 @@ neighbors_are_available:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 106(sp)
+    lw t0, 4(sp)
     beqz t0, "%.13154<else0>"
     j "%.13155<then>"
 "%.13154<else0>":
@@ -22889,7 +22309,7 @@ try_exploit_neighbors:
     lw t0, 100(sp)
     seqz t0, t0
     sw t0, 96(sp)
-    lw t0, 43(sp)
+    lw t0, 96(sp)
     beqz t0, "%.13158<else0>"
     j "%.13159<then>"
 "%.13158<else0>":
@@ -22913,7 +22333,7 @@ try_exploit_neighbors:
     lw t0, 76(sp)
     seqz t0, t0
     sw t0, 72(sp)
-    lw t0, 49(sp)
+    lw t0, 72(sp)
     beqz t0, "%.13162<else0>"
     j "%.13163<then>"
 "%.13162<else0>":
@@ -22926,7 +22346,7 @@ try_exploit_neighbors:
     lw a4, 148(sp)
     call neighbors_are_available
     sw a0, 68(sp)
-    lw t0, 50(sp)
+    lw t0, 68(sp)
     beqz t0, "%.13166<else0>"
     j "%.13167<then>"
 "%.13166<else0>":
@@ -22941,7 +22361,7 @@ try_exploit_neighbors:
     sw t2, 60(sp)
     flw ft11, 60(sp)
     fsw ft11, 56(sp)
-    lw t0, 53(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13170<else0>"
     j "%.13171<then>"
 "%.13170<else0>":
@@ -23196,7 +22616,7 @@ write_rgb_element_int:
     lw t1, 20(sp)
     slt t2, t0, t1
     sw t2, 12(sp)
-    lw t0, 28(sp)
+    lw t0, 12(sp)
     beqz t0, "%.13174<else0>"
     j "%.13175<then>"
 "%.13174<else0>":
@@ -23212,7 +22632,7 @@ write_rgb_element_int:
     lw t1, 4(sp)
     slt t2, t0, t1
     sw t2, 0(sp)
-    lw t0, 31(sp)
+    lw t0, 0(sp)
     beqz t0, "%.13178<else0>"
     j "%.13179<then>"
 "%.13178<else0>":
@@ -23295,7 +22715,7 @@ write_rgb_element_char:
     lw t1, 20(sp)
     slt t2, t0, t1
     sw t2, 12(sp)
-    lw t0, 28(sp)
+    lw t0, 12(sp)
     beqz t0, "%.13182<else0>"
     j "%.13183<then>"
 "%.13182<else0>":
@@ -23311,7 +22731,7 @@ write_rgb_element_char:
     lw t1, 4(sp)
     slt t2, t0, t1
     sw t2, 0(sp)
-    lw t0, 31(sp)
+    lw t0, 0(sp)
     beqz t0, "%.13186<else0>"
     j "%.13187<then>"
 "%.13186<else0>":
@@ -23394,7 +22814,7 @@ write_rgb:
     lw t0, 288(sp)
     seqz t0, t0
     sw t0, 284(sp)
-    lw t0, 28(sp)
+    lw t0, 284(sp)
     beqz t0, "%.13190<else0>"
     j "%.13191<then>"
 "%.13190<else0>":
@@ -23422,7 +22842,7 @@ write_rgb:
     lw t1, 260(sp)
     slt t2, t0, t1
     sw t2, 252(sp)
-    lw t0, 36(sp)
+    lw t0, 252(sp)
     beqz t0, "%.13194<else0>"
     j "%.13195<then>"
 "%.13194<else0>":
@@ -23438,7 +22858,7 @@ write_rgb:
     lw t1, 244(sp)
     slt t2, t0, t1
     sw t2, 240(sp)
-    lw t0, 39(sp)
+    lw t0, 240(sp)
     beqz t0, "%.13198<else0>"
     j "%.13199<then>"
 "%.13198<else0>":
@@ -23480,7 +22900,7 @@ write_rgb:
     lw t1, 212(sp)
     slt t2, t0, t1
     sw t2, 204(sp)
-    lw t0, 48(sp)
+    lw t0, 204(sp)
     beqz t0, "%.13202<else0>"
     j "%.13203<then>"
 "%.13202<else0>":
@@ -23496,7 +22916,7 @@ write_rgb:
     lw t1, 196(sp)
     slt t2, t0, t1
     sw t2, 192(sp)
-    lw t0, 51(sp)
+    lw t0, 192(sp)
     beqz t0, "%.13206<else0>"
     j "%.13207<then>"
 "%.13206<else0>":
@@ -23538,7 +22958,7 @@ write_rgb:
     lw t1, 164(sp)
     slt t2, t0, t1
     sw t2, 156(sp)
-    lw t0, 60(sp)
+    lw t0, 156(sp)
     beqz t0, "%.13210<else0>"
     j "%.13211<then>"
 "%.13210<else0>":
@@ -23554,7 +22974,7 @@ write_rgb:
     lw t1, 148(sp)
     slt t2, t0, t1
     sw t2, 144(sp)
-    lw t0, 63(sp)
+    lw t0, 144(sp)
     beqz t0, "%.13214<else0>"
     j "%.13215<then>"
 "%.13214<else0>":
@@ -23598,7 +23018,7 @@ write_rgb:
     lw t1, 116(sp)
     slt t2, t0, t1
     sw t2, 108(sp)
-    lw t0, 72(sp)
+    lw t0, 108(sp)
     beqz t0, "%.13218<else0>"
     j "%.13219<then>"
 "%.13218<else0>":
@@ -23614,7 +23034,7 @@ write_rgb:
     lw t1, 100(sp)
     slt t2, t0, t1
     sw t2, 96(sp)
-    lw t0, 75(sp)
+    lw t0, 96(sp)
     beqz t0, "%.13222<else0>"
     j "%.13223<then>"
 "%.13222<else0>":
@@ -23652,7 +23072,7 @@ write_rgb:
     lw t1, 72(sp)
     slt t2, t0, t1
     sw t2, 64(sp)
-    lw t0, 83(sp)
+    lw t0, 64(sp)
     beqz t0, "%.13226<else0>"
     j "%.13227<then>"
 "%.13226<else0>":
@@ -23668,7 +23088,7 @@ write_rgb:
     lw t1, 56(sp)
     slt t2, t0, t1
     sw t2, 52(sp)
-    lw t0, 86(sp)
+    lw t0, 52(sp)
     beqz t0, "%.13230<else0>"
     j "%.13231<then>"
 "%.13230<else0>":
@@ -23706,7 +23126,7 @@ write_rgb:
     lw t1, 28(sp)
     slt t2, t0, t1
     sw t2, 20(sp)
-    lw t0, 94(sp)
+    lw t0, 20(sp)
     beqz t0, "%.13234<else0>"
     j "%.13235<then>"
 "%.13234<else0>":
@@ -23722,7 +23142,7 @@ write_rgb:
     lw t1, 12(sp)
     slt t2, t0, t1
     sw t2, 8(sp)
-    lw t0, 97(sp)
+    lw t0, 8(sp)
     beqz t0, "%.13238<else0>"
     j "%.13239<then>"
 "%.13238<else0>":
@@ -23815,7 +23235,7 @@ pretrace_diffuse_rays:
     lw t0, 124(sp)
     seqz t0, t0
     sw t0, 120(sp)
-    lw t0, 36(sp)
+    lw t0, 120(sp)
     beqz t0, "%.13242<else0>"
     j "%.13243<then>"
 "%.13242<else0>":
@@ -23839,7 +23259,7 @@ pretrace_diffuse_rays:
     lw t0, 100(sp)
     seqz t0, t0
     sw t0, 96(sp)
-    lw t0, 42(sp)
+    lw t0, 96(sp)
     beqz t0, "%.13246<else0>"
     j "%.13247<then>"
 "%.13246<else0>":
@@ -23854,7 +23274,7 @@ pretrace_diffuse_rays:
     sw t2, 88(sp)
     flw ft11, 88(sp)
     fsw ft11, 84(sp)
-    lw t0, 45(sp)
+    lw t0, 84(sp)
     beqz t0, "%.13250<else0>"
     j "%.13251<then>"
 "%.13250<else0>":
@@ -24015,7 +23435,7 @@ pretrace_pixels:
     lw t0, 796(sp)
     seqz t0, t0
     sw t0, 792(sp)
-    lw t0, 33(sp)
+    lw t0, 792(sp)
     beqz t0, "%.13254<else0>"
     j "%.13255<then>"
 "%.13254<else0>":
@@ -24924,7 +24344,7 @@ scan_pixel:
     lw t1, 112(sp)
     slt t2, t0, t1
     sw t2, 108(sp)
-    lw t0, 36(sp)
+    lw t0, 108(sp)
     beqz t0, "%.13258<else0>"
     j "%.13259<then>"
 "%.13258<else0>":
@@ -24961,7 +24381,7 @@ scan_pixel:
     lw a2, 136(sp)
     call neighbors_exist
     sw a0, 64(sp)
-    lw t0, 47(sp)
+    lw t0, 64(sp)
     beqz t0, "%.13262<else0>"
     j "%.13263<then>"
 "%.13262<else0>":
@@ -25112,7 +24532,7 @@ scan_line:
     lw t1, 64(sp)
     slt t2, t0, t1
     sw t2, 60(sp)
-    lw t0, 36(sp)
+    lw t0, 60(sp)
     beqz t0, "%.13266<else0>"
     j "%.13267<then>"
 "%.13266<else0>":
@@ -25141,7 +24561,7 @@ scan_line:
     lw t1, 32(sp)
     slt t2, t0, t1
     sw t2, 28(sp)
-    lw t0, 44(sp)
+    lw t0, 28(sp)
     beqz t0, "%.13270<else0>"
     j "%.13271<then>"
 "%.13270<else0>":
@@ -25510,7 +24930,7 @@ init_line_elements:
     lw t0, 60(sp)
     seqz t0, t0
     sw t0, 56(sp)
-    lw t0, 29(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13274<else0>"
     j "%.13275<then>"
 "%.13274<else0>":
@@ -25935,7 +25355,7 @@ calc_dirvec:
     lw t0, 264(sp)
     seqz t0, t0
     sw t0, 260(sp)
-    lw t0, 34(sp)
+    lw t0, 260(sp)
     beqz t0, "%.13278<else0>"
     j "%.13279<then>"
 "%.13278<else0>":
@@ -26239,7 +25659,7 @@ calc_dirvecs:
     lw t0, 100(sp)
     seqz t0, t0
     sw t0, 96(sp)
-    lw t0, 31(sp)
+    lw t0, 96(sp)
     beqz t0, "%.13282<else0>"
     j "%.13283<then>"
 "%.13282<else0>":
@@ -26393,7 +25813,7 @@ calc_dirvec_rows:
     lw t0, 56(sp)
     seqz t0, t0
     sw t0, 52(sp)
-    lw t0, 30(sp)
+    lw t0, 52(sp)
     beqz t0, "%.13286<else0>"
     j "%.13287<then>"
 "%.13286<else0>":
@@ -26596,7 +26016,7 @@ create_dirvec_elements:
     lw t0, 60(sp)
     seqz t0, t0
     sw t0, 56(sp)
-    lw t0, 29(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13290<else0>"
     j "%.13291<then>"
 "%.13290<else0>":
@@ -26715,7 +26135,7 @@ create_dirvecs:
     lw t0, 96(sp)
     seqz t0, t0
     sw t0, 92(sp)
-    lw t0, 28(sp)
+    lw t0, 92(sp)
     beqz t0, "%.13294<else0>"
     j "%.13295<then>"
 "%.13294<else0>":
@@ -26857,7 +26277,7 @@ init_dirvec_constants:
     lw t0, 60(sp)
     seqz t0, t0
     sw t0, 56(sp)
-    lw t0, 29(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13298<else0>"
     j "%.13299<then>"
 "%.13298<else0>":
@@ -27898,7 +27318,7 @@ setup_reflections:
     lw t0, 128(sp)
     seqz t0, t0
     sw t0, 124(sp)
-    lw t0, 28(sp)
+    lw t0, 124(sp)
     beqz t0, "%.13306<else0>"
     j "%.13307<then>"
 "%.13306<else0>":
@@ -27944,7 +27364,7 @@ setup_reflections:
     lw t0, 60(sp)
     seqz t0, t0
     sw t0, 56(sp)
-    lw t0, 45(sp)
+    lw t0, 56(sp)
     beqz t0, "%.13310<else0>"
     j "%.13311<then>"
 "%.13310<else0>":
@@ -27969,7 +27389,7 @@ setup_reflections:
     flw ft1, 32(sp)
     flt.s t2, ft0, ft1
     sw t2, 28(sp)
-    lw t0, 52(sp)
+    lw t0, 28(sp)
     beqz t0, "%.13314<else0>"
     j "%.13315<then>"
 "%.13314<else0>":
@@ -27984,7 +27404,7 @@ setup_reflections:
     lw t0, 20(sp)
     seqz t0, t0
     sw t0, 16(sp)
-    lw t0, 55(sp)
+    lw t0, 16(sp)
     beqz t0, "%.13318<else0>"
     j "%.13319<then>"
 "%.13318<else0>":
@@ -28018,7 +27438,7 @@ setup_reflections:
     lw t0, 8(sp)
     seqz t0, t0
     sw t0, 4(sp)
-    lw t0, 58(sp)
+    lw t0, 4(sp)
     beqz t0, "%.13322<else0>"
     j "%.13323<then>"
 "%.13322<else0>":

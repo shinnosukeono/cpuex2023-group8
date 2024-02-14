@@ -2665,7 +2665,22 @@ public:
 	virtual void exec(VirtualMachine &vm) override {
 		int tmp;
 		cout << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: ";
-		cin >> tmp;
+		string s;
+		cin >> s;
+		try {
+			tmp = stoi(s);
+			for (int i = 0; i < s.size(); i++) {
+				if (s[i] == '.') {
+					cerr << "\ncycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: " << s << endl;
+					cerr << "\nInvalid input: " << s << endl;
+					exit(1);
+				}
+			}
+		} catch (const std::invalid_argument& e) {
+			cerr << "\ncycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: " << s << endl;
+			cerr << "\nInvalid input: " << s << endl;
+			exit(1);
+		}
 		vm.WriteIntRegisters(operand1,Data{tmp});
 		//vm.pc += 4;
 	}
@@ -2686,7 +2701,15 @@ public:
 	virtual void exec(VirtualMachine &vm) override {
 		float tmp;
 		cout << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.float[" + Fnames[operand1] + "]: ";
-		cin >> tmp;
+		string s;
+		cin >> s;
+		try {
+			tmp = stof(s);
+		} catch (const std::invalid_argument& e) {
+			cerr << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.float[" + Fnames[operand1] + "]: " << s << endl;
+			cerr << "\nInvalid input: " << s << endl;
+			exit(1);
+		}
 		vm.WriteFloatRegisters(operand1,Data{tmp});
 		//vm.pc += 4;
 	}

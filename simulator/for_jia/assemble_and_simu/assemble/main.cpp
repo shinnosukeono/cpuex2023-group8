@@ -4650,10 +4650,12 @@ int main(){
 		}
 	}
 	ofstream ofs("output_hex.txt");
+	ofstream ofs7("pc_line.txt");
 	for (int i=0; i<instructions.size(); i++){
 		line_number = instructions_line[i];
 		int result = (*instructions[i]).assembler();
 		ofs << setw(8) << setfill('0') << hex << result << endl;
+		ofs7 << "[" << setw(8) << setfill('0') << dec << i+1 << "] <" << setw(8) << setfill('0') << hex << 4*i << ">: " << setw(8) << setfill('0') << hex << result << " line:" << dec << line_number << endl;
 	}
 
 	bool flag = false;

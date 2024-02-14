@@ -13,7 +13,7 @@
 #include <sstream>
 #include "fpu.h"
 
-#define Dsize (1 << 26)
+#define Dsize (1 << 30)
 #define maxcount 10000000000
 #define AP_max 4
 #define GP_max 4
@@ -21,6 +21,10 @@
 
 using namespace std;
 using Data = std::variant<int, float, unsigned int>;
+
+
+extern int last_pc;
+extern long long last_cycle;
 
 class Memory
 {
@@ -30,9 +34,12 @@ public:
 	// public:
 	void write(size_t addr, const char *src, size_t length)
 	{ // Write 32bits data to memory normally little endian
-		if (addr + length > Dsize){
-			cout << "Memory out of range" << endl;
-			cout << "addr: " << addr << endl;
+		if (addr + length > Dsize || (addr%4 != 0)){
+			cerr << "Memory out of range" << endl;
+			cerr << "addr: " << addr << endl;
+			cerr << "Dsize: " << Dsize << endl;
+			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}
 		std::copy(src, src + length, data + addr);
@@ -43,9 +50,12 @@ public:
 	  // Load 32bits data from memory
 		static_assert(std::is_same_v<T, int> || std::is_same_v<T, float> || std::is_same_v<T, unsigned int>, "T must be int or float or unsigned int");
 		
-		if (addr >= Dsize){
-			cout << "Memory out of range" << endl;
-			cout << "addr: " << addr << endl;
+		if (addr >= Dsize || addr < 0 || (addr%4 != 0)){
+			cerr << "Memory out of range" << endl;
+			cerr << "addr: " << addr << endl;
+			cerr << "Dsize: " << Dsize << endl;
+			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}
 		union
@@ -203,6 +213,14 @@ public:
 	template <typename T>
 	Data load(int address)
 	{
+		if (address >= Dsize || address < 0 || (address%4 != 0)){
+			cerr << "Memory out of range" << endl;
+			cerr << "addr: " << address << endl;
+			cerr << "Dsize: " << Dsize << endl;
+			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_cycle: " << last_cycle << endl;
+			exit(1);
+		}
 		int offset = address & ((1 << cache.num_of_bits_offset) - 1);
 		int index = (address >> cache.num_of_bits_offset) & ((1 << cache.num_of_bits_index) - 1);
 		int tag = (address >> (cache.num_of_bits_offset + cache.num_of_bits_index)) & ((1 << cache.num_of_bits_tag) - 1);
@@ -265,6 +283,14 @@ public:
 
 	void write(size_t address, const char *src, size_t length = 4)
 	{
+		if (address + length > Dsize || address < 0 || (address%4 != 0)){
+			cerr << "Memory out of range" << endl;
+			cerr << "addr: " << address << endl;
+			cerr << "Dsize: " << Dsize << endl;
+			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_cycle: " << last_cycle << endl;
+			exit(1);
+		}
 		int offset = address & ((1 << cache.num_of_bits_offset) - 1);
 		int index = (address >> cache.num_of_bits_offset) & ((1 << cache.num_of_bits_index) - 1);
 		int tag = (address >> (cache.num_of_bits_offset + cache.num_of_bits_index)) & ((1 << cache.num_of_bits_tag) - 1);
@@ -569,6 +595,13 @@ public:
 			}
 			while (pc < 4 * (int)intrs.size() && pc != -1 && cycle < maxcount)
 			{
+				if ((pc % 4) != 0){
+					cerr << "pc is not aligned correctly" << endl;
+					cerr << "pc: " << pc << endl;
+					cerr << "cycle: " << cycle << endl;
+					exit(1);
+				}
+
 				if (cycle % 200000 == 0){
 					cout << cycle << endl;
 					cout << "pc: " << ID_pc/4 << endl;
@@ -623,6 +656,8 @@ public:
 					IF_flag = true;
 				}
 
+				last_pc = pc;
+				last_cycle = cycle;
 				if (print_mode > 0 && cycle >= print_cycle && cycle <= print_cycle_end){
 					outputFile << endl << "cycle:[" << cycle << "], ";
 					outputFile << "pc:[" << pc << "(" << hex << pc << ")" << "], ";
@@ -850,10 +885,19 @@ public:
 					cout << "pc: " << pc/4 << endl;
 				}
 				
+				if ((pc % 4) != 0){
+					cerr << "pc is not aligned correctly" << endl;
+					cerr << "pc: " << pc << endl;
+					cerr << "cycle: " << cycle << endl;
+					exit(1);
+				}
+
 				if (pc < 4 * (int)intrs.size()) {
 					EX = intrs[(pc / 4)];
 				}
 
+				last_pc = pc;
+				last_cycle = cycle;
 				if (print_mode > 0 && cycle >= print_cycle && cycle <= print_cycle_end){
 					outputFile << endl << "cycle:[" << cycle << "], ";
 					outputFile << "pc:[" << pc << "(" << hex << pc << ")" << "], ";
@@ -2558,7 +2602,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		op1 = get<int>(vm.ReadIntRegisters(operand2));
-		cerr << "Cout.int: " << op1 << " [" + Rnames[operand2] + "]"<< endl;
+		cerr << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cout.int: " << op1 << " [" + Rnames[operand2] + "]"<< endl;
 		//vm.pc += 4;
 	}
 };
@@ -2577,7 +2621,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		op1 = get<float>(vm.ReadFloatRegisters(operand2));
-		cerr << "Cout.float: " << op1 << " [" + Fnames[operand2] + "]" << endl;
+		cerr << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cout.float: " << op1 << " [" + Fnames[operand2] + "]" << endl;
 		//vm.pc += 4;
 	}
 };
@@ -2616,7 +2660,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		int tmp;
-		cout << "Cin.int[" + Rnames[operand1] + "]: ";
+		cout << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: ";
 		cin >> tmp;
 		vm.WriteIntRegisters(operand1,Data{tmp});
 		//vm.pc += 4;
@@ -2637,7 +2681,7 @@ public:
 	}
 	virtual void exec(VirtualMachine &vm) override {
 		float tmp;
-		cout << "Cin.float[" + Fnames[operand1] + "]: ";
+		cout << endl << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.float[" + Fnames[operand1] + "]: ";
 		cin >> tmp;
 		vm.WriteFloatRegisters(operand1,Data{tmp});
 		//vm.pc += 4;

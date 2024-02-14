@@ -11,6 +11,9 @@ using namespace std;
 
 #define data_section 0x40000
 
+int last_pc;
+long long last_cycle;
+
 int main()
 {
 	// Create a virtual machine

@@ -11,6 +11,10 @@
 #include <unordered_map>
 #include <fstream>
 #include <sstream>
+#include <bitset>
+#include <iomanip>
+#include <chrono>
+#include <map>
 #include "fpu.h"
 
 #define Dsize (1 << 30)
@@ -38,7 +42,7 @@ public:
 			cerr << "Memory out of range" << endl;
 			cerr << "addr: " << addr << endl;
 			cerr << "Dsize: " << Dsize << endl;
-			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}
@@ -54,7 +58,7 @@ public:
 			cerr << "Memory out of range" << endl;
 			cerr << "addr: " << addr << endl;
 			cerr << "Dsize: " << Dsize << endl;
-			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}
@@ -217,7 +221,7 @@ public:
 			cerr << "Memory out of range" << endl;
 			cerr << "addr: " << address << endl;
 			cerr << "Dsize: " << Dsize << endl;
-			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}
@@ -287,7 +291,7 @@ public:
 			cerr << "Memory out of range" << endl;
 			cerr << "addr: " << address << endl;
 			cerr << "Dsize: " << Dsize << endl;
-			cerr << "last_pc: " << last_pc << endl;
+			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
 			exit(1);
 		}

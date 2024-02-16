@@ -17,7 +17,7 @@
 #include <map>
 #include "fpu.h"
 
-#define Dsize (1 << 30)
+#define Dsize (1 << 26)
 #define maxcount 10000000000
 #define AP_max 4
 #define GP_max 4
@@ -29,6 +29,7 @@ using Data = std::variant<int, float, unsigned int>;
 
 extern int last_pc;
 extern long long last_cycle;
+extern ofstream last_pc_file;
 
 class Memory
 {
@@ -44,7 +45,8 @@ public:
 			cerr << "Dsize: " << Dsize << endl;
 			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		std::copy(src, src + length, data + addr);
 	}
@@ -60,7 +62,8 @@ public:
 			cerr << "Dsize: " << Dsize << endl;
 			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		union
 		{
@@ -223,7 +226,8 @@ public:
 			cerr << "Dsize: " << Dsize << endl;
 			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		int offset = address & ((1 << cache.num_of_bits_offset) - 1);
 		int index = (address >> cache.num_of_bits_offset) & ((1 << cache.num_of_bits_index) - 1);
@@ -293,7 +297,8 @@ public:
 			cerr << "Dsize: " << Dsize << endl;
 			cerr << "last_pc: " << setw(8) << setfill('0') << hex << last_pc << dec << endl;
 			cerr << "last_cycle: " << last_cycle << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		int offset = address & ((1 << cache.num_of_bits_offset) - 1);
 		int index = (address >> cache.num_of_bits_offset) & ((1 << cache.num_of_bits_index) - 1);
@@ -603,7 +608,8 @@ public:
 					cerr << "pc is not aligned correctly" << endl;
 					cerr << "pc: " << pc << endl;
 					cerr << "cycle: " << cycle << endl;
-					exit(1);
+					last_pc_file << pc << endl;
+					exit(0);
 				}
 
 				if (cycle % 200000 == 0){
@@ -893,7 +899,8 @@ public:
 					cerr << "pc is not aligned correctly" << endl;
 					cerr << "pc: " << pc << endl;
 					cerr << "cycle: " << cycle << endl;
-					exit(1);
+					last_pc_file << pc << endl;
+					exit(0);
 				}
 
 				if (pc < 4 * (int)intrs.size()) {
@@ -2673,13 +2680,15 @@ public:
 				if (s[i] == '.') {
 					cerr << "\ncycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: " << s << endl;
 					cerr << "\nInvalid input: " << s << endl;
-					exit(1);
+					last_pc_file << last_pc << endl;
+					exit(0);
 				}
 			}
 		} catch (const std::invalid_argument& e) {
 			cerr << "\ncycle: [" << last_cycle << "] <" << last_pc << "> Cin.int[" + Rnames[operand1] + "]: " << s << endl;
 			cerr << "\nInvalid input: " << s << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		vm.WriteIntRegisters(operand1,Data{tmp});
 		//vm.pc += 4;
@@ -2708,7 +2717,8 @@ public:
 		} catch (const std::invalid_argument& e) {
 			cerr << "cycle: [" << last_cycle << "] <" << last_pc << "> Cin.float[" + Fnames[operand1] + "]: " << s << endl;
 			cerr << "\nInvalid input: " << s << endl;
-			exit(1);
+			last_pc_file << last_pc << endl;
+			exit(0);
 		}
 		vm.WriteFloatRegisters(operand1,Data{tmp});
 		//vm.pc += 4;

@@ -5,10 +5,10 @@ set -e
 cp main.s ./assemble/a.s
 cat main_lib.s >> ./assemble/a.s
 cd assemble
-g++ main.cpp
 ./a.out < a.txt
 cp output_hex.txt ../make_bin/hex.txt
 cp output_data.txt ../make_bin/data.txt
+cp pc_line.txt ../write_line/pc_line_input.txt
 cd ../make_bin
 ./a.out < a.txt
 cp output.bin ../simulator/contest.bin
@@ -17,3 +17,6 @@ cd ../simulator
 ./main < a.txt
 cp output.ppm ../out.ppm
 cp inst.txt ../core_inst.txt
+cp last_pc.txt ../write_line/last_pc_input.txt
+cd ../write_line
+./a.out

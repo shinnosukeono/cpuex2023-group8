@@ -13,6 +13,7 @@ using namespace std;
 
 int last_pc;
 long long last_cycle;
+ofstream last_pc_file;
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
 	VirtualMachine vm;
 	std::string hexString;
 	string binaryString;
+	last_pc_file.open("last_pc.txt");
 	unsigned int value;
 
 	vm.mem.memory.data = (char*)calloc(Dsize, sizeof(char));
@@ -366,6 +368,8 @@ int main()
 	}
 
 	vm.outputPpm.close();
+	last_pc_file << last_pc << endl;
+	last_pc_file.close();
 
 	cout << "Mips: " << (double)vm.cycle / (double)nsec * 1000000000.0 / 1000000.0 << endl;
 

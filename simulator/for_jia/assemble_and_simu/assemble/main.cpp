@@ -4459,6 +4459,7 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		cerr << endl << endl;
 		cerr << "No such instruction. Code: " << tokens[0] << "\n";
 		cerr << endl << endl;
+		cerr << "Line: " << line_number << endl;
 		exit(1);
 	}
 
@@ -4655,7 +4656,7 @@ int main(){
 		line_number = instructions_line[i];
 		int result = (*instructions[i]).assembler();
 		ofs << setw(8) << setfill('0') << hex << result << endl;
-		ofs7 << "[" << setw(8) << setfill('0') << dec << i+1 << "] <" << setw(8) << setfill('0') << hex << 4*i << ">: " << setw(8) << setfill('0') << hex << result << " line:" << dec << line_number << endl;
+		ofs7 << "[" << setw(8) << setfill('0') << dec << i+1 << "] <" << setw(8) << setfill('0') << hex << 4*i << ">: " << setw(8) << setfill('0') << hex << result << " line: " << dec << line_number << endl;
 	}
 
 	bool flag = false;

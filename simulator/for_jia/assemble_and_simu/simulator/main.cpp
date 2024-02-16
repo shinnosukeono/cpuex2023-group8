@@ -14,6 +14,7 @@ using namespace std;
 int last_pc;
 long long last_cycle;
 ofstream last_pc_file;
+unordered_map<int, int> address_map;
 
 int main()
 {

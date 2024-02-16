@@ -30,6 +30,7 @@ using Data = std::variant<int, float, unsigned int>;
 extern int last_pc;
 extern long long last_cycle;
 extern ofstream last_pc_file;
+extern unordered_map<int, int> address_map;
 
 class Memory
 {
@@ -1413,6 +1414,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 		//vm.pc += 4;
@@ -1445,6 +1447,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 		//vm.pc += 4;
@@ -1476,6 +1479,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 		//vm.pc += 4;
@@ -1507,6 +1511,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 		//vm.pc += 4;
@@ -1538,6 +1543,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 		//vm.pc += 4;
@@ -1859,6 +1865,8 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
+				address_map[get<T>(op1) + operand3] = vm.cycle;
 			}
 		}
 	}
@@ -1889,6 +1897,8 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
+				address_map[get<T>(op1) + operand3] = vm.cycle;
 			}
 		}
 	}
@@ -1920,6 +1930,8 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
+				address_map[get<T>(op1) + operand3] = vm.cycle;
 			}
 		}
 	}
@@ -2527,6 +2539,7 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast read cycle: " << address_map[op2 + operand3] << endl;
 			}
 		}
 	}
@@ -2557,6 +2570,8 @@ public:
 			mode = true;
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<int>(op1) + operand3 << dec << "]" << endl;
+				vm.outputFile << "\tLast write cycle: " << address_map[get<int>(op1) + operand3] << endl;
+				address_map[get<int>(op1) + operand3] = vm.cycle;
 			}
 		}
 	}

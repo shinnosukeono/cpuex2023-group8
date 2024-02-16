@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module instr_mem (
-    input wire clk,
+    input wire clk, rstn,
     input wire we,
     input wire en,
     input wire io_sel,
@@ -18,8 +18,9 @@ module instr_mem (
 
     assign addra = addr[14:2];
 
-    instr_mem_pp_io_1 i_instr_mem (
+    blk_mem_gen_0 i_instr_mem (
         .clka(clk),
+        .rsta(~rstn),
         .wea(we),
         .ena(en),
         .addra(addra),

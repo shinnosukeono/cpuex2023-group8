@@ -1,8 +1,3 @@
-`include "../proc_common/alu.sv"
-`include "../proc_common/alu_simplified.sv"
-`include "if/control_signal.sv"
-`include "if/data_signal.sv"
-
 module exec (
     input logic rst,
     // input
@@ -45,7 +40,7 @@ module exec (
     output pc_src_e,
 
     // to I/O module
-    output logic [31:0] out_data,
+    // output logic [31:0] out_data,
 
     // from FPU unit
     input logic [31:0] fast_fpu_result,
@@ -59,7 +54,9 @@ module exec (
     output wire [31:0] fpu_rd3,
 
     output logic [31:0] src_a,
-    output logic [31:0] src_b
+    output logic [31:0] src_b,
+
+    input wire in_issued
 );
 
     // forwarding
@@ -159,7 +156,7 @@ module exec (
     assign fpu_rd3 = fpu_rd3_forward;
 
     // to I/O module
-    assign out_data = {24'b0, rd1_forward[7:0]};
+    // assign out_data = {24'b0, rd1_forward[7:0]};
     assign data_exec_if.out_data = {24'b0, rd1_forward[7:0]};
 
     // to data memory
@@ -198,6 +195,7 @@ module exec (
     assign control_exec_if.mem_read = control_decode_if.mem_read;
     assign control_exec_if.fpu_reg_write = control_decode_if.fpu_reg_write;
     assign control_exec_if.out_issued = control_decode_if.out_issued;
+    assign control_exec_if.in_issued = control_decode_if.in_issued;
 
     assign data_exec_if.rd = data_decode_if.rd;
     assign data_exec_if.imm_ext = data_decode_if.imm_ext;

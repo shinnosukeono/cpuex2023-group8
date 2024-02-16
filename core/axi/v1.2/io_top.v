@@ -28,7 +28,9 @@ module io_top (
     input wire [31:0] output_data,
     input wire output_valid,
     output wire [31:0] input_data,
-    output wire input_data_ready
+    output wire input_data_ready,
+
+    output wire [7:0] sdata_debug
 );
     localparam DATA_SECTION_BASE_ADDR = 32'h10000;
 
@@ -94,7 +96,8 @@ module io_top (
         .output_busy(output_busy), // out instruction is executing
         .instr_mem_ready(instr_mem_ready),
         .cache_buf_ready(cache_buf_ready),
-        .cache_ready(cache_ready)
+        .cache_ready(cache_ready),
+        .sdata_debug(sdata_debug)
     );
 
     CacheBuf i_cache_buf (

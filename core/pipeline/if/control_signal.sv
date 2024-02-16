@@ -63,13 +63,15 @@ interface control_exec_io;
     logic mem_read;
     logic fpu_reg_write;
     logic out_issued;
+    logic in_issued;
     modport in (
         output reg_write,
         output result_src,
         output mem_write,
         output mem_read,
         output fpu_reg_write,
-        output out_issued
+        output out_issued,
+        output in_issued
     );
     modport out (
         input reg_write,
@@ -77,7 +79,8 @@ interface control_exec_io;
         input mem_write,
         input mem_read,
         input fpu_reg_write,
-        input out_issued
+        input out_issued,
+        input in_issued
     );
 endinterface //control_exec_io
 

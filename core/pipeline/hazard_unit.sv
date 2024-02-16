@@ -40,6 +40,7 @@ module hazard_unit (
     output logic [1:0] forward_fpu_rd2_e,
     output logic [1:0] forward_fpu_rd3_e,
     output logic cache_stall,
+    output wire in_stall,
 
     // to memory access reg
     output logic flush_m,
@@ -52,6 +53,7 @@ module hazard_unit (
     input logic mem_write_m,
     input logic mem_read_m,
     input logic fpu_reg_write_m,
+    input logic in_issued_m,
 
     // from data memory
     input logic cache_data_valid,
@@ -65,8 +67,8 @@ module hazard_unit (
     input logic fpu_reg_write_w,
 
     // from I/O module
-    input logic out_stall,
-    input logic in_stall,
+    // input logic out_stall,
+    input logic in_data_valid,
 
     // from FPU unit
     input logic fast_fpu_valid,
@@ -78,6 +80,9 @@ module hazard_unit (
 
     output logic lw_stall
 );
+    // wire in_stall;
+    assign in_stall = in_issued_m & ~in_data_valid;
+
     // forwarding for data hazard
     // rd1
     // NOTE: Though the fsw instruction asserts the s_fpu, it uses the integer register rs1 for the
@@ -197,7 +202,7 @@ module hazard_unit (
     reg fast_fpu_waiting;
     wire fast_fpu_stall;
 
-    assign fast_fpu_en_1 = fast_fpu_dispatch_e & ~fast_fpu_valid & ~cache_stall;
+    assign fast_fpu_en_1 = fast_fpu_dispatch_e & ~fast_fpu_valid & ~cache_stall & ~in_stall;
     always @(posedge clk) begin
         fast_fpu_en_2 <= fast_fpu_en_1;
     end
@@ -222,7 +227,7 @@ module hazard_unit (
     reg slow_fpu_waiting;
     wire slow_fpu_stall;
 
-    assign slow_fpu_en_1 = slow_fpu_dispatch_e & ~slow_fpu_valid & ~cache_stall;
+    assign slow_fpu_en_1 = slow_fpu_dispatch_e & ~slow_fpu_valid & ~cache_stall & ~in_stall;
     always @(posedge clk) begin
         slow_fpu_en_2 <= slow_fpu_en_1;
     end
@@ -243,13 +248,20 @@ module hazard_unit (
     assign slow_fpu_stall = slow_fpu_en_pulse | (slow_fpu_waiting & ~slow_fpu_valid);
 
     // logic lw_stall;
+    // NOTE: lw_stall is asserted when
+    // 1. lw OR in is in the exec stage AND
+    // 2. the source registers of the decode stage is same as the dest register of the exec stage AND
+    // 3. ((integer instruction OR fsw), (lw OR in)) or (fpu instruction, flw) is in the (ID, EX)
     assign lw_stall = ((result_src_e == 3'b001 | result_src_e == 3'b111) & ((rs1_d == rd_e) | (rs2_d == rd_e) | (r4_d & (rs3_d == rd_e))) & (((~s_fpu_d | (s_fpu_d & mem_write_d)) & reg_write_e) | (s_fpu_d & fpu_reg_write_e)));
     assign cache_stall = (mem_read_m | mem_write_m) & ~cache_data_valid;
-    assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
-    assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
-    assign stall_e = cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
-    assign stall_m = cache_stall;
-    assign stall_w = cache_stall;
+    // assign stall_f = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_f = lw_stall | cache_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    // assign stall_d = lw_stall | cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_d = lw_stall | cache_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    // assign stall_e = cache_stall | out_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_e = cache_stall | in_stall | fast_fpu_stall | slow_fpu_stall;
+    assign stall_m = cache_stall | in_stall;
+    assign stall_w = cache_stall | in_stall;
 
     // flush in branch or load-oriented bubble
 
@@ -266,6 +278,11 @@ module hazard_unit (
     // keeping the in_issued asserted in the exec stage while the in_stall is
     // assserted.
 
+    // NOTE: As fpu_en_pulse is always asserted when neither cache_stall nor in_stall
+    // are asserted, it is assured that the fpu instruction is in the memory access stage
+    // 1 clock after the fpu_en_pulse is assrted. However, the fpu instruction should
+    // not proceed to the memory access stage until the fpu_valid is asserted,
+    // so the memory access stage should be kept flushed.
     assign flush_d = pc_src_e;
     assign flush_e = (lw_stall | pc_src_e) & ~cache_stall & ~in_stall;
     assign flush_m = fast_fpu_stall | slow_fpu_stall;

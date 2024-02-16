@@ -1,6 +1,3 @@
-`include "if/control_signal.sv"
-`include "if/data_signal.sv"
-
 module memory_access (
     // input
     control_exec_io.out control_exec_if,
@@ -20,7 +17,10 @@ module memory_access (
     output logic [31:0] imm_ext_m,
     output logic [31:0] fpu_rd1_m,
     output logic [31:0] fpu_result_m,
-    output logic [2:0] result_src_m
+    output logic [2:0] result_src_m,
+
+    // from I/O module
+    input wire [31:0] in_data
 );
     assign result_src_m = control_exec_if.result_src;
     assign alu_result_m = data_exec_if.alu_result;
@@ -43,4 +43,5 @@ module memory_access (
     assign data_mem_if.fpu_result = data_exec_if.fpu_result;
     assign data_mem_if.rd1 = data_exec_if.rd1;
     assign data_mem_if.fpu_rd1 = data_exec_if.fpu_rd1;
+    assign data_mem_if.in_data = in_data;
 endmodule

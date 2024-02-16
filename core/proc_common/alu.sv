@@ -1,5 +1,3 @@
-`include "../lib/adder.sv"
-
 module alu #(
     parameter N = 32
 ) (

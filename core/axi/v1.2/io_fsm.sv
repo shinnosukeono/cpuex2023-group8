@@ -18,9 +18,10 @@ module IO_fsm #(CLK_PER_HALF_BIT = _CLK_PER_HALF_BIT) (
     // output wire [2:0] led,
     output reg instr_mem_ready,
     output reg cache_buf_ready,
-    output reg cache_ready
-);
+    output reg cache_ready,
 
+    output wire [7:0] sdata_debug
+);
 
     logic [31:0] _rdata_buf;
     logic _rdata_buf_ready;
@@ -52,6 +53,8 @@ module IO_fsm #(CLK_PER_HALF_BIT = _CLK_PER_HALF_BIT) (
     logic tx_busy;
 
     logic t_status;
+
+    assign sdata_debug = sdata;
 
     always_ff @( posedge clk ) begin : DMA_ctl
         if (tx_start) begin

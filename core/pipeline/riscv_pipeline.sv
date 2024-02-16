@@ -1,12 +1,3 @@
-`include "instr_fetch.sv"
-`include "instr_decode.sv"
-`include "exec.sv"
-`include "memory_access.sv"
-`include "write_back.sv"
-`include "hazard_unit.sv"
-`include "if/control_signal.sv"
-`include "if/data_signal.sv"
-
 module riscv_pipeline (
     input logic clk, rst,
 
@@ -28,12 +19,14 @@ module riscv_pipeline (
     output logic [31:0] din,
 
     // from I/O module
-    input logic out_stall,
-    input logic in_stall,
+    // input logic out_stall,
+    // input logic in_stall,
+    input logic in_data_valid,
     input logic [31:0] in_data,
-    input logic reg_we,
-    input logic [31:0] reg_init_data,
-    input logic [4:0] rd,
+    input logic io_stall,
+    // input logic reg_we,
+    // input logic [31:0] reg_init_data,
+    // input logic [4:0] rd,
 
     // to I/O module
     output logic [31:0] status,
@@ -73,6 +66,8 @@ module riscv_pipeline (
     output logic [31:0] src_b
 );
     // hazard unit signals
+    wire in_stall;
+    // wire out_stall;
     logic [1:0] forward_a_e;
     logic [1:0] forward_b_e;
     (* mark_debug = "true" *) logic [2:0] forward_rd1_e;
@@ -82,12 +77,14 @@ module riscv_pipeline (
     logic [1:0] forward_fpu_rd3_e;
     wire flush_m;
 
+    // assign out_stall = 1'b0;
+
     // instr fetch reg
     data_back_io data_back_if_in();
     data_back_io data_back_if_out();
 
     always_ff @( posedge clk ) begin
-        if (rst) begin
+        if (rst || io_stall) begin
             data_back_if_out.pc <= 32'b0;
         end
         else if (stall_f == 1'b0) begin
@@ -110,7 +107,7 @@ module riscv_pipeline (
     data_fetch_io data_fetch_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_d == 1'b1 || rst) begin
+        if (flush_d == 1'b1 || rst || io_stall) begin
             data_fetch_if_out.pc <= 32'b0;
             data_fetch_if_out.instr <= 32'b0;
             data_fetch_if_out.pc_plus4 <= 32'b0;
@@ -131,7 +128,7 @@ module riscv_pipeline (
 
     instr_decode i_instr_decode (
         .clk(clk),
-        .rst(rst),
+        .rst(rst | io_stall),
         .data_fetch_if(data_fetch_if_out.out),
         .control_decode_if(control_decode_if_in.in),
         .data_decode_if(data_decode_if_in.in),
@@ -139,10 +136,10 @@ module riscv_pipeline (
         .result_w(result_w),
         .reg_write_w(reg_write_w),
         .fpu_reg_write_w(fpu_reg_write_w),
-        .r4(r4_d),
-        .io_we(reg_we),
-        .io_reg_init_data(reg_init_data),
-        .io_rd(rd)
+        .r4(r4_d)
+        // .io_we(reg_we),
+        // .io_reg_init_data(reg_init_data),
+        // .io_rd(rd)
     );
 
     // exec reg
@@ -152,7 +149,7 @@ module riscv_pipeline (
     data_decode_io data_decode_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_e == 1'b1 || rst) begin
+        if (flush_e == 1'b1 || rst || io_stall) begin
             control_decode_if_out.reg_write <= 1'b0;
             control_decode_if_out.result_src <= 3'b0;
             control_decode_if_out.mem_read <= 1'b0;
@@ -224,10 +221,11 @@ module riscv_pipeline (
         end
     end
 
-    assign out_issued = control_decode_if_out.out_issued & ~cache_stall;
-    // assign out_issued = control_exec_if_out.out_issued;
-    // assign out_data = data_exec_if_out.out_data;
-    assign in_issued = control_decode_if_out.in_issued & ~cache_stall;
+    // assign out_issued = control_decode_if_out.out_issued & ~cache_stall & ~in_stall;
+
+    assign out_issued = control_exec_if_out.out_issued;
+    assign out_data = data_exec_if_out.out_data;
+    assign in_issued = (stall_m) ? control_exec_if_out.in_issued : control_decode_if_out.in_issued;
 
     // exec stage
     logic [31:0] alu_result_e;
@@ -269,7 +267,7 @@ module riscv_pipeline (
         .forward_fpu_rd2_e(forward_fpu_rd2_e),
         .forward_fpu_rd3_e(forward_fpu_rd3_e),
         .pc_src_e(pc_src_e),
-        .out_data(out_data),
+        // .out_data(out_data),
         .fast_fpu_result(fast_fpu_result),
         .fast_fpu_valid(fast_fpu_valid),
         .slow_fpu_result(slow_fpu_result),
@@ -307,13 +305,14 @@ module riscv_pipeline (
     // forwarded into the exec stage, which results in the unpredictable state
     // in the memory access register when the core_gating_signal is asserted.
     always_ff @( posedge clk ) begin
-        if (rst || flush_m) begin
+        if (rst || flush_m || io_stall) begin
             control_exec_if_out.reg_write <= 1'b0;
             control_exec_if_out.result_src <= 3'b0;
             control_exec_if_out.mem_write <= 1'b0;
             control_exec_if_out.mem_read <= 1'b0;
             control_exec_if_out.fpu_reg_write <= 1'b0;
             control_exec_if_out.out_issued <= 1'b0;
+            control_exec_if_out.in_issued <= 1'b0;
 
             data_exec_if_out.alu_result <= 32'b0;
             data_exec_if_out.data_addr <= 32'b0;
@@ -333,7 +332,8 @@ module riscv_pipeline (
             control_exec_if_out.mem_write <= control_exec_if_in.mem_write;
             control_exec_if_out.mem_read <= control_exec_if_in.mem_read;
             control_exec_if_out.fpu_reg_write <= control_exec_if_in.fpu_reg_write;
-            control_exec_if_out.out_issued <= control_decode_if_in.out_issued;
+            control_exec_if_out.out_issued <= control_exec_if_in.out_issued;
+            control_exec_if_out.in_issued <= control_exec_if_in.in_issued;
 
             data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
             data_exec_if_out.data_addr <= data_exec_if_in.data_addr;
@@ -362,7 +362,8 @@ module riscv_pipeline (
         .imm_ext_m(imm_ext_m),
         .fpu_rd1_m(fpu_rd1_m),
         .fpu_result_m(fpu_result_m),
-        .result_src_m(result_src_m)
+        .result_src_m(result_src_m),
+        .in_data(in_data)
     );
 
     // write back reg
@@ -372,7 +373,7 @@ module riscv_pipeline (
     data_mem_io data_mem_if_out();
 
     always_ff @( posedge clk ) begin
-        if (rst) begin
+        if (rst || io_stall) begin
             control_mem_if_out.reg_write <= 1'b0;
             control_mem_if_out.result_src <= 3'b0;
             control_mem_if_out.fpu_reg_write <= 1'b0;
@@ -386,6 +387,7 @@ module riscv_pipeline (
             data_mem_if_out.fpu_result <= 32'b0;
             data_mem_if_out.rd1 <= 32'b0;
             data_mem_if_out.fpu_rd1 <= 32'b0;
+            data_mem_if_out.in_data <= 32'b0;
         end
         else if (stall_w == 1'b0) begin
             control_mem_if_out.reg_write <= control_mem_if_in.reg_write;
@@ -401,6 +403,7 @@ module riscv_pipeline (
             data_mem_if_out.fpu_result <= data_mem_if_in.fpu_result;
             data_mem_if_out.rd1 <= data_mem_if_in.rd1;
             data_mem_if_out.fpu_rd1 <= data_mem_if_in.fpu_rd1;
+            data_mem_if_out.in_data <= data_mem_if_in.in_data;
         end
     end
 
@@ -416,8 +419,7 @@ module riscv_pipeline (
         .result_w(result_w),
         .fpu_reg_write_w(fpu_reg_write_w),
         .pc_src_e(pc_src_e),
-        .pc_target_e(pc_target_e),
-        .in_data(in_data)
+        .pc_target_e(pc_target_e)
     );
 
     // hazard unit
@@ -461,6 +463,7 @@ module riscv_pipeline (
         .forward_fpu_rd2_e(forward_fpu_rd2_e),
         .forward_fpu_rd3_e(forward_fpu_rd3_e),
         .cache_stall(cache_stall),
+        .in_stall(in_stall),
         .flush_m(flush_m),
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
@@ -469,13 +472,14 @@ module riscv_pipeline (
         .mem_write_m(control_exec_if_out.mem_write),
         .mem_read_m(control_exec_if_out.mem_read),
         .fpu_reg_write_m(control_exec_if_out.fpu_reg_write),
+        .in_issued_m(control_exec_if_out.in_issued),
         .cache_data_valid(cache_data_valid),
+        .in_data_valid(in_data_valid),
         .stall_w(stall_w),
         .rd_w(rd_w),
         .reg_write_w(control_mem_if_out.reg_write),
         .fpu_reg_write_w(control_mem_if_out.fpu_reg_write),
-        .out_stall(out_stall),
-        .in_stall(in_stall),
+        // .out_stall(out_stall),
         .fast_fpu_valid(fast_fpu_valid),
         .slow_fpu_valid(slow_fpu_valid),
         .fast_fpu_en_pulse(fast_fpu_en),
@@ -486,7 +490,7 @@ module riscv_pipeline (
     assign en_instr_mem = ~stall_d;
 
     always @(posedge clk) begin
-        if (rst) begin
+        if (rst || io_stall) begin
             status <= 32'h0;
         end
         else if (data_mem_if_out.status) begin

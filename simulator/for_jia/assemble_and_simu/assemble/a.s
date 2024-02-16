@@ -1,4 +1,4 @@
-# ver2 parameter is 345
+# parameter is 141
 	.globl	main                            # -- Begin function main
 	.p2align	2
 	.type	main,@function
@@ -32,6 +32,42 @@ main:                                   # @main
 	li s9, 0
 	li s10, 0
 	li s11, 0
+    li t3, 0
+    li t4, 0
+    li t5, 0
+    li t6, 0
+    fmv.w.x fa0, zero
+    fmv.w.x fa1, zero
+    fmv.w.x fa2, zero
+    fmv.w.x fa3, zero
+    fmv.w.x fa4, zero
+    fmv.w.x fa5, zero
+    fmv.w.x fa6, zero
+    fmv.w.x fa7, zero
+    fmv.w.x fs0, zero
+    fmv.w.x fs1, zero
+    fmv.w.x fs2, zero
+    fmv.w.x fs3, zero
+    fmv.w.x fs4, zero
+    fmv.w.x fs5, zero
+    fmv.w.x fs6, zero
+    fmv.w.x fs7, zero
+    fmv.w.x fs8, zero
+    fmv.w.x fs9, zero
+    fmv.w.x fs10, zero
+    fmv.w.x fs11, zero
+    fmv.w.x ft0, zero
+    fmv.w.x ft1, zero
+    fmv.w.x ft2, zero
+    fmv.w.x ft3, zero
+    fmv.w.x ft4, zero
+    fmv.w.x ft5, zero
+    fmv.w.x ft6, zero
+    fmv.w.x ft7, zero
+    fmv.w.x ft8, zero
+    fmv.w.x ft9, zero
+    fmv.w.x ft10, zero
+    fmv.w.x ft11, zero
 	addi	sp, sp, -16
 	sw	ra, 12(sp)                      # 4-byte Folded Spill
 	sw	s0, 8(sp)                       # 4-byte Folded Spill
@@ -51,13 +87,13 @@ main:                                   # @main
 	lui	a1, 784384
 	sw	a1, 0(a0)
 	li	a0, 200
-.LBB22_1:                               # =>This Inner Loop Header: Depth=1
+.LBB21_1:                               # =>This Inner Loop Header: Depth=1
 	lw	a1, %lo(and_net)(s2)
 	lw	a2, 0(a1)
 	add	a1, a1, s1
 	addi	s1, s1, 4
 	sw	a2, 0(a1)
-	bne	s1, a0, .LBB22_1
+	bne	s1, a0, .LBB21_1
 # %bb.2:
 	li	a0, 1
 	li	a1, 4
@@ -74,23 +110,6 @@ main:                                   # @main
 	lw	a1, 0(a1)
 	sw	a1, 0(a0)
 	call	caml_main
-	lui	s0, %hi(buffer_pos)
-	lw	a0, %lo(buffer_pos)(s0)
-	beqz	a0, .LBB22_5
-# %bb.3:
-	li	s1, 0
-	lui	a0, %hi(buffer)
-	addi	s2, a0, %lo(buffer)
-.LBB22_4:                               # =>This Inner Loop Header: Depth=1
-	lw	a0, 0(s2)
-	call	putchar
-	lw	a0, %lo(buffer_pos)(s0)
-	addi	s1, s1, 1
-	addi	s2, s2, 4
-	bltu	s1, a0, .LBB22_4
-.LBB22_5:
-	li	a0, 10
-	call	putchar
 	li	a0, 0
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
@@ -98,236 +117,13 @@ main:                                   # @main
 	lw	s2, 0(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end22:
-	.size	main, .Lfunc_end22-main
+.vLfunc_end21:
+	.size	main, .vLfunc_end21-main
                                         # -- End function
-
-
-# -----------------------------------------------
-	.globl	calloc                             # -- Begin function calloc
-	.p2align	1
-	.type	calloc,@function
-calloc:                                    # @calloc
-# %bb.0:                                # %entry
-	slli a1, a0, 2 # a0 = a0 * 4
-    mv a0, tp
-    add tp, tp, a1
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end100:
-	.size	calloc, .Myfunc_end100-calloc
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	putchar                             # -- Begin function putchar
-	.p2align	1
-	.type	putchar,@function
-putchar:                                    # @putchar
-# %bb.0:                                # %entry
-	out a0 # out a0
-# %bb.1:                                # %entry.endif
-	ret
-.LLLfunc_end101:
-	.size	putchar, .LLLfunc_end101-putchar
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	sqrtf                             # -- Begin function sqrtf
-	.p2align	1
-	.type	sqrtf,@function
-sqrtf:                                    # @sqrtf
-# %bb.0:                                # %entry
-	fmv.w.x	fa5, a0
-    fsqrt.s	fa5, fa5
-    fmv.x.w	a0, fa5
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end107:
-	.size	sqrtf, .Myfunc_end107-sqrtf
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	scanf_float                             # -- Begin function scanf_float
-	.p2align	1
-	.type	scanf_float,@function
-scanf_float:                                    # @scanf_float
-# %bb.0:                                # %entry
-	cin.float fa5 # Cin_float fa5
-    fsw fa5, 0(a1)
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end108:
-	.size	scanf_float, .Myfunc_end108-scanf_float
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	scanf_int                             # -- Begin function scanf_int
-	.p2align	1
-	.type	scanf_int,@function
-scanf_int:                                    # @scanf_int
-# %bb.0:                                # %entry
-	cin.int a0 # Cin_int a0
-    sw a0, 0(a1)
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end109:
-	.size	scanf_int, .Myfunc_end109-scanf_int
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	memcpy                             # -- Begin function memcpy
-	.p2align	1
-	.type	memcpy,@function
-memcpy:
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        sw      a1,-40(s0)
-        sw      a2,-44(s0)
-        lw      a5,-40(s0)
-        sw      a5,-20(s0)
-        lw      a5,-36(s0)
-        sw      a5,-24(s0)
-        j       .L2
-.L3:
-        lw      a4,-20(s0)
-        addi    a5,a4,4
-        sw      a5,-20(s0)
-        lw      a5,-24(s0)
-        addi    a3,a5,4
-        sw      a3,-24(s0)
-        lw      a4,0(a4)
-        sw      a4,0(a5)
-        lw      a5,-44(s0)
-        addi    a5,a5,-4
-        sw      a5,-44(s0)
-.L2:
-        lw      a5,-44(s0)
-        bne     a5,zero,.L3
-        lw      a5,-40(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end110:
-	.size	memcpy, .Myfunc_end110-memcpy
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	__mulsi3                             # -- Begin function __mulsi3
-	.p2align	1
-	.type	__mulsi3,@function
-__mulsi3:                                    # @__mulsi3
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        sw      a1,-40(s0)
-        sw      zero,-20(s0)
-        sw      zero,-24(s0)
-        j       .L4
-.L6:
-        lw      a5,-24(s0)
-        lw      a4,-40(s0)
-        sra     a5,a4,a5
-        andi    a5,a5,1
-        beq     a5,zero,.L5
-        lw      a5,-24(s0)
-        lw      a4,-36(s0)
-        sll     a5,a4,a5
-        lw      a4,-20(s0)
-        add     a5,a4,a5
-        sw      a5,-20(s0)
-.L5:
-        lw      a5,-24(s0)
-        addi    a5,a5,1
-        sw      a5,-24(s0)
-.L4:
-        lw      a4,-24(s0)
-        li      a5,12
-        ble     a4,a5,.L6
-        lw      a5,-20(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end99:
-	.size	__mulsi3, .Myfunc_end99-__mulsi3
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	__udivsi3                             # -- Begin function __udivsi3
-	.p2align	1
-	.type	__udivsi3,@function
-__udivsi3:                                    # @__udivsi3
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        lw      a5,-36(s0)
-        srai    a4,a5,3
-        lw      a5,-36(s0)
-        add     a5,a4,a5
-        srai    a4,a5,1
-        lw      a5,-36(s0)
-        add     a5,a4,a5
-        srai    a5,a5,4
-        sw      a5,-20(s0)
-.L19:
-        lw      a5,-20(s0)
-        slli    a4,a5,2
-        lw      a5,-20(s0)
-        add     a5,a4,a5
-        slli    a5,a5,1
-        lw      a4,-36(s0)
-        sub     a5,a4,a5
-        addi    a5,a5,1
-        sw      a5,-24(s0)
-        lw      a5,-24(s0)
-        srai    a4,a5,3
-        lw      a5,-24(s0)
-        add     a5,a4,a5
-        srai    a4,a5,1
-        lw      a5,-24(s0)
-        add     a5,a4,a5
-        srai    a5,a5,4
-        lw      a4,-20(s0)
-        add     a5,a4,a5
-        sw      a5,-20(s0)
-        lw      a4,-24(s0)
-        li      a5,10
-        bgt     a4,a5,.L19
-        lw      a5,-20(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end97:
-	.size	__udivsi3, .Myfunc_end97-__udivsi3
-                                        # -- End function
-# -----------------------------------------------
-
-
+	.text
+	.attribute	4, 16
+	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
+	.file	"min-rt.ll"
 	.globl	caml_main                       # -- Begin function caml_main
 	.p2align	2
 	.type	caml_main,@function
@@ -342,7 +138,7 @@ caml_main:                              # @caml_main
 	lw	a0, %lo(size)(a0)
 	lui	a1, %hi(dbg)
 	lw	a1, %lo(dbg)(a1)
-	li	a2, 4
+	li	a2, 64                     .#parameter
 	sw	a2, 0(a0)
 	sw	a2, 4(a0)
 	sw	zero, 0(a1)
@@ -352,8 +148,8 @@ caml_main:                              # @caml_main
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end0:
-	.size	caml_main, .LLminfunc_end0-caml_main
+.Lfunc_end0:
+	.size	caml_main, .Lfunc_end0-caml_main
 	.cfi_endproc
                                         # -- End function
 	.globl	xor                             # -- Begin function xor
@@ -369,8 +165,8 @@ xor:                                    # @xor
 	ret
 .LBB1_2:                                # %entry.if
 	tail	min_caml_not@plt
-.LLminfunc_end1:
-	.size	xor, .LLminfunc_end1-xor
+.Lfunc_end1:
+	.size	xor, .Lfunc_end1-xor
 	.cfi_endproc
                                         # -- End function
 	.globl	fsqr                            # -- Begin function fsqr
@@ -382,8 +178,8 @@ fsqr:                                   # @fsqr
 	fmul.s	fa5, fa5, fa5
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end2:
-	.size	fsqr, .LLminfunc_end2-fsqr
+.Lfunc_end2:
+	.size	fsqr, .Lfunc_end2-fsqr
                                         # -- End function
 	.globl	fhalf                           # -- Begin function fhalf
 	.p2align	2
@@ -396,8 +192,8 @@ fhalf:                                  # @fhalf
 	fmul.s	fa5, fa5, fa4
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end3:
-	.size	fhalf, .LLminfunc_end3-fhalf
+.Lfunc_end3:
+	.size	fhalf, .Lfunc_end3-fhalf
                                         # -- End function
 	.globl	o_texturetype                   # -- Begin function o_texturetype
 	.p2align	2
@@ -405,8 +201,8 @@ fhalf:                                  # @fhalf
 o_texturetype:                          # @o_texturetype
 # %bb.0:                                # %entry
 	ret
-.LLminfunc_end4:
-	.size	o_texturetype, .LLminfunc_end4-o_texturetype
+.Lfunc_end4:
+	.size	o_texturetype, .Lfunc_end4-o_texturetype
                                         # -- End function
 	.globl	o_form                          # -- Begin function o_form
 	.p2align	2
@@ -415,8 +211,8 @@ o_form:                                 # @o_form
 # %bb.0:                                # %entry
 	mv	a0, a1
 	ret
-.LLminfunc_end5:
-	.size	o_form, .LLminfunc_end5-o_form
+.Lfunc_end5:
+	.size	o_form, .Lfunc_end5-o_form
                                         # -- End function
 	.globl	o_reflectiontype                # -- Begin function o_reflectiontype
 	.p2align	2
@@ -425,8 +221,8 @@ o_reflectiontype:                       # @o_reflectiontype
 # %bb.0:                                # %entry
 	mv	a0, a2
 	ret
-.LLminfunc_end6:
-	.size	o_reflectiontype, .LLminfunc_end6-o_reflectiontype
+.Lfunc_end6:
+	.size	o_reflectiontype, .Lfunc_end6-o_reflectiontype
                                         # -- End function
 	.globl	o_isinvert                      # -- Begin function o_isinvert
 	.p2align	2
@@ -435,8 +231,8 @@ o_isinvert:                             # @o_isinvert
 # %bb.0:                                # %entry
 	mv	a0, a6
 	ret
-.LLminfunc_end7:
-	.size	o_isinvert, .LLminfunc_end7-o_isinvert
+.Lfunc_end7:
+	.size	o_isinvert, .Lfunc_end7-o_isinvert
                                         # -- End function
 	.globl	o_isrot                         # -- Begin function o_isrot
 	.p2align	2
@@ -445,8 +241,8 @@ o_isrot:                                # @o_isrot
 # %bb.0:                                # %entry
 	mv	a0, a3
 	ret
-.LLminfunc_end8:
-	.size	o_isrot, .LLminfunc_end8-o_isrot
+.Lfunc_end8:
+	.size	o_isrot, .Lfunc_end8-o_isrot
                                         # -- End function
 	.globl	o_param_a                       # -- Begin function o_param_a
 	.p2align	2
@@ -455,8 +251,8 @@ o_param_a:                              # @o_param_a
 # %bb.0:                                # %entry
 	lw	a0, 0(a4)
 	ret
-.LLminfunc_end9:
-	.size	o_param_a, .LLminfunc_end9-o_param_a
+.Lfunc_end9:
+	.size	o_param_a, .Lfunc_end9-o_param_a
                                         # -- End function
 	.globl	o_param_b                       # -- Begin function o_param_b
 	.p2align	2
@@ -465,8 +261,8 @@ o_param_b:                              # @o_param_b
 # %bb.0:                                # %entry
 	lw	a0, 4(a4)
 	ret
-.LLminfunc_end10:
-	.size	o_param_b, .LLminfunc_end10-o_param_b
+.Lfunc_end10:
+	.size	o_param_b, .Lfunc_end10-o_param_b
                                         # -- End function
 	.globl	o_param_c                       # -- Begin function o_param_c
 	.p2align	2
@@ -475,8 +271,8 @@ o_param_c:                              # @o_param_c
 # %bb.0:                                # %entry
 	lw	a0, 8(a4)
 	ret
-.LLminfunc_end11:
-	.size	o_param_c, .LLminfunc_end11-o_param_c
+.Lfunc_end11:
+	.size	o_param_c, .Lfunc_end11-o_param_c
                                         # -- End function
 	.globl	o_param_x                       # -- Begin function o_param_x
 	.p2align	2
@@ -485,8 +281,8 @@ o_param_x:                              # @o_param_x
 # %bb.0:                                # %entry
 	lw	a0, 0(a5)
 	ret
-.LLminfunc_end12:
-	.size	o_param_x, .LLminfunc_end12-o_param_x
+.Lfunc_end12:
+	.size	o_param_x, .Lfunc_end12-o_param_x
                                         # -- End function
 	.globl	o_param_y                       # -- Begin function o_param_y
 	.p2align	2
@@ -495,8 +291,8 @@ o_param_y:                              # @o_param_y
 # %bb.0:                                # %entry
 	lw	a0, 4(a5)
 	ret
-.LLminfunc_end13:
-	.size	o_param_y, .LLminfunc_end13-o_param_y
+.Lfunc_end13:
+	.size	o_param_y, .Lfunc_end13-o_param_y
                                         # -- End function
 	.globl	o_param_z                       # -- Begin function o_param_z
 	.p2align	2
@@ -505,8 +301,8 @@ o_param_z:                              # @o_param_z
 # %bb.0:                                # %entry
 	lw	a0, 8(a5)
 	ret
-.LLminfunc_end14:
-	.size	o_param_z, .LLminfunc_end14-o_param_z
+.Lfunc_end14:
+	.size	o_param_z, .Lfunc_end14-o_param_z
                                         # -- End function
 	.globl	o_diffuse                       # -- Begin function o_diffuse
 	.p2align	2
@@ -515,8 +311,8 @@ o_diffuse:                              # @o_diffuse
 # %bb.0:                                # %entry
 	lw	a0, 0(a7)
 	ret
-.LLminfunc_end15:
-	.size	o_diffuse, .LLminfunc_end15-o_diffuse
+.Lfunc_end15:
+	.size	o_diffuse, .Lfunc_end15-o_diffuse
                                         # -- End function
 	.globl	o_hilight                       # -- Begin function o_hilight
 	.p2align	2
@@ -525,8 +321,8 @@ o_hilight:                              # @o_hilight
 # %bb.0:                                # %entry
 	lw	a0, 4(a7)
 	ret
-.LLminfunc_end16:
-	.size	o_hilight, .LLminfunc_end16-o_hilight
+.Lfunc_end16:
+	.size	o_hilight, .Lfunc_end16-o_hilight
                                         # -- End function
 	.globl	o_color_red                     # -- Begin function o_color_red
 	.p2align	2
@@ -536,8 +332,8 @@ o_color_red:                            # @o_color_red
 	lw	a0, 0(sp)
 	lw	a0, 0(a0)
 	ret
-.LLminfunc_end17:
-	.size	o_color_red, .LLminfunc_end17-o_color_red
+.Lfunc_end17:
+	.size	o_color_red, .Lfunc_end17-o_color_red
                                         # -- End function
 	.globl	o_color_green                   # -- Begin function o_color_green
 	.p2align	2
@@ -547,8 +343,8 @@ o_color_green:                          # @o_color_green
 	lw	a0, 0(sp)
 	lw	a0, 4(a0)
 	ret
-.LLminfunc_end18:
-	.size	o_color_green, .LLminfunc_end18-o_color_green
+.Lfunc_end18:
+	.size	o_color_green, .Lfunc_end18-o_color_green
                                         # -- End function
 	.globl	o_color_blue                    # -- Begin function o_color_blue
 	.p2align	2
@@ -558,8 +354,8 @@ o_color_blue:                           # @o_color_blue
 	lw	a0, 0(sp)
 	lw	a0, 8(a0)
 	ret
-.LLminfunc_end19:
-	.size	o_color_blue, .LLminfunc_end19-o_color_blue
+.Lfunc_end19:
+	.size	o_color_blue, .Lfunc_end19-o_color_blue
                                         # -- End function
 	.globl	o_param_r1                      # -- Begin function o_param_r1
 	.p2align	2
@@ -569,8 +365,8 @@ o_param_r1:                             # @o_param_r1
 	lw	a0, 4(sp)
 	lw	a0, 0(a0)
 	ret
-.LLminfunc_end20:
-	.size	o_param_r1, .LLminfunc_end20-o_param_r1
+.Lfunc_end20:
+	.size	o_param_r1, .Lfunc_end20-o_param_r1
                                         # -- End function
 	.globl	o_param_r2                      # -- Begin function o_param_r2
 	.p2align	2
@@ -580,8 +376,8 @@ o_param_r2:                             # @o_param_r2
 	lw	a0, 4(sp)
 	lw	a0, 4(a0)
 	ret
-.LLminfunc_end21:
-	.size	o_param_r2, .LLminfunc_end21-o_param_r2
+.Lfunc_end21:
+	.size	o_param_r2, .Lfunc_end21-o_param_r2
                                         # -- End function
 	.globl	o_param_r3                      # -- Begin function o_param_r3
 	.p2align	2
@@ -591,8 +387,8 @@ o_param_r3:                             # @o_param_r3
 	lw	a0, 4(sp)
 	lw	a0, 8(a0)
 	ret
-.LLminfunc_end22:
-	.size	o_param_r3, .LLminfunc_end22-o_param_r3
+.Lfunc_end22:
+	.size	o_param_r3, .Lfunc_end22-o_param_r3
                                         # -- End function
 	.globl	normalize_vector                # -- Begin function normalize_vector
 	.p2align	2
@@ -640,8 +436,8 @@ normalize_vector:                       # @normalize_vector
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end23:
-	.size	normalize_vector, .LLminfunc_end23-normalize_vector
+.Lfunc_end23:
+	.size	normalize_vector, .Lfunc_end23-normalize_vector
 	.cfi_endproc
                                         # -- End function
 	.globl	sgn                             # -- Begin function sgn
@@ -662,8 +458,8 @@ sgn:                                    # @sgn
 	fmv.w.x	fa5, a0
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end24:
-	.size	sgn, .LLminfunc_end24-sgn
+.Lfunc_end24:
+	.size	sgn, .Lfunc_end24-sgn
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function rad
@@ -681,8 +477,8 @@ rad:                                    # @rad
 	fmul.s	fa5, fa4, fa5
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end25:
-	.size	rad, .LLminfunc_end25-rad
+.Lfunc_end25:
+	.size	rad, .Lfunc_end25-rad
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function read_environ
@@ -825,8 +621,8 @@ read_environ:                           # @read_environ
 	lw	s4, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end26:
-	.size	read_environ, .LLminfunc_end26-read_environ
+.Lfunc_end26:
+	.size	read_environ, .Lfunc_end26-read_environ
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -1236,8 +1032,8 @@ read_nth_object:                        # @read_nth_object
 	lw	s11, 28(sp)                     # 4-byte Folded Reload
 	addi	sp, sp, 80
 	ret
-.LLminfunc_end27:
-	.size	read_nth_object, .LLminfunc_end27-read_nth_object
+.Lfunc_end27:
+	.size	read_nth_object, .Lfunc_end27-read_nth_object
 	.cfi_endproc
                                         # -- End function
 	.globl	read_object                     # -- Begin function read_object
@@ -1272,8 +1068,8 @@ read_object:                            # @read_object
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end28:
-	.size	read_object, .LLminfunc_end28-read_object
+.Lfunc_end28:
+	.size	read_object, .Lfunc_end28-read_object
 	.cfi_endproc
                                         # -- End function
 	.globl	read_all_object                 # -- Begin function read_all_object
@@ -1308,8 +1104,8 @@ read_all_object:                        # @read_all_object
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end29:
-	.size	read_all_object, .LLminfunc_end29-read_all_object
+.Lfunc_end29:
+	.size	read_all_object, .Lfunc_end29-read_all_object
 	.cfi_endproc
                                         # -- End function
 	.globl	read_net_item                   # -- Begin function read_net_item
@@ -1349,8 +1145,8 @@ read_net_item:                          # @read_net_item
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_create_array_int@plt
-.LLminfunc_end30:
-	.size	read_net_item, .LLminfunc_end30-read_net_item
+.Lfunc_end30:
+	.size	read_net_item, .Lfunc_end30-read_net_item
 	.cfi_endproc
                                         # -- End function
 	.globl	read_or_network                 # -- Begin function read_or_network
@@ -1392,8 +1188,8 @@ read_or_network:                        # @read_or_network
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_create_array_int_array@plt
-.LLminfunc_end31:
-	.size	read_or_network, .LLminfunc_end31-read_or_network
+.Lfunc_end31:
+	.size	read_or_network, .Lfunc_end31-read_or_network
 	.cfi_endproc
                                         # -- End function
 	.globl	read_and_network                # -- Begin function read_and_network
@@ -1435,8 +1231,8 @@ read_and_network:                       # @read_and_network
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end32:
-	.size	read_and_network, .LLminfunc_end32-read_and_network
+.Lfunc_end32:
+	.size	read_and_network, .Lfunc_end32-read_and_network
 	.cfi_endproc
                                         # -- End function
 	.globl	read_parameter                  # -- Begin function read_parameter
@@ -1494,8 +1290,8 @@ read_parameter:                         # @read_parameter
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end33:
-	.size	read_parameter, .LLminfunc_end33-read_parameter
+.Lfunc_end33:
+	.size	read_parameter, .Lfunc_end33-read_parameter
 	.cfi_endproc
                                         # -- End function
 	.globl	solver_rect                     # -- Begin function solver_rect
@@ -1682,8 +1478,8 @@ solver_rect:                            # @solver_rect
 	lw	s3, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end34:
-	.size	solver_rect, .LLminfunc_end34-solver_rect
+.Lfunc_end34:
+	.size	solver_rect, .Lfunc_end34-solver_rect
 	.cfi_endproc
                                         # -- End function
 	.globl	solver_surface                  # -- Begin function solver_surface
@@ -1727,8 +1523,8 @@ solver_surface:                         # @solver_surface
 .LBB35_2:
 	li	a0, 0
 	ret
-.LLminfunc_end35:
-	.size	solver_surface, .LLminfunc_end35-solver_surface
+.Lfunc_end35:
+	.size	solver_surface, .Lfunc_end35-solver_surface
                                         # -- End function
 	.globl	in_prod_sqr_obj                 # -- Begin function in_prod_sqr_obj
 	.p2align	2
@@ -1752,8 +1548,8 @@ in_prod_sqr_obj:                        # @in_prod_sqr_obj
 	fadd.s	fa5, fa5, fa4
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end36:
-	.size	in_prod_sqr_obj, .LLminfunc_end36-in_prod_sqr_obj
+.Lfunc_end36:
+	.size	in_prod_sqr_obj, .Lfunc_end36-in_prod_sqr_obj
                                         # -- End function
 	.globl	in_prod_co_objrot               # -- Begin function in_prod_co_objrot
 	.p2align	2
@@ -1778,8 +1574,8 @@ in_prod_co_objrot:                      # @in_prod_co_objrot
 	fadd.s	fa5, fa4, fa5
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end37:
-	.size	in_prod_co_objrot, .LLminfunc_end37-in_prod_co_objrot
+.Lfunc_end37:
+	.size	in_prod_co_objrot, .Lfunc_end37-in_prod_co_objrot
                                         # -- End function
 	.globl	solver2nd_mul_b                 # -- Begin function solver2nd_mul_b
 	.p2align	2
@@ -1808,8 +1604,8 @@ solver2nd_mul_b:                        # @solver2nd_mul_b
 	fadd.s	fa5, fa5, fa4
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end38:
-	.size	solver2nd_mul_b, .LLminfunc_end38-solver2nd_mul_b
+.Lfunc_end38:
+	.size	solver2nd_mul_b, .Lfunc_end38-solver2nd_mul_b
                                         # -- End function
 	.globl	solver2nd_rot_b                 # -- Begin function solver2nd_rot_b
 	.p2align	2
@@ -1845,8 +1641,8 @@ solver2nd_rot_b:                        # @solver2nd_rot_b
 	fadd.s	fa5, fa4, fa5
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end39:
-	.size	solver2nd_rot_b, .LLminfunc_end39-solver2nd_rot_b
+.Lfunc_end39:
+	.size	solver2nd_rot_b, .Lfunc_end39-solver2nd_rot_b
                                         # -- End function
 	.globl	solver_second                   # -- Begin function solver_second
 	.p2align	2
@@ -1999,8 +1795,8 @@ solver_second:                          # @solver_second
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end40:
-	.size	solver_second, .LLminfunc_end40-solver_second
+.Lfunc_end40:
+	.size	solver_second, .Lfunc_end40-solver_second
 	.cfi_endproc
                                         # -- End function
 	.globl	solver                          # -- Begin function solver
@@ -2104,8 +1900,8 @@ solver:                                 # @solver
 	lw	s2, 16(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end41:
-	.size	solver, .LLminfunc_end41-solver
+.Lfunc_end41:
+	.size	solver, .Lfunc_end41-solver
 	.cfi_endproc
                                         # -- End function
 	.globl	is_rect_outside                 # -- Begin function is_rect_outside
@@ -2164,8 +1960,8 @@ is_rect_outside:                        # @is_rect_outside
 	lw	s2, 0(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_not@plt
-.LLminfunc_end42:
-	.size	is_rect_outside, .LLminfunc_end42-is_rect_outside
+.Lfunc_end42:
+	.size	is_rect_outside, .Lfunc_end42-is_rect_outside
 	.cfi_endproc
                                         # -- End function
 	.globl	is_plane_outside                # -- Begin function is_plane_outside
@@ -2201,8 +1997,8 @@ is_plane_outside:                       # @is_plane_outside
 	addi	sp, sp, 16
 .LBB43_2:                               # %xor.exit
 	tail	min_caml_not@plt
-.LLminfunc_end43:
-	.size	is_plane_outside, .LLminfunc_end43-is_plane_outside
+.Lfunc_end43:
+	.size	is_plane_outside, .Lfunc_end43-is_plane_outside
 	.cfi_endproc
                                         # -- End function
 	.globl	is_second_outside               # -- Begin function is_second_outside
@@ -2264,8 +2060,8 @@ is_second_outside:                      # @is_second_outside
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_not@plt
-.LLminfunc_end44:
-	.size	is_second_outside, .LLminfunc_end44-is_second_outside
+.Lfunc_end44:
+	.size	is_second_outside, .Lfunc_end44-is_second_outside
 	.cfi_endproc
                                         # -- End function
 	.globl	is_outside                      # -- Begin function is_outside
@@ -2401,8 +2197,8 @@ is_outside:                             # @is_outside
 	lw	s2, 0(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_not@plt
-.LLminfunc_end45:
-	.size	is_outside, .LLminfunc_end45-is_outside
+.Lfunc_end45:
+	.size	is_outside, .Lfunc_end45-is_outside
 	.cfi_endproc
                                         # -- End function
 	.globl	check_all_inside                # -- Begin function check_all_inside
@@ -2470,8 +2266,8 @@ check_all_inside:                       # @check_all_inside
 	lw	s3, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end46:
-	.size	check_all_inside, .LLminfunc_end46-check_all_inside
+.Lfunc_end46:
+	.size	check_all_inside, .Lfunc_end46-check_all_inside
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -2635,8 +2431,8 @@ shadow_check_and_group:                 # @shadow_check_and_group
 	lw	s10, 16(sp)                     # 4-byte Folded Reload
 	addi	sp, sp, 64
 	ret
-.LLminfunc_end47:
-	.size	shadow_check_and_group, .LLminfunc_end47-shadow_check_and_group
+.Lfunc_end47:
+	.size	shadow_check_and_group, .Lfunc_end47-shadow_check_and_group
 	.cfi_endproc
                                         # -- End function
 	.globl	shadow_check_one_or_group       # -- Begin function shadow_check_one_or_group
@@ -2695,8 +2491,8 @@ shadow_check_one_or_group:              # @shadow_check_one_or_group
 	lw	s3, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end48:
-	.size	shadow_check_one_or_group, .LLminfunc_end48-shadow_check_one_or_group
+.Lfunc_end48:
+	.size	shadow_check_one_or_group, .Lfunc_end48-shadow_check_one_or_group
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -2840,8 +2636,8 @@ shadow_check_one_or_matrix:             # @shadow_check_one_or_matrix
 .LBB49_16:                              # %entry.endif.loopexit39
 	li	a0, 0
 	j	.LBB49_15
-.LLminfunc_end49:
-	.size	shadow_check_one_or_matrix, .LLminfunc_end49-shadow_check_one_or_matrix
+.Lfunc_end49:
+	.size	shadow_check_one_or_matrix, .Lfunc_end49-shadow_check_one_or_matrix
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -3054,8 +2850,8 @@ solve_each_element:                     # @solve_each_element
 	lw	s11, 44(sp)                     # 4-byte Folded Reload
 	addi	sp, sp, 96
 	ret
-.LLminfunc_end50:
-	.size	solve_each_element, .LLminfunc_end50-solve_each_element
+.Lfunc_end50:
+	.size	solve_each_element, .Lfunc_end50-solve_each_element
 	.cfi_endproc
                                         # -- End function
 	.globl	solve_one_or_network            # -- Begin function solve_one_or_network
@@ -3106,8 +2902,8 @@ solve_one_or_network:                   # @solve_one_or_network
 	lw	s3, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 32
 	ret
-.LLminfunc_end51:
-	.size	solve_one_or_network, .LLminfunc_end51-solve_one_or_network
+.Lfunc_end51:
+	.size	solve_one_or_network, .Lfunc_end51-solve_one_or_network
 	.cfi_endproc
                                         # -- End function
 	.globl	trace_or_matrix                 # -- Begin function trace_or_matrix
@@ -3241,8 +3037,8 @@ trace_or_matrix:                        # @trace_or_matrix
 	lw	s10, 0(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 48
 	ret
-.LLminfunc_end52:
-	.size	trace_or_matrix, .LLminfunc_end52-trace_or_matrix
+.Lfunc_end52:
+	.size	trace_or_matrix, .Lfunc_end52-trace_or_matrix
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -3286,8 +3082,8 @@ tracer:                                 # @tracer
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end53:
-	.size	tracer, .LLminfunc_end53-tracer
+.Lfunc_end53:
+	.size	tracer, .Lfunc_end53-tracer
 	.cfi_endproc
                                         # -- End function
 	.globl	get_nvector_rect                # -- Begin function get_nvector_rect
@@ -3369,8 +3165,8 @@ get_nvector_rect:                       # @get_nvector_rect
 	fsw	fa5, 8(a0)
 .LBB54_16:                              # %entry.endif
 	ret
-.LLminfunc_end54:
-	.size	get_nvector_rect, .LLminfunc_end54-get_nvector_rect
+.Lfunc_end54:
+	.size	get_nvector_rect, .Lfunc_end54-get_nvector_rect
                                         # -- End function
 	.globl	get_nvector_plane               # -- Begin function get_nvector_plane
 	.p2align	2
@@ -3389,8 +3185,8 @@ get_nvector_plane:                      # @get_nvector_plane
 	fneg.s	fa5, fa5
 	fsw	fa5, 8(a0)
 	ret
-.LLminfunc_end55:
-	.size	get_nvector_plane, .LLminfunc_end55-get_nvector_plane
+.Lfunc_end55:
+	.size	get_nvector_plane, .Lfunc_end55-get_nvector_plane
                                         # -- End function
 	.globl	get_nvector_second_norot        # -- Begin function get_nvector_second_norot
 	.p2align	2
@@ -3455,8 +3251,8 @@ get_nvector_second_norot:               # @get_nvector_second_norot
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end56:
-	.size	get_nvector_second_norot, .LLminfunc_end56-get_nvector_second_norot
+.Lfunc_end56:
+	.size	get_nvector_second_norot, .Lfunc_end56-get_nvector_second_norot
 	.cfi_endproc
                                         # -- End function
 	.globl	get_nvector_second_rot          # -- Begin function get_nvector_second_rot
@@ -3557,8 +3353,8 @@ get_nvector_second_rot:                 # @get_nvector_second_rot
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.LLminfunc_end57:
-	.size	get_nvector_second_rot, .LLminfunc_end57-get_nvector_second_rot
+.Lfunc_end57:
+	.size	get_nvector_second_rot, .Lfunc_end57-get_nvector_second_rot
 	.cfi_endproc
                                         # -- End function
 	.globl	get_nvector                     # -- Begin function get_nvector
@@ -3773,8 +3569,8 @@ get_nvector:                            # @get_nvector
 	fsw	fa4, 0(a0)
 	sw	zero, 4(a0)
 	j	.LBB58_9
-.LLminfunc_end58:
-	.size	get_nvector, .LLminfunc_end58-get_nvector
+.Lfunc_end58:
+	.size	get_nvector, .Lfunc_end58-get_nvector
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
@@ -4081,8 +3877,8 @@ utexture:                               # @utexture
 	lw	s5, 36(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 64
 	ret
-.LLminfunc_end59:
-	.size	utexture, .LLminfunc_end59-utexture
+.Lfunc_end59:
+	.size	utexture, .Lfunc_end59-utexture
 	.cfi_endproc
                                         # -- End function
 	.globl	in_prod                         # -- Begin function in_prod
@@ -4103,8 +3899,8 @@ in_prod:                                # @in_prod
 	fadd.s	fa5, fa5, fa4
 	fmv.x.w	a0, fa5
 	ret
-.LLminfunc_end60:
-	.size	in_prod, .LLminfunc_end60-in_prod
+.Lfunc_end60:
+	.size	in_prod, .Lfunc_end60-in_prod
                                         # -- End function
 	.globl	accumulate_vec_mul              # -- Begin function accumulate_vec_mul
 	.p2align	2
@@ -4128,8 +3924,8 @@ accumulate_vec_mul:                     # @accumulate_vec_mul
 	fadd.s	fa5, fa4, fa5
 	fsw	fa5, 8(a0)
 	ret
-.LLminfunc_end61:
-	.size	accumulate_vec_mul, .LLminfunc_end61-accumulate_vec_mul
+.Lfunc_end61:
+	.size	accumulate_vec_mul, .Lfunc_end61-accumulate_vec_mul
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function raytracing
@@ -4511,8 +4307,8 @@ raytracing:                             # @raytracing
 	lw	s11, 108(sp)                    # 4-byte Folded Reload
 	addi	sp, sp, 160
 	ret
-.LLminfunc_end62:
-	.size	raytracing, .LLminfunc_end62-raytracing
+.Lfunc_end62:
+	.size	raytracing, .Lfunc_end62-raytracing
 	.cfi_endproc
                                         # -- End function
 	.globl	write_rgb                       # -- Begin function write_rgb
@@ -4557,8 +4353,8 @@ write_rgb:                              # @write_rgb
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_print_byte@plt
-.LLminfunc_end63:
-	.size	write_rgb, .LLminfunc_end63-write_rgb
+.Lfunc_end63:
+	.size	write_rgb, .Lfunc_end63-write_rgb
 	.cfi_endproc
                                         # -- End function
 	.globl	write_ppm_header                # -- Begin function write_ppm_header
@@ -4596,8 +4392,8 @@ write_ppm_header:                       # @write_ppm_header
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	min_caml_print_byte@plt
-.LLminfunc_end64:
-	.size	write_ppm_header, .LLminfunc_end64-write_ppm_header
+.Lfunc_end64:
+	.size	write_ppm_header, .Lfunc_end64-write_ppm_header
 	.cfi_endproc
                                         # -- End function
 	.globl	scan_point                      # -- Begin function scan_point
@@ -4771,8 +4567,8 @@ scan_point:                             # @scan_point
 	lw	s11, 12(sp)                     # 4-byte Folded Reload
 	addi	sp, sp, 64
 	ret
-.LLminfunc_end65:
-	.size	scan_point, .LLminfunc_end65-scan_point
+.Lfunc_end65:
+	.size	scan_point, .Lfunc_end65-scan_point
 	.cfi_endproc
                                         # -- End function
 	.globl	scan_line                       # -- Begin function scan_line
@@ -4883,8 +4679,8 @@ scan_line:                              # @scan_line
 	lw	s9, 20(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 64
 	ret
-.LLminfunc_end66:
-	.size	scan_line, .LLminfunc_end66-scan_line
+.Lfunc_end66:
+	.size	scan_line, .Lfunc_end66-scan_line
 	.cfi_endproc
                                         # -- End function
 	.globl	scan_start                      # -- Begin function scan_start
@@ -4939,8 +4735,8 @@ scan_start:                             # @scan_start
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	scan_line@plt
-.LLminfunc_end67:
-	.size	scan_start, .LLminfunc_end67-scan_start
+.Lfunc_end67:
+	.size	scan_start, .Lfunc_end67-scan_start
 	.cfi_endproc
                                         # -- End function
 	.globl	rt                              # -- Begin function rt
@@ -4964,11 +4760,241 @@ rt:                                     # @rt
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 16
 	tail	scan_start@plt
-.LLminfunc_end68:
-	.size	rt, .LLminfunc_end68-rt
+.Lfunc_end68:
+	.size	rt, .Lfunc_end68-rt
 	.cfi_endproc
                                         # -- End function
+	.section	".note.GNU-stack","",@progbits
+	.addrsig
 
+# -----------------------------------------------
+	.globl	calloc                             # -- Begin function calloc
+	.p2align	1
+	.type	calloc,@function
+calloc:                                    # @calloc
+# %bb.0:                                # %entry
+	slli a1, a0, 2 # a0 = a0 * 4
+    mv a0, tp
+    add tp, tp, a1
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end100:
+	.size	calloc, .Myfunc_end100-calloc
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	putchar                             # -- Begin function putchar
+	.p2align	1
+	.type	putchar,@function
+putchar:                                    # @putchar
+# %bb.0:                                # %entry
+	out a0 # out a0
+# %bb.1:                                # %entry.endif
+	ret
+.LLvLfunc_end101:
+	.size	putchar, .LLvLfunc_end101-putchar
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	sqrtf                             # -- Begin function sqrtf
+	.p2align	1
+	.type	sqrtf,@function
+sqrtf:                                    # @sqrtf
+# %bb.0:                                # %entry
+	fmv.w.x	fa5, a0
+    fsqrt.s	fa5, fa5
+    fmv.x.w	a0, fa5
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end107:
+	.size	sqrtf, .Myfunc_end107-sqrtf
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	scanf_float                             # -- Begin function scanf_float
+	.p2align	1
+	.type	scanf_float,@function
+scanf_float:                                    # @scanf_float
+# %bb.0:                                # %entry
+	cin.float fa5 # Cin_float fa5
+    fsw fa5, 0(a1)
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end108:
+	.size	scanf_float, .Myfunc_end108-scanf_float
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	scanf_int                             # -- Begin function scanf_int
+	.p2align	1
+	.type	scanf_int,@function
+scanf_int:                                    # @scanf_int
+# %bb.0:                                # %entry
+	cin.int a0 # Cin_int a0
+    sw a0, 0(a1)
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end109:
+	.size	scanf_int, .Myfunc_end109-scanf_int
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	memcpy                             # -- Begin function memcpy
+	.p2align	1
+	.type	memcpy,@function
+memcpy:
+        addi    sp,sp,-48
+        sw      ra,44(sp)
+        sw      s0,40(sp)
+        addi    s0,sp,48
+        sw      a0,-36(s0)
+        sw      a1,-40(s0)
+        sw      a2,-44(s0)
+        lw      a5,-40(s0)
+        sw      a5,-20(s0)
+        lw      a5,-36(s0)
+        sw      a5,-24(s0)
+        j       .L2
+.L3:
+        lw      a4,-20(s0)
+        addi    a5,a4,4
+        sw      a5,-20(s0)
+        lw      a5,-24(s0)
+        addi    a3,a5,4
+        sw      a3,-24(s0)
+        lw      a4,0(a4)
+        sw      a4,0(a5)
+        lw      a5,-44(s0)
+        addi    a5,a5,-4
+        sw      a5,-44(s0)
+.L2:
+        lw      a5,-44(s0)
+        bne     a5,zero,.L3
+        lw      a5,-40(s0)
+        mv      a0,a5
+        lw      ra,44(sp)
+        lw      s0,40(sp)
+        addi    sp,sp,48
+        jr      ra
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end110:
+	.size	memcpy, .Myfunc_end110-memcpy
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	__mulsi3                             # -- Begin function __mulsi3
+	.p2align	1
+	.type	__mulsi3,@function
+__mulsi3:                                    # @__mulsi3
+        addi    sp,sp,-48
+        sw      ra,44(sp)
+        sw      s0,40(sp)
+        addi    s0,sp,48
+        sw      a0,-36(s0)
+        sw      a1,-40(s0)
+        sw      zero,-20(s0)
+        sw      zero,-24(s0)
+        j       .L4
+.L6:
+        lw      a5,-24(s0)
+        lw      a4,-40(s0)
+        sra     a5,a4,a5
+        andi    a5,a5,1
+        beq     a5,zero,.L5
+        lw      a5,-24(s0)
+        lw      a4,-36(s0)
+        sll     a5,a4,a5
+        lw      a4,-20(s0)
+        add     a5,a4,a5
+        sw      a5,-20(s0)
+.L5:
+        lw      a5,-24(s0)
+        addi    a5,a5,1
+        sw      a5,-24(s0)
+.L4:
+        lw      a4,-24(s0)
+        li      a5,12
+        ble     a4,a5,.L6
+        lw      a5,-20(s0)
+        mv      a0,a5
+        lw      ra,44(sp)
+        lw      s0,40(sp)
+        addi    sp,sp,48
+        jr      ra
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end99:
+	.size	__mulsi3, .Myfunc_end99-__mulsi3
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	__udivsi3                             # -- Begin function __udivsi3
+	.p2align	1
+	.type	__udivsi3,@function
+__udivsi3:                                    # @__udivsi3
+        addi    sp,sp,-48
+        sw      ra,44(sp)
+        sw      s0,40(sp)
+        addi    s0,sp,48
+        sw      a0,-36(s0)
+        lw      a5,-36(s0)
+        srai    a4,a5,3
+        lw      a5,-36(s0)
+        add     a5,a4,a5
+        srai    a4,a5,1
+        lw      a5,-36(s0)
+        add     a5,a4,a5
+        srai    a5,a5,4
+        sw      a5,-20(s0)
+.L19:
+        lw      a5,-20(s0)
+        slli    a4,a5,2
+        lw      a5,-20(s0)
+        add     a5,a4,a5
+        slli    a5,a5,1
+        lw      a4,-36(s0)
+        sub     a5,a4,a5
+        addi    a5,a5,1
+        sw      a5,-24(s0)
+        lw      a5,-24(s0)
+        srai    a4,a5,3
+        lw      a5,-24(s0)
+        add     a5,a4,a5
+        srai    a4,a5,1
+        lw      a5,-24(s0)
+        add     a5,a4,a5
+        srai    a5,a5,4
+        lw      a4,-20(s0)
+        add     a5,a4,a5
+        sw      a5,-20(s0)
+        lw      a4,-24(s0)
+        li      a5,10
+        bgt     a4,a5,.L19
+        lw      a5,-20(s0)
+        mv      a0,a5
+        lw      ra,44(sp)
+        lw      s0,40(sp)
+        addi    sp,sp,48
+        jr      ra
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end97:
+	.size	__udivsi3, .Myfunc_end97-__udivsi3
+                                        # -- End function
+# -----------------------------------------------
+
+	.text
+	.attribute	4, 16
+	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
+	.file	"lib.c"
 	.globl	init                            # -- Begin function init
 	.p2align	2
 	.type	init,@function
@@ -5021,8 +5047,8 @@ init:                                   # @init
 	lw	s2, 0(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end0:
-	.size	init, .Lfunc_end0-init
+.vLfunc_end0:
+	.size	init, .vLfunc_end0-init
                                         # -- End function
 	.globl	min_caml_not                    # -- Begin function min_caml_not
 	.p2align	2
@@ -5031,26 +5057,17 @@ min_caml_not:                           # @min_caml_not
 # %bb.0:
 	seqz	a0, a0
 	ret
-.Lfunc_end1:
-	.size	min_caml_not, .Lfunc_end1-min_caml_not
+.vLfunc_end1:
+	.size	min_caml_not, .vLfunc_end1-min_caml_not
                                         # -- End function
 	.globl	min_caml_print_byte             # -- Begin function min_caml_print_byte
 	.p2align	2
 	.type	min_caml_print_byte,@function
 min_caml_print_byte:                    # @min_caml_print_byte
 # %bb.0:
-	lui	a1, %hi(buffer_pos)
-	lw	a2, %lo(buffer_pos)(a1)
-	addi	a3, a2, 1
-	sw	a3, %lo(buffer_pos)(a1)
-	lui	a1, %hi(buffer)
-	addi	a1, a1, %lo(buffer)
-	slli	a2, a2, 2
-	add	a1, a1, a2
-	sw	a0, 0(a1)
-	ret
-.Lfunc_end2:
-	.size	min_caml_print_byte, .Lfunc_end2-min_caml_print_byte
+	tail	putchar
+.vLfunc_end2:
+	.size	min_caml_print_byte, .vLfunc_end2-min_caml_print_byte
                                         # -- End function
 	.globl	min_caml_print_int              # -- Begin function min_caml_print_int
 	.p2align	2
@@ -5066,27 +5083,20 @@ min_caml_print_int:                     # @min_caml_print_int
 	sw	s2, 64(sp)                      # 4-byte Folded Spill
 	sw	s3, 60(sp)                      # 4-byte Folded Spill
 	sw	s4, 56(sp)                      # 4-byte Folded Spill
+	sw	s5, 52(sp)                      # 4-byte Folded Spill
 	mv	s0, a0
 	bgez	a0, .LBB3_3
 # %bb.2:
-	lui	a0, %hi(buffer_pos)
-	lw	a1, %lo(buffer_pos)(a0)
-	addi	a2, a1, 1
-	sw	a2, %lo(buffer_pos)(a0)
-	lui	a0, %hi(buffer)
-	addi	a0, a0, %lo(buffer)
-	slli	a1, a1, 2
-	add	a0, a0, a1
-	li	a1, 45
-	sw	a1, 0(a0)
+	li	a0, 45
+	call	putchar
 	neg	s0, s0
 .LBB3_3:
 	li	s2, 1
-	addi	a0, sp, 4
-	li	s3, 10
+	mv	s3, sp
+	li	s4, 9
 .LBB3_4:                                # =>This Inner Loop Header: Depth=1
 	mv	s1, s0
-	mv	s4, a0
+	mv	s5, s3
 	li	a1, 10
 	mv	a0, s0
 	call	__udivsi3@plt
@@ -5094,52 +5104,34 @@ min_caml_print_int:                     # @min_caml_print_int
 	li	a1, 10
 	call	__mulsi3@plt
 	sub	a0, s1, a0
-	ori	a1, a0, 48
-	addi	a0, s4, 4
-	sw	a1, 4(s4)
+	ori	a0, a0, 48
+	addi	s3, s3, 4
+	sw	a0, 4(s5)
 	addi	s2, s2, 1
-	bgeu	s1, s3, .LBB3_4
+	bltu	s4, s1, .LBB3_4
 # %bb.5:
-	lui	a1, %hi(buffer_pos)
-	lw	a1, %lo(buffer_pos)(a1)
-	slli	a2, a1, 2
-	lui	a3, %hi(buffer)
-	addi	a3, a3, %lo(buffer)
-	add	a2, a3, a2
-	li	a3, 1
+	li	s0, 1
 .LBB3_6:                                # =>This Inner Loop Header: Depth=1
-	lw	a4, 0(a0)
-	addi	a1, a1, 1
-	sw	a4, 0(a2)
+	lw	a0, 0(s3)
+	call	putchar
 	addi	s2, s2, -1
-	addi	a0, a0, -4
-	addi	a2, a2, 4
-	bltu	a3, s2, .LBB3_6
+	addi	s3, s3, -4
+	bltu	s0, s2, .LBB3_6
 # %bb.7:
-	lui	a0, %hi(buffer_pos)
-	sw	a1, %lo(buffer_pos)(a0)
 	lw	ra, 76(sp)                      # 4-byte Folded Reload
 	lw	s0, 72(sp)                      # 4-byte Folded Reload
 	lw	s1, 68(sp)                      # 4-byte Folded Reload
 	lw	s2, 64(sp)                      # 4-byte Folded Reload
 	lw	s3, 60(sp)                      # 4-byte Folded Reload
 	lw	s4, 56(sp)                      # 4-byte Folded Reload
+	lw	s5, 52(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 80
 	ret
 .LBB3_8:
-	lui	a0, %hi(buffer_pos)
-	lw	a1, %lo(buffer_pos)(a0)
-	addi	a2, a1, 1
-	sw	a2, %lo(buffer_pos)(a0)
-	lui	a0, %hi(buffer)
-	addi	a0, a0, %lo(buffer)
-	slli	a1, a1, 2
-	add	a0, a0, a1
-	li	a1, 48
-	sw	a1, 0(a0)
-	ret
-.Lfunc_end3:
-	.size	min_caml_print_int, .Lfunc_end3-min_caml_print_int
+	li	a0, 48
+	tail	putchar
+.vLfunc_end3:
+	.size	min_caml_print_int, .vLfunc_end3-min_caml_print_int
                                         # -- End function
 	.globl	min_caml_read_int               # -- Begin function min_caml_read_int
 	.p2align	2
@@ -5156,8 +5148,8 @@ min_caml_read_int:                      # @min_caml_read_int
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end4:
-	.size	min_caml_read_int, .Lfunc_end4-min_caml_read_int
+.vLfunc_end4:
+	.size	min_caml_read_int, .vLfunc_end4-min_caml_read_int
                                         # -- End function
 	.globl	min_caml_float_of_int           # -- Begin function min_caml_float_of_int
 	.p2align	2
@@ -5167,8 +5159,8 @@ min_caml_float_of_int:                  # @min_caml_float_of_int
 	fcvt.s.w	fa5, a0
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end5:
-	.size	min_caml_float_of_int, .Lfunc_end5-min_caml_float_of_int
+.vLfunc_end5:
+	.size	min_caml_float_of_int, .vLfunc_end5-min_caml_float_of_int
                                         # -- End function
 	.globl	min_caml_abs_float              # -- Begin function min_caml_abs_float
 	.p2align	2
@@ -5178,8 +5170,8 @@ min_caml_abs_float:                     # @min_caml_abs_float
 	slli	a0, a0, 1
 	srli	a0, a0, 1
 	ret
-.Lfunc_end6:
-	.size	min_caml_abs_float, .Lfunc_end6-min_caml_abs_float
+.vLfunc_end6:
+	.size	min_caml_abs_float, .vLfunc_end6-min_caml_abs_float
                                         # -- End function
 	.globl	min_caml_int_of_float           # -- Begin function min_caml_int_of_float
 	.p2align	2
@@ -5189,8 +5181,8 @@ min_caml_int_of_float:                  # @min_caml_int_of_float
 	fmv.w.x	fa5, a0
 	fcvt.w.s	a0, fa5, rtz
 	ret
-.Lfunc_end7:
-	.size	min_caml_int_of_float, .Lfunc_end7-min_caml_int_of_float
+.vLfunc_end7:
+	.size	min_caml_int_of_float, .vLfunc_end7-min_caml_int_of_float
                                         # -- End function
 	.globl	min_caml_create_array_int_array # -- Begin function min_caml_create_array_int_array
 	.p2align	2
@@ -5219,8 +5211,8 @@ min_caml_create_array_int_array:        # @min_caml_create_array_int_array
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end8:
-	.size	min_caml_create_array_int_array, .Lfunc_end8-min_caml_create_array_int_array
+.vLfunc_end8:
+	.size	min_caml_create_array_int_array, .vLfunc_end8-min_caml_create_array_int_array
                                         # -- End function
 	.globl	min_caml_create_array_int       # -- Begin function min_caml_create_array_int
 	.p2align	2
@@ -5249,8 +5241,8 @@ min_caml_create_array_int:              # @min_caml_create_array_int
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end9:
-	.size	min_caml_create_array_int, .Lfunc_end9-min_caml_create_array_int
+.vLfunc_end9:
+	.size	min_caml_create_array_int, .vLfunc_end9-min_caml_create_array_int
                                         # -- End function
 	.globl	min_caml_create_array_float     # -- Begin function min_caml_create_array_float
 	.p2align	2
@@ -5280,8 +5272,8 @@ min_caml_create_array_float:            # @min_caml_create_array_float
 	lw	s1, 4(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end10:
-	.size	min_caml_create_array_float, .Lfunc_end10-min_caml_create_array_float
+.vLfunc_end10:
+	.size	min_caml_create_array_float, .vLfunc_end10-min_caml_create_array_float
                                         # -- End function
 	.globl	min_caml_read_float             # -- Begin function min_caml_read_float
 	.p2align	2
@@ -5298,27 +5290,18 @@ min_caml_read_float:                    # @min_caml_read_float
 	lw	ra, 12(sp)                      # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end11:
-	.size	min_caml_read_float, .Lfunc_end11-min_caml_read_float
+.vLfunc_end11:
+	.size	min_caml_read_float, .vLfunc_end11-min_caml_read_float
                                         # -- End function
 	.globl	min_caml_print_newline          # -- Begin function min_caml_print_newline
 	.p2align	2
 	.type	min_caml_print_newline,@function
 min_caml_print_newline:                 # @min_caml_print_newline
 # %bb.0:
-	lui	a0, %hi(buffer_pos)
-	lw	a1, %lo(buffer_pos)(a0)
-	addi	a2, a1, 1
-	sw	a2, %lo(buffer_pos)(a0)
-	lui	a0, %hi(buffer)
-	addi	a0, a0, %lo(buffer)
-	slli	a1, a1, 2
-	add	a0, a0, a1
-	li	a1, 10
-	sw	a1, 0(a0)
-	ret
-.Lfunc_end12:
-	.size	min_caml_print_newline, .Lfunc_end12-min_caml_print_newline
+	li	a0, 10
+	tail	putchar
+.vLfunc_end12:
+	.size	min_caml_print_newline, .vLfunc_end12-min_caml_print_newline
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function sin2
@@ -5362,8 +5345,8 @@ sin2:                                   # @sin2
 	fadd.s	fa5, fa3, fa5
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end13:
-	.size	sin2, .Lfunc_end13-sin2
+.vLfunc_end13:
+	.size	sin2, .vLfunc_end13-sin2
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function cos2
@@ -5404,8 +5387,8 @@ cos2:                                   # @cos2
 	fadd.s	fa5, fa3, fa5
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end14:
-	.size	cos2, .Lfunc_end14-cos2
+.vLfunc_end14:
+	.size	cos2, .vLfunc_end14-cos2
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function min_caml_sin
@@ -5584,8 +5567,8 @@ min_caml_sin:                           # @min_caml_sin
 	lw	s0, 8(sp)                       # 4-byte Folded Reload
 	addi	sp, sp, 16
 	ret
-.Lfunc_end15:
-	.size	min_caml_sin, .Lfunc_end15-min_caml_sin
+.vLfunc_end15:
+	.size	min_caml_sin, .vLfunc_end15-min_caml_sin
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function min_caml_cos
@@ -5603,8 +5586,8 @@ min_caml_cos:                           # @min_caml_cos
 	fadd.s	fa5, fa4, fa5
 	fmv.x.w	a0, fa5
 	tail	min_caml_sin
-.Lfunc_end16:
-	.size	min_caml_cos, .Lfunc_end16-min_caml_cos
+.vLfunc_end16:
+	.size	min_caml_cos, .vLfunc_end16-min_caml_cos
                                         # -- End function
 	.globl	min_caml_sqrt                   # -- Begin function min_caml_sqrt
 	.p2align	2
@@ -5621,8 +5604,8 @@ min_caml_sqrt:                          # @min_caml_sqrt
 .LBB17_2:
 	fmv.x.w	a0, fa5
 	tail	sqrtf
-.Lfunc_end17:
-	.size	min_caml_sqrt, .Lfunc_end17-min_caml_sqrt
+.vLfunc_end17:
+	.size	min_caml_sqrt, .vLfunc_end17-min_caml_sqrt
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function arctan2
@@ -5692,8 +5675,8 @@ arctan2:                                # @arctan2
 	fmadd.s	fa5, fa5, fa1, fa3
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end18:
-	.size	arctan2, .Lfunc_end18-arctan2
+.vLfunc_end18:
+	.size	arctan2, .vLfunc_end18-arctan2
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	2, 0x0                          # -- Begin function min_caml_atan
@@ -5905,8 +5888,8 @@ min_caml_atan:                          # @min_caml_atan
 	fadd.s	fa5, fa5, fa0
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end19:
-	.size	min_caml_atan, .Lfunc_end19-min_caml_atan
+.vLfunc_end19:
+	.size	min_caml_atan, .vLfunc_end19-min_caml_atan
                                         # -- End function
 	.globl	min_caml_floor                  # -- Begin function min_caml_floor
 	.p2align	2
@@ -5924,66 +5907,46 @@ min_caml_floor:                         # @min_caml_floor
 .LBB20_2:
 	fmv.x.w	a0, fa5
 	ret
-.Lfunc_end20:
-	.size	min_caml_floor, .Lfunc_end20-min_caml_floor
+.vLfunc_end20:
+	.size	min_caml_floor, .vLfunc_end20-min_caml_floor
                                         # -- End function
-	.globl	last_print                      # -- Begin function last_print
-	.p2align	2
-	.type	last_print,@function
-last_print:                             # @last_print
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	sw	s2, 0(sp)                       # 4-byte Folded Spill
-	lui	s0, %hi(buffer_pos)
-	lw	a0, %lo(buffer_pos)(s0)
-	beqz	a0, .LBB21_3
-# %bb.1:
-	li	s1, 0
-	lui	a0, %hi(buffer)
-	addi	s2, a0, %lo(buffer)
-.LBB21_2:                               # =>This Inner Loop Header: Depth=1
-	lw	a0, 0(s2)
-	call	putchar
-	lw	a0, %lo(buffer_pos)(s0)
-	addi	s1, s1, 1
-	addi	s2, s2, 4
-	bltu	s1, a0, .LBB21_2
-.LBB21_3:
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end21:
-	.size	last_print, .Lfunc_end21-last_print
-                                        # -- End function
-
-.data
 
 	.type	.compoundliteral,@object        # @.compoundliteral
 	.local	.compoundliteral
 	.comm	.compoundliteral,2400,4
+	.type	objects,@object                 # @objects
+	.section	.sdata,"aw",@progbits
+	.globl	objects
+	.p2align	2, 0x0
 objects:
 	.word	.compoundliteral
 	.size	objects, 4
 
+	.type	.compoundliteral.1,@object      # @.compoundliteral.1
+	.p2align	2, 0x0
 .compoundliteral.1:
 	.word	128                             # 0x80
 	.word	128                             # 0x80
 	.size	.compoundliteral.1, 8
 
+	.type	size,@object                    # @size
+	.globl	size
+	.p2align	2, 0x0
 size:
 	.word	.compoundliteral.1
 	.size	size, 4
 
+	.type	.compoundliteral.2,@object      # @.compoundliteral.2
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.2:
 	.zero	4
 	.size	.compoundliteral.2, 4
 
+	.type	dbg,@object                     # @dbg
+	.section	.sdata,"aw",@progbits
+	.globl	dbg
+	.p2align	2, 0x0
 dbg:
 	.word	.compoundliteral.2
 	.size	dbg, 4
@@ -5991,6 +5954,9 @@ dbg:
 	.type	.compoundliteral.3,@object      # @.compoundliteral.3
 	.local	.compoundliteral.3
 	.comm	.compoundliteral.3,12,4
+	.type	screen,@object                  # @screen
+	.globl	screen
+	.p2align	2, 0x0
 screen:
 	.word	.compoundliteral.3
 	.size	screen, 4
@@ -5998,6 +5964,9 @@ screen:
 	.type	.compoundliteral.4,@object      # @.compoundliteral.4
 	.local	.compoundliteral.4
 	.comm	.compoundliteral.4,12,4
+	.type	vp,@object                      # @vp
+	.globl	vp
+	.p2align	2, 0x0
 vp:
 	.word	.compoundliteral.4
 	.size	vp, 4
@@ -6005,6 +5974,9 @@ vp:
 	.type	.compoundliteral.5,@object      # @.compoundliteral.5
 	.local	.compoundliteral.5
 	.comm	.compoundliteral.5,12,4
+	.type	view,@object                    # @view
+	.globl	view
+	.p2align	2, 0x0
 view:
 	.word	.compoundliteral.5
 	.size	view, 4
@@ -6012,30 +5984,52 @@ view:
 	.type	.compoundliteral.6,@object      # @.compoundliteral.6
 	.local	.compoundliteral.6
 	.comm	.compoundliteral.6,12,4
+	.type	light,@object                   # @light
+	.globl	light
+	.p2align	2, 0x0
 light:
 	.word	.compoundliteral.6
 	.size	light, 4
 
+	.type	.compoundliteral.7,@object      # @.compoundliteral.7
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.7:
 	.zero	8
 	.size	.compoundliteral.7, 8
 
+	.type	cos_v,@object                   # @cos_v
+	.section	.sdata,"aw",@progbits
+	.globl	cos_v
+	.p2align	2, 0x0
 cos_v:
 	.word	.compoundliteral.7
 	.size	cos_v, 4
 
+	.type	.compoundliteral.8,@object      # @.compoundliteral.8
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.8:
 	.zero	8
 	.size	.compoundliteral.8, 8
 
+	.type	sin_v,@object                   # @sin_v
+	.section	.sdata,"aw",@progbits
+	.globl	sin_v
+	.p2align	2, 0x0
 sin_v:
 	.word	.compoundliteral.8
 	.size	sin_v, 4
 
+	.type	.compoundliteral.9,@object      # @.compoundliteral.9
+	.p2align	2, 0x0
 .compoundliteral.9:
 	.word	0x437f0000                      # float 255
 	.size	.compoundliteral.9, 4
 
+	.type	beam,@object                    # @beam
+	.globl	beam
+	.p2align	2, 0x0
 beam:
 	.word	.compoundliteral.9
 	.size	beam, 4
@@ -6043,6 +6037,9 @@ beam:
 	.type	.compoundliteral.10,@object     # @.compoundliteral.10
 	.local	.compoundliteral.10
 	.comm	.compoundliteral.10,56,4
+	.type	temp,@object                    # @temp
+	.globl	temp
+	.p2align	2, 0x0
 temp:
 	.word	.compoundliteral.10
 	.size	temp, 4
@@ -6050,22 +6047,38 @@ temp:
 	.type	.compoundliteral.11,@object     # @.compoundliteral.11
 	.local	.compoundliteral.11
 	.comm	.compoundliteral.11,64,4
+	.type	cs_temp,@object                 # @cs_temp
+	.globl	cs_temp
+	.p2align	2, 0x0
 cs_temp:
 	.word	.compoundliteral.11
 	.size	cs_temp, 4
 
+	.type	and_net,@object                 # @and_net
+	.section	.swss,"aw",@nobits
+	.globl	and_net
+	.p2align	2, 0x0
 and_net:
 	.word	0
 	.size	and_net, 4
 
+	.type	or_net,@object                  # @or_net
+	.globl	or_net
+	.p2align	2, 0x0
 or_net:
 	.word	0
 	.size	or_net, 4
 
+	.type	.compoundliteral.12,@object     # @.compoundliteral.12
+	.p2align	2, 0x0
 .compoundliteral.12:
 	.zero	4
 	.size	.compoundliteral.12, 4
 
+	.type	solver_dist,@object             # @solver_dist
+	.section	.sdata,"aw",@progbits
+	.globl	solver_dist
+	.p2align	2, 0x0
 solver_dist:
 	.word	.compoundliteral.12
 	.size	solver_dist, 4
@@ -6073,22 +6086,37 @@ solver_dist:
 	.type	.compoundliteral.13,@object     # @.compoundliteral.13
 	.local	.compoundliteral.13
 	.comm	.compoundliteral.13,12,4
+	.type	vscan,@object                   # @vscan
+	.globl	vscan
+	.p2align	2, 0x0
 vscan:
 	.word	.compoundliteral.13
 	.size	vscan, 4
 
+	.type	.compoundliteral.14,@object     # @.compoundliteral.14
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.14:
 	.zero	4
 	.size	.compoundliteral.14, 4
 
+	.type	intsec_rectside,@object         # @intsec_rectside
+	.section	.sdata,"aw",@progbits
+	.globl	intsec_rectside
+	.p2align	2, 0x0
 intsec_rectside:
 	.word	.compoundliteral.14
 	.size	intsec_rectside, 4
 
+	.type	.compoundliteral.15,@object     # @.compoundliteral.15
+	.p2align	2, 0x0
 .compoundliteral.15:
 	.word	0x4e6e6b28                      # float 1.0E+9
 	.size	.compoundliteral.15, 4
 
+	.type	tmin,@object                    # @tmin
+	.globl	tmin
+	.p2align	2, 0x0
 tmin:
 	.word	.compoundliteral.15
 	.size	tmin, 4
@@ -6096,22 +6124,39 @@ tmin:
 	.type	.compoundliteral.16,@object     # @.compoundliteral.16
 	.local	.compoundliteral.16
 	.comm	.compoundliteral.16,12,4
+	.type	crashed_point,@object           # @crashed_point
+	.globl	crashed_point
+	.p2align	2, 0x0
 crashed_point:
 	.word	.compoundliteral.16
 	.size	crashed_point, 4
 
+	.type	.compoundliteral.17,@object     # @.compoundliteral.17
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.17:
 	.zero	4
 	.size	.compoundliteral.17, 4
 
+	.type	crashed_object,@object          # @crashed_object
+	.section	.sdata,"aw",@progbits
+	.globl	crashed_object
+	.p2align	2, 0x0
 crashed_object:
 	.word	.compoundliteral.17
 	.size	crashed_object, 4
 
+	.type	.compoundliteral.18,@object     # @.compoundliteral.18
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.18:
 	.zero	4
 	.size	.compoundliteral.18, 4
 
+	.type	end_flag,@object                # @end_flag
+	.section	.sdata,"aw",@progbits
+	.globl	end_flag
+	.p2align	2, 0x0
 end_flag:
 	.word	.compoundliteral.18
 	.size	end_flag, 4
@@ -6119,6 +6164,9 @@ end_flag:
 	.type	.compoundliteral.19,@object     # @.compoundliteral.19
 	.local	.compoundliteral.19
 	.comm	.compoundliteral.19,12,4
+	.type	viewpoint,@object               # @viewpoint
+	.globl	viewpoint
+	.p2align	2, 0x0
 viewpoint:
 	.word	.compoundliteral.19
 	.size	viewpoint, 4
@@ -6126,6 +6174,9 @@ viewpoint:
 	.type	.compoundliteral.20,@object     # @.compoundliteral.20
 	.local	.compoundliteral.20
 	.comm	.compoundliteral.20,12,4
+	.type	nvector,@object                 # @nvector
+	.globl	nvector
+	.p2align	2, 0x0
 nvector:
 	.word	.compoundliteral.20
 	.size	nvector, 4
@@ -6133,6 +6184,9 @@ nvector:
 	.type	.compoundliteral.21,@object     # @.compoundliteral.21
 	.local	.compoundliteral.21
 	.comm	.compoundliteral.21,12,4
+	.type	rgb,@object                     # @rgb
+	.globl	rgb
+	.p2align	2, 0x0
 rgb:
 	.word	.compoundliteral.21
 	.size	rgb, 4
@@ -6140,6 +6194,9 @@ rgb:
 	.type	.compoundliteral.22,@object     # @.compoundliteral.22
 	.local	.compoundliteral.22
 	.comm	.compoundliteral.22,12,4
+	.type	texture_color,@object           # @texture_color
+	.globl	texture_color
+	.p2align	2, 0x0
 texture_color:
 	.word	.compoundliteral.22
 	.size	texture_color, 4
@@ -6147,6 +6204,9 @@ texture_color:
 	.type	.compoundliteral.23,@object     # @.compoundliteral.23
 	.local	.compoundliteral.23
 	.comm	.compoundliteral.23,12,4
+	.type	solver_w_vec,@object            # @solver_w_vec
+	.globl	solver_w_vec
+	.p2align	2, 0x0
 solver_w_vec:
 	.word	.compoundliteral.23
 	.size	solver_w_vec, 4
@@ -6154,6 +6214,9 @@ solver_w_vec:
 	.type	.compoundliteral.24,@object     # @.compoundliteral.24
 	.local	.compoundliteral.24
 	.comm	.compoundliteral.24,12,4
+	.type	chkinside_p,@object             # @chkinside_p
+	.globl	chkinside_p
+	.p2align	2, 0x0
 chkinside_p:
 	.word	.compoundliteral.24
 	.size	chkinside_p, 4
@@ -6161,6 +6224,9 @@ chkinside_p:
 	.type	.compoundliteral.25,@object     # @.compoundliteral.25
 	.local	.compoundliteral.25
 	.comm	.compoundliteral.25,12,4
+	.type	isoutside_q,@object             # @isoutside_q
+	.globl	isoutside_q
+	.p2align	2, 0x0
 isoutside_q:
 	.word	.compoundliteral.25
 	.size	isoutside_q, 4
@@ -6168,38 +6234,69 @@ isoutside_q:
 	.type	.compoundliteral.26,@object     # @.compoundliteral.26
 	.local	.compoundliteral.26
 	.comm	.compoundliteral.26,12,4
+	.type	nvector_w,@object               # @nvector_w
+	.globl	nvector_w
+	.p2align	2, 0x0
 nvector_w:
 	.word	.compoundliteral.26
 	.size	nvector_w, 4
 
+	.type	.compoundliteral.27,@object     # @.compoundliteral.27
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.27:
 	.zero	4
 	.size	.compoundliteral.27, 4
 
+	.type	scan_d,@object                  # @scan_d
+	.section	.sdata,"aw",@progbits
+	.globl	scan_d
+	.p2align	2, 0x0
 scan_d:
 	.word	.compoundliteral.27
 	.size	scan_d, 4
 
+	.type	.compoundliteral.28,@object     # @.compoundliteral.28
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.28:
 	.zero	4
 	.size	.compoundliteral.28, 4
 
+	.type	scan_offset,@object             # @scan_offset
+	.section	.sdata,"aw",@progbits
+	.globl	scan_offset
+	.p2align	2, 0x0
 scan_offset:
 	.word	.compoundliteral.28
 	.size	scan_offset, 4
 
+	.type	.compoundliteral.29,@object     # @.compoundliteral.29
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.29:
 	.zero	4
 	.size	.compoundliteral.29, 4
 
+	.type	scan_sscany,@object             # @scan_sscany
+	.section	.sdata,"aw",@progbits
+	.globl	scan_sscany
+	.p2align	2, 0x0
 scan_sscany:
 	.word	.compoundliteral.29
 	.size	scan_sscany, 4
 
+	.type	.compoundliteral.30,@object     # @.compoundliteral.30
+	.section	.swss,"aw",@nobits
+	.p2align	2, 0x0
 .compoundliteral.30:
 	.zero	4
 	.size	.compoundliteral.30, 4
 
+	.type	scan_met1,@object               # @scan_met1
+	.section	.sdata,"aw",@progbits
+	.globl	scan_met1
+	.p2align	2, 0x0
 scan_met1:
 	.word	.compoundliteral.30
 	.size	scan_met1, 4
@@ -6207,26 +6304,72 @@ scan_met1:
 	.type	.compoundliteral.31,@object     # @.compoundliteral.31
 	.local	.compoundliteral.31
 	.comm	.compoundliteral.31,12,4
+	.type	wscan,@object                   # @wscan
+	.globl	wscan
+	.p2align	2, 0x0
 wscan:
 	.word	.compoundliteral.31
 	.size	wscan, 4
 
+	.type	buffer_pos,@object              # @buffer_pos
+	.section	.swss,"aw",@nobits
+	.globl	buffer_pos
+	.p2align	2, 0x0
 buffer_pos:
 	.word	0                               # 0x0
 	.size	buffer_pos, 4
 
-buffer:
-	.zero	1600000
-	.size	buffer, 1600000
-
+	.type	.L.str,@object                  # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str:
 	.asciz	"%d"
 	.size	.L.str, 3
 
+	.type	.L.str.32,@object               # @.str.32
 .L.str.32:
 	.asciz	"%f"
 	.size	.L.str.32, 3
 
+	.type	pi,@object                      # @pi
+	.section	.rodata,"a",@progbits
+	.globl	pi
+	.p2align	2, 0x0
 pi:
 	.word	0x40490fdb                      # float 3.14159274
 	.size	pi, 4
+
+	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
+	.section	".note.GNU-stack","",@progbits
+	.addrsig
+	.addrsig_sym .compoundliteral
+	.addrsig_sym .compoundliteral.1
+	.addrsig_sym .compoundliteral.2
+	.addrsig_sym .compoundliteral.3
+	.addrsig_sym .compoundliteral.4
+	.addrsig_sym .compoundliteral.5
+	.addrsig_sym .compoundliteral.6
+	.addrsig_sym .compoundliteral.7
+	.addrsig_sym .compoundliteral.8
+	.addrsig_sym .compoundliteral.9
+	.addrsig_sym .compoundliteral.10
+	.addrsig_sym .compoundliteral.11
+	.addrsig_sym .compoundliteral.12
+	.addrsig_sym .compoundliteral.13
+	.addrsig_sym .compoundliteral.14
+	.addrsig_sym .compoundliteral.15
+	.addrsig_sym .compoundliteral.16
+	.addrsig_sym .compoundliteral.17
+	.addrsig_sym .compoundliteral.18
+	.addrsig_sym .compoundliteral.19
+	.addrsig_sym .compoundliteral.20
+	.addrsig_sym .compoundliteral.21
+	.addrsig_sym .compoundliteral.22
+	.addrsig_sym .compoundliteral.23
+	.addrsig_sym .compoundliteral.24
+	.addrsig_sym .compoundliteral.25
+	.addrsig_sym .compoundliteral.26
+	.addrsig_sym .compoundliteral.27
+	.addrsig_sym .compoundliteral.28
+	.addrsig_sym .compoundliteral.29
+	.addrsig_sym .compoundliteral.30
+	.addrsig_sym .compoundliteral.31

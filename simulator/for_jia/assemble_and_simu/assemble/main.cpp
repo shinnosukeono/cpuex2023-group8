@@ -4145,9 +4145,17 @@ long long assemble(const std::string &line, unordered_map<string, int> &RFnames)
 		try{
 			stoi(tokens[2]);
 		} catch (std::invalid_argument e){
-			cerr << "Label is here:  " << tokens[2] << endl;
-			Label_assign[3][tokens[2]].push_back(instructions.size());
-			tokens[2] = "400";
+			cerr << "Label is here:  " << tokens[2];
+			if (tokens[2] == "%lo"){
+				cerr << " " << tokens[3] << endl;
+				Label_assign_lo[3][tokens[3]].push_back(instructions.size());
+				tokens[2] = "400";
+				tokens[3] = tokens[4];
+			}else{
+				cerr << endl;
+				Label_assign[2][tokens[2]].push_back(instructions.size());
+				tokens[2] = "400";
+			}
 		} catch (std::out_of_range e){
 			cerr << "Out of range: " << tokens[1] << " " << tokens[2] << " " << tokens[3] << endl;
 			exit(1);

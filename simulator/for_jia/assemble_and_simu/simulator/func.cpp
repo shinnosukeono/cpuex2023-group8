@@ -18,7 +18,7 @@
 #include "fpu.h"
 
 #define Dsize (1 << 26)
-#define maxcount 10000000000
+#define maxcount 1000000000000
 #define AP_max 4
 #define GP_max 4
 #define ways 4
@@ -612,6 +612,15 @@ public:
 					exit(0);
 				}
 
+				if (VirtualIntRegisters_EX[2] < VirtualIntRegisters_EX[4]){
+					cerr << "heap is overwrited by stack" << endl;
+					cerr << "sp: " << get<int>(VirtualIntRegisters_EX[2]) << endl;
+					cerr << "tp: " << get<int>(VirtualIntRegisters_EX[4]) << endl;
+					cerr << "cycle: " << cycle << endl;
+					last_pc_file << pc << endl;
+					exit(0);
+				}
+
 				if (cycle % 200000 == 0){
 					cout << cycle << endl;
 					cout << "pc: " << ID_pc/4 << endl;
@@ -898,6 +907,15 @@ public:
 				if ((pc % 4) != 0){
 					cerr << "pc is not aligned correctly" << endl;
 					cerr << "pc: " << pc << endl;
+					cerr << "cycle: " << cycle << endl;
+					last_pc_file << pc << endl;
+					exit(0);
+				}
+
+				if (VirtualIntRegisters_EX[2] < VirtualIntRegisters_EX[4]){
+					cerr << "heap is overwrited by stack" << endl;
+					cerr << "sp: " << get<int>(VirtualIntRegisters_EX[2]) << endl;
+					cerr << "tp: " << get<int>(VirtualIntRegisters_EX[4]) << endl;
 					cerr << "cycle: " << cycle << endl;
 					last_pc_file << pc << endl;
 					exit(0);
@@ -1393,6 +1411,9 @@ public:
 			int tmp2 = tmp; // 符号拡張
 			vm.WriteIntRegisters(operand1, Data{tmp2});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 		//vm.pc += 4;
 	}
@@ -1422,6 +1443,9 @@ public:
 			int tmp2 = tmp; // 符号拡張
 			vm.WriteIntRegisters(operand1, Data{tmp2});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 		//vm.pc += 4;
 	}
@@ -1450,6 +1474,9 @@ public:
 			int tmp = get<T>(vm.mem_load<T>(op2 + operand3));
 			vm.WriteIntRegisters(operand1, Data{tmp});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 		//vm.pc += 4;
 	}
@@ -1478,6 +1505,9 @@ public:
 			int8_t tmp = get<T>(vm.mem_load<T>(op2 + operand3)) & 0xff;
 			vm.WriteIntRegisters(operand1, Data{tmp});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 		//vm.pc += 4;
 	}
@@ -1506,6 +1536,9 @@ public:
 			int16_t tmp = get<T>(vm.mem_load<T>(op2 + operand3)) & 0xffff;
 			vm.WriteIntRegisters(operand1, Data{tmp});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 		//vm.pc += 4;
 	}
@@ -1824,6 +1857,9 @@ public:
 		}else{
 			vm.mem_write(get<T>(op1) + operand3, op2, 1);
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+			}
 		}
 	}
 };
@@ -1851,6 +1887,9 @@ public:
 		}else{
 			vm.mem_write(get<T>(op1) + operand3, op2, 2);
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+			}
 		}
 	}
 };
@@ -1879,6 +1918,9 @@ public:
 		}else{
 			vm.mem_write(get<T>(op1) + operand3, op2, 4);
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
+			}
 		}
 	}
 };
@@ -2483,6 +2525,9 @@ public:
 			float tmp = get<T>(vm.mem_load<T>(op2 + operand3));
 			vm.WriteFloatRegisters(operand1, Data{tmp});
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << op2 + operand3 << dec << "]" << endl;
+			}
 		}
 	}
 };
@@ -2510,6 +2555,9 @@ public:
 		}else{
 			vm.mem_write(get<int>(op1) + operand3, op2, 4);
 			mode = true;
+			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
+				vm.outputFile << "\tMemory address: [" << hex << get<int>(op1) + operand3 << dec << "]" << endl;
+			}
 		}
 	}
 };

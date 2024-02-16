@@ -892,7 +892,7 @@ public:
 			{
 				if (cycle % 500000 == 0){
 					cout << cycle << endl;
-					cout << "pc: " << pc/4 << endl;
+					cout << "pc: " << pc << endl;
 				}
 				
 				if ((pc % 4) != 0){
@@ -913,7 +913,7 @@ public:
 					outputFile << endl << "cycle:[" << cycle << "], ";
 					outputFile << "pc:[" << pc << "(" << hex << pc << ")" << "], ";
 					outputFile << dec;
-					outputFile << "instruction:[<" << pc/4 << ">: " << (*EX).name << "], ";
+					outputFile << "instruction:[<" << pc << ">: " << (*EX).name << "], ";
 					
 					outputFile << endl;
 				}

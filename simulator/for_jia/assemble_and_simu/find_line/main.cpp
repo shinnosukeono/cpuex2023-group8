@@ -41,14 +41,9 @@ int main()
         }
     }
 
-    ifstream ifs3("last_pc_input.txt");
-    if (ifs3.fail())
-    {
-        cerr << "Failed to open file." << endl;
-        return -1;
-    }
     string last_pc3;
-    getline(ifs3, last_pc3);
+
+    cin >> last_pc3;
 
     unsigned int last_pc = stoi(last_pc3);
     cerr << "\nLast line: "<< pc_to_line[last_pc] << endl;

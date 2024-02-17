@@ -100,11 +100,12 @@ module fdiv_pipe
                                                               ex_reg[4] - ey_reg[4] + 10'd127;
     wire udf = (e_res_temp[9] & e_res_temp[8]) | ~|e_res_temp; // e_res_temp <= 0
     wire ovf = (~e_res_temp[9] & e_res_temp[8]) | (~e_res_temp[9] & ~e_res_temp[8] & &e_res_temp[7:0]); // e_res_temp >= 255
-    wire [7:0] e_res = udf & m_mul[22] ? 8'b1 :
-                                   udf ? 8'b0 : // underflow
-                                   ovf ? 8'hff : // overflow
-                                         e_res_temp[7:0];
-    wire s_res = udf & ~m_mul[22] ? 1'b0 : s_res_temp_reg[4];
+    wire no_subnorm = ~|e_res_temp & m_mul[22];
+    wire [7:0] e_res = no_subnorm ? 8'b1 :
+                              udf ? 8'b0 : // underflow
+                              ovf ? 8'hff : // overflow
+                                    e_res_temp[7:0];
+    wire s_res = udf & ~no_subnorm ? 1'b0 : s_res_temp_reg[4];
     wire [22:0] m_res = (udf | ovf) ? 23'b0 : m_mul[22:0];
 
     assign res = {s_res,e_res,m_res};

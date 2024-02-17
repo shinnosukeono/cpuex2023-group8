@@ -248,6 +248,10 @@ float FPUfsub(int x, int y)
 
 float FPUfmul(int x, int y)
 {
+    if (x == 0)
+        return 0;
+    if (y == 0)
+        return 0;
     int x_sign = (x >> 31) & 1;
     int y_sign = (y >> 31) & 1;
 

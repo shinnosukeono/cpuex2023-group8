@@ -138,7 +138,7 @@ caml_main:                              # @caml_main
 	lw	a0, %lo(size)(a0)
 	lui	a1, %hi(dbg)
 	lw	a1, %lo(dbg)(a1)
-	li	a2, 64                     .#parameter
+	li	a2, 256                     .#parameter
 	sw	a2, 0(a0)
 	sw	a2, 4(a0)
 	sw	zero, 0(a1)

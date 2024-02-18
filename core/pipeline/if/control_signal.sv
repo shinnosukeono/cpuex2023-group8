@@ -11,7 +11,8 @@ interface control_decode_io;
     logic funct3_0;
     logic out_issued;
     logic in_issued;
-    logic fpu_dispatch;
+    logic fast_fpu_dispatch;
+    logic slow_fpu_dispatch;
     logic fpu_reg_write;
     logic write_src;
     logic s_fpu;
@@ -28,7 +29,8 @@ interface control_decode_io;
         output funct3_0,
         output out_issued,
         output in_issued,
-        output fpu_dispatch,
+        output fast_fpu_dispatch,
+        output slow_fpu_dispatch,
         output fpu_reg_write,
         output write_src,
         output s_fpu
@@ -46,7 +48,8 @@ interface control_decode_io;
         input funct3_0,
         input out_issued,
         input in_issued,
-        input fpu_dispatch,
+        input fast_fpu_dispatch,
+        input slow_fpu_dispatch,
         input fpu_reg_write,
         input write_src,
         input s_fpu
@@ -59,19 +62,25 @@ interface control_exec_io;
     logic mem_write;
     logic mem_read;
     logic fpu_reg_write;
+    logic out_issued;
+    logic in_issued;
     modport in (
         output reg_write,
         output result_src,
         output mem_write,
         output mem_read,
-        output fpu_reg_write
+        output fpu_reg_write,
+        output out_issued,
+        output in_issued
     );
     modport out (
         input reg_write,
         input result_src,
         input mem_write,
         input mem_read,
-        input fpu_reg_write
+        input fpu_reg_write,
+        input out_issued,
+        input in_issued
     );
 endinterface //control_exec_io
 

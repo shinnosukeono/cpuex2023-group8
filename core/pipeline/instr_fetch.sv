@@ -1,5 +1,3 @@
-`include "if/data_signal.sv"
-
 module instr_fetch (
     // input
     data_back_io.out data_back_if,

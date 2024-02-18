@@ -1,9 +1,6 @@
 // 加算と減算だけに対応した簡易版ALU
 // データメモリへのアドレス入力に用いる
 
-`include "../lib/mux.sv"
-`include "../lib/adder.sv"
-
 module alu_simplified #(
     parameter N = 32
 ) (

@@ -1,6 +1,3 @@
-`include "if/control_signal.sv"
-`include "if/data_signal.sv"
-
 module write_back (
     // input
     control_mem_io.out control_mem_if,
@@ -23,10 +20,7 @@ module write_back (
 
     // from exec stage
     input logic pc_src_e,
-    input logic [31:0] pc_target_e,
-
-    // from I/O module
-    input logic [31:0] in_data
+    input logic [31:0] pc_target_e
 );
     assign reg_write_w = control_mem_if.reg_write;
     assign rd_w = data_mem_if.rd;
@@ -42,10 +36,11 @@ module write_back (
             3'b000: result_w = data_mem_if.alu_result;
             3'b001: result_w = data_mem_if.read_data;
             3'b010: result_w = data_mem_if.pc_plus4;
-            3'b011: result_w = data_mem_if.c_reg_data_out;
+            3'b011: result_w = data_mem_if.rd1;
             3'b100: result_w = data_mem_if.imm_ext;
+            3'b101: result_w = data_mem_if.fpu_rd1;
             3'b110: result_w = data_mem_if.fpu_result;
-            3'b111: result_w = in_data;
+            3'b111: result_w = data_mem_if.in_data;
             default: result_w = 32'bx;
         endcase
     end

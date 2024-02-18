@@ -1,5 +1,3 @@
-`include "../lib/adder.sv"
-
 module alu #(
     parameter N = 32
 ) (
@@ -23,11 +21,11 @@ module alu #(
 
     /* slt */
     logic [N-1:0] slt;
-    assign slt = {(N){overflow_flag ^ sum[N-1]}};
+    assign slt = {31'b0, overflow_flag ^ sum[N-1]};
 
     /* sltu */
     logic [N-1:0] sltu;
-    assign sltu = {(N){~c_out}};
+    assign sltu = {31'b0, ~c_out};
 
     /* flags */
     // overflow check
@@ -57,10 +55,10 @@ module alu #(
             4'b0011: result = a|b;  // or
             4'b0111: result = sltu;  // sltu
             4'b0101: result = slt;  // slt
-            4'b0110: result = a<<b;  // shift left
+            4'b0110: result = a<<b[4:0];  // shift left
             4'b1000: result = a^b;  // xor
-            4'b1110: result = a>>b;  // shift right logical
-            4'b1111: result = $signed(a)>>>b;  // shift right arithmetical
+            4'b1110: result = a>>b[4:0];  // shift right logical
+            4'b1111: result = $signed(a)>>>b[4:0];  // shift right arithmetical
             default: result = {N{1'b0}};  // error
         endcase
     end

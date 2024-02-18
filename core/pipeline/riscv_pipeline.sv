@@ -1,12 +1,3 @@
-`include "instr_fetch.sv"
-`include "instr_decode.sv"
-`include "exec.sv"
-`include "memory_access.sv"
-`include "write_back.sv"
-`include "hazard_unit.sv"
-`include "if/control_signal.sv"
-`include "if/data_signal.sv"
-
 module riscv_pipeline (
     input logic clk, rst,
 
@@ -28,35 +19,75 @@ module riscv_pipeline (
     output logic [31:0] din,
 
     // from I/O module
-    input logic out_stall,
-    input logic in_stall,
+    // input logic out_stall,
+    // input logic in_stall,
+    input logic in_data_valid,
     input logic [31:0] in_data,
+    input logic io_stall,
+    // input logic reg_we,
+    // input logic [31:0] reg_init_data,
+    // input logic [4:0] rd,
 
     // to I/O module
     output logic [31:0] status,
-    output logic [31:0] result_bytes,
     output logic out_issued,
     output logic [31:0] out_data,
     output logic in_issued,
 
     // from FPU unit
-    input logic [31:0] fpu_result,
+    input logic [31:0] fast_fpu_result,
+    input logic fast_fpu_valid,
+    input wire [31:0] slow_fpu_result,
+    input wire slow_fpu_valid,
 
     // to FPU unit
+    output wire fast_fpu_en,
+    output wire slow_fpu_en,
     output logic [31:0] fpu_rd1,
     output logic [31:0] fpu_rd2,
+    output wire [31:0] fpu_rd3,
     output logic [2:0] fpu_rm,
-    output logic [4:0] fpu_funct5
+    output logic [4:0] fpu_funct5,
+
+    output logic cache_stall,
+    output logic lw_stall,
+
+    output logic stall_f,
+    output logic stall_d,
+    output logic stall_e,
+    output logic stall_m,
+    output logic stall_w,
+    output logic flush_d,
+    output logic flush_e,
+    output logic [31:0] pc_plus4_e,
+    output logic pc_src_e,
+    output logic [31:0] pc_plus4_m,
+    output logic [31:0] src_a,
+    output logic [31:0] src_b
 );
+    // hazard unit signals
+    wire in_stall;
+    // wire out_stall;
+    logic [1:0] forward_a_e;
+    logic [1:0] forward_b_e;
+    (* mark_debug = "true" *) logic [2:0] forward_rd1_e;
+    (* mark_debug = "true" *) logic [2:0] forward_rd2_e;
+    logic [1:0] forward_fpu_rd1_e;
+    logic [1:0] forward_fpu_rd2_e;
+    logic [1:0] forward_fpu_rd3_e;
+    wire flush_m;
+
+    // assign out_stall = 1'b0;
+
     // instr fetch reg
     data_back_io data_back_if_in();
     data_back_io data_back_if_out();
 
     always_ff @( posedge clk ) begin
-        if (rst) begin
+        if (rst || io_stall) begin
             data_back_if_out.pc <= 32'b0;
         end
-        else if (stall_f === 1'b0) begin
+        else if (stall_f == 1'b0) begin
             data_back_if_out.pc <= data_back_if_in.pc;
         end
     end
@@ -76,12 +107,12 @@ module riscv_pipeline (
     data_fetch_io data_fetch_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_d === 1'b1 || rst) begin
+        if (flush_d == 1'b1 || rst || io_stall) begin
             data_fetch_if_out.pc <= 32'b0;
             data_fetch_if_out.instr <= 32'b0;
             data_fetch_if_out.pc_plus4 <= 32'b0;
         end
-        else if (stall_d === 1'b0 || stall_d === 1'bx) begin
+        else if (stall_d == 1'b0) begin
             data_fetch_if_out.pc <= data_fetch_if_in.pc;
             data_fetch_if_out.instr <= data_fetch_if_in.instr;
             data_fetch_if_out.pc_plus4 <= data_fetch_if_in.pc_plus4;
@@ -93,17 +124,22 @@ module riscv_pipeline (
     logic [31:0] result_w;
     logic reg_write_w;
     logic fpu_reg_write_w;
+    logic r4_d;
 
     instr_decode i_instr_decode (
         .clk(clk),
-        .rst(rst),
+        .rst(rst | io_stall),
         .data_fetch_if(data_fetch_if_out.out),
         .control_decode_if(control_decode_if_in.in),
         .data_decode_if(data_decode_if_in.in),
         .rd_w(rd_w),
         .result_w(result_w),
         .reg_write_w(reg_write_w),
-        .fpu_reg_write_w(fpu_reg_write_w)
+        .fpu_reg_write_w(fpu_reg_write_w),
+        .r4(r4_d)
+        // .io_we(reg_we),
+        // .io_reg_init_data(reg_init_data),
+        // .io_rd(rd)
     );
 
     // exec reg
@@ -113,7 +149,7 @@ module riscv_pipeline (
     data_decode_io data_decode_if_out();
 
     always_ff @( posedge clk ) begin
-        if (flush_e === 1'b1 || rst) begin
+        if (flush_e == 1'b1 || rst || io_stall) begin
             control_decode_if_out.reg_write <= 1'b0;
             control_decode_if_out.result_src <= 3'b0;
             control_decode_if_out.mem_read <= 1'b0;
@@ -126,7 +162,8 @@ module riscv_pipeline (
             control_decode_if_out.funct3_0 <= 1'b0;
             control_decode_if_out.out_issued <= 1'b0;
             control_decode_if_out.in_issued <= 1'b0;
-            control_decode_if_out.fpu_dispatch <= 1'b0;
+            control_decode_if_out.fast_fpu_dispatch <= 1'b0;
+            control_decode_if_out.slow_fpu_dispatch <= 1'b0;
             control_decode_if_out.fpu_reg_write <= 1'b0;
             control_decode_if_out.write_src <= 1'b0;
             control_decode_if_out.s_fpu <= 1'b0;
@@ -136,18 +173,18 @@ module riscv_pipeline (
             data_decode_if_out.pc <= 32'b0;
             data_decode_if_out.rs1 <= 5'b0;
             data_decode_if_out.rs2 <= 5'b0;
+            data_decode_if_out.rs3 <= 5'b0;
             data_decode_if_out.rd <= 5'b0;
             data_decode_if_out.imm_ext <= 32'b0;
             data_decode_if_out.pc_plus4 <= 32'b0;
-            data_decode_if_out.c_reg_data_out <= 32'b0;
             data_decode_if_out.status <= 32'b0;
-            data_decode_if_out.result_bytes <= 32'b0;
             data_decode_if_out.fpu_rd1 <= 32'b0;
             data_decode_if_out.fpu_rd2 <= 32'b0;
+            data_decode_if_out.fpu_rd3 <= 32'b0;
             data_decode_if_out.rm <= 3'b0;
             data_decode_if_out.funct5 <= 5'b0;
         end
-        else if (stall_e === 1'b0) begin
+        else if (stall_e == 1'b0) begin
             control_decode_if_out.reg_write <= control_decode_if_in.reg_write;
             control_decode_if_out.result_src <= control_decode_if_in.result_src;
             control_decode_if_out.mem_read <= control_decode_if_in.mem_read;
@@ -160,7 +197,8 @@ module riscv_pipeline (
             control_decode_if_out.funct3_0 <= control_decode_if_in.funct3_0;
             control_decode_if_out.out_issued <= control_decode_if_in.out_issued;
             control_decode_if_out.in_issued <= control_decode_if_in.in_issued;
-            control_decode_if_out.fpu_dispatch <= control_decode_if_in.fpu_dispatch;
+            control_decode_if_out.fast_fpu_dispatch <= control_decode_if_in.fast_fpu_dispatch;
+            control_decode_if_out.slow_fpu_dispatch <= control_decode_if_in.slow_fpu_dispatch;
             control_decode_if_out.fpu_reg_write <= control_decode_if_in.fpu_reg_write;
             control_decode_if_out.write_src <= control_decode_if_in.write_src;
             control_decode_if_out.s_fpu <= control_decode_if_in.s_fpu;
@@ -170,31 +208,37 @@ module riscv_pipeline (
             data_decode_if_out.pc <= data_decode_if_in.pc;
             data_decode_if_out.rs1 <= data_decode_if_in.rs1;
             data_decode_if_out.rs2 <= data_decode_if_in.rs2;
+            data_decode_if_out.rs3 <= data_decode_if_in.rs3;
             data_decode_if_out.rd <= data_decode_if_in.rd;
             data_decode_if_out.imm_ext <= data_decode_if_in.imm_ext;
             data_decode_if_out.pc_plus4 <= data_decode_if_in.pc_plus4;
-            data_decode_if_out.c_reg_data_out <= data_decode_if_in.c_reg_data_out;
             data_decode_if_out.status <= data_decode_if_in.status;
-            data_decode_if_out.result_bytes <= data_decode_if_in.result_bytes;
             data_decode_if_out.fpu_rd1 <= data_decode_if_in.fpu_rd1;
             data_decode_if_out.fpu_rd2 <= data_decode_if_in.fpu_rd2;
+            data_decode_if_out.fpu_rd3 <= data_decode_if_in.fpu_rd3;
             data_decode_if_out.rm <= data_decode_if_in.rm;
             data_decode_if_out.funct5 <= data_decode_if_in.funct5;
         end
     end
 
-    assign out_issued = control_decode_if_out.out_issued & ~cache_stall;
-    assign in_issued = control_decode_if_out.in_issued & ~cache_stall;
+    // assign out_issued = control_decode_if_out.out_issued & ~cache_stall & ~in_stall;
+
+    assign out_issued = control_exec_if_out.out_issued;
+    assign out_data = data_exec_if_out.out_data;
+    assign in_issued = (stall_m) ? control_exec_if_out.in_issued : control_decode_if_out.in_issued;
 
     // exec stage
     logic [31:0] alu_result_e;
     logic [31:0] alu_result_m;
+    // logic [31:0] pc_plus4_m;
+    logic [31:0] rd1_m;
     logic [31:0] imm_ext_m;
-    logic [31:0] write_data_e;
+    logic [31:0] fpu_rd1_m;
+    logic [31:0] fpu_result_m;
+    logic [2:0] result_src_m;
+    (* mark_debug = "true" *) logic [31:0] write_data_e;
     logic [31:0] pc_target_e;
-    logic [4:0] rs1_e;
-    logic [4:0] rs2_e;
-    logic pc_src_e;
+    // logic pc_src_e;
     logic data_we_e;
     logic data_re_e;
 
@@ -209,20 +253,32 @@ module riscv_pipeline (
         .data_memory_we(data_we_e),
         .data_memory_re(data_re_e),
         .alu_result_m(alu_result_m),
+        .pc_plus4_m(pc_plus4_m),
+        .rd1_m(rd1_m),
         .imm_ext_m(imm_ext_m),
+        .fpu_rd1_m(fpu_rd1_m),
+        .fpu_result_m(fpu_result_m),
+        .result_src_m(result_src_m),
         .result_w(result_w),
         .pc_target_e(pc_target_e),
-        .forward_a_e(forward_a_e),
-        .forward_b_e(forward_b_e),
-        .rs1_e(rs1_e),
-        .rs2_e(rs2_e),
+        .forward_rd1_e(forward_rd1_e),
+        .forward_rd2_e(forward_rd2_e),
+        .forward_fpu_rd1_e(forward_fpu_rd1_e),
+        .forward_fpu_rd2_e(forward_fpu_rd2_e),
+        .forward_fpu_rd3_e(forward_fpu_rd3_e),
         .pc_src_e(pc_src_e),
-        .out_data(out_data),
-        .fpu_result(fpu_result)
+        // .out_data(out_data),
+        .fast_fpu_result(fast_fpu_result),
+        .fast_fpu_valid(fast_fpu_valid),
+        .slow_fpu_result(slow_fpu_result),
+        .slow_fpu_valid(slow_fpu_valid),
+        .fpu_rd1(fpu_rd1),
+        .fpu_rd2(fpu_rd2),
+        .fpu_rd3(fpu_rd3),
+        .src_a(src_a),
+        .src_b(src_b)
     );
 
-    assign fpu_rd1 = data_decode_if_out.fpu_rd1;
-    assign fpu_rd2 = data_decode_if_out.fpu_rd2;
     assign fpu_rm = data_decode_if_out.rm;
     assign fpu_funct5 = data_decode_if_out.funct5;
 
@@ -230,7 +286,10 @@ module riscv_pipeline (
     // consistent during the search of the cache system. So if stall_m is asserted,
     // which signifies cache_stall is also asserted, the input signals shoule be
     // taken from the memory access register.
-    assign data_addr = (stall_m) ? data_exec_if_out.alu_result : alu_result_e;
+    (* mark_debug = "true" *) logic [31:0] write_data_m;
+    assign write_data_m = data_exec_if_out.write_data;
+
+    assign data_addr = (stall_m) ? data_exec_if_out.data_addr : alu_result_e;
     assign din = (stall_m) ? data_exec_if_out.write_data : write_data_e;
     assign data_we = (stall_m) ? control_exec_if_out.mem_write : control_decode_if_out.mem_write;
     assign data_re = (stall_m) ? control_exec_if_out.mem_read : control_decode_if_out.mem_read;
@@ -246,39 +305,47 @@ module riscv_pipeline (
     // forwarded into the exec stage, which results in the unpredictable state
     // in the memory access register when the core_gating_signal is asserted.
     always_ff @( posedge clk ) begin
-        if (rst) begin
+        if (rst || flush_m || io_stall) begin
             control_exec_if_out.reg_write <= 1'b0;
             control_exec_if_out.result_src <= 3'b0;
             control_exec_if_out.mem_write <= 1'b0;
             control_exec_if_out.mem_read <= 1'b0;
             control_exec_if_out.fpu_reg_write <= 1'b0;
+            control_exec_if_out.out_issued <= 1'b0;
+            control_exec_if_out.in_issued <= 1'b0;
 
             data_exec_if_out.alu_result <= 32'b0;
+            data_exec_if_out.data_addr <= 32'b0;
             data_exec_if_out.write_data <= 32'b0;
             data_exec_if_out.rd <= 5'b0;
             data_exec_if_out.imm_ext <= 32'b0;
             data_exec_if_out.pc_plus4 <= 32'b0;
-            data_exec_if_out.c_reg_data_out <= 32'b0;
             data_exec_if_out.status <= 32'b0;
-            data_exec_if_out.result_bytes <= 32'b0;
             data_exec_if_out.fpu_result <= 32'b0;
+            data_exec_if_out.rd1 <= 32'b0;
+            data_exec_if_out.fpu_rd1 = 32'b0;
+            data_exec_if_out.out_data <= 32'b0;
         end
-        else if (stall_m === 1'b0) begin
+        else if (stall_m == 1'b0) begin
             control_exec_if_out.reg_write <= control_exec_if_in.reg_write;
             control_exec_if_out.result_src <= control_exec_if_in.result_src;
             control_exec_if_out.mem_write <= control_exec_if_in.mem_write;
             control_exec_if_out.mem_read <= control_exec_if_in.mem_read;
             control_exec_if_out.fpu_reg_write <= control_exec_if_in.fpu_reg_write;
+            control_exec_if_out.out_issued <= control_exec_if_in.out_issued;
+            control_exec_if_out.in_issued <= control_exec_if_in.in_issued;
 
             data_exec_if_out.alu_result <= data_exec_if_in.alu_result;
+            data_exec_if_out.data_addr <= data_exec_if_in.data_addr;
             data_exec_if_out.write_data <= data_exec_if_in.write_data;
             data_exec_if_out.rd <= data_exec_if_in.rd;
             data_exec_if_out.imm_ext <= data_exec_if_in.imm_ext;
             data_exec_if_out.pc_plus4 <= data_exec_if_in.pc_plus4;
-            data_exec_if_out.c_reg_data_out <= data_exec_if_in.c_reg_data_out;
             data_exec_if_out.status <= data_exec_if_in.status;
-            data_exec_if_out.result_bytes <= data_exec_if_in.result_bytes;
             data_exec_if_out.fpu_result <= data_exec_if_in.fpu_result;
+            data_exec_if_out.rd1 <= data_exec_if_in.rd1;
+            data_exec_if_out.fpu_rd1 <= data_exec_if_in.fpu_rd1;
+            data_exec_if_out.out_data <= data_exec_if_in.out_data;
         end
     end
 
@@ -290,7 +357,13 @@ module riscv_pipeline (
         .data_mem_if(data_mem_if_in.in),
         .dout(read_data),
         .alu_result_m(alu_result_m),
-        .imm_ext_m(imm_ext_m)
+        .pc_plus4_m(pc_plus4_m),
+        .rd1_m(rd1_m),
+        .imm_ext_m(imm_ext_m),
+        .fpu_rd1_m(fpu_rd1_m),
+        .fpu_result_m(fpu_result_m),
+        .result_src_m(result_src_m),
+        .in_data(in_data)
     );
 
     // write back reg
@@ -300,7 +373,23 @@ module riscv_pipeline (
     data_mem_io data_mem_if_out();
 
     always_ff @( posedge clk ) begin
-        if (stall_w === 1'b0) begin
+        if (rst || io_stall) begin
+            control_mem_if_out.reg_write <= 1'b0;
+            control_mem_if_out.result_src <= 3'b0;
+            control_mem_if_out.fpu_reg_write <= 1'b0;
+
+            data_mem_if_out.alu_result <= 32'b0;
+            data_mem_if_out.read_data <= 32'b0;
+            data_mem_if_out.rd <= 5'b0;
+            data_mem_if_out.imm_ext <= 32'b0;
+            data_mem_if_out.pc_plus4 <= 32'b0;
+            data_mem_if_out.status <= 1'b0;
+            data_mem_if_out.fpu_result <= 32'b0;
+            data_mem_if_out.rd1 <= 32'b0;
+            data_mem_if_out.fpu_rd1 <= 32'b0;
+            data_mem_if_out.in_data <= 32'b0;
+        end
+        else if (stall_w == 1'b0) begin
             control_mem_if_out.reg_write <= control_mem_if_in.reg_write;
             control_mem_if_out.result_src <= control_mem_if_in.result_src;
             control_mem_if_out.fpu_reg_write <= control_mem_if_in.fpu_reg_write;
@@ -310,10 +399,11 @@ module riscv_pipeline (
             data_mem_if_out.rd <= data_mem_if_in.rd;
             data_mem_if_out.imm_ext <= data_mem_if_in.imm_ext;
             data_mem_if_out.pc_plus4 <= data_mem_if_in.pc_plus4;
-            data_mem_if_out.c_reg_data_out <= data_mem_if_in.c_reg_data_out;
             data_mem_if_out.status <= data_mem_if_in.status;
-            data_mem_if_out.result_bytes <= data_mem_if_in.result_bytes;
             data_mem_if_out.fpu_result <= data_mem_if_in.fpu_result;
+            data_mem_if_out.rd1 <= data_mem_if_in.rd1;
+            data_mem_if_out.fpu_rd1 <= data_mem_if_in.fpu_rd1;
+            data_mem_if_out.in_data <= data_mem_if_in.in_data;
         end
     end
 
@@ -329,43 +419,52 @@ module riscv_pipeline (
         .result_w(result_w),
         .fpu_reg_write_w(fpu_reg_write_w),
         .pc_src_e(pc_src_e),
-        .pc_target_e(pc_target_e),
-        .in_data(in_data)
+        .pc_target_e(pc_target_e)
     );
 
     // hazard unit
-    logic stall_f;
-    logic stall_d;
-    logic stall_e;
-    logic stall_m;
-    logic stall_w;
-    logic flush_d;
-    logic flush_e;
-    logic [1:0] forward_a_e;
-    logic [1:0] forward_b_e;
-    logic cache_stall;
+    // logic stall_f;
+    // logic stall_d;
+    // logic stall_e;
+    // logic stall_m;
+    // logic stall_w;
+    // logic flush_d;
+    // logic flush_e;
 
     hazard_unit i_hazard_unit (
+        .clk(clk),
         .rst(rst),
         .stall_f(stall_f),
         .stall_d(stall_d),
         .flush_d(flush_d),
         .rs1_d(data_decode_if_in.rs1),
         .rs2_d(data_decode_if_in.rs2),
+        .rs3_d(data_decode_if_in.rs3),
         .s_fpu_d(control_decode_if_in.s_fpu),
+        .mem_write_d(control_decode_if_in.mem_write),
+        .r4_d(r4_d),
         .stall_e(stall_e),
         .flush_e(flush_e),
         .rs1_e(data_decode_if_out.rs1),
         .rs2_e(data_decode_if_out.rs2),
+        .rs3_e(data_decode_if_out.rs3),
         .rd_e(data_decode_if_out.rd),
         .pc_src_e(pc_src_e),
-        .result_src_e_0(control_decode_if_out.result_src[0]),
+        .result_src_e(control_decode_if_out.result_src),
+        .mem_write_e(control_decode_if_out.mem_write),
         .s_fpu_e(control_decode_if_out.s_fpu),
         .reg_write_e(control_decode_if_out.reg_write),
         .fpu_reg_write_e(control_decode_if_out.fpu_reg_write),
-        .forward_a_e(forward_a_e),
-        .forward_b_e(forward_b_e),
+        .fast_fpu_dispatch_e(control_decode_if_out.fast_fpu_dispatch),
+        .slow_fpu_dispatch_e(control_decode_if_out.slow_fpu_dispatch),
+        .forward_rd1_e(forward_rd1_e),
+        .forward_rd2_e(forward_rd2_e),
+        .forward_fpu_rd1_e(forward_fpu_rd1_e),
+        .forward_fpu_rd2_e(forward_fpu_rd2_e),
+        .forward_fpu_rd3_e(forward_fpu_rd3_e),
         .cache_stall(cache_stall),
+        .in_stall(in_stall),
+        .flush_m(flush_m),
         .stall_m(stall_m),
         .rd_m(data_exec_if_out.rd),
         .reg_write_m(control_exec_if_out.reg_write),
@@ -373,17 +472,31 @@ module riscv_pipeline (
         .mem_write_m(control_exec_if_out.mem_write),
         .mem_read_m(control_exec_if_out.mem_read),
         .fpu_reg_write_m(control_exec_if_out.fpu_reg_write),
+        .in_issued_m(control_exec_if_out.in_issued),
         .cache_data_valid(cache_data_valid),
+        .in_data_valid(in_data_valid),
         .stall_w(stall_w),
         .rd_w(rd_w),
         .reg_write_w(control_mem_if_out.reg_write),
         .fpu_reg_write_w(control_mem_if_out.fpu_reg_write),
-        .out_stall(out_stall),
-        .in_stall(in_stall)
+        // .out_stall(out_stall),
+        .fast_fpu_valid(fast_fpu_valid),
+        .slow_fpu_valid(slow_fpu_valid),
+        .fast_fpu_en_pulse(fast_fpu_en),
+        .slow_fpu_en_pulse(slow_fpu_en),
+        .lw_stall(lw_stall)
     );
 
     assign en_instr_mem = ~stall_d;
 
-    assign status = data_decode_if_out.status;
-    assign result_bytes = data_decode_if_in.result_bytes;
+    always @(posedge clk) begin
+        if (rst || io_stall) begin
+            status <= 32'h0;
+        end
+        else if (data_mem_if_out.status) begin
+            status <= 32'hffffffff;
+        end
+    end
+
+    assign pc_plus4_e = data_decode_if_out.pc_plus4;
 endmodule

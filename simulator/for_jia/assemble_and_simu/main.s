@@ -1,71 +1,7 @@
-.section .text # param 437,439
+.section .text #param is 373, 375
 .type main, @function
 .globl main
 main:
-	li zero, 0
-	li ra, -1
-	li sp, 0x4000000
-	li gp, 0
-	li tp, 0x1000000
-	li t0, 0
-	li t1, 0
-	li t2, 0
-	li s0, 0
-	li s1, 0
-	li a0, 0
-	li a1, 0
-	li a2, 0
-	li a3, 0
-	li a4, 0
-	li a5, 0
-	li a6, 0
-	li a7, 0
-	li s2, 0
-	li s3, 0
-	li s4, 0
-	li s5, 0
-	li s6, 0
-	li s7, 0
-	li s8, 0
-	li s9, 0
-	li s10, 0
-	li s11, 0
-    li t3, 0
-    li t4, 0
-    li t5, 0
-    li t6, 0
-    fmv.w.x fa0, zero
-    fmv.w.x fa1, zero
-    fmv.w.x fa2, zero
-    fmv.w.x fa3, zero
-    fmv.w.x fa4, zero
-    fmv.w.x fa5, zero
-    fmv.w.x fa6, zero
-    fmv.w.x fa7, zero
-    fmv.w.x fs0, zero
-    fmv.w.x fs1, zero
-    fmv.w.x fs2, zero
-    fmv.w.x fs3, zero
-    fmv.w.x fs4, zero
-    fmv.w.x fs5, zero
-    fmv.w.x fs6, zero
-    fmv.w.x fs7, zero
-    fmv.w.x fs8, zero
-    fmv.w.x fs9, zero
-    fmv.w.x fs10, zero
-    fmv.w.x fs11, zero
-    fmv.w.x ft0, zero
-    fmv.w.x ft1, zero
-    fmv.w.x ft2, zero
-    fmv.w.x ft3, zero
-    fmv.w.x ft4, zero
-    fmv.w.x ft5, zero
-    fmv.w.x ft6, zero
-    fmv.w.x ft7, zero
-    fmv.w.x ft8, zero
-    fmv.w.x ft9, zero
-    fmv.w.x ft10, zero
-    fmv.w.x ft11, zero
     addi sp, sp, -848
     sw ra, 844(sp) 	# main
     li t0, 1
@@ -434,9 +370,9 @@ main:
     call .5641_Lcreate_array_0_0_J
     lui t6, %hi(n_reflections)
     sw a0, %lo(n_reflections)(t6)
-    li t0, 16
+    li t0, 4
     sw t0, 464(sp)
-    li t0, 16
+    li t0, 4
     sw t0, 460(sp)
     li t0, 3
     sw t0, 456(sp)
@@ -472,8 +408,6 @@ main:
     fsw ft11, 0(t6)
     li t0, 0
     sw t0, 420(sp)
-    li t0, 2
-    sw t0, 416(sp)
     lw t0, 464(sp)
     srai t2, t0, 1
     sw t2, 412(sp)
@@ -492,8 +426,6 @@ main:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 396(sp)
-    li t0, 2
-    sw t0, 392(sp)
     lw t0, 460(sp)
     srai t2, t0, 1
     sw t2, 388(sp)
@@ -849,23 +781,31 @@ sgn:
     feq.s t2, ft0, ft1
     sw t2, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .8859_Lelse_J
+    beqz t0, .8859_Lelse0_J
+    j .8861_Lthen_J
+.8859_Lelse0_J:
+    j .8860_Lelse_J
+.8861_Lthen_J:
     sw zero, 28(sp)
-    j .8860_Lendif_J
-.8859_Lelse_J:
+    j .8862_Lendif_J
+.8860_Lelse_J:
     sw zero, 24(sp)
     flw ft0, 24(sp)
     flw ft1, 40(sp)
     flt.s t2, ft0, ft1
     sw t2, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .8861_Lelse_J
+    beqz t0, .8863_Lelse0_J
+    j .8865_Lthen_J
+.8863_Lelse0_J:
+    j .8864_Lelse_J
+.8865_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 16(sp)
     flw ft11, 16(sp)
     fsw ft11, 28(sp)
-    j .8862_Lendif_J
-.8861_Lelse_J:
+    j .8866_Lendif_J
+.8864_Lelse_J:
     lui t6, 260096 # 0x3f800
     sw t6, 12(sp)
     flw ft11, 12(sp)
@@ -873,8 +813,8 @@ sgn:
     flw ft0, 8(sp)
     fneg.s ft0, ft0
     fsw ft0, 28(sp)
+.8866_Lendif_J:
 .8862_Lendif_J:
-.8860_Lendif_J:
     flw fa0, 28(sp)
     lw ra, 44(sp)
     addi sp, sp, 48
@@ -889,15 +829,19 @@ fneg_cond:
     sw a0, 8(sp)
     fsw fa0, 4(sp)
     lw t0, 8(sp)
-    beqz t0, .8863_Lelse_J
+    beqz t0, .8867_Lelse0_J
+    j .8869_Lthen_J
+.8867_Lelse0_J:
+    j .8868_Lelse_J
+.8869_Lthen_J:
     flw ft11, 4(sp)
     fsw ft11, 0(sp)
-    j .8864_Lendif_J
-.8863_Lelse_J:
+    j .8870_Lendif_J
+.8868_Lelse_J:
     flw ft0, 4(sp)
     fneg.s ft0, ft0
     fsw ft0, 0(sp)
-.8864_Lendif_J:
+.8870_Lendif_J:
     flw fa0, 0(sp)
     lw ra, 12(sp)
     addi sp, sp, 16
@@ -925,18 +869,22 @@ add_mod5:
     seqz t0, t0
     sw t0, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .8865_Lelse_J
+    beqz t0, .8871_Lelse0_J
+    j .8873_Lthen_J
+.8871_Lelse0_J:
+    j .8872_Lelse_J
+.8873_Lthen_J:
     li t0, 5
     sw t0, 16(sp)
     lw t0, 32(sp)
     lw t1, 16(sp)
     sub t2, t0, t1
     sw t2, 12(sp)
-    j .8866_Lendif_J
-.8865_Lelse_J:
+    j .8874_Lendif_J
+.8872_Lelse_J:
     flw ft11, 32(sp)
     fsw ft11, 12(sp)
-.8866_Lendif_J:
+.8874_Lendif_J:
     lw a0, 12(sp)
     lw ra, 44(sp)
     addi sp, sp, 48
@@ -1212,15 +1160,23 @@ vecunit_sgn:
     feq.s t2, ft0, ft1
     sw t2, 132(sp)
     lw t0, 132(sp)
-    beqz t0, .8867_Lelse_J
+    beqz t0, .8875_Lelse0_J
+    j .8877_Lthen_J
+.8875_Lelse0_J:
+    j .8876_Lelse_J
+.8877_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 128(sp)
     flw ft11, 128(sp)
     fsw ft11, 124(sp)
-    j .8868_Lendif_J
-.8867_Lelse_J:
+    j .8878_Lendif_J
+.8876_Lelse_J:
     lw t0, 212(sp)
-    beqz t0, .8869_Lelse_J
+    beqz t0, .8879_Lelse0_J
+    j .8881_Lthen_J
+.8879_Lelse0_J:
+    j .8880_Lelse_J
+.8881_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 120(sp)
     flw ft11, 120(sp)
@@ -1232,8 +1188,8 @@ vecunit_sgn:
     flw ft1, 140(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 124(sp)
-    j .8870_Lendif_J
-.8869_Lelse_J:
+    j .8882_Lendif_J
+.8880_Lelse_J:
     lui t6, 260096 # 0x3f800
     sw t6, 108(sp)
     flw ft11, 108(sp)
@@ -1242,8 +1198,8 @@ vecunit_sgn:
     flw ft1, 140(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 124(sp)
-.8870_Lendif_J:
-.8868_Lendif_J:
+.8882_Lendif_J:
+.8878_Lendif_J:
     li t0, 0
     sw t0, 100(sp)
     li t0, 0
@@ -3050,8 +3006,7 @@ read_screen_settings:
     sw ra, 492(sp) 	# read_screen_settings
     li t0, 0
     sw t0, 488(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 484(sp)
     lui t6, %hi(screen)
     flw ft11, %lo(screen)(t6)
@@ -3068,8 +3023,7 @@ read_screen_settings:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 468(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 464(sp)
     lui t6, %hi(screen)
     flw ft11, %lo(screen)(t6)
@@ -3086,8 +3040,7 @@ read_screen_settings:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 448(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 444(sp)
     lui t6, %hi(screen)
     flw ft11, %lo(screen)(t6)
@@ -3102,8 +3055,7 @@ read_screen_settings:
     lw t6, 432(sp)
     flw ft11, 444(sp)
     fsw ft11, 0(t6)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 428(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -3118,8 +3070,7 @@ read_screen_settings:
     flw fa0, 420(sp)
     call mincaml_sin
     fsw fa0, 412(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 408(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -3479,11 +3430,9 @@ read_screen_settings:
 read_light:
     addi sp, sp, -128
     sw ra, 124(sp) 	# read_light
-    call read_int
-    mv t0, a0
+    cin.int t0
     sw t0, 120(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 116(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -3513,8 +3462,7 @@ read_light:
     lw t6, 84(sp)
     flw ft11, 96(sp)
     fsw ft11, 0(t6)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 80(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -3572,8 +3520,7 @@ read_light:
     fsw ft11, 0(t6)
     li t0, 0
     sw t0, 16(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 12(sp)
     lui t6, %hi(beam)
     flw ft11, %lo(beam)(t6)
@@ -4105,8 +4052,7 @@ read_nth_object:
     addi sp, sp, -592
     sw ra, 588(sp) 	# read_nth_object
     sw a0, 584(sp)
-    call read_int
-    mv t0, a0
+    cin.int t0
     sw t0, 580(sp)
     li t0, 1
     sw t0, 576(sp)
@@ -4118,15 +4064,16 @@ read_nth_object:
     xor t2, t0, t1
     sw t2, 568(sp)
     lw t0, 568(sp)
-    beqz t0, .8871_Lelse_J
-    call read_int
-    mv t0, a0
+    beqz t0, .8883_Lelse0_J
+    j .8885_Lthen_J
+.8883_Lelse0_J:
+    j .8884_Lelse_J
+.8885_Lthen_J:
+    cin.int t0
     sw t0, 564(sp)
-    call read_int
-    mv t0, a0
+    cin.int t0
     sw t0, 560(sp)
-    call read_int
-    mv t0, a0
+    cin.int t0
     sw t0, 556(sp)
     li t0, 3
     sw t0, 552(sp)
@@ -4137,8 +4084,7 @@ read_nth_object:
     sw a0, 544(sp)
     li t0, 0
     sw t0, 540(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 536(sp)
     lw t0, 540(sp)
     slli t0, t0, 2
@@ -4152,8 +4098,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 524(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 520(sp)
     lw t0, 524(sp)
     slli t0, t0, 2
@@ -4167,8 +4112,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 508(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 504(sp)
     lw t0, 508(sp)
     slli t0, t0, 2
@@ -4189,8 +4133,7 @@ read_nth_object:
     sw a0, 484(sp)
     li t0, 0
     sw t0, 480(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 476(sp)
     lw t0, 480(sp)
     slli t0, t0, 2
@@ -4204,8 +4147,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 464(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 460(sp)
     lw t0, 464(sp)
     slli t0, t0, 2
@@ -4219,8 +4161,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 448(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 444(sp)
     lw t0, 448(sp)
     slli t0, t0, 2
@@ -4232,8 +4173,7 @@ read_nth_object:
     lw t6, 436(sp)
     flw ft11, 444(sp)
     fsw ft11, 0(t6)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 432(sp)
     sw zero, 428(sp)
     flw ft0, 432(sp)
@@ -4249,8 +4189,7 @@ read_nth_object:
     sw a0, 412(sp)
     li t0, 0
     sw t0, 408(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 404(sp)
     lw t0, 408(sp)
     slli t0, t0, 2
@@ -4264,8 +4203,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 392(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 388(sp)
     lw t0, 392(sp)
     slli t0, t0, 2
@@ -4286,8 +4224,7 @@ read_nth_object:
     sw a0, 368(sp)
     li t0, 0
     sw t0, 364(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 360(sp)
     lw t0, 364(sp)
     slli t0, t0, 2
@@ -4301,8 +4238,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 348(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 344(sp)
     lw t0, 348(sp)
     slli t0, t0, 2
@@ -4316,8 +4252,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 332(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 328(sp)
     lw t0, 332(sp)
     slli t0, t0, 2
@@ -4343,11 +4278,14 @@ read_nth_object:
     xor t2, t0, t1
     sw t2, 300(sp)
     lw t0, 300(sp)
-    beqz t0, .8873_Lelse_J
+    beqz t0, .8887_Lelse0_J
+    j .8889_Lthen_J
+.8887_Lelse0_J:
+    j .8888_Lelse_J
+.8889_Lthen_J:
     li t0, 0
     sw t0, 296(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 292(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -4368,8 +4306,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 272(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 268(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -4390,8 +4327,7 @@ read_nth_object:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 248(sp)
-    call read_float
-    fmv.s ft0, fa0
+    cin.float ft0
     fsw ft0, 244(sp)
     lui t6, %hi(.6339_L.LC0_J)
     flw ft11, %lo(.6339_L.LC0_J)(t6)
@@ -4410,8 +4346,8 @@ read_nth_object:
     lw t6, 228(sp)
     flw ft11, 236(sp)
     fsw ft11, 0(t6)
-.8873_Lelse_J:
-.8874_Lendif_J:
+.8888_Lelse_J:
+.8890_Lendif_J:
     li t0, 2
     sw t0, 224(sp)
     lw t0, 564(sp)
@@ -4422,14 +4358,18 @@ read_nth_object:
     seqz t0, t0
     sw t0, 216(sp)
     lw t0, 216(sp)
-    beqz t0, .8875_Lelse_J
+    beqz t0, .8891_Lelse0_J
+    j .8893_Lthen_J
+.8891_Lelse0_J:
+    j .8892_Lelse_J
+.8893_Lthen_J:
     li t0, 1
     sw t0, 212(sp)
-    j .8876_Lendif_J
-.8875_Lelse_J:
+    j .8894_Lendif_J
+.8892_Lelse_J:
     flw ft11, 424(sp)
     fsw ft11, 212(sp)
-.8876_Lendif_J:
+.8894_Lendif_J:
     li t0, 4
     sw t0, 208(sp)
     sw zero, 204(sp)
@@ -4495,7 +4435,11 @@ read_nth_object:
     seqz t0, t0
     sw t0, 176(sp)
     lw t0, 176(sp)
-    beqz t0, .8877_Lelse_J
+    beqz t0, .8895_Lelse0_J
+    j .8897_Lthen_J
+.8895_Lelse0_J:
+    j .8896_Lelse_J
+.8897_Lthen_J:
     li t0, 0
     sw t0, 172(sp)
     lw t0, 172(sp)
@@ -4516,10 +4460,14 @@ read_nth_object:
     feq.s t2, ft0, ft1
     sw t2, 148(sp)
     lw t0, 148(sp)
-    beqz t0, .8879_Lelse_J
+    beqz t0, .8899_Lelse0_J
+    j .8901_Lthen_J
+.8899_Lelse0_J:
+    j .8900_Lelse_J
+.8901_Lthen_J:
     sw zero, 144(sp)
-    j .8880_Lendif_J
-.8879_Lelse_J:
+    j .8902_Lendif_J
+.8900_Lelse_J:
     flw fa0, 160(sp)
     call sgn
     fsw fa0, 140(sp)
@@ -4531,7 +4479,7 @@ read_nth_object:
     flw ft1, 136(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 144(sp)
-.8880_Lendif_J:
+.8902_Lendif_J:
     lw t0, 156(sp)
     slli t0, t0, 2
     sw t0, 132(sp)
@@ -4562,10 +4510,14 @@ read_nth_object:
     feq.s t2, ft0, ft1
     sw t2, 100(sp)
     lw t0, 100(sp)
-    beqz t0, .8881_Lelse_J
+    beqz t0, .8903_Lelse0_J
+    j .8905_Lthen_J
+.8903_Lelse0_J:
+    j .8904_Lelse_J
+.8905_Lthen_J:
     sw zero, 96(sp)
-    j .8882_Lendif_J
-.8881_Lelse_J:
+    j .8906_Lendif_J
+.8904_Lelse_J:
     flw fa0, 112(sp)
     call sgn
     fsw fa0, 92(sp)
@@ -4577,7 +4529,7 @@ read_nth_object:
     flw ft1, 88(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 96(sp)
-.8882_Lendif_J:
+.8906_Lendif_J:
     lw t0, 108(sp)
     slli t0, t0, 2
     sw t0, 84(sp)
@@ -4608,10 +4560,14 @@ read_nth_object:
     feq.s t2, ft0, ft1
     sw t2, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .8883_Lelse_J
+    beqz t0, .8907_Lelse0_J
+    j .8909_Lthen_J
+.8907_Lelse0_J:
+    j .8908_Lelse_J
+.8909_Lthen_J:
     sw zero, 48(sp)
-    j .8884_Lendif_J
-.8883_Lelse_J:
+    j .8910_Lendif_J
+.8908_Lelse_J:
     flw fa0, 64(sp)
     call sgn
     fsw fa0, 44(sp)
@@ -4623,7 +4579,7 @@ read_nth_object:
     flw ft1, 40(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 48(sp)
-.8884_Lendif_J:
+.8910_Lendif_J:
     lw t0, 60(sp)
     slli t0, t0, 2
     sw t0, 36(sp)
@@ -4634,8 +4590,8 @@ read_nth_object:
     lw t6, 32(sp)
     flw ft11, 48(sp)
     fsw ft11, 0(t6)
-    j .8878_Lendif_J
-.8877_Lelse_J:
+    j .8898_Lendif_J
+.8896_Lelse_J:
     li t0, 2
     sw t0, 28(sp)
     lw t0, 564(sp)
@@ -4646,16 +4602,20 @@ read_nth_object:
     seqz t0, t0
     sw t0, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .8885_Lelse_J
+    beqz t0, .8911_Lelse0_J
+    j .8913_Lthen_J
+.8911_Lelse0_J:
+    j .8912_Lelse_J
+.8913_Lthen_J:
     lw t0, 424(sp)
     seqz t0, t0
     sw t0, 16(sp)
     lw a0, 544(sp)
     lw a1, 16(sp)
     call vecunit_sgn
-.8885_Lelse_J:
-.8886_Lendif_J:
-.8878_Lendif_J:
+.8912_Lelse_J:
+.8914_Lendif_J:
+.8898_Lendif_J:
     li t0, 0
     sw t0, 12(sp)
     lw t0, 556(sp)
@@ -4663,19 +4623,23 @@ read_nth_object:
     xor t2, t0, t1
     sw t2, 8(sp)
     lw t0, 8(sp)
-    beqz t0, .8887_Lelse_J
+    beqz t0, .8915_Lelse0_J
+    j .8917_Lthen_J
+.8915_Lelse0_J:
+    j .8916_Lelse_J
+.8917_Lthen_J:
     lw a0, 544(sp)
     lw a1, 308(sp)
     call rotate_quadratic_matrix
-.8887_Lelse_J:
-.8888_Lendif_J:
+.8916_Lelse_J:
+.8918_Lendif_J:
     li t0, 1
     sw t0, 4(sp)
-    j .8872_Lendif_J
-.8871_Lelse_J:
+    j .8886_Lendif_J
+.8884_Lelse_J:
     li t0, 0
     sw t0, 4(sp)
-.8872_Lendif_J:
+.8886_Lendif_J:
     lw a0, 4(sp)
     lw ra, 588(sp)
     addi sp, sp, 592
@@ -4695,12 +4659,20 @@ read_object:
     slt t2, t0, t1
     sw t2, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .8889_Lelse_J
+    beqz t0, .8919_Lelse0_J
+    j .8921_Lthen_J
+.8919_Lelse0_J:
+    j .8920_Lelse_J
+.8921_Lthen_J:
     lw a0, 40(sp)
     call read_nth_object
     sw a0, 28(sp)
     lw t0, 28(sp)
-    beqz t0, .8891_Lelse_J
+    beqz t0, .8923_Lelse0_J
+    j .8925_Lthen_J
+.8923_Lelse0_J:
+    j .8924_Lelse_J
+.8925_Lthen_J:
     li t0, 1
     sw t0, 24(sp)
     lw t0, 40(sp)
@@ -4709,8 +4681,8 @@ read_object:
     sw t2, 20(sp)
     lw a0, 20(sp)
     call read_object
-    j .8892_Lendif_J
-.8891_Lelse_J:
+    j .8926_Lendif_J
+.8924_Lelse_J:
     li t0, 0
     sw t0, 16(sp)
     lui t6, %hi(n_objects)
@@ -4726,9 +4698,9 @@ read_object:
     lw t6, 4(sp)
     flw ft11, 40(sp)
     fsw ft11, 0(t6)
-.8892_Lendif_J:
-.8889_Lelse_J:
-.8890_Lendif_J:
+.8926_Lendif_J:
+.8920_Lelse_J:
+.8922_Lendif_J:
     lw ra, 44(sp)
     addi sp, sp, 48
     ret
@@ -4754,8 +4726,7 @@ read_net_item:
     addi sp, sp, -80
     sw ra, 76(sp) 	# read_net_item
     sw a0, 72(sp)
-    call read_int
-    mv t0, a0
+    cin.int t0
     sw t0, 68(sp)
     li t0, 1
     sw t0, 64(sp)
@@ -4770,7 +4741,11 @@ read_net_item:
     seqz t0, t0
     sw t0, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .8893_Lelse_J
+    beqz t0, .8927_Lelse0_J
+    j .8929_Lthen_J
+.8927_Lelse0_J:
+    j .8928_Lelse_J
+.8929_Lthen_J:
     li t0, 1
     sw t0, 48(sp)
     lw t0, 72(sp)
@@ -4786,8 +4761,8 @@ read_net_item:
     lw a1, 36(sp)
     call .5641_Lcreate_array_0_0_J
     sw a0, 12(sp)
-    j .8894_Lendif_J
-.8893_Lelse_J:
+    j .8930_Lendif_J
+.8928_Lelse_J:
     li t0, 1
     sw t0, 32(sp)
     lw t0, 72(sp)
@@ -4809,7 +4784,7 @@ read_net_item:
     fsw ft11, 0(t6)
     flw ft11, 24(sp)
     fsw ft11, 12(sp)
-.8894_Lendif_J:
+.8930_Lendif_J:
     lw a0, 12(sp)
     lw ra, 76(sp)
     addi sp, sp, 80
@@ -4852,7 +4827,11 @@ read_or_network:
     seqz t0, t0
     sw t0, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .8895_Lelse_J
+    beqz t0, .8931_Lelse0_J
+    j .8933_Lthen_J
+.8931_Lelse0_J:
+    j .8932_Lelse_J
+.8933_Lthen_J:
     li t0, 1
     sw t0, 28(sp)
     lw t0, 72(sp)
@@ -4863,8 +4842,8 @@ read_or_network:
     lw a1, 64(sp)
     call .5641_Lcreate_array_0_0_J
     sw a0, 0(sp)
-    j .8896_Lendif_J
-.8895_Lelse_J:
+    j .8934_Lendif_J
+.8932_Lelse_J:
     li t0, 1
     sw t0, 20(sp)
     lw t0, 72(sp)
@@ -4886,7 +4865,7 @@ read_or_network:
     fsw ft11, 0(t6)
     flw ft11, 12(sp)
     fsw ft11, 0(sp)
-.8896_Lendif_J:
+.8934_Lendif_J:
     lw a0, 0(sp)
     lw ra, 76(sp)
     addi sp, sp, 80
@@ -4929,9 +4908,13 @@ read_and_network:
     seqz t0, t0
     sw t0, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .8897_Lelse_J
-    j .8898_Lendif_J
-.8897_Lelse_J:
+    beqz t0, .8935_Lelse0_J
+    j .8937_Lthen_J
+.8935_Lelse0_J:
+    j .8936_Lelse_J
+.8937_Lthen_J:
+    j .8938_Lendif_J
+.8936_Lelse_J:
     lui t6, %hi(and_net)
     flw ft11, %lo(and_net)(t6)
     fsw ft11, 28(sp)
@@ -4953,7 +4936,7 @@ read_and_network:
     sw t2, 12(sp)
     lw a0, 12(sp)
     call read_and_network
-.8898_Lendif_J:
+.8938_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -5045,11 +5028,15 @@ solver_rect_surface:
     feq.s t2, ft0, ft1
     sw t2, 164(sp)
     lw t0, 164(sp)
-    beqz t0, .8899_Lelse_J
+    beqz t0, .8939_Lelse0_J
+    j .8941_Lthen_J
+.8939_Lelse0_J:
+    j .8940_Lelse_J
+.8941_Lthen_J:
     li t0, 0
     sw t0, 160(sp)
-    j .8900_Lendif_J
-.8899_Lelse_J:
+    j .8942_Lendif_J
+.8940_Lelse_J:
     lw t0, 192(sp)
     slli t0, t0, 2
     sw t0, 156(sp)
@@ -5080,15 +5067,19 @@ solver_rect_surface:
     flw ft11, 0(t6)
     fsw ft11, 124(sp)
     lw t0, 136(sp)
-    beqz t0, .8901_Lelse_J
+    beqz t0, .8943_Lelse0_J
+    j .8945_Lthen_J
+.8943_Lelse0_J:
+    j .8944_Lelse_J
+.8945_Lthen_J:
     flw ft11, 124(sp)
     fsw ft11, 120(sp)
-    j .8902_Lendif_J
-.8901_Lelse_J:
+    j .8946_Lendif_J
+.8944_Lelse_J:
     flw ft0, 124(sp)
     fneg.s ft0, ft0
     fsw ft0, 120(sp)
-.8902_Lendif_J:
+.8946_Lendif_J:
     flw ft0, 120(sp)
     flw ft1, 204(sp)
     fsub.s ft2, ft0, ft1
@@ -5143,7 +5134,11 @@ solver_rect_surface:
     flt.s t2, ft0, ft1
     sw t2, 60(sp)
     lw t0, 60(sp)
-    beqz t0, .8903_Lelse_J
+    beqz t0, .8947_Lelse0_J
+    j .8949_Lthen_J
+.8947_Lelse0_J:
+    j .8948_Lelse_J
+.8949_Lthen_J:
     lw t0, 184(sp)
     slli t0, t0, 2
     sw t0, 56(sp)
@@ -5180,7 +5175,11 @@ solver_rect_surface:
     flt.s t2, ft0, ft1
     sw t2, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .8905_Lelse_J
+    beqz t0, .8951_Lelse0_J
+    j .8953_Lthen_J
+.8951_Lelse0_J:
+    j .8952_Lelse_J
+.8953_Lthen_J:
     li t0, 0
     sw t0, 16(sp)
     lui t6, %hi(solver_dist)
@@ -5198,17 +5197,17 @@ solver_rect_surface:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 160(sp)
-    j .8906_Lendif_J
-.8905_Lelse_J:
+    j .8954_Lendif_J
+.8952_Lelse_J:
     li t0, 0
     sw t0, 160(sp)
-.8906_Lendif_J:
-    j .8904_Lendif_J
-.8903_Lelse_J:
+.8954_Lendif_J:
+    j .8950_Lendif_J
+.8948_Lelse_J:
     li t0, 0
     sw t0, 160(sp)
-.8904_Lendif_J:
-.8900_Lendif_J:
+.8950_Lendif_J:
+.8942_Lendif_J:
     lw a0, 160(sp)
     lw ra, 256(sp)
     addi sp, sp, 288
@@ -5273,11 +5272,15 @@ solver_rect:
     call solver_rect_surface
     sw a0, 48(sp)
     lw t0, 48(sp)
-    beqz t0, .8907_Lelse_J
+    beqz t0, .8955_Lelse0_J
+    j .8957_Lthen_J
+.8955_Lelse0_J:
+    j .8956_Lelse_J
+.8957_Lthen_J:
     li t0, 1
     sw t0, 44(sp)
-    j .8908_Lendif_J
-.8907_Lelse_J:
+    j .8958_Lendif_J
+.8956_Lelse_J:
     li t0, 1
     sw t0, 40(sp)
     li t0, 2
@@ -5312,11 +5315,15 @@ solver_rect:
     call solver_rect_surface
     sw a0, 28(sp)
     lw t0, 28(sp)
-    beqz t0, .8909_Lelse_J
+    beqz t0, .8959_Lelse0_J
+    j .8961_Lthen_J
+.8959_Lelse0_J:
+    j .8960_Lelse_J
+.8961_Lthen_J:
     li t0, 2
     sw t0, 44(sp)
-    j .8910_Lendif_J
-.8909_Lelse_J:
+    j .8962_Lendif_J
+.8960_Lelse_J:
     li t0, 2
     sw t0, 24(sp)
     li t0, 0
@@ -5351,16 +5358,20 @@ solver_rect:
     call solver_rect_surface
     sw a0, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .8911_Lelse_J
+    beqz t0, .8963_Lelse0_J
+    j .8965_Lthen_J
+.8963_Lelse0_J:
+    j .8964_Lelse_J
+.8965_Lthen_J:
     li t0, 3
     sw t0, 44(sp)
-    j .8912_Lendif_J
-.8911_Lelse_J:
+    j .8966_Lendif_J
+.8964_Lelse_J:
     li t0, 0
     sw t0, 44(sp)
-.8912_Lendif_J:
-.8910_Lendif_J:
-.8908_Lendif_J:
+.8966_Lendif_J:
+.8962_Lendif_J:
+.8958_Lendif_J:
     lw a0, 44(sp)
     lw ra, 124(sp)
     addi sp, sp, 144
@@ -5489,7 +5500,11 @@ solver_surface:
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
     lw t0, 100(sp)
-    beqz t0, .8913_Lelse_J
+    beqz t0, .8967_Lelse0_J
+    j .8969_Lthen_J
+.8967_Lelse0_J:
+    j .8968_Lelse_J
+.8969_Lthen_J:
     li t0, 0
     sw t0, 96(sp)
     li t0, 0
@@ -5570,11 +5585,11 @@ solver_surface:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 4(sp)
-    j .8914_Lendif_J
-.8913_Lelse_J:
+    j .8970_Lendif_J
+.8968_Lelse_J:
     li t0, 0
     sw t0, 4(sp)
-.8914_Lendif_J:
+.8970_Lendif_J:
     lw a0, 4(sp)
     lw ra, 284(sp)
     addi sp, sp, 304
@@ -5681,11 +5696,15 @@ quadratic:
     seqz t0, t0
     sw t0, 92(sp)
     lw t0, 92(sp)
-    beqz t0, .8915_Lelse_J
+    beqz t0, .8971_Lelse0_J
+    j .8973_Lthen_J
+.8971_Lelse0_J:
+    j .8972_Lelse_J
+.8973_Lthen_J:
     flw ft11, 104(sp)
     fsw ft11, 88(sp)
-    j .8916_Lendif_J
-.8915_Lelse_J:
+    j .8974_Lendif_J
+.8972_Lelse_J:
     flw ft0, 188(sp)
     flw ft1, 184(sp)
     fmul.s ft2, ft0, ft1
@@ -5758,7 +5777,7 @@ quadratic:
     flw ft1, 8(sp)
     fadd.s ft2, ft0, ft1
     fsw ft2, 88(sp)
-.8916_Lendif_J:
+.8974_Lendif_J:
     flw fa0, 88(sp)
     lw ra, 240(sp)
     addi sp, sp, 256
@@ -5868,11 +5887,15 @@ bilinear:
     seqz t0, t0
     sw t0, 128(sp)
     lw t0, 128(sp)
-    beqz t0, .8917_Lelse_J
+    beqz t0, .8975_Lelse0_J
+    j .8977_Lthen_J
+.8975_Lelse0_J:
+    j .8976_Lelse_J
+.8977_Lthen_J:
     flw ft11, 140(sp)
     fsw ft11, 124(sp)
-    j .8918_Lendif_J
-.8917_Lelse_J:
+    j .8978_Lendif_J
+.8976_Lelse_J:
     flw ft0, 232(sp)
     flw ft1, 224(sp)
     fmul.s ft2, ft0, ft1
@@ -5977,7 +6000,7 @@ bilinear:
     flw ft1, 12(sp)
     fadd.s ft2, ft0, ft1
     fsw ft2, 124(sp)
-.8918_Lendif_J:
+.8978_Lendif_J:
     flw fa0, 124(sp)
     lw ra, 288(sp)
     addi sp, sp, 304
@@ -6069,11 +6092,15 @@ solver_second:
     feq.s t2, ft0, ft1
     sw t2, 148(sp)
     lw t0, 148(sp)
-    beqz t0, .8919_Lelse_J
+    beqz t0, .8979_Lelse0_J
+    j .8981_Lthen_J
+.8979_Lelse0_J:
+    j .8980_Lelse_J
+.8981_Lthen_J:
     li t0, 0
     sw t0, 144(sp)
-    j .8920_Lendif_J
-.8919_Lelse_J:
+    j .8982_Lendif_J
+.8980_Lelse_J:
     li t0, 0
     sw t0, 140(sp)
     lw t0, 140(sp)
@@ -6161,7 +6188,11 @@ solver_second:
     seqz t0, t0
     sw t0, 76(sp)
     lw t0, 76(sp)
-    beqz t0, .8921_Lelse_J
+    beqz t0, .8983_Lelse0_J
+    j .8985_Lthen_J
+.8983_Lelse0_J:
+    j .8984_Lelse_J
+.8985_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 72(sp)
     flw ft11, 72(sp)
@@ -6170,11 +6201,11 @@ solver_second:
     flw ft1, 68(sp)
     fsub.s ft2, ft0, ft1
     fsw ft2, 64(sp)
-    j .8922_Lendif_J
-.8921_Lelse_J:
+    j .8986_Lendif_J
+.8984_Lelse_J:
     flw ft11, 88(sp)
     fsw ft11, 64(sp)
-.8922_Lendif_J:
+.8986_Lendif_J:
     flw ft0, 92(sp)
     flw ft1, 92(sp)
     fmul.s ft2, ft0, ft1
@@ -6193,20 +6224,28 @@ solver_second:
     flt.s t2, ft0, ft1
     sw t2, 44(sp)
     lw t0, 44(sp)
-    beqz t0, .8923_Lelse_J
+    beqz t0, .8987_Lelse0_J
+    j .8989_Lthen_J
+.8987_Lelse0_J:
+    j .8988_Lelse_J
+.8989_Lthen_J:
     flw ft0, 52(sp)
     fsqrt.s ft0, ft0
     fsw ft0, 40(sp)
     lw t0, 240(sp)
-    beqz t0, .8925_Lelse_J
+    beqz t0, .8991_Lelse0_J
+    j .8993_Lthen_J
+.8991_Lelse0_J:
+    j .8992_Lelse_J
+.8993_Lthen_J:
     flw ft11, 40(sp)
     fsw ft11, 36(sp)
-    j .8926_Lendif_J
-.8925_Lelse_J:
+    j .8994_Lendif_J
+.8992_Lelse_J:
     flw ft0, 40(sp)
     fneg.s ft0, ft0
     fsw ft0, 36(sp)
-.8926_Lendif_J:
+.8994_Lendif_J:
     li t0, 0
     sw t0, 32(sp)
     flw ft0, 36(sp)
@@ -6232,12 +6271,12 @@ solver_second:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 144(sp)
-    j .8924_Lendif_J
-.8923_Lelse_J:
+    j .8990_Lendif_J
+.8988_Lelse_J:
     li t0, 0
     sw t0, 144(sp)
-.8924_Lendif_J:
-.8920_Lendif_J:
+.8990_Lendif_J:
+.8982_Lendif_J:
     lw a0, 144(sp)
     lw ra, 268(sp)
     addi sp, sp, 288
@@ -6394,7 +6433,11 @@ solver:
     seqz t0, t0
     sw t0, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .8927_Lelse_J
+    beqz t0, .8995_Lelse0_J
+    j .8997_Lthen_J
+.8995_Lelse0_J:
+    j .8996_Lelse_J
+.8997_Lthen_J:
     lw a0, 176(sp)
     lw a1, 172(sp)
     lw a2, 168(sp)
@@ -6416,8 +6459,8 @@ solver:
     flw fa2, 28(sp)
     call solver_rect
     sw a0, 0(sp)
-    j .8928_Lendif_J
-.8927_Lelse_J:
+    j .8998_Lendif_J
+.8996_Lelse_J:
     li t0, 2
     sw t0, 12(sp)
     lw t0, 172(sp)
@@ -6428,7 +6471,11 @@ solver:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .8929_Lelse_J
+    beqz t0, .8999_Lelse0_J
+    j .9001_Lthen_J
+.8999_Lelse0_J:
+    j .9000_Lelse_J
+.9001_Lthen_J:
     lw a0, 176(sp)
     lw a1, 172(sp)
     lw a2, 168(sp)
@@ -6450,8 +6497,8 @@ solver:
     flw fa2, 28(sp)
     call solver_surface
     sw a0, 0(sp)
-    j .8930_Lendif_J
-.8929_Lelse_J:
+    j .9002_Lendif_J
+.9000_Lelse_J:
     lw a0, 176(sp)
     lw a1, 172(sp)
     lw a2, 168(sp)
@@ -6473,8 +6520,8 @@ solver:
     flw fa2, 28(sp)
     call solver_second
     sw a0, 0(sp)
-.8930_Lendif_J:
-.8928_Lendif_J:
+.9002_Lendif_J:
+.8998_Lendif_J:
     lw a0, 0(sp)
     lw ra, 204(sp)
     addi sp, sp, 208
@@ -6579,7 +6626,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 464(sp)
     lw t0, 464(sp)
-    beqz t0, .8931_Lelse_J
+    beqz t0, .9003_Lelse0_J
+    j .9005_Lthen_J
+.9003_Lelse0_J:
+    j .9004_Lelse_J
+.9005_Lthen_J:
     li t0, 2
     sw t0, 460(sp)
     lw t0, 460(sp)
@@ -6620,7 +6671,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 416(sp)
     lw t0, 416(sp)
-    beqz t0, .8933_Lelse_J
+    beqz t0, .9007_Lelse0_J
+    j .9009_Lthen_J
+.9007_Lelse0_J:
+    j .9008_Lelse_J
+.9009_Lthen_J:
     li t0, 1
     sw t0, 412(sp)
     lw t0, 412(sp)
@@ -6641,18 +6696,22 @@ solver_rect_fast:
     lw t0, 392(sp)
     seqz t0, t0
     sw t0, 388(sp)
-    j .8934_Lendif_J
-.8933_Lelse_J:
+    j .9010_Lendif_J
+.9008_Lelse_J:
     li t0, 0
     sw t0, 388(sp)
-.8934_Lendif_J:
-    j .8932_Lendif_J
-.8931_Lelse_J:
+.9010_Lendif_J:
+    j .9006_Lendif_J
+.9004_Lelse_J:
     li t0, 0
     sw t0, 388(sp)
-.8932_Lendif_J:
+.9006_Lendif_J:
     lw t0, 388(sp)
-    beqz t0, .8935_Lelse_J
+    beqz t0, .9011_Lelse0_J
+    j .9013_Lthen_J
+.9011_Lelse0_J:
+    j .9012_Lelse_J
+.9013_Lthen_J:
     li t0, 0
     sw t0, 384(sp)
     lui t6, %hi(solver_dist)
@@ -6670,8 +6729,8 @@ solver_rect_fast:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 368(sp)
-    j .8936_Lendif_J
-.8935_Lelse_J:
+    j .9014_Lendif_J
+.9012_Lelse_J:
     li t0, 2
     sw t0, 364(sp)
     lw t0, 364(sp)
@@ -6744,7 +6803,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 280(sp)
     lw t0, 280(sp)
-    beqz t0, .8937_Lelse_J
+    beqz t0, .9015_Lelse0_J
+    j .9017_Lthen_J
+.9015_Lelse0_J:
+    j .9016_Lelse_J
+.9017_Lthen_J:
     li t0, 2
     sw t0, 276(sp)
     lw t0, 276(sp)
@@ -6785,7 +6848,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 232(sp)
     lw t0, 232(sp)
-    beqz t0, .8939_Lelse_J
+    beqz t0, .9019_Lelse0_J
+    j .9021_Lthen_J
+.9019_Lelse0_J:
+    j .9020_Lelse_J
+.9021_Lthen_J:
     li t0, 3
     sw t0, 228(sp)
     lw t0, 228(sp)
@@ -6806,18 +6873,22 @@ solver_rect_fast:
     lw t0, 208(sp)
     seqz t0, t0
     sw t0, 204(sp)
-    j .8940_Lendif_J
-.8939_Lelse_J:
+    j .9022_Lendif_J
+.9020_Lelse_J:
     li t0, 0
     sw t0, 204(sp)
-.8940_Lendif_J:
-    j .8938_Lendif_J
-.8937_Lelse_J:
+.9022_Lendif_J:
+    j .9018_Lendif_J
+.9016_Lelse_J:
     li t0, 0
     sw t0, 204(sp)
-.8938_Lendif_J:
+.9018_Lendif_J:
     lw t0, 204(sp)
-    beqz t0, .8941_Lelse_J
+    beqz t0, .9023_Lelse0_J
+    j .9025_Lthen_J
+.9023_Lelse0_J:
+    j .9024_Lelse_J
+.9025_Lthen_J:
     li t0, 0
     sw t0, 200(sp)
     lui t6, %hi(solver_dist)
@@ -6835,8 +6906,8 @@ solver_rect_fast:
     fsw ft11, 0(t6)
     li t0, 2
     sw t0, 368(sp)
-    j .8942_Lendif_J
-.8941_Lelse_J:
+    j .9026_Lendif_J
+.9024_Lelse_J:
     li t0, 4
     sw t0, 184(sp)
     lw t0, 184(sp)
@@ -6909,7 +6980,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
     lw t0, 100(sp)
-    beqz t0, .8943_Lelse_J
+    beqz t0, .9027_Lelse0_J
+    j .9029_Lthen_J
+.9027_Lelse0_J:
+    j .9028_Lelse_J
+.9029_Lthen_J:
     li t0, 1
     sw t0, 96(sp)
     lw t0, 96(sp)
@@ -6950,7 +7025,11 @@ solver_rect_fast:
     flt.s t2, ft0, ft1
     sw t2, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .8945_Lelse_J
+    beqz t0, .9031_Lelse0_J
+    j .9033_Lthen_J
+.9031_Lelse0_J:
+    j .9032_Lelse_J
+.9033_Lthen_J:
     li t0, 5
     sw t0, 48(sp)
     lw t0, 48(sp)
@@ -6971,18 +7050,22 @@ solver_rect_fast:
     lw t0, 28(sp)
     seqz t0, t0
     sw t0, 24(sp)
-    j .8946_Lendif_J
-.8945_Lelse_J:
+    j .9034_Lendif_J
+.9032_Lelse_J:
     li t0, 0
     sw t0, 24(sp)
-.8946_Lendif_J:
-    j .8944_Lendif_J
-.8943_Lelse_J:
+.9034_Lendif_J:
+    j .9030_Lendif_J
+.9028_Lelse_J:
     li t0, 0
     sw t0, 24(sp)
-.8944_Lendif_J:
+.9030_Lendif_J:
     lw t0, 24(sp)
-    beqz t0, .8947_Lelse_J
+    beqz t0, .9035_Lelse0_J
+    j .9037_Lthen_J
+.9035_Lelse0_J:
+    j .9036_Lelse_J
+.9037_Lthen_J:
     li t0, 0
     sw t0, 20(sp)
     lui t6, %hi(solver_dist)
@@ -7000,13 +7083,13 @@ solver_rect_fast:
     fsw ft11, 0(t6)
     li t0, 3
     sw t0, 368(sp)
-    j .8948_Lendif_J
-.8947_Lelse_J:
+    j .9038_Lendif_J
+.9036_Lelse_J:
     li t0, 0
     sw t0, 368(sp)
-.8948_Lendif_J:
-.8942_Lendif_J:
-.8936_Lendif_J:
+.9038_Lendif_J:
+.9026_Lendif_J:
+.9014_Lendif_J:
     lw a0, 368(sp)
     lw ra, 616(sp)
     addi sp, sp, 640
@@ -7055,7 +7138,11 @@ solver_surface_fast:
     flt.s t2, ft0, ft1
     sw t2, 88(sp)
     lw t0, 88(sp)
-    beqz t0, .8949_Lelse_J
+    beqz t0, .9039_Lelse0_J
+    j .9041_Lthen_J
+.9039_Lelse0_J:
+    j .9040_Lelse_J
+.9041_Lthen_J:
     li t0, 0
     sw t0, 84(sp)
     li t0, 1
@@ -7129,11 +7216,11 @@ solver_surface_fast:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 0(sp)
-    j .8950_Lendif_J
-.8949_Lelse_J:
+    j .9042_Lendif_J
+.9040_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.8950_Lendif_J:
+.9042_Lendif_J:
     lw a0, 0(sp)
     lw ra, 172(sp)
     addi sp, sp, 192
@@ -7182,11 +7269,15 @@ solver_second_fast:
     feq.s t2, ft0, ft1
     sw t2, 216(sp)
     lw t0, 216(sp)
-    beqz t0, .8951_Lelse_J
+    beqz t0, .9043_Lelse0_J
+    j .9045_Lthen_J
+.9043_Lelse0_J:
+    j .9044_Lelse_J
+.9045_Lthen_J:
     li t0, 0
     sw t0, 212(sp)
-    j .8952_Lendif_J
-.8951_Lelse_J:
+    j .9046_Lendif_J
+.9044_Lelse_J:
     li t0, 1
     sw t0, 208(sp)
     lw t0, 208(sp)
@@ -7272,7 +7363,11 @@ solver_second_fast:
     seqz t0, t0
     sw t0, 128(sp)
     lw t0, 128(sp)
-    beqz t0, .8953_Lelse_J
+    beqz t0, .9047_Lelse0_J
+    j .9049_Lthen_J
+.9047_Lelse0_J:
+    j .9048_Lelse_J
+.9049_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 124(sp)
     flw ft11, 124(sp)
@@ -7281,11 +7376,11 @@ solver_second_fast:
     flw ft1, 120(sp)
     fsub.s ft2, ft0, ft1
     fsw ft2, 116(sp)
-    j .8954_Lendif_J
-.8953_Lelse_J:
+    j .9050_Lendif_J
+.9048_Lelse_J:
     flw ft11, 140(sp)
     fsw ft11, 116(sp)
-.8954_Lendif_J:
+.9050_Lendif_J:
     flw ft0, 144(sp)
     flw ft1, 144(sp)
     fmul.s ft2, ft0, ft1
@@ -7304,9 +7399,17 @@ solver_second_fast:
     flt.s t2, ft0, ft1
     sw t2, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .8955_Lelse_J
+    beqz t0, .9051_Lelse0_J
+    j .9053_Lthen_J
+.9051_Lelse0_J:
+    j .9052_Lelse_J
+.9053_Lthen_J:
     lw t0, 272(sp)
-    beqz t0, .8957_Lelse_J
+    beqz t0, .9055_Lelse0_J
+    j .9057_Lthen_J
+.9055_Lelse0_J:
+    j .9056_Lelse_J
+.9057_Lthen_J:
     li t0, 0
     sw t0, 92(sp)
     flw ft0, 104(sp)
@@ -7345,8 +7448,8 @@ solver_second_fast:
     lw t6, 52(sp)
     flw ft11, 64(sp)
     fsw ft11, 0(t6)
-    j .8958_Lendif_J
-.8957_Lelse_J:
+    j .9058_Lendif_J
+.9056_Lelse_J:
     li t0, 0
     sw t0, 48(sp)
     flw ft0, 104(sp)
@@ -7385,15 +7488,15 @@ solver_second_fast:
     lw t6, 8(sp)
     flw ft11, 20(sp)
     fsw ft11, 0(t6)
-.8958_Lendif_J:
+.9058_Lendif_J:
     li t0, 1
     sw t0, 212(sp)
-    j .8956_Lendif_J
-.8955_Lelse_J:
+    j .9054_Lendif_J
+.9052_Lelse_J:
     li t0, 0
     sw t0, 212(sp)
-.8956_Lendif_J:
-.8952_Lendif_J:
+.9054_Lendif_J:
+.9046_Lendif_J:
     lw a0, 212(sp)
     lw ra, 300(sp)
     addi sp, sp, 320
@@ -7561,7 +7664,11 @@ solver_fast:
     seqz t0, t0
     sw t0, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .8959_Lelse_J
+    beqz t0, .9059_Lelse0_J
+    j .9061_Lthen_J
+.9059_Lelse0_J:
+    j .9060_Lelse_J
+.9061_Lthen_J:
     lw a0, 188(sp)
     lw a1, 184(sp)
     lw a2, 180(sp)
@@ -7585,8 +7692,8 @@ solver_fast:
     flw fa2, 40(sp)
     call solver_rect_fast
     sw a0, 0(sp)
-    j .8960_Lendif_J
-.8959_Lelse_J:
+    j .9062_Lendif_J
+.9060_Lelse_J:
     li t0, 2
     sw t0, 12(sp)
     lw t0, 184(sp)
@@ -7597,7 +7704,11 @@ solver_fast:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .8961_Lelse_J
+    beqz t0, .9063_Lelse0_J
+    j .9065_Lthen_J
+.9063_Lelse0_J:
+    j .9064_Lelse_J
+.9065_Lthen_J:
     lw a0, 188(sp)
     lw a1, 184(sp)
     lw a2, 180(sp)
@@ -7619,8 +7730,8 @@ solver_fast:
     flw fa2, 40(sp)
     call solver_surface_fast
     sw a0, 0(sp)
-    j .8962_Lendif_J
-.8961_Lelse_J:
+    j .9066_Lendif_J
+.9064_Lelse_J:
     lw a0, 188(sp)
     lw a1, 184(sp)
     lw a2, 180(sp)
@@ -7642,8 +7753,8 @@ solver_fast:
     flw fa2, 40(sp)
     call solver_second_fast
     sw a0, 0(sp)
-.8962_Lendif_J:
-.8960_Lendif_J:
+.9066_Lendif_J:
+.9062_Lendif_J:
     lw a0, 0(sp)
     lw ra, 220(sp)
     addi sp, sp, 224
@@ -7694,7 +7805,11 @@ solver_surface_fast2:
     flt.s t2, ft0, ft1
     sw t2, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .8963_Lelse_J
+    beqz t0, .9067_Lelse0_J
+    j .9069_Lthen_J
+.9067_Lelse0_J:
+    j .9068_Lelse_J
+.9069_Lthen_J:
     li t0, 0
     sw t0, 60(sp)
     li t0, 0
@@ -7740,11 +7855,11 @@ solver_surface_fast2:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 8(sp)
-    j .8964_Lendif_J
-.8963_Lelse_J:
+    j .9070_Lendif_J
+.9068_Lelse_J:
     li t0, 0
     sw t0, 8(sp)
-.8964_Lendif_J:
+.9070_Lendif_J:
     lw a0, 8(sp)
     lw ra, 152(sp)
     addi sp, sp, 176
@@ -7795,11 +7910,15 @@ solver_second_fast2:
     feq.s t2, ft0, ft1
     sw t2, 208(sp)
     lw t0, 208(sp)
-    beqz t0, .8965_Lelse_J
+    beqz t0, .9071_Lelse0_J
+    j .9073_Lthen_J
+.9071_Lelse0_J:
+    j .9072_Lelse_J
+.9073_Lthen_J:
     li t0, 0
     sw t0, 204(sp)
-    j .8966_Lendif_J
-.8965_Lelse_J:
+    j .9074_Lendif_J
+.9072_Lelse_J:
     li t0, 1
     sw t0, 200(sp)
     lw t0, 200(sp)
@@ -7886,9 +8005,17 @@ solver_second_fast2:
     flt.s t2, ft0, ft1
     sw t2, 100(sp)
     lw t0, 100(sp)
-    beqz t0, .8967_Lelse_J
+    beqz t0, .9075_Lelse0_J
+    j .9077_Lthen_J
+.9075_Lelse0_J:
+    j .9076_Lelse_J
+.9077_Lthen_J:
     lw t0, 268(sp)
-    beqz t0, .8969_Lelse_J
+    beqz t0, .9079_Lelse0_J
+    j .9081_Lthen_J
+.9079_Lelse0_J:
+    j .9080_Lelse_J
+.9081_Lthen_J:
     li t0, 0
     sw t0, 96(sp)
     flw ft0, 108(sp)
@@ -7927,8 +8054,8 @@ solver_second_fast2:
     lw t6, 56(sp)
     flw ft11, 68(sp)
     fsw ft11, 0(t6)
-    j .8970_Lendif_J
-.8969_Lelse_J:
+    j .9082_Lendif_J
+.9080_Lelse_J:
     li t0, 0
     sw t0, 52(sp)
     flw ft0, 108(sp)
@@ -7967,15 +8094,15 @@ solver_second_fast2:
     lw t6, 12(sp)
     flw ft11, 24(sp)
     fsw ft11, 0(t6)
-.8970_Lendif_J:
+.9082_Lendif_J:
     li t0, 1
     sw t0, 204(sp)
-    j .8968_Lendif_J
-.8967_Lelse_J:
+    j .9078_Lendif_J
+.9076_Lelse_J:
     li t0, 0
     sw t0, 204(sp)
-.8968_Lendif_J:
-.8966_Lendif_J:
+.9078_Lendif_J:
+.9074_Lendif_J:
     lw a0, 204(sp)
     lw ra, 296(sp)
     addi sp, sp, 320
@@ -8094,7 +8221,11 @@ solver_fast2:
     seqz t0, t0
     sw t0, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .8971_Lelse_J
+    beqz t0, .9083_Lelse0_J
+    j .9085_Lthen_J
+.9083_Lelse0_J:
+    j .9084_Lelse_J
+.9085_Lthen_J:
     lw a0, 128(sp)
     lw a1, 124(sp)
     lw a2, 120(sp)
@@ -8118,8 +8249,8 @@ solver_fast2:
     flw fa2, 40(sp)
     call solver_rect_fast
     sw a0, 0(sp)
-    j .8972_Lendif_J
-.8971_Lelse_J:
+    j .9086_Lendif_J
+.9084_Lelse_J:
     li t0, 2
     sw t0, 12(sp)
     lw t0, 124(sp)
@@ -8130,7 +8261,11 @@ solver_fast2:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .8973_Lelse_J
+    beqz t0, .9087_Lelse0_J
+    j .9089_Lthen_J
+.9087_Lelse0_J:
+    j .9088_Lelse_J
+.9089_Lthen_J:
     lw a0, 128(sp)
     lw a1, 124(sp)
     lw a2, 120(sp)
@@ -8154,8 +8289,8 @@ solver_fast2:
     flw fa2, 40(sp)
     call solver_surface_fast2
     sw a0, 0(sp)
-    j .8974_Lendif_J
-.8973_Lelse_J:
+    j .9090_Lendif_J
+.9088_Lelse_J:
     lw a0, 128(sp)
     lw a1, 124(sp)
     lw a2, 120(sp)
@@ -8179,8 +8314,8 @@ solver_fast2:
     flw fa2, 40(sp)
     call solver_second_fast2
     sw a0, 0(sp)
-.8974_Lendif_J:
-.8972_Lendif_J:
+.9090_Lendif_J:
+.9086_Lendif_J:
     lw a0, 0(sp)
     lw ra, 156(sp)
     addi sp, sp, 160
@@ -8233,7 +8368,11 @@ setup_rect_table:
     feq.s t2, ft0, ft1
     sw t2, 408(sp)
     lw t0, 408(sp)
-    beqz t0, .8975_Lelse_J
+    beqz t0, .9091_Lelse0_J
+    j .9093_Lthen_J
+.9091_Lelse0_J:
+    j .9092_Lelse_J
+.9093_Lthen_J:
     li t0, 1
     sw t0, 404(sp)
     sw zero, 400(sp)
@@ -8247,8 +8386,8 @@ setup_rect_table:
     lw t6, 392(sp)
     flw ft11, 400(sp)
     fsw ft11, 0(t6)
-    j .8976_Lendif_J
-.8975_Lelse_J:
+    j .9094_Lendif_J
+.9092_Lelse_J:
     li t0, 0
     sw t0, 388(sp)
     li t0, 0
@@ -8285,15 +8424,19 @@ setup_rect_table:
     flw ft11, 0(t6)
     fsw ft11, 344(sp)
     lw t0, 360(sp)
-    beqz t0, .8977_Lelse_J
+    beqz t0, .9095_Lelse0_J
+    j .9097_Lthen_J
+.9095_Lelse0_J:
+    j .9096_Lelse_J
+.9097_Lthen_J:
     flw ft11, 344(sp)
     fsw ft11, 340(sp)
-    j .8978_Lendif_J
-.8977_Lelse_J:
+    j .9098_Lendif_J
+.9096_Lelse_J:
     flw ft0, 344(sp)
     fneg.s ft0, ft0
     fsw ft0, 340(sp)
-.8978_Lendif_J:
+.9098_Lendif_J:
     lw t0, 388(sp)
     slli t0, t0, 2
     sw t0, 336(sp)
@@ -8336,7 +8479,7 @@ setup_rect_table:
     lw t6, 292(sp)
     flw ft11, 300(sp)
     fsw ft11, 0(t6)
-.8976_Lendif_J:
+.9094_Lendif_J:
     li t0, 1
     sw t0, 288(sp)
     lw t0, 288(sp)
@@ -8355,7 +8498,11 @@ setup_rect_table:
     feq.s t2, ft0, ft1
     sw t2, 268(sp)
     lw t0, 268(sp)
-    beqz t0, .8979_Lelse_J
+    beqz t0, .9099_Lelse0_J
+    j .9101_Lthen_J
+.9099_Lelse0_J:
+    j .9100_Lelse_J
+.9101_Lthen_J:
     li t0, 3
     sw t0, 264(sp)
     sw zero, 260(sp)
@@ -8369,8 +8516,8 @@ setup_rect_table:
     lw t6, 252(sp)
     flw ft11, 260(sp)
     fsw ft11, 0(t6)
-    j .8980_Lendif_J
-.8979_Lelse_J:
+    j .9102_Lendif_J
+.9100_Lelse_J:
     li t0, 2
     sw t0, 248(sp)
     li t0, 1
@@ -8407,15 +8554,19 @@ setup_rect_table:
     flw ft11, 0(t6)
     fsw ft11, 204(sp)
     lw t0, 220(sp)
-    beqz t0, .8981_Lelse_J
+    beqz t0, .9103_Lelse0_J
+    j .9105_Lthen_J
+.9103_Lelse0_J:
+    j .9104_Lelse_J
+.9105_Lthen_J:
     flw ft11, 204(sp)
     fsw ft11, 200(sp)
-    j .8982_Lendif_J
-.8981_Lelse_J:
+    j .9106_Lendif_J
+.9104_Lelse_J:
     flw ft0, 204(sp)
     fneg.s ft0, ft0
     fsw ft0, 200(sp)
-.8982_Lendif_J:
+.9106_Lendif_J:
     lw t0, 248(sp)
     slli t0, t0, 2
     sw t0, 196(sp)
@@ -8458,7 +8609,7 @@ setup_rect_table:
     lw t6, 152(sp)
     flw ft11, 160(sp)
     fsw ft11, 0(t6)
-.8980_Lendif_J:
+.9102_Lendif_J:
     li t0, 2
     sw t0, 148(sp)
     lw t0, 148(sp)
@@ -8477,7 +8628,11 @@ setup_rect_table:
     feq.s t2, ft0, ft1
     sw t2, 128(sp)
     lw t0, 128(sp)
-    beqz t0, .8983_Lelse_J
+    beqz t0, .9107_Lelse0_J
+    j .9109_Lthen_J
+.9107_Lelse0_J:
+    j .9108_Lelse_J
+.9109_Lthen_J:
     li t0, 5
     sw t0, 124(sp)
     sw zero, 120(sp)
@@ -8491,8 +8646,8 @@ setup_rect_table:
     lw t6, 112(sp)
     flw ft11, 120(sp)
     fsw ft11, 0(t6)
-    j .8984_Lendif_J
-.8983_Lelse_J:
+    j .9110_Lendif_J
+.9108_Lelse_J:
     li t0, 4
     sw t0, 108(sp)
     li t0, 2
@@ -8529,15 +8684,19 @@ setup_rect_table:
     flw ft11, 0(t6)
     fsw ft11, 64(sp)
     lw t0, 80(sp)
-    beqz t0, .8985_Lelse_J
+    beqz t0, .9111_Lelse0_J
+    j .9113_Lthen_J
+.9111_Lelse0_J:
+    j .9112_Lelse_J
+.9113_Lthen_J:
     flw ft11, 64(sp)
     fsw ft11, 60(sp)
-    j .8986_Lendif_J
-.8985_Lelse_J:
+    j .9114_Lendif_J
+.9112_Lelse_J:
     flw ft0, 64(sp)
     fneg.s ft0, ft0
     fsw ft0, 60(sp)
-.8986_Lendif_J:
+.9114_Lendif_J:
     lw t0, 108(sp)
     slli t0, t0, 2
     sw t0, 56(sp)
@@ -8580,7 +8739,7 @@ setup_rect_table:
     lw t6, 12(sp)
     flw ft11, 20(sp)
     fsw ft11, 0(t6)
-.8984_Lendif_J:
+.9110_Lendif_J:
     lw a0, 432(sp)
     lw ra, 492(sp)
     addi sp, sp, 512
@@ -8713,7 +8872,11 @@ setup_surface_table:
     flt.s t2, ft0, ft1
     sw t2, 164(sp)
     lw t0, 164(sp)
-    beqz t0, .8987_Lelse_J
+    beqz t0, .9115_Lelse0_J
+    j .9117_Lthen_J
+.9115_Lelse0_J:
+    j .9116_Lelse_J
+.9117_Lthen_J:
     li t0, 0
     sw t0, 160(sp)
     lui t6, 260096 # 0x3f800
@@ -8830,8 +8993,8 @@ setup_surface_table:
     lw t6, 28(sp)
     flw ft11, 36(sp)
     fsw ft11, 0(t6)
-    j .8988_Lendif_J
-.8987_Lelse_J:
+    j .9118_Lendif_J
+.9116_Lelse_J:
     li t0, 0
     sw t0, 24(sp)
     sw zero, 20(sp)
@@ -8845,7 +9008,7 @@ setup_surface_table:
     lw t6, 12(sp)
     flw ft11, 20(sp)
     fsw ft11, 0(t6)
-.8988_Lendif_J:
+.9118_Lendif_J:
     lw a0, 288(sp)
     lw ra, 348(sp)
     addi sp, sp, 368
@@ -9047,7 +9210,11 @@ setup_second_table:
     xor t2, t0, t1
     sw t2, 384(sp)
     lw t0, 384(sp)
-    beqz t0, .8989_Lelse_J
+    beqz t0, .9119_Lelse0_J
+    j .9121_Lthen_J
+.9119_Lelse0_J:
+    j .9120_Lelse_J
+.9121_Lthen_J:
     li t0, 1
     sw t0, 380(sp)
     li t0, 2
@@ -9300,8 +9467,8 @@ setup_second_table:
     lw t6, 72(sp)
     flw ft11, 80(sp)
     fsw ft11, 0(t6)
-    j .8990_Lendif_J
-.8989_Lelse_J:
+    j .9122_Lendif_J
+.9120_Lelse_J:
     li t0, 1
     sw t0, 68(sp)
     lw t0, 68(sp)
@@ -9338,7 +9505,7 @@ setup_second_table:
     lw t6, 36(sp)
     flw ft11, 404(sp)
     fsw ft11, 0(t6)
-.8990_Lendif_J:
+.9122_Lendif_J:
     sw zero, 32(sp)
     flw ft0, 524(sp)
     flw ft1, 32(sp)
@@ -9348,7 +9515,11 @@ setup_second_table:
     seqz t0, t0
     sw t0, 24(sp)
     lw t0, 24(sp)
-    beqz t0, .8991_Lelse_J
+    beqz t0, .9123_Lelse0_J
+    j .9125_Lthen_J
+.9123_Lelse0_J:
+    j .9124_Lelse_J
+.9125_Lthen_J:
     li t0, 4
     sw t0, 20(sp)
     lui t6, 260096 # 0x3f800
@@ -9369,8 +9540,8 @@ setup_second_table:
     lw t6, 0(sp)
     flw ft11, 8(sp)
     fsw ft11, 0(t6)
-.8991_Lelse_J:
-.8992_Lendif_J:
+.9124_Lelse_J:
+.9126_Lendif_J:
     lw a0, 576(sp)
     lw ra, 636(sp)
     addi sp, sp, 656
@@ -9395,7 +9566,11 @@ iter_setup_dirvec_constants:
     seqz t0, t0
     sw t0, 132(sp)
     lw t0, 132(sp)
-    beqz t0, .8993_Lelse_J
+    beqz t0, .9127_Lelse0_J
+    j .9129_Lthen_J
+.9127_Lelse0_J:
+    j .9128_Lelse_J
+.9129_Lthen_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 128(sp)
@@ -9454,7 +9629,11 @@ iter_setup_dirvec_constants:
     seqz t0, t0
     sw t0, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .8995_Lelse_J
+    beqz t0, .9131_Lelse0_J
+    j .9133_Lthen_J
+.9131_Lelse0_J:
+    j .9132_Lelse_J
+.9133_Lthen_J:
     lw a0, 152(sp)
     lw a1, 116(sp)
     lw a2, 112(sp)
@@ -9483,8 +9662,8 @@ iter_setup_dirvec_constants:
     lw t6, 52(sp)
     flw ft11, 60(sp)
     fsw ft11, 0(t6)
-    j .8996_Lendif_J
-.8995_Lelse_J:
+    j .9134_Lendif_J
+.9132_Lelse_J:
     li t0, 2
     sw t0, 48(sp)
     lw t0, 112(sp)
@@ -9495,7 +9674,11 @@ iter_setup_dirvec_constants:
     seqz t0, t0
     sw t0, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .8997_Lelse_J
+    beqz t0, .9135_Lelse0_J
+    j .9137_Lthen_J
+.9135_Lelse0_J:
+    j .9136_Lelse_J
+.9137_Lthen_J:
     lw a0, 152(sp)
     lw a1, 116(sp)
     lw a2, 112(sp)
@@ -9524,8 +9707,8 @@ iter_setup_dirvec_constants:
     lw t6, 28(sp)
     flw ft11, 36(sp)
     fsw ft11, 0(t6)
-    j .8998_Lendif_J
-.8997_Lelse_J:
+    j .9138_Lendif_J
+.9136_Lelse_J:
     lw a0, 152(sp)
     lw a1, 116(sp)
     lw a2, 112(sp)
@@ -9554,8 +9737,8 @@ iter_setup_dirvec_constants:
     lw t6, 16(sp)
     flw ft11, 24(sp)
     fsw ft11, 0(t6)
-.8998_Lendif_J:
-.8996_Lendif_J:
+.9138_Lendif_J:
+.9134_Lendif_J:
     li t0, 1
     sw t0, 12(sp)
     lw t0, 144(sp)
@@ -9566,8 +9749,8 @@ iter_setup_dirvec_constants:
     lw a1, 148(sp)
     lw a2, 8(sp)
     call iter_setup_dirvec_constants
-.8993_Lelse_J:
-.8994_Lendif_J:
+.9128_Lelse_J:
+.9130_Lendif_J:
     lw ra, 156(sp)
     addi sp, sp, 160
     ret
@@ -9627,7 +9810,11 @@ setup_startp_constants:
     seqz t0, t0
     sw t0, 456(sp)
     lw t0, 456(sp)
-    beqz t0, .8999_Lelse_J
+    beqz t0, .9139_Lelse0_J
+    j .9141_Lthen_J
+.9139_Lelse0_J:
+    j .9140_Lelse_J
+.9141_Lthen_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 452(sp)
@@ -9806,7 +9993,11 @@ setup_startp_constants:
     seqz t0, t0
     sw t0, 244(sp)
     lw t0, 244(sp)
-    beqz t0, .9001_Lelse_J
+    beqz t0, .9143_Lelse0_J
+    j .9145_Lthen_J
+.9143_Lelse0_J:
+    j .9144_Lelse_J
+.9145_Lthen_J:
     li t0, 3
     sw t0, 240(sp)
     li t0, 0
@@ -9911,8 +10102,8 @@ setup_startp_constants:
     lw t6, 116(sp)
     flw ft11, 124(sp)
     fsw ft11, 0(t6)
-    j .9002_Lendif_J
-.9001_Lelse_J:
+    j .9146_Lendif_J
+.9144_Lelse_J:
     li t0, 2
     sw t0, 112(sp)
     lw t0, 112(sp)
@@ -9920,7 +10111,11 @@ setup_startp_constants:
     slt t2, t0, t1
     sw t2, 108(sp)
     lw t0, 108(sp)
-    beqz t0, .9003_Lelse_J
+    beqz t0, .9147_Lelse0_J
+    j .9149_Lthen_J
+.9147_Lelse0_J:
+    j .9148_Lelse_J
+.9149_Lthen_J:
     li t0, 0
     sw t0, 104(sp)
     lw t0, 104(sp)
@@ -9988,7 +10183,11 @@ setup_startp_constants:
     seqz t0, t0
     sw t0, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9005_Lelse_J
+    beqz t0, .9151_Lelse0_J
+    j .9153_Lthen_J
+.9151_Lelse0_J:
+    j .9152_Lelse_J
+.9153_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 36(sp)
     flw ft11, 36(sp)
@@ -9997,11 +10196,11 @@ setup_startp_constants:
     flw ft1, 32(sp)
     fsub.s ft2, ft0, ft1
     fsw ft2, 28(sp)
-    j .9006_Lendif_J
-.9005_Lelse_J:
+    j .9154_Lendif_J
+.9152_Lelse_J:
     flw ft11, 56(sp)
     fsw ft11, 28(sp)
-.9006_Lendif_J:
+.9154_Lendif_J:
     lw t0, 52(sp)
     slli t0, t0, 2
     sw t0, 24(sp)
@@ -10012,9 +10211,9 @@ setup_startp_constants:
     lw t6, 20(sp)
     flw ft11, 28(sp)
     fsw ft11, 0(t6)
-.9003_Lelse_J:
-.9004_Lendif_J:
-.9002_Lendif_J:
+.9148_Lelse_J:
+.9150_Lendif_J:
+.9146_Lendif_J:
     li t0, 1
     sw t0, 16(sp)
     lw t0, 468(sp)
@@ -10024,8 +10223,8 @@ setup_startp_constants:
     lw a0, 472(sp)
     lw a1, 12(sp)
     call setup_startp_constants
-.8999_Lelse_J:
-.9000_Lendif_J:
+.9140_Lelse_J:
+.9142_Lendif_J:
     lw ra, 476(sp)
     addi sp, sp, 480
     ret
@@ -10112,7 +10311,11 @@ is_rect_outside:
     flt.s t2, ft0, ft1
     sw t2, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .9007_Lelse_J
+    beqz t0, .9155_Lelse0_J
+    j .9157_Lthen_J
+.9155_Lelse0_J:
+    j .9156_Lelse_J
+.9157_Lthen_J:
     flw ft0, 92(sp)
     fabs.s ft0, ft0
     fsw ft0, 60(sp)
@@ -10133,7 +10336,11 @@ is_rect_outside:
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9009_Lelse_J
+    beqz t0, .9159_Lelse0_J
+    j .9161_Lthen_J
+.9159_Lelse0_J:
+    j .9160_Lelse_J
+.9161_Lthen_J:
     flw ft0, 88(sp)
     fabs.s ft0, ft0
     fsw ft0, 36(sp)
@@ -10153,26 +10360,30 @@ is_rect_outside:
     flw ft1, 20(sp)
     flt.s t2, ft0, ft1
     sw t2, 16(sp)
-    j .9010_Lendif_J
-.9009_Lelse_J:
+    j .9162_Lendif_J
+.9160_Lelse_J:
     li t0, 0
     sw t0, 16(sp)
-.9010_Lendif_J:
-    j .9008_Lendif_J
-.9007_Lelse_J:
+.9162_Lendif_J:
+    j .9158_Lendif_J
+.9156_Lelse_J:
     li t0, 0
     sw t0, 16(sp)
-.9008_Lendif_J:
+.9158_Lendif_J:
     lw t0, 16(sp)
-    beqz t0, .9011_Lelse_J
+    beqz t0, .9163_Lelse0_J
+    j .9165_Lthen_J
+.9163_Lelse0_J:
+    j .9164_Lelse_J
+.9165_Lthen_J:
     flw ft11, 116(sp)
     fsw ft11, 12(sp)
-    j .9012_Lendif_J
-.9011_Lelse_J:
+    j .9166_Lendif_J
+.9164_Lelse_J:
     lw t0, 116(sp)
     seqz t0, t0
     sw t0, 12(sp)
-.9012_Lendif_J:
+.9166_Lendif_J:
     lw a0, 12(sp)
     lw ra, 144(sp)
     addi sp, sp, 160
@@ -10326,7 +10537,11 @@ is_second_outside:
     seqz t0, t0
     sw t0, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9013_Lelse_J
+    beqz t0, .9167_Lelse0_J
+    j .9169_Lthen_J
+.9167_Lelse0_J:
+    j .9168_Lelse_J
+.9169_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 36(sp)
     flw ft11, 36(sp)
@@ -10335,11 +10550,11 @@ is_second_outside:
     flw ft1, 32(sp)
     fsub.s ft2, ft0, ft1
     fsw ft2, 28(sp)
-    j .9014_Lendif_J
-.9013_Lelse_J:
+    j .9170_Lendif_J
+.9168_Lelse_J:
     flw ft11, 52(sp)
     fsw ft11, 28(sp)
-.9014_Lendif_J:
+.9170_Lendif_J:
     sw zero, 24(sp)
     flw ft0, 28(sp)
     flw ft1, 24(sp)
@@ -10438,7 +10653,11 @@ is_outside:
     seqz t0, t0
     sw t0, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9015_Lelse_J
+    beqz t0, .9171_Lelse0_J
+    j .9173_Lthen_J
+.9171_Lelse0_J:
+    j .9172_Lelse_J
+.9173_Lthen_J:
     lw a0, 220(sp)
     lw a1, 216(sp)
     lw a2, 212(sp)
@@ -10458,8 +10677,8 @@ is_outside:
     flw fa2, 108(sp)
     call is_rect_outside
     sw a0, 0(sp)
-    j .9016_Lendif_J
-.9015_Lelse_J:
+    j .9174_Lendif_J
+.9172_Lelse_J:
     li t0, 2
     sw t0, 92(sp)
     lw t0, 216(sp)
@@ -10470,7 +10689,11 @@ is_outside:
     seqz t0, t0
     sw t0, 84(sp)
     lw t0, 84(sp)
-    beqz t0, .9017_Lelse_J
+    beqz t0, .9175_Lelse0_J
+    j .9177_Lthen_J
+.9175_Lelse0_J:
+    j .9176_Lelse_J
+.9177_Lthen_J:
     li t0, 0
     sw t0, 80(sp)
     lw t0, 80(sp)
@@ -10539,8 +10762,8 @@ is_outside:
     lw t0, 4(sp)
     seqz t0, t0
     sw t0, 0(sp)
-    j .9018_Lendif_J
-.9017_Lelse_J:
+    j .9178_Lendif_J
+.9176_Lelse_J:
     lw a0, 220(sp)
     lw a1, 216(sp)
     lw a2, 212(sp)
@@ -10560,8 +10783,8 @@ is_outside:
     flw fa2, 108(sp)
     call is_second_outside
     sw a0, 0(sp)
-.9018_Lendif_J:
-.9016_Lendif_J:
+.9178_Lendif_J:
+.9174_Lendif_J:
     lw a0, 0(sp)
     lw ra, 224(sp)
     addi sp, sp, 240
@@ -10601,11 +10824,15 @@ check_all_inside:
     seqz t0, t0
     sw t0, 76(sp)
     lw t0, 76(sp)
-    beqz t0, .9019_Lelse_J
+    beqz t0, .9179_Lelse0_J
+    j .9181_Lthen_J
+.9179_Lelse0_J:
+    j .9180_Lelse_J
+.9181_Lthen_J:
     li t0, 1
     sw t0, 72(sp)
-    j .9020_Lendif_J
-.9019_Lelse_J:
+    j .9182_Lendif_J
+.9180_Lelse_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 68(sp)
@@ -10674,11 +10901,15 @@ check_all_inside:
     call is_outside
     sw a0, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9021_Lelse_J
+    beqz t0, .9183_Lelse0_J
+    j .9185_Lthen_J
+.9183_Lelse0_J:
+    j .9184_Lelse_J
+.9185_Lthen_J:
     li t0, 0
     sw t0, 72(sp)
-    j .9022_Lendif_J
-.9021_Lelse_J:
+    j .9186_Lendif_J
+.9184_Lelse_J:
     li t0, 1
     sw t0, 8(sp)
     lw t0, 120(sp)
@@ -10692,8 +10923,8 @@ check_all_inside:
     flw fa2, 104(sp)
     call check_all_inside
     sw a0, 72(sp)
-.9022_Lendif_J:
-.9020_Lendif_J:
+.9186_Lendif_J:
+.9182_Lendif_J:
     lw a0, 72(sp)
     lw ra, 124(sp)
     addi sp, sp, 128
@@ -10730,11 +10961,15 @@ shadow_check_and_group:
     seqz t0, t0
     sw t0, 296(sp)
     lw t0, 296(sp)
-    beqz t0, .9023_Lelse_J
+    beqz t0, .9187_Lelse0_J
+    j .9189_Lthen_J
+.9187_Lelse0_J:
+    j .9188_Lelse_J
+.9189_Lthen_J:
     li t0, 0
     sw t0, 292(sp)
-    j .9024_Lendif_J
-.9023_Lelse_J:
+    j .9190_Lendif_J
+.9188_Lelse_J:
     lw t0, 328(sp)
     slli t0, t0, 2
     sw t0, 288(sp)
@@ -10777,7 +11012,11 @@ shadow_check_and_group:
     xor t2, t0, t1
     sw t2, 248(sp)
     lw t0, 248(sp)
-    beqz t0, .9025_Lelse_J
+    beqz t0, .9191_Lelse0_J
+    j .9193_Lthen_J
+.9191_Lelse0_J:
+    j .9192_Lelse_J
+.9193_Lthen_J:
     lui t6, %hi(.7342_L.LC3_J)
     flw ft11, %lo(.7342_L.LC3_J)(t6)
     fsw ft11, 244(sp)
@@ -10788,13 +11027,17 @@ shadow_check_and_group:
     flw ft1, 240(sp)
     flt.s t2, ft0, ft1
     sw t2, 236(sp)
-    j .9026_Lendif_J
-.9025_Lelse_J:
+    j .9194_Lendif_J
+.9192_Lelse_J:
     li t0, 0
     sw t0, 236(sp)
-.9026_Lendif_J:
+.9194_Lendif_J:
     lw t0, 236(sp)
-    beqz t0, .9027_Lelse_J
+    beqz t0, .9195_Lelse0_J
+    j .9197_Lthen_J
+.9195_Lelse0_J:
+    j .9196_Lelse_J
+.9197_Lthen_J:
     lui t6, %hi(.7343_L.LC4_J)
     flw ft11, %lo(.7343_L.LC4_J)(t6)
     fsw ft11, 232(sp)
@@ -10926,11 +11169,15 @@ shadow_check_and_group:
     call check_all_inside
     sw a0, 76(sp)
     lw t0, 76(sp)
-    beqz t0, .9029_Lelse_J
+    beqz t0, .9199_Lelse0_J
+    j .9201_Lthen_J
+.9199_Lelse0_J:
+    j .9200_Lelse_J
+.9201_Lthen_J:
     li t0, 1
     sw t0, 292(sp)
-    j .9030_Lendif_J
-.9029_Lelse_J:
+    j .9202_Lendif_J
+.9200_Lelse_J:
     li t0, 1
     sw t0, 72(sp)
     lw t0, 328(sp)
@@ -10941,9 +11188,9 @@ shadow_check_and_group:
     lw a1, 324(sp)
     call shadow_check_and_group
     sw a0, 292(sp)
-.9030_Lendif_J:
-    j .9028_Lendif_J
-.9027_Lelse_J:
+.9202_Lendif_J:
+    j .9198_Lendif_J
+.9196_Lelse_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 64(sp)
@@ -10993,7 +11240,11 @@ shadow_check_and_group:
     flw ft11, 40(t6)
     fsw ft11, 12(sp)
     lw t0, 28(sp)
-    beqz t0, .9031_Lelse_J
+    beqz t0, .9203_Lelse0_J
+    j .9205_Lthen_J
+.9203_Lelse0_J:
+    j .9204_Lelse_J
+.9205_Lthen_J:
     li t0, 1
     sw t0, 8(sp)
     lw t0, 328(sp)
@@ -11004,13 +11255,13 @@ shadow_check_and_group:
     lw a1, 324(sp)
     call shadow_check_and_group
     sw a0, 292(sp)
-    j .9032_Lendif_J
-.9031_Lelse_J:
+    j .9206_Lendif_J
+.9204_Lelse_J:
     li t0, 0
     sw t0, 292(sp)
-.9032_Lendif_J:
-.9028_Lendif_J:
-.9024_Lendif_J:
+.9206_Lendif_J:
+.9198_Lendif_J:
+.9190_Lendif_J:
     lw a0, 292(sp)
     lw ra, 332(sp)
     addi sp, sp, 336
@@ -11047,11 +11298,15 @@ shadow_check_one_or_group:
     seqz t0, t0
     sw t0, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9033_Lelse_J
+    beqz t0, .9207_Lelse0_J
+    j .9209_Lthen_J
+.9207_Lelse0_J:
+    j .9208_Lelse_J
+.9209_Lthen_J:
     li t0, 0
     sw t0, 36(sp)
-    j .9034_Lendif_J
-.9033_Lelse_J:
+    j .9210_Lendif_J
+.9208_Lelse_J:
     lui t6, %hi(and_net)
     flw ft11, %lo(and_net)(t6)
     fsw ft11, 32(sp)
@@ -11072,11 +11327,15 @@ shadow_check_one_or_group:
     call shadow_check_and_group
     sw a0, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9035_Lelse_J
+    beqz t0, .9211_Lelse0_J
+    j .9213_Lthen_J
+.9211_Lelse0_J:
+    j .9212_Lelse_J
+.9213_Lthen_J:
     li t0, 1
     sw t0, 36(sp)
-    j .9036_Lendif_J
-.9035_Lelse_J:
+    j .9214_Lendif_J
+.9212_Lelse_J:
     li t0, 1
     sw t0, 8(sp)
     lw t0, 72(sp)
@@ -11087,8 +11346,8 @@ shadow_check_one_or_group:
     lw a1, 68(sp)
     call shadow_check_one_or_group
     sw a0, 36(sp)
-.9036_Lendif_J:
-.9034_Lendif_J:
+.9214_Lendif_J:
+.9210_Lendif_J:
     lw a0, 36(sp)
     lw ra, 76(sp)
     addi sp, sp, 80
@@ -11137,11 +11396,15 @@ shadow_check_one_or_matrix:
     seqz t0, t0
     sw t0, 104(sp)
     lw t0, 104(sp)
-    beqz t0, .9037_Lelse_J
+    beqz t0, .9215_Lelse0_J
+    j .9217_Lthen_J
+.9215_Lelse0_J:
+    j .9216_Lelse_J
+.9217_Lthen_J:
     li t0, 0
     sw t0, 100(sp)
-    j .9038_Lendif_J
-.9037_Lelse_J:
+    j .9218_Lendif_J
+.9216_Lelse_J:
     li t0, 99
     sw t0, 96(sp)
     lw t0, 120(sp)
@@ -11152,11 +11415,15 @@ shadow_check_one_or_matrix:
     seqz t0, t0
     sw t0, 88(sp)
     lw t0, 88(sp)
-    beqz t0, .9039_Lelse_J
+    beqz t0, .9219_Lelse0_J
+    j .9221_Lthen_J
+.9219_Lelse0_J:
+    j .9220_Lelse_J
+.9221_Lthen_J:
     li t0, 1
     sw t0, 84(sp)
-    j .9040_Lendif_J
-.9039_Lelse_J:
+    j .9222_Lendif_J
+.9220_Lelse_J:
     lw a0, 120(sp)
     lui a1, %hi(light_dirvec)
     lw a1, %lo(light_dirvec)(a1)
@@ -11174,7 +11441,11 @@ shadow_check_one_or_matrix:
     xor t2, t0, t1
     sw t2, 72(sp)
     lw t0, 72(sp)
-    beqz t0, .9041_Lelse_J
+    beqz t0, .9223_Lelse0_J
+    j .9225_Lthen_J
+.9223_Lelse0_J:
+    j .9224_Lelse_J
+.9225_Lthen_J:
     li t0, 0
     sw t0, 68(sp)
     lui t6, %hi(solver_dist)
@@ -11201,7 +11472,11 @@ shadow_check_one_or_matrix:
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9043_Lelse_J
+    beqz t0, .9227_Lelse0_J
+    j .9229_Lthen_J
+.9227_Lelse0_J:
+    j .9228_Lelse_J
+.9229_Lthen_J:
     li t0, 1
     sw t0, 36(sp)
     lw a0, 36(sp)
@@ -11209,27 +11484,35 @@ shadow_check_one_or_matrix:
     call shadow_check_one_or_group
     sw a0, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .9045_Lelse_J
+    beqz t0, .9231_Lelse0_J
+    j .9233_Lthen_J
+.9231_Lelse0_J:
+    j .9232_Lelse_J
+.9233_Lthen_J:
     li t0, 1
     sw t0, 84(sp)
-    j .9046_Lendif_J
-.9045_Lelse_J:
+    j .9234_Lendif_J
+.9232_Lelse_J:
     li t0, 0
     sw t0, 84(sp)
-.9046_Lendif_J:
-    j .9044_Lendif_J
-.9043_Lelse_J:
+.9234_Lendif_J:
+    j .9230_Lendif_J
+.9228_Lelse_J:
     li t0, 0
     sw t0, 84(sp)
-.9044_Lendif_J:
-    j .9042_Lendif_J
-.9041_Lelse_J:
+.9230_Lendif_J:
+    j .9226_Lendif_J
+.9224_Lelse_J:
     li t0, 0
     sw t0, 84(sp)
-.9042_Lendif_J:
-.9040_Lendif_J:
+.9226_Lendif_J:
+.9222_Lendif_J:
     lw t0, 84(sp)
-    beqz t0, .9047_Lelse_J
+    beqz t0, .9235_Lelse0_J
+    j .9237_Lthen_J
+.9235_Lelse0_J:
+    j .9236_Lelse_J
+.9237_Lthen_J:
     li t0, 1
     sw t0, 28(sp)
     lw a0, 28(sp)
@@ -11237,11 +11520,15 @@ shadow_check_one_or_matrix:
     call shadow_check_one_or_group
     sw a0, 24(sp)
     lw t0, 24(sp)
-    beqz t0, .9049_Lelse_J
+    beqz t0, .9239_Lelse0_J
+    j .9241_Lthen_J
+.9239_Lelse0_J:
+    j .9240_Lelse_J
+.9241_Lthen_J:
     li t0, 1
     sw t0, 100(sp)
-    j .9050_Lendif_J
-.9049_Lelse_J:
+    j .9242_Lendif_J
+.9240_Lelse_J:
     li t0, 1
     sw t0, 20(sp)
     lw t0, 152(sp)
@@ -11252,9 +11539,9 @@ shadow_check_one_or_matrix:
     lw a1, 148(sp)
     call shadow_check_one_or_matrix
     sw a0, 100(sp)
-.9050_Lendif_J:
-    j .9048_Lendif_J
-.9047_Lelse_J:
+.9242_Lendif_J:
+    j .9238_Lendif_J
+.9236_Lelse_J:
     li t0, 1
     sw t0, 12(sp)
     lw t0, 152(sp)
@@ -11265,8 +11552,8 @@ shadow_check_one_or_matrix:
     lw a1, 148(sp)
     call shadow_check_one_or_matrix
     sw a0, 100(sp)
-.9048_Lendif_J:
-.9038_Lendif_J:
+.9238_Lendif_J:
+.9218_Lendif_J:
     lw a0, 100(sp)
     lw ra, 156(sp)
     addi sp, sp, 160
@@ -11304,9 +11591,13 @@ solve_each_element:
     seqz t0, t0
     sw t0, 340(sp)
     lw t0, 340(sp)
-    beqz t0, .9051_Lelse_J
-    j .9052_Lendif_J
-.9051_Lelse_J:
+    beqz t0, .9243_Lelse0_J
+    j .9245_Lthen_J
+.9243_Lelse0_J:
+    j .9244_Lelse_J
+.9245_Lthen_J:
+    j .9246_Lendif_J
+.9244_Lelse_J:
     lw a0, 356(sp)
     lw a1, 368(sp)
     lui a2, %hi(startp)
@@ -11320,7 +11611,11 @@ solve_each_element:
     xor t2, t0, t1
     sw t2, 328(sp)
     lw t0, 328(sp)
-    beqz t0, .9053_Lelse_J
+    beqz t0, .9247_Lelse0_J
+    j .9249_Lthen_J
+.9247_Lelse0_J:
+    j .9248_Lelse_J
+.9249_Lthen_J:
     li t0, 0
     sw t0, 324(sp)
     lui t6, %hi(solver_dist)
@@ -11342,7 +11637,11 @@ solve_each_element:
     flt.s t2, ft0, ft1
     sw t2, 300(sp)
     lw t0, 300(sp)
-    beqz t0, .9055_Lelse_J
+    beqz t0, .9251_Lelse0_J
+    j .9253_Lthen_J
+.9251_Lelse0_J:
+    j .9252_Lelse_J
+.9253_Lthen_J:
     li t0, 0
     sw t0, 296(sp)
     lui t6, %hi(tmin)
@@ -11363,7 +11662,11 @@ solve_each_element:
     flt.s t2, ft0, ft1
     sw t2, 276(sp)
     lw t0, 276(sp)
-    beqz t0, .9057_Lelse_J
+    beqz t0, .9255_Lelse0_J
+    j .9257_Lthen_J
+.9255_Lelse0_J:
+    j .9256_Lelse_J
+.9257_Lthen_J:
     lui t6, %hi(.7343_L.LC4_J)
     flw ft11, %lo(.7343_L.LC4_J)(t6)
     fsw ft11, 272(sp)
@@ -11486,7 +11789,11 @@ solve_each_element:
     call check_all_inside
     sw a0, 128(sp)
     lw t0, 128(sp)
-    beqz t0, .9059_Lelse_J
+    beqz t0, .9259_Lelse0_J
+    j .9261_Lthen_J
+.9259_Lelse0_J:
+    j .9260_Lelse_J
+.9261_Lthen_J:
     li t0, 0
     sw t0, 124(sp)
     lui t6, %hi(tmin)
@@ -11538,12 +11845,12 @@ solve_each_element:
     lw t6, 80(sp)
     flw ft11, 336(sp)
     fsw ft11, 0(t6)
-.9059_Lelse_J:
-.9060_Lendif_J:
-.9057_Lelse_J:
-.9058_Lendif_J:
-.9055_Lelse_J:
-.9056_Lendif_J:
+.9260_Lelse_J:
+.9262_Lendif_J:
+.9256_Lelse_J:
+.9258_Lendif_J:
+.9252_Lelse_J:
+.9254_Lendif_J:
     li t0, 1
     sw t0, 76(sp)
     lw t0, 376(sp)
@@ -11554,8 +11861,8 @@ solve_each_element:
     lw a1, 372(sp)
     lw a2, 368(sp)
     call solve_each_element
-    j .9054_Lendif_J
-.9053_Lelse_J:
+    j .9250_Lendif_J
+.9248_Lelse_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 68(sp)
@@ -11605,7 +11912,11 @@ solve_each_element:
     flw ft11, 40(t6)
     fsw ft11, 16(sp)
     lw t0, 32(sp)
-    beqz t0, .9061_Lelse_J
+    beqz t0, .9263_Lelse0_J
+    j .9265_Lthen_J
+.9263_Lelse0_J:
+    j .9264_Lelse_J
+.9265_Lthen_J:
     li t0, 1
     sw t0, 12(sp)
     lw t0, 376(sp)
@@ -11616,10 +11927,10 @@ solve_each_element:
     lw a1, 372(sp)
     lw a2, 368(sp)
     call solve_each_element
-.9061_Lelse_J:
-.9062_Lendif_J:
-.9054_Lendif_J:
-.9052_Lendif_J:
+.9264_Lelse_J:
+.9266_Lendif_J:
+.9250_Lendif_J:
+.9246_Lendif_J:
     lw ra, 380(sp)
     addi sp, sp, 384
     ret
@@ -11653,7 +11964,11 @@ solve_one_or_network:
     xor t2, t0, t1
     sw t2, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9063_Lelse_J
+    beqz t0, .9267_Lelse0_J
+    j .9269_Lthen_J
+.9267_Lelse0_J:
+    j .9268_Lelse_J
+.9269_Lthen_J:
     lui t6, %hi(and_net)
     flw ft11, %lo(and_net)(t6)
     fsw ft11, 36(sp)
@@ -11683,8 +11998,8 @@ solve_one_or_network:
     lw a1, 68(sp)
     lw a2, 64(sp)
     call solve_one_or_network
-.9063_Lelse_J:
-.9064_Lendif_J:
+.9268_Lelse_J:
+.9270_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -11733,9 +12048,13 @@ trace_or_matrix:
     seqz t0, t0
     sw t0, 84(sp)
     lw t0, 84(sp)
-    beqz t0, .9065_Lelse_J
-    j .9066_Lendif_J
-.9065_Lelse_J:
+    beqz t0, .9271_Lelse0_J
+    j .9273_Lthen_J
+.9271_Lelse0_J:
+    j .9272_Lelse_J
+.9273_Lthen_J:
+    j .9274_Lendif_J
+.9272_Lelse_J:
     li t0, 99
     sw t0, 80(sp)
     lw t0, 100(sp)
@@ -11746,15 +12065,19 @@ trace_or_matrix:
     seqz t0, t0
     sw t0, 72(sp)
     lw t0, 72(sp)
-    beqz t0, .9067_Lelse_J
+    beqz t0, .9275_Lelse0_J
+    j .9277_Lthen_J
+.9275_Lelse0_J:
+    j .9276_Lelse_J
+.9277_Lthen_J:
     li t0, 1
     sw t0, 68(sp)
     lw a0, 68(sp)
     lw a1, 116(sp)
     lw a2, 128(sp)
     call solve_one_or_network
-    j .9068_Lendif_J
-.9067_Lelse_J:
+    j .9278_Lendif_J
+.9276_Lelse_J:
     lw a0, 100(sp)
     lw a1, 128(sp)
     lui a2, %hi(startp)
@@ -11768,7 +12091,11 @@ trace_or_matrix:
     xor t2, t0, t1
     sw t2, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9069_Lelse_J
+    beqz t0, .9279_Lelse0_J
+    j .9281_Lthen_J
+.9279_Lelse0_J:
+    j .9280_Lelse_J
+.9281_Lthen_J:
     li t0, 0
     sw t0, 52(sp)
     lui t6, %hi(solver_dist)
@@ -11804,18 +12131,22 @@ trace_or_matrix:
     flt.s t2, ft0, ft1
     sw t2, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9071_Lelse_J
+    beqz t0, .9283_Lelse0_J
+    j .9285_Lthen_J
+.9283_Lelse0_J:
+    j .9284_Lelse_J
+.9285_Lthen_J:
     li t0, 1
     sw t0, 8(sp)
     lw a0, 8(sp)
     lw a1, 116(sp)
     lw a2, 128(sp)
     call solve_one_or_network
-.9071_Lelse_J:
-.9072_Lendif_J:
-.9069_Lelse_J:
-.9070_Lendif_J:
-.9068_Lendif_J:
+.9284_Lelse_J:
+.9286_Lendif_J:
+.9280_Lelse_J:
+.9282_Lendif_J:
+.9278_Lendif_J:
     li t0, 1
     sw t0, 4(sp)
     lw t0, 136(sp)
@@ -11826,7 +12157,7 @@ trace_or_matrix:
     lw a1, 132(sp)
     lw a2, 128(sp)
     call trace_or_matrix
-.9066_Lendif_J:
+.9274_Lendif_J:
     lw ra, 140(sp)
     addi sp, sp, 144
     ret
@@ -11903,7 +12234,11 @@ judge_intersection:
     flt.s t2, ft0, ft1
     sw t2, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9073_Lelse_J
+    beqz t0, .9287_Lelse0_J
+    j .9289_Lthen_J
+.9287_Lelse0_J:
+    j .9288_Lelse_J
+.9289_Lthen_J:
     lui t6, %hi(.7469_L.LC7_J)
     flw ft11, %lo(.7469_L.LC7_J)(t6)
     fsw ft11, 8(sp)
@@ -11911,11 +12246,11 @@ judge_intersection:
     flw ft1, 8(sp)
     flt.s t2, ft0, ft1
     sw t2, 4(sp)
-    j .9074_Lendif_J
-.9073_Lelse_J:
+    j .9290_Lendif_J
+.9288_Lelse_J:
     li t0, 0
     sw t0, 4(sp)
-.9074_Lendif_J:
+.9290_Lendif_J:
     lw a0, 4(sp)
     lw ra, 92(sp)
     addi sp, sp, 96
@@ -11954,9 +12289,13 @@ solve_each_element_fast:
     seqz t0, t0
     sw t0, 336(sp)
     lw t0, 336(sp)
-    beqz t0, .9075_Lelse_J
-    j .9076_Lendif_J
-.9075_Lelse_J:
+    beqz t0, .9291_Lelse0_J
+    j .9293_Lthen_J
+.9291_Lelse0_J:
+    j .9292_Lelse_J
+.9293_Lthen_J:
+    j .9294_Lendif_J
+.9292_Lelse_J:
     lw a0, 352(sp)
     lw a1, 368(sp)
     lw a2, 364(sp)
@@ -11969,7 +12308,11 @@ solve_each_element_fast:
     xor t2, t0, t1
     sw t2, 324(sp)
     lw t0, 324(sp)
-    beqz t0, .9077_Lelse_J
+    beqz t0, .9295_Lelse0_J
+    j .9297_Lthen_J
+.9295_Lelse0_J:
+    j .9296_Lelse_J
+.9297_Lthen_J:
     li t0, 0
     sw t0, 320(sp)
     lui t6, %hi(solver_dist)
@@ -11991,7 +12334,11 @@ solve_each_element_fast:
     flt.s t2, ft0, ft1
     sw t2, 296(sp)
     lw t0, 296(sp)
-    beqz t0, .9079_Lelse_J
+    beqz t0, .9299_Lelse0_J
+    j .9301_Lthen_J
+.9299_Lelse0_J:
+    j .9300_Lelse_J
+.9301_Lthen_J:
     li t0, 0
     sw t0, 292(sp)
     lui t6, %hi(tmin)
@@ -12012,7 +12359,11 @@ solve_each_element_fast:
     flt.s t2, ft0, ft1
     sw t2, 272(sp)
     lw t0, 272(sp)
-    beqz t0, .9081_Lelse_J
+    beqz t0, .9303_Lelse0_J
+    j .9305_Lthen_J
+.9303_Lelse0_J:
+    j .9304_Lelse_J
+.9305_Lthen_J:
     lui t6, %hi(.7343_L.LC4_J)
     flw ft11, %lo(.7343_L.LC4_J)(t6)
     fsw ft11, 268(sp)
@@ -12135,7 +12486,11 @@ solve_each_element_fast:
     call check_all_inside
     sw a0, 124(sp)
     lw t0, 124(sp)
-    beqz t0, .9083_Lelse_J
+    beqz t0, .9307_Lelse0_J
+    j .9309_Lthen_J
+.9307_Lelse0_J:
+    j .9308_Lelse_J
+.9309_Lthen_J:
     li t0, 0
     sw t0, 120(sp)
     lui t6, %hi(tmin)
@@ -12187,12 +12542,12 @@ solve_each_element_fast:
     lw t6, 76(sp)
     flw ft11, 332(sp)
     fsw ft11, 0(t6)
-.9083_Lelse_J:
-.9084_Lendif_J:
-.9081_Lelse_J:
-.9082_Lendif_J:
-.9079_Lelse_J:
-.9080_Lendif_J:
+.9308_Lelse_J:
+.9310_Lendif_J:
+.9304_Lelse_J:
+.9306_Lendif_J:
+.9300_Lelse_J:
+.9302_Lendif_J:
     li t0, 1
     sw t0, 72(sp)
     lw t0, 376(sp)
@@ -12204,8 +12559,8 @@ solve_each_element_fast:
     lw a2, 368(sp)
     lw a3, 364(sp)
     call solve_each_element_fast
-    j .9078_Lendif_J
-.9077_Lelse_J:
+    j .9298_Lendif_J
+.9296_Lelse_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 64(sp)
@@ -12255,7 +12610,11 @@ solve_each_element_fast:
     flw ft11, 40(t6)
     fsw ft11, 12(sp)
     lw t0, 28(sp)
-    beqz t0, .9085_Lelse_J
+    beqz t0, .9311_Lelse0_J
+    j .9313_Lthen_J
+.9311_Lelse0_J:
+    j .9312_Lelse_J
+.9313_Lthen_J:
     li t0, 1
     sw t0, 8(sp)
     lw t0, 376(sp)
@@ -12267,10 +12626,10 @@ solve_each_element_fast:
     lw a2, 368(sp)
     lw a3, 364(sp)
     call solve_each_element_fast
-.9085_Lelse_J:
-.9086_Lendif_J:
-.9078_Lendif_J:
-.9076_Lendif_J:
+.9312_Lelse_J:
+.9314_Lendif_J:
+.9298_Lendif_J:
+.9294_Lendif_J:
     lw ra, 380(sp)
     addi sp, sp, 384
     ret
@@ -12305,7 +12664,11 @@ solve_one_or_network_fast:
     xor t2, t0, t1
     sw t2, 36(sp)
     lw t0, 36(sp)
-    beqz t0, .9087_Lelse_J
+    beqz t0, .9315_Lelse0_J
+    j .9317_Lthen_J
+.9315_Lelse0_J:
+    j .9316_Lelse_J
+.9317_Lthen_J:
     lui t6, %hi(and_net)
     flw ft11, %lo(and_net)(t6)
     fsw ft11, 32(sp)
@@ -12337,8 +12700,8 @@ solve_one_or_network_fast:
     lw a2, 64(sp)
     lw a3, 60(sp)
     call solve_one_or_network_fast
-.9087_Lelse_J:
-.9088_Lendif_J:
+.9316_Lelse_J:
+.9318_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -12388,9 +12751,13 @@ trace_or_matrix_fast:
     seqz t0, t0
     sw t0, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9089_Lelse_J
-    j .9090_Lendif_J
-.9089_Lelse_J:
+    beqz t0, .9319_Lelse0_J
+    j .9321_Lthen_J
+.9319_Lelse0_J:
+    j .9320_Lelse_J
+.9321_Lthen_J:
+    j .9322_Lendif_J
+.9320_Lelse_J:
     li t0, 99
     sw t0, 92(sp)
     lw t0, 112(sp)
@@ -12401,7 +12768,11 @@ trace_or_matrix_fast:
     seqz t0, t0
     sw t0, 84(sp)
     lw t0, 84(sp)
-    beqz t0, .9091_Lelse_J
+    beqz t0, .9323_Lelse0_J
+    j .9325_Lthen_J
+.9323_Lelse0_J:
+    j .9324_Lelse_J
+.9325_Lthen_J:
     li t0, 1
     sw t0, 80(sp)
     lw a0, 80(sp)
@@ -12409,8 +12780,8 @@ trace_or_matrix_fast:
     lw a2, 144(sp)
     lw a3, 140(sp)
     call solve_one_or_network_fast
-    j .9092_Lendif_J
-.9091_Lelse_J:
+    j .9326_Lendif_J
+.9324_Lelse_J:
     lw a0, 112(sp)
     lw a1, 144(sp)
     lw a2, 140(sp)
@@ -12423,7 +12794,11 @@ trace_or_matrix_fast:
     xor t2, t0, t1
     sw t2, 68(sp)
     lw t0, 68(sp)
-    beqz t0, .9093_Lelse_J
+    beqz t0, .9327_Lelse0_J
+    j .9329_Lthen_J
+.9327_Lelse0_J:
+    j .9328_Lelse_J
+.9329_Lthen_J:
     li t0, 0
     sw t0, 64(sp)
     lui t6, %hi(solver_dist)
@@ -12459,7 +12834,11 @@ trace_or_matrix_fast:
     flt.s t2, ft0, ft1
     sw t2, 24(sp)
     lw t0, 24(sp)
-    beqz t0, .9095_Lelse_J
+    beqz t0, .9331_Lelse0_J
+    j .9333_Lthen_J
+.9331_Lelse0_J:
+    j .9332_Lelse_J
+.9333_Lthen_J:
     li t0, 1
     sw t0, 20(sp)
     lw a0, 20(sp)
@@ -12467,11 +12846,11 @@ trace_or_matrix_fast:
     lw a2, 144(sp)
     lw a3, 140(sp)
     call solve_one_or_network_fast
-.9095_Lelse_J:
-.9096_Lendif_J:
-.9093_Lelse_J:
-.9094_Lendif_J:
-.9092_Lendif_J:
+.9332_Lelse_J:
+.9334_Lendif_J:
+.9328_Lelse_J:
+.9330_Lendif_J:
+.9326_Lendif_J:
     li t0, 1
     sw t0, 16(sp)
     lw t0, 152(sp)
@@ -12483,7 +12862,7 @@ trace_or_matrix_fast:
     lw a2, 144(sp)
     lw a3, 140(sp)
     call trace_or_matrix_fast
-.9090_Lendif_J:
+.9322_Lendif_J:
     lw ra, 156(sp)
     addi sp, sp, 160
     ret
@@ -12562,7 +12941,11 @@ judge_intersection_fast:
     flt.s t2, ft0, ft1
     sw t2, 8(sp)
     lw t0, 8(sp)
-    beqz t0, .9097_Lelse_J
+    beqz t0, .9335_Lelse0_J
+    j .9337_Lthen_J
+.9335_Lelse0_J:
+    j .9336_Lelse_J
+.9337_Lthen_J:
     lui t6, %hi(.7469_L.LC7_J)
     flw ft11, %lo(.7469_L.LC7_J)(t6)
     fsw ft11, 4(sp)
@@ -12570,11 +12953,11 @@ judge_intersection_fast:
     flw ft1, 4(sp)
     flt.s t2, ft0, ft1
     sw t2, 0(sp)
-    j .9098_Lendif_J
-.9097_Lelse_J:
+    j .9338_Lendif_J
+.9336_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.9098_Lendif_J:
+.9338_Lendif_J:
     lw a0, 0(sp)
     lw ra, 92(sp)
     addi sp, sp, 96
@@ -12937,7 +13320,11 @@ get_nvector_second:
     seqz t0, t0
     sw t0, 276(sp)
     lw t0, 276(sp)
-    beqz t0, .9099_Lelse_J
+    beqz t0, .9339_Lelse0_J
+    j .9341_Lthen_J
+.9339_Lelse0_J:
+    j .9340_Lelse_J
+.9341_Lthen_J:
     li t0, 0
     sw t0, 272(sp)
     lui t6, %hi(nvector)
@@ -12983,8 +13370,8 @@ get_nvector_second:
     lw t6, 228(sp)
     flw ft11, 288(sp)
     fsw ft11, 0(t6)
-    j .9100_Lendif_J
-.9099_Lelse_J:
+    j .9342_Lendif_J
+.9340_Lelse_J:
     li t0, 0
     sw t0, 224(sp)
     li t0, 2
@@ -13174,7 +13561,7 @@ get_nvector_second:
     lw t6, 0(sp)
     flw ft11, 12(sp)
     fsw ft11, 0(t6)
-.9100_Lendif_J:
+.9342_Lendif_J:
     lui a0, %hi(nvector)
     lw a0, %lo(nvector)(a0)
     lw a1, 484(sp)
@@ -13215,11 +13602,15 @@ get_nvector:
     seqz t0, t0
     sw t0, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .9101_Lelse_J
+    beqz t0, .9343_Lelse0_J
+    j .9345_Lthen_J
+.9343_Lelse0_J:
+    j .9344_Lelse_J
+.9345_Lthen_J:
     lw a0, 28(sp)
     call get_nvector_rect
-    j .9102_Lendif_J
-.9101_Lelse_J:
+    j .9346_Lendif_J
+.9344_Lelse_J:
     li t0, 2
     sw t0, 12(sp)
     lw t0, 68(sp)
@@ -13230,7 +13621,11 @@ get_nvector:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .9103_Lelse_J
+    beqz t0, .9347_Lelse0_J
+    j .9349_Lthen_J
+.9347_Lelse0_J:
+    j .9348_Lelse_J
+.9349_Lthen_J:
     lw a0, 72(sp)
     lw a1, 68(sp)
     lw a2, 64(sp)
@@ -13246,8 +13641,8 @@ get_nvector:
     flw ft11, 32(sp)
     fsw ft11, -4(sp)
     call get_nvector_plane
-    j .9104_Lendif_J
-.9103_Lelse_J:
+    j .9350_Lendif_J
+.9348_Lelse_J:
     lw a0, 72(sp)
     lw a1, 68(sp)
     lw a2, 64(sp)
@@ -13263,8 +13658,8 @@ get_nvector:
     flw ft11, 32(sp)
     fsw ft11, -4(sp)
     call get_nvector_second
-.9104_Lendif_J:
-.9102_Lendif_J:
+.9350_Lendif_J:
+.9346_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 96
     ret
@@ -13382,7 +13777,11 @@ utexture:
     seqz t0, t0
     sw t0, 848(sp)
     lw t0, 848(sp)
-    beqz t0, .9105_Lelse_J
+    beqz t0, .9351_Lelse0_J
+    j .9353_Lthen_J
+.9351_Lelse0_J:
+    j .9352_Lelse_J
+.9353_Lthen_J:
     li t0, 0
     sw t0, 844(sp)
     lw t0, 844(sp)
@@ -13498,28 +13897,40 @@ utexture:
     li t0, 1
     sw t0, 708(sp)
     lw t0, 780(sp)
-    beqz t0, .9107_Lelse_J
+    beqz t0, .9355_Lelse0_J
+    j .9357_Lthen_J
+.9355_Lelse0_J:
+    j .9356_Lelse_J
+.9357_Lthen_J:
     lw t0, 712(sp)
-    beqz t0, .9109_Lelse_J
+    beqz t0, .9359_Lelse0_J
+    j .9361_Lthen_J
+.9359_Lelse0_J:
+    j .9360_Lelse_J
+.9361_Lthen_J:
     lui t6, %hi(.7706_L.LC11_J)
     flw ft11, %lo(.7706_L.LC11_J)(t6)
     fsw ft11, 704(sp)
-    j .9110_Lendif_J
-.9109_Lelse_J:
+    j .9362_Lendif_J
+.9360_Lelse_J:
     sw zero, 704(sp)
-.9110_Lendif_J:
-    j .9108_Lendif_J
-.9107_Lelse_J:
+.9362_Lendif_J:
+    j .9358_Lendif_J
+.9356_Lelse_J:
     lw t0, 712(sp)
-    beqz t0, .9111_Lelse_J
+    beqz t0, .9363_Lelse0_J
+    j .9365_Lthen_J
+.9363_Lelse0_J:
+    j .9364_Lelse_J
+.9365_Lthen_J:
     sw zero, 704(sp)
-    j .9112_Lendif_J
-.9111_Lelse_J:
+    j .9366_Lendif_J
+.9364_Lelse_J:
     lui t6, %hi(.7706_L.LC11_J)
     flw ft11, %lo(.7706_L.LC11_J)(t6)
     fsw ft11, 704(sp)
-.9112_Lendif_J:
-.9108_Lendif_J:
+.9366_Lendif_J:
+.9358_Lendif_J:
     lui t6, %hi(texture_color)
     flw ft11, %lo(texture_color)(t6)
     fsw ft11, 700(sp)
@@ -13533,8 +13944,8 @@ utexture:
     lw t6, 692(sp)
     flw ft11, 704(sp)
     fsw ft11, 0(t6)
-    j .9106_Lendif_J
-.9105_Lelse_J:
+    j .9354_Lendif_J
+.9352_Lelse_J:
     li t0, 2
     sw t0, 688(sp)
     lw t0, 1000(sp)
@@ -13545,7 +13956,11 @@ utexture:
     seqz t0, t0
     sw t0, 680(sp)
     lw t0, 680(sp)
-    beqz t0, .9113_Lelse_J
+    beqz t0, .9367_Lelse0_J
+    j .9369_Lthen_J
+.9367_Lelse0_J:
+    j .9368_Lelse_J
+.9369_Lthen_J:
     li t0, 1
     sw t0, 676(sp)
     lw t0, 676(sp)
@@ -13624,8 +14039,8 @@ utexture:
     lw t6, 588(sp)
     flw ft11, 600(sp)
     fsw ft11, 0(t6)
-    j .9114_Lendif_J
-.9113_Lelse_J:
+    j .9370_Lendif_J
+.9368_Lelse_J:
     li t0, 3
     sw t0, 584(sp)
     lw t0, 1000(sp)
@@ -13636,7 +14051,11 @@ utexture:
     seqz t0, t0
     sw t0, 576(sp)
     lw t0, 576(sp)
-    beqz t0, .9115_Lelse_J
+    beqz t0, .9371_Lelse0_J
+    j .9373_Lthen_J
+.9371_Lelse0_J:
+    j .9372_Lelse_J
+.9373_Lthen_J:
     li t0, 0
     sw t0, 572(sp)
     lw t0, 572(sp)
@@ -13788,8 +14207,8 @@ utexture:
     lw t6, 396(sp)
     flw ft11, 408(sp)
     fsw ft11, 0(t6)
-    j .9116_Lendif_J
-.9115_Lelse_J:
+    j .9374_Lendif_J
+.9372_Lelse_J:
     li t0, 4
     sw t0, 392(sp)
     lw t0, 1000(sp)
@@ -13800,7 +14219,11 @@ utexture:
     seqz t0, t0
     sw t0, 384(sp)
     lw t0, 384(sp)
-    beqz t0, .9117_Lelse_J
+    beqz t0, .9375_Lelse0_J
+    j .9377_Lthen_J
+.9375_Lelse0_J:
+    j .9376_Lelse_J
+.9377_Lthen_J:
     li t0, 0
     sw t0, 380(sp)
     lw t0, 380(sp)
@@ -13918,12 +14341,16 @@ utexture:
     flt.s t2, ft0, ft1
     sw t2, 240(sp)
     lw t0, 240(sp)
-    beqz t0, .9119_Lelse_J
+    beqz t0, .9379_Lelse0_J
+    j .9381_Lthen_J
+.9379_Lelse0_J:
+    j .9380_Lelse_J
+.9381_Lthen_J:
     lui t6, %hi(.7752_L.LC15_J)
     flw ft11, %lo(.7752_L.LC15_J)(t6)
     fsw ft11, 236(sp)
-    j .9120_Lendif_J
-.9119_Lelse_J:
+    j .9382_Lendif_J
+.9380_Lelse_J:
     flw ft0, 264(sp)
     flw ft1, 324(sp)
     fdiv.s ft2, ft0, ft1
@@ -13948,7 +14375,7 @@ utexture:
     flw ft1, 212(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 236(sp)
-.9120_Lendif_J:
+.9382_Lendif_J:
     flw fa0, 236(sp)
     call mincaml_floor
     fsw fa0, 208(sp)
@@ -14014,12 +14441,16 @@ utexture:
     flt.s t2, ft0, ft1
     sw t2, 132(sp)
     lw t0, 132(sp)
-    beqz t0, .9121_Lelse_J
+    beqz t0, .9383_Lelse0_J
+    j .9385_Lthen_J
+.9383_Lelse0_J:
+    j .9384_Lelse_J
+.9385_Lthen_J:
     lui t6, %hi(.7752_L.LC15_J)
     flw ft11, %lo(.7752_L.LC15_J)(t6)
     fsw ft11, 128(sp)
-    j .9122_Lendif_J
-.9121_Lelse_J:
+    j .9386_Lendif_J
+.9384_Lelse_J:
     flw ft0, 144(sp)
     flw ft1, 252(sp)
     fdiv.s ft2, ft0, ft1
@@ -14044,7 +14475,7 @@ utexture:
     flw ft1, 104(sp)
     fdiv.s ft2, ft0, ft1
     fsw ft2, 128(sp)
-.9122_Lendif_J:
+.9386_Lendif_J:
     flw fa0, 128(sp)
     call mincaml_floor
     fsw fa0, 100(sp)
@@ -14093,13 +14524,17 @@ utexture:
     flt.s t2, ft0, ft1
     sw t2, 44(sp)
     lw t0, 44(sp)
-    beqz t0, .9123_Lelse_J
+    beqz t0, .9387_Lelse0_J
+    j .9389_Lthen_J
+.9387_Lelse0_J:
+    j .9388_Lelse_J
+.9389_Lthen_J:
     sw zero, 40(sp)
-    j .9124_Lendif_J
-.9123_Lelse_J:
+    j .9390_Lendif_J
+.9388_Lelse_J:
     flw ft11, 52(sp)
     fsw ft11, 40(sp)
-.9124_Lendif_J:
+.9390_Lendif_J:
     li t0, 2
     sw t0, 36(sp)
     lui t6, %hi(.7706_L.LC11_J)
@@ -14129,11 +14564,11 @@ utexture:
     lw t6, 8(sp)
     flw ft11, 20(sp)
     fsw ft11, 0(t6)
-.9117_Lelse_J:
-.9118_Lendif_J:
-.9116_Lendif_J:
-.9114_Lendif_J:
-.9106_Lendif_J:
+.9376_Lelse_J:
+.9378_Lendif_J:
+.9374_Lendif_J:
+.9370_Lendif_J:
+.9354_Lendif_J:
     lw ra, 1004(sp)
     addi sp, sp, 1024
     ret
@@ -14153,22 +14588,30 @@ add_light:
     flt.s t2, ft0, ft1
     sw t2, 152(sp)
     lw t0, 152(sp)
-    beqz t0, .9125_Lelse_J
+    beqz t0, .9391_Lelse0_J
+    j .9393_Lthen_J
+.9391_Lelse0_J:
+    j .9392_Lelse_J
+.9393_Lthen_J:
     lui a0, %hi(rgb)
     lw a0, %lo(rgb)(a0)
     flw fa0, 168(sp)
     lui a1, %hi(texture_color)
     lw a1, %lo(texture_color)(a1)
     call vecaccum
-.9125_Lelse_J:
-.9126_Lendif_J:
+.9392_Lelse_J:
+.9394_Lendif_J:
     sw zero, 148(sp)
     flw ft0, 148(sp)
     flw ft1, 164(sp)
     flt.s t2, ft0, ft1
     sw t2, 144(sp)
     lw t0, 144(sp)
-    beqz t0, .9127_Lelse_J
+    beqz t0, .9395_Lelse0_J
+    j .9397_Lthen_J
+.9395_Lelse0_J:
+    j .9396_Lelse_J
+.9397_Lthen_J:
     flw ft0, 164(sp)
     flw ft1, 164(sp)
     fmul.s ft2, ft0, ft1
@@ -14283,8 +14726,8 @@ add_light:
     lw t6, 12(sp)
     flw ft11, 24(sp)
     fsw ft11, 0(t6)
-.9127_Lelse_J:
-.9128_Lendif_J:
+.9396_Lelse_J:
+.9398_Lendif_J:
     lw ra, 172(sp)
     addi sp, sp, 176
     ret
@@ -14309,7 +14752,11 @@ trace_reflections:
     seqz t0, t0
     sw t0, 400(sp)
     lw t0, 400(sp)
-    beqz t0, .9129_Lelse_J
+    beqz t0, .9399_Lelse0_J
+    j .9401_Lthen_J
+.9399_Lelse0_J:
+    j .9400_Lelse_J
+.9401_Lthen_J:
     lui t6, %hi(reflections)
     flw ft11, %lo(reflections)(t6)
     fsw ft11, 396(sp)
@@ -14337,7 +14784,11 @@ trace_reflections:
     call judge_intersection_fast
     sw a0, 368(sp)
     lw t0, 368(sp)
-    beqz t0, .9131_Lelse_J
+    beqz t0, .9403_Lelse0_J
+    j .9405_Lthen_J
+.9403_Lelse0_J:
+    j .9404_Lelse_J
+.9405_Lthen_J:
     li t0, 0
     sw t0, 364(sp)
     lui t6, %hi(intersected_object_id)
@@ -14353,8 +14804,6 @@ trace_reflections:
     lw t6, 352(sp)
     flw ft11, 0(t6)
     fsw ft11, 348(sp)
-    li t0, 4
-    sw t0, 344(sp)
     lw t0, 348(sp)
     slli t2, t0, 2
     sw t2, 340(sp)
@@ -14385,7 +14834,11 @@ trace_reflections:
     seqz t0, t0
     sw t0, 308(sp)
     lw t0, 308(sp)
-    beqz t0, .9133_Lelse_J
+    beqz t0, .9407_Lelse0_J
+    j .9409_Lthen_J
+.9407_Lelse0_J:
+    j .9408_Lelse_J
+.9409_Lthen_J:
     li t0, 0
     sw t0, 304(sp)
     li t0, 0
@@ -14411,7 +14864,11 @@ trace_reflections:
     seqz t0, t0
     sw t0, 276(sp)
     lw t0, 276(sp)
-    beqz t0, .9135_Lelse_J
+    beqz t0, .9411_Lelse0_J
+    j .9413_Lthen_J
+.9411_Lelse0_J:
+    j .9412_Lelse_J
+.9413_Lthen_J:
     li t0, 0
     sw t0, 272(sp)
     lui t6, %hi(nvector)
@@ -14621,12 +15078,12 @@ trace_reflections:
     flw fa1, 20(sp)
     flw fa2, 416(sp)
     call add_light
-.9135_Lelse_J:
-.9136_Lendif_J:
-.9133_Lelse_J:
-.9134_Lendif_J:
-.9131_Lelse_J:
-.9132_Lendif_J:
+.9412_Lelse_J:
+.9414_Lendif_J:
+.9408_Lelse_J:
+.9410_Lendif_J:
+.9404_Lelse_J:
+.9406_Lendif_J:
     li t0, 1
     sw t0, 16(sp)
     lw t0, 424(sp)
@@ -14638,8 +15095,8 @@ trace_reflections:
     flw fa1, 416(sp)
     lw a1, 412(sp)
     call trace_reflections
-.9129_Lelse_J:
-.9130_Lendif_J:
+.9400_Lelse_J:
+.9402_Lendif_J:
     lw ra, 428(sp)
     addi sp, sp, 432
     ret
@@ -14674,14 +15131,20 @@ trace_ray:
     seqz t0, t0
     sw t0, 1224(sp)
     lw t0, 1224(sp)
-    bnez t0, next
-    j .9137_Lelse_J
-next:
+    beqz t0, .9415_Lelse0_J
+    j .9417_Lthen_J
+.9415_Lelse0_J:
+    j .9416_Lelse_J
+.9417_Lthen_J:
     lw a0, 1272(sp)
     call judge_intersection
     sw a0, 1220(sp)
     lw t0, 1220(sp)
-    beqz t0, .9139_Lelse_J
+    beqz t0, .9419_Lelse0_J
+    j .9421_Lthen_J
+.9419_Lelse0_J:
+    j .9420_Lelse_J
+.9421_Lthen_J:
     li t0, 0
     sw t0, 1216(sp)
     lui t6, %hi(intersected_object_id)
@@ -14801,8 +15264,6 @@ next:
     flw ft11, %lo(intersection_point)(t6)
     fsw ft11, -4(sp)
     call utexture
-    li t0, 4
-    sw t0, 1120(sp)
     lw t0, 1200(sp)
     slli t2, t0, 2
     sw t2, 1116(sp)
@@ -14870,7 +15331,11 @@ next:
     flt.s t2, ft0, ft1
     sw t2, 1044(sp)
     lw t0, 1044(sp)
-    beqz t0, .9141_Lelse_J
+    beqz t0, .9423_Lelse0_J
+    j .9425_Lthen_J
+.9423_Lelse0_J:
+    j .9424_Lelse_J
+.9425_Lthen_J:
     li t0, 0
     sw t0, 1040(sp)
     lw t0, 1280(sp)
@@ -14883,8 +15348,8 @@ next:
     lw t6, 1032(sp)
     flw ft11, 1040(sp)
     fsw ft11, 0(t6)
-    j .9142_Lendif_J
-.9141_Lelse_J:
+    j .9426_Lendif_J
+.9424_Lelse_J:
     li t0, 1
     sw t0, 1028(sp)
     lw t0, 1280(sp)
@@ -14953,7 +15418,7 @@ next:
     lui a1, %hi(nvector)
     lw a1, %lo(nvector)(a1)
     call veccpy
-.9142_Lendif_J:
+.9426_Lendif_J:
     lui t6, %hi(.6440_L.LC2_J)
     flw ft11, %lo(.6440_L.LC2_J)(t6)
     fsw ft11, 960(sp)
@@ -15111,7 +15576,11 @@ next:
     seqz t0, t0
     sw t0, 772(sp)
     lw t0, 772(sp)
-    beqz t0, .9143_Lelse_J
+    beqz t0, .9427_Lelse0_J
+    j .9429_Lthen_J
+.9427_Lelse0_J:
+    j .9428_Lelse_J
+.9429_Lthen_J:
     li t0, 0
     sw t0, 768(sp)
     lui t6, %hi(nvector)
@@ -15337,8 +15806,8 @@ next:
     flw fa1, 492(sp)
     flw fa2, 804(sp)
     call add_light
-.9143_Lelse_J:
-.9144_Lendif_J:
+.9428_Lelse_J:
+.9430_Lendif_J:
     lui a0, %hi(startp_fast)
     lw a0, %lo(startp_fast)(a0)
     lui a1, %hi(intersection_point)
@@ -15403,7 +15872,11 @@ next:
     flt.s t2, ft0, ft1
     sw t2, 428(sp)
     lw t0, 428(sp)
-    beqz t0, .9145_Lelse_J
+    beqz t0, .9431_Lelse0_J
+    j .9433_Lthen_J
+.9431_Lelse0_J:
+    j .9432_Lelse_J
+.9433_Lthen_J:
     li t0, 4
     sw t0, 424(sp)
     lw t0, 1280(sp)
@@ -15411,7 +15884,11 @@ next:
     slt t2, t0, t1
     sw t2, 420(sp)
     lw t0, 420(sp)
-    beqz t0, .9147_Lelse_J
+    beqz t0, .9435_Lelse0_J
+    j .9437_Lthen_J
+.9435_Lelse0_J:
+    j .9436_Lelse_J
+.9437_Lthen_J:
     li t0, 1
     sw t0, 416(sp)
     lw t0, 1280(sp)
@@ -15433,8 +15910,8 @@ next:
     lw t6, 396(sp)
     flw ft11, 404(sp)
     fsw ft11, 0(t6)
-.9147_Lelse_J:
-.9148_Lendif_J:
+.9436_Lelse_J:
+.9438_Lendif_J:
     li t0, 2
     sw t0, 392(sp)
     lw t0, 1176(sp)
@@ -15445,7 +15922,11 @@ next:
     seqz t0, t0
     sw t0, 384(sp)
     lw t0, 384(sp)
-    beqz t0, .9149_Lelse_J
+    beqz t0, .9439_Lelse0_J
+    j .9441_Lthen_J
+.9439_Lelse0_J:
+    j .9440_Lelse_J
+.9441_Lthen_J:
     lui t6, 260096 # 0x3f800
     sw t6, 380(sp)
     flw ft11, 380(sp)
@@ -15510,12 +15991,12 @@ next:
     fsw ft11, -4(sp)
     flw fa1, 320(sp)
     call trace_ray
-.9149_Lelse_J:
-.9150_Lendif_J:
-.9145_Lelse_J:
-.9146_Lendif_J:
-    j .9140_Lendif_J
-.9139_Lelse_J:
+.9440_Lelse_J:
+.9442_Lendif_J:
+.9432_Lelse_J:
+.9434_Lendif_J:
+    j .9422_Lendif_J
+.9420_Lelse_J:
     li t0, 1
     sw t0, 316(sp)
     lw t0, 316(sp)
@@ -15538,7 +16019,11 @@ next:
     xor t2, t0, t1
     sw t2, 296(sp)
     lw t0, 296(sp)
-    beqz t0, .9151_Lelse_J
+    beqz t0, .9443_Lelse0_J
+    j .9445_Lthen_J
+.9443_Lelse0_J:
+    j .9444_Lelse_J
+.9445_Lthen_J:
     li t0, 0
     sw t0, 292(sp)
     lw t0, 292(sp)
@@ -15649,7 +16134,11 @@ next:
     flt.s t2, ft0, ft1
     sw t2, 156(sp)
     lw t0, 156(sp)
-    beqz t0, .9153_Lelse_J
+    beqz t0, .9447_Lelse0_J
+    j .9449_Lthen_J
+.9447_Lelse0_J:
+    j .9448_Lelse_J
+.9449_Lthen_J:
     flw ft0, 164(sp)
     flw ft1, 164(sp)
     fmul.s ft2, ft0, ft1
@@ -15783,13 +16272,13 @@ next:
     lw t6, 0(sp)
     flw ft11, 12(sp)
     fsw ft11, 0(t6)
-.9153_Lelse_J:
-.9154_Lendif_J:
-.9151_Lelse_J:
-.9152_Lendif_J:
-.9140_Lendif_J:
-.9137_Lelse_J:
-.9138_Lendif_J:
+.9448_Lelse_J:
+.9450_Lendif_J:
+.9444_Lelse_J:
+.9446_Lendif_J:
+.9422_Lendif_J:
+.9416_Lelse_J:
+.9418_Lendif_J:
     lw ra, 1284(sp)
     addi sp, sp, 1296
     ret
@@ -15808,7 +16297,11 @@ trace_diffuse_ray:
     call judge_intersection_fast
     sw a0, 300(sp)
     lw t0, 300(sp)
-    beqz t0, .9155_Lelse_J
+    beqz t0, .9451_Lelse0_J
+    j .9453_Lthen_J
+.9451_Lelse0_J:
+    j .9452_Lelse_J
+.9453_Lthen_J:
     li t0, 0
     sw t0, 296(sp)
     lui t6, %hi(intersected_object_id)
@@ -15932,7 +16425,11 @@ trace_diffuse_ray:
     seqz t0, t0
     sw t0, 192(sp)
     lw t0, 192(sp)
-    beqz t0, .9157_Lelse_J
+    beqz t0, .9455_Lelse0_J
+    j .9457_Lthen_J
+.9455_Lelse0_J:
+    j .9456_Lelse_J
+.9457_Lthen_J:
     li t0, 0
     sw t0, 188(sp)
     lui t6, %hi(nvector)
@@ -16052,13 +16549,17 @@ trace_diffuse_ray:
     flt.s t2, ft0, ft1
     sw t2, 40(sp)
     lw t0, 40(sp)
-    beqz t0, .9159_Lelse_J
+    beqz t0, .9459_Lelse0_J
+    j .9461_Lthen_J
+.9459_Lelse0_J:
+    j .9460_Lelse_J
+.9461_Lthen_J:
     flw ft11, 48(sp)
     fsw ft11, 36(sp)
-    j .9160_Lendif_J
-.9159_Lelse_J:
+    j .9462_Lendif_J
+.9460_Lelse_J:
     sw zero, 36(sp)
-.9160_Lendif_J:
+.9462_Lendif_J:
     flw ft0, 304(sp)
     flw ft1, 36(sp)
     fmul.s ft2, ft0, ft1
@@ -16085,10 +16586,10 @@ trace_diffuse_ray:
     lui a1, %hi(texture_color)
     lw a1, %lo(texture_color)(a1)
     call vecaccum
-.9157_Lelse_J:
-.9158_Lendif_J:
-.9155_Lelse_J:
-.9156_Lendif_J:
+.9456_Lelse_J:
+.9458_Lendif_J:
+.9452_Lelse_J:
+.9454_Lendif_J:
     lw ra, 316(sp)
     addi sp, sp, 320
     ret
@@ -16113,7 +16614,11 @@ iter_trace_diffuse_rays:
     seqz t0, t0
     sw t0, 208(sp)
     lw t0, 208(sp)
-    beqz t0, .9161_Lelse_J
+    beqz t0, .9463_Lelse0_J
+    j .9465_Lthen_J
+.9463_Lelse0_J:
+    j .9464_Lelse_J
+.9465_Lthen_J:
     lw t0, 220(sp)
     slli t0, t0, 3
     sw t0, 204(sp)
@@ -16225,7 +16730,11 @@ iter_trace_diffuse_rays:
     flt.s t2, ft0, ft1
     sw t2, 68(sp)
     lw t0, 68(sp)
-    beqz t0, .9163_Lelse_J
+    beqz t0, .9467_Lelse0_J
+    j .9469_Lthen_J
+.9467_Lelse0_J:
+    j .9468_Lelse_J
+.9469_Lthen_J:
     li t0, 1
     sw t0, 64(sp)
     lw t0, 220(sp)
@@ -16259,8 +16768,8 @@ iter_trace_diffuse_rays:
     lw a1, 44(sp)
     flw fa0, 32(sp)
     call trace_diffuse_ray
-    j .9164_Lendif_J
-.9163_Lelse_J:
+    j .9470_Lendif_J
+.9468_Lelse_J:
     lw t0, 220(sp)
     slli t0, t0, 3
     sw t0, 28(sp)
@@ -16285,7 +16794,7 @@ iter_trace_diffuse_rays:
     lw a1, 16(sp)
     flw fa0, 8(sp)
     call trace_diffuse_ray
-.9164_Lendif_J:
+.9470_Lendif_J:
     li t0, 2
     sw t0, 4(sp)
     lw t0, 220(sp)
@@ -16297,8 +16806,8 @@ iter_trace_diffuse_rays:
     lw a2, 224(sp)
     lw a3, 0(sp)
     call iter_trace_diffuse_rays
-.9161_Lelse_J:
-.9162_Lendif_J:
+.9464_Lelse_J:
+.9466_Lendif_J:
     lw ra, 236(sp)
     addi sp, sp, 240
     ret
@@ -16367,7 +16876,11 @@ trace_diffuse_ray_80percent:
     xor t2, t0, t1
     sw t2, 136(sp)
     lw t0, 136(sp)
-    beqz t0, .9165_Lelse_J
+    beqz t0, .9471_Lelse0_J
+    j .9473_Lthen_J
+.9471_Lelse0_J:
+    j .9472_Lelse_J
+.9473_Lthen_J:
     li t0, 0
     sw t0, 132(sp)
     lui t6, %hi(dirvecs)
@@ -16387,8 +16900,8 @@ trace_diffuse_ray_80percent:
     lw a1, 148(sp)
     lw a2, 144(sp)
     call trace_diffuse_rays
-.9165_Lelse_J:
-.9166_Lendif_J:
+.9472_Lelse_J:
+.9474_Lendif_J:
     li t0, 1
     sw t0, 112(sp)
     lw t0, 152(sp)
@@ -16396,7 +16909,11 @@ trace_diffuse_ray_80percent:
     xor t2, t0, t1
     sw t2, 108(sp)
     lw t0, 108(sp)
-    beqz t0, .9167_Lelse_J
+    beqz t0, .9475_Lelse0_J
+    j .9477_Lthen_J
+.9475_Lelse0_J:
+    j .9476_Lelse_J
+.9477_Lthen_J:
     li t0, 1
     sw t0, 104(sp)
     lui t6, %hi(dirvecs)
@@ -16416,8 +16933,8 @@ trace_diffuse_ray_80percent:
     lw a1, 148(sp)
     lw a2, 144(sp)
     call trace_diffuse_rays
-.9167_Lelse_J:
-.9168_Lendif_J:
+.9476_Lelse_J:
+.9478_Lendif_J:
     li t0, 2
     sw t0, 84(sp)
     lw t0, 152(sp)
@@ -16425,7 +16942,11 @@ trace_diffuse_ray_80percent:
     xor t2, t0, t1
     sw t2, 80(sp)
     lw t0, 80(sp)
-    beqz t0, .9169_Lelse_J
+    beqz t0, .9479_Lelse0_J
+    j .9481_Lthen_J
+.9479_Lelse0_J:
+    j .9480_Lelse_J
+.9481_Lthen_J:
     li t0, 2
     sw t0, 76(sp)
     lui t6, %hi(dirvecs)
@@ -16445,8 +16966,8 @@ trace_diffuse_ray_80percent:
     lw a1, 148(sp)
     lw a2, 144(sp)
     call trace_diffuse_rays
-.9169_Lelse_J:
-.9170_Lendif_J:
+.9480_Lelse_J:
+.9482_Lendif_J:
     li t0, 3
     sw t0, 56(sp)
     lw t0, 152(sp)
@@ -16454,7 +16975,11 @@ trace_diffuse_ray_80percent:
     xor t2, t0, t1
     sw t2, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .9171_Lelse_J
+    beqz t0, .9483_Lelse0_J
+    j .9485_Lthen_J
+.9483_Lelse0_J:
+    j .9484_Lelse_J
+.9485_Lthen_J:
     li t0, 3
     sw t0, 48(sp)
     lui t6, %hi(dirvecs)
@@ -16474,8 +16999,8 @@ trace_diffuse_ray_80percent:
     lw a1, 148(sp)
     lw a2, 144(sp)
     call trace_diffuse_rays
-.9171_Lelse_J:
-.9172_Lendif_J:
+.9484_Lelse_J:
+.9486_Lendif_J:
     li t0, 4
     sw t0, 28(sp)
     lw t0, 152(sp)
@@ -16483,7 +17008,11 @@ trace_diffuse_ray_80percent:
     xor t2, t0, t1
     sw t2, 24(sp)
     lw t0, 24(sp)
-    beqz t0, .9173_Lelse_J
+    beqz t0, .9487_Lelse0_J
+    j .9489_Lthen_J
+.9487_Lelse0_J:
+    j .9488_Lelse_J
+.9489_Lthen_J:
     li t0, 4
     sw t0, 20(sp)
     lui t6, %hi(dirvecs)
@@ -16503,8 +17032,8 @@ trace_diffuse_ray_80percent:
     lw a1, 148(sp)
     lw a2, 144(sp)
     call trace_diffuse_rays
-.9173_Lelse_J:
-.9174_Lendif_J:
+.9488_Lelse_J:
+.9490_Lendif_J:
     lw ra, 156(sp)
     addi sp, sp, 160
     ret
@@ -16920,7 +17449,11 @@ do_without_neighbors:
     seqz t0, t0
     sw t0, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9175_Lelse_J
+    beqz t0, .9491_Lelse0_J
+    j .9493_Lthen_J
+.9491_Lelse0_J:
+    j .9492_Lelse_J
+.9493_Lthen_J:
     lw t0, 68(sp)
     slli t0, t0, 2
     sw t0, 52(sp)
@@ -16941,7 +17474,11 @@ do_without_neighbors:
     seqz t0, t0
     sw t0, 32(sp)
     lw t0, 32(sp)
-    beqz t0, .9177_Lelse_J
+    beqz t0, .9495_Lelse0_J
+    j .9497_Lthen_J
+.9495_Lelse0_J:
+    j .9496_Lelse_J
+.9497_Lthen_J:
     lw t0, 68(sp)
     slli t0, t0, 2
     sw t0, 28(sp)
@@ -16953,7 +17490,11 @@ do_without_neighbors:
     flw ft11, 0(t6)
     fsw ft11, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .9179_Lelse_J
+    beqz t0, .9499_Lelse0_J
+    j .9501_Lthen_J
+.9499_Lelse0_J:
+    j .9500_Lelse_J
+.9501_Lthen_J:
     lw a0, 100(sp)
     lw a1, 96(sp)
     lw a2, 92(sp)
@@ -16965,8 +17506,8 @@ do_without_neighbors:
     flw ft11, 68(sp)
     fsw ft11, -4(sp)
     call calc_diffuse_using_1point
-.9179_Lelse_J:
-.9180_Lendif_J:
+.9500_Lelse_J:
+.9502_Lendif_J:
     li t0, 1
     sw t0, 16(sp)
     lw t0, 68(sp)
@@ -16984,10 +17525,10 @@ do_without_neighbors:
     flw ft11, 12(sp)
     fsw ft11, -4(sp)
     call do_without_neighbors
-.9177_Lelse_J:
-.9178_Lendif_J:
-.9175_Lelse_J:
-.9176_Lendif_J:
+.9496_Lelse_J:
+.9498_Lendif_J:
+.9492_Lelse_J:
+.9494_Lendif_J:
     lw ra, 104(sp)
     addi sp, sp, 112
     ret
@@ -17027,7 +17568,11 @@ neighbors_exist:
     slt t2, t0, t1
     sw t2, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .9181_Lelse_J
+    beqz t0, .9503_Lelse0_J
+    j .9505_Lthen_J
+.9503_Lelse0_J:
+    j .9504_Lelse_J
+.9505_Lthen_J:
     li t0, 0
     sw t0, 60(sp)
     lw t0, 60(sp)
@@ -17035,7 +17580,11 @@ neighbors_exist:
     slt t2, t0, t1
     sw t2, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9183_Lelse_J
+    beqz t0, .9507_Lelse0_J
+    j .9509_Lthen_J
+.9507_Lelse0_J:
+    j .9508_Lelse_J
+.9509_Lthen_J:
     li t0, 1
     sw t0, 52(sp)
     lw t0, 104(sp)
@@ -17062,7 +17611,11 @@ neighbors_exist:
     slt t2, t0, t1
     sw t2, 24(sp)
     lw t0, 24(sp)
-    beqz t0, .9185_Lelse_J
+    beqz t0, .9511_Lelse0_J
+    j .9513_Lthen_J
+.9511_Lelse0_J:
+    j .9512_Lelse_J
+.9513_Lthen_J:
     li t0, 0
     sw t0, 20(sp)
     lw t0, 20(sp)
@@ -17070,29 +17623,33 @@ neighbors_exist:
     slt t2, t0, t1
     sw t2, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .9187_Lelse_J
+    beqz t0, .9515_Lelse0_J
+    j .9517_Lthen_J
+.9515_Lelse0_J:
+    j .9516_Lelse_J
+.9517_Lthen_J:
     li t0, 1
     sw t0, 12(sp)
-    j .9188_Lendif_J
-.9187_Lelse_J:
+    j .9518_Lendif_J
+.9516_Lelse_J:
     li t0, 0
     sw t0, 12(sp)
-.9188_Lendif_J:
-    j .9186_Lendif_J
-.9185_Lelse_J:
+.9518_Lendif_J:
+    j .9514_Lendif_J
+.9512_Lelse_J:
     li t0, 0
     sw t0, 12(sp)
-.9186_Lendif_J:
-    j .9184_Lendif_J
-.9183_Lelse_J:
+.9514_Lendif_J:
+    j .9510_Lendif_J
+.9508_Lelse_J:
     li t0, 0
     sw t0, 12(sp)
-.9184_Lendif_J:
-    j .9182_Lendif_J
-.9181_Lelse_J:
+.9510_Lendif_J:
+    j .9506_Lendif_J
+.9504_Lelse_J:
     li t0, 0
     sw t0, 12(sp)
-.9182_Lendif_J:
+.9506_Lendif_J:
     lw a0, 12(sp)
     lw ra, 108(sp)
     addi sp, sp, 112
@@ -17230,7 +17787,11 @@ neighbors_are_available:
     seqz t0, t0
     sw t0, 200(sp)
     lw t0, 200(sp)
-    beqz t0, .9189_Lelse_J
+    beqz t0, .9519_Lelse0_J
+    j .9521_Lthen_J
+.9519_Lelse0_J:
+    j .9520_Lelse_J
+.9521_Lthen_J:
     lw t0, 328(sp)
     slli t0, t0, 5
     sw t0, 196(sp)
@@ -17280,7 +17841,11 @@ neighbors_are_available:
     seqz t0, t0
     sw t0, 140(sp)
     lw t0, 140(sp)
-    beqz t0, .9191_Lelse_J
+    beqz t0, .9523_Lelse0_J
+    j .9525_Lthen_J
+.9523_Lelse0_J:
+    j .9524_Lelse_J
+.9525_Lthen_J:
     li t0, 1
     sw t0, 136(sp)
     lw t0, 328(sp)
@@ -17336,7 +17901,11 @@ neighbors_are_available:
     seqz t0, t0
     sw t0, 72(sp)
     lw t0, 72(sp)
-    beqz t0, .9193_Lelse_J
+    beqz t0, .9527_Lelse0_J
+    j .9529_Lthen_J
+.9527_Lelse0_J:
+    j .9528_Lelse_J
+.9529_Lthen_J:
     li t0, 1
     sw t0, 68(sp)
     lw t0, 328(sp)
@@ -17392,29 +17961,33 @@ neighbors_are_available:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .9195_Lelse_J
+    beqz t0, .9531_Lelse0_J
+    j .9533_Lthen_J
+.9531_Lelse0_J:
+    j .9532_Lelse_J
+.9533_Lthen_J:
     li t0, 1
     sw t0, 0(sp)
-    j .9196_Lendif_J
-.9195_Lelse_J:
+    j .9534_Lendif_J
+.9532_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.9196_Lendif_J:
-    j .9194_Lendif_J
-.9193_Lelse_J:
+.9534_Lendif_J:
+    j .9530_Lendif_J
+.9528_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.9194_Lendif_J:
-    j .9192_Lendif_J
-.9191_Lelse_J:
+.9530_Lendif_J:
+    j .9526_Lendif_J
+.9524_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.9192_Lendif_J:
-    j .9190_Lendif_J
-.9189_Lelse_J:
+.9526_Lendif_J:
+    j .9522_Lendif_J
+.9520_Lelse_J:
     li t0, 0
     sw t0, 0(sp)
-.9190_Lendif_J:
+.9522_Lendif_J:
     lw a0, 0(sp)
     lw ra, 332(sp)
     addi sp, sp, 336
@@ -17473,7 +18046,11 @@ try_exploit_neighbors:
     seqz t0, t0
     sw t0, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9197_Lelse_J
+    beqz t0, .9535_Lelse0_J
+    j .9537_Lthen_J
+.9535_Lelse0_J:
+    j .9536_Lelse_J
+.9537_Lthen_J:
     lw t0, 148(sp)
     slli t0, t0, 2
     sw t0, 92(sp)
@@ -17494,7 +18071,11 @@ try_exploit_neighbors:
     seqz t0, t0
     sw t0, 72(sp)
     lw t0, 72(sp)
-    beqz t0, .9199_Lelse_J
+    beqz t0, .9539_Lelse0_J
+    j .9541_Lthen_J
+.9539_Lelse0_J:
+    j .9540_Lelse_J
+.9541_Lthen_J:
     lw a0, 168(sp)
     lw a1, 160(sp)
     lw a2, 156(sp)
@@ -17503,7 +18084,11 @@ try_exploit_neighbors:
     call neighbors_are_available
     sw a0, 68(sp)
     lw t0, 68(sp)
-    beqz t0, .9201_Lelse_J
+    beqz t0, .9543_Lelse0_J
+    j .9545_Lthen_J
+.9543_Lelse0_J:
+    j .9544_Lelse_J
+.9545_Lthen_J:
     lw t0, 148(sp)
     slli t0, t0, 2
     sw t0, 64(sp)
@@ -17515,15 +18100,19 @@ try_exploit_neighbors:
     flw ft11, 0(t6)
     fsw ft11, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9203_Lelse_J
+    beqz t0, .9547_Lelse0_J
+    j .9549_Lthen_J
+.9547_Lelse0_J:
+    j .9548_Lelse_J
+.9549_Lthen_J:
     lw a0, 168(sp)
     lw a1, 160(sp)
     lw a2, 156(sp)
     lw a3, 152(sp)
     lw a4, 148(sp)
     call calc_diffuse_using_5points
-.9203_Lelse_J:
-.9204_Lendif_J:
+.9548_Lelse_J:
+.9550_Lendif_J:
     li t0, 1
     sw t0, 52(sp)
     lw t0, 148(sp)
@@ -17537,8 +18126,8 @@ try_exploit_neighbors:
     lw a4, 152(sp)
     lw a5, 48(sp)
     call try_exploit_neighbors
-    j .9202_Lendif_J
-.9201_Lelse_J:
+    j .9546_Lendif_J
+.9544_Lelse_J:
     lw t0, 168(sp)
     slli t0, t0, 5
     sw t0, 44(sp)
@@ -17581,11 +18170,11 @@ try_exploit_neighbors:
     flw ft11, 148(sp)
     fsw ft11, -4(sp)
     call do_without_neighbors
-.9202_Lendif_J:
-.9199_Lelse_J:
-.9200_Lendif_J:
-.9197_Lelse_J:
-.9198_Lendif_J:
+.9546_Lendif_J:
+.9540_Lelse_J:
+.9542_Lendif_J:
+.9536_Lelse_J:
+.9538_Lendif_J:
     lw ra, 172(sp)
     addi sp, sp, 176
     ret
@@ -17600,8 +18189,7 @@ write_ppm_header:
     li t0, 80
     sw t0, 68(sp)
     lw t0, 68(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 48
     sw t0, 64(sp)
     lw t0, 64(sp)
@@ -17609,13 +18197,11 @@ write_ppm_header:
     add t2, t0, t1
     sw t2, 60(sp)
     lw t0, 60(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 10
     sw t0, 56(sp)
     lw t0, 56(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 0
     sw t0, 52(sp)
     lui t6, %hi(image_size)
@@ -17636,8 +18222,7 @@ write_ppm_header:
     li t0, 32
     sw t0, 32(sp)
     lw t0, 32(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 1
     sw t0, 28(sp)
     lui t6, %hi(image_size)
@@ -17658,8 +18243,7 @@ write_ppm_header:
     li t0, 32
     sw t0, 8(sp)
     lw t0, 8(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 255
     sw t0, 4(sp)
     lw a0, 4(sp)
@@ -17667,8 +18251,7 @@ write_ppm_header:
     li t0, 10
     sw t0, 0(sp)
     lw t0, 0(sp)
-    mv a0, t0
-    call putchar
+    out t0
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -17690,11 +18273,15 @@ write_rgb_element_int:
     slt t2, t0, t1
     sw t2, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9205_Lelse_J
+    beqz t0, .9551_Lelse0_J
+    j .9553_Lthen_J
+.9551_Lelse0_J:
+    j .9552_Lelse_J
+.9553_Lthen_J:
     li t0, 255
     sw t0, 8(sp)
-    j .9206_Lendif_J
-.9205_Lelse_J:
+    j .9554_Lendif_J
+.9552_Lelse_J:
     li t0, 0
     sw t0, 4(sp)
     lw t0, 20(sp)
@@ -17702,15 +18289,19 @@ write_rgb_element_int:
     slt t2, t0, t1
     sw t2, 0(sp)
     lw t0, 0(sp)
-    beqz t0, .9207_Lelse_J
+    beqz t0, .9555_Lelse0_J
+    j .9557_Lthen_J
+.9555_Lelse0_J:
+    j .9556_Lelse_J
+.9557_Lthen_J:
     li t0, 0
     sw t0, 8(sp)
-    j .9208_Lendif_J
-.9207_Lelse_J:
+    j .9558_Lendif_J
+.9556_Lelse_J:
     flw ft11, 20(sp)
     fsw ft11, 8(sp)
-.9208_Lendif_J:
-.9206_Lendif_J:
+.9558_Lendif_J:
+.9554_Lendif_J:
     lw a0, 8(sp)
     call print_int
     lw ra, 28(sp)
@@ -17734,11 +18325,15 @@ write_rgb_element_char:
     slt t2, t0, t1
     sw t2, 12(sp)
     lw t0, 12(sp)
-    beqz t0, .9209_Lelse_J
+    beqz t0, .9559_Lelse0_J
+    j .9561_Lthen_J
+.9559_Lelse0_J:
+    j .9560_Lelse_J
+.9561_Lthen_J:
     li t0, 255
     sw t0, 8(sp)
-    j .9210_Lendif_J
-.9209_Lelse_J:
+    j .9562_Lendif_J
+.9560_Lelse_J:
     li t0, 0
     sw t0, 4(sp)
     lw t0, 20(sp)
@@ -17746,18 +18341,21 @@ write_rgb_element_char:
     slt t2, t0, t1
     sw t2, 0(sp)
     lw t0, 0(sp)
-    beqz t0, .9211_Lelse_J
+    beqz t0, .9563_Lelse0_J
+    j .9565_Lthen_J
+.9563_Lelse0_J:
+    j .9564_Lelse_J
+.9565_Lthen_J:
     li t0, 0
     sw t0, 8(sp)
-    j .9212_Lendif_J
-.9211_Lelse_J:
+    j .9566_Lendif_J
+.9564_Lelse_J:
     flw ft11, 20(sp)
     fsw ft11, 8(sp)
-.9212_Lendif_J:
-.9210_Lendif_J:
+.9566_Lendif_J:
+.9562_Lendif_J:
     lw t0, 8(sp)
-    mv a0, t0
-    call putchar
+    out t0
     lw ra, 28(sp)
     addi sp, sp, 32
     ret
@@ -17779,7 +18377,11 @@ write_rgb:
     seqz t0, t0
     sw t0, 284(sp)
     lw t0, 284(sp)
-    beqz t0, .9213_Lelse_J
+    beqz t0, .9567_Lelse0_J
+    j .9569_Lthen_J
+.9567_Lelse0_J:
+    j .9568_Lelse_J
+.9569_Lthen_J:
     li t0, 0
     sw t0, 280(sp)
     lui t6, %hi(rgb)
@@ -17805,11 +18407,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 252(sp)
     lw t0, 252(sp)
-    beqz t0, .9215_Lelse_J
+    beqz t0, .9571_Lelse0_J
+    j .9573_Lthen_J
+.9571_Lelse0_J:
+    j .9572_Lelse_J
+.9573_Lthen_J:
     li t0, 255
     sw t0, 248(sp)
-    j .9216_Lendif_J
-.9215_Lelse_J:
+    j .9574_Lendif_J
+.9572_Lelse_J:
     li t0, 0
     sw t0, 244(sp)
     lw t0, 260(sp)
@@ -17817,22 +18423,25 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 240(sp)
     lw t0, 240(sp)
-    beqz t0, .9217_Lelse_J
+    beqz t0, .9575_Lelse0_J
+    j .9577_Lthen_J
+.9575_Lelse0_J:
+    j .9576_Lelse_J
+.9577_Lthen_J:
     li t0, 0
     sw t0, 248(sp)
-    j .9218_Lendif_J
-.9217_Lelse_J:
+    j .9578_Lendif_J
+.9576_Lelse_J:
     flw ft11, 260(sp)
     fsw ft11, 248(sp)
-.9218_Lendif_J:
-.9216_Lendif_J:
+.9578_Lendif_J:
+.9574_Lendif_J:
     lw a0, 248(sp)
     call print_int
     li t0, 32
     sw t0, 236(sp)
     lw t0, 236(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 1
     sw t0, 232(sp)
     lui t6, %hi(rgb)
@@ -17858,11 +18467,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 204(sp)
     lw t0, 204(sp)
-    beqz t0, .9219_Lelse_J
+    beqz t0, .9579_Lelse0_J
+    j .9581_Lthen_J
+.9579_Lelse0_J:
+    j .9580_Lelse_J
+.9581_Lthen_J:
     li t0, 255
     sw t0, 200(sp)
-    j .9220_Lendif_J
-.9219_Lelse_J:
+    j .9582_Lendif_J
+.9580_Lelse_J:
     li t0, 0
     sw t0, 196(sp)
     lw t0, 212(sp)
@@ -17870,22 +18483,25 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 192(sp)
     lw t0, 192(sp)
-    beqz t0, .9221_Lelse_J
+    beqz t0, .9583_Lelse0_J
+    j .9585_Lthen_J
+.9583_Lelse0_J:
+    j .9584_Lelse_J
+.9585_Lthen_J:
     li t0, 0
     sw t0, 200(sp)
-    j .9222_Lendif_J
-.9221_Lelse_J:
+    j .9586_Lendif_J
+.9584_Lelse_J:
     flw ft11, 212(sp)
     fsw ft11, 200(sp)
-.9222_Lendif_J:
-.9220_Lendif_J:
+.9586_Lendif_J:
+.9582_Lendif_J:
     lw a0, 200(sp)
     call print_int
     li t0, 32
     sw t0, 188(sp)
     lw t0, 188(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 2
     sw t0, 184(sp)
     lui t6, %hi(rgb)
@@ -17911,11 +18527,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 156(sp)
     lw t0, 156(sp)
-    beqz t0, .9223_Lelse_J
+    beqz t0, .9587_Lelse0_J
+    j .9589_Lthen_J
+.9587_Lelse0_J:
+    j .9588_Lelse_J
+.9589_Lthen_J:
     li t0, 255
     sw t0, 152(sp)
-    j .9224_Lendif_J
-.9223_Lelse_J:
+    j .9590_Lendif_J
+.9588_Lelse_J:
     li t0, 0
     sw t0, 148(sp)
     lw t0, 164(sp)
@@ -17923,24 +18543,27 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 144(sp)
     lw t0, 144(sp)
-    beqz t0, .9225_Lelse_J
+    beqz t0, .9591_Lelse0_J
+    j .9593_Lthen_J
+.9591_Lelse0_J:
+    j .9592_Lelse_J
+.9593_Lthen_J:
     li t0, 0
     sw t0, 152(sp)
-    j .9226_Lendif_J
-.9225_Lelse_J:
+    j .9594_Lendif_J
+.9592_Lelse_J:
     flw ft11, 164(sp)
     fsw ft11, 152(sp)
-.9226_Lendif_J:
-.9224_Lendif_J:
+.9594_Lendif_J:
+.9590_Lendif_J:
     lw a0, 152(sp)
     call print_int
     li t0, 10
     sw t0, 140(sp)
     lw t0, 140(sp)
-    mv a0, t0
-    call putchar
-    j .9214_Lendif_J
-.9213_Lelse_J:
+    out t0
+    j .9570_Lendif_J
+.9568_Lelse_J:
     li t0, 0
     sw t0, 136(sp)
     lui t6, %hi(rgb)
@@ -17966,11 +18589,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 108(sp)
     lw t0, 108(sp)
-    beqz t0, .9227_Lelse_J
+    beqz t0, .9595_Lelse0_J
+    j .9597_Lthen_J
+.9595_Lelse0_J:
+    j .9596_Lelse_J
+.9597_Lthen_J:
     li t0, 255
     sw t0, 104(sp)
-    j .9228_Lendif_J
-.9227_Lelse_J:
+    j .9598_Lendif_J
+.9596_Lelse_J:
     li t0, 0
     sw t0, 100(sp)
     lw t0, 116(sp)
@@ -17978,18 +18605,21 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9229_Lelse_J
+    beqz t0, .9599_Lelse0_J
+    j .9601_Lthen_J
+.9599_Lelse0_J:
+    j .9600_Lelse_J
+.9601_Lthen_J:
     li t0, 0
     sw t0, 104(sp)
-    j .9230_Lendif_J
-.9229_Lelse_J:
+    j .9602_Lendif_J
+.9600_Lelse_J:
     flw ft11, 116(sp)
     fsw ft11, 104(sp)
-.9230_Lendif_J:
-.9228_Lendif_J:
+.9602_Lendif_J:
+.9598_Lendif_J:
     lw t0, 104(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 1
     sw t0, 92(sp)
     lui t6, %hi(rgb)
@@ -18015,11 +18645,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .9231_Lelse_J
+    beqz t0, .9603_Lelse0_J
+    j .9605_Lthen_J
+.9603_Lelse0_J:
+    j .9604_Lelse_J
+.9605_Lthen_J:
     li t0, 255
     sw t0, 60(sp)
-    j .9232_Lendif_J
-.9231_Lelse_J:
+    j .9606_Lendif_J
+.9604_Lelse_J:
     li t0, 0
     sw t0, 56(sp)
     lw t0, 72(sp)
@@ -18027,18 +18661,21 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .9233_Lelse_J
+    beqz t0, .9607_Lelse0_J
+    j .9609_Lthen_J
+.9607_Lelse0_J:
+    j .9608_Lelse_J
+.9609_Lthen_J:
     li t0, 0
     sw t0, 60(sp)
-    j .9234_Lendif_J
-.9233_Lelse_J:
+    j .9610_Lendif_J
+.9608_Lelse_J:
     flw ft11, 72(sp)
     fsw ft11, 60(sp)
-.9234_Lendif_J:
-.9232_Lendif_J:
+.9610_Lendif_J:
+.9606_Lendif_J:
     lw t0, 60(sp)
-    mv a0, t0
-    call putchar
+    out t0
     li t0, 2
     sw t0, 48(sp)
     lui t6, %hi(rgb)
@@ -18064,11 +18701,15 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 20(sp)
     lw t0, 20(sp)
-    beqz t0, .9235_Lelse_J
+    beqz t0, .9611_Lelse0_J
+    j .9613_Lthen_J
+.9611_Lelse0_J:
+    j .9612_Lelse_J
+.9613_Lthen_J:
     li t0, 255
     sw t0, 16(sp)
-    j .9236_Lendif_J
-.9235_Lelse_J:
+    j .9614_Lendif_J
+.9612_Lelse_J:
     li t0, 0
     sw t0, 12(sp)
     lw t0, 28(sp)
@@ -18076,19 +18717,22 @@ write_rgb:
     slt t2, t0, t1
     sw t2, 8(sp)
     lw t0, 8(sp)
-    beqz t0, .9237_Lelse_J
+    beqz t0, .9615_Lelse0_J
+    j .9617_Lthen_J
+.9615_Lelse0_J:
+    j .9616_Lelse_J
+.9617_Lthen_J:
     li t0, 0
     sw t0, 16(sp)
-    j .9238_Lendif_J
-.9237_Lelse_J:
+    j .9618_Lendif_J
+.9616_Lelse_J:
     flw ft11, 28(sp)
     fsw ft11, 16(sp)
-.9238_Lendif_J:
-.9236_Lendif_J:
+.9618_Lendif_J:
+.9614_Lendif_J:
     lw t0, 16(sp)
-    mv a0, t0
-    call putchar
-.9214_Lendif_J:
+    out t0
+.9570_Lendif_J:
     lw ra, 300(sp)
     addi sp, sp, 304
     ret
@@ -18119,7 +18763,11 @@ pretrace_diffuse_rays:
     seqz t0, t0
     sw t0, 120(sp)
     lw t0, 120(sp)
-    beqz t0, .9239_Lelse_J
+    beqz t0, .9619_Lelse0_J
+    j .9621_Lthen_J
+.9619_Lelse0_J:
+    j .9620_Lelse_J
+.9621_Lthen_J:
     lw t0, 132(sp)
     slli t0, t0, 2
     sw t0, 116(sp)
@@ -18140,7 +18788,11 @@ pretrace_diffuse_rays:
     seqz t0, t0
     sw t0, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9241_Lelse_J
+    beqz t0, .9623_Lelse0_J
+    j .9625_Lthen_J
+.9623_Lelse0_J:
+    j .9624_Lelse_J
+.9625_Lthen_J:
     lw t0, 132(sp)
     slli t0, t0, 2
     sw t0, 92(sp)
@@ -18152,7 +18804,11 @@ pretrace_diffuse_rays:
     flw ft11, 0(t6)
     fsw ft11, 84(sp)
     lw t0, 84(sp)
-    beqz t0, .9243_Lelse_J
+    beqz t0, .9627_Lelse0_J
+    j .9629_Lthen_J
+.9627_Lelse0_J:
+    j .9628_Lelse_J
+.9629_Lthen_J:
     li t0, 0
     sw t0, 80(sp)
     lw t0, 80(sp)
@@ -18221,8 +18877,8 @@ pretrace_diffuse_rays:
     lui a1, %hi(diffuse_ray)
     lw a1, %lo(diffuse_ray)(a1)
     call veccpy
-.9243_Lelse_J:
-.9244_Lendif_J:
+.9628_Lelse_J:
+.9630_Lendif_J:
     li t0, 1
     sw t0, 8(sp)
     lw t0, 132(sp)
@@ -18240,10 +18896,10 @@ pretrace_diffuse_rays:
     flw ft11, 4(sp)
     fsw ft11, -4(sp)
     call pretrace_diffuse_rays
-.9241_Lelse_J:
-.9242_Lendif_J:
-.9239_Lelse_J:
-.9240_Lendif_J:
+.9624_Lelse_J:
+.9626_Lendif_J:
+.9620_Lelse_J:
+.9622_Lendif_J:
     lw ra, 168(sp)
     addi sp, sp, 176
     ret
@@ -18270,7 +18926,11 @@ pretrace_pixels:
     seqz t0, t0
     sw t0, 408(sp)
     lw t0, 408(sp)
-    beqz t0, .9245_Lelse_J
+    beqz t0, .9631_Lelse0_J
+    j .9633_Lthen_J
+.9631_Lelse0_J:
+    j .9632_Lelse_J
+.9633_Lthen_J:
     li t0, 0
     sw t0, 404(sp)
     lui t6, %hi(scan_pitch)
@@ -18637,8 +19297,8 @@ pretrace_pixels:
     flw fa1, 424(sp)
     flw fa2, 420(sp)
     call pretrace_pixels
-.9245_Lelse_J:
-.9246_Lendif_J:
+.9632_Lelse_J:
+.9634_Lendif_J:
     lw ra, 444(sp)
     addi sp, sp, 448
     ret
@@ -18871,7 +19531,11 @@ scan_pixel:
     slt t2, t0, t1
     sw t2, 108(sp)
     lw t0, 108(sp)
-    beqz t0, .9247_Lelse_J
+    beqz t0, .9635_Lelse0_J
+    j .9637_Lthen_J
+.9635_Lelse0_J:
+    j .9636_Lelse_J
+.9637_Lthen_J:
     lw t0, 152(sp)
     slli t0, t0, 5
     sw t0, 104(sp)
@@ -18913,7 +19577,11 @@ scan_pixel:
     call neighbors_exist
     sw a0, 64(sp)
     lw t0, 64(sp)
-    beqz t0, .9249_Lelse_J
+    beqz t0, .9639_Lelse0_J
+    j .9641_Lthen_J
+.9639_Lelse0_J:
+    j .9640_Lelse_J
+.9641_Lthen_J:
     li t0, 0
     sw t0, 60(sp)
     lw a0, 152(sp)
@@ -18923,8 +19591,8 @@ scan_pixel:
     lw a4, 136(sp)
     lw a5, 60(sp)
     call try_exploit_neighbors
-    j .9250_Lendif_J
-.9249_Lelse_J:
+    j .9642_Lendif_J
+.9640_Lelse_J:
     lw t0, 152(sp)
     slli t0, t0, 5
     sw t0, 56(sp)
@@ -18969,7 +19637,7 @@ scan_pixel:
     flw ft11, 16(sp)
     fsw ft11, -4(sp)
     call do_without_neighbors
-.9250_Lendif_J:
+.9642_Lendif_J:
     lw a0, 132(sp)
     call write_rgb
     li t0, 1
@@ -18985,8 +19653,8 @@ scan_pixel:
     lw a4, 136(sp)
     lw a5, 132(sp)
     call scan_pixel
-.9247_Lelse_J:
-.9248_Lendif_J:
+.9636_Lelse_J:
+.9638_Lendif_J:
     lw ra, 156(sp)
     addi sp, sp, 160
     ret
@@ -19023,7 +19691,11 @@ scan_line:
     slt t2, t0, t1
     sw t2, 60(sp)
     lw t0, 60(sp)
-    beqz t0, .9251_Lelse_J
+    beqz t0, .9643_Lelse0_J
+    j .9645_Lthen_J
+.9643_Lelse0_J:
+    j .9644_Lelse_J
+.9645_Lthen_J:
     li t0, 1
     sw t0, 56(sp)
     lui t6, %hi(image_size)
@@ -19050,7 +19722,11 @@ scan_line:
     slt t2, t0, t1
     sw t2, 28(sp)
     lw t0, 28(sp)
-    beqz t0, .9253_Lelse_J
+    beqz t0, .9647_Lelse0_J
+    j .9649_Lthen_J
+.9647_Lelse0_J:
+    j .9648_Lelse_J
+.9649_Lthen_J:
     li t0, 1
     sw t0, 24(sp)
     lw t0, 104(sp)
@@ -19061,8 +19737,8 @@ scan_line:
     lw a1, 20(sp)
     lw a2, 88(sp)
     call pretrace_line
-.9253_Lelse_J:
-.9254_Lendif_J:
+.9648_Lelse_J:
+.9650_Lendif_J:
     li t0, 0
     sw t0, 16(sp)
     lw a0, 16(sp)
@@ -19091,8 +19767,8 @@ scan_line:
     lw a4, 0(sp)
     lw a5, 84(sp)
     call scan_line
-.9251_Lelse_J:
-.9252_Lendif_J:
+.9644_Lelse_J:
+.9646_Lendif_J:
     lw ra, 108(sp)
     addi sp, sp, 112
     ret
@@ -19278,7 +19954,11 @@ init_line_elements:
     seqz t0, t0
     sw t0, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9255_Lelse_J
+    beqz t0, .9651_Lelse0_J
+    j .9653_Lthen_J
+.9651_Lelse0_J:
+    j .9652_Lelse_J
+.9653_Lthen_J:
     call create_pixel
     sw a0, 52(sp)
     sw a1, 48(sp)
@@ -19335,11 +20015,11 @@ init_line_elements:
     lw a1, 8(sp)
     call init_line_elements
     sw a0, 4(sp)
-    j .9256_Lendif_J
-.9255_Lelse_J:
+    j .9654_Lendif_J
+.9652_Lelse_J:
     flw ft11, 72(sp)
     fsw ft11, 4(sp)
-.9256_Lendif_J:
+.9654_Lendif_J:
     lw a0, 4(sp)
     lw ra, 76(sp)
     addi sp, sp, 80
@@ -19524,7 +20204,11 @@ calc_dirvec:
     seqz t0, t0
     sw t0, 260(sp)
     lw t0, 260(sp)
-    beqz t0, .9257_Lelse_J
+    beqz t0, .9655_Lelse0_J
+    j .9657_Lthen_J
+.9655_Lelse0_J:
+    j .9656_Lelse_J
+.9657_Lthen_J:
     flw ft0, 292(sp)
     flw ft1, 292(sp)
     fmul.s ft2, ft0, ft1
@@ -19742,8 +20426,8 @@ calc_dirvec:
     flw fa1, 228(sp)
     flw fa2, 224(sp)
     call vecset
-    j .9258_Lendif_J
-.9257_Lelse_J:
+    j .9658_Lendif_J
+.9656_Lelse_J:
     flw fa0, 288(sp)
     flw fa1, 284(sp)
     call adjust_position
@@ -19766,7 +20450,7 @@ calc_dirvec:
     lw a1, 276(sp)
     lw a2, 272(sp)
     call calc_dirvec
-.9258_Lendif_J:
+.9658_Lendif_J:
     lw ra, 300(sp)
     addi sp, sp, 304
     ret
@@ -19791,7 +20475,11 @@ calc_dirvecs:
     seqz t0, t0
     sw t0, 96(sp)
     lw t0, 96(sp)
-    beqz t0, .9259_Lelse_J
+    beqz t0, .9659_Lelse0_J
+    j .9661_Lthen_J
+.9659_Lelse0_J:
+    j .9660_Lelse_J
+.9661_Lthen_J:
     lw t0, 120(sp)
     fcvt.s.w ft0, t0
     fsw ft0, 92(sp)
@@ -19873,8 +20561,8 @@ calc_dirvecs:
     lw a1, 8(sp)
     lw a2, 108(sp)
     call calc_dirvecs
-.9259_Lelse_J:
-.9260_Lendif_J:
+.9660_Lelse_J:
+.9662_Lendif_J:
     lw ra, 124(sp)
     addi sp, sp, 128
     ret
@@ -19898,7 +20586,11 @@ calc_dirvec_rows:
     seqz t0, t0
     sw t0, 52(sp)
     lw t0, 52(sp)
-    beqz t0, .9261_Lelse_J
+    beqz t0, .9663_Lelse0_J
+    j .9665_Lthen_J
+.9663_Lelse0_J:
+    j .9664_Lelse_J
+.9665_Lthen_J:
     lw t0, 72(sp)
     fcvt.s.w ft0, t0
     fsw ft0, 48(sp)
@@ -19945,8 +20637,8 @@ calc_dirvec_rows:
     lw a1, 12(sp)
     lw a2, 4(sp)
     call calc_dirvec_rows
-.9261_Lelse_J:
-.9262_Lendif_J:
+.9664_Lelse_J:
+.9666_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -20007,7 +20699,11 @@ create_dirvec_elements:
     seqz t0, t0
     sw t0, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9263_Lelse_J
+    beqz t0, .9667_Lelse0_J
+    j .9669_Lthen_J
+.9667_Lelse0_J:
+    j .9668_Lelse_J
+.9669_Lthen_J:
     li t0, 3
     sw t0, 52(sp)
     sw zero, 48(sp)
@@ -20056,8 +20752,8 @@ create_dirvec_elements:
     lw a0, 72(sp)
     lw a1, 4(sp)
     call create_dirvec_elements
-.9263_Lelse_J:
-.9264_Lendif_J:
+.9668_Lelse_J:
+.9670_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -20079,7 +20775,11 @@ create_dirvecs:
     seqz t0, t0
     sw t0, 92(sp)
     lw t0, 92(sp)
-    beqz t0, .9265_Lelse_J
+    beqz t0, .9671_Lelse0_J
+    j .9673_Lthen_J
+.9671_Lelse0_J:
+    j .9672_Lelse_J
+.9673_Lthen_J:
     li t0, 120
     sw t0, 88(sp)
     li t0, 3
@@ -20152,8 +20852,8 @@ create_dirvecs:
     sw t2, 8(sp)
     lw a0, 8(sp)
     call create_dirvecs
-.9265_Lelse_J:
-.9266_Lendif_J:
+.9672_Lelse_J:
+.9674_Lendif_J:
     lw ra, 108(sp)
     addi sp, sp, 112
     ret
@@ -20176,7 +20876,11 @@ init_dirvec_constants:
     seqz t0, t0
     sw t0, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9267_Lelse_J
+    beqz t0, .9675_Lelse0_J
+    j .9677_Lthen_J
+.9675_Lelse0_J:
+    j .9676_Lelse_J
+.9677_Lthen_J:
     lw t0, 68(sp)
     slli t0, t0, 3
     sw t0, 52(sp)
@@ -20224,8 +20928,8 @@ init_dirvec_constants:
     lw a0, 72(sp)
     lw a1, 4(sp)
     call init_dirvec_constants
-.9267_Lelse_J:
-.9268_Lendif_J:
+.9676_Lelse_J:
+.9678_Lendif_J:
     lw ra, 76(sp)
     addi sp, sp, 80
     ret
@@ -20247,7 +20951,11 @@ init_vecset_constants:
     seqz t0, t0
     sw t0, 28(sp)
     lw t0, 28(sp)
-    beqz t0, .9269_Lelse_J
+    beqz t0, .9679_Lelse0_J
+    j .9681_Lthen_J
+.9679_Lelse0_J:
+    j .9680_Lelse_J
+.9681_Lthen_J:
     lui t6, %hi(dirvecs)
     flw ft11, %lo(dirvecs)(t6)
     fsw ft11, 24(sp)
@@ -20274,8 +20982,8 @@ init_vecset_constants:
     sw t2, 0(sp)
     lw a0, 0(sp)
     call init_vecset_constants
-.9269_Lelse_J:
-.9270_Lendif_J:
+.9680_Lelse_J:
+.9682_Lendif_J:
     lw ra, 44(sp)
     addi sp, sp, 48
     ret
@@ -20424,8 +21132,6 @@ setup_rect_reflection:
     fsw ft11, 256(sp)
     flw ft11, 316(sp)
     fsw ft11, 252(sp)
-    li t0, 4
-    sw t0, 248(sp)
     lw t0, 296(sp)
     slli t2, t0, 2
     sw t2, 244(sp)
@@ -20661,10 +21367,7 @@ setup_surface_reflection:
     fsw ft11, 384(sp)
     flw ft11, 444(sp)
     fsw ft11, 380(sp)
-    li t0, 4
-    sw t0, 376(sp)
     lw t0, 424(sp)
-    lw t1, 376(sp)
     slli t2, t0, 2
     sw t2, 372(sp)
     li t0, 1
@@ -20984,7 +21687,11 @@ setup_reflections:
     seqz t0, t0
     sw t0, 124(sp)
     lw t0, 124(sp)
-    beqz t0, .9271_Lelse_J
+    beqz t0, .9683_Lelse0_J
+    j .9685_Lthen_J
+.9683_Lelse0_J:
+    j .9684_Lelse_J
+.9685_Lthen_J:
     lui t6, %hi(objects)
     flw ft11, %lo(objects)(t6)
     fsw ft11, 120(sp)
@@ -21043,7 +21750,11 @@ setup_reflections:
     seqz t0, t0
     sw t0, 56(sp)
     lw t0, 56(sp)
-    beqz t0, .9273_Lelse_J
+    beqz t0, .9687_Lelse0_J
+    j .9689_Lthen_J
+.9687_Lelse0_J:
+    j .9688_Lelse_J
+.9689_Lthen_J:
     li t0, 0
     sw t0, 52(sp)
     lw t0, 52(sp)
@@ -21065,7 +21776,11 @@ setup_reflections:
     flt.s t2, ft0, ft1
     sw t2, 28(sp)
     lw t0, 28(sp)
-    beqz t0, .9275_Lelse_J
+    beqz t0, .9691_Lelse0_J
+    j .9693_Lthen_J
+.9691_Lelse0_J:
+    j .9692_Lelse_J
+.9693_Lthen_J:
     li t0, 1
     sw t0, 24(sp)
     lw t0, 104(sp)
@@ -21076,7 +21791,11 @@ setup_reflections:
     seqz t0, t0
     sw t0, 16(sp)
     lw t0, 16(sp)
-    beqz t0, .9277_Lelse_J
+    beqz t0, .9695_Lelse0_J
+    j .9697_Lthen_J
+.9695_Lelse0_J:
+    j .9696_Lelse_J
+.9697_Lthen_J:
     lw a0, 136(sp)
     lw a1, 108(sp)
     lw a2, 104(sp)
@@ -21094,8 +21813,8 @@ setup_reflections:
     flw ft11, 68(sp)
     fsw ft11, -4(sp)
     call setup_rect_reflection
-    j .9278_Lendif_J
-.9277_Lelse_J:
+    j .9698_Lendif_J
+.9696_Lelse_J:
     li t0, 2
     sw t0, 12(sp)
     lw t0, 104(sp)
@@ -21106,7 +21825,11 @@ setup_reflections:
     seqz t0, t0
     sw t0, 4(sp)
     lw t0, 4(sp)
-    beqz t0, .9279_Lelse_J
+    beqz t0, .9699_Lelse0_J
+    j .9701_Lthen_J
+.9699_Lelse0_J:
+    j .9700_Lelse_J
+.9701_Lthen_J:
     lw a0, 136(sp)
     lw a1, 108(sp)
     lw a2, 104(sp)
@@ -21124,15 +21847,15 @@ setup_reflections:
     flw ft11, 68(sp)
     fsw ft11, -4(sp)
     call setup_surface_reflection
-.9279_Lelse_J:
-.9280_Lendif_J:
-.9278_Lendif_J:
-.9275_Lelse_J:
-.9276_Lendif_J:
-.9273_Lelse_J:
-.9274_Lendif_J:
-.9271_Lelse_J:
-.9272_Lendif_J:
+.9700_Lelse_J:
+.9702_Lendif_J:
+.9698_Lendif_J:
+.9692_Lelse_J:
+.9694_Lendif_J:
+.9688_Lelse_J:
+.9690_Lendif_J:
+.9684_Lelse_J:
+.9686_Lendif_J:
     lw ra, 140(sp)
     addi sp, sp, 144
     ret
@@ -21178,8 +21901,6 @@ rt:
     fsw ft11, 0(t6)
     li t0, 0
     sw t0, 412(sp)
-    li t0, 2
-    sw t0, 408(sp)
     lw t0, 456(sp)
     srai t2, t0, 1
     sw t2, 404(sp)
@@ -21198,8 +21919,6 @@ rt:
     fsw ft11, 0(t6)
     li t0, 1
     sw t0, 388(sp)
-    li t0, 2
-    sw t0, 384(sp)
     lw t0, 452(sp)
     srai t2, t0, 1
     sw t2, 380(sp)
@@ -21531,13 +22250,17 @@ rt:
 .5641_Lcreate_array_0_0_J:
     mv t0, tp
 .5643_Lloop_J:
-    beqz a0, .9281_Lelse_J
+    beqz a0, .9703_Lelse0_J
+    j .9705_Lthen_J
+.9703_Lelse0_J:
+    j .9704_Lelse_J
+.9705_Lthen_J:
     sw a1, 0(tp)
     addi tp, tp, 4
     addi a0, a0, -1
     j .5643_Lloop_J
-.9281_Lelse_J:
-.9282_Lendif_J:
+.9704_Lelse_J:
+.9706_Lendif_J:
     mv a0, t0
     ret
 
@@ -21547,13 +22270,17 @@ rt:
 .5644_Lcreate_array_1_0_J:
     mv t0, tp
 .5646_Lloop_J:
-    beqz a0, .9283_Lelse_J
+    beqz a0, .9707_Lelse0_J
+    j .9709_Lthen_J
+.9707_Lelse0_J:
+    j .9708_Lelse_J
+.9709_Lthen_J:
     fsw fa0, 0(tp)
     addi tp, tp, 4
     addi a0, a0, -1
     j .5646_Lloop_J
-.9283_Lelse_J:
-.9284_Lendif_J:
+.9708_Lelse_J:
+.9710_Lendif_J:
     mv a0, t0
     ret
 
@@ -21568,7 +22295,11 @@ rt:
     lw t3, 8(sp)
     lw t4, 12(sp)
 .5649_Lloop_J:
-    beqz a0, .9285_Lelse_J
+    beqz a0, .9711_Lelse0_J
+    j .9713_Lthen_J
+.9711_Lelse0_J:
+    j .9712_Lelse_J
+.9713_Lthen_J:
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -21583,8 +22314,8 @@ rt:
     addi tp, tp, 44
     addi a0, a0, -1
     j .5649_Lloop_J
-.9285_Lelse_J:
-.9286_Lendif_J:
+.9712_Lelse_J:
+.9714_Lendif_J:
     mv a0, t0
     addi sp, sp, 16
     ret
@@ -21595,14 +22326,18 @@ rt:
 .5650_Lcreate_array_00_0_J:
     mv t0, tp
 .5652_Lloop_J:
-    beqz a0, .9287_Lelse_J
+    beqz a0, .9715_Lelse0_J
+    j .9717_Lthen_J
+.9715_Lelse0_J:
+    j .9716_Lelse_J
+.9717_Lthen_J:
     sw a1, 0(tp)
     sw a2, 4(tp)
     addi tp, tp, 8
     addi a0, a0, -1
     j .5652_Lloop_J
-.9287_Lelse_J:
-.9288_Lendif_J:
+.9716_Lelse_J:
+.9718_Lendif_J:
     mv a0, t0
     ret
 
@@ -21612,7 +22347,11 @@ rt:
 .5653_Lcreate_array_0001_0_J:
     mv t0, tp
 .5655_Lloop_J:
-    beqz a0, .9289_Lelse_J
+    beqz a0, .9719_Lelse0_J
+    j .9721_Lthen_J
+.9719_Lelse0_J:
+    j .9720_Lelse_J
+.9721_Lthen_J:
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -21620,8 +22359,8 @@ rt:
     addi tp, tp, 16
     addi a0, a0, -1
     j .5655_Lloop_J
-.9289_Lelse_J:
-.9290_Lendif_J:
+.9720_Lelse_J:
+.9722_Lendif_J:
     mv a0, t0
     ret
 
@@ -21633,7 +22372,11 @@ rt:
     mv t0, tp
     lw t1, 12(sp)
 .5658_Lloop_J:
-    beqz a0, .9291_Lelse_J
+    beqz a0, .9723_Lelse0_J
+    j .9725_Lthen_J
+.9723_Lelse0_J:
+    j .9724_Lelse_J
+.9725_Lthen_J:
     sw a1, 0(tp)
     sw a2, 4(tp)
     sw a3, 8(tp)
@@ -21645,8 +22388,8 @@ rt:
     addi tp, tp, 32
     addi a0, a0, -1
     j .5658_Lloop_J
-.9291_Lelse_J:
-.9292_Lendif_J:
+.9724_Lelse_J:
+.9726_Lendif_J:
     mv a0, t0
     addi sp, sp, 16
     ret
@@ -21758,643 +22501,3 @@ n_reflections:
     .float 0.8999999761581421
 .8720_L.LC22_J:
     .float 128.0
-
-
-.globl mincaml_floor
-mincaml_floor:
-        fmv.x.s a4,fa0
-        li      a2,22
-        srai    a5,a4,23
-        andi    a5,a5,255
-        addi    a5,a5,-127
-        mv      a3,a4
-        bgt     a5,a2,.L9
-        blt     a5,zero,.L19
-        lui     a1,0x00800
-        addi    a2,a1,-1
-        sra     a2,a2,a5
-        and     a0,a2,a4
-        beq     a0,zero,.L12
-        bge     a4,zero,.L13
-        sra     a1,a1,a5
-        add     a3,a4,a1
-.L13:
-        not     a2,a2
-        and     a4,a2,a3
-.L12:
-        fmv.s.x fa0,a4
-        ret
-.L19:
-        mv      a4,zero
-        bge     a3,zero,.L12
-        slli    a3,a3,1
-        beq     a3,zero,.L20
-        lui     a4,0xbf800
-        j       .L12
-.L9:
-        li      a3,128
-        bne     a5,a3,.L12
-        fadd.s  fa5,fa0,fa0
-        fmv.x.s a4,fa5
-        j       .L12
-.L20:
-        li      a4,-1
-        srli    a4,a4,1
-        j       .L12
-
-.globl print_int
-print_int:
-    mv a3, ra
-    bgt a0, zero, print_positive
-    beq a0, zero, print_zero
-    li a1, 45
-    out a1
-    lui a2, 0x80000
-    beq a0, a2, print_INT_MIN
-    neg a0, a0
-print_positive:
-    call divmod_10
-    beq a1, zero, print_positive_end_1
-    fmv.w.x ft1, a0
-
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_2
-    fmv.w.x ft2, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_3
-    fmv.w.x ft3, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_4
-    fmv.w.x ft4, a0
-
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_5
-    fmv.w.x ft5, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_6
-    fmv.w.x ft6, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_7
-    fmv.w.x ft7, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_8
-    fmv.w.x ft8, a0
-    
-    mv a0, a1
-    call divmod_10
-    beq a1, zero, print_positive_end_9
-    addi a1, a1, 48
-    out a1
-print_positive_end_9:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft8
-print_positive_end_8:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft7
-print_positive_end_7:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft6
-print_positive_end_6:
-    addi a0, a0, 48
-    out a0
-    
-    fmv.x.w a0, ft5
-print_positive_end_5:
-    addi a0, a0, 48
-    out a0
-    
-    fmv.x.w a0, ft4
-print_positive_end_4:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft3
-print_positive_end_3:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft2
-print_positive_end_2:
-    addi a0, a0, 48
-    out a0
-
-    fmv.x.w a0, ft1
-print_positive_end_1:
-    addi a0, a0, 48
-    out a0
-    jr a3
-
-print_zero:
-    li a0, 48
-    out a0
-    jr a3
-
-print_INT_MIN:
-    li a0, 50 # '2'
-    out a0
-    li a0, 49 # '1'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 55 # '7'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
-    li a0, 51 # '3'
-    out a0
-    li a0, 54 # '6'
-    out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
-    jr a3
-    
-divmod_10: # a0: dividend; 0 <= a0 <= 2^31 - 1
-    li t0, 10
-    li t2, 5
-    mv t1, zero
-divmod_10_loop:
-    bge t0, a0, divmod_10_loop_end
-    slli t0, t0, 1
-    slli t2, t2, 1
-    addi t1, t1, 1
-    ble t0, zero, overflow
-    j divmod_10_loop
-overflow:
-    addi t1, t1, -1
-    mv t0, t2
-divmod_10_loop_end:
-    mv a1, zero
-divmod_10_loop2:
-    blt t1, zero, divmod_10_loop2_end
-    blt a0, t0, divmod_10_else
-    sub a0, a0, t0
-    srli t0, t0, 1
-    slli a1, a1, 1
-    ori a1, a1, 1
-    addi t1, t1, -1
-    j divmod_10_loop2
-divmod_10_else:
-    srli t0, t0, 1
-    slli a1, a1, 1
-    addi t1, t1, -1
-    j divmod_10_loop2
-divmod_10_loop2_end:
-    # a0: remainder; a1: quotient
-    ret
-
-	.text
-	.attribute	4, 16
-	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
-	.file	"trigonometric.c"
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function mincaml_atan
-.LCPI0_0:
-	.word	0xbdb7d66e                      # float -0.0897644609
-.LCPI0_1:
-	.word	0x3d75e7c5                      # float 0.0600354858
-.LCPI0_2:
-	.word	0x3de38e38                      # float 0.111111104
-.LCPI0_3:
-	.word	0xbe124925                      # float -0.142857149
-.LCPI0_4:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI0_5:
-	.word	0xbeaaaaaa                      # float -0.333333313
-.LCPI0_6:
-	.word	0xbfc90fdb                      # float -1.57079637
-.LCPI0_7:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI0_8:
-	.word	0xbf490fdb                      # float -0.785398185
-.LCPI0_9:
-	.word	0x3f490fdb                      # float 0.785398185
-	.text
-	.globl	mincaml_atan
-	.p2align	2
-	.type	mincaml_atan,@function
-mincaml_atan:                           # @mincaml_atan
-# %bb.0:
-	fabs.s	fa5, fa0
-	fmv.x.w	a1, fa5
-	lui	a0, 257536
-	addi	a0, a0, -1
-	blt	a0, a1, .LBB0_2
-# %bb.1:
-	lui	a0, %hi(.LCPI0_0)
-	flw	fa5, %lo(.LCPI0_0)(a0)
-	lui	a0, %hi(.LCPI0_1)
-	flw	fa4, %lo(.LCPI0_1)(a0)
-	lui	a0, %hi(.LCPI0_2)
-	flw	fa3, %lo(.LCPI0_2)(a0)
-	fmul.s	fa2, fa0, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	fmadd.s	fa5, fa2, fa5, fa3
-	lui	a0, %hi(.LCPI0_3)
-	flw	fa4, %lo(.LCPI0_3)(a0)
-	lui	a0, %hi(.LCPI0_4)
-	flw	fa3, %lo(.LCPI0_4)(a0)
-	lui	a0, %hi(.LCPI0_5)
-	flw	fa1, %lo(.LCPI0_5)(a0)
-	fmadd.s	fa5, fa2, fa5, fa4
-	fmadd.s	fa5, fa2, fa5, fa3
-	fmul.s	fa4, fa2, fa0
-	fmadd.s	fa5, fa2, fa5, fa1
-	fmadd.s	fa0, fa4, fa5, fa0
-	ret
-.LBB0_2:
-	lui	a0, 262592
-	addi	a2, a0, -1
-	fmv.x.w	a0, fa0
-	bltu	a2, a1, .LBB0_5
-# %bb.3:
-	lui	a1, 784384
-	fmv.w.x	fa4, a1
-	fadd.s	fa4, fa5, fa4
-	lui	a1, 260096
-	fmv.w.x	fa3, a1
-	fadd.s	fa5, fa5, fa3
-	lui	a1, %hi(.LCPI0_0)
-	flw	fa3, %lo(.LCPI0_0)(a1)
-	lui	a1, %hi(.LCPI0_1)
-	flw	fa2, %lo(.LCPI0_1)(a1)
-	lui	a1, %hi(.LCPI0_2)
-	flw	fa1, %lo(.LCPI0_2)(a1)
-	fdiv.s	fa5, fa4, fa5
-	fmul.s	fa4, fa5, fa5
-	fmadd.s	fa3, fa4, fa2, fa3
-	fmadd.s	fa3, fa4, fa3, fa1
-	lui	a1, %hi(.LCPI0_3)
-	flw	fa2, %lo(.LCPI0_3)(a1)
-	lui	a1, %hi(.LCPI0_4)
-	flw	fa1, %lo(.LCPI0_4)(a1)
-	lui	a1, %hi(.LCPI0_5)
-	flw	fa0, %lo(.LCPI0_5)(a1)
-	fmadd.s	fa3, fa4, fa3, fa2
-	fmadd.s	fa3, fa4, fa3, fa1
-	fmul.s	fa2, fa5, fa4
-	fmadd.s	fa4, fa4, fa3, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	bltz	a0, .LBB0_7
-# %bb.4:
-	lui	a0, %hi(.LCPI0_9)
-	flw	fa4, %lo(.LCPI0_9)(a0)
-	fadd.s	fa0, fa5, fa4
-	ret
-.LBB0_5:
-	lui	a1, 260096
-	fmv.w.x	fa4, a1
-	lui	a1, %hi(.LCPI0_0)
-	flw	fa3, %lo(.LCPI0_0)(a1)
-	lui	a1, %hi(.LCPI0_1)
-	flw	fa2, %lo(.LCPI0_1)(a1)
-	lui	a1, %hi(.LCPI0_2)
-	flw	fa1, %lo(.LCPI0_2)(a1)
-	fdiv.s	fa5, fa4, fa5
-	fmul.s	fa4, fa5, fa5
-	fmadd.s	fa3, fa4, fa2, fa3
-	fmadd.s	fa3, fa4, fa3, fa1
-	lui	a1, %hi(.LCPI0_3)
-	flw	fa2, %lo(.LCPI0_3)(a1)
-	lui	a1, %hi(.LCPI0_4)
-	flw	fa1, %lo(.LCPI0_4)(a1)
-	lui	a1, %hi(.LCPI0_5)
-	flw	fa0, %lo(.LCPI0_5)(a1)
-	fmadd.s	fa3, fa4, fa3, fa2
-	fmadd.s	fa3, fa4, fa3, fa1
-	fmul.s	fa2, fa5, fa4
-	fmadd.s	fa4, fa4, fa3, fa0
-	fmadd.s	fa5, fa2, fa4, fa5
-	bltz	a0, .LBB0_8
-# %bb.6:
-	lui	a0, %hi(.LCPI0_7)
-	flw	fa4, %lo(.LCPI0_7)(a0)
-	fsub.s	fa0, fa4, fa5
-	ret
-.LBB0_7:
-	lui	a0, %hi(.LCPI0_8)
-	flw	fa4, %lo(.LCPI0_8)(a0)
-	fsub.s	fa0, fa4, fa5
-	ret
-.LBB0_8:
-	lui	a0, %hi(.LCPI0_6)
-	flw	fa4, %lo(.LCPI0_6)(a0)
-	fadd.s	fa0, fa5, fa4
-	ret
-.Lfunc_end0:
-	.size	mincaml_atan, .Lfunc_end0-mincaml_atan
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function mincaml_sin
-.LCPI1_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI1_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI1_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI1_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI1_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI1_5:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI1_6:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI1_7:
-	.word	0xbe2aaaac                      # float -0.166666687
-.LCPI1_8:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI1_9:
-	.word	0xbab38106                      # float -0.00136950682
-	.text
-	.globl	mincaml_sin
-	.p2align	2
-	.type	mincaml_sin,@function
-mincaml_sin:                            # @mincaml_sin
-# %bb.0:
-	lui	a0, %hi(.LCPI1_0)
-	flw	fa4, %lo(.LCPI1_0)(a0)
-	fabs.s	fa5, fa0
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB1_9
-.LBB1_1:
-	lui	a0, %hi(.LCPI1_1)
-	flw	fa4, %lo(.LCPI1_1)(a0)
-	fle.s	a0, fa4, fa5
-	fmv.x.w	a1, fa0
-	beqz	a0, .LBB1_3
-# %bb.2:
-	lui	a2, %hi(.LCPI1_2)
-	flw	fa3, %lo(.LCPI1_2)(a2)
-	fadd.s	fa5, fa5, fa3
-.LBB1_3:
-	lui	a2, %hi(.LCPI1_3)
-	flw	fa3, %lo(.LCPI1_3)(a2)
-	fle.s	a2, fa3, fa5
-	srai	a1, a1, 31
-	beqz	a2, .LBB1_5
-# %bb.4:
-	fsub.s	fa5, fa4, fa5
-.LBB1_5:
-	lui	a2, %hi(.LCPI1_4)
-	flw	fa4, %lo(.LCPI1_4)(a2)
-	fle.s	a2, fa5, fa4
-	xor	a0, a1, a0
-	bnez	a2, .LBB1_14
-# %bb.6:
-	lui	a1, %hi(.LCPI1_3)
-	flw	fa4, %lo(.LCPI1_3)(a1)
-	lui	a1, %hi(.LCPI1_8)
-	flw	fa3, %lo(.LCPI1_8)(a1)
-	lui	a1, %hi(.LCPI1_9)
-	flw	fa2, %lo(.LCPI1_9)(a1)
-	fsub.s	fa5, fa4, fa5
-	fmul.s	fa5, fa5, fa5
-	fmadd.s	fa4, fa5, fa2, fa3
-	lui	a1, 782336
-	fmv.w.x	fa3, a1
-	fmadd.s	fa4, fa5, fa4, fa3
-	lui	a1, 260096
-	fmv.w.x	fa3, a1
-	fmadd.s	fa0, fa5, fa4, fa3
-	beqz	a0, .LBB1_8
-.LBB1_7:
-	fneg.s	fa0, fa0
-.LBB1_8:
-	ret
-.LBB1_9:                                # =>This Inner Loop Header: Depth=1
-	fadd.s	fa4, fa4, fa4
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB1_9
-# %bb.10:
-	lui	a0, %hi(.LCPI1_0)
-	flw	fa3, %lo(.LCPI1_0)(a0)
-	fmv.w.x	fa2, zero
-	lui	a0, 258048
-	fmv.w.x	fa1, a0
-	j	.LBB1_12
-.LBB1_11:                               #   in Loop: Header=BB1_12 Depth=1
-	fsub.s	fa5, fa5, ft0
-	fle.s	a0, fa3, fa5
-	fmul.s	fa4, fa4, fa1
-	beqz	a0, .LBB1_1
-.LBB1_12:                               # =>This Inner Loop Header: Depth=1
-	fle.s	a0, fa4, fa5
-	fmv.s	ft0, fa2
-	beqz	a0, .LBB1_11
-# %bb.13:                               #   in Loop: Header=BB1_12 Depth=1
-	fmv.s	ft0, fa4
-	j	.LBB1_11
-.LBB1_14:
-	lui	a1, %hi(.LCPI1_5)
-	flw	fa4, %lo(.LCPI1_5)(a1)
-	lui	a1, %hi(.LCPI1_6)
-	flw	fa3, %lo(.LCPI1_6)(a1)
-	lui	a1, %hi(.LCPI1_7)
-	flw	fa2, %lo(.LCPI1_7)(a1)
-	fmul.s	fa1, fa5, fa5
-	fmul.s	fa0, fa5, fa1
-	fmadd.s	fa4, fa1, fa3, fa4
-	fmadd.s	fa4, fa1, fa4, fa2
-	fmadd.s	fa0, fa0, fa4, fa5
-	bnez	a0, .LBB1_7
-	j	.LBB1_8
-.Lfunc_end1:
-	.size	mincaml_sin, .Lfunc_end1-mincaml_sin
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function mincaml_cos
-.LCPI2_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI2_1:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI2_2:
-	.word	0xc0490fdb                      # float -3.14159274
-.LCPI2_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI2_4:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI2_5:
-	.word	0x3d2aa789                      # float 0.0416636802
-.LCPI2_6:
-	.word	0xbab38106                      # float -0.00136950682
-.LCPI2_7:
-	.word	0x3c088666                      # float 0.00833282433
-.LCPI2_8:
-	.word	0xb94d64b6                      # float -1.95878412E-4
-.LCPI2_9:
-	.word	0xbe2aaaac                      # float -0.166666687
-	.text
-	.globl	mincaml_cos
-	.p2align	2
-	.type	mincaml_cos,@function
-mincaml_cos:                            # @mincaml_cos
-# %bb.0:
-	lui	a0, %hi(.LCPI2_0)
-	flw	fa4, %lo(.LCPI2_0)(a0)
-	fabs.s	fa5, fa0
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB2_5
-.LBB2_1:
-	lui	a0, %hi(.LCPI2_1)
-	flw	fa3, %lo(.LCPI2_1)(a0)
-	fle.s	a0, fa3, fa5
-	bnez	a0, .LBB2_10
-# %bb.2:
-	fmv.s	fa4, fa5
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fle.s	a0, fa2, fa5
-	beqz	a0, .LBB2_11
-.LBB2_3:
-	fsub.s	fa3, fa3, fa4
-	lui	a0, %hi(.LCPI2_4)
-	flw	fa2, %lo(.LCPI2_4)(a0)
-	fle.s	a0, fa3, fa2
-	beqz	a0, .LBB2_12
-.LBB2_4:
-	lui	a0, %hi(.LCPI2_5)
-	flw	fa2, %lo(.LCPI2_5)(a0)
-	lui	a0, %hi(.LCPI2_6)
-	flw	fa1, %lo(.LCPI2_6)(a0)
-	fmul.s	fa3, fa3, fa3
-	fmadd.s	fa2, fa3, fa1, fa2
-	lui	a0, 782336
-	fmv.w.x	fa1, a0
-	fmadd.s	fa2, fa3, fa2, fa1
-	lui	a0, 260096
-	fmv.w.x	fa1, a0
-	fmadd.s	fa0, fa3, fa2, fa1
-	j	.LBB2_13
-.LBB2_5:                                # =>This Inner Loop Header: Depth=1
-	fadd.s	fa4, fa4, fa4
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB2_5
-# %bb.6:
-	lui	a0, %hi(.LCPI2_0)
-	flw	fa3, %lo(.LCPI2_0)(a0)
-	fmv.w.x	fa2, zero
-	lui	a0, 258048
-	fmv.w.x	fa1, a0
-	j	.LBB2_8
-.LBB2_7:                                #   in Loop: Header=BB2_8 Depth=1
-	fsub.s	fa5, fa5, fa0
-	fle.s	a0, fa3, fa5
-	fmul.s	fa4, fa4, fa1
-	beqz	a0, .LBB2_1
-.LBB2_8:                                # =>This Inner Loop Header: Depth=1
-	fle.s	a0, fa4, fa5
-	fmv.s	fa0, fa2
-	beqz	a0, .LBB2_7
-# %bb.9:                                #   in Loop: Header=BB2_8 Depth=1
-	fmv.s	fa0, fa4
-	j	.LBB2_7
-.LBB2_10:
-	lui	a0, %hi(.LCPI2_2)
-	flw	fa4, %lo(.LCPI2_2)(a0)
-	fadd.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fle.s	a0, fa2, fa4
-	bnez	a0, .LBB2_3
-.LBB2_11:
-	fmv.s	fa3, fa4
-	lui	a0, %hi(.LCPI2_4)
-	flw	fa2, %lo(.LCPI2_4)(a0)
-	fle.s	a0, fa4, fa2
-	bnez	a0, .LBB2_4
-.LBB2_12:
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa2, %lo(.LCPI2_3)(a0)
-	fsub.s	fa3, fa2, fa3
-	lui	a0, %hi(.LCPI2_7)
-	flw	fa2, %lo(.LCPI2_7)(a0)
-	lui	a0, %hi(.LCPI2_8)
-	flw	fa1, %lo(.LCPI2_8)(a0)
-	lui	a0, %hi(.LCPI2_9)
-	flw	fa0, %lo(.LCPI2_9)(a0)
-	fmul.s	ft0, fa3, fa3
-	fmul.s	ft1, fa3, ft0
-	fmadd.s	fa2, ft0, fa1, fa2
-	fmadd.s	fa2, ft0, fa2, fa0
-	fmadd.s	fa0, ft1, fa2, fa3
-.LBB2_13:
-	lui	a0, %hi(.LCPI2_3)
-	flw	fa3, %lo(.LCPI2_3)(a0)
-	lui	a0, %hi(.LCPI2_1)
-	flw	fa2, %lo(.LCPI2_1)(a0)
-	fle.s	a0, fa3, fa4
-	fle.s	a1, fa2, fa5
-	beq	a1, a0, .LBB2_15
-# %bb.14:
-	fneg.s	fa0, fa0
-.LBB2_15:
-	ret
-.Lfunc_end2:
-	.size	mincaml_cos, .Lfunc_end2-mincaml_cos
-                                        # -- End function
-	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
-	.section	".note.GNU-stack","",@progbits
-
-# -----------------------------------------------
-	.globl	putchar                             # -- Begin function putchar
-	.p2align	1
-	.type	putchar,@function
-putchar:                                    # @putchar
-# %bb.0:                                # %entry
-	out a0 # out a0
-# %bb.1:                                # %entry.endif
-	ret
-.LLLfunc_end101:
-	.size	putchar, .LLLfunc_end101-putchar
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	read_float                             # -- Begin function read_float
-	.p2align	1
-	.type	read_float,@function
-read_float:                                    # @read_float
-# %bb.0:                                # %entry
-	cin.float fa0 # Cin_float fa5
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end108:
-	.size	read_float, .Myfunc_end108-read_float
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	read_int                             # -- Begin function read_int
-	.p2align	1
-	.type	read_int,@function
-read_int:                                    # @read_int
-# %bb.0:                                # %entry
-	cin.int a0 # Cin_int a0
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end109:
-	.size	read_int, .Myfunc_end109-read_int
-                                        # -- End function
-# -----------------------------------------------

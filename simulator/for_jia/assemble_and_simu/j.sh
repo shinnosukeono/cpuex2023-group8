@@ -2,10 +2,12 @@
 
 set -e
 
-cp main.s ./assemble/a.s
+cp main_init.s ./assemble/a.s
+cat main.s >> ./assemble/a.s
 cat main_lib.s >> ./assemble/a.s
 cd assemble
 ./a.out < a.txt
+cp a.s ../core.s
 cp output_hex.txt ../make_bin/hex.txt
 cp output_data.txt ../make_bin/data.txt
 cp pc_line.txt ../find_line/pc_line_input.txt

@@ -1866,8 +1866,9 @@ public:
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
 				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
-				address_map[get<T>(op1) + operand3] = vm.cycle;
+				
 			}
+			address_map[get<T>(op1) + operand3] = vm.cycle;
 		}
 	}
 };
@@ -1898,8 +1899,9 @@ public:
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
 				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
-				address_map[get<T>(op1) + operand3] = vm.cycle;
+				
 			}
+			address_map[get<T>(op1) + operand3] = vm.cycle;
 		}
 	}
 };
@@ -1931,8 +1933,9 @@ public:
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<T>(op1) + operand3 << dec << "]" << endl;
 				vm.outputFile << "\tLast write cycle: " << address_map[get<T>(op1) + operand3] << endl;
-				address_map[get<T>(op1) + operand3] = vm.cycle;
+				
 			}
+			address_map[get<T>(op1) + operand3] = vm.cycle;
 		}
 	}
 };
@@ -2571,8 +2574,9 @@ public:
 			if (vm.print_mode > 0 && vm.cycle-1 >= vm.print_cycle && vm.cycle-1 <= vm.print_cycle_end){
 				vm.outputFile << "\tMemory address: [" << hex << get<int>(op1) + operand3 << dec << "]" << endl;
 				vm.outputFile << "\tLast write cycle: " << address_map[get<int>(op1) + operand3] << endl;
-				address_map[get<int>(op1) + operand3] = vm.cycle;
+			
 			}
+			address_map[get<int>(op1) + operand3] = vm.cycle;
 		}
 	}
 };

@@ -53,12 +53,12 @@ print_int:
     neg a0, a0
 print_positive:
     call divmod_10
-    beq a1, zero, print_positive_end_1
+    beq a1, zero, print_leading_zero_2
     fmv.w.x ft1, a0
 
     mv a0, a1
     call divmod_10
-    beq a1, zero, print_positive_end_2
+    beq a1, zero, print_leading_zero_1
     fmv.w.x ft2, a0
     
     mv a0, a1
@@ -141,8 +141,21 @@ print_positive_end_1:
     out a0
     jr a3
 
-print_zero:
+print_leading_zero_2: # "00"
+    li a1, 48
+    out a1
+    out a1
+    j print_positive_end_1
+
+print_leading_zero_1: # "0"
+    li a1, 48
+    out a1
+    j print_positive_end_2
+
+print_zero: # "000"
     li a0, 48
+    out a0
+    out a0
     out a0
     jr a3
 
@@ -151,22 +164,19 @@ print_INT_MIN:
     out a0
     li a0, 49 # '1'
     out a0
-    li a0, 52 # '4'
-    out a0
+    li a1, 52 # '4'
+    out a1
     li a0, 55 # '7'
     out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
+    out a1    # '4'
+    li a4, 56 # '8'
+    out a4
     li a0, 51 # '3'
     out a0
     li a0, 54 # '6'
     out a0
-    li a0, 52 # '4'
-    out a0
-    li a0, 56 # '8'
-    out a0
+    out a1    # '4'
+    out a4    # '8'
     jr a3
     
 divmod_10: # a0: dividend; 0 <= a0 <= 2^31 - 1
@@ -202,6 +212,7 @@ divmod_10_else:
 divmod_10_loop2_end:
     # a0: remainder; a1: quotient
     ret
+
 
 	.text
 	.attribute	4, 16

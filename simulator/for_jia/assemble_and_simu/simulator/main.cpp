@@ -358,8 +358,9 @@ int main()
 	for (auto p:vm.pc_map){
 		pc_map_sorted[p.first] = p.second;
 	}
-	for (auto p:pc_map_sorted){
-		pc_counts << "pc: " << p.first << " count: " << p.second << endl;
+	pc_map_sorted[0] = pc_map_sorted[0] + 1;
+	for (int i=0; i<instrs_case1.size(); i++){
+		pc_counts << "pc: " << 4*i << " count: " << pc_map_sorted[4*i] << endl;
 	}
 	pc_counts.close();
 

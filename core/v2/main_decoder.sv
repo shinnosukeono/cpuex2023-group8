@@ -53,8 +53,8 @@ module main_decoder (
                 endcase
             end
             // TODO: select the source of the AGU or branch unit
-            7'b1100111: controls = 22'b1_000_0011_xx_000_x_0_1_0_0_0010;  // jalr
-            7'b1101111: controls = 22'b1_000_0011_xx_011_x_0_1_0_0_0010;  // jal
+            7'b1100111: controls = 22'b1_000_0011_10_000_1_0_1_0_0_0010;  // jalr
+            7'b1101111: controls = 22'b1_000_0011_11_011_1_0_1_0_0_0010;  // jal
             7'b1110011: controls = 22'b0_000_0000_xx_000_x_0_0_0_1_0000;  // csrrw
 
             // RVF

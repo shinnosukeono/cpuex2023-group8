@@ -1,4 +1,4 @@
-.section .text
+.section .text #parameter is 376
 .type main, @function
 .globl main
 main:

@@ -1,9 +1,7 @@
-# parameter is 141
-	.globl	main                            # -- Begin function main
-	.p2align	2
-	.type	main,@function
-main:                                   # @main
-# %bb.0:
+.section .text # param 437,439
+.type main, @function
+.globl main
+main:
 	li zero, 0
 	li ra, -1
 	li sp, 0x4000000
@@ -68,4720 +66,22296 @@ main:                                   # @main
     fmv.w.x ft9, zero
     fmv.w.x ft10, zero
     fmv.w.x ft11, zero
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	sw	s2, 0(sp)                       # 4-byte Folded Spill
-	li	a0, 50
-	li	a1, 4
-	li	s1, 4
-	call	calloc
-	mv	s0, a0
-	lui	s2, %hi(and_net)
-	sw	a0, %lo(and_net)(s2)
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	sw	a0, 0(s0)
-	lui	a1, 784384
-	sw	a1, 0(a0)
-	li	a0, 200
-.LBB21_1:                               # =>This Inner Loop Header: Depth=1
-	lw	a1, %lo(and_net)(s2)
-	lw	a2, 0(a1)
-	add	a1, a1, s1
-	addi	s1, s1, 4
-	sw	a2, 0(a1)
-	bne	s1, a0, .LBB21_1
-# %bb.2:
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	mv	s0, a0
-	lui	a0, %hi(or_net)
-	sw	s0, %lo(or_net)(a0)
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	lui	a1, %hi(and_net)
-	lw	a1, %lo(and_net)(a1)
-	sw	a0, 0(s0)
-	lw	a1, 0(a1)
-	sw	a1, 0(a0)
-	call	caml_main
-	li	a0, 0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end21:
-	.size	main, .vLfunc_end21-main
-                                        # -- End function
+    addi sp, sp, -848
+    sw ra, 844(sp) 	# main
+    li t0, 1
+    sw t0, 840(sp)
+    li t0, 0
+    sw t0, 836(sp)
+    lw a0, 840(sp)
+    lw a1, 836(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(n_objects)
+    sw a0, %lo(n_objects)(t6)
+    li t0, 0
+    sw t0, 832(sp)
+    sw zero, 828(sp)
+    lw a0, 832(sp)
+    flw fa0, 828(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 824(sp)
+    li t0, 60
+    sw t0, 820(sp)
+    li t0, 0
+    sw t0, 816(sp)
+    li t0, 0
+    sw t0, 812(sp)
+    li t0, 0
+    sw t0, 808(sp)
+    li t0, 0
+    sw t0, 804(sp)
+    li t0, 0
+    sw t0, 800(sp)
+    lw a0, 820(sp)
+    lw a1, 816(sp)
+    lw a2, 812(sp)
+    lw a3, 808(sp)
+    lw a4, 804(sp)
+    lw a5, 824(sp)
+    lw a6, 824(sp)
+    lw a7, 800(sp)
+    flw ft11, 824(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 824(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 824(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 824(sp)
+    fsw ft11, -4(sp)
+    call .5647_Lcreate_array_0000000_4_J
+    lui t6, %hi(objects)
+    sw a0, %lo(objects)(t6)
+    li t0, 3
+    sw t0, 796(sp)
+    sw zero, 792(sp)
+    lw a0, 796(sp)
+    flw fa0, 792(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(screen)
+    sw a0, %lo(screen)(t6)
+    li t0, 3
+    sw t0, 788(sp)
+    sw zero, 784(sp)
+    lw a0, 788(sp)
+    flw fa0, 784(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(viewpoint)
+    sw a0, %lo(viewpoint)(t6)
+    li t0, 3
+    sw t0, 780(sp)
+    sw zero, 776(sp)
+    lw a0, 780(sp)
+    flw fa0, 776(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(light)
+    sw a0, %lo(light)(t6)
+    li t0, 1
+    sw t0, 772(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 768(sp)
+    lw a0, 772(sp)
+    flw fa0, 768(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(beam)
+    sw a0, %lo(beam)(t6)
+    li t0, 50
+    sw t0, 764(sp)
+    li t0, 1
+    sw t0, 760(sp)
+    li t0, 1
+    sw t0, 756(sp)
+    lw t0, 756(sp)
+    neg t0, t0
+    sw t0, 752(sp)
+    lw a0, 760(sp)
+    lw a1, 752(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 748(sp)
+    lw a0, 764(sp)
+    lw a1, 748(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(and_net)
+    sw a0, %lo(and_net)(t6)
+    li t0, 1
+    sw t0, 744(sp)
+    li t0, 1
+    sw t0, 740(sp)
+    li t0, 0
+    sw t0, 736(sp)
+    lui t6, %hi(and_net)
+    flw ft11, %lo(and_net)(t6)
+    fsw ft11, 732(sp)
+    lw t0, 736(sp)
+    slli t0, t0, 2
+    sw t0, 728(sp)
+    lw t0, 732(sp)
+    lw t1, 728(sp)
+    add t2, t0, t1
+    sw t2, 724(sp)
+    lw t6, 724(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 720(sp)
+    lw a0, 740(sp)
+    lw a1, 720(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 716(sp)
+    lw a0, 744(sp)
+    lw a1, 716(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(or_net)
+    sw a0, %lo(or_net)(t6)
+    li t0, 1
+    sw t0, 712(sp)
+    sw zero, 708(sp)
+    lw a0, 712(sp)
+    flw fa0, 708(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(solver_dist)
+    sw a0, %lo(solver_dist)(t6)
+    li t0, 1
+    sw t0, 704(sp)
+    li t0, 0
+    sw t0, 700(sp)
+    lw a0, 704(sp)
+    lw a1, 700(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(intsec_rectside)
+    sw a0, %lo(intsec_rectside)(t6)
+    li t0, 1
+    sw t0, 696(sp)
+    lui t6, %hi(.7459_L.LC6_J)
+    flw ft11, %lo(.7459_L.LC6_J)(t6)
+    fsw ft11, 692(sp)
+    lw a0, 696(sp)
+    flw fa0, 692(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(tmin)
+    sw a0, %lo(tmin)(t6)
+    li t0, 3
+    sw t0, 688(sp)
+    sw zero, 684(sp)
+    lw a0, 688(sp)
+    flw fa0, 684(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(intersection_point)
+    sw a0, %lo(intersection_point)(t6)
+    li t0, 1
+    sw t0, 680(sp)
+    li t0, 0
+    sw t0, 676(sp)
+    lw a0, 680(sp)
+    lw a1, 676(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(intersected_object_id)
+    sw a0, %lo(intersected_object_id)(t6)
+    li t0, 3
+    sw t0, 672(sp)
+    sw zero, 668(sp)
+    lw a0, 672(sp)
+    flw fa0, 668(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(nvector)
+    sw a0, %lo(nvector)(t6)
+    li t0, 3
+    sw t0, 664(sp)
+    sw zero, 660(sp)
+    lw a0, 664(sp)
+    flw fa0, 660(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(texture_color)
+    sw a0, %lo(texture_color)(t6)
+    li t0, 3
+    sw t0, 656(sp)
+    sw zero, 652(sp)
+    lw a0, 656(sp)
+    flw fa0, 652(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(diffuse_ray)
+    sw a0, %lo(diffuse_ray)(t6)
+    li t0, 3
+    sw t0, 648(sp)
+    sw zero, 644(sp)
+    lw a0, 648(sp)
+    flw fa0, 644(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(rgb)
+    sw a0, %lo(rgb)(t6)
+    li t0, 2
+    sw t0, 640(sp)
+    li t0, 0
+    sw t0, 636(sp)
+    lw a0, 640(sp)
+    lw a1, 636(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(image_size)
+    sw a0, %lo(image_size)(t6)
+    li t0, 2
+    sw t0, 632(sp)
+    li t0, 0
+    sw t0, 628(sp)
+    lw a0, 632(sp)
+    lw a1, 628(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(image_center)
+    sw a0, %lo(image_center)(t6)
+    li t0, 1
+    sw t0, 624(sp)
+    sw zero, 620(sp)
+    lw a0, 624(sp)
+    flw fa0, 620(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(scan_pitch)
+    sw a0, %lo(scan_pitch)(t6)
+    li t0, 3
+    sw t0, 616(sp)
+    sw zero, 612(sp)
+    lw a0, 616(sp)
+    flw fa0, 612(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(startp)
+    sw a0, %lo(startp)(t6)
+    li t0, 3
+    sw t0, 608(sp)
+    sw zero, 604(sp)
+    lw a0, 608(sp)
+    flw fa0, 604(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(startp_fast)
+    sw a0, %lo(startp_fast)(t6)
+    li t0, 3
+    sw t0, 600(sp)
+    sw zero, 596(sp)
+    lw a0, 600(sp)
+    flw fa0, 596(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(screenx_dir)
+    sw a0, %lo(screenx_dir)(t6)
+    li t0, 3
+    sw t0, 592(sp)
+    sw zero, 588(sp)
+    lw a0, 592(sp)
+    flw fa0, 588(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(screeny_dir)
+    sw a0, %lo(screeny_dir)(t6)
+    li t0, 3
+    sw t0, 584(sp)
+    sw zero, 580(sp)
+    lw a0, 584(sp)
+    flw fa0, 580(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(screenz_dir)
+    sw a0, %lo(screenz_dir)(t6)
+    li t0, 3
+    sw t0, 576(sp)
+    sw zero, 572(sp)
+    lw a0, 576(sp)
+    flw fa0, 572(sp)
+    call .5644_Lcreate_array_1_0_J
+    lui t6, %hi(ptrace_dirvec)
+    sw a0, %lo(ptrace_dirvec)(t6)
+    li t0, 0
+    sw t0, 568(sp)
+    sw zero, 564(sp)
+    lw a0, 568(sp)
+    flw fa0, 564(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 560(sp)
+    li t0, 0
+    sw t0, 556(sp)
+    lw a0, 556(sp)
+    lw a1, 560(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 552(sp)
+    li t0, 0
+    sw t0, 548(sp)
+    lw a0, 548(sp)
+    lw a1, 560(sp)
+    lw a2, 552(sp)
+    call .5650_Lcreate_array_00_0_J
+    sw a0, 544(sp)
+    li t0, 5
+    sw t0, 540(sp)
+    lw a0, 540(sp)
+    lw a1, 544(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(dirvecs)
+    sw a0, %lo(dirvecs)(t6)
+    li t0, 0
+    sw t0, 536(sp)
+    sw zero, 532(sp)
+    lw a0, 536(sp)
+    flw fa0, 532(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 528(sp)
+    li t0, 3
+    sw t0, 524(sp)
+    sw zero, 520(sp)
+    lw a0, 524(sp)
+    flw fa0, 520(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 516(sp)
+    li t0, 60
+    sw t0, 512(sp)
+    lw a0, 512(sp)
+    lw a1, 528(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 508(sp)
+    flw ft11, 516(sp)
+    lui t6, %hi(light_dirvec)
+    fsw ft11, %lo(light_dirvec)(t6)
+    flw ft11, 508(sp)
+    lui t6, %hi(light_dirvec)
+    addi t6, t6, 4
+    fsw ft11, %lo(light_dirvec)(t6)
+    li t0, 0
+    sw t0, 504(sp)
+    sw zero, 500(sp)
+    lw a0, 504(sp)
+    flw fa0, 500(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 496(sp)
+    li t0, 0
+    sw t0, 492(sp)
+    lw a0, 492(sp)
+    lw a1, 496(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 488(sp)
+    li t0, 180
+    sw t0, 484(sp)
+    li t0, 0
+    sw t0, 480(sp)
+    sw zero, 476(sp)
+    lw a0, 484(sp)
+    lw a1, 480(sp)
+    lw a2, 496(sp)
+    lw a3, 488(sp)
+    flw fa0, 476(sp)
+    call .5653_Lcreate_array_0001_0_J
+    lui t6, %hi(reflections)
+    sw a0, %lo(reflections)(t6)
+    li t0, 1
+    sw t0, 472(sp)
+    li t0, 0
+    sw t0, 468(sp)
+    lw a0, 472(sp)
+    lw a1, 468(sp)
+    call .5641_Lcreate_array_0_0_J
+    lui t6, %hi(n_reflections)
+    sw a0, %lo(n_reflections)(t6)
+    li t0, 16
+    sw t0, 464(sp)
+    li t0, 16
+    sw t0, 460(sp)
+    li t0, 3
+    sw t0, 456(sp)
+    li t0, 0
+    sw t0, 452(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 448(sp)
+    lw t0, 452(sp)
+    slli t0, t0, 2
+    sw t0, 444(sp)
+    lw t0, 448(sp)
+    lw t1, 444(sp)
+    add t2, t0, t1
+    sw t2, 440(sp)
+    lw t6, 440(sp)
+    flw ft11, 464(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 436(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 432(sp)
+    lw t0, 436(sp)
+    slli t0, t0, 2
+    sw t0, 428(sp)
+    lw t0, 432(sp)
+    lw t1, 428(sp)
+    add t2, t0, t1
+    sw t2, 424(sp)
+    lw t6, 424(sp)
+    flw ft11, 460(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 420(sp)
+    li t0, 2
+    sw t0, 416(sp)
+    lw t0, 464(sp)
+    srai t2, t0, 1
+    sw t2, 412(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 408(sp)
+    lw t0, 420(sp)
+    slli t0, t0, 2
+    sw t0, 404(sp)
+    lw t0, 408(sp)
+    lw t1, 404(sp)
+    add t2, t0, t1
+    sw t2, 400(sp)
+    lw t6, 400(sp)
+    flw ft11, 412(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 396(sp)
+    li t0, 2
+    sw t0, 392(sp)
+    lw t0, 460(sp)
+    srai t2, t0, 1
+    sw t2, 388(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 384(sp)
+    lw t0, 396(sp)
+    slli t0, t0, 2
+    sw t0, 380(sp)
+    lw t0, 384(sp)
+    lw t1, 380(sp)
+    add t2, t0, t1
+    sw t2, 376(sp)
+    lw t6, 376(sp)
+    flw ft11, 388(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 372(sp)
+    lui t6, %hi(.8720_L.LC22_J)
+    flw ft11, %lo(.8720_L.LC22_J)(t6)
+    fsw ft11, 368(sp)
+    lw t0, 464(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 364(sp)
+    flw ft0, 368(sp)
+    flw ft1, 364(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 360(sp)
+    lui t6, %hi(scan_pitch)
+    flw ft11, %lo(scan_pitch)(t6)
+    fsw ft11, 356(sp)
+    lw t0, 372(sp)
+    slli t0, t0, 2
+    sw t0, 352(sp)
+    lw t0, 356(sp)
+    lw t1, 352(sp)
+    add t2, t0, t1
+    sw t2, 348(sp)
+    lw t6, 348(sp)
+    flw ft11, 360(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 344(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 340(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 2
+    sw t0, 336(sp)
+    lw t0, 340(sp)
+    lw t1, 336(sp)
+    add t2, t0, t1
+    sw t2, 332(sp)
+    lw t6, 332(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 328(sp)
+    call create_pixel
+    sw a0, 324(sp)
+    sw a1, 320(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 316(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 312(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 308(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 304(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 300(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 296(sp)
+    lw a0, 328(sp)
+    lw a1, 324(sp)
+    lw a2, 320(sp)
+    lw a3, 316(sp)
+    lw a4, 312(sp)
+    lw a5, 308(sp)
+    lw a6, 304(sp)
+    lw a7, 300(sp)
+    flw ft11, 296(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 292(sp)
+    li t0, 0
+    sw t0, 288(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 284(sp)
+    lw t0, 288(sp)
+    slli t0, t0, 2
+    sw t0, 280(sp)
+    lw t0, 284(sp)
+    lw t1, 280(sp)
+    add t2, t0, t1
+    sw t2, 276(sp)
+    lw t6, 276(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 272(sp)
+    li t0, 2
+    sw t0, 268(sp)
+    lw t0, 272(sp)
+    lw t1, 268(sp)
+    sub t2, t0, t1
+    sw t2, 264(sp)
+    lw a0, 292(sp)
+    lw a1, 264(sp)
+    call init_line_elements
+    sw a0, 260(sp)
+    li t0, 0
+    sw t0, 256(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 252(sp)
+    lw t0, 256(sp)
+    slli t0, t0, 2
+    sw t0, 248(sp)
+    lw t0, 252(sp)
+    lw t1, 248(sp)
+    add t2, t0, t1
+    sw t2, 244(sp)
+    lw t6, 244(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 240(sp)
+    call create_pixel
+    sw a0, 236(sp)
+    sw a1, 232(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 228(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 224(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 220(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 216(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 212(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 208(sp)
+    lw a0, 240(sp)
+    lw a1, 236(sp)
+    lw a2, 232(sp)
+    lw a3, 228(sp)
+    lw a4, 224(sp)
+    lw a5, 220(sp)
+    lw a6, 216(sp)
+    lw a7, 212(sp)
+    flw ft11, 208(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 204(sp)
+    li t0, 0
+    sw t0, 200(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 184(sp)
+    li t0, 2
+    sw t0, 180(sp)
+    lw t0, 184(sp)
+    lw t1, 180(sp)
+    sub t2, t0, t1
+    sw t2, 176(sp)
+    lw a0, 204(sp)
+    lw a1, 176(sp)
+    call init_line_elements
+    sw a0, 172(sp)
+    li t0, 0
+    sw t0, 168(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 164(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 164(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    call create_pixel
+    sw a0, 148(sp)
+    sw a1, 144(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 140(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 136(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 132(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 128(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 124(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 120(sp)
+    lw a0, 152(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    lw a4, 136(sp)
+    lw a5, 132(sp)
+    lw a6, 128(sp)
+    lw a7, 124(sp)
+    flw ft11, 120(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 108(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 108(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    li t0, 2
+    sw t0, 92(sp)
+    lw t0, 96(sp)
+    lw t1, 92(sp)
+    sub t2, t0, t1
+    sw t2, 88(sp)
+    lw a0, 116(sp)
+    lw a1, 88(sp)
+    call init_line_elements
+    sw a0, 84(sp)
+    call read_parameter
+    lw a0, 456(sp)
+    call write_ppm_header
+    call init_dirvecs
+    lui a0, %hi(light_dirvec)
+    lw a0, %lo(light_dirvec)(a0)
+    lui a1, %hi(light)
+    lw a1, %lo(light)(a1)
+    call veccpy
+    li t0, 0
+    sw t0, 80(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 76(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 76(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    li t0, 1
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    sub t2, t0, t1
+    sw t2, 56(sp)
+    lui a0, %hi(light_dirvec)
+    lw a0, %lo(light_dirvec)(a0)
+    lui a1, %hi(light_dirvec)
+    addi a1, a1, 4
+    lw a1, %lo(light_dirvec)(a1)
+    lw a2, 56(sp)
+    call iter_setup_dirvec_constants
+    li t0, 0
+    sw t0, 52(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 48(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 48(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    li t0, 1
+    sw t0, 32(sp)
+    lw t0, 36(sp)
+    lw t1, 32(sp)
+    sub t2, t0, t1
+    sw t2, 28(sp)
+    lw a0, 28(sp)
+    call setup_reflections
+    li t0, 0
+    sw t0, 24(sp)
+    li t0, 0
+    sw t0, 20(sp)
+    lw a0, 172(sp)
+    lw a1, 24(sp)
+    lw a2, 20(sp)
+    call pretrace_line
+    li t0, 0
+    sw t0, 16(sp)
+    li t0, 2
+    sw t0, 12(sp)
+    lw a0, 16(sp)
+    lw a1, 260(sp)
+    lw a2, 172(sp)
+    lw a3, 84(sp)
+    lw a4, 12(sp)
+    lw a5, 456(sp)
+    call scan_line
+    lw ra, 844(sp)
+    addi sp, sp, 848
+    ret
+
+.section .text
+.type xor, @function
+.globl xor
+xor:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# xor
+    sw a0, 8(sp)
+    sw a1, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    xor t2, t0, t1
+    sw t2, 0(sp)
+    lw a0, 0(sp)
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type sgn, @function
+.globl sgn
+sgn:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# sgn
+    fsw fa0, 40(sp)
+    sw zero, 36(sp)
+    flw ft0, 40(sp)
+    flw ft1, 36(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .8859_Lelse_J
+    sw zero, 28(sp)
+    j .8860_Lendif_J
+.8859_Lelse_J:
+    sw zero, 24(sp)
+    flw ft0, 24(sp)
+    flw ft1, 40(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .8861_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 16(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 28(sp)
+    j .8862_Lendif_J
+.8861_Lelse_J:
+    lui t6, 260096 # 0x3f800
+    sw t6, 12(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 8(sp)
+    flw ft0, 8(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 28(sp)
+.8862_Lendif_J:
+.8860_Lendif_J:
+    flw fa0, 28(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type fneg_cond, @function
+.globl fneg_cond
+fneg_cond:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# fneg_cond
+    sw a0, 8(sp)
+    fsw fa0, 4(sp)
+    lw t0, 8(sp)
+    beqz t0, .8863_Lelse_J
+    flw ft11, 4(sp)
+    fsw ft11, 0(sp)
+    j .8864_Lendif_J
+.8863_Lelse_J:
+    flw ft0, 4(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 0(sp)
+.8864_Lendif_J:
+    flw fa0, 0(sp)
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type add_mod5, @function
+.globl add_mod5
+add_mod5:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# add_mod5
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    li t0, 5
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    slt t2, t0, t1
+    sw t2, 24(sp)
+    lw t0, 24(sp)
+    seqz t0, t0
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .8865_Lelse_J
+    li t0, 5
+    sw t0, 16(sp)
+    lw t0, 32(sp)
+    lw t1, 16(sp)
+    sub t2, t0, t1
+    sw t2, 12(sp)
+    j .8866_Lendif_J
+.8865_Lelse_J:
+    flw ft11, 32(sp)
+    fsw ft11, 12(sp)
+.8866_Lendif_J:
+    lw a0, 12(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type vecset, @function
+.globl vecset
+vecset:
+    addi sp, sp, -64
+    sw ra, 60(sp) 	# vecset
+    sw a0, 56(sp)
+    fsw fa0, 52(sp)
+    fsw fa1, 48(sp)
+    fsw fa2, 44(sp)
+    li t0, 0
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 56(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 56(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 56(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 44(sp)
+    fsw ft11, 0(t6)
+    lw ra, 60(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type vecfill, @function
+.globl vecfill
+vecfill:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# vecfill
+    sw a0, 40(sp)
+    fsw fa0, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 40(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 40(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 8(sp)
+    lw t0, 8(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 40(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type vecbzero, @function
+.globl vecbzero
+vecbzero:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# vecbzero
+    sw a0, 8(sp)
+    sw zero, 4(sp)
+    lw a0, 8(sp)
+    flw fa0, 4(sp)
+    call vecfill
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type veccpy, @function
+.globl veccpy
+veccpy:
+    addi sp, sp, -96
+    sw ra, 92(sp) 	# veccpy
+    sw a0, 88(sp)
+    sw a1, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    li t0, 0
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 84(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 88(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 52(sp)
+    li t0, 1
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 84(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 88(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 24(sp)
+    li t0, 2
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 84(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 8(sp)
+    lw t0, 24(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 88(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 8(sp)
+    fsw ft11, 0(t6)
+    lw ra, 92(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type vecunit_sgn, @function
+.globl vecunit_sgn
+vecunit_sgn:
+    addi sp, sp, -224
+    sw ra, 220(sp) 	# vecunit_sgn
+    sw a0, 216(sp)
+    sw a1, 212(sp)
+    li t0, 0
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 216(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    flw ft0, 196(sp)
+    flw ft1, 196(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    li t0, 1
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 216(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 176(sp)
+    flw ft1, 176(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    flw ft0, 192(sp)
+    flw ft1, 172(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    li t0, 2
+    sw t0, 164(sp)
+    lw t0, 164(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 216(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 152(sp)
+    flw ft1, 152(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    flw ft0, 168(sp)
+    flw ft1, 148(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    flw ft0, 144(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 140(sp)
+    sw zero, 136(sp)
+    flw ft0, 140(sp)
+    flw ft1, 136(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 132(sp)
+    lw t0, 132(sp)
+    beqz t0, .8867_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 128(sp)
+    flw ft11, 128(sp)
+    fsw ft11, 124(sp)
+    j .8868_Lendif_J
+.8867_Lelse_J:
+    lw t0, 212(sp)
+    beqz t0, .8869_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 120(sp)
+    flw ft11, 120(sp)
+    fsw ft11, 116(sp)
+    flw ft0, 116(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 112(sp)
+    flw ft0, 112(sp)
+    flw ft1, 140(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    j .8870_Lendif_J
+.8869_Lelse_J:
+    lui t6, 260096 # 0x3f800
+    sw t6, 108(sp)
+    flw ft11, 108(sp)
+    fsw ft11, 104(sp)
+    flw ft0, 104(sp)
+    flw ft1, 140(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+.8870_Lendif_J:
+.8868_Lendif_J:
+    li t0, 0
+    sw t0, 100(sp)
+    li t0, 0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 216(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    flw ft0, 84(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 216(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 80(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 68(sp)
+    li t0, 1
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 216(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    flw ft0, 52(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 216(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 36(sp)
+    li t0, 2
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 216(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 20(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 216(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 0(t6)
+    lw ra, 220(sp)
+    addi sp, sp, 224
+    ret
+
+.section .text
+.type veciprod, @function
+.globl veciprod
+veciprod:
+    addi sp, sp, -128
+    sw ra, 124(sp) 	# veciprod
+    sw a0, 120(sp)
+    sw a1, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 108(sp)
+    lw t0, 120(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    li t0, 0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 116(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    flw ft0, 100(sp)
+    flw ft1, 84(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    li t0, 1
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 120(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    li t0, 1
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 116(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 64(sp)
+    flw ft1, 48(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    flw ft0, 80(sp)
+    flw ft1, 44(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 120(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    li t0, 2
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 116(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 8(sp)
+    flw ft0, 24(sp)
+    flw ft1, 8(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 4(sp)
+    flw ft0, 40(sp)
+    flw ft1, 4(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 0(sp)
+    flw fa0, 0(sp)
+    lw ra, 124(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type veciprod2, @function
+.globl veciprod2
+veciprod2:
+    addi sp, sp, -96
+    sw ra, 92(sp) 	# veciprod2
+    sw a0, 88(sp)
+    fsw fa0, 84(sp)
+    fsw fa1, 80(sp)
+    fsw fa2, 76(sp)
+    li t0, 0
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 88(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    flw ft0, 60(sp)
+    flw ft1, 84(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 88(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    flw ft0, 40(sp)
+    flw ft1, 80(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 36(sp)
+    flw ft0, 56(sp)
+    flw ft1, 36(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    li t0, 2
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 88(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 16(sp)
+    flw ft1, 76(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    flw ft0, 32(sp)
+    flw ft1, 12(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 8(sp)
+    flw fa0, 8(sp)
+    lw ra, 92(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type vecaccum, @function
+.globl vecaccum
+vecaccum:
+    addi sp, sp, -176
+    sw ra, 172(sp) 	# vecaccum
+    sw a0, 168(sp)
+    fsw fa0, 164(sp)
+    sw a1, 160(sp)
+    li t0, 0
+    sw t0, 156(sp)
+    li t0, 0
+    sw t0, 152(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 168(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    li t0, 0
+    sw t0, 136(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 160(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 124(sp)
+    flw ft0, 164(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 120(sp)
+    flw ft0, 140(sp)
+    flw ft1, 120(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 168(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 116(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 104(sp)
+    li t0, 1
+    sw t0, 100(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 168(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    li t0, 1
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 160(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    flw ft0, 164(sp)
+    flw ft1, 72(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 68(sp)
+    flw ft0, 88(sp)
+    flw ft1, 68(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 168(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 52(sp)
+    li t0, 2
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 168(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    li t0, 2
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 160(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 164(sp)
+    flw ft1, 20(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    flw ft0, 36(sp)
+    flw ft1, 16(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 168(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 172(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type vecadd, @function
+.globl vecadd
+vecadd:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# vecadd
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    li t0, 0
+    sw t0, 144(sp)
+    li t0, 0
+    sw t0, 140(sp)
+    lw t0, 140(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 152(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    li t0, 0
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 148(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 128(sp)
+    flw ft1, 112(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 152(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 108(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 96(sp)
+    li t0, 1
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 152(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    li t0, 1
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 148(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    flw ft0, 80(sp)
+    flw ft1, 64(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 152(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 48(sp)
+    li t0, 2
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 152(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    li t0, 2
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 148(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 32(sp)
+    flw ft1, 16(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 152(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type vecscale, @function
+.globl vecscale
+vecscale:
+    addi sp, sp, -112
+    sw ra, 108(sp) 	# vecscale
+    sw a0, 104(sp)
+    fsw fa0, 100(sp)
+    li t0, 0
+    sw t0, 96(sp)
+    li t0, 0
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 104(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 100(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 104(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 64(sp)
+    li t0, 1
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 104(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 48(sp)
+    flw ft1, 100(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 104(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 44(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 32(sp)
+    li t0, 2
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 104(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 16(sp)
+    flw ft1, 100(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 104(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 108(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type vecaccumv, @function
+.globl vecaccumv
+vecaccumv:
+    addi sp, sp, -224
+    sw ra, 220(sp) 	# vecaccumv
+    sw a0, 216(sp)
+    sw a1, 212(sp)
+    sw a2, 208(sp)
+    li t0, 0
+    sw t0, 204(sp)
+    li t0, 0
+    sw t0, 200(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 196(sp)
+    lw t0, 216(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    li t0, 0
+    sw t0, 184(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 212(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    li t0, 0
+    sw t0, 168(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 164(sp)
+    lw t0, 208(sp)
+    lw t1, 164(sp)
+    add t2, t0, t1
+    sw t2, 160(sp)
+    lw t6, 160(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 172(sp)
+    flw ft1, 156(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 188(sp)
+    flw ft1, 152(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 144(sp)
+    lw t0, 216(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 148(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 136(sp)
+    li t0, 1
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 216(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    li t0, 1
+    sw t0, 116(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 212(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    li t0, 1
+    sw t0, 100(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 208(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    flw ft0, 104(sp)
+    flw ft1, 88(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    flw ft0, 120(sp)
+    flw ft1, 84(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 216(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 80(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 68(sp)
+    li t0, 2
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 216(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    li t0, 2
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 212(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    li t0, 2
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 208(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 36(sp)
+    flw ft1, 20(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    flw ft0, 52(sp)
+    flw ft1, 16(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 216(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 220(sp)
+    addi sp, sp, 224
+    ret
+
+.section .text
+.type o_texturetype, @function
+.globl o_texturetype
+o_texturetype:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_texturetype
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 44(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_form, @function
+.globl o_form
+o_form:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_form
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 40(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_reflectiontype, @function
+.globl o_reflectiontype
+o_reflectiontype:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_reflectiontype
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 36(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_isinvert, @function
+.globl o_isinvert
+o_isinvert:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_isinvert
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 20(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_isrot, @function
+.globl o_isrot
+o_isrot:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_isrot
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 32(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_param_a, @function
+.globl o_param_a
+o_param_a:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_a
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 44(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_b, @function
+.globl o_param_b
+o_param_b:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_b
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 44(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_c, @function
+.globl o_param_c
+o_param_c:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_c
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 2
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 44(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_abc, @function
+.globl o_param_abc
+o_param_abc:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_param_abc
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 28(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type o_param_x, @function
+.globl o_param_x
+o_param_x:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_x
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 40(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_y, @function
+.globl o_param_y
+o_param_y:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_y
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 40(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_z, @function
+.globl o_param_z
+o_param_z:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_z
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 2
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 40(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_diffuse, @function
+.globl o_diffuse
+o_diffuse:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_diffuse
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 32(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_hilight, @function
+.globl o_hilight
+o_hilight:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_hilight
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 32(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_color_red, @function
+.globl o_color_red
+o_color_red:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_color_red
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 28(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_color_green, @function
+.globl o_color_green
+o_color_green:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_color_green
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 28(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_color_blue, @function
+.globl o_color_blue
+o_color_blue:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_color_blue
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 2
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 28(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_r1, @function
+.globl o_param_r1
+o_param_r1:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_r1
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 24(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_r2, @function
+.globl o_param_r2
+o_param_r2:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_r2
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 24(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_r3, @function
+.globl o_param_r3
+o_param_r3:
+    addi sp, sp, -80
+    sw ra, 64(sp) 	# o_param_r3
+    sw a0, 60(sp)
+    sw a1, 56(sp)
+    sw a2, 52(sp)
+    sw a3, 48(sp)
+    sw a4, 44(sp)
+    sw a5, 40(sp)
+    sw a6, 36(sp)
+    sw a7, 32(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 28(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 24(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 20(sp)
+    li t0, 2
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 24(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    flw fa0, 4(sp)
+    lw ra, 64(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type o_param_ctbl, @function
+.globl o_param_ctbl
+o_param_ctbl:
+    addi sp, sp, -64
+    sw ra, 48(sp) 	# o_param_ctbl
+    sw a0, 44(sp)
+    sw a1, 40(sp)
+    sw a2, 36(sp)
+    sw a3, 32(sp)
+    sw a4, 28(sp)
+    sw a5, 24(sp)
+    sw a6, 20(sp)
+    sw a7, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 8(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 4(sp)
+    lw a0, 4(sp)
+    lw ra, 48(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type p_rgb, @function
+.globl p_rgb
+p_rgb:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_rgb
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 40(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_intersection_points, @function
+.globl p_intersection_points
+p_intersection_points:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_intersection_points
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 36(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_surface_ids, @function
+.globl p_surface_ids
+p_surface_ids:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_surface_ids
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 32(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_calc_diffuse, @function
+.globl p_calc_diffuse
+p_calc_diffuse:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_calc_diffuse
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 28(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_energy, @function
+.globl p_energy
+p_energy:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_energy
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 24(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_received_ray_20percent, @function
+.globl p_received_ray_20percent
+p_received_ray_20percent:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_received_ray_20percent
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 20(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type p_group_id, @function
+.globl p_group_id
+p_group_id:
+    addi sp, sp, -64
+    sw ra, 60(sp) 	# p_group_id
+    sw a0, 56(sp)
+    sw a1, 52(sp)
+    sw a2, 48(sp)
+    sw a3, 44(sp)
+    sw a4, 40(sp)
+    sw a5, 36(sp)
+    sw a6, 32(sp)
+    sw a7, 28(sp)
+    li t0, 0
+    sw t0, 24(sp)
+    lw t0, 24(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 32(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    lw a0, 12(sp)
+    lw ra, 60(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type p_set_group_id, @function
+.globl p_set_group_id
+p_set_group_id:
+    addi sp, sp, -64
+    sw ra, 56(sp) 	# p_set_group_id
+    sw a0, 52(sp)
+    sw a1, 48(sp)
+    sw a2, 44(sp)
+    sw a3, 40(sp)
+    sw a4, 36(sp)
+    sw a5, 32(sp)
+    sw a6, 28(sp)
+    sw a7, 24(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 28(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+    lw ra, 56(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type p_nvectors, @function
+.globl p_nvectors
+p_nvectors:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# p_nvectors
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    sw a3, 28(sp)
+    sw a4, 24(sp)
+    sw a5, 20(sp)
+    sw a6, 16(sp)
+    sw a7, 12(sp)
+    lw a0, 12(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type d_vec, @function
+.globl d_vec
+d_vec:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# d_vec
+    sw a0, 8(sp)
+    sw a1, 4(sp)
+    lw a0, 8(sp)
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type d_const, @function
+.globl d_const
+d_const:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# d_const
+    sw a0, 8(sp)
+    sw a1, 4(sp)
+    lw a0, 4(sp)
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type r_surface_id, @function
+.globl r_surface_id
+r_surface_id:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# r_surface_id
+    sw a0, 24(sp)
+    sw a1, 20(sp)
+    sw a2, 16(sp)
+    fsw fa0, 12(sp)
+    lw a0, 24(sp)
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type r_dvec, @function
+.globl r_dvec
+r_dvec:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# r_dvec
+    sw a0, 24(sp)
+    sw a1, 20(sp)
+    sw a2, 16(sp)
+    fsw fa0, 12(sp)
+    lw a0, 20(sp)
+    lw a1, 16(sp)
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type r_bright, @function
+.globl r_bright
+r_bright:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# r_bright
+    sw a0, 24(sp)
+    sw a1, 20(sp)
+    sw a2, 16(sp)
+    fsw fa0, 12(sp)
+    flw fa0, 12(sp)
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type rad, @function
+.globl rad
+rad:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# rad
+    fsw fa0, 8(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 4(sp)
+    flw ft0, 8(sp)
+    flw ft1, 4(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 0(sp)
+    flw fa0, 0(sp)
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type read_screen_settings, @function
+.globl read_screen_settings
+read_screen_settings:
+    addi sp, sp, -496
+    sw ra, 492(sp) 	# read_screen_settings
+    li t0, 0
+    sw t0, 488(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 484(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 480(sp)
+    lw t0, 488(sp)
+    slli t0, t0, 2
+    sw t0, 476(sp)
+    lw t0, 480(sp)
+    lw t1, 476(sp)
+    add t2, t0, t1
+    sw t2, 472(sp)
+    lw t6, 472(sp)
+    flw ft11, 484(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 468(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 464(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 460(sp)
+    lw t0, 468(sp)
+    slli t0, t0, 2
+    sw t0, 456(sp)
+    lw t0, 460(sp)
+    lw t1, 456(sp)
+    add t2, t0, t1
+    sw t2, 452(sp)
+    lw t6, 452(sp)
+    flw ft11, 464(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 448(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 444(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 440(sp)
+    lw t0, 448(sp)
+    slli t0, t0, 2
+    sw t0, 436(sp)
+    lw t0, 440(sp)
+    lw t1, 436(sp)
+    add t2, t0, t1
+    sw t2, 432(sp)
+    lw t6, 432(sp)
+    flw ft11, 444(sp)
+    fsw ft11, 0(t6)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 428(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 424(sp)
+    flw ft0, 428(sp)
+    flw ft1, 424(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 420(sp)
+    flw fa0, 420(sp)
+    call mincaml_cos
+    fsw fa0, 416(sp)
+    flw fa0, 420(sp)
+    call mincaml_sin
+    fsw fa0, 412(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 408(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 404(sp)
+    flw ft0, 408(sp)
+    flw ft1, 404(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 400(sp)
+    flw fa0, 400(sp)
+    call mincaml_cos
+    fsw fa0, 396(sp)
+    flw fa0, 400(sp)
+    call mincaml_sin
+    fsw fa0, 392(sp)
+    li t0, 0
+    sw t0, 388(sp)
+    flw ft0, 416(sp)
+    flw ft1, 392(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 384(sp)
+    lui t6, %hi(.6349_L.LC1_J)
+    flw ft11, %lo(.6349_L.LC1_J)(t6)
+    fsw ft11, 380(sp)
+    flw ft0, 384(sp)
+    flw ft1, 380(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 376(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 372(sp)
+    lw t0, 388(sp)
+    slli t0, t0, 2
+    sw t0, 368(sp)
+    lw t0, 372(sp)
+    lw t1, 368(sp)
+    add t2, t0, t1
+    sw t2, 364(sp)
+    lw t6, 364(sp)
+    flw ft11, 376(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 360(sp)
+    lui t6, %hi(.6349_L.LC1_J)
+    flw ft11, %lo(.6349_L.LC1_J)(t6)
+    fsw ft11, 356(sp)
+    flw ft0, 356(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 352(sp)
+    flw ft0, 412(sp)
+    flw ft1, 352(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 348(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 344(sp)
+    lw t0, 360(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 344(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 348(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 332(sp)
+    flw ft0, 416(sp)
+    flw ft1, 396(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 328(sp)
+    lui t6, %hi(.6349_L.LC1_J)
+    flw ft11, %lo(.6349_L.LC1_J)(t6)
+    fsw ft11, 324(sp)
+    flw ft0, 328(sp)
+    flw ft1, 324(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 320(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 316(sp)
+    lw t0, 332(sp)
+    slli t0, t0, 2
+    sw t0, 312(sp)
+    lw t0, 316(sp)
+    lw t1, 312(sp)
+    add t2, t0, t1
+    sw t2, 308(sp)
+    lw t6, 308(sp)
+    flw ft11, 320(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 304(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 300(sp)
+    lw t0, 304(sp)
+    slli t0, t0, 2
+    sw t0, 296(sp)
+    lw t0, 300(sp)
+    lw t1, 296(sp)
+    add t2, t0, t1
+    sw t2, 292(sp)
+    lw t6, 292(sp)
+    flw ft11, 396(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 288(sp)
+    sw zero, 284(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 280(sp)
+    lw t0, 288(sp)
+    slli t0, t0, 2
+    sw t0, 276(sp)
+    lw t0, 280(sp)
+    lw t1, 276(sp)
+    add t2, t0, t1
+    sw t2, 272(sp)
+    lw t6, 272(sp)
+    flw ft11, 284(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 268(sp)
+    flw ft0, 392(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 264(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 260(sp)
+    lw t0, 268(sp)
+    slli t0, t0, 2
+    sw t0, 256(sp)
+    lw t0, 260(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 264(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 248(sp)
+    flw ft0, 412(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 244(sp)
+    flw ft0, 244(sp)
+    flw ft1, 392(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 240(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 236(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 236(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 240(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 224(sp)
+    flw ft0, 416(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 220(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 216(sp)
+    lw t0, 224(sp)
+    slli t0, t0, 2
+    sw t0, 212(sp)
+    lw t0, 216(sp)
+    lw t1, 212(sp)
+    add t2, t0, t1
+    sw t2, 208(sp)
+    lw t6, 208(sp)
+    flw ft11, 220(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 204(sp)
+    flw ft0, 412(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 200(sp)
+    flw ft0, 200(sp)
+    flw ft1, 396(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 196(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 192(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 188(sp)
+    lw t0, 192(sp)
+    lw t1, 188(sp)
+    add t2, t0, t1
+    sw t2, 184(sp)
+    lw t6, 184(sp)
+    flw ft11, 196(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 180(sp)
+    li t0, 0
+    sw t0, 176(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 172(sp)
+    lw t0, 176(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 172(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    li t0, 0
+    sw t0, 156(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 152(sp)
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 152(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    flw ft0, 160(sp)
+    flw ft1, 140(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    lui t6, %hi(viewpoint)
+    flw ft11, %lo(viewpoint)(t6)
+    fsw ft11, 132(sp)
+    lw t0, 180(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 132(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 136(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 120(sp)
+    li t0, 1
+    sw t0, 116(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 112(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 108(sp)
+    lw t0, 112(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    li t0, 1
+    sw t0, 96(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 92(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 92(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 100(sp)
+    flw ft1, 80(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    lui t6, %hi(viewpoint)
+    flw ft11, %lo(viewpoint)(t6)
+    fsw ft11, 72(sp)
+    lw t0, 120(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 72(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 60(sp)
+    li t0, 2
+    sw t0, 56(sp)
+    lui t6, %hi(screen)
+    flw ft11, %lo(screen)(t6)
+    fsw ft11, 52(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 52(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 40(sp)
+    flw ft1, 20(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    lui t6, %hi(viewpoint)
+    flw ft11, %lo(viewpoint)(t6)
+    fsw ft11, 12(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 0(t6)
+    lw ra, 492(sp)
+    addi sp, sp, 496
+    ret
+
+.section .text
+.type read_light, @function
+.globl read_light
+read_light:
+    addi sp, sp, -128
+    sw ra, 124(sp) 	# read_light
+    call read_int
+    mv t0, a0
+    sw t0, 120(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 116(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 116(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    flw fa0, 108(sp)
+    call mincaml_sin
+    fsw fa0, 104(sp)
+    li t0, 1
+    sw t0, 100(sp)
+    flw ft0, 104(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 96(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 92(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 92(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 96(sp)
+    fsw ft11, 0(t6)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 80(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 76(sp)
+    flw ft0, 80(sp)
+    flw ft1, 76(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 72(sp)
+    flw fa0, 108(sp)
+    call mincaml_cos
+    fsw fa0, 68(sp)
+    flw fa0, 72(sp)
+    call mincaml_sin
+    fsw fa0, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    flw ft0, 68(sp)
+    flw ft1, 64(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 52(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 52(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 0(t6)
+    flw fa0, 72(sp)
+    call mincaml_cos
+    fsw fa0, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    flw ft0, 68(sp)
+    flw ft1, 40(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 32(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 16(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 12(sp)
+    lui t6, %hi(beam)
+    flw ft11, %lo(beam)(t6)
+    fsw ft11, 8(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 124(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type rotate_quadratic_matrix, @function
+.globl rotate_quadratic_matrix
+rotate_quadratic_matrix:
+    addi sp, sp, -560
+    sw ra, 556(sp) 	# rotate_quadratic_matrix
+    sw a0, 552(sp)
+    sw a1, 548(sp)
+    li t0, 0
+    sw t0, 544(sp)
+    lw t0, 544(sp)
+    slli t0, t0, 2
+    sw t0, 540(sp)
+    lw t0, 548(sp)
+    lw t1, 540(sp)
+    add t2, t0, t1
+    sw t2, 536(sp)
+    lw t6, 536(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 532(sp)
+    flw fa0, 532(sp)
+    call mincaml_cos
+    fsw fa0, 528(sp)
+    li t0, 0
+    sw t0, 524(sp)
+    lw t0, 524(sp)
+    slli t0, t0, 2
+    sw t0, 520(sp)
+    lw t0, 548(sp)
+    lw t1, 520(sp)
+    add t2, t0, t1
+    sw t2, 516(sp)
+    lw t6, 516(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 512(sp)
+    flw fa0, 512(sp)
+    call mincaml_sin
+    fsw fa0, 508(sp)
+    li t0, 1
+    sw t0, 504(sp)
+    lw t0, 504(sp)
+    slli t0, t0, 2
+    sw t0, 500(sp)
+    lw t0, 548(sp)
+    lw t1, 500(sp)
+    add t2, t0, t1
+    sw t2, 496(sp)
+    lw t6, 496(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 492(sp)
+    flw fa0, 492(sp)
+    call mincaml_cos
+    fsw fa0, 488(sp)
+    li t0, 1
+    sw t0, 484(sp)
+    lw t0, 484(sp)
+    slli t0, t0, 2
+    sw t0, 480(sp)
+    lw t0, 548(sp)
+    lw t1, 480(sp)
+    add t2, t0, t1
+    sw t2, 476(sp)
+    lw t6, 476(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 472(sp)
+    flw fa0, 472(sp)
+    call mincaml_sin
+    fsw fa0, 468(sp)
+    li t0, 2
+    sw t0, 464(sp)
+    lw t0, 464(sp)
+    slli t0, t0, 2
+    sw t0, 460(sp)
+    lw t0, 548(sp)
+    lw t1, 460(sp)
+    add t2, t0, t1
+    sw t2, 456(sp)
+    lw t6, 456(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 452(sp)
+    flw fa0, 452(sp)
+    call mincaml_cos
+    fsw fa0, 448(sp)
+    li t0, 2
+    sw t0, 444(sp)
+    lw t0, 444(sp)
+    slli t0, t0, 2
+    sw t0, 440(sp)
+    lw t0, 548(sp)
+    lw t1, 440(sp)
+    add t2, t0, t1
+    sw t2, 436(sp)
+    lw t6, 436(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 432(sp)
+    flw fa0, 432(sp)
+    call mincaml_sin
+    fsw fa0, 428(sp)
+    flw ft0, 488(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 424(sp)
+    flw ft0, 508(sp)
+    flw ft1, 468(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 420(sp)
+    flw ft0, 420(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 416(sp)
+    flw ft0, 528(sp)
+    flw ft1, 428(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 412(sp)
+    flw ft0, 416(sp)
+    flw ft1, 412(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 408(sp)
+    flw ft0, 528(sp)
+    flw ft1, 468(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 404(sp)
+    flw ft0, 404(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 400(sp)
+    flw ft0, 508(sp)
+    flw ft1, 428(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 396(sp)
+    flw ft0, 400(sp)
+    flw ft1, 396(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 392(sp)
+    flw ft0, 488(sp)
+    flw ft1, 428(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 388(sp)
+    flw ft0, 508(sp)
+    flw ft1, 468(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 384(sp)
+    flw ft0, 384(sp)
+    flw ft1, 428(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 380(sp)
+    flw ft0, 528(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 376(sp)
+    flw ft0, 380(sp)
+    flw ft1, 376(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 372(sp)
+    flw ft0, 528(sp)
+    flw ft1, 468(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 368(sp)
+    flw ft0, 368(sp)
+    flw ft1, 428(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 364(sp)
+    flw ft0, 508(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 360(sp)
+    flw ft0, 364(sp)
+    flw ft1, 360(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 356(sp)
+    flw ft0, 468(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 352(sp)
+    flw ft0, 508(sp)
+    flw ft1, 488(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 348(sp)
+    flw ft0, 528(sp)
+    flw ft1, 488(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 344(sp)
+    li t0, 0
+    sw t0, 340(sp)
+    lw t0, 340(sp)
+    slli t0, t0, 2
+    sw t0, 336(sp)
+    lw t0, 552(sp)
+    lw t1, 336(sp)
+    add t2, t0, t1
+    sw t2, 332(sp)
+    lw t6, 332(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 328(sp)
+    li t0, 1
+    sw t0, 324(sp)
+    lw t0, 324(sp)
+    slli t0, t0, 2
+    sw t0, 320(sp)
+    lw t0, 552(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t6, 316(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 312(sp)
+    li t0, 2
+    sw t0, 308(sp)
+    lw t0, 308(sp)
+    slli t0, t0, 2
+    sw t0, 304(sp)
+    lw t0, 552(sp)
+    lw t1, 304(sp)
+    add t2, t0, t1
+    sw t2, 300(sp)
+    lw t6, 300(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 296(sp)
+    li t0, 0
+    sw t0, 292(sp)
+    flw ft0, 424(sp)
+    flw ft1, 424(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 288(sp)
+    flw ft0, 328(sp)
+    flw ft1, 288(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 284(sp)
+    flw ft0, 388(sp)
+    flw ft1, 388(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 280(sp)
+    flw ft0, 312(sp)
+    flw ft1, 280(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 276(sp)
+    flw ft0, 284(sp)
+    flw ft1, 276(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 272(sp)
+    flw ft0, 352(sp)
+    flw ft1, 352(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 268(sp)
+    flw ft0, 296(sp)
+    flw ft1, 268(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 264(sp)
+    flw ft0, 272(sp)
+    flw ft1, 264(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 260(sp)
+    lw t0, 292(sp)
+    slli t0, t0, 2
+    sw t0, 256(sp)
+    lw t0, 552(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 260(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 248(sp)
+    flw ft0, 408(sp)
+    flw ft1, 408(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 244(sp)
+    flw ft0, 328(sp)
+    flw ft1, 244(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 240(sp)
+    flw ft0, 372(sp)
+    flw ft1, 372(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    flw ft0, 312(sp)
+    flw ft1, 236(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 232(sp)
+    flw ft0, 240(sp)
+    flw ft1, 232(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 228(sp)
+    flw ft0, 348(sp)
+    flw ft1, 348(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 224(sp)
+    flw ft0, 296(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 220(sp)
+    flw ft0, 228(sp)
+    flw ft1, 220(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 216(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 212(sp)
+    lw t0, 552(sp)
+    lw t1, 212(sp)
+    add t2, t0, t1
+    sw t2, 208(sp)
+    lw t6, 208(sp)
+    flw ft11, 216(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 204(sp)
+    flw ft0, 392(sp)
+    flw ft1, 392(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 200(sp)
+    flw ft0, 328(sp)
+    flw ft1, 200(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 196(sp)
+    flw ft0, 356(sp)
+    flw ft1, 356(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    flw ft0, 312(sp)
+    flw ft1, 192(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 188(sp)
+    flw ft0, 196(sp)
+    flw ft1, 188(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 184(sp)
+    flw ft0, 344(sp)
+    flw ft1, 344(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 180(sp)
+    flw ft0, 296(sp)
+    flw ft1, 180(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 176(sp)
+    flw ft0, 184(sp)
+    flw ft1, 176(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 552(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 172(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 160(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 328(sp)
+    flw ft1, 408(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 152(sp)
+    flw ft1, 392(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    flw ft0, 312(sp)
+    flw ft1, 372(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    flw ft0, 144(sp)
+    flw ft1, 356(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 140(sp)
+    flw ft0, 148(sp)
+    flw ft1, 140(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    flw ft0, 296(sp)
+    flw ft1, 348(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 132(sp)
+    flw ft0, 132(sp)
+    flw ft1, 344(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    flw ft0, 136(sp)
+    flw ft1, 128(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    flw ft0, 156(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 120(sp)
+    lw t0, 160(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 548(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 120(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 108(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 328(sp)
+    flw ft1, 424(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    flw ft0, 100(sp)
+    flw ft1, 392(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 96(sp)
+    flw ft0, 312(sp)
+    flw ft1, 388(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 92(sp)
+    flw ft0, 92(sp)
+    flw ft1, 356(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    flw ft0, 96(sp)
+    flw ft1, 88(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    flw ft0, 296(sp)
+    flw ft1, 352(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 344(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    flw ft0, 84(sp)
+    flw ft1, 76(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 72(sp)
+    flw ft0, 104(sp)
+    flw ft1, 72(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 68(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 548(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 56(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 52(sp)
+    flw ft0, 328(sp)
+    flw ft1, 424(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+    flw ft0, 48(sp)
+    flw ft1, 408(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    flw ft0, 312(sp)
+    flw ft1, 388(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    flw ft0, 40(sp)
+    flw ft1, 372(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 36(sp)
+    flw ft0, 44(sp)
+    flw ft1, 36(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    flw ft0, 296(sp)
+    flw ft1, 352(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    flw ft0, 28(sp)
+    flw ft1, 348(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    flw ft0, 32(sp)
+    flw ft1, 24(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    flw ft0, 52(sp)
+    flw ft1, 20(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 548(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 0(t6)
+    lw ra, 556(sp)
+    addi sp, sp, 560
+    ret
+
+.section .text
+.type read_nth_object, @function
+.globl read_nth_object
+read_nth_object:
+    addi sp, sp, -592
+    sw ra, 588(sp) 	# read_nth_object
+    sw a0, 584(sp)
+    call read_int
+    mv t0, a0
+    sw t0, 580(sp)
+    li t0, 1
+    sw t0, 576(sp)
+    lw t0, 576(sp)
+    neg t0, t0
+    sw t0, 572(sp)
+    lw t0, 580(sp)
+    lw t1, 572(sp)
+    xor t2, t0, t1
+    sw t2, 568(sp)
+    lw t0, 568(sp)
+    beqz t0, .8871_Lelse_J
+    call read_int
+    mv t0, a0
+    sw t0, 564(sp)
+    call read_int
+    mv t0, a0
+    sw t0, 560(sp)
+    call read_int
+    mv t0, a0
+    sw t0, 556(sp)
+    li t0, 3
+    sw t0, 552(sp)
+    sw zero, 548(sp)
+    lw a0, 552(sp)
+    flw fa0, 548(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 544(sp)
+    li t0, 0
+    sw t0, 540(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 536(sp)
+    lw t0, 540(sp)
+    slli t0, t0, 2
+    sw t0, 532(sp)
+    lw t0, 544(sp)
+    lw t1, 532(sp)
+    add t2, t0, t1
+    sw t2, 528(sp)
+    lw t6, 528(sp)
+    flw ft11, 536(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 524(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 520(sp)
+    lw t0, 524(sp)
+    slli t0, t0, 2
+    sw t0, 516(sp)
+    lw t0, 544(sp)
+    lw t1, 516(sp)
+    add t2, t0, t1
+    sw t2, 512(sp)
+    lw t6, 512(sp)
+    flw ft11, 520(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 508(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 504(sp)
+    lw t0, 508(sp)
+    slli t0, t0, 2
+    sw t0, 500(sp)
+    lw t0, 544(sp)
+    lw t1, 500(sp)
+    add t2, t0, t1
+    sw t2, 496(sp)
+    lw t6, 496(sp)
+    flw ft11, 504(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 492(sp)
+    sw zero, 488(sp)
+    lw a0, 492(sp)
+    flw fa0, 488(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 484(sp)
+    li t0, 0
+    sw t0, 480(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 476(sp)
+    lw t0, 480(sp)
+    slli t0, t0, 2
+    sw t0, 472(sp)
+    lw t0, 484(sp)
+    lw t1, 472(sp)
+    add t2, t0, t1
+    sw t2, 468(sp)
+    lw t6, 468(sp)
+    flw ft11, 476(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 464(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 460(sp)
+    lw t0, 464(sp)
+    slli t0, t0, 2
+    sw t0, 456(sp)
+    lw t0, 484(sp)
+    lw t1, 456(sp)
+    add t2, t0, t1
+    sw t2, 452(sp)
+    lw t6, 452(sp)
+    flw ft11, 460(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 448(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 444(sp)
+    lw t0, 448(sp)
+    slli t0, t0, 2
+    sw t0, 440(sp)
+    lw t0, 484(sp)
+    lw t1, 440(sp)
+    add t2, t0, t1
+    sw t2, 436(sp)
+    lw t6, 436(sp)
+    flw ft11, 444(sp)
+    fsw ft11, 0(t6)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 432(sp)
+    sw zero, 428(sp)
+    flw ft0, 432(sp)
+    flw ft1, 428(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 424(sp)
+    li t0, 2
+    sw t0, 420(sp)
+    sw zero, 416(sp)
+    lw a0, 420(sp)
+    flw fa0, 416(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 412(sp)
+    li t0, 0
+    sw t0, 408(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 404(sp)
+    lw t0, 408(sp)
+    slli t0, t0, 2
+    sw t0, 400(sp)
+    lw t0, 412(sp)
+    lw t1, 400(sp)
+    add t2, t0, t1
+    sw t2, 396(sp)
+    lw t6, 396(sp)
+    flw ft11, 404(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 392(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 388(sp)
+    lw t0, 392(sp)
+    slli t0, t0, 2
+    sw t0, 384(sp)
+    lw t0, 412(sp)
+    lw t1, 384(sp)
+    add t2, t0, t1
+    sw t2, 380(sp)
+    lw t6, 380(sp)
+    flw ft11, 388(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 376(sp)
+    sw zero, 372(sp)
+    lw a0, 376(sp)
+    flw fa0, 372(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 368(sp)
+    li t0, 0
+    sw t0, 364(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 360(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 356(sp)
+    lw t0, 368(sp)
+    lw t1, 356(sp)
+    add t2, t0, t1
+    sw t2, 352(sp)
+    lw t6, 352(sp)
+    flw ft11, 360(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 348(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 344(sp)
+    lw t0, 348(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 368(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 344(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 332(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 328(sp)
+    lw t0, 332(sp)
+    slli t0, t0, 2
+    sw t0, 324(sp)
+    lw t0, 368(sp)
+    lw t1, 324(sp)
+    add t2, t0, t1
+    sw t2, 320(sp)
+    lw t6, 320(sp)
+    flw ft11, 328(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 316(sp)
+    sw zero, 312(sp)
+    lw a0, 316(sp)
+    flw fa0, 312(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 308(sp)
+    li t0, 0
+    sw t0, 304(sp)
+    lw t0, 556(sp)
+    lw t1, 304(sp)
+    xor t2, t0, t1
+    sw t2, 300(sp)
+    lw t0, 300(sp)
+    beqz t0, .8873_Lelse_J
+    li t0, 0
+    sw t0, 296(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 292(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 288(sp)
+    flw ft0, 292(sp)
+    flw ft1, 288(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 284(sp)
+    lw t0, 296(sp)
+    slli t0, t0, 2
+    sw t0, 280(sp)
+    lw t0, 308(sp)
+    lw t1, 280(sp)
+    add t2, t0, t1
+    sw t2, 276(sp)
+    lw t6, 276(sp)
+    flw ft11, 284(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 272(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 268(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 264(sp)
+    flw ft0, 268(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 260(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 256(sp)
+    lw t0, 308(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 260(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 248(sp)
+    call read_float
+    fmv.s ft0, fa0
+    fsw ft0, 244(sp)
+    lui t6, %hi(.6339_L.LC0_J)
+    flw ft11, %lo(.6339_L.LC0_J)(t6)
+    fsw ft11, 240(sp)
+    flw ft0, 244(sp)
+    flw ft1, 240(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 308(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 236(sp)
+    fsw ft11, 0(t6)
+.8873_Lelse_J:
+.8874_Lendif_J:
+    li t0, 2
+    sw t0, 224(sp)
+    lw t0, 564(sp)
+    lw t1, 224(sp)
+    xor t2, t0, t1
+    sw t2, 220(sp)
+    lw t0, 220(sp)
+    seqz t0, t0
+    sw t0, 216(sp)
+    lw t0, 216(sp)
+    beqz t0, .8875_Lelse_J
+    li t0, 1
+    sw t0, 212(sp)
+    j .8876_Lendif_J
+.8875_Lelse_J:
+    flw ft11, 424(sp)
+    fsw ft11, 212(sp)
+.8876_Lendif_J:
+    li t0, 4
+    sw t0, 208(sp)
+    sw zero, 204(sp)
+    lw a0, 208(sp)
+    flw fa0, 204(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 200(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 584(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 580(sp)
+    fsw ft11, 0(t6)
+    lw t6, 188(sp)
+    flw ft11, 564(sp)
+    fsw ft11, 4(t6)
+    lw t6, 188(sp)
+    flw ft11, 560(sp)
+    fsw ft11, 8(t6)
+    lw t6, 188(sp)
+    flw ft11, 556(sp)
+    fsw ft11, 12(t6)
+    lw t6, 188(sp)
+    flw ft11, 544(sp)
+    fsw ft11, 16(t6)
+    lw t6, 188(sp)
+    flw ft11, 484(sp)
+    fsw ft11, 20(t6)
+    lw t6, 188(sp)
+    flw ft11, 212(sp)
+    fsw ft11, 24(t6)
+    lw t6, 188(sp)
+    flw ft11, 412(sp)
+    fsw ft11, 28(t6)
+    lw t6, 188(sp)
+    flw ft11, 368(sp)
+    fsw ft11, 32(t6)
+    lw t6, 188(sp)
+    flw ft11, 308(sp)
+    fsw ft11, 36(t6)
+    lw t6, 188(sp)
+    flw ft11, 200(sp)
+    fsw ft11, 40(t6)
+    li t0, 3
+    sw t0, 184(sp)
+    lw t0, 564(sp)
+    lw t1, 184(sp)
+    xor t2, t0, t1
+    sw t2, 180(sp)
+    lw t0, 180(sp)
+    seqz t0, t0
+    sw t0, 176(sp)
+    lw t0, 176(sp)
+    beqz t0, .8877_Lelse_J
+    li t0, 0
+    sw t0, 172(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 544(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    li t0, 0
+    sw t0, 156(sp)
+    sw zero, 152(sp)
+    flw ft0, 160(sp)
+    flw ft1, 152(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 148(sp)
+    lw t0, 148(sp)
+    beqz t0, .8879_Lelse_J
+    sw zero, 144(sp)
+    j .8880_Lendif_J
+.8879_Lelse_J:
+    flw fa0, 160(sp)
+    call sgn
+    fsw fa0, 140(sp)
+    flw ft0, 160(sp)
+    flw ft1, 160(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    flw ft0, 140(sp)
+    flw ft1, 136(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+.8880_Lendif_J:
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 544(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 144(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 544(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    li t0, 1
+    sw t0, 108(sp)
+    sw zero, 104(sp)
+    flw ft0, 112(sp)
+    flw ft1, 104(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    beqz t0, .8881_Lelse_J
+    sw zero, 96(sp)
+    j .8882_Lendif_J
+.8881_Lelse_J:
+    flw fa0, 112(sp)
+    call sgn
+    fsw fa0, 92(sp)
+    flw ft0, 112(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    flw ft0, 92(sp)
+    flw ft1, 88(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 96(sp)
+.8882_Lendif_J:
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 544(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 96(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 544(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    li t0, 2
+    sw t0, 60(sp)
+    sw zero, 56(sp)
+    flw ft0, 64(sp)
+    flw ft1, 56(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .8883_Lelse_J
+    sw zero, 48(sp)
+    j .8884_Lendif_J
+.8883_Lelse_J:
+    flw fa0, 64(sp)
+    call sgn
+    fsw fa0, 44(sp)
+    flw ft0, 64(sp)
+    flw ft1, 64(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    flw ft0, 44(sp)
+    flw ft1, 40(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+.8884_Lendif_J:
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 544(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 0(t6)
+    j .8878_Lendif_J
+.8877_Lelse_J:
+    li t0, 2
+    sw t0, 28(sp)
+    lw t0, 564(sp)
+    lw t1, 28(sp)
+    xor t2, t0, t1
+    sw t2, 24(sp)
+    lw t0, 24(sp)
+    seqz t0, t0
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .8885_Lelse_J
+    lw t0, 424(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw a0, 544(sp)
+    lw a1, 16(sp)
+    call vecunit_sgn
+.8885_Lelse_J:
+.8886_Lendif_J:
+.8878_Lendif_J:
+    li t0, 0
+    sw t0, 12(sp)
+    lw t0, 556(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    beqz t0, .8887_Lelse_J
+    lw a0, 544(sp)
+    lw a1, 308(sp)
+    call rotate_quadratic_matrix
+.8887_Lelse_J:
+.8888_Lendif_J:
+    li t0, 1
+    sw t0, 4(sp)
+    j .8872_Lendif_J
+.8871_Lelse_J:
+    li t0, 0
+    sw t0, 4(sp)
+.8872_Lendif_J:
+    lw a0, 4(sp)
+    lw ra, 588(sp)
+    addi sp, sp, 592
+    ret
+
+.section .text
+.type read_object, @function
+.globl read_object
+read_object:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# read_object
+    sw a0, 40(sp)
+    li t0, 60
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    slt t2, t0, t1
+    sw t2, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .8889_Lelse_J
+    lw a0, 40(sp)
+    call read_nth_object
+    sw a0, 28(sp)
+    lw t0, 28(sp)
+    beqz t0, .8891_Lelse_J
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 40(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw a0, 20(sp)
+    call read_object
+    j .8892_Lendif_J
+.8891_Lelse_J:
+    li t0, 0
+    sw t0, 16(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 12(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 40(sp)
+    fsw ft11, 0(t6)
+.8892_Lendif_J:
+.8889_Lelse_J:
+.8890_Lendif_J:
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type read_all_object, @function
+.globl read_all_object
+read_all_object:
+    addi sp, sp, -16
+    sw ra, 12(sp) 	# read_all_object
+    li t0, 0
+    sw t0, 8(sp)
+    lw a0, 8(sp)
+    call read_object
+    lw ra, 12(sp)
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type read_net_item, @function
+.globl read_net_item
+read_net_item:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# read_net_item
+    sw a0, 72(sp)
+    call read_int
+    mv t0, a0
+    sw t0, 68(sp)
+    li t0, 1
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    neg t0, t0
+    sw t0, 60(sp)
+    lw t0, 68(sp)
+    lw t1, 60(sp)
+    xor t2, t0, t1
+    sw t2, 56(sp)
+    lw t0, 56(sp)
+    seqz t0, t0
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .8893_Lelse_J
+    li t0, 1
+    sw t0, 48(sp)
+    lw t0, 72(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    li t0, 1
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    neg t0, t0
+    sw t0, 36(sp)
+    lw a0, 44(sp)
+    lw a1, 36(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 12(sp)
+    j .8894_Lendif_J
+.8893_Lelse_J:
+    li t0, 1
+    sw t0, 32(sp)
+    lw t0, 72(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw a0, 28(sp)
+    call read_net_item
+    sw a0, 24(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 24(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 0(t6)
+    flw ft11, 24(sp)
+    fsw ft11, 12(sp)
+.8894_Lendif_J:
+    lw a0, 12(sp)
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type read_or_network, @function
+.globl read_or_network
+read_or_network:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# read_or_network
+    sw a0, 72(sp)
+    li t0, 0
+    sw t0, 68(sp)
+    lw a0, 68(sp)
+    call read_net_item
+    sw a0, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 64(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 1
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    neg t0, t0
+    sw t0, 40(sp)
+    lw t0, 48(sp)
+    lw t1, 40(sp)
+    xor t2, t0, t1
+    sw t2, 36(sp)
+    lw t0, 36(sp)
+    seqz t0, t0
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .8895_Lelse_J
+    li t0, 1
+    sw t0, 28(sp)
+    lw t0, 72(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw a0, 24(sp)
+    lw a1, 64(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 0(sp)
+    j .8896_Lendif_J
+.8895_Lelse_J:
+    li t0, 1
+    sw t0, 20(sp)
+    lw t0, 72(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw a0, 16(sp)
+    call read_or_network
+    sw a0, 12(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    flw ft11, 12(sp)
+    fsw ft11, 0(sp)
+.8896_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type read_and_network, @function
+.globl read_and_network
+read_and_network:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# read_and_network
+    sw a0, 72(sp)
+    li t0, 0
+    sw t0, 68(sp)
+    lw a0, 68(sp)
+    call read_net_item
+    sw a0, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 64(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 1
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    neg t0, t0
+    sw t0, 40(sp)
+    lw t0, 48(sp)
+    lw t1, 40(sp)
+    xor t2, t0, t1
+    sw t2, 36(sp)
+    lw t0, 36(sp)
+    seqz t0, t0
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .8897_Lelse_J
+    j .8898_Lendif_J
+.8897_Lelse_J:
+    lui t6, %hi(and_net)
+    flw ft11, %lo(and_net)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 72(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 12(sp)
+    call read_and_network
+.8898_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type read_parameter, @function
+.globl read_parameter
+read_parameter:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# read_parameter
+    call read_screen_settings
+    call read_light
+    li t0, 0
+    sw t0, 40(sp)
+    lw a0, 40(sp)
+    call read_object
+    li t0, 0
+    sw t0, 36(sp)
+    lw a0, 36(sp)
+    call read_and_network
+    li t0, 0
+    sw t0, 32(sp)
+    li t0, 0
+    sw t0, 28(sp)
+    lw a0, 28(sp)
+    call read_or_network
+    sw a0, 24(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type solver_rect_surface, @function
+.globl solver_rect_surface
+solver_rect_surface:
+    addi sp, sp, -288
+    sw ra, 256(sp) 	# solver_rect_surface
+    sw a0, 252(sp)
+    sw a1, 248(sp)
+    sw a2, 244(sp)
+    sw a3, 240(sp)
+    sw a4, 236(sp)
+    sw a5, 232(sp)
+    sw a6, 228(sp)
+    sw a7, 224(sp)
+    flw ft11, 260(sp)
+    fsw ft11, 220(sp)
+    flw ft11, 264(sp)
+    fsw ft11, 216(sp)
+    flw ft11, 268(sp)
+    fsw ft11, 212(sp)
+    flw ft11, 272(sp)
+    fsw ft11, 208(sp)
+    fsw fa0, 204(sp)
+    fsw fa1, 200(sp)
+    fsw fa2, 196(sp)
+    flw ft11, 276(sp)
+    fsw ft11, 192(sp)
+    flw ft11, 280(sp)
+    fsw ft11, 188(sp)
+    flw ft11, 284(sp)
+    fsw ft11, 184(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 208(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    sw zero, 168(sp)
+    flw ft0, 172(sp)
+    flw ft1, 168(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 164(sp)
+    lw t0, 164(sp)
+    beqz t0, .8899_Lelse_J
+    li t0, 0
+    sw t0, 160(sp)
+    j .8900_Lendif_J
+.8899_Lelse_J:
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 156(sp)
+    lw t0, 208(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 148(sp)
+    sw zero, 144(sp)
+    flw ft0, 148(sp)
+    flw ft1, 144(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 140(sp)
+    lw t0, 228(sp)
+    lw t1, 140(sp)
+    xor t2, t0, t1
+    sw t2, 136(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 236(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 124(sp)
+    lw t0, 136(sp)
+    beqz t0, .8901_Lelse_J
+    flw ft11, 124(sp)
+    fsw ft11, 120(sp)
+    j .8902_Lendif_J
+.8901_Lelse_J:
+    flw ft0, 124(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 120(sp)
+.8902_Lendif_J:
+    flw ft0, 120(sp)
+    flw ft1, 204(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 208(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 116(sp)
+    flw ft1, 104(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 208(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    flw ft0, 100(sp)
+    flw ft1, 88(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    flw ft0, 84(sp)
+    flw ft1, 200(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    flw ft0, 80(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 76(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 236(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    flw ft0, 76(sp)
+    flw ft1, 64(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    beqz t0, .8903_Lelse_J
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 208(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 100(sp)
+    flw ft1, 48(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    flw ft0, 44(sp)
+    flw ft1, 196(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    flw ft0, 40(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 36(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 236(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 36(sp)
+    flw ft1, 24(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .8905_Lelse_J
+    li t0, 0
+    sw t0, 16(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 12(sp)
+    lw t0, 16(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 100(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 160(sp)
+    j .8906_Lendif_J
+.8905_Lelse_J:
+    li t0, 0
+    sw t0, 160(sp)
+.8906_Lendif_J:
+    j .8904_Lendif_J
+.8903_Lelse_J:
+    li t0, 0
+    sw t0, 160(sp)
+.8904_Lendif_J:
+.8900_Lendif_J:
+    lw a0, 160(sp)
+    lw ra, 256(sp)
+    addi sp, sp, 288
+    ret
+
+.section .text
+.type solver_rect, @function
+.globl solver_rect
+solver_rect:
+    addi sp, sp, -144
+    sw ra, 124(sp) 	# solver_rect
+    sw a0, 120(sp)
+    sw a1, 116(sp)
+    sw a2, 112(sp)
+    sw a3, 108(sp)
+    sw a4, 104(sp)
+    sw a5, 100(sp)
+    sw a6, 96(sp)
+    sw a7, 92(sp)
+    flw ft11, 128(sp)
+    fsw ft11, 88(sp)
+    flw ft11, 132(sp)
+    fsw ft11, 84(sp)
+    flw ft11, 136(sp)
+    fsw ft11, 80(sp)
+    flw ft11, 140(sp)
+    fsw ft11, 76(sp)
+    fsw fa0, 72(sp)
+    fsw fa1, 68(sp)
+    fsw fa2, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    li t0, 1
+    sw t0, 56(sp)
+    li t0, 2
+    sw t0, 52(sp)
+    lw a0, 120(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -28(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -24(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -16(sp)
+    flw fa0, 72(sp)
+    flw fa1, 68(sp)
+    flw fa2, 64(sp)
+    flw ft11, 60(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 56(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 52(sp)
+    fsw ft11, -4(sp)
+    call solver_rect_surface
+    sw a0, 48(sp)
+    lw t0, 48(sp)
+    beqz t0, .8907_Lelse_J
+    li t0, 1
+    sw t0, 44(sp)
+    j .8908_Lendif_J
+.8907_Lelse_J:
+    li t0, 1
+    sw t0, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lw a0, 120(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -28(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -24(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -16(sp)
+    flw fa0, 68(sp)
+    flw fa1, 64(sp)
+    flw fa2, 72(sp)
+    flw ft11, 40(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 36(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 32(sp)
+    fsw ft11, -4(sp)
+    call solver_rect_surface
+    sw a0, 28(sp)
+    lw t0, 28(sp)
+    beqz t0, .8909_Lelse_J
+    li t0, 2
+    sw t0, 44(sp)
+    j .8910_Lendif_J
+.8909_Lelse_J:
+    li t0, 2
+    sw t0, 24(sp)
+    li t0, 0
+    sw t0, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw a0, 120(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -28(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -24(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -16(sp)
+    flw fa0, 64(sp)
+    flw fa1, 72(sp)
+    flw fa2, 68(sp)
+    flw ft11, 24(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 20(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 16(sp)
+    fsw ft11, -4(sp)
+    call solver_rect_surface
+    sw a0, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .8911_Lelse_J
+    li t0, 3
+    sw t0, 44(sp)
+    j .8912_Lendif_J
+.8911_Lelse_J:
+    li t0, 0
+    sw t0, 44(sp)
+.8912_Lendif_J:
+.8910_Lendif_J:
+.8908_Lendif_J:
+    lw a0, 44(sp)
+    lw ra, 124(sp)
+    addi sp, sp, 144
+    ret
+
+.section .text
+.type solver_surface, @function
+.globl solver_surface
+solver_surface:
+    addi sp, sp, -304
+    sw ra, 284(sp) 	# solver_surface
+    sw a0, 280(sp)
+    sw a1, 276(sp)
+    sw a2, 272(sp)
+    sw a3, 268(sp)
+    sw a4, 264(sp)
+    sw a5, 260(sp)
+    sw a6, 256(sp)
+    sw a7, 252(sp)
+    flw ft11, 288(sp)
+    fsw ft11, 248(sp)
+    flw ft11, 292(sp)
+    fsw ft11, 244(sp)
+    flw ft11, 296(sp)
+    fsw ft11, 240(sp)
+    flw ft11, 300(sp)
+    fsw ft11, 236(sp)
+    fsw fa0, 232(sp)
+    fsw fa1, 228(sp)
+    fsw fa2, 224(sp)
+    li t0, 0
+    sw t0, 220(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 236(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    li t0, 0
+    sw t0, 204(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 200(sp)
+    lw t0, 264(sp)
+    lw t1, 200(sp)
+    add t2, t0, t1
+    sw t2, 196(sp)
+    lw t6, 196(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 192(sp)
+    flw ft0, 208(sp)
+    flw ft1, 192(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 188(sp)
+    li t0, 1
+    sw t0, 184(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 236(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    li t0, 1
+    sw t0, 168(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 164(sp)
+    lw t0, 264(sp)
+    lw t1, 164(sp)
+    add t2, t0, t1
+    sw t2, 160(sp)
+    lw t6, 160(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 172(sp)
+    flw ft1, 156(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 188(sp)
+    flw ft1, 152(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 2
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 236(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    li t0, 2
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 264(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    flw ft0, 132(sp)
+    flw ft1, 116(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    flw ft0, 148(sp)
+    flw ft1, 112(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    sw zero, 104(sp)
+    flw ft0, 104(sp)
+    flw ft1, 108(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    beqz t0, .8913_Lelse_J
+    li t0, 0
+    sw t0, 96(sp)
+    li t0, 0
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 264(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 232(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    li t0, 1
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 264(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    flw ft0, 60(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    flw ft0, 76(sp)
+    flw ft1, 56(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    li t0, 2
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 264(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    flw ft0, 36(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    flw ft0, 52(sp)
+    flw ft1, 32(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    flw ft0, 28(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 24(sp)
+    flw ft0, 24(sp)
+    flw ft1, 108(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 4(sp)
+    j .8914_Lendif_J
+.8913_Lelse_J:
+    li t0, 0
+    sw t0, 4(sp)
+.8914_Lendif_J:
+    lw a0, 4(sp)
+    lw ra, 284(sp)
+    addi sp, sp, 304
+    ret
+
+.section .text
+.type quadratic, @function
+.globl quadratic
+quadratic:
+    addi sp, sp, -256
+    sw ra, 240(sp) 	# quadratic
+    sw a0, 236(sp)
+    sw a1, 232(sp)
+    sw a2, 228(sp)
+    sw a3, 224(sp)
+    sw a4, 220(sp)
+    sw a5, 216(sp)
+    sw a6, 212(sp)
+    sw a7, 208(sp)
+    flw ft11, 244(sp)
+    fsw ft11, 204(sp)
+    flw ft11, 248(sp)
+    fsw ft11, 200(sp)
+    flw ft11, 252(sp)
+    fsw ft11, 196(sp)
+    fsw fa0, 192(sp)
+    fsw fa1, 188(sp)
+    fsw fa2, 184(sp)
+    flw ft0, 192(sp)
+    flw ft1, 192(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 180(sp)
+    li t0, 0
+    sw t0, 176(sp)
+    lw t0, 176(sp)
+    slli t0, t0, 2
+    sw t0, 172(sp)
+    lw t0, 220(sp)
+    lw t1, 172(sp)
+    add t2, t0, t1
+    sw t2, 168(sp)
+    lw t6, 168(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 164(sp)
+    flw ft0, 180(sp)
+    flw ft1, 164(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 160(sp)
+    flw ft0, 188(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 156(sp)
+    li t0, 1
+    sw t0, 152(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 220(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    flw ft0, 156(sp)
+    flw ft1, 140(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    flw ft0, 160(sp)
+    flw ft1, 136(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 132(sp)
+    flw ft0, 184(sp)
+    flw ft1, 184(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    li t0, 2
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 220(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 128(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    flw ft0, 132(sp)
+    flw ft1, 108(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    li t0, 0
+    sw t0, 100(sp)
+    lw t0, 224(sp)
+    lw t1, 100(sp)
+    xor t2, t0, t1
+    sw t2, 96(sp)
+    lw t0, 96(sp)
+    seqz t0, t0
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    beqz t0, .8915_Lelse_J
+    flw ft11, 104(sp)
+    fsw ft11, 88(sp)
+    j .8916_Lendif_J
+.8915_Lelse_J:
+    flw ft0, 188(sp)
+    flw ft1, 184(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 200(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 84(sp)
+    flw ft1, 68(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    flw ft0, 104(sp)
+    flw ft1, 64(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    flw ft0, 184(sp)
+    flw ft1, 192(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 200(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    flw ft0, 56(sp)
+    flw ft1, 40(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 36(sp)
+    flw ft0, 60(sp)
+    flw ft1, 36(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    flw ft0, 192(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    li t0, 2
+    sw t0, 24(sp)
+    lw t0, 24(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 200(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    flw ft0, 28(sp)
+    flw ft1, 12(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 8(sp)
+    flw ft0, 32(sp)
+    flw ft1, 8(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+.8916_Lendif_J:
+    flw fa0, 88(sp)
+    lw ra, 240(sp)
+    addi sp, sp, 256
+    ret
+
+.section .text
+.type bilinear, @function
+.globl bilinear
+bilinear:
+    addi sp, sp, -304
+    sw ra, 288(sp) 	# bilinear
+    sw a0, 284(sp)
+    sw a1, 280(sp)
+    sw a2, 276(sp)
+    sw a3, 272(sp)
+    sw a4, 268(sp)
+    sw a5, 264(sp)
+    sw a6, 260(sp)
+    sw a7, 256(sp)
+    flw ft11, 292(sp)
+    fsw ft11, 252(sp)
+    flw ft11, 296(sp)
+    fsw ft11, 248(sp)
+    flw ft11, 300(sp)
+    fsw ft11, 244(sp)
+    fsw fa0, 240(sp)
+    fsw fa1, 236(sp)
+    fsw fa2, 232(sp)
+    fsw fa3, 228(sp)
+    fsw fa4, 224(sp)
+    fsw fa5, 220(sp)
+    flw ft0, 240(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 216(sp)
+    li t0, 0
+    sw t0, 212(sp)
+    lw t0, 212(sp)
+    slli t0, t0, 2
+    sw t0, 208(sp)
+    lw t0, 268(sp)
+    lw t1, 208(sp)
+    add t2, t0, t1
+    sw t2, 204(sp)
+    lw t6, 204(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 200(sp)
+    flw ft0, 216(sp)
+    flw ft1, 200(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 196(sp)
+    flw ft0, 236(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    li t0, 1
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 268(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 192(sp)
+    flw ft1, 176(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    flw ft0, 196(sp)
+    flw ft1, 172(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    flw ft0, 232(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 164(sp)
+    li t0, 2
+    sw t0, 160(sp)
+    lw t0, 160(sp)
+    slli t0, t0, 2
+    sw t0, 156(sp)
+    lw t0, 268(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 148(sp)
+    flw ft0, 164(sp)
+    flw ft1, 148(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    flw ft0, 168(sp)
+    flw ft1, 144(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 140(sp)
+    li t0, 0
+    sw t0, 136(sp)
+    lw t0, 272(sp)
+    lw t1, 136(sp)
+    xor t2, t0, t1
+    sw t2, 132(sp)
+    lw t0, 132(sp)
+    seqz t0, t0
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    beqz t0, .8917_Lelse_J
+    flw ft11, 140(sp)
+    fsw ft11, 124(sp)
+    j .8918_Lendif_J
+.8917_Lelse_J:
+    flw ft0, 232(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 120(sp)
+    flw ft0, 236(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    flw ft0, 120(sp)
+    flw ft1, 116(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    li t0, 0
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 248(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    flw ft0, 112(sp)
+    flw ft1, 96(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 92(sp)
+    flw ft0, 240(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    flw ft0, 232(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    flw ft0, 88(sp)
+    flw ft1, 84(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    li t0, 1
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 248(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    flw ft0, 80(sp)
+    flw ft1, 64(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    flw ft0, 92(sp)
+    flw ft1, 60(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    flw ft0, 240(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    flw ft0, 236(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+    flw ft0, 52(sp)
+    flw ft1, 48(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    li t0, 2
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 248(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 44(sp)
+    flw ft1, 28(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    flw ft0, 56(sp)
+    flw ft1, 24(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 16(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 12(sp)
+    flw ft0, 20(sp)
+    flw ft1, 8(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    flw ft0, 140(sp)
+    flw ft1, 12(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+.8918_Lendif_J:
+    flw fa0, 124(sp)
+    lw ra, 288(sp)
+    addi sp, sp, 304
+    ret
+
+.section .text
+.type solver_second, @function
+.globl solver_second
+solver_second:
+    addi sp, sp, -288
+    sw ra, 268(sp) 	# solver_second
+    sw a0, 264(sp)
+    sw a1, 260(sp)
+    sw a2, 256(sp)
+    sw a3, 252(sp)
+    sw a4, 248(sp)
+    sw a5, 244(sp)
+    sw a6, 240(sp)
+    sw a7, 236(sp)
+    flw ft11, 272(sp)
+    fsw ft11, 232(sp)
+    flw ft11, 276(sp)
+    fsw ft11, 228(sp)
+    flw ft11, 280(sp)
+    fsw ft11, 224(sp)
+    flw ft11, 284(sp)
+    fsw ft11, 220(sp)
+    fsw fa0, 216(sp)
+    fsw fa1, 212(sp)
+    fsw fa2, 208(sp)
+    li t0, 0
+    sw t0, 204(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 200(sp)
+    lw t0, 220(sp)
+    lw t1, 200(sp)
+    add t2, t0, t1
+    sw t2, 196(sp)
+    lw t6, 196(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 192(sp)
+    li t0, 1
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 220(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    li t0, 2
+    sw t0, 172(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 220(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    lw a0, 264(sp)
+    lw a1, 260(sp)
+    lw a2, 256(sp)
+    lw a3, 252(sp)
+    lw a4, 248(sp)
+    lw a5, 244(sp)
+    lw a6, 240(sp)
+    lw a7, 236(sp)
+    flw ft11, 232(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 228(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 224(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 192(sp)
+    flw fa1, 176(sp)
+    flw fa2, 160(sp)
+    call quadratic
+    fsw fa0, 156(sp)
+    sw zero, 152(sp)
+    flw ft0, 156(sp)
+    flw ft1, 152(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 148(sp)
+    lw t0, 148(sp)
+    beqz t0, .8919_Lelse_J
+    li t0, 0
+    sw t0, 144(sp)
+    j .8920_Lendif_J
+.8919_Lelse_J:
+    li t0, 0
+    sw t0, 140(sp)
+    lw t0, 140(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 220(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    li t0, 1
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 220(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    li t0, 2
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 220(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    lw a0, 264(sp)
+    lw a1, 260(sp)
+    lw a2, 256(sp)
+    lw a3, 252(sp)
+    lw a4, 248(sp)
+    lw a5, 244(sp)
+    lw a6, 240(sp)
+    lw a7, 236(sp)
+    flw ft11, 232(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 228(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 224(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 128(sp)
+    flw fa1, 112(sp)
+    flw fa2, 96(sp)
+    flw fa3, 216(sp)
+    flw fa4, 212(sp)
+    flw fa5, 208(sp)
+    call bilinear
+    fsw fa0, 92(sp)
+    lw a0, 264(sp)
+    lw a1, 260(sp)
+    lw a2, 256(sp)
+    lw a3, 252(sp)
+    lw a4, 248(sp)
+    lw a5, 244(sp)
+    lw a6, 240(sp)
+    lw a7, 236(sp)
+    flw ft11, 232(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 228(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 224(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 216(sp)
+    flw fa1, 212(sp)
+    flw fa2, 208(sp)
+    call quadratic
+    fsw fa0, 88(sp)
+    li t0, 3
+    sw t0, 84(sp)
+    lw t0, 260(sp)
+    lw t1, 84(sp)
+    xor t2, t0, t1
+    sw t2, 80(sp)
+    lw t0, 80(sp)
+    seqz t0, t0
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    beqz t0, .8921_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 72(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 68(sp)
+    flw ft0, 88(sp)
+    flw ft1, 68(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    j .8922_Lendif_J
+.8921_Lelse_J:
+    flw ft11, 88(sp)
+    fsw ft11, 64(sp)
+.8922_Lendif_J:
+    flw ft0, 92(sp)
+    flw ft1, 92(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    flw ft0, 156(sp)
+    flw ft1, 64(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    flw ft0, 60(sp)
+    flw ft1, 56(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    sw zero, 48(sp)
+    flw ft0, 48(sp)
+    flw ft1, 52(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    beqz t0, .8923_Lelse_J
+    flw ft0, 52(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 40(sp)
+    lw t0, 240(sp)
+    beqz t0, .8925_Lelse_J
+    flw ft11, 40(sp)
+    fsw ft11, 36(sp)
+    j .8926_Lendif_J
+.8925_Lelse_J:
+    flw ft0, 40(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 36(sp)
+.8926_Lendif_J:
+    li t0, 0
+    sw t0, 32(sp)
+    flw ft0, 36(sp)
+    flw ft1, 92(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    flw ft0, 28(sp)
+    flw ft1, 156(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 144(sp)
+    j .8924_Lendif_J
+.8923_Lelse_J:
+    li t0, 0
+    sw t0, 144(sp)
+.8924_Lendif_J:
+.8920_Lendif_J:
+    lw a0, 144(sp)
+    lw ra, 268(sp)
+    addi sp, sp, 288
+    ret
+
+.section .text
+.type solver, @function
+.globl solver
+solver:
+    addi sp, sp, -208
+    sw ra, 204(sp) 	# solver
+    sw a0, 200(sp)
+    sw a1, 196(sp)
+    sw a2, 192(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 188(sp)
+    lw t0, 200(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 184(sp)
+    lw t0, 188(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    lw t6, 180(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 172(sp)
+    lw t6, 180(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 168(sp)
+    lw t6, 180(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 164(sp)
+    lw t6, 180(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 160(sp)
+    lw t6, 180(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 156(sp)
+    lw t6, 180(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 152(sp)
+    lw t6, 180(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 148(sp)
+    lw t6, 180(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 144(sp)
+    lw t6, 180(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 140(sp)
+    lw t6, 180(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 136(sp)
+    li t0, 0
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 192(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    li t0, 0
+    sw t0, 116(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 156(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 120(sp)
+    flw ft1, 104(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    li t0, 1
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 192(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    li t0, 1
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 156(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 84(sp)
+    flw ft1, 68(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    li t0, 2
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 192(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 2
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 156(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    flw ft0, 48(sp)
+    flw ft1, 32(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 172(sp)
+    lw t1, 24(sp)
+    xor t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .8927_Lelse_J
+    lw a0, 176(sp)
+    lw a1, 172(sp)
+    lw a2, 168(sp)
+    lw a3, 164(sp)
+    lw a4, 160(sp)
+    lw a5, 156(sp)
+    lw a6, 152(sp)
+    lw a7, 148(sp)
+    flw ft11, 144(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 140(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 136(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 196(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 100(sp)
+    flw fa1, 64(sp)
+    flw fa2, 28(sp)
+    call solver_rect
+    sw a0, 0(sp)
+    j .8928_Lendif_J
+.8927_Lelse_J:
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 172(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .8929_Lelse_J
+    lw a0, 176(sp)
+    lw a1, 172(sp)
+    lw a2, 168(sp)
+    lw a3, 164(sp)
+    lw a4, 160(sp)
+    lw a5, 156(sp)
+    lw a6, 152(sp)
+    lw a7, 148(sp)
+    flw ft11, 144(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 140(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 136(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 196(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 100(sp)
+    flw fa1, 64(sp)
+    flw fa2, 28(sp)
+    call solver_surface
+    sw a0, 0(sp)
+    j .8930_Lendif_J
+.8929_Lelse_J:
+    lw a0, 176(sp)
+    lw a1, 172(sp)
+    lw a2, 168(sp)
+    lw a3, 164(sp)
+    lw a4, 160(sp)
+    lw a5, 156(sp)
+    lw a6, 152(sp)
+    lw a7, 148(sp)
+    flw ft11, 144(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 140(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 136(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 196(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 100(sp)
+    flw fa1, 64(sp)
+    flw fa2, 28(sp)
+    call solver_second
+    sw a0, 0(sp)
+.8930_Lendif_J:
+.8928_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 204(sp)
+    addi sp, sp, 208
+    ret
+
+.section .text
+.type solver_rect_fast, @function
+.globl solver_rect_fast
+solver_rect_fast:
+    addi sp, sp, -640
+    sw ra, 616(sp) 	# solver_rect_fast
+    sw a0, 612(sp)
+    sw a1, 608(sp)
+    sw a2, 604(sp)
+    sw a3, 600(sp)
+    sw a4, 596(sp)
+    sw a5, 592(sp)
+    sw a6, 588(sp)
+    sw a7, 584(sp)
+    flw ft11, 620(sp)
+    fsw ft11, 580(sp)
+    flw ft11, 624(sp)
+    fsw ft11, 576(sp)
+    flw ft11, 628(sp)
+    fsw ft11, 572(sp)
+    flw ft11, 632(sp)
+    fsw ft11, 568(sp)
+    flw ft11, 636(sp)
+    fsw ft11, 564(sp)
+    fsw fa0, 560(sp)
+    fsw fa1, 556(sp)
+    fsw fa2, 552(sp)
+    li t0, 0
+    sw t0, 548(sp)
+    lw t0, 548(sp)
+    slli t0, t0, 2
+    sw t0, 544(sp)
+    lw t0, 564(sp)
+    lw t1, 544(sp)
+    add t2, t0, t1
+    sw t2, 540(sp)
+    lw t6, 540(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 536(sp)
+    flw ft0, 536(sp)
+    flw ft1, 560(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 532(sp)
+    li t0, 1
+    sw t0, 528(sp)
+    lw t0, 528(sp)
+    slli t0, t0, 2
+    sw t0, 524(sp)
+    lw t0, 564(sp)
+    lw t1, 524(sp)
+    add t2, t0, t1
+    sw t2, 520(sp)
+    lw t6, 520(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 516(sp)
+    flw ft0, 532(sp)
+    flw ft1, 516(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 512(sp)
+    li t0, 1
+    sw t0, 508(sp)
+    lw t0, 508(sp)
+    slli t0, t0, 2
+    sw t0, 504(sp)
+    lw t0, 568(sp)
+    lw t1, 504(sp)
+    add t2, t0, t1
+    sw t2, 500(sp)
+    lw t6, 500(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 496(sp)
+    flw ft0, 512(sp)
+    flw ft1, 496(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 492(sp)
+    flw ft0, 492(sp)
+    flw ft1, 556(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 488(sp)
+    flw ft0, 488(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 484(sp)
+    li t0, 1
+    sw t0, 480(sp)
+    lw t0, 480(sp)
+    slli t0, t0, 2
+    sw t0, 476(sp)
+    lw t0, 596(sp)
+    lw t1, 476(sp)
+    add t2, t0, t1
+    sw t2, 472(sp)
+    lw t6, 472(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 468(sp)
+    flw ft0, 484(sp)
+    flw ft1, 468(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 464(sp)
+    lw t0, 464(sp)
+    beqz t0, .8931_Lelse_J
+    li t0, 2
+    sw t0, 460(sp)
+    lw t0, 460(sp)
+    slli t0, t0, 2
+    sw t0, 456(sp)
+    lw t0, 568(sp)
+    lw t1, 456(sp)
+    add t2, t0, t1
+    sw t2, 452(sp)
+    lw t6, 452(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 448(sp)
+    flw ft0, 512(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 444(sp)
+    flw ft0, 444(sp)
+    flw ft1, 552(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 440(sp)
+    flw ft0, 440(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 436(sp)
+    li t0, 2
+    sw t0, 432(sp)
+    lw t0, 432(sp)
+    slli t0, t0, 2
+    sw t0, 428(sp)
+    lw t0, 596(sp)
+    lw t1, 428(sp)
+    add t2, t0, t1
+    sw t2, 424(sp)
+    lw t6, 424(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 420(sp)
+    flw ft0, 436(sp)
+    flw ft1, 420(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 416(sp)
+    lw t0, 416(sp)
+    beqz t0, .8933_Lelse_J
+    li t0, 1
+    sw t0, 412(sp)
+    lw t0, 412(sp)
+    slli t0, t0, 2
+    sw t0, 408(sp)
+    lw t0, 564(sp)
+    lw t1, 408(sp)
+    add t2, t0, t1
+    sw t2, 404(sp)
+    lw t6, 404(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 400(sp)
+    sw zero, 396(sp)
+    flw ft0, 400(sp)
+    flw ft1, 396(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 392(sp)
+    lw t0, 392(sp)
+    seqz t0, t0
+    sw t0, 388(sp)
+    j .8934_Lendif_J
+.8933_Lelse_J:
+    li t0, 0
+    sw t0, 388(sp)
+.8934_Lendif_J:
+    j .8932_Lendif_J
+.8931_Lelse_J:
+    li t0, 0
+    sw t0, 388(sp)
+.8932_Lendif_J:
+    lw t0, 388(sp)
+    beqz t0, .8935_Lelse_J
+    li t0, 0
+    sw t0, 384(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 380(sp)
+    lw t0, 384(sp)
+    slli t0, t0, 2
+    sw t0, 376(sp)
+    lw t0, 380(sp)
+    lw t1, 376(sp)
+    add t2, t0, t1
+    sw t2, 372(sp)
+    lw t6, 372(sp)
+    flw ft11, 512(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 368(sp)
+    j .8936_Lendif_J
+.8935_Lelse_J:
+    li t0, 2
+    sw t0, 364(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 360(sp)
+    lw t0, 564(sp)
+    lw t1, 360(sp)
+    add t2, t0, t1
+    sw t2, 356(sp)
+    lw t6, 356(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 352(sp)
+    flw ft0, 352(sp)
+    flw ft1, 556(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 348(sp)
+    li t0, 3
+    sw t0, 344(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 564(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 332(sp)
+    flw ft0, 348(sp)
+    flw ft1, 332(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 328(sp)
+    li t0, 0
+    sw t0, 324(sp)
+    lw t0, 324(sp)
+    slli t0, t0, 2
+    sw t0, 320(sp)
+    lw t0, 568(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t6, 316(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 312(sp)
+    flw ft0, 328(sp)
+    flw ft1, 312(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 308(sp)
+    flw ft0, 308(sp)
+    flw ft1, 560(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 304(sp)
+    flw ft0, 304(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 300(sp)
+    li t0, 0
+    sw t0, 296(sp)
+    lw t0, 296(sp)
+    slli t0, t0, 2
+    sw t0, 292(sp)
+    lw t0, 596(sp)
+    lw t1, 292(sp)
+    add t2, t0, t1
+    sw t2, 288(sp)
+    lw t6, 288(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 284(sp)
+    flw ft0, 300(sp)
+    flw ft1, 284(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 280(sp)
+    lw t0, 280(sp)
+    beqz t0, .8937_Lelse_J
+    li t0, 2
+    sw t0, 276(sp)
+    lw t0, 276(sp)
+    slli t0, t0, 2
+    sw t0, 272(sp)
+    lw t0, 568(sp)
+    lw t1, 272(sp)
+    add t2, t0, t1
+    sw t2, 268(sp)
+    lw t6, 268(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 264(sp)
+    flw ft0, 328(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 260(sp)
+    flw ft0, 260(sp)
+    flw ft1, 552(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 256(sp)
+    flw ft0, 256(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 252(sp)
+    li t0, 2
+    sw t0, 248(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 244(sp)
+    lw t0, 596(sp)
+    lw t1, 244(sp)
+    add t2, t0, t1
+    sw t2, 240(sp)
+    lw t6, 240(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 236(sp)
+    flw ft0, 252(sp)
+    flw ft1, 236(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 232(sp)
+    lw t0, 232(sp)
+    beqz t0, .8939_Lelse_J
+    li t0, 3
+    sw t0, 228(sp)
+    lw t0, 228(sp)
+    slli t0, t0, 2
+    sw t0, 224(sp)
+    lw t0, 564(sp)
+    lw t1, 224(sp)
+    add t2, t0, t1
+    sw t2, 220(sp)
+    lw t6, 220(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 216(sp)
+    sw zero, 212(sp)
+    flw ft0, 216(sp)
+    flw ft1, 212(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 208(sp)
+    lw t0, 208(sp)
+    seqz t0, t0
+    sw t0, 204(sp)
+    j .8940_Lendif_J
+.8939_Lelse_J:
+    li t0, 0
+    sw t0, 204(sp)
+.8940_Lendif_J:
+    j .8938_Lendif_J
+.8937_Lelse_J:
+    li t0, 0
+    sw t0, 204(sp)
+.8938_Lendif_J:
+    lw t0, 204(sp)
+    beqz t0, .8941_Lelse_J
+    li t0, 0
+    sw t0, 200(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 328(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 368(sp)
+    j .8942_Lendif_J
+.8941_Lelse_J:
+    li t0, 4
+    sw t0, 184(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 564(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    flw ft0, 172(sp)
+    flw ft1, 552(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    li t0, 5
+    sw t0, 164(sp)
+    lw t0, 164(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 564(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 168(sp)
+    flw ft1, 152(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 0
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 568(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    flw ft0, 148(sp)
+    flw ft1, 132(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    flw ft0, 128(sp)
+    flw ft1, 560(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    flw ft0, 124(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 120(sp)
+    li t0, 0
+    sw t0, 116(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 596(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 120(sp)
+    flw ft1, 104(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    beqz t0, .8943_Lelse_J
+    li t0, 1
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 568(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    flw ft0, 148(sp)
+    flw ft1, 84(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 556(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    flw ft0, 76(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 72(sp)
+    li t0, 1
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 596(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    flw ft0, 72(sp)
+    flw ft1, 56(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .8945_Lelse_J
+    li t0, 5
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 564(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    sw zero, 32(sp)
+    flw ft0, 36(sp)
+    flw ft1, 32(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 28(sp)
+    lw t0, 28(sp)
+    seqz t0, t0
+    sw t0, 24(sp)
+    j .8946_Lendif_J
+.8945_Lelse_J:
+    li t0, 0
+    sw t0, 24(sp)
+.8946_Lendif_J:
+    j .8944_Lendif_J
+.8943_Lelse_J:
+    li t0, 0
+    sw t0, 24(sp)
+.8944_Lendif_J:
+    lw t0, 24(sp)
+    beqz t0, .8947_Lelse_J
+    li t0, 0
+    sw t0, 20(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 148(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 368(sp)
+    j .8948_Lendif_J
+.8947_Lelse_J:
+    li t0, 0
+    sw t0, 368(sp)
+.8948_Lendif_J:
+.8942_Lendif_J:
+.8936_Lendif_J:
+    lw a0, 368(sp)
+    lw ra, 616(sp)
+    addi sp, sp, 640
+    ret
+
+.section .text
+.type solver_surface_fast, @function
+.globl solver_surface_fast
+solver_surface_fast:
+    addi sp, sp, -192
+    sw ra, 172(sp) 	# solver_surface_fast
+    sw a0, 168(sp)
+    sw a1, 164(sp)
+    sw a2, 160(sp)
+    sw a3, 156(sp)
+    sw a4, 152(sp)
+    sw a5, 148(sp)
+    sw a6, 144(sp)
+    sw a7, 140(sp)
+    flw ft11, 176(sp)
+    fsw ft11, 136(sp)
+    flw ft11, 180(sp)
+    fsw ft11, 132(sp)
+    flw ft11, 184(sp)
+    fsw ft11, 128(sp)
+    flw ft11, 188(sp)
+    fsw ft11, 124(sp)
+    fsw fa0, 120(sp)
+    fsw fa1, 116(sp)
+    fsw fa2, 112(sp)
+    li t0, 0
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 124(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    sw zero, 92(sp)
+    flw ft0, 96(sp)
+    flw ft1, 92(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 88(sp)
+    lw t0, 88(sp)
+    beqz t0, .8949_Lelse_J
+    li t0, 0
+    sw t0, 84(sp)
+    li t0, 1
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 124(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 68(sp)
+    flw ft1, 120(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    li t0, 2
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 124(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 48(sp)
+    flw ft1, 116(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    flw ft0, 64(sp)
+    flw ft1, 44(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    li t0, 3
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 124(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 24(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    flw ft0, 40(sp)
+    flw ft1, 20(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 12(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 0(sp)
+    j .8950_Lendif_J
+.8949_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.8950_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 172(sp)
+    addi sp, sp, 192
+    ret
+
+.section .text
+.type solver_second_fast, @function
+.globl solver_second_fast
+solver_second_fast:
+    addi sp, sp, -320
+    sw ra, 300(sp) 	# solver_second_fast
+    sw a0, 296(sp)
+    sw a1, 292(sp)
+    sw a2, 288(sp)
+    sw a3, 284(sp)
+    sw a4, 280(sp)
+    sw a5, 276(sp)
+    sw a6, 272(sp)
+    sw a7, 268(sp)
+    flw ft11, 304(sp)
+    fsw ft11, 264(sp)
+    flw ft11, 308(sp)
+    fsw ft11, 260(sp)
+    flw ft11, 312(sp)
+    fsw ft11, 256(sp)
+    flw ft11, 316(sp)
+    fsw ft11, 252(sp)
+    fsw fa0, 248(sp)
+    fsw fa1, 244(sp)
+    fsw fa2, 240(sp)
+    li t0, 0
+    sw t0, 236(sp)
+    lw t0, 236(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 252(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 224(sp)
+    sw zero, 220(sp)
+    flw ft0, 224(sp)
+    flw ft1, 220(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 216(sp)
+    lw t0, 216(sp)
+    beqz t0, .8951_Lelse_J
+    li t0, 0
+    sw t0, 212(sp)
+    j .8952_Lendif_J
+.8951_Lelse_J:
+    li t0, 1
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 252(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    flw ft0, 196(sp)
+    flw ft1, 248(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    li t0, 2
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 252(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 176(sp)
+    flw ft1, 244(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    flw ft0, 192(sp)
+    flw ft1, 172(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    li t0, 3
+    sw t0, 164(sp)
+    lw t0, 164(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 252(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 152(sp)
+    flw ft1, 240(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    flw ft0, 168(sp)
+    flw ft1, 148(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    lw a0, 296(sp)
+    lw a1, 292(sp)
+    lw a2, 288(sp)
+    lw a3, 284(sp)
+    lw a4, 280(sp)
+    lw a5, 276(sp)
+    lw a6, 272(sp)
+    lw a7, 268(sp)
+    flw ft11, 264(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 260(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 256(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 248(sp)
+    flw fa1, 244(sp)
+    flw fa2, 240(sp)
+    call quadratic
+    fsw fa0, 140(sp)
+    li t0, 3
+    sw t0, 136(sp)
+    lw t0, 292(sp)
+    lw t1, 136(sp)
+    xor t2, t0, t1
+    sw t2, 132(sp)
+    lw t0, 132(sp)
+    seqz t0, t0
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    beqz t0, .8953_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 124(sp)
+    flw ft11, 124(sp)
+    fsw ft11, 120(sp)
+    flw ft0, 140(sp)
+    flw ft1, 120(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    j .8954_Lendif_J
+.8953_Lelse_J:
+    flw ft11, 140(sp)
+    fsw ft11, 116(sp)
+.8954_Lendif_J:
+    flw ft0, 144(sp)
+    flw ft1, 144(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    flw ft0, 224(sp)
+    flw ft1, 116(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    flw ft0, 112(sp)
+    flw ft1, 108(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    sw zero, 100(sp)
+    flw ft0, 100(sp)
+    flw ft1, 104(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .8955_Lelse_J
+    lw t0, 272(sp)
+    beqz t0, .8957_Lelse_J
+    li t0, 0
+    sw t0, 92(sp)
+    flw ft0, 104(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 88(sp)
+    flw ft0, 144(sp)
+    flw ft1, 88(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    li t0, 4
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 252(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 84(sp)
+    flw ft1, 68(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 60(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 60(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    j .8958_Lendif_J
+.8957_Lelse_J:
+    li t0, 0
+    sw t0, 48(sp)
+    flw ft0, 104(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 44(sp)
+    flw ft0, 144(sp)
+    flw ft1, 44(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    li t0, 4
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 252(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 40(sp)
+    flw ft1, 24(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+.8958_Lendif_J:
+    li t0, 1
+    sw t0, 212(sp)
+    j .8956_Lendif_J
+.8955_Lelse_J:
+    li t0, 0
+    sw t0, 212(sp)
+.8956_Lendif_J:
+.8952_Lendif_J:
+    lw a0, 212(sp)
+    lw ra, 300(sp)
+    addi sp, sp, 320
+    ret
+
+.section .text
+.type solver_fast, @function
+.globl solver_fast
+solver_fast:
+    addi sp, sp, -224
+    sw ra, 220(sp) 	# solver_fast
+    sw a0, 216(sp)
+    sw a1, 212(sp)
+    sw a2, 208(sp)
+    sw a3, 204(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 200(sp)
+    lw t0, 216(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 196(sp)
+    lw t0, 200(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    lw t6, 192(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 184(sp)
+    lw t6, 192(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 180(sp)
+    lw t6, 192(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 176(sp)
+    lw t6, 192(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 172(sp)
+    lw t6, 192(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 168(sp)
+    lw t6, 192(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 164(sp)
+    lw t6, 192(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 160(sp)
+    lw t6, 192(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 156(sp)
+    lw t6, 192(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 152(sp)
+    lw t6, 192(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 148(sp)
+    li t0, 0
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 204(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    li t0, 0
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 168(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    flw ft0, 132(sp)
+    flw ft1, 116(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    li t0, 1
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 204(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    li t0, 1
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 168(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 96(sp)
+    flw ft1, 80(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    li t0, 2
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 204(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    li t0, 2
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 168(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    flw ft0, 60(sp)
+    flw ft1, 44(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    lw t0, 216(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 208(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 184(sp)
+    lw t1, 24(sp)
+    xor t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .8959_Lelse_J
+    lw a0, 188(sp)
+    lw a1, 184(sp)
+    lw a2, 180(sp)
+    lw a3, 176(sp)
+    lw a4, 172(sp)
+    lw a5, 168(sp)
+    lw a6, 164(sp)
+    lw a7, 160(sp)
+    flw ft11, 156(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 152(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 148(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 212(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 112(sp)
+    flw fa1, 76(sp)
+    flw fa2, 40(sp)
+    call solver_rect_fast
+    sw a0, 0(sp)
+    j .8960_Lendif_J
+.8959_Lelse_J:
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 184(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .8961_Lelse_J
+    lw a0, 188(sp)
+    lw a1, 184(sp)
+    lw a2, 180(sp)
+    lw a3, 176(sp)
+    lw a4, 172(sp)
+    lw a5, 168(sp)
+    lw a6, 164(sp)
+    lw a7, 160(sp)
+    flw ft11, 156(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 152(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 148(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 112(sp)
+    flw fa1, 76(sp)
+    flw fa2, 40(sp)
+    call solver_surface_fast
+    sw a0, 0(sp)
+    j .8962_Lendif_J
+.8961_Lelse_J:
+    lw a0, 188(sp)
+    lw a1, 184(sp)
+    lw a2, 180(sp)
+    lw a3, 176(sp)
+    lw a4, 172(sp)
+    lw a5, 168(sp)
+    lw a6, 164(sp)
+    lw a7, 160(sp)
+    flw ft11, 156(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 152(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 148(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 112(sp)
+    flw fa1, 76(sp)
+    flw fa2, 40(sp)
+    call solver_second_fast
+    sw a0, 0(sp)
+.8962_Lendif_J:
+.8960_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 220(sp)
+    addi sp, sp, 224
+    ret
+
+.section .text
+.type solver_surface_fast2, @function
+.globl solver_surface_fast2
+solver_surface_fast2:
+    addi sp, sp, -176
+    sw ra, 152(sp) 	# solver_surface_fast2
+    sw a0, 148(sp)
+    sw a1, 144(sp)
+    sw a2, 140(sp)
+    sw a3, 136(sp)
+    sw a4, 132(sp)
+    sw a5, 128(sp)
+    sw a6, 124(sp)
+    sw a7, 120(sp)
+    flw ft11, 156(sp)
+    fsw ft11, 116(sp)
+    flw ft11, 160(sp)
+    fsw ft11, 112(sp)
+    flw ft11, 164(sp)
+    fsw ft11, 108(sp)
+    flw ft11, 168(sp)
+    fsw ft11, 104(sp)
+    flw ft11, 172(sp)
+    fsw ft11, 100(sp)
+    fsw fa0, 96(sp)
+    fsw fa1, 92(sp)
+    fsw fa2, 88(sp)
+    li t0, 0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 104(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    sw zero, 68(sp)
+    flw ft0, 72(sp)
+    flw ft1, 68(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .8963_Lelse_J
+    li t0, 0
+    sw t0, 60(sp)
+    li t0, 0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 104(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    li t0, 3
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 100(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 44(sp)
+    flw ft1, 28(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 8(sp)
+    j .8964_Lendif_J
+.8963_Lelse_J:
+    li t0, 0
+    sw t0, 8(sp)
+.8964_Lendif_J:
+    lw a0, 8(sp)
+    lw ra, 152(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type solver_second_fast2, @function
+.globl solver_second_fast2
+solver_second_fast2:
+    addi sp, sp, -320
+    sw ra, 296(sp) 	# solver_second_fast2
+    sw a0, 292(sp)
+    sw a1, 288(sp)
+    sw a2, 284(sp)
+    sw a3, 280(sp)
+    sw a4, 276(sp)
+    sw a5, 272(sp)
+    sw a6, 268(sp)
+    sw a7, 264(sp)
+    flw ft11, 300(sp)
+    fsw ft11, 260(sp)
+    flw ft11, 304(sp)
+    fsw ft11, 256(sp)
+    flw ft11, 308(sp)
+    fsw ft11, 252(sp)
+    flw ft11, 312(sp)
+    fsw ft11, 248(sp)
+    flw ft11, 316(sp)
+    fsw ft11, 244(sp)
+    fsw fa0, 240(sp)
+    fsw fa1, 236(sp)
+    fsw fa2, 232(sp)
+    li t0, 0
+    sw t0, 228(sp)
+    lw t0, 228(sp)
+    slli t0, t0, 2
+    sw t0, 224(sp)
+    lw t0, 248(sp)
+    lw t1, 224(sp)
+    add t2, t0, t1
+    sw t2, 220(sp)
+    lw t6, 220(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 216(sp)
+    sw zero, 212(sp)
+    flw ft0, 216(sp)
+    flw ft1, 212(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 208(sp)
+    lw t0, 208(sp)
+    beqz t0, .8965_Lelse_J
+    li t0, 0
+    sw t0, 204(sp)
+    j .8966_Lendif_J
+.8965_Lelse_J:
+    li t0, 1
+    sw t0, 200(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 196(sp)
+    lw t0, 248(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    flw ft0, 188(sp)
+    flw ft1, 240(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 184(sp)
+    li t0, 2
+    sw t0, 180(sp)
+    lw t0, 180(sp)
+    slli t0, t0, 2
+    sw t0, 176(sp)
+    lw t0, 248(sp)
+    lw t1, 176(sp)
+    add t2, t0, t1
+    sw t2, 172(sp)
+    lw t6, 172(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 168(sp)
+    flw ft0, 168(sp)
+    flw ft1, 236(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 164(sp)
+    flw ft0, 184(sp)
+    flw ft1, 164(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 160(sp)
+    li t0, 3
+    sw t0, 156(sp)
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 152(sp)
+    lw t0, 248(sp)
+    lw t1, 152(sp)
+    add t2, t0, t1
+    sw t2, 148(sp)
+    lw t6, 148(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 144(sp)
+    flw ft0, 144(sp)
+    flw ft1, 232(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 140(sp)
+    flw ft0, 160(sp)
+    flw ft1, 140(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    li t0, 3
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 244(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    flw ft0, 136(sp)
+    flw ft1, 136(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    flw ft0, 216(sp)
+    flw ft1, 120(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    flw ft0, 116(sp)
+    flw ft1, 112(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    sw zero, 104(sp)
+    flw ft0, 104(sp)
+    flw ft1, 108(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    beqz t0, .8967_Lelse_J
+    lw t0, 268(sp)
+    beqz t0, .8969_Lelse_J
+    li t0, 0
+    sw t0, 96(sp)
+    flw ft0, 108(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 92(sp)
+    flw ft0, 136(sp)
+    flw ft1, 92(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    li t0, 4
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 248(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    flw ft0, 88(sp)
+    flw ft1, 72(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 68(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 0(t6)
+    j .8970_Lendif_J
+.8969_Lelse_J:
+    li t0, 0
+    sw t0, 52(sp)
+    flw ft0, 108(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 48(sp)
+    flw ft0, 136(sp)
+    flw ft1, 48(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    li t0, 4
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 248(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 44(sp)
+    flw ft1, 28(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+.8970_Lendif_J:
+    li t0, 1
+    sw t0, 204(sp)
+    j .8968_Lendif_J
+.8967_Lelse_J:
+    li t0, 0
+    sw t0, 204(sp)
+.8968_Lendif_J:
+.8966_Lendif_J:
+    lw a0, 204(sp)
+    lw ra, 296(sp)
+    addi sp, sp, 320
+    ret
+
+.section .text
+.type solver_fast2, @function
+.globl solver_fast2
+solver_fast2:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# solver_fast2
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    sw a2, 144(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 140(sp)
+    lw t0, 152(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 136(sp)
+    lw t0, 140(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    lw t6, 132(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 124(sp)
+    lw t6, 132(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 120(sp)
+    lw t6, 132(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 116(sp)
+    lw t6, 132(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 112(sp)
+    lw t6, 132(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 108(sp)
+    lw t6, 132(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 104(sp)
+    lw t6, 132(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 100(sp)
+    lw t6, 132(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 96(sp)
+    lw t6, 132(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 92(sp)
+    lw t6, 132(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 88(sp)
+    li t0, 0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 88(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    li t0, 1
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 88(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    li t0, 2
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 88(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 144(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 124(sp)
+    lw t1, 24(sp)
+    xor t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .8971_Lelse_J
+    lw a0, 128(sp)
+    lw a1, 124(sp)
+    lw a2, 120(sp)
+    lw a3, 116(sp)
+    lw a4, 112(sp)
+    lw a5, 108(sp)
+    lw a6, 104(sp)
+    lw a7, 100(sp)
+    flw ft11, 96(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 92(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 148(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 72(sp)
+    flw fa1, 56(sp)
+    flw fa2, 40(sp)
+    call solver_rect_fast
+    sw a0, 0(sp)
+    j .8972_Lendif_J
+.8971_Lelse_J:
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 124(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .8973_Lelse_J
+    lw a0, 128(sp)
+    lw a1, 124(sp)
+    lw a2, 120(sp)
+    lw a3, 116(sp)
+    lw a4, 112(sp)
+    lw a5, 108(sp)
+    lw a6, 104(sp)
+    lw a7, 100(sp)
+    flw ft11, 96(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 92(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 72(sp)
+    flw fa1, 56(sp)
+    flw fa2, 40(sp)
+    call solver_surface_fast2
+    sw a0, 0(sp)
+    j .8974_Lendif_J
+.8973_Lelse_J:
+    lw a0, 128(sp)
+    lw a1, 124(sp)
+    lw a2, 120(sp)
+    lw a3, 116(sp)
+    lw a4, 112(sp)
+    lw a5, 108(sp)
+    lw a6, 104(sp)
+    lw a7, 100(sp)
+    flw ft11, 96(sp)
+    fsw ft11, -20(sp)
+    flw ft11, 92(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 28(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 72(sp)
+    flw fa1, 56(sp)
+    flw fa2, 40(sp)
+    call solver_second_fast2
+    sw a0, 0(sp)
+.8974_Lendif_J:
+.8972_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type setup_rect_table, @function
+.globl setup_rect_table
+setup_rect_table:
+    addi sp, sp, -512
+    sw ra, 492(sp) 	# setup_rect_table
+    sw a0, 488(sp)
+    sw a1, 484(sp)
+    sw a2, 480(sp)
+    sw a3, 476(sp)
+    sw a4, 472(sp)
+    sw a5, 468(sp)
+    sw a6, 464(sp)
+    sw a7, 460(sp)
+    flw ft11, 496(sp)
+    fsw ft11, 456(sp)
+    flw ft11, 500(sp)
+    fsw ft11, 452(sp)
+    flw ft11, 504(sp)
+    fsw ft11, 448(sp)
+    flw ft11, 508(sp)
+    fsw ft11, 444(sp)
+    li t0, 6
+    sw t0, 440(sp)
+    sw zero, 436(sp)
+    lw a0, 440(sp)
+    flw fa0, 436(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 432(sp)
+    li t0, 0
+    sw t0, 428(sp)
+    lw t0, 428(sp)
+    slli t0, t0, 2
+    sw t0, 424(sp)
+    lw t0, 488(sp)
+    lw t1, 424(sp)
+    add t2, t0, t1
+    sw t2, 420(sp)
+    lw t6, 420(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 416(sp)
+    sw zero, 412(sp)
+    flw ft0, 416(sp)
+    flw ft1, 412(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 408(sp)
+    lw t0, 408(sp)
+    beqz t0, .8975_Lelse_J
+    li t0, 1
+    sw t0, 404(sp)
+    sw zero, 400(sp)
+    lw t0, 404(sp)
+    slli t0, t0, 2
+    sw t0, 396(sp)
+    lw t0, 432(sp)
+    lw t1, 396(sp)
+    add t2, t0, t1
+    sw t2, 392(sp)
+    lw t6, 392(sp)
+    flw ft11, 400(sp)
+    fsw ft11, 0(t6)
+    j .8976_Lendif_J
+.8975_Lelse_J:
+    li t0, 0
+    sw t0, 388(sp)
+    li t0, 0
+    sw t0, 384(sp)
+    lw t0, 384(sp)
+    slli t0, t0, 2
+    sw t0, 380(sp)
+    lw t0, 488(sp)
+    lw t1, 380(sp)
+    add t2, t0, t1
+    sw t2, 376(sp)
+    lw t6, 376(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 372(sp)
+    sw zero, 368(sp)
+    flw ft0, 372(sp)
+    flw ft1, 368(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 364(sp)
+    lw t0, 460(sp)
+    lw t1, 364(sp)
+    xor t2, t0, t1
+    sw t2, 360(sp)
+    li t0, 0
+    sw t0, 356(sp)
+    lw t0, 356(sp)
+    slli t0, t0, 2
+    sw t0, 352(sp)
+    lw t0, 468(sp)
+    lw t1, 352(sp)
+    add t2, t0, t1
+    sw t2, 348(sp)
+    lw t6, 348(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 344(sp)
+    lw t0, 360(sp)
+    beqz t0, .8977_Lelse_J
+    flw ft11, 344(sp)
+    fsw ft11, 340(sp)
+    j .8978_Lendif_J
+.8977_Lelse_J:
+    flw ft0, 344(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 340(sp)
+.8978_Lendif_J:
+    lw t0, 388(sp)
+    slli t0, t0, 2
+    sw t0, 336(sp)
+    lw t0, 432(sp)
+    lw t1, 336(sp)
+    add t2, t0, t1
+    sw t2, 332(sp)
+    lw t6, 332(sp)
+    flw ft11, 340(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 328(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 324(sp)
+    flw ft11, 324(sp)
+    fsw ft11, 320(sp)
+    li t0, 0
+    sw t0, 316(sp)
+    lw t0, 316(sp)
+    slli t0, t0, 2
+    sw t0, 312(sp)
+    lw t0, 488(sp)
+    lw t1, 312(sp)
+    add t2, t0, t1
+    sw t2, 308(sp)
+    lw t6, 308(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 304(sp)
+    flw ft0, 320(sp)
+    flw ft1, 304(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 300(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 296(sp)
+    lw t0, 432(sp)
+    lw t1, 296(sp)
+    add t2, t0, t1
+    sw t2, 292(sp)
+    lw t6, 292(sp)
+    flw ft11, 300(sp)
+    fsw ft11, 0(t6)
+.8976_Lendif_J:
+    li t0, 1
+    sw t0, 288(sp)
+    lw t0, 288(sp)
+    slli t0, t0, 2
+    sw t0, 284(sp)
+    lw t0, 488(sp)
+    lw t1, 284(sp)
+    add t2, t0, t1
+    sw t2, 280(sp)
+    lw t6, 280(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 276(sp)
+    sw zero, 272(sp)
+    flw ft0, 276(sp)
+    flw ft1, 272(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 268(sp)
+    lw t0, 268(sp)
+    beqz t0, .8979_Lelse_J
+    li t0, 3
+    sw t0, 264(sp)
+    sw zero, 260(sp)
+    lw t0, 264(sp)
+    slli t0, t0, 2
+    sw t0, 256(sp)
+    lw t0, 432(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 260(sp)
+    fsw ft11, 0(t6)
+    j .8980_Lendif_J
+.8979_Lelse_J:
+    li t0, 2
+    sw t0, 248(sp)
+    li t0, 1
+    sw t0, 244(sp)
+    lw t0, 244(sp)
+    slli t0, t0, 2
+    sw t0, 240(sp)
+    lw t0, 488(sp)
+    lw t1, 240(sp)
+    add t2, t0, t1
+    sw t2, 236(sp)
+    lw t6, 236(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 232(sp)
+    sw zero, 228(sp)
+    flw ft0, 232(sp)
+    flw ft1, 228(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 224(sp)
+    lw t0, 460(sp)
+    lw t1, 224(sp)
+    xor t2, t0, t1
+    sw t2, 220(sp)
+    li t0, 1
+    sw t0, 216(sp)
+    lw t0, 216(sp)
+    slli t0, t0, 2
+    sw t0, 212(sp)
+    lw t0, 468(sp)
+    lw t1, 212(sp)
+    add t2, t0, t1
+    sw t2, 208(sp)
+    lw t6, 208(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 204(sp)
+    lw t0, 220(sp)
+    beqz t0, .8981_Lelse_J
+    flw ft11, 204(sp)
+    fsw ft11, 200(sp)
+    j .8982_Lendif_J
+.8981_Lelse_J:
+    flw ft0, 204(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 200(sp)
+.8982_Lendif_J:
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 196(sp)
+    lw t0, 432(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 200(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 188(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 184(sp)
+    flw ft11, 184(sp)
+    fsw ft11, 180(sp)
+    li t0, 1
+    sw t0, 176(sp)
+    lw t0, 176(sp)
+    slli t0, t0, 2
+    sw t0, 172(sp)
+    lw t0, 488(sp)
+    lw t1, 172(sp)
+    add t2, t0, t1
+    sw t2, 168(sp)
+    lw t6, 168(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 164(sp)
+    flw ft0, 180(sp)
+    flw ft1, 164(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 160(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 156(sp)
+    lw t0, 432(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 160(sp)
+    fsw ft11, 0(t6)
+.8980_Lendif_J:
+    li t0, 2
+    sw t0, 148(sp)
+    lw t0, 148(sp)
+    slli t0, t0, 2
+    sw t0, 144(sp)
+    lw t0, 488(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 136(sp)
+    sw zero, 132(sp)
+    flw ft0, 136(sp)
+    flw ft1, 132(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 128(sp)
+    lw t0, 128(sp)
+    beqz t0, .8983_Lelse_J
+    li t0, 5
+    sw t0, 124(sp)
+    sw zero, 120(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 432(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 120(sp)
+    fsw ft11, 0(t6)
+    j .8984_Lendif_J
+.8983_Lelse_J:
+    li t0, 4
+    sw t0, 108(sp)
+    li t0, 2
+    sw t0, 104(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 100(sp)
+    lw t0, 488(sp)
+    lw t1, 100(sp)
+    add t2, t0, t1
+    sw t2, 96(sp)
+    lw t6, 96(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 92(sp)
+    sw zero, 88(sp)
+    flw ft0, 92(sp)
+    flw ft1, 88(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 84(sp)
+    lw t0, 460(sp)
+    lw t1, 84(sp)
+    xor t2, t0, t1
+    sw t2, 80(sp)
+    li t0, 2
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 468(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    lw t0, 80(sp)
+    beqz t0, .8985_Lelse_J
+    flw ft11, 64(sp)
+    fsw ft11, 60(sp)
+    j .8986_Lendif_J
+.8985_Lelse_J:
+    flw ft0, 64(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 60(sp)
+.8986_Lendif_J:
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 432(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 0(t6)
+    li t0, 5
+    sw t0, 48(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 44(sp)
+    flw ft11, 44(sp)
+    fsw ft11, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 488(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 40(sp)
+    flw ft1, 24(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 432(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+.8984_Lendif_J:
+    lw a0, 432(sp)
+    lw ra, 492(sp)
+    addi sp, sp, 512
+    ret
+
+.section .text
+.type setup_surface_table, @function
+.globl setup_surface_table
+setup_surface_table:
+    addi sp, sp, -368
+    sw ra, 348(sp) 	# setup_surface_table
+    sw a0, 344(sp)
+    sw a1, 340(sp)
+    sw a2, 336(sp)
+    sw a3, 332(sp)
+    sw a4, 328(sp)
+    sw a5, 324(sp)
+    sw a6, 320(sp)
+    sw a7, 316(sp)
+    flw ft11, 352(sp)
+    fsw ft11, 312(sp)
+    flw ft11, 356(sp)
+    fsw ft11, 308(sp)
+    flw ft11, 360(sp)
+    fsw ft11, 304(sp)
+    flw ft11, 364(sp)
+    fsw ft11, 300(sp)
+    li t0, 4
+    sw t0, 296(sp)
+    sw zero, 292(sp)
+    lw a0, 296(sp)
+    flw fa0, 292(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 288(sp)
+    li t0, 0
+    sw t0, 284(sp)
+    lw t0, 284(sp)
+    slli t0, t0, 2
+    sw t0, 280(sp)
+    lw t0, 344(sp)
+    lw t1, 280(sp)
+    add t2, t0, t1
+    sw t2, 276(sp)
+    lw t6, 276(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 272(sp)
+    li t0, 0
+    sw t0, 268(sp)
+    lw t0, 268(sp)
+    slli t0, t0, 2
+    sw t0, 264(sp)
+    lw t0, 324(sp)
+    lw t1, 264(sp)
+    add t2, t0, t1
+    sw t2, 260(sp)
+    lw t6, 260(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 256(sp)
+    flw ft0, 272(sp)
+    flw ft1, 256(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 252(sp)
+    li t0, 1
+    sw t0, 248(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 244(sp)
+    lw t0, 344(sp)
+    lw t1, 244(sp)
+    add t2, t0, t1
+    sw t2, 240(sp)
+    lw t6, 240(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 236(sp)
+    li t0, 1
+    sw t0, 232(sp)
+    lw t0, 232(sp)
+    slli t0, t0, 2
+    sw t0, 228(sp)
+    lw t0, 324(sp)
+    lw t1, 228(sp)
+    add t2, t0, t1
+    sw t2, 224(sp)
+    lw t6, 224(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 220(sp)
+    flw ft0, 236(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 216(sp)
+    flw ft0, 252(sp)
+    flw ft1, 216(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 212(sp)
+    li t0, 2
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 344(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    li t0, 2
+    sw t0, 192(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 188(sp)
+    lw t0, 324(sp)
+    lw t1, 188(sp)
+    add t2, t0, t1
+    sw t2, 184(sp)
+    lw t6, 184(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 180(sp)
+    flw ft0, 196(sp)
+    flw ft1, 180(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 176(sp)
+    flw ft0, 212(sp)
+    flw ft1, 176(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    sw zero, 168(sp)
+    flw ft0, 168(sp)
+    flw ft1, 172(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 164(sp)
+    lw t0, 164(sp)
+    beqz t0, .8987_Lelse_J
+    li t0, 0
+    sw t0, 160(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 156(sp)
+    flw ft11, 156(sp)
+    fsw ft11, 152(sp)
+    flw ft0, 152(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 148(sp)
+    flw ft0, 148(sp)
+    flw ft1, 172(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    lw t0, 160(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 288(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 144(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 132(sp)
+    li t0, 0
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 324(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    flw ft0, 116(sp)
+    flw ft1, 172(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    flw ft0, 112(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 108(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 288(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 108(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 96(sp)
+    li t0, 1
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 324(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 172(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    flw ft0, 76(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 72(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 288(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 60(sp)
+    li t0, 2
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 324(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    flw ft0, 44(sp)
+    flw ft1, 172(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    flw ft0, 40(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 36(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 288(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    j .8988_Lendif_J
+.8987_Lelse_J:
+    li t0, 0
+    sw t0, 24(sp)
+    sw zero, 20(sp)
+    lw t0, 24(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 288(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+.8988_Lendif_J:
+    lw a0, 288(sp)
+    lw ra, 348(sp)
+    addi sp, sp, 368
+    ret
+
+.section .text
+.type setup_second_table, @function
+.globl setup_second_table
+setup_second_table:
+    addi sp, sp, -656
+    sw ra, 636(sp) 	# setup_second_table
+    sw a0, 632(sp)
+    sw a1, 628(sp)
+    sw a2, 624(sp)
+    sw a3, 620(sp)
+    sw a4, 616(sp)
+    sw a5, 612(sp)
+    sw a6, 608(sp)
+    sw a7, 604(sp)
+    flw ft11, 640(sp)
+    fsw ft11, 600(sp)
+    flw ft11, 644(sp)
+    fsw ft11, 596(sp)
+    flw ft11, 648(sp)
+    fsw ft11, 592(sp)
+    flw ft11, 652(sp)
+    fsw ft11, 588(sp)
+    li t0, 5
+    sw t0, 584(sp)
+    sw zero, 580(sp)
+    lw a0, 584(sp)
+    flw fa0, 580(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 576(sp)
+    li t0, 0
+    sw t0, 572(sp)
+    lw t0, 572(sp)
+    slli t0, t0, 2
+    sw t0, 568(sp)
+    lw t0, 632(sp)
+    lw t1, 568(sp)
+    add t2, t0, t1
+    sw t2, 564(sp)
+    lw t6, 564(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 560(sp)
+    li t0, 1
+    sw t0, 556(sp)
+    lw t0, 556(sp)
+    slli t0, t0, 2
+    sw t0, 552(sp)
+    lw t0, 632(sp)
+    lw t1, 552(sp)
+    add t2, t0, t1
+    sw t2, 548(sp)
+    lw t6, 548(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 544(sp)
+    li t0, 2
+    sw t0, 540(sp)
+    lw t0, 540(sp)
+    slli t0, t0, 2
+    sw t0, 536(sp)
+    lw t0, 632(sp)
+    lw t1, 536(sp)
+    add t2, t0, t1
+    sw t2, 532(sp)
+    lw t6, 532(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 528(sp)
+    lw a0, 628(sp)
+    lw a1, 624(sp)
+    lw a2, 620(sp)
+    lw a3, 616(sp)
+    lw a4, 612(sp)
+    lw a5, 608(sp)
+    lw a6, 604(sp)
+    lw a7, 600(sp)
+    flw ft11, 596(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 592(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 588(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 560(sp)
+    flw fa1, 544(sp)
+    flw fa2, 528(sp)
+    call quadratic
+    fsw fa0, 524(sp)
+    li t0, 0
+    sw t0, 520(sp)
+    lw t0, 520(sp)
+    slli t0, t0, 2
+    sw t0, 516(sp)
+    lw t0, 632(sp)
+    lw t1, 516(sp)
+    add t2, t0, t1
+    sw t2, 512(sp)
+    lw t6, 512(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 508(sp)
+    li t0, 0
+    sw t0, 504(sp)
+    lw t0, 504(sp)
+    slli t0, t0, 2
+    sw t0, 500(sp)
+    lw t0, 612(sp)
+    lw t1, 500(sp)
+    add t2, t0, t1
+    sw t2, 496(sp)
+    lw t6, 496(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 492(sp)
+    flw ft0, 508(sp)
+    flw ft1, 492(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 488(sp)
+    flw ft0, 488(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 484(sp)
+    li t0, 1
+    sw t0, 480(sp)
+    lw t0, 480(sp)
+    slli t0, t0, 2
+    sw t0, 476(sp)
+    lw t0, 632(sp)
+    lw t1, 476(sp)
+    add t2, t0, t1
+    sw t2, 472(sp)
+    lw t6, 472(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 468(sp)
+    li t0, 1
+    sw t0, 464(sp)
+    lw t0, 464(sp)
+    slli t0, t0, 2
+    sw t0, 460(sp)
+    lw t0, 612(sp)
+    lw t1, 460(sp)
+    add t2, t0, t1
+    sw t2, 456(sp)
+    lw t6, 456(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 452(sp)
+    flw ft0, 468(sp)
+    flw ft1, 452(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 448(sp)
+    flw ft0, 448(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 444(sp)
+    li t0, 2
+    sw t0, 440(sp)
+    lw t0, 440(sp)
+    slli t0, t0, 2
+    sw t0, 436(sp)
+    lw t0, 632(sp)
+    lw t1, 436(sp)
+    add t2, t0, t1
+    sw t2, 432(sp)
+    lw t6, 432(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 428(sp)
+    li t0, 2
+    sw t0, 424(sp)
+    lw t0, 424(sp)
+    slli t0, t0, 2
+    sw t0, 420(sp)
+    lw t0, 612(sp)
+    lw t1, 420(sp)
+    add t2, t0, t1
+    sw t2, 416(sp)
+    lw t6, 416(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 412(sp)
+    flw ft0, 428(sp)
+    flw ft1, 412(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 408(sp)
+    flw ft0, 408(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 404(sp)
+    li t0, 0
+    sw t0, 400(sp)
+    lw t0, 400(sp)
+    slli t0, t0, 2
+    sw t0, 396(sp)
+    lw t0, 576(sp)
+    lw t1, 396(sp)
+    add t2, t0, t1
+    sw t2, 392(sp)
+    lw t6, 392(sp)
+    flw ft11, 524(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 388(sp)
+    lw t0, 616(sp)
+    lw t1, 388(sp)
+    xor t2, t0, t1
+    sw t2, 384(sp)
+    lw t0, 384(sp)
+    beqz t0, .8989_Lelse_J
+    li t0, 1
+    sw t0, 380(sp)
+    li t0, 2
+    sw t0, 376(sp)
+    lw t0, 376(sp)
+    slli t0, t0, 2
+    sw t0, 372(sp)
+    lw t0, 632(sp)
+    lw t1, 372(sp)
+    add t2, t0, t1
+    sw t2, 368(sp)
+    lw t6, 368(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 364(sp)
+    li t0, 1
+    sw t0, 360(sp)
+    lw t0, 360(sp)
+    slli t0, t0, 2
+    sw t0, 356(sp)
+    lw t0, 592(sp)
+    lw t1, 356(sp)
+    add t2, t0, t1
+    sw t2, 352(sp)
+    lw t6, 352(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 348(sp)
+    flw ft0, 364(sp)
+    flw ft1, 348(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 344(sp)
+    li t0, 1
+    sw t0, 340(sp)
+    lw t0, 340(sp)
+    slli t0, t0, 2
+    sw t0, 336(sp)
+    lw t0, 632(sp)
+    lw t1, 336(sp)
+    add t2, t0, t1
+    sw t2, 332(sp)
+    lw t6, 332(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 328(sp)
+    li t0, 2
+    sw t0, 324(sp)
+    lw t0, 324(sp)
+    slli t0, t0, 2
+    sw t0, 320(sp)
+    lw t0, 592(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t6, 316(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 312(sp)
+    flw ft0, 328(sp)
+    flw ft1, 312(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 308(sp)
+    flw ft0, 344(sp)
+    flw ft1, 308(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 304(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 300(sp)
+    flw ft11, 300(sp)
+    fsw ft11, 296(sp)
+    flw ft0, 304(sp)
+    flw ft1, 292(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 296(sp)
+    flw ft0, 484(sp)
+    flw ft1, 296(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 288(sp)
+    lw t0, 380(sp)
+    slli t0, t0, 2
+    sw t0, 284(sp)
+    lw t0, 576(sp)
+    lw t1, 284(sp)
+    add t2, t0, t1
+    sw t2, 280(sp)
+    lw t6, 280(sp)
+    flw ft11, 288(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 276(sp)
+    li t0, 2
+    sw t0, 272(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 268(sp)
+    lw t0, 632(sp)
+    lw t1, 268(sp)
+    add t2, t0, t1
+    sw t2, 264(sp)
+    lw t6, 264(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 260(sp)
+    li t0, 0
+    sw t0, 256(sp)
+    lw t0, 256(sp)
+    slli t0, t0, 2
+    sw t0, 252(sp)
+    lw t0, 592(sp)
+    lw t1, 252(sp)
+    add t2, t0, t1
+    sw t2, 248(sp)
+    lw t6, 248(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 244(sp)
+    flw ft0, 260(sp)
+    flw ft1, 244(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 240(sp)
+    li t0, 0
+    sw t0, 236(sp)
+    lw t0, 236(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 632(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 224(sp)
+    li t0, 2
+    sw t0, 220(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 592(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    flw ft0, 224(sp)
+    flw ft1, 208(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 204(sp)
+    flw ft0, 240(sp)
+    flw ft1, 204(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 200(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 196(sp)
+    flw ft11, 196(sp)
+    fsw ft11, 192(sp)
+    flw ft0, 200(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    flw ft0, 444(sp)
+    flw ft1, 192(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 184(sp)
+    lw t0, 276(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 576(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 184(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 172(sp)
+    li t0, 1
+    sw t0, 168(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 164(sp)
+    lw t0, 632(sp)
+    lw t1, 164(sp)
+    add t2, t0, t1
+    sw t2, 160(sp)
+    lw t6, 160(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 156(sp)
+    li t0, 0
+    sw t0, 152(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 592(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    flw ft0, 156(sp)
+    flw ft1, 140(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    li t0, 0
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 632(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    li t0, 1
+    sw t0, 116(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 592(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 120(sp)
+    flw ft1, 104(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    flw ft0, 136(sp)
+    flw ft1, 100(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 96(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 92(sp)
+    flw ft11, 92(sp)
+    fsw ft11, 88(sp)
+    flw ft0, 96(sp)
+    flw ft1, 84(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    flw ft0, 404(sp)
+    flw ft1, 88(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 576(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 80(sp)
+    fsw ft11, 0(t6)
+    j .8990_Lendif_J
+.8989_Lelse_J:
+    li t0, 1
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 576(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 484(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 576(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 444(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 576(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 404(sp)
+    fsw ft11, 0(t6)
+.8990_Lendif_J:
+    sw zero, 32(sp)
+    flw ft0, 524(sp)
+    flw ft1, 32(sp)
+    feq.s t2, ft0, ft1
+    sw t2, 28(sp)
+    lw t0, 28(sp)
+    seqz t0, t0
+    sw t0, 24(sp)
+    lw t0, 24(sp)
+    beqz t0, .8991_Lelse_J
+    li t0, 4
+    sw t0, 20(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 16(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 12(sp)
+    flw ft0, 12(sp)
+    flw ft1, 524(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 8(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 576(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 8(sp)
+    fsw ft11, 0(t6)
+.8991_Lelse_J:
+.8992_Lendif_J:
+    lw a0, 576(sp)
+    lw ra, 636(sp)
+    addi sp, sp, 656
+    ret
+
+.section .text
+.type iter_setup_dirvec_constants, @function
+.globl iter_setup_dirvec_constants
+iter_setup_dirvec_constants:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# iter_setup_dirvec_constants
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    sw a2, 144(sp)
+    li t0, 0
+    sw t0, 140(sp)
+    lw t0, 144(sp)
+    lw t1, 140(sp)
+    slt t2, t0, t1
+    sw t2, 136(sp)
+    lw t0, 136(sp)
+    seqz t0, t0
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    beqz t0, .8993_Lelse_J
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 128(sp)
+    lw t0, 144(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 124(sp)
+    lw t0, 128(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    lw t6, 120(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 112(sp)
+    lw t6, 120(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 108(sp)
+    lw t6, 120(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 104(sp)
+    lw t6, 120(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 100(sp)
+    lw t6, 120(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 96(sp)
+    lw t6, 120(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 92(sp)
+    lw t6, 120(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 88(sp)
+    lw t6, 120(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 84(sp)
+    lw t6, 120(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 80(sp)
+    lw t6, 120(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 76(sp)
+    li t0, 1
+    sw t0, 72(sp)
+    lw t0, 112(sp)
+    lw t1, 72(sp)
+    xor t2, t0, t1
+    sw t2, 68(sp)
+    lw t0, 68(sp)
+    seqz t0, t0
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .8995_Lelse_J
+    lw a0, 152(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -4(sp)
+    call setup_rect_table
+    sw a0, 60(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 148(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 0(t6)
+    j .8996_Lendif_J
+.8995_Lelse_J:
+    li t0, 2
+    sw t0, 48(sp)
+    lw t0, 112(sp)
+    lw t1, 48(sp)
+    xor t2, t0, t1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    seqz t0, t0
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .8997_Lelse_J
+    lw a0, 152(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -4(sp)
+    call setup_surface_table
+    sw a0, 36(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 148(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 0(t6)
+    j .8998_Lendif_J
+.8997_Lelse_J:
+    lw a0, 152(sp)
+    lw a1, 116(sp)
+    lw a2, 112(sp)
+    lw a3, 108(sp)
+    lw a4, 104(sp)
+    lw a5, 100(sp)
+    lw a6, 96(sp)
+    lw a7, 92(sp)
+    flw ft11, 88(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 84(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -4(sp)
+    call setup_second_table
+    sw a0, 24(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 148(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+.8998_Lendif_J:
+.8996_Lendif_J:
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 144(sp)
+    lw t1, 12(sp)
+    sub t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 152(sp)
+    lw a1, 148(sp)
+    lw a2, 8(sp)
+    call iter_setup_dirvec_constants
+.8993_Lelse_J:
+.8994_Lendif_J:
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type setup_dirvec_constants, @function
+.globl setup_dirvec_constants
+setup_dirvec_constants:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# setup_dirvec_constants
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    sub t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 40(sp)
+    lw a1, 36(sp)
+    lw a2, 8(sp)
+    call iter_setup_dirvec_constants
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type setup_startp_constants, @function
+.globl setup_startp_constants
+setup_startp_constants:
+    addi sp, sp, -480
+    sw ra, 476(sp) 	# setup_startp_constants
+    sw a0, 472(sp)
+    sw a1, 468(sp)
+    li t0, 0
+    sw t0, 464(sp)
+    lw t0, 468(sp)
+    lw t1, 464(sp)
+    slt t2, t0, t1
+    sw t2, 460(sp)
+    lw t0, 460(sp)
+    seqz t0, t0
+    sw t0, 456(sp)
+    lw t0, 456(sp)
+    beqz t0, .8999_Lelse_J
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 452(sp)
+    lw t0, 468(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 448(sp)
+    lw t0, 452(sp)
+    lw t1, 448(sp)
+    add t2, t0, t1
+    sw t2, 444(sp)
+    lw t6, 444(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 440(sp)
+    lw t6, 444(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 436(sp)
+    lw t6, 444(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 432(sp)
+    lw t6, 444(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 428(sp)
+    lw t6, 444(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 424(sp)
+    lw t6, 444(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 420(sp)
+    lw t6, 444(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 416(sp)
+    lw t6, 444(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 412(sp)
+    lw t6, 444(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 408(sp)
+    lw t6, 444(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 404(sp)
+    lw t6, 444(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 400(sp)
+    li t0, 0
+    sw t0, 396(sp)
+    li t0, 0
+    sw t0, 392(sp)
+    lw t0, 392(sp)
+    slli t0, t0, 2
+    sw t0, 388(sp)
+    lw t0, 472(sp)
+    lw t1, 388(sp)
+    add t2, t0, t1
+    sw t2, 384(sp)
+    lw t6, 384(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 380(sp)
+    li t0, 0
+    sw t0, 376(sp)
+    lw t0, 376(sp)
+    slli t0, t0, 2
+    sw t0, 372(sp)
+    lw t0, 420(sp)
+    lw t1, 372(sp)
+    add t2, t0, t1
+    sw t2, 368(sp)
+    lw t6, 368(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 364(sp)
+    flw ft0, 380(sp)
+    flw ft1, 364(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 360(sp)
+    lw t0, 396(sp)
+    slli t0, t0, 2
+    sw t0, 356(sp)
+    lw t0, 400(sp)
+    lw t1, 356(sp)
+    add t2, t0, t1
+    sw t2, 352(sp)
+    lw t6, 352(sp)
+    flw ft11, 360(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 348(sp)
+    li t0, 1
+    sw t0, 344(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 472(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 332(sp)
+    li t0, 1
+    sw t0, 328(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 324(sp)
+    lw t0, 420(sp)
+    lw t1, 324(sp)
+    add t2, t0, t1
+    sw t2, 320(sp)
+    lw t6, 320(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 316(sp)
+    flw ft0, 332(sp)
+    flw ft1, 316(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 312(sp)
+    lw t0, 348(sp)
+    slli t0, t0, 2
+    sw t0, 308(sp)
+    lw t0, 400(sp)
+    lw t1, 308(sp)
+    add t2, t0, t1
+    sw t2, 304(sp)
+    lw t6, 304(sp)
+    flw ft11, 312(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 300(sp)
+    li t0, 2
+    sw t0, 296(sp)
+    lw t0, 296(sp)
+    slli t0, t0, 2
+    sw t0, 292(sp)
+    lw t0, 472(sp)
+    lw t1, 292(sp)
+    add t2, t0, t1
+    sw t2, 288(sp)
+    lw t6, 288(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 284(sp)
+    li t0, 2
+    sw t0, 280(sp)
+    lw t0, 280(sp)
+    slli t0, t0, 2
+    sw t0, 276(sp)
+    lw t0, 420(sp)
+    lw t1, 276(sp)
+    add t2, t0, t1
+    sw t2, 272(sp)
+    lw t6, 272(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 268(sp)
+    flw ft0, 284(sp)
+    flw ft1, 268(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 264(sp)
+    lw t0, 300(sp)
+    slli t0, t0, 2
+    sw t0, 260(sp)
+    lw t0, 400(sp)
+    lw t1, 260(sp)
+    add t2, t0, t1
+    sw t2, 256(sp)
+    lw t6, 256(sp)
+    flw ft11, 264(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 252(sp)
+    lw t0, 436(sp)
+    lw t1, 252(sp)
+    xor t2, t0, t1
+    sw t2, 248(sp)
+    lw t0, 248(sp)
+    seqz t0, t0
+    sw t0, 244(sp)
+    lw t0, 244(sp)
+    beqz t0, .9001_Lelse_J
+    li t0, 3
+    sw t0, 240(sp)
+    li t0, 0
+    sw t0, 236(sp)
+    lw t0, 236(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 400(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 224(sp)
+    li t0, 1
+    sw t0, 220(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 400(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    li t0, 2
+    sw t0, 204(sp)
+    lw t0, 204(sp)
+    slli t0, t0, 2
+    sw t0, 200(sp)
+    lw t0, 400(sp)
+    lw t1, 200(sp)
+    add t2, t0, t1
+    sw t2, 196(sp)
+    lw t6, 196(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 192(sp)
+    li t0, 0
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 424(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 176(sp)
+    flw ft1, 224(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    li t0, 1
+    sw t0, 168(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 164(sp)
+    lw t0, 424(sp)
+    lw t1, 164(sp)
+    add t2, t0, t1
+    sw t2, 160(sp)
+    lw t6, 160(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 156(sp)
+    flw ft1, 208(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 172(sp)
+    flw ft1, 152(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 2
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 424(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    flw ft0, 132(sp)
+    flw ft1, 192(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    flw ft0, 148(sp)
+    flw ft1, 128(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    lw t0, 240(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 400(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 124(sp)
+    fsw ft11, 0(t6)
+    j .9002_Lendif_J
+.9001_Lelse_J:
+    li t0, 2
+    sw t0, 112(sp)
+    lw t0, 112(sp)
+    lw t1, 436(sp)
+    slt t2, t0, t1
+    sw t2, 108(sp)
+    lw t0, 108(sp)
+    beqz t0, .9003_Lelse_J
+    li t0, 0
+    sw t0, 104(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 100(sp)
+    lw t0, 400(sp)
+    lw t1, 100(sp)
+    add t2, t0, t1
+    sw t2, 96(sp)
+    lw t6, 96(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 92(sp)
+    li t0, 1
+    sw t0, 88(sp)
+    lw t0, 88(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 400(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 76(sp)
+    li t0, 2
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 400(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    lw a0, 440(sp)
+    lw a1, 436(sp)
+    lw a2, 432(sp)
+    lw a3, 428(sp)
+    lw a4, 424(sp)
+    lw a5, 420(sp)
+    lw a6, 416(sp)
+    lw a7, 412(sp)
+    flw ft11, 408(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 404(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 400(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 92(sp)
+    flw fa1, 76(sp)
+    flw fa2, 60(sp)
+    call quadratic
+    fsw fa0, 56(sp)
+    li t0, 3
+    sw t0, 52(sp)
+    li t0, 3
+    sw t0, 48(sp)
+    lw t0, 436(sp)
+    lw t1, 48(sp)
+    xor t2, t0, t1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    seqz t0, t0
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9005_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 36(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 32(sp)
+    flw ft0, 56(sp)
+    flw ft1, 32(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    j .9006_Lendif_J
+.9005_Lelse_J:
+    flw ft11, 56(sp)
+    fsw ft11, 28(sp)
+.9006_Lendif_J:
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 400(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 28(sp)
+    fsw ft11, 0(t6)
+.9003_Lelse_J:
+.9004_Lendif_J:
+.9002_Lendif_J:
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 468(sp)
+    lw t1, 16(sp)
+    sub t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 472(sp)
+    lw a1, 12(sp)
+    call setup_startp_constants
+.8999_Lelse_J:
+.9000_Lendif_J:
+    lw ra, 476(sp)
+    addi sp, sp, 480
+    ret
+
+.section .text
+.type setup_startp, @function
+.globl setup_startp
+setup_startp:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# setup_startp
+    sw a0, 40(sp)
+    lui a0, %hi(startp_fast)
+    lw a0, %lo(startp_fast)(a0)
+    lw a1, 40(sp)
+    call veccpy
+    li t0, 0
+    sw t0, 36(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    sub t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 40(sp)
+    lw a1, 12(sp)
+    call setup_startp_constants
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type is_rect_outside, @function
+.globl is_rect_outside
+is_rect_outside:
+    addi sp, sp, -160
+    sw ra, 144(sp) 	# is_rect_outside
+    sw a0, 140(sp)
+    sw a1, 136(sp)
+    sw a2, 132(sp)
+    sw a3, 128(sp)
+    sw a4, 124(sp)
+    sw a5, 120(sp)
+    sw a6, 116(sp)
+    sw a7, 112(sp)
+    flw ft11, 148(sp)
+    fsw ft11, 108(sp)
+    flw ft11, 152(sp)
+    fsw ft11, 104(sp)
+    flw ft11, 156(sp)
+    fsw ft11, 100(sp)
+    fsw fa0, 96(sp)
+    fsw fa1, 92(sp)
+    fsw fa2, 88(sp)
+    flw ft0, 96(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 124(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 84(sp)
+    flw ft1, 68(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .9007_Lelse_J
+    flw ft0, 92(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 60(sp)
+    li t0, 1
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 124(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    flw ft0, 60(sp)
+    flw ft1, 44(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9009_Lelse_J
+    flw ft0, 88(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 36(sp)
+    li t0, 2
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 124(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 36(sp)
+    flw ft1, 20(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 16(sp)
+    j .9010_Lendif_J
+.9009_Lelse_J:
+    li t0, 0
+    sw t0, 16(sp)
+.9010_Lendif_J:
+    j .9008_Lendif_J
+.9007_Lelse_J:
+    li t0, 0
+    sw t0, 16(sp)
+.9008_Lendif_J:
+    lw t0, 16(sp)
+    beqz t0, .9011_Lelse_J
+    flw ft11, 116(sp)
+    fsw ft11, 12(sp)
+    j .9012_Lendif_J
+.9011_Lelse_J:
+    lw t0, 116(sp)
+    seqz t0, t0
+    sw t0, 12(sp)
+.9012_Lendif_J:
+    lw a0, 12(sp)
+    lw ra, 144(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type is_plane_outside, @function
+.globl is_plane_outside
+is_plane_outside:
+    addi sp, sp, -160
+    sw ra, 144(sp) 	# is_plane_outside
+    sw a0, 140(sp)
+    sw a1, 136(sp)
+    sw a2, 132(sp)
+    sw a3, 128(sp)
+    sw a4, 124(sp)
+    sw a5, 120(sp)
+    sw a6, 116(sp)
+    sw a7, 112(sp)
+    flw ft11, 148(sp)
+    fsw ft11, 108(sp)
+    flw ft11, 152(sp)
+    fsw ft11, 104(sp)
+    flw ft11, 156(sp)
+    fsw ft11, 100(sp)
+    fsw fa0, 96(sp)
+    fsw fa1, 92(sp)
+    fsw fa2, 88(sp)
+    li t0, 0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 124(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    flw ft0, 72(sp)
+    flw ft1, 96(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 68(sp)
+    li t0, 1
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 124(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    flw ft0, 52(sp)
+    flw ft1, 92(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+    flw ft0, 68(sp)
+    flw ft1, 48(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    li t0, 2
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 124(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 28(sp)
+    flw ft1, 88(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    flw ft0, 44(sp)
+    flw ft1, 24(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    sw zero, 16(sp)
+    flw ft0, 20(sp)
+    flw ft1, 16(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 12(sp)
+    lw t0, 116(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw a0, 4(sp)
+    lw ra, 144(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type is_second_outside, @function
+.globl is_second_outside
+is_second_outside:
+    addi sp, sp, -128
+    sw ra, 112(sp) 	# is_second_outside
+    sw a0, 108(sp)
+    sw a1, 104(sp)
+    sw a2, 100(sp)
+    sw a3, 96(sp)
+    sw a4, 92(sp)
+    sw a5, 88(sp)
+    sw a6, 84(sp)
+    sw a7, 80(sp)
+    flw ft11, 116(sp)
+    fsw ft11, 76(sp)
+    flw ft11, 120(sp)
+    fsw ft11, 72(sp)
+    flw ft11, 124(sp)
+    fsw ft11, 68(sp)
+    fsw fa0, 64(sp)
+    fsw fa1, 60(sp)
+    fsw fa2, 56(sp)
+    lw a0, 108(sp)
+    lw a1, 104(sp)
+    lw a2, 100(sp)
+    lw a3, 96(sp)
+    lw a4, 92(sp)
+    lw a5, 88(sp)
+    lw a6, 84(sp)
+    lw a7, 80(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 72(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 68(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 64(sp)
+    flw fa1, 60(sp)
+    flw fa2, 56(sp)
+    call quadratic
+    fsw fa0, 52(sp)
+    li t0, 3
+    sw t0, 48(sp)
+    lw t0, 104(sp)
+    lw t1, 48(sp)
+    xor t2, t0, t1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    seqz t0, t0
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9013_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 36(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 32(sp)
+    flw ft0, 52(sp)
+    flw ft1, 32(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    j .9014_Lendif_J
+.9013_Lelse_J:
+    flw ft11, 52(sp)
+    fsw ft11, 28(sp)
+.9014_Lendif_J:
+    sw zero, 24(sp)
+    flw ft0, 28(sp)
+    flw ft1, 24(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 20(sp)
+    lw t0, 84(sp)
+    lw t1, 20(sp)
+    xor t2, t0, t1
+    sw t2, 16(sp)
+    lw t0, 16(sp)
+    seqz t0, t0
+    sw t0, 12(sp)
+    lw a0, 12(sp)
+    lw ra, 112(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type is_outside, @function
+.globl is_outside
+is_outside:
+    addi sp, sp, -240
+    sw ra, 224(sp) 	# is_outside
+    sw a0, 220(sp)
+    sw a1, 216(sp)
+    sw a2, 212(sp)
+    sw a3, 208(sp)
+    sw a4, 204(sp)
+    sw a5, 200(sp)
+    sw a6, 196(sp)
+    sw a7, 192(sp)
+    flw ft11, 228(sp)
+    fsw ft11, 188(sp)
+    flw ft11, 232(sp)
+    fsw ft11, 184(sp)
+    flw ft11, 236(sp)
+    fsw ft11, 180(sp)
+    fsw fa0, 176(sp)
+    fsw fa1, 172(sp)
+    fsw fa2, 168(sp)
+    li t0, 0
+    sw t0, 164(sp)
+    lw t0, 164(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 200(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 176(sp)
+    flw ft1, 152(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 1
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 200(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    flw ft0, 172(sp)
+    flw ft1, 132(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    li t0, 2
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 200(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 168(sp)
+    flw ft1, 112(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    li t0, 1
+    sw t0, 104(sp)
+    lw t0, 216(sp)
+    lw t1, 104(sp)
+    xor t2, t0, t1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    seqz t0, t0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9015_Lelse_J
+    lw a0, 220(sp)
+    lw a1, 216(sp)
+    lw a2, 212(sp)
+    lw a3, 208(sp)
+    lw a4, 204(sp)
+    lw a5, 200(sp)
+    lw a6, 196(sp)
+    lw a7, 192(sp)
+    flw ft11, 188(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 184(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 180(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 148(sp)
+    flw fa1, 128(sp)
+    flw fa2, 108(sp)
+    call is_rect_outside
+    sw a0, 0(sp)
+    j .9016_Lendif_J
+.9015_Lelse_J:
+    li t0, 2
+    sw t0, 92(sp)
+    lw t0, 216(sp)
+    lw t1, 92(sp)
+    xor t2, t0, t1
+    sw t2, 88(sp)
+    lw t0, 88(sp)
+    seqz t0, t0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    beqz t0, .9017_Lelse_J
+    li t0, 0
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 204(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 68(sp)
+    flw ft1, 148(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    li t0, 1
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 204(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 48(sp)
+    flw ft1, 128(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    flw ft0, 64(sp)
+    flw ft1, 44(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 204(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 24(sp)
+    flw ft1, 108(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    flw ft0, 40(sp)
+    flw ft1, 20(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    sw zero, 12(sp)
+    flw ft0, 16(sp)
+    flw ft1, 12(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 8(sp)
+    lw t0, 196(sp)
+    lw t1, 8(sp)
+    xor t2, t0, t1
+    sw t2, 4(sp)
+    lw t0, 4(sp)
+    seqz t0, t0
+    sw t0, 0(sp)
+    j .9018_Lendif_J
+.9017_Lelse_J:
+    lw a0, 220(sp)
+    lw a1, 216(sp)
+    lw a2, 212(sp)
+    lw a3, 208(sp)
+    lw a4, 204(sp)
+    lw a5, 200(sp)
+    lw a6, 196(sp)
+    lw a7, 192(sp)
+    flw ft11, 188(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 184(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 180(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 148(sp)
+    flw fa1, 128(sp)
+    flw fa2, 108(sp)
+    call is_second_outside
+    sw a0, 0(sp)
+.9018_Lendif_J:
+.9016_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 224(sp)
+    addi sp, sp, 240
+    ret
+
+.section .text
+.type check_all_inside, @function
+.globl check_all_inside
+check_all_inside:
+    addi sp, sp, -128
+    sw ra, 124(sp) 	# check_all_inside
+    sw a0, 120(sp)
+    sw a1, 116(sp)
+    fsw fa0, 112(sp)
+    fsw fa1, 108(sp)
+    fsw fa2, 104(sp)
+    lw t0, 120(sp)
+    slli t0, t0, 2
+    sw t0, 100(sp)
+    lw t0, 116(sp)
+    lw t1, 100(sp)
+    add t2, t0, t1
+    sw t2, 96(sp)
+    lw t6, 96(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 92(sp)
+    li t0, 1
+    sw t0, 88(sp)
+    lw t0, 88(sp)
+    neg t0, t0
+    sw t0, 84(sp)
+    lw t0, 92(sp)
+    lw t1, 84(sp)
+    xor t2, t0, t1
+    sw t2, 80(sp)
+    lw t0, 80(sp)
+    seqz t0, t0
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    beqz t0, .9019_Lelse_J
+    li t0, 1
+    sw t0, 72(sp)
+    j .9020_Lendif_J
+.9019_Lelse_J:
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 92(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lw t6, 60(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 52(sp)
+    lw t6, 60(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 48(sp)
+    lw t6, 60(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 44(sp)
+    lw t6, 60(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 40(sp)
+    lw t6, 60(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 36(sp)
+    lw t6, 60(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 32(sp)
+    lw t6, 60(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 28(sp)
+    lw t6, 60(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 24(sp)
+    lw t6, 60(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 20(sp)
+    lw t6, 60(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 16(sp)
+    lw a0, 56(sp)
+    lw a1, 52(sp)
+    lw a2, 48(sp)
+    lw a3, 44(sp)
+    lw a4, 40(sp)
+    lw a5, 36(sp)
+    lw a6, 32(sp)
+    lw a7, 28(sp)
+    flw ft11, 24(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 20(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 16(sp)
+    fsw ft11, -4(sp)
+    flw fa0, 112(sp)
+    flw fa1, 108(sp)
+    flw fa2, 104(sp)
+    call is_outside
+    sw a0, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9021_Lelse_J
+    li t0, 0
+    sw t0, 72(sp)
+    j .9022_Lendif_J
+.9021_Lelse_J:
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 120(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 4(sp)
+    lw a1, 116(sp)
+    flw fa0, 112(sp)
+    flw fa1, 108(sp)
+    flw fa2, 104(sp)
+    call check_all_inside
+    sw a0, 72(sp)
+.9022_Lendif_J:
+.9020_Lendif_J:
+    lw a0, 72(sp)
+    lw ra, 124(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type shadow_check_and_group, @function
+.globl shadow_check_and_group
+shadow_check_and_group:
+    addi sp, sp, -336
+    sw ra, 332(sp) 	# shadow_check_and_group
+    sw a0, 328(sp)
+    sw a1, 324(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 320(sp)
+    lw t0, 324(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t6, 316(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 312(sp)
+    li t0, 1
+    sw t0, 308(sp)
+    lw t0, 308(sp)
+    neg t0, t0
+    sw t0, 304(sp)
+    lw t0, 312(sp)
+    lw t1, 304(sp)
+    xor t2, t0, t1
+    sw t2, 300(sp)
+    lw t0, 300(sp)
+    seqz t0, t0
+    sw t0, 296(sp)
+    lw t0, 296(sp)
+    beqz t0, .9023_Lelse_J
+    li t0, 0
+    sw t0, 292(sp)
+    j .9024_Lendif_J
+.9023_Lelse_J:
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 288(sp)
+    lw t0, 324(sp)
+    lw t1, 288(sp)
+    add t2, t0, t1
+    sw t2, 284(sp)
+    lw t6, 284(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 280(sp)
+    lw a0, 280(sp)
+    lui a1, %hi(light_dirvec)
+    lw a1, %lo(light_dirvec)(a1)
+    lui a2, %hi(light_dirvec)
+    addi a2, a2, 4
+    lw a2, %lo(light_dirvec)(a2)
+    lui a3, %hi(intersection_point)
+    lw a3, %lo(intersection_point)(a3)
+    call solver_fast
+    sw a0, 276(sp)
+    li t0, 0
+    sw t0, 272(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 268(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 264(sp)
+    lw t0, 268(sp)
+    lw t1, 264(sp)
+    add t2, t0, t1
+    sw t2, 260(sp)
+    lw t6, 260(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 256(sp)
+    li t0, 0
+    sw t0, 252(sp)
+    lw t0, 276(sp)
+    lw t1, 252(sp)
+    xor t2, t0, t1
+    sw t2, 248(sp)
+    lw t0, 248(sp)
+    beqz t0, .9025_Lelse_J
+    lui t6, %hi(.7342_L.LC3_J)
+    flw ft11, %lo(.7342_L.LC3_J)(t6)
+    fsw ft11, 244(sp)
+    flw ft0, 244(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 240(sp)
+    flw ft0, 256(sp)
+    flw ft1, 240(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 236(sp)
+    j .9026_Lendif_J
+.9025_Lelse_J:
+    li t0, 0
+    sw t0, 236(sp)
+.9026_Lendif_J:
+    lw t0, 236(sp)
+    beqz t0, .9027_Lelse_J
+    lui t6, %hi(.7343_L.LC4_J)
+    flw ft11, %lo(.7343_L.LC4_J)(t6)
+    fsw ft11, 232(sp)
+    flw ft0, 256(sp)
+    flw ft1, 232(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 228(sp)
+    li t0, 0
+    sw t0, 224(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 220(sp)
+    lw t0, 224(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 220(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    flw ft0, 208(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 204(sp)
+    li t0, 0
+    sw t0, 200(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 184(sp)
+    flw ft0, 204(sp)
+    flw ft1, 184(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 180(sp)
+    li t0, 1
+    sw t0, 176(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 172(sp)
+    lw t0, 176(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 172(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    flw ft0, 160(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 156(sp)
+    li t0, 1
+    sw t0, 152(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 148(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 144(sp)
+    lw t0, 148(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 136(sp)
+    flw ft0, 156(sp)
+    flw ft1, 136(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 132(sp)
+    li t0, 2
+    sw t0, 128(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 124(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 124(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 112(sp)
+    flw ft1, 228(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    li t0, 2
+    sw t0, 104(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    flw ft0, 108(sp)
+    flw ft1, 88(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    lw a0, 80(sp)
+    lw a1, 324(sp)
+    flw fa0, 180(sp)
+    flw fa1, 132(sp)
+    flw fa2, 84(sp)
+    call check_all_inside
+    sw a0, 76(sp)
+    lw t0, 76(sp)
+    beqz t0, .9029_Lelse_J
+    li t0, 1
+    sw t0, 292(sp)
+    j .9030_Lendif_J
+.9029_Lelse_J:
+    li t0, 1
+    sw t0, 72(sp)
+    lw t0, 328(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw a0, 68(sp)
+    lw a1, 324(sp)
+    call shadow_check_and_group
+    sw a0, 292(sp)
+.9030_Lendif_J:
+    j .9028_Lendif_J
+.9027_Lelse_J:
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 280(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lw t6, 56(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 48(sp)
+    lw t6, 56(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 44(sp)
+    lw t6, 56(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 40(sp)
+    lw t6, 56(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 36(sp)
+    lw t6, 56(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 32(sp)
+    lw t6, 56(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 28(sp)
+    lw t6, 56(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 24(sp)
+    lw t6, 56(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 20(sp)
+    lw t6, 56(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 16(sp)
+    lw t6, 56(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 12(sp)
+    lw t0, 28(sp)
+    beqz t0, .9031_Lelse_J
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 328(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 4(sp)
+    lw a1, 324(sp)
+    call shadow_check_and_group
+    sw a0, 292(sp)
+    j .9032_Lendif_J
+.9031_Lelse_J:
+    li t0, 0
+    sw t0, 292(sp)
+.9032_Lendif_J:
+.9028_Lendif_J:
+.9024_Lendif_J:
+    lw a0, 292(sp)
+    lw ra, 332(sp)
+    addi sp, sp, 336
+    ret
+
+.section .text
+.type shadow_check_one_or_group, @function
+.globl shadow_check_one_or_group
+shadow_check_one_or_group:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# shadow_check_one_or_group
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    neg t0, t0
+    sw t0, 48(sp)
+    lw t0, 56(sp)
+    lw t1, 48(sp)
+    xor t2, t0, t1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    seqz t0, t0
+    sw t0, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9033_Lelse_J
+    li t0, 0
+    sw t0, 36(sp)
+    j .9034_Lendif_J
+.9033_Lelse_J:
+    lui t6, %hi(and_net)
+    flw ft11, %lo(and_net)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw a0, 16(sp)
+    lw a1, 20(sp)
+    call shadow_check_and_group
+    sw a0, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9035_Lelse_J
+    li t0, 1
+    sw t0, 36(sp)
+    j .9036_Lendif_J
+.9035_Lelse_J:
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 72(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 4(sp)
+    lw a1, 68(sp)
+    call shadow_check_one_or_group
+    sw a0, 36(sp)
+.9036_Lendif_J:
+.9034_Lendif_J:
+    lw a0, 36(sp)
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type shadow_check_one_or_matrix, @function
+.globl shadow_check_one_or_matrix
+shadow_check_one_or_matrix:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# shadow_check_one_or_matrix
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 144(sp)
+    lw t0, 148(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 136(sp)
+    li t0, 0
+    sw t0, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 136(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    li t0, 1
+    sw t0, 116(sp)
+    lw t0, 116(sp)
+    neg t0, t0
+    sw t0, 112(sp)
+    lw t0, 120(sp)
+    lw t1, 112(sp)
+    xor t2, t0, t1
+    sw t2, 108(sp)
+    lw t0, 108(sp)
+    seqz t0, t0
+    sw t0, 104(sp)
+    lw t0, 104(sp)
+    beqz t0, .9037_Lelse_J
+    li t0, 0
+    sw t0, 100(sp)
+    j .9038_Lendif_J
+.9037_Lelse_J:
+    li t0, 99
+    sw t0, 96(sp)
+    lw t0, 120(sp)
+    lw t1, 96(sp)
+    xor t2, t0, t1
+    sw t2, 92(sp)
+    lw t0, 92(sp)
+    seqz t0, t0
+    sw t0, 88(sp)
+    lw t0, 88(sp)
+    beqz t0, .9039_Lelse_J
+    li t0, 1
+    sw t0, 84(sp)
+    j .9040_Lendif_J
+.9039_Lelse_J:
+    lw a0, 120(sp)
+    lui a1, %hi(light_dirvec)
+    lw a1, %lo(light_dirvec)(a1)
+    lui a2, %hi(light_dirvec)
+    addi a2, a2, 4
+    lw a2, %lo(light_dirvec)(a2)
+    lui a3, %hi(intersection_point)
+    lw a3, %lo(intersection_point)(a3)
+    call solver_fast
+    sw a0, 80(sp)
+    li t0, 0
+    sw t0, 76(sp)
+    lw t0, 80(sp)
+    lw t1, 76(sp)
+    xor t2, t0, t1
+    sw t2, 72(sp)
+    lw t0, 72(sp)
+    beqz t0, .9041_Lelse_J
+    li t0, 0
+    sw t0, 68(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 48(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 44(sp)
+    flw ft0, 52(sp)
+    flw ft1, 44(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9043_Lelse_J
+    li t0, 1
+    sw t0, 36(sp)
+    lw a0, 36(sp)
+    lw a1, 136(sp)
+    call shadow_check_one_or_group
+    sw a0, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .9045_Lelse_J
+    li t0, 1
+    sw t0, 84(sp)
+    j .9046_Lendif_J
+.9045_Lelse_J:
+    li t0, 0
+    sw t0, 84(sp)
+.9046_Lendif_J:
+    j .9044_Lendif_J
+.9043_Lelse_J:
+    li t0, 0
+    sw t0, 84(sp)
+.9044_Lendif_J:
+    j .9042_Lendif_J
+.9041_Lelse_J:
+    li t0, 0
+    sw t0, 84(sp)
+.9042_Lendif_J:
+.9040_Lendif_J:
+    lw t0, 84(sp)
+    beqz t0, .9047_Lelse_J
+    li t0, 1
+    sw t0, 28(sp)
+    lw a0, 28(sp)
+    lw a1, 136(sp)
+    call shadow_check_one_or_group
+    sw a0, 24(sp)
+    lw t0, 24(sp)
+    beqz t0, .9049_Lelse_J
+    li t0, 1
+    sw t0, 100(sp)
+    j .9050_Lendif_J
+.9049_Lelse_J:
+    li t0, 1
+    sw t0, 20(sp)
+    lw t0, 152(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw a0, 16(sp)
+    lw a1, 148(sp)
+    call shadow_check_one_or_matrix
+    sw a0, 100(sp)
+.9050_Lendif_J:
+    j .9048_Lendif_J
+.9047_Lelse_J:
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 152(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 8(sp)
+    lw a1, 148(sp)
+    call shadow_check_one_or_matrix
+    sw a0, 100(sp)
+.9048_Lendif_J:
+.9038_Lendif_J:
+    lw a0, 100(sp)
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type solve_each_element, @function
+.globl solve_each_element
+solve_each_element:
+    addi sp, sp, -384
+    sw ra, 380(sp) 	# solve_each_element
+    sw a0, 376(sp)
+    sw a1, 372(sp)
+    sw a2, 368(sp)
+    lw t0, 376(sp)
+    slli t0, t0, 2
+    sw t0, 364(sp)
+    lw t0, 372(sp)
+    lw t1, 364(sp)
+    add t2, t0, t1
+    sw t2, 360(sp)
+    lw t6, 360(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 356(sp)
+    li t0, 1
+    sw t0, 352(sp)
+    lw t0, 352(sp)
+    neg t0, t0
+    sw t0, 348(sp)
+    lw t0, 356(sp)
+    lw t1, 348(sp)
+    xor t2, t0, t1
+    sw t2, 344(sp)
+    lw t0, 344(sp)
+    seqz t0, t0
+    sw t0, 340(sp)
+    lw t0, 340(sp)
+    beqz t0, .9051_Lelse_J
+    j .9052_Lendif_J
+.9051_Lelse_J:
+    lw a0, 356(sp)
+    lw a1, 368(sp)
+    lui a2, %hi(startp)
+    lw a2, %lo(startp)(a2)
+    call solver
+    sw a0, 336(sp)
+    li t0, 0
+    sw t0, 332(sp)
+    lw t0, 336(sp)
+    lw t1, 332(sp)
+    xor t2, t0, t1
+    sw t2, 328(sp)
+    lw t0, 328(sp)
+    beqz t0, .9053_Lelse_J
+    li t0, 0
+    sw t0, 324(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 320(sp)
+    lw t0, 324(sp)
+    slli t0, t0, 2
+    sw t0, 316(sp)
+    lw t0, 320(sp)
+    lw t1, 316(sp)
+    add t2, t0, t1
+    sw t2, 312(sp)
+    lw t6, 312(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 308(sp)
+    sw zero, 304(sp)
+    flw ft0, 304(sp)
+    flw ft1, 308(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 300(sp)
+    lw t0, 300(sp)
+    beqz t0, .9055_Lelse_J
+    li t0, 0
+    sw t0, 296(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 292(sp)
+    lw t0, 296(sp)
+    slli t0, t0, 2
+    sw t0, 288(sp)
+    lw t0, 292(sp)
+    lw t1, 288(sp)
+    add t2, t0, t1
+    sw t2, 284(sp)
+    lw t6, 284(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 280(sp)
+    flw ft0, 308(sp)
+    flw ft1, 280(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 276(sp)
+    lw t0, 276(sp)
+    beqz t0, .9057_Lelse_J
+    lui t6, %hi(.7343_L.LC4_J)
+    flw ft11, %lo(.7343_L.LC4_J)(t6)
+    fsw ft11, 272(sp)
+    flw ft0, 308(sp)
+    flw ft1, 272(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 268(sp)
+    li t0, 0
+    sw t0, 264(sp)
+    lw t0, 264(sp)
+    slli t0, t0, 2
+    sw t0, 260(sp)
+    lw t0, 368(sp)
+    lw t1, 260(sp)
+    add t2, t0, t1
+    sw t2, 256(sp)
+    lw t6, 256(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 252(sp)
+    flw ft0, 252(sp)
+    flw ft1, 268(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 248(sp)
+    li t0, 0
+    sw t0, 244(sp)
+    lui t6, %hi(startp)
+    flw ft11, %lo(startp)(t6)
+    fsw ft11, 240(sp)
+    lw t0, 244(sp)
+    slli t0, t0, 2
+    sw t0, 236(sp)
+    lw t0, 240(sp)
+    lw t1, 236(sp)
+    add t2, t0, t1
+    sw t2, 232(sp)
+    lw t6, 232(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 228(sp)
+    flw ft0, 248(sp)
+    flw ft1, 228(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 224(sp)
+    li t0, 1
+    sw t0, 220(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 368(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    flw ft0, 208(sp)
+    flw ft1, 268(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 204(sp)
+    li t0, 1
+    sw t0, 200(sp)
+    lui t6, %hi(startp)
+    flw ft11, %lo(startp)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 184(sp)
+    flw ft0, 204(sp)
+    flw ft1, 184(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 180(sp)
+    li t0, 2
+    sw t0, 176(sp)
+    lw t0, 176(sp)
+    slli t0, t0, 2
+    sw t0, 172(sp)
+    lw t0, 368(sp)
+    lw t1, 172(sp)
+    add t2, t0, t1
+    sw t2, 168(sp)
+    lw t6, 168(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 164(sp)
+    flw ft0, 164(sp)
+    flw ft1, 268(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 160(sp)
+    li t0, 2
+    sw t0, 156(sp)
+    lui t6, %hi(startp)
+    flw ft11, %lo(startp)(t6)
+    fsw ft11, 152(sp)
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 152(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    flw ft0, 160(sp)
+    flw ft1, 140(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    li t0, 0
+    sw t0, 132(sp)
+    lw a0, 132(sp)
+    lw a1, 372(sp)
+    flw fa0, 224(sp)
+    flw fa1, 180(sp)
+    flw fa2, 136(sp)
+    call check_all_inside
+    sw a0, 128(sp)
+    lw t0, 128(sp)
+    beqz t0, .9059_Lelse_J
+    li t0, 0
+    sw t0, 124(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 120(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 120(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 268(sp)
+    fsw ft11, 0(t6)
+    lui a0, %hi(intersection_point)
+    lw a0, %lo(intersection_point)(a0)
+    flw fa0, 224(sp)
+    flw fa1, 180(sp)
+    flw fa2, 136(sp)
+    call vecset
+    li t0, 0
+    sw t0, 108(sp)
+    lui t6, %hi(intersected_object_id)
+    flw ft11, %lo(intersected_object_id)(t6)
+    fsw ft11, 104(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 100(sp)
+    lw t0, 104(sp)
+    lw t1, 100(sp)
+    add t2, t0, t1
+    sw t2, 96(sp)
+    lw t6, 96(sp)
+    flw ft11, 356(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 92(sp)
+    lui t6, %hi(intsec_rectside)
+    flw ft11, %lo(intsec_rectside)(t6)
+    fsw ft11, 88(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 88(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 336(sp)
+    fsw ft11, 0(t6)
+.9059_Lelse_J:
+.9060_Lendif_J:
+.9057_Lelse_J:
+.9058_Lendif_J:
+.9055_Lelse_J:
+.9056_Lendif_J:
+    li t0, 1
+    sw t0, 76(sp)
+    lw t0, 376(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw a0, 72(sp)
+    lw a1, 372(sp)
+    lw a2, 368(sp)
+    call solve_each_element
+    j .9054_Lendif_J
+.9053_Lelse_J:
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 356(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lw t6, 60(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 52(sp)
+    lw t6, 60(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 48(sp)
+    lw t6, 60(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 44(sp)
+    lw t6, 60(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 40(sp)
+    lw t6, 60(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 36(sp)
+    lw t6, 60(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 32(sp)
+    lw t6, 60(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 28(sp)
+    lw t6, 60(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 24(sp)
+    lw t6, 60(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 20(sp)
+    lw t6, 60(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 16(sp)
+    lw t0, 32(sp)
+    beqz t0, .9061_Lelse_J
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 376(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 8(sp)
+    lw a1, 372(sp)
+    lw a2, 368(sp)
+    call solve_each_element
+.9061_Lelse_J:
+.9062_Lendif_J:
+.9054_Lendif_J:
+.9052_Lendif_J:
+    lw ra, 380(sp)
+    addi sp, sp, 384
+    ret
+
+.section .text
+.type solve_one_or_network, @function
+.globl solve_one_or_network
+solve_one_or_network:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# solve_one_or_network
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    sw a2, 64(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 68(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    li t0, 1
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    neg t0, t0
+    sw t0, 44(sp)
+    lw t0, 52(sp)
+    lw t1, 44(sp)
+    xor t2, t0, t1
+    sw t2, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9063_Lelse_J
+    lui t6, %hi(and_net)
+    flw ft11, %lo(and_net)(t6)
+    fsw ft11, 36(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 36(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    li t0, 0
+    sw t0, 20(sp)
+    lw a0, 20(sp)
+    lw a1, 24(sp)
+    lw a2, 64(sp)
+    call solve_each_element
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 72(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 12(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    call solve_one_or_network
+.9063_Lelse_J:
+.9064_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type trace_or_matrix, @function
+.globl trace_or_matrix
+trace_or_matrix:
+    addi sp, sp, -144
+    sw ra, 140(sp) 	# trace_or_matrix
+    sw a0, 136(sp)
+    sw a1, 132(sp)
+    sw a2, 128(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 132(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 108(sp)
+    lw t0, 116(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    li t0, 1
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    neg t0, t0
+    sw t0, 92(sp)
+    lw t0, 100(sp)
+    lw t1, 92(sp)
+    xor t2, t0, t1
+    sw t2, 88(sp)
+    lw t0, 88(sp)
+    seqz t0, t0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    beqz t0, .9065_Lelse_J
+    j .9066_Lendif_J
+.9065_Lelse_J:
+    li t0, 99
+    sw t0, 80(sp)
+    lw t0, 100(sp)
+    lw t1, 80(sp)
+    xor t2, t0, t1
+    sw t2, 76(sp)
+    lw t0, 76(sp)
+    seqz t0, t0
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    beqz t0, .9067_Lelse_J
+    li t0, 1
+    sw t0, 68(sp)
+    lw a0, 68(sp)
+    lw a1, 116(sp)
+    lw a2, 128(sp)
+    call solve_one_or_network
+    j .9068_Lendif_J
+.9067_Lelse_J:
+    lw a0, 100(sp)
+    lw a1, 128(sp)
+    lui a2, %hi(startp)
+    lw a2, %lo(startp)(a2)
+    call solver
+    sw a0, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    xor t2, t0, t1
+    sw t2, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9069_Lelse_J
+    li t0, 0
+    sw t0, 52(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 48(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 48(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 36(sp)
+    flw ft1, 16(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9071_Lelse_J
+    li t0, 1
+    sw t0, 8(sp)
+    lw a0, 8(sp)
+    lw a1, 116(sp)
+    lw a2, 128(sp)
+    call solve_one_or_network
+.9071_Lelse_J:
+.9072_Lendif_J:
+.9069_Lelse_J:
+.9070_Lendif_J:
+.9068_Lendif_J:
+    li t0, 1
+    sw t0, 4(sp)
+    lw t0, 136(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw a0, 0(sp)
+    lw a1, 132(sp)
+    lw a2, 128(sp)
+    call trace_or_matrix
+.9066_Lendif_J:
+    lw ra, 140(sp)
+    addi sp, sp, 144
+    ret
+
+.section .text
+.type judge_intersection, @function
+.globl judge_intersection
+judge_intersection:
+    addi sp, sp, -96
+    sw ra, 92(sp) 	# judge_intersection
+    sw a0, 88(sp)
+    li t0, 0
+    sw t0, 84(sp)
+    lui t6, %hi(.7459_L.LC6_J)
+    flw ft11, %lo(.7459_L.LC6_J)(t6)
+    fsw ft11, 80(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 76(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 76(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 80(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 56(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 56(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    lw a0, 64(sp)
+    lw a1, 44(sp)
+    lw a2, 88(sp)
+    call trace_or_matrix
+    li t0, 0
+    sw t0, 40(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 36(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 36(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 20(sp)
+    flw ft0, 20(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 16(sp)
+    flw ft0, 16(sp)
+    flw ft1, 24(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9073_Lelse_J
+    lui t6, %hi(.7469_L.LC7_J)
+    flw ft11, %lo(.7469_L.LC7_J)(t6)
+    fsw ft11, 8(sp)
+    flw ft0, 24(sp)
+    flw ft1, 8(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 4(sp)
+    j .9074_Lendif_J
+.9073_Lelse_J:
+    li t0, 0
+    sw t0, 4(sp)
+.9074_Lendif_J:
+    lw a0, 4(sp)
+    lw ra, 92(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type solve_each_element_fast, @function
+.globl solve_each_element_fast
+solve_each_element_fast:
+    addi sp, sp, -384
+    sw ra, 380(sp) 	# solve_each_element_fast
+    sw a0, 376(sp)
+    sw a1, 372(sp)
+    sw a2, 368(sp)
+    sw a3, 364(sp)
+    lw t0, 376(sp)
+    slli t0, t0, 2
+    sw t0, 360(sp)
+    lw t0, 372(sp)
+    lw t1, 360(sp)
+    add t2, t0, t1
+    sw t2, 356(sp)
+    lw t6, 356(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 352(sp)
+    li t0, 1
+    sw t0, 348(sp)
+    lw t0, 348(sp)
+    neg t0, t0
+    sw t0, 344(sp)
+    lw t0, 352(sp)
+    lw t1, 344(sp)
+    xor t2, t0, t1
+    sw t2, 340(sp)
+    lw t0, 340(sp)
+    seqz t0, t0
+    sw t0, 336(sp)
+    lw t0, 336(sp)
+    beqz t0, .9075_Lelse_J
+    j .9076_Lendif_J
+.9075_Lelse_J:
+    lw a0, 352(sp)
+    lw a1, 368(sp)
+    lw a2, 364(sp)
+    call solver_fast2
+    sw a0, 332(sp)
+    li t0, 0
+    sw t0, 328(sp)
+    lw t0, 332(sp)
+    lw t1, 328(sp)
+    xor t2, t0, t1
+    sw t2, 324(sp)
+    lw t0, 324(sp)
+    beqz t0, .9077_Lelse_J
+    li t0, 0
+    sw t0, 320(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 316(sp)
+    lw t0, 320(sp)
+    slli t0, t0, 2
+    sw t0, 312(sp)
+    lw t0, 316(sp)
+    lw t1, 312(sp)
+    add t2, t0, t1
+    sw t2, 308(sp)
+    lw t6, 308(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 304(sp)
+    sw zero, 300(sp)
+    flw ft0, 300(sp)
+    flw ft1, 304(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 296(sp)
+    lw t0, 296(sp)
+    beqz t0, .9079_Lelse_J
+    li t0, 0
+    sw t0, 292(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 288(sp)
+    lw t0, 292(sp)
+    slli t0, t0, 2
+    sw t0, 284(sp)
+    lw t0, 288(sp)
+    lw t1, 284(sp)
+    add t2, t0, t1
+    sw t2, 280(sp)
+    lw t6, 280(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 276(sp)
+    flw ft0, 304(sp)
+    flw ft1, 276(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 272(sp)
+    lw t0, 272(sp)
+    beqz t0, .9081_Lelse_J
+    lui t6, %hi(.7343_L.LC4_J)
+    flw ft11, %lo(.7343_L.LC4_J)(t6)
+    fsw ft11, 268(sp)
+    flw ft0, 304(sp)
+    flw ft1, 268(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 264(sp)
+    li t0, 0
+    sw t0, 260(sp)
+    lw t0, 260(sp)
+    slli t0, t0, 2
+    sw t0, 256(sp)
+    lw t0, 368(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 248(sp)
+    flw ft0, 248(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 244(sp)
+    li t0, 0
+    sw t0, 240(sp)
+    lui t6, %hi(startp_fast)
+    flw ft11, %lo(startp_fast)(t6)
+    fsw ft11, 236(sp)
+    lw t0, 240(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 236(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 224(sp)
+    flw ft0, 244(sp)
+    flw ft1, 224(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 220(sp)
+    li t0, 1
+    sw t0, 216(sp)
+    lw t0, 216(sp)
+    slli t0, t0, 2
+    sw t0, 212(sp)
+    lw t0, 368(sp)
+    lw t1, 212(sp)
+    add t2, t0, t1
+    sw t2, 208(sp)
+    lw t6, 208(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 204(sp)
+    flw ft0, 204(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 200(sp)
+    li t0, 1
+    sw t0, 196(sp)
+    lui t6, %hi(startp_fast)
+    flw ft11, %lo(startp_fast)(t6)
+    fsw ft11, 192(sp)
+    lw t0, 196(sp)
+    slli t0, t0, 2
+    sw t0, 188(sp)
+    lw t0, 192(sp)
+    lw t1, 188(sp)
+    add t2, t0, t1
+    sw t2, 184(sp)
+    lw t6, 184(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 180(sp)
+    flw ft0, 200(sp)
+    flw ft1, 180(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 176(sp)
+    li t0, 2
+    sw t0, 172(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 368(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    flw ft0, 160(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 156(sp)
+    li t0, 2
+    sw t0, 152(sp)
+    lui t6, %hi(startp_fast)
+    flw ft11, %lo(startp_fast)(t6)
+    fsw ft11, 148(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 144(sp)
+    lw t0, 148(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 136(sp)
+    flw ft0, 156(sp)
+    flw ft1, 136(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 132(sp)
+    li t0, 0
+    sw t0, 128(sp)
+    lw a0, 128(sp)
+    lw a1, 372(sp)
+    flw fa0, 220(sp)
+    flw fa1, 176(sp)
+    flw fa2, 132(sp)
+    call check_all_inside
+    sw a0, 124(sp)
+    lw t0, 124(sp)
+    beqz t0, .9083_Lelse_J
+    li t0, 0
+    sw t0, 120(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 116(sp)
+    lw t0, 120(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 116(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 264(sp)
+    fsw ft11, 0(t6)
+    lui a0, %hi(intersection_point)
+    lw a0, %lo(intersection_point)(a0)
+    flw fa0, 220(sp)
+    flw fa1, 176(sp)
+    flw fa2, 132(sp)
+    call vecset
+    li t0, 0
+    sw t0, 104(sp)
+    lui t6, %hi(intersected_object_id)
+    flw ft11, %lo(intersected_object_id)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 352(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 88(sp)
+    lui t6, %hi(intsec_rectside)
+    flw ft11, %lo(intsec_rectside)(t6)
+    fsw ft11, 84(sp)
+    lw t0, 88(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 84(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 332(sp)
+    fsw ft11, 0(t6)
+.9083_Lelse_J:
+.9084_Lendif_J:
+.9081_Lelse_J:
+.9082_Lendif_J:
+.9079_Lelse_J:
+.9080_Lendif_J:
+    li t0, 1
+    sw t0, 72(sp)
+    lw t0, 376(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw a0, 68(sp)
+    lw a1, 372(sp)
+    lw a2, 368(sp)
+    lw a3, 364(sp)
+    call solve_each_element_fast
+    j .9078_Lendif_J
+.9077_Lelse_J:
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 352(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lw t6, 56(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 48(sp)
+    lw t6, 56(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 44(sp)
+    lw t6, 56(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 40(sp)
+    lw t6, 56(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 36(sp)
+    lw t6, 56(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 32(sp)
+    lw t6, 56(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 28(sp)
+    lw t6, 56(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 24(sp)
+    lw t6, 56(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 20(sp)
+    lw t6, 56(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 16(sp)
+    lw t6, 56(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 12(sp)
+    lw t0, 28(sp)
+    beqz t0, .9085_Lelse_J
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 376(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 4(sp)
+    lw a1, 372(sp)
+    lw a2, 368(sp)
+    lw a3, 364(sp)
+    call solve_each_element_fast
+.9085_Lelse_J:
+.9086_Lendif_J:
+.9078_Lendif_J:
+.9076_Lendif_J:
+    lw ra, 380(sp)
+    addi sp, sp, 384
+    ret
+
+.section .text
+.type solve_one_or_network_fast, @function
+.globl solve_one_or_network_fast
+solve_one_or_network_fast:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# solve_one_or_network_fast
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    sw a2, 64(sp)
+    sw a3, 60(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 68(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 1
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    neg t0, t0
+    sw t0, 40(sp)
+    lw t0, 48(sp)
+    lw t1, 40(sp)
+    xor t2, t0, t1
+    sw t2, 36(sp)
+    lw t0, 36(sp)
+    beqz t0, .9087_Lelse_J
+    lui t6, %hi(and_net)
+    flw ft11, %lo(and_net)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw a0, 16(sp)
+    lw a1, 20(sp)
+    lw a2, 64(sp)
+    lw a3, 60(sp)
+    call solve_each_element_fast
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 72(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 8(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    lw a3, 60(sp)
+    call solve_one_or_network_fast
+.9087_Lelse_J:
+.9088_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type trace_or_matrix_fast, @function
+.globl trace_or_matrix_fast
+trace_or_matrix_fast:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# trace_or_matrix_fast
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    sw a2, 144(sp)
+    sw a3, 140(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 148(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    li t0, 0
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 128(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    li t0, 1
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    neg t0, t0
+    sw t0, 104(sp)
+    lw t0, 112(sp)
+    lw t1, 104(sp)
+    xor t2, t0, t1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    seqz t0, t0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9089_Lelse_J
+    j .9090_Lendif_J
+.9089_Lelse_J:
+    li t0, 99
+    sw t0, 92(sp)
+    lw t0, 112(sp)
+    lw t1, 92(sp)
+    xor t2, t0, t1
+    sw t2, 88(sp)
+    lw t0, 88(sp)
+    seqz t0, t0
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    beqz t0, .9091_Lelse_J
+    li t0, 1
+    sw t0, 80(sp)
+    lw a0, 80(sp)
+    lw a1, 128(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    call solve_one_or_network_fast
+    j .9092_Lendif_J
+.9091_Lelse_J:
+    lw a0, 112(sp)
+    lw a1, 144(sp)
+    lw a2, 140(sp)
+    call solver_fast2
+    sw a0, 76(sp)
+    li t0, 0
+    sw t0, 72(sp)
+    lw t0, 76(sp)
+    lw t1, 72(sp)
+    xor t2, t0, t1
+    sw t2, 68(sp)
+    lw t0, 68(sp)
+    beqz t0, .9093_Lelse_J
+    li t0, 0
+    sw t0, 64(sp)
+    lui t6, %hi(solver_dist)
+    flw ft11, %lo(solver_dist)(t6)
+    fsw ft11, 60(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 60(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 0
+    sw t0, 44(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 40(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 48(sp)
+    flw ft1, 28(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 24(sp)
+    lw t0, 24(sp)
+    beqz t0, .9095_Lelse_J
+    li t0, 1
+    sw t0, 20(sp)
+    lw a0, 20(sp)
+    lw a1, 128(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    call solve_one_or_network_fast
+.9095_Lelse_J:
+.9096_Lendif_J:
+.9093_Lelse_J:
+.9094_Lendif_J:
+.9092_Lendif_J:
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 152(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 12(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    call trace_or_matrix_fast
+.9090_Lendif_J:
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type judge_intersection_fast, @function
+.globl judge_intersection_fast
+judge_intersection_fast:
+    addi sp, sp, -96
+    sw ra, 92(sp) 	# judge_intersection_fast
+    sw a0, 88(sp)
+    sw a1, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    lui t6, %hi(.7459_L.LC6_J)
+    flw ft11, %lo(.7459_L.LC6_J)(t6)
+    fsw ft11, 76(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 72(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 72(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 76(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 60(sp)
+    li t0, 0
+    sw t0, 56(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 52(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 52(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    lw a0, 60(sp)
+    lw a1, 40(sp)
+    lw a2, 88(sp)
+    lw a3, 84(sp)
+    call trace_or_matrix_fast
+    li t0, 0
+    sw t0, 36(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 16(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 12(sp)
+    flw ft0, 12(sp)
+    flw ft1, 20(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    beqz t0, .9097_Lelse_J
+    lui t6, %hi(.7469_L.LC7_J)
+    flw ft11, %lo(.7469_L.LC7_J)(t6)
+    fsw ft11, 4(sp)
+    flw ft0, 20(sp)
+    flw ft1, 4(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 0(sp)
+    j .9098_Lendif_J
+.9097_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.9098_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 92(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type get_nvector_rect, @function
+.globl get_nvector_rect
+get_nvector_rect:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# get_nvector_rect
+    sw a0, 72(sp)
+    li t0, 0
+    sw t0, 68(sp)
+    lui t6, %hi(intsec_rectside)
+    flw ft11, %lo(intsec_rectside)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    sw zero, 48(sp)
+    lui a0, %hi(nvector)
+    lw a0, %lo(nvector)(a0)
+    flw fa0, 48(sp)
+    call vecfill
+    li t0, 1
+    sw t0, 44(sp)
+    lw t0, 52(sp)
+    lw t1, 44(sp)
+    sub t2, t0, t1
+    sw t2, 40(sp)
+    li t0, 1
+    sw t0, 36(sp)
+    lw t0, 52(sp)
+    lw t1, 36(sp)
+    sub t2, t0, t1
+    sw t2, 32(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 72(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    flw fa0, 20(sp)
+    call sgn
+    fsw fa0, 16(sp)
+    flw ft0, 16(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 12(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 8(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type get_nvector_plane, @function
+.globl get_nvector_plane
+get_nvector_plane:
+    addi sp, sp, -176
+    sw ra, 160(sp) 	# get_nvector_plane
+    sw a0, 156(sp)
+    sw a1, 152(sp)
+    sw a2, 148(sp)
+    sw a3, 144(sp)
+    sw a4, 140(sp)
+    sw a5, 136(sp)
+    sw a6, 132(sp)
+    sw a7, 128(sp)
+    flw ft11, 164(sp)
+    fsw ft11, 124(sp)
+    flw ft11, 168(sp)
+    fsw ft11, 120(sp)
+    flw ft11, 172(sp)
+    fsw ft11, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    li t0, 0
+    sw t0, 108(sp)
+    lw t0, 108(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 140(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    flw ft0, 96(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 92(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 88(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 88(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 92(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 76(sp)
+    li t0, 1
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 140(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    flw ft0, 60(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 56(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 52(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 52(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 56(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 40(sp)
+    li t0, 2
+    sw t0, 36(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 140(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 24(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 20(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+    lw ra, 160(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type get_nvector_second, @function
+.globl get_nvector_second
+get_nvector_second:
+    addi sp, sp, -528
+    sw ra, 512(sp) 	# get_nvector_second
+    sw a0, 508(sp)
+    sw a1, 504(sp)
+    sw a2, 500(sp)
+    sw a3, 496(sp)
+    sw a4, 492(sp)
+    sw a5, 488(sp)
+    sw a6, 484(sp)
+    sw a7, 480(sp)
+    flw ft11, 516(sp)
+    fsw ft11, 476(sp)
+    flw ft11, 520(sp)
+    fsw ft11, 472(sp)
+    flw ft11, 524(sp)
+    fsw ft11, 468(sp)
+    li t0, 0
+    sw t0, 464(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 460(sp)
+    lw t0, 464(sp)
+    slli t0, t0, 2
+    sw t0, 456(sp)
+    lw t0, 460(sp)
+    lw t1, 456(sp)
+    add t2, t0, t1
+    sw t2, 452(sp)
+    lw t6, 452(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 448(sp)
+    li t0, 0
+    sw t0, 444(sp)
+    lw t0, 444(sp)
+    slli t0, t0, 2
+    sw t0, 440(sp)
+    lw t0, 488(sp)
+    lw t1, 440(sp)
+    add t2, t0, t1
+    sw t2, 436(sp)
+    lw t6, 436(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 432(sp)
+    flw ft0, 448(sp)
+    flw ft1, 432(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 428(sp)
+    li t0, 1
+    sw t0, 424(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 420(sp)
+    lw t0, 424(sp)
+    slli t0, t0, 2
+    sw t0, 416(sp)
+    lw t0, 420(sp)
+    lw t1, 416(sp)
+    add t2, t0, t1
+    sw t2, 412(sp)
+    lw t6, 412(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 408(sp)
+    li t0, 1
+    sw t0, 404(sp)
+    lw t0, 404(sp)
+    slli t0, t0, 2
+    sw t0, 400(sp)
+    lw t0, 488(sp)
+    lw t1, 400(sp)
+    add t2, t0, t1
+    sw t2, 396(sp)
+    lw t6, 396(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 392(sp)
+    flw ft0, 408(sp)
+    flw ft1, 392(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 388(sp)
+    li t0, 2
+    sw t0, 384(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, 380(sp)
+    lw t0, 384(sp)
+    slli t0, t0, 2
+    sw t0, 376(sp)
+    lw t0, 380(sp)
+    lw t1, 376(sp)
+    add t2, t0, t1
+    sw t2, 372(sp)
+    lw t6, 372(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 368(sp)
+    li t0, 2
+    sw t0, 364(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 360(sp)
+    lw t0, 488(sp)
+    lw t1, 360(sp)
+    add t2, t0, t1
+    sw t2, 356(sp)
+    lw t6, 356(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 352(sp)
+    flw ft0, 368(sp)
+    flw ft1, 352(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 348(sp)
+    li t0, 0
+    sw t0, 344(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 492(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 332(sp)
+    flw ft0, 428(sp)
+    flw ft1, 332(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 328(sp)
+    li t0, 1
+    sw t0, 324(sp)
+    lw t0, 324(sp)
+    slli t0, t0, 2
+    sw t0, 320(sp)
+    lw t0, 492(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t6, 316(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 312(sp)
+    flw ft0, 388(sp)
+    flw ft1, 312(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 308(sp)
+    li t0, 2
+    sw t0, 304(sp)
+    lw t0, 304(sp)
+    slli t0, t0, 2
+    sw t0, 300(sp)
+    lw t0, 492(sp)
+    lw t1, 300(sp)
+    add t2, t0, t1
+    sw t2, 296(sp)
+    lw t6, 296(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 292(sp)
+    flw ft0, 348(sp)
+    flw ft1, 292(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 288(sp)
+    li t0, 0
+    sw t0, 284(sp)
+    lw t0, 496(sp)
+    lw t1, 284(sp)
+    xor t2, t0, t1
+    sw t2, 280(sp)
+    lw t0, 280(sp)
+    seqz t0, t0
+    sw t0, 276(sp)
+    lw t0, 276(sp)
+    beqz t0, .9099_Lelse_J
+    li t0, 0
+    sw t0, 272(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 268(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 264(sp)
+    lw t0, 268(sp)
+    lw t1, 264(sp)
+    add t2, t0, t1
+    sw t2, 260(sp)
+    lw t6, 260(sp)
+    flw ft11, 328(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 256(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 252(sp)
+    lw t0, 256(sp)
+    slli t0, t0, 2
+    sw t0, 248(sp)
+    lw t0, 252(sp)
+    lw t1, 248(sp)
+    add t2, t0, t1
+    sw t2, 244(sp)
+    lw t6, 244(sp)
+    flw ft11, 308(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 240(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 236(sp)
+    lw t0, 240(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 236(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 288(sp)
+    fsw ft11, 0(t6)
+    j .9100_Lendif_J
+.9099_Lelse_J:
+    li t0, 0
+    sw t0, 224(sp)
+    li t0, 2
+    sw t0, 220(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 472(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    flw ft0, 388(sp)
+    flw ft1, 208(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 204(sp)
+    li t0, 1
+    sw t0, 200(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 196(sp)
+    lw t0, 472(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    flw ft0, 348(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 184(sp)
+    flw ft0, 204(sp)
+    flw ft1, 184(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 180(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 176(sp)
+    flw ft11, 176(sp)
+    fsw ft11, 172(sp)
+    flw ft0, 180(sp)
+    flw ft1, 168(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    flw ft0, 328(sp)
+    flw ft1, 172(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 164(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 160(sp)
+    lw t0, 224(sp)
+    slli t0, t0, 2
+    sw t0, 156(sp)
+    lw t0, 160(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 164(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 148(sp)
+    li t0, 2
+    sw t0, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 140(sp)
+    lw t0, 472(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    flw ft0, 428(sp)
+    flw ft1, 132(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+    li t0, 0
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 472(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 348(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    flw ft0, 128(sp)
+    flw ft1, 108(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 100(sp)
+    flw ft11, 100(sp)
+    fsw ft11, 96(sp)
+    flw ft0, 104(sp)
+    flw ft1, 92(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 96(sp)
+    flw ft0, 308(sp)
+    flw ft1, 96(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 88(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 84(sp)
+    lw t0, 148(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 84(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 88(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 72(sp)
+    li t0, 1
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 472(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    flw ft0, 428(sp)
+    flw ft1, 56(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    li t0, 0
+    sw t0, 48(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 472(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    flw ft0, 388(sp)
+    flw ft1, 36(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    flw ft0, 52(sp)
+    flw ft1, 32(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 24(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 20(sp)
+    flw ft0, 28(sp)
+    flw ft1, 16(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    flw ft0, 288(sp)
+    flw ft1, 20(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 8(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+.9100_Lendif_J:
+    lui a0, %hi(nvector)
+    lw a0, %lo(nvector)(a0)
+    lw a1, 484(sp)
+    call vecunit_sgn
+    lw ra, 512(sp)
+    addi sp, sp, 528
+    ret
+
+.section .text
+.type get_nvector, @function
+.globl get_nvector
+get_nvector:
+    addi sp, sp, -96
+    sw ra, 76(sp) 	# get_nvector
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    sw a2, 64(sp)
+    sw a3, 60(sp)
+    sw a4, 56(sp)
+    sw a5, 52(sp)
+    sw a6, 48(sp)
+    sw a7, 44(sp)
+    flw ft11, 80(sp)
+    fsw ft11, 40(sp)
+    flw ft11, 84(sp)
+    fsw ft11, 36(sp)
+    flw ft11, 88(sp)
+    fsw ft11, 32(sp)
+    flw ft11, 92(sp)
+    fsw ft11, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 68(sp)
+    lw t1, 24(sp)
+    xor t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .9101_Lelse_J
+    lw a0, 28(sp)
+    call get_nvector_rect
+    j .9102_Lendif_J
+.9101_Lelse_J:
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 68(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .9103_Lelse_J
+    lw a0, 72(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    lw a3, 60(sp)
+    lw a4, 56(sp)
+    lw a5, 52(sp)
+    lw a6, 48(sp)
+    lw a7, 44(sp)
+    flw ft11, 40(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 36(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 32(sp)
+    fsw ft11, -4(sp)
+    call get_nvector_plane
+    j .9104_Lendif_J
+.9103_Lelse_J:
+    lw a0, 72(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    lw a3, 60(sp)
+    lw a4, 56(sp)
+    lw a5, 52(sp)
+    lw a6, 48(sp)
+    lw a7, 44(sp)
+    flw ft11, 40(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 36(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 32(sp)
+    fsw ft11, -4(sp)
+    call get_nvector_second
+.9104_Lendif_J:
+.9102_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type utexture, @function
+.globl utexture
+utexture:
+    addi sp, sp, -1024
+    sw ra, 1004(sp) 	# utexture
+    sw a0, 1000(sp)
+    sw a1, 996(sp)
+    sw a2, 992(sp)
+    sw a3, 988(sp)
+    sw a4, 984(sp)
+    sw a5, 980(sp)
+    sw a6, 976(sp)
+    sw a7, 972(sp)
+    flw ft11, 1008(sp)
+    fsw ft11, 968(sp)
+    flw ft11, 1012(sp)
+    fsw ft11, 964(sp)
+    flw ft11, 1016(sp)
+    fsw ft11, 960(sp)
+    flw ft11, 1020(sp)
+    fsw ft11, 956(sp)
+    li t0, 0
+    sw t0, 952(sp)
+    li t0, 0
+    sw t0, 948(sp)
+    lw t0, 948(sp)
+    slli t0, t0, 2
+    sw t0, 944(sp)
+    lw t0, 968(sp)
+    lw t1, 944(sp)
+    add t2, t0, t1
+    sw t2, 940(sp)
+    lw t6, 940(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 936(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 932(sp)
+    lw t0, 952(sp)
+    slli t0, t0, 2
+    sw t0, 928(sp)
+    lw t0, 932(sp)
+    lw t1, 928(sp)
+    add t2, t0, t1
+    sw t2, 924(sp)
+    lw t6, 924(sp)
+    flw ft11, 936(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 920(sp)
+    li t0, 1
+    sw t0, 916(sp)
+    lw t0, 916(sp)
+    slli t0, t0, 2
+    sw t0, 912(sp)
+    lw t0, 968(sp)
+    lw t1, 912(sp)
+    add t2, t0, t1
+    sw t2, 908(sp)
+    lw t6, 908(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 904(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 900(sp)
+    lw t0, 920(sp)
+    slli t0, t0, 2
+    sw t0, 896(sp)
+    lw t0, 900(sp)
+    lw t1, 896(sp)
+    add t2, t0, t1
+    sw t2, 892(sp)
+    lw t6, 892(sp)
+    flw ft11, 904(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 888(sp)
+    li t0, 2
+    sw t0, 884(sp)
+    lw t0, 884(sp)
+    slli t0, t0, 2
+    sw t0, 880(sp)
+    lw t0, 968(sp)
+    lw t1, 880(sp)
+    add t2, t0, t1
+    sw t2, 876(sp)
+    lw t6, 876(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 872(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 868(sp)
+    lw t0, 888(sp)
+    slli t0, t0, 2
+    sw t0, 864(sp)
+    lw t0, 868(sp)
+    lw t1, 864(sp)
+    add t2, t0, t1
+    sw t2, 860(sp)
+    lw t6, 860(sp)
+    flw ft11, 872(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 856(sp)
+    lw t0, 1000(sp)
+    lw t1, 856(sp)
+    xor t2, t0, t1
+    sw t2, 852(sp)
+    lw t0, 852(sp)
+    seqz t0, t0
+    sw t0, 848(sp)
+    lw t0, 848(sp)
+    beqz t0, .9105_Lelse_J
+    li t0, 0
+    sw t0, 844(sp)
+    lw t0, 844(sp)
+    slli t0, t0, 2
+    sw t0, 840(sp)
+    lw t0, 956(sp)
+    lw t1, 840(sp)
+    add t2, t0, t1
+    sw t2, 836(sp)
+    lw t6, 836(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 832(sp)
+    li t0, 0
+    sw t0, 828(sp)
+    lw t0, 828(sp)
+    slli t0, t0, 2
+    sw t0, 824(sp)
+    lw t0, 980(sp)
+    lw t1, 824(sp)
+    add t2, t0, t1
+    sw t2, 820(sp)
+    lw t6, 820(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 816(sp)
+    flw ft0, 832(sp)
+    flw ft1, 816(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 812(sp)
+    lui t6, %hi(.7699_L.LC8_J)
+    flw ft11, %lo(.7699_L.LC8_J)(t6)
+    fsw ft11, 808(sp)
+    flw ft0, 812(sp)
+    flw ft1, 808(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 804(sp)
+    flw fa0, 804(sp)
+    call mincaml_floor
+    fsw fa0, 800(sp)
+    lui t6, %hi(.7700_L.LC9_J)
+    flw ft11, %lo(.7700_L.LC9_J)(t6)
+    fsw ft11, 796(sp)
+    flw ft0, 800(sp)
+    flw ft1, 796(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 792(sp)
+    flw ft0, 812(sp)
+    flw ft1, 792(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 788(sp)
+    lui t6, %hi(.7701_L.LC10_J)
+    flw ft11, %lo(.7701_L.LC10_J)(t6)
+    fsw ft11, 784(sp)
+    flw ft0, 788(sp)
+    flw ft1, 784(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 780(sp)
+    li t0, 2
+    sw t0, 776(sp)
+    lw t0, 776(sp)
+    slli t0, t0, 2
+    sw t0, 772(sp)
+    lw t0, 956(sp)
+    lw t1, 772(sp)
+    add t2, t0, t1
+    sw t2, 768(sp)
+    lw t6, 768(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 764(sp)
+    li t0, 2
+    sw t0, 760(sp)
+    lw t0, 760(sp)
+    slli t0, t0, 2
+    sw t0, 756(sp)
+    lw t0, 980(sp)
+    lw t1, 756(sp)
+    add t2, t0, t1
+    sw t2, 752(sp)
+    lw t6, 752(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 748(sp)
+    flw ft0, 764(sp)
+    flw ft1, 748(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 744(sp)
+    lui t6, %hi(.7699_L.LC8_J)
+    flw ft11, %lo(.7699_L.LC8_J)(t6)
+    fsw ft11, 740(sp)
+    flw ft0, 744(sp)
+    flw ft1, 740(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 736(sp)
+    flw fa0, 736(sp)
+    call mincaml_floor
+    fsw fa0, 732(sp)
+    lui t6, %hi(.7700_L.LC9_J)
+    flw ft11, %lo(.7700_L.LC9_J)(t6)
+    fsw ft11, 728(sp)
+    flw ft0, 732(sp)
+    flw ft1, 728(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 724(sp)
+    flw ft0, 744(sp)
+    flw ft1, 724(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 720(sp)
+    lui t6, %hi(.7701_L.LC10_J)
+    flw ft11, %lo(.7701_L.LC10_J)(t6)
+    fsw ft11, 716(sp)
+    flw ft0, 720(sp)
+    flw ft1, 716(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 712(sp)
+    li t0, 1
+    sw t0, 708(sp)
+    lw t0, 780(sp)
+    beqz t0, .9107_Lelse_J
+    lw t0, 712(sp)
+    beqz t0, .9109_Lelse_J
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 704(sp)
+    j .9110_Lendif_J
+.9109_Lelse_J:
+    sw zero, 704(sp)
+.9110_Lendif_J:
+    j .9108_Lendif_J
+.9107_Lelse_J:
+    lw t0, 712(sp)
+    beqz t0, .9111_Lelse_J
+    sw zero, 704(sp)
+    j .9112_Lendif_J
+.9111_Lelse_J:
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 704(sp)
+.9112_Lendif_J:
+.9108_Lendif_J:
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 700(sp)
+    lw t0, 708(sp)
+    slli t0, t0, 2
+    sw t0, 696(sp)
+    lw t0, 700(sp)
+    lw t1, 696(sp)
+    add t2, t0, t1
+    sw t2, 692(sp)
+    lw t6, 692(sp)
+    flw ft11, 704(sp)
+    fsw ft11, 0(t6)
+    j .9106_Lendif_J
+.9105_Lelse_J:
+    li t0, 2
+    sw t0, 688(sp)
+    lw t0, 1000(sp)
+    lw t1, 688(sp)
+    xor t2, t0, t1
+    sw t2, 684(sp)
+    lw t0, 684(sp)
+    seqz t0, t0
+    sw t0, 680(sp)
+    lw t0, 680(sp)
+    beqz t0, .9113_Lelse_J
+    li t0, 1
+    sw t0, 676(sp)
+    lw t0, 676(sp)
+    slli t0, t0, 2
+    sw t0, 672(sp)
+    lw t0, 956(sp)
+    lw t1, 672(sp)
+    add t2, t0, t1
+    sw t2, 668(sp)
+    lw t6, 668(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 664(sp)
+    lui t6, %hi(.7713_L.LC12_J)
+    flw ft11, %lo(.7713_L.LC12_J)(t6)
+    fsw ft11, 660(sp)
+    flw ft0, 664(sp)
+    flw ft1, 660(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 656(sp)
+    flw fa0, 656(sp)
+    call mincaml_sin
+    fsw fa0, 652(sp)
+    flw ft0, 652(sp)
+    flw ft1, 652(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 648(sp)
+    li t0, 0
+    sw t0, 644(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 640(sp)
+    flw ft0, 640(sp)
+    flw ft1, 648(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 636(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 632(sp)
+    lw t0, 644(sp)
+    slli t0, t0, 2
+    sw t0, 628(sp)
+    lw t0, 632(sp)
+    lw t1, 628(sp)
+    add t2, t0, t1
+    sw t2, 624(sp)
+    lw t6, 624(sp)
+    flw ft11, 636(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 620(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 616(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 612(sp)
+    flw ft11, 612(sp)
+    fsw ft11, 608(sp)
+    flw ft0, 608(sp)
+    flw ft1, 648(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 604(sp)
+    flw ft0, 616(sp)
+    flw ft1, 604(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 600(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 596(sp)
+    lw t0, 620(sp)
+    slli t0, t0, 2
+    sw t0, 592(sp)
+    lw t0, 596(sp)
+    lw t1, 592(sp)
+    add t2, t0, t1
+    sw t2, 588(sp)
+    lw t6, 588(sp)
+    flw ft11, 600(sp)
+    fsw ft11, 0(t6)
+    j .9114_Lendif_J
+.9113_Lelse_J:
+    li t0, 3
+    sw t0, 584(sp)
+    lw t0, 1000(sp)
+    lw t1, 584(sp)
+    xor t2, t0, t1
+    sw t2, 580(sp)
+    lw t0, 580(sp)
+    seqz t0, t0
+    sw t0, 576(sp)
+    lw t0, 576(sp)
+    beqz t0, .9115_Lelse_J
+    li t0, 0
+    sw t0, 572(sp)
+    lw t0, 572(sp)
+    slli t0, t0, 2
+    sw t0, 568(sp)
+    lw t0, 956(sp)
+    lw t1, 568(sp)
+    add t2, t0, t1
+    sw t2, 564(sp)
+    lw t6, 564(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 560(sp)
+    li t0, 0
+    sw t0, 556(sp)
+    lw t0, 556(sp)
+    slli t0, t0, 2
+    sw t0, 552(sp)
+    lw t0, 980(sp)
+    lw t1, 552(sp)
+    add t2, t0, t1
+    sw t2, 548(sp)
+    lw t6, 548(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 544(sp)
+    flw ft0, 560(sp)
+    flw ft1, 544(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 540(sp)
+    li t0, 2
+    sw t0, 536(sp)
+    lw t0, 536(sp)
+    slli t0, t0, 2
+    sw t0, 532(sp)
+    lw t0, 956(sp)
+    lw t1, 532(sp)
+    add t2, t0, t1
+    sw t2, 528(sp)
+    lw t6, 528(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 524(sp)
+    li t0, 2
+    sw t0, 520(sp)
+    lw t0, 520(sp)
+    slli t0, t0, 2
+    sw t0, 516(sp)
+    lw t0, 980(sp)
+    lw t1, 516(sp)
+    add t2, t0, t1
+    sw t2, 512(sp)
+    lw t6, 512(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 508(sp)
+    flw ft0, 524(sp)
+    flw ft1, 508(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 504(sp)
+    flw ft0, 540(sp)
+    flw ft1, 540(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 500(sp)
+    flw ft0, 504(sp)
+    flw ft1, 504(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 496(sp)
+    flw ft0, 500(sp)
+    flw ft1, 496(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 492(sp)
+    flw ft0, 492(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 488(sp)
+    lui t6, %hi(.7701_L.LC10_J)
+    flw ft11, %lo(.7701_L.LC10_J)(t6)
+    fsw ft11, 484(sp)
+    flw ft0, 488(sp)
+    flw ft1, 484(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 480(sp)
+    flw fa0, 480(sp)
+    call mincaml_floor
+    fsw fa0, 476(sp)
+    flw ft0, 480(sp)
+    flw ft1, 476(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 472(sp)
+    lui t6, %hi(.7730_L.LC13_J)
+    flw ft11, %lo(.7730_L.LC13_J)(t6)
+    fsw ft11, 468(sp)
+    flw ft0, 472(sp)
+    flw ft1, 468(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 464(sp)
+    flw fa0, 464(sp)
+    call mincaml_cos
+    fsw fa0, 460(sp)
+    flw ft0, 460(sp)
+    flw ft1, 460(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 456(sp)
+    li t0, 1
+    sw t0, 452(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 448(sp)
+    flw ft0, 456(sp)
+    flw ft1, 448(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 444(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 440(sp)
+    lw t0, 452(sp)
+    slli t0, t0, 2
+    sw t0, 436(sp)
+    lw t0, 440(sp)
+    lw t1, 436(sp)
+    add t2, t0, t1
+    sw t2, 432(sp)
+    lw t6, 432(sp)
+    flw ft11, 444(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 428(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 424(sp)
+    flw ft11, 424(sp)
+    fsw ft11, 420(sp)
+    flw ft0, 420(sp)
+    flw ft1, 456(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 416(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 412(sp)
+    flw ft0, 416(sp)
+    flw ft1, 412(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 408(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 404(sp)
+    lw t0, 428(sp)
+    slli t0, t0, 2
+    sw t0, 400(sp)
+    lw t0, 404(sp)
+    lw t1, 400(sp)
+    add t2, t0, t1
+    sw t2, 396(sp)
+    lw t6, 396(sp)
+    flw ft11, 408(sp)
+    fsw ft11, 0(t6)
+    j .9116_Lendif_J
+.9115_Lelse_J:
+    li t0, 4
+    sw t0, 392(sp)
+    lw t0, 1000(sp)
+    lw t1, 392(sp)
+    xor t2, t0, t1
+    sw t2, 388(sp)
+    lw t0, 388(sp)
+    seqz t0, t0
+    sw t0, 384(sp)
+    lw t0, 384(sp)
+    beqz t0, .9117_Lelse_J
+    li t0, 0
+    sw t0, 380(sp)
+    lw t0, 380(sp)
+    slli t0, t0, 2
+    sw t0, 376(sp)
+    lw t0, 956(sp)
+    lw t1, 376(sp)
+    add t2, t0, t1
+    sw t2, 372(sp)
+    lw t6, 372(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 368(sp)
+    li t0, 0
+    sw t0, 364(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 360(sp)
+    lw t0, 980(sp)
+    lw t1, 360(sp)
+    add t2, t0, t1
+    sw t2, 356(sp)
+    lw t6, 356(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 352(sp)
+    flw ft0, 368(sp)
+    flw ft1, 352(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 348(sp)
+    li t0, 0
+    sw t0, 344(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 984(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 332(sp)
+    flw ft0, 332(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 328(sp)
+    flw ft0, 348(sp)
+    flw ft1, 328(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 324(sp)
+    li t0, 2
+    sw t0, 320(sp)
+    lw t0, 320(sp)
+    slli t0, t0, 2
+    sw t0, 316(sp)
+    lw t0, 956(sp)
+    lw t1, 316(sp)
+    add t2, t0, t1
+    sw t2, 312(sp)
+    lw t6, 312(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 308(sp)
+    li t0, 2
+    sw t0, 304(sp)
+    lw t0, 304(sp)
+    slli t0, t0, 2
+    sw t0, 300(sp)
+    lw t0, 980(sp)
+    lw t1, 300(sp)
+    add t2, t0, t1
+    sw t2, 296(sp)
+    lw t6, 296(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 292(sp)
+    flw ft0, 308(sp)
+    flw ft1, 292(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 288(sp)
+    li t0, 2
+    sw t0, 284(sp)
+    lw t0, 284(sp)
+    slli t0, t0, 2
+    sw t0, 280(sp)
+    lw t0, 984(sp)
+    lw t1, 280(sp)
+    add t2, t0, t1
+    sw t2, 276(sp)
+    lw t6, 276(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 272(sp)
+    flw ft0, 272(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 268(sp)
+    flw ft0, 288(sp)
+    flw ft1, 268(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 264(sp)
+    flw ft0, 324(sp)
+    flw ft1, 324(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 260(sp)
+    flw ft0, 264(sp)
+    flw ft1, 264(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 256(sp)
+    flw ft0, 260(sp)
+    flw ft1, 256(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 252(sp)
+    flw ft0, 324(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 248(sp)
+    lui t6, %hi(.7751_L.LC14_J)
+    flw ft11, %lo(.7751_L.LC14_J)(t6)
+    fsw ft11, 244(sp)
+    flw ft0, 248(sp)
+    flw ft1, 244(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 240(sp)
+    lw t0, 240(sp)
+    beqz t0, .9119_Lelse_J
+    lui t6, %hi(.7752_L.LC15_J)
+    flw ft11, %lo(.7752_L.LC15_J)(t6)
+    fsw ft11, 236(sp)
+    j .9120_Lendif_J
+.9119_Lelse_J:
+    flw ft0, 264(sp)
+    flw ft1, 324(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 232(sp)
+    flw ft0, 232(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 228(sp)
+    flw fa0, 228(sp)
+    call mincaml_atan
+    fsw fa0, 224(sp)
+    lui t6, %hi(.7753_L.LC16_J)
+    flw ft11, %lo(.7753_L.LC16_J)(t6)
+    fsw ft11, 220(sp)
+    flw ft0, 224(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 216(sp)
+    lui t6, %hi(.7730_L.LC13_J)
+    flw ft11, %lo(.7730_L.LC13_J)(t6)
+    fsw ft11, 212(sp)
+    flw ft0, 216(sp)
+    flw ft1, 212(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+.9120_Lendif_J:
+    flw fa0, 236(sp)
+    call mincaml_floor
+    fsw fa0, 208(sp)
+    flw ft0, 236(sp)
+    flw ft1, 208(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 204(sp)
+    li t0, 1
+    sw t0, 200(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 196(sp)
+    lw t0, 956(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    li t0, 1
+    sw t0, 184(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 980(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    flw ft0, 188(sp)
+    flw ft1, 172(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    li t0, 1
+    sw t0, 164(sp)
+    lw t0, 164(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 984(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 152(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 148(sp)
+    flw ft0, 168(sp)
+    flw ft1, 148(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    flw ft0, 252(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 140(sp)
+    lui t6, %hi(.7751_L.LC14_J)
+    flw ft11, %lo(.7751_L.LC14_J)(t6)
+    fsw ft11, 136(sp)
+    flw ft0, 140(sp)
+    flw ft1, 136(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 132(sp)
+    lw t0, 132(sp)
+    beqz t0, .9121_Lelse_J
+    lui t6, %hi(.7752_L.LC15_J)
+    flw ft11, %lo(.7752_L.LC15_J)(t6)
+    fsw ft11, 128(sp)
+    j .9122_Lendif_J
+.9121_Lelse_J:
+    flw ft0, 144(sp)
+    flw ft1, 252(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    flw ft0, 124(sp)
+    fabs.s ft0, ft0
+    fsw ft0, 120(sp)
+    flw fa0, 120(sp)
+    call mincaml_atan
+    fsw fa0, 116(sp)
+    lui t6, %hi(.7753_L.LC16_J)
+    flw ft11, %lo(.7753_L.LC16_J)(t6)
+    fsw ft11, 112(sp)
+    flw ft0, 116(sp)
+    flw ft1, 112(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    lui t6, %hi(.7730_L.LC13_J)
+    flw ft11, %lo(.7730_L.LC13_J)(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 108(sp)
+    flw ft1, 104(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 128(sp)
+.9122_Lendif_J:
+    flw fa0, 128(sp)
+    call mincaml_floor
+    fsw fa0, 100(sp)
+    flw ft0, 128(sp)
+    flw ft1, 100(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 96(sp)
+    lui t6, %hi(.7760_L.LC17_J)
+    flw ft11, %lo(.7760_L.LC17_J)(t6)
+    fsw ft11, 92(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 88(sp)
+    flw ft11, 88(sp)
+    fsw ft11, 84(sp)
+    flw ft0, 84(sp)
+    flw ft1, 204(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    flw ft0, 80(sp)
+    flw ft1, 80(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    flw ft0, 92(sp)
+    flw ft1, 76(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 72(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 68(sp)
+    flw ft11, 68(sp)
+    fsw ft11, 64(sp)
+    flw ft0, 64(sp)
+    flw ft1, 96(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    flw ft0, 60(sp)
+    flw ft1, 60(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    flw ft0, 72(sp)
+    flw ft1, 56(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    sw zero, 48(sp)
+    flw ft0, 52(sp)
+    flw ft1, 48(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    beqz t0, .9123_Lelse_J
+    sw zero, 40(sp)
+    j .9124_Lendif_J
+.9123_Lelse_J:
+    flw ft11, 52(sp)
+    fsw ft11, 40(sp)
+.9124_Lendif_J:
+    li t0, 2
+    sw t0, 36(sp)
+    lui t6, %hi(.7706_L.LC11_J)
+    flw ft11, %lo(.7706_L.LC11_J)(t6)
+    fsw ft11, 32(sp)
+    flw ft0, 32(sp)
+    flw ft1, 40(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    lui t6, %hi(.7764_L.LC18_J)
+    flw ft11, %lo(.7764_L.LC18_J)(t6)
+    fsw ft11, 24(sp)
+    flw ft0, 28(sp)
+    flw ft1, 24(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    lui t6, %hi(texture_color)
+    flw ft11, %lo(texture_color)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+.9117_Lelse_J:
+.9118_Lendif_J:
+.9116_Lendif_J:
+.9114_Lendif_J:
+.9106_Lendif_J:
+    lw ra, 1004(sp)
+    addi sp, sp, 1024
+    ret
+
+.section .text
+.type add_light, @function
+.globl add_light
+add_light:
+    addi sp, sp, -176
+    sw ra, 172(sp) 	# add_light
+    fsw fa0, 168(sp)
+    fsw fa1, 164(sp)
+    fsw fa2, 160(sp)
+    sw zero, 156(sp)
+    flw ft0, 156(sp)
+    flw ft1, 168(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 152(sp)
+    lw t0, 152(sp)
+    beqz t0, .9125_Lelse_J
+    lui a0, %hi(rgb)
+    lw a0, %lo(rgb)(a0)
+    flw fa0, 168(sp)
+    lui a1, %hi(texture_color)
+    lw a1, %lo(texture_color)(a1)
+    call vecaccum
+.9125_Lelse_J:
+.9126_Lendif_J:
+    sw zero, 148(sp)
+    flw ft0, 148(sp)
+    flw ft1, 164(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 144(sp)
+    lw t0, 144(sp)
+    beqz t0, .9127_Lelse_J
+    flw ft0, 164(sp)
+    flw ft1, 164(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 140(sp)
+    flw ft0, 140(sp)
+    flw ft1, 140(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    flw ft0, 136(sp)
+    flw ft1, 160(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 132(sp)
+    li t0, 0
+    sw t0, 128(sp)
+    li t0, 0
+    sw t0, 124(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 120(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 120(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    flw ft0, 108(sp)
+    flw ft1, 132(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 104(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 88(sp)
+    li t0, 1
+    sw t0, 84(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 80(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 80(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    flw ft0, 68(sp)
+    flw ft1, 132(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 60(sp)
+    lw t0, 88(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 60(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 48(sp)
+    li t0, 2
+    sw t0, 44(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 40(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 28(sp)
+    flw ft1, 132(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 0(t6)
+.9127_Lelse_J:
+.9128_Lendif_J:
+    lw ra, 172(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type trace_reflections, @function
+.globl trace_reflections
+trace_reflections:
+    addi sp, sp, -432
+    sw ra, 428(sp) 	# trace_reflections
+    sw a0, 424(sp)
+    fsw fa0, 420(sp)
+    fsw fa1, 416(sp)
+    sw a1, 412(sp)
+    li t0, 0
+    sw t0, 408(sp)
+    lw t0, 424(sp)
+    lw t1, 408(sp)
+    slt t2, t0, t1
+    sw t2, 404(sp)
+    lw t0, 404(sp)
+    seqz t0, t0
+    sw t0, 400(sp)
+    lw t0, 400(sp)
+    beqz t0, .9129_Lelse_J
+    lui t6, %hi(reflections)
+    flw ft11, %lo(reflections)(t6)
+    fsw ft11, 396(sp)
+    lw t0, 424(sp)
+    slli t0, t0, 4
+    sw t0, 392(sp)
+    lw t0, 396(sp)
+    lw t1, 392(sp)
+    add t2, t0, t1
+    sw t2, 388(sp)
+    lw t6, 388(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 384(sp)
+    lw t6, 388(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 380(sp)
+    lw t6, 388(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 376(sp)
+    lw t6, 388(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 372(sp)
+    lw a0, 380(sp)
+    lw a1, 376(sp)
+    call judge_intersection_fast
+    sw a0, 368(sp)
+    lw t0, 368(sp)
+    beqz t0, .9131_Lelse_J
+    li t0, 0
+    sw t0, 364(sp)
+    lui t6, %hi(intersected_object_id)
+    flw ft11, %lo(intersected_object_id)(t6)
+    fsw ft11, 360(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 356(sp)
+    lw t0, 360(sp)
+    lw t1, 356(sp)
+    add t2, t0, t1
+    sw t2, 352(sp)
+    lw t6, 352(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 348(sp)
+    li t0, 4
+    sw t0, 344(sp)
+    lw t0, 348(sp)
+    slli t2, t0, 2
+    sw t2, 340(sp)
+    li t0, 0
+    sw t0, 336(sp)
+    lui t6, %hi(intsec_rectside)
+    flw ft11, %lo(intsec_rectside)(t6)
+    fsw ft11, 332(sp)
+    lw t0, 336(sp)
+    slli t0, t0, 2
+    sw t0, 328(sp)
+    lw t0, 332(sp)
+    lw t1, 328(sp)
+    add t2, t0, t1
+    sw t2, 324(sp)
+    lw t6, 324(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 320(sp)
+    lw t0, 340(sp)
+    lw t1, 320(sp)
+    add t2, t0, t1
+    sw t2, 316(sp)
+    lw t0, 316(sp)
+    lw t1, 384(sp)
+    xor t2, t0, t1
+    sw t2, 312(sp)
+    lw t0, 312(sp)
+    seqz t0, t0
+    sw t0, 308(sp)
+    lw t0, 308(sp)
+    beqz t0, .9133_Lelse_J
+    li t0, 0
+    sw t0, 304(sp)
+    li t0, 0
+    sw t0, 300(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 296(sp)
+    lw t0, 300(sp)
+    slli t0, t0, 2
+    sw t0, 292(sp)
+    lw t0, 296(sp)
+    lw t1, 292(sp)
+    add t2, t0, t1
+    sw t2, 288(sp)
+    lw t6, 288(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 284(sp)
+    lw a0, 304(sp)
+    lw a1, 284(sp)
+    call shadow_check_one_or_matrix
+    sw a0, 280(sp)
+    lw t0, 280(sp)
+    seqz t0, t0
+    sw t0, 276(sp)
+    lw t0, 276(sp)
+    beqz t0, .9135_Lelse_J
+    li t0, 0
+    sw t0, 272(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 268(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 264(sp)
+    lw t0, 268(sp)
+    lw t1, 264(sp)
+    add t2, t0, t1
+    sw t2, 260(sp)
+    lw t6, 260(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 256(sp)
+    li t0, 0
+    sw t0, 252(sp)
+    lw t0, 252(sp)
+    slli t0, t0, 2
+    sw t0, 248(sp)
+    lw t0, 380(sp)
+    lw t1, 248(sp)
+    add t2, t0, t1
+    sw t2, 244(sp)
+    lw t6, 244(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 240(sp)
+    flw ft0, 256(sp)
+    flw ft1, 240(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    li t0, 1
+    sw t0, 232(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 228(sp)
+    lw t0, 232(sp)
+    slli t0, t0, 2
+    sw t0, 224(sp)
+    lw t0, 228(sp)
+    lw t1, 224(sp)
+    add t2, t0, t1
+    sw t2, 220(sp)
+    lw t6, 220(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 216(sp)
+    li t0, 1
+    sw t0, 212(sp)
+    lw t0, 212(sp)
+    slli t0, t0, 2
+    sw t0, 208(sp)
+    lw t0, 380(sp)
+    lw t1, 208(sp)
+    add t2, t0, t1
+    sw t2, 204(sp)
+    lw t6, 204(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 200(sp)
+    flw ft0, 216(sp)
+    flw ft1, 200(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 196(sp)
+    flw ft0, 236(sp)
+    flw ft1, 196(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    li t0, 2
+    sw t0, 188(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 184(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 184(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    li t0, 2
+    sw t0, 168(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 164(sp)
+    lw t0, 380(sp)
+    lw t1, 164(sp)
+    add t2, t0, t1
+    sw t2, 160(sp)
+    lw t6, 160(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 172(sp)
+    flw ft1, 156(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 192(sp)
+    flw ft1, 152(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    flw ft0, 372(sp)
+    flw ft1, 420(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    flw ft0, 144(sp)
+    flw ft1, 148(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 140(sp)
+    li t0, 0
+    sw t0, 136(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 412(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 124(sp)
+    li t0, 0
+    sw t0, 120(sp)
+    lw t0, 120(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 380(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    flw ft0, 124(sp)
+    flw ft1, 108(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    li t0, 1
+    sw t0, 100(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 412(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    li t0, 1
+    sw t0, 84(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 380(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    flw ft0, 88(sp)
+    flw ft1, 72(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 68(sp)
+    flw ft0, 104(sp)
+    flw ft1, 68(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 64(sp)
+    li t0, 2
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 412(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    li t0, 2
+    sw t0, 44(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 380(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    flw ft0, 48(sp)
+    flw ft1, 32(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    flw ft0, 64(sp)
+    flw ft1, 28(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    flw ft0, 372(sp)
+    flw ft1, 24(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 20(sp)
+    flw fa0, 140(sp)
+    flw fa1, 20(sp)
+    flw fa2, 416(sp)
+    call add_light
+.9135_Lelse_J:
+.9136_Lendif_J:
+.9133_Lelse_J:
+.9134_Lendif_J:
+.9131_Lelse_J:
+.9132_Lendif_J:
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 424(sp)
+    lw t1, 16(sp)
+    sub t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 12(sp)
+    flw fa0, 420(sp)
+    flw fa1, 416(sp)
+    lw a1, 412(sp)
+    call trace_reflections
+.9129_Lelse_J:
+.9130_Lendif_J:
+    lw ra, 428(sp)
+    addi sp, sp, 432
+    ret
+
+.section .text
+.type trace_ray, @function
+.globl trace_ray
+trace_ray:
+    addi sp, sp, -1296
+    sw ra, 1284(sp) 	# trace_ray
+    sw a0, 1280(sp)
+    fsw fa0, 1276(sp)
+    sw a1, 1272(sp)
+    sw a2, 1268(sp)
+    sw a3, 1264(sp)
+    sw a4, 1260(sp)
+    sw a5, 1256(sp)
+    sw a6, 1252(sp)
+    sw a7, 1248(sp)
+    flw ft11, 1288(sp)
+    fsw ft11, 1244(sp)
+    flw ft11, 1292(sp)
+    fsw ft11, 1240(sp)
+    fsw fa1, 1236(sp)
+    li t0, 4
+    sw t0, 1232(sp)
+    lw t0, 1232(sp)
+    lw t1, 1280(sp)
+    slt t2, t0, t1
+    sw t2, 1228(sp)
+    lw t0, 1228(sp)
+    seqz t0, t0
+    sw t0, 1224(sp)
+    lw t0, 1224(sp)
+    bnez t0, next
+    j .9137_Lelse_J
+next:
+    lw a0, 1272(sp)
+    call judge_intersection
+    sw a0, 1220(sp)
+    lw t0, 1220(sp)
+    beqz t0, .9139_Lelse_J
+    li t0, 0
+    sw t0, 1216(sp)
+    lui t6, %hi(intersected_object_id)
+    flw ft11, %lo(intersected_object_id)(t6)
+    fsw ft11, 1212(sp)
+    lw t0, 1216(sp)
+    slli t0, t0, 2
+    sw t0, 1208(sp)
+    lw t0, 1212(sp)
+    lw t1, 1208(sp)
+    add t2, t0, t1
+    sw t2, 1204(sp)
+    lw t6, 1204(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1200(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 1196(sp)
+    lw t0, 1200(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 1192(sp)
+    lw t0, 1196(sp)
+    lw t1, 1192(sp)
+    add t2, t0, t1
+    sw t2, 1188(sp)
+    lw t6, 1188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1184(sp)
+    lw t6, 1188(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 1180(sp)
+    lw t6, 1188(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 1176(sp)
+    lw t6, 1188(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 1172(sp)
+    lw t6, 1188(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 1168(sp)
+    lw t6, 1188(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 1164(sp)
+    lw t6, 1188(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 1160(sp)
+    lw t6, 1188(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 1156(sp)
+    lw t6, 1188(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 1152(sp)
+    lw t6, 1188(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 1148(sp)
+    lw t6, 1188(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 1144(sp)
+    li t0, 0
+    sw t0, 1140(sp)
+    lw t0, 1140(sp)
+    slli t0, t0, 2
+    sw t0, 1136(sp)
+    lw t0, 1156(sp)
+    lw t1, 1136(sp)
+    add t2, t0, t1
+    sw t2, 1132(sp)
+    lw t6, 1132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1128(sp)
+    flw ft0, 1128(sp)
+    flw ft1, 1276(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 1124(sp)
+    lw a0, 1184(sp)
+    lw a1, 1180(sp)
+    lw a2, 1176(sp)
+    lw a3, 1172(sp)
+    lw a4, 1168(sp)
+    lw a5, 1164(sp)
+    lw a6, 1160(sp)
+    lw a7, 1156(sp)
+    flw ft11, 1152(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 1148(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 1144(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 1272(sp)
+    fsw ft11, -4(sp)
+    call get_nvector
+    lui a0, %hi(startp)
+    lw a0, %lo(startp)(a0)
+    lui a1, %hi(intersection_point)
+    lw a1, %lo(intersection_point)(a1)
+    call veccpy
+    lw a0, 1184(sp)
+    lw a1, 1180(sp)
+    lw a2, 1176(sp)
+    lw a3, 1172(sp)
+    lw a4, 1168(sp)
+    lw a5, 1164(sp)
+    lw a6, 1160(sp)
+    lw a7, 1156(sp)
+    flw ft11, 1152(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 1148(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 1144(sp)
+    fsw ft11, -8(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, -4(sp)
+    call utexture
+    li t0, 4
+    sw t0, 1120(sp)
+    lw t0, 1200(sp)
+    slli t2, t0, 2
+    sw t2, 1116(sp)
+    li t0, 0
+    sw t0, 1112(sp)
+    lui t6, %hi(intsec_rectside)
+    flw ft11, %lo(intsec_rectside)(t6)
+    fsw ft11, 1108(sp)
+    lw t0, 1112(sp)
+    slli t0, t0, 2
+    sw t0, 1104(sp)
+    lw t0, 1108(sp)
+    lw t1, 1104(sp)
+    add t2, t0, t1
+    sw t2, 1100(sp)
+    lw t6, 1100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1096(sp)
+    lw t0, 1116(sp)
+    lw t1, 1096(sp)
+    add t2, t0, t1
+    sw t2, 1092(sp)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1088(sp)
+    lw t0, 1260(sp)
+    lw t1, 1088(sp)
+    add t2, t0, t1
+    sw t2, 1084(sp)
+    lw t6, 1084(sp)
+    flw ft11, 1092(sp)
+    fsw ft11, 0(t6)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1080(sp)
+    lw t0, 1264(sp)
+    lw t1, 1080(sp)
+    add t2, t0, t1
+    sw t2, 1076(sp)
+    lw t6, 1076(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1072(sp)
+    lw a0, 1072(sp)
+    lui a1, %hi(intersection_point)
+    lw a1, %lo(intersection_point)(a1)
+    call veccpy
+    li t0, 0
+    sw t0, 1068(sp)
+    lw t0, 1068(sp)
+    slli t0, t0, 2
+    sw t0, 1064(sp)
+    lw t0, 1156(sp)
+    lw t1, 1064(sp)
+    add t2, t0, t1
+    sw t2, 1060(sp)
+    lw t6, 1060(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1056(sp)
+    lui t6, 258048 # 0x3f000
+    sw t6, 1052(sp)
+    flw ft11, 1052(sp)
+    fsw ft11, 1048(sp)
+    flw ft0, 1056(sp)
+    flw ft1, 1048(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 1044(sp)
+    lw t0, 1044(sp)
+    beqz t0, .9141_Lelse_J
+    li t0, 0
+    sw t0, 1040(sp)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1036(sp)
+    lw t0, 1256(sp)
+    lw t1, 1036(sp)
+    add t2, t0, t1
+    sw t2, 1032(sp)
+    lw t6, 1032(sp)
+    flw ft11, 1040(sp)
+    fsw ft11, 0(t6)
+    j .9142_Lendif_J
+.9141_Lelse_J:
+    li t0, 1
+    sw t0, 1028(sp)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1024(sp)
+    lw t0, 1256(sp)
+    lw t1, 1024(sp)
+    add t2, t0, t1
+    sw t2, 1020(sp)
+    lw t6, 1020(sp)
+    flw ft11, 1028(sp)
+    fsw ft11, 0(t6)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1016(sp)
+    lw t0, 1252(sp)
+    lw t1, 1016(sp)
+    add t2, t0, t1
+    sw t2, 1012(sp)
+    lw t6, 1012(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 1008(sp)
+    lw a0, 1008(sp)
+    lui a1, %hi(texture_color)
+    lw a1, %lo(texture_color)(a1)
+    call veccpy
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 1004(sp)
+    lw t0, 1252(sp)
+    lw t1, 1004(sp)
+    add t2, t0, t1
+    sw t2, 1000(sp)
+    lw t6, 1000(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 996(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 992(sp)
+    flw ft11, 992(sp)
+    fsw ft11, 988(sp)
+    lui t6, %hi(.7882_L.LC19_J)
+    flw ft11, %lo(.7882_L.LC19_J)(t6)
+    fsw ft11, 984(sp)
+    flw ft0, 988(sp)
+    flw ft1, 984(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 980(sp)
+    flw ft0, 980(sp)
+    flw ft1, 1124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 976(sp)
+    lw a0, 996(sp)
+    flw fa0, 976(sp)
+    call vecscale
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 972(sp)
+    lw t0, 1240(sp)
+    lw t1, 972(sp)
+    add t2, t0, t1
+    sw t2, 968(sp)
+    lw t6, 968(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 964(sp)
+    lw a0, 964(sp)
+    lui a1, %hi(nvector)
+    lw a1, %lo(nvector)(a1)
+    call veccpy
+.9142_Lendif_J:
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 960(sp)
+    flw ft0, 960(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 956(sp)
+    li t0, 0
+    sw t0, 952(sp)
+    lw t0, 952(sp)
+    slli t0, t0, 2
+    sw t0, 948(sp)
+    lw t0, 1272(sp)
+    lw t1, 948(sp)
+    add t2, t0, t1
+    sw t2, 944(sp)
+    lw t6, 944(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 940(sp)
+    li t0, 0
+    sw t0, 936(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 932(sp)
+    lw t0, 936(sp)
+    slli t0, t0, 2
+    sw t0, 928(sp)
+    lw t0, 932(sp)
+    lw t1, 928(sp)
+    add t2, t0, t1
+    sw t2, 924(sp)
+    lw t6, 924(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 920(sp)
+    flw ft0, 940(sp)
+    flw ft1, 920(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 916(sp)
+    li t0, 1
+    sw t0, 912(sp)
+    lw t0, 912(sp)
+    slli t0, t0, 2
+    sw t0, 908(sp)
+    lw t0, 1272(sp)
+    lw t1, 908(sp)
+    add t2, t0, t1
+    sw t2, 904(sp)
+    lw t6, 904(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 900(sp)
+    li t0, 1
+    sw t0, 896(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 892(sp)
+    lw t0, 896(sp)
+    slli t0, t0, 2
+    sw t0, 888(sp)
+    lw t0, 892(sp)
+    lw t1, 888(sp)
+    add t2, t0, t1
+    sw t2, 884(sp)
+    lw t6, 884(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 880(sp)
+    flw ft0, 900(sp)
+    flw ft1, 880(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 876(sp)
+    flw ft0, 916(sp)
+    flw ft1, 876(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 872(sp)
+    li t0, 2
+    sw t0, 868(sp)
+    lw t0, 868(sp)
+    slli t0, t0, 2
+    sw t0, 864(sp)
+    lw t0, 1272(sp)
+    lw t1, 864(sp)
+    add t2, t0, t1
+    sw t2, 860(sp)
+    lw t6, 860(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 856(sp)
+    li t0, 2
+    sw t0, 852(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 848(sp)
+    lw t0, 852(sp)
+    slli t0, t0, 2
+    sw t0, 844(sp)
+    lw t0, 848(sp)
+    lw t1, 844(sp)
+    add t2, t0, t1
+    sw t2, 840(sp)
+    lw t6, 840(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 836(sp)
+    flw ft0, 856(sp)
+    flw ft1, 836(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 832(sp)
+    flw ft0, 872(sp)
+    flw ft1, 832(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 828(sp)
+    flw ft0, 956(sp)
+    flw ft1, 828(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 824(sp)
+    lw a0, 1272(sp)
+    flw fa0, 824(sp)
+    lui a1, %hi(nvector)
+    lw a1, %lo(nvector)(a1)
+    call vecaccum
+    li t0, 1
+    sw t0, 820(sp)
+    lw t0, 820(sp)
+    slli t0, t0, 2
+    sw t0, 816(sp)
+    lw t0, 1156(sp)
+    lw t1, 816(sp)
+    add t2, t0, t1
+    sw t2, 812(sp)
+    lw t6, 812(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 808(sp)
+    flw ft0, 1276(sp)
+    flw ft1, 808(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 804(sp)
+    li t0, 0
+    sw t0, 800(sp)
+    li t0, 0
+    sw t0, 796(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 792(sp)
+    lw t0, 796(sp)
+    slli t0, t0, 2
+    sw t0, 788(sp)
+    lw t0, 792(sp)
+    lw t1, 788(sp)
+    add t2, t0, t1
+    sw t2, 784(sp)
+    lw t6, 784(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 780(sp)
+    lw a0, 800(sp)
+    lw a1, 780(sp)
+    call shadow_check_one_or_matrix
+    sw a0, 776(sp)
+    lw t0, 776(sp)
+    seqz t0, t0
+    sw t0, 772(sp)
+    lw t0, 772(sp)
+    beqz t0, .9143_Lelse_J
+    li t0, 0
+    sw t0, 768(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 764(sp)
+    lw t0, 768(sp)
+    slli t0, t0, 2
+    sw t0, 760(sp)
+    lw t0, 764(sp)
+    lw t1, 760(sp)
+    add t2, t0, t1
+    sw t2, 756(sp)
+    lw t6, 756(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 752(sp)
+    li t0, 0
+    sw t0, 748(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 744(sp)
+    lw t0, 748(sp)
+    slli t0, t0, 2
+    sw t0, 740(sp)
+    lw t0, 744(sp)
+    lw t1, 740(sp)
+    add t2, t0, t1
+    sw t2, 736(sp)
+    lw t6, 736(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 732(sp)
+    flw ft0, 752(sp)
+    flw ft1, 732(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 728(sp)
+    li t0, 1
+    sw t0, 724(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 720(sp)
+    lw t0, 724(sp)
+    slli t0, t0, 2
+    sw t0, 716(sp)
+    lw t0, 720(sp)
+    lw t1, 716(sp)
+    add t2, t0, t1
+    sw t2, 712(sp)
+    lw t6, 712(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 708(sp)
+    li t0, 1
+    sw t0, 704(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 700(sp)
+    lw t0, 704(sp)
+    slli t0, t0, 2
+    sw t0, 696(sp)
+    lw t0, 700(sp)
+    lw t1, 696(sp)
+    add t2, t0, t1
+    sw t2, 692(sp)
+    lw t6, 692(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 688(sp)
+    flw ft0, 708(sp)
+    flw ft1, 688(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 684(sp)
+    flw ft0, 728(sp)
+    flw ft1, 684(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 680(sp)
+    li t0, 2
+    sw t0, 676(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 672(sp)
+    lw t0, 676(sp)
+    slli t0, t0, 2
+    sw t0, 668(sp)
+    lw t0, 672(sp)
+    lw t1, 668(sp)
+    add t2, t0, t1
+    sw t2, 664(sp)
+    lw t6, 664(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 660(sp)
+    li t0, 2
+    sw t0, 656(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 652(sp)
+    lw t0, 656(sp)
+    slli t0, t0, 2
+    sw t0, 648(sp)
+    lw t0, 652(sp)
+    lw t1, 648(sp)
+    add t2, t0, t1
+    sw t2, 644(sp)
+    lw t6, 644(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 640(sp)
+    flw ft0, 660(sp)
+    flw ft1, 640(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 636(sp)
+    flw ft0, 680(sp)
+    flw ft1, 636(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 632(sp)
+    flw ft0, 632(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 628(sp)
+    flw ft0, 628(sp)
+    flw ft1, 1124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 624(sp)
+    li t0, 0
+    sw t0, 620(sp)
+    lw t0, 620(sp)
+    slli t0, t0, 2
+    sw t0, 616(sp)
+    lw t0, 1272(sp)
+    lw t1, 616(sp)
+    add t2, t0, t1
+    sw t2, 612(sp)
+    lw t6, 612(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 608(sp)
+    li t0, 0
+    sw t0, 604(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 600(sp)
+    lw t0, 604(sp)
+    slli t0, t0, 2
+    sw t0, 596(sp)
+    lw t0, 600(sp)
+    lw t1, 596(sp)
+    add t2, t0, t1
+    sw t2, 592(sp)
+    lw t6, 592(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 588(sp)
+    flw ft0, 608(sp)
+    flw ft1, 588(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 584(sp)
+    li t0, 1
+    sw t0, 580(sp)
+    lw t0, 580(sp)
+    slli t0, t0, 2
+    sw t0, 576(sp)
+    lw t0, 1272(sp)
+    lw t1, 576(sp)
+    add t2, t0, t1
+    sw t2, 572(sp)
+    lw t6, 572(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 568(sp)
+    li t0, 1
+    sw t0, 564(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 560(sp)
+    lw t0, 564(sp)
+    slli t0, t0, 2
+    sw t0, 556(sp)
+    lw t0, 560(sp)
+    lw t1, 556(sp)
+    add t2, t0, t1
+    sw t2, 552(sp)
+    lw t6, 552(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 548(sp)
+    flw ft0, 568(sp)
+    flw ft1, 548(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 544(sp)
+    flw ft0, 584(sp)
+    flw ft1, 544(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 540(sp)
+    li t0, 2
+    sw t0, 536(sp)
+    lw t0, 536(sp)
+    slli t0, t0, 2
+    sw t0, 532(sp)
+    lw t0, 1272(sp)
+    lw t1, 532(sp)
+    add t2, t0, t1
+    sw t2, 528(sp)
+    lw t6, 528(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 524(sp)
+    li t0, 2
+    sw t0, 520(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 516(sp)
+    lw t0, 520(sp)
+    slli t0, t0, 2
+    sw t0, 512(sp)
+    lw t0, 516(sp)
+    lw t1, 512(sp)
+    add t2, t0, t1
+    sw t2, 508(sp)
+    lw t6, 508(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 504(sp)
+    flw ft0, 524(sp)
+    flw ft1, 504(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 500(sp)
+    flw ft0, 540(sp)
+    flw ft1, 500(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 496(sp)
+    flw ft0, 496(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 492(sp)
+    flw fa0, 624(sp)
+    flw fa1, 492(sp)
+    flw fa2, 804(sp)
+    call add_light
+.9143_Lelse_J:
+.9144_Lendif_J:
+    lui a0, %hi(startp_fast)
+    lw a0, %lo(startp_fast)(a0)
+    lui a1, %hi(intersection_point)
+    lw a1, %lo(intersection_point)(a1)
+    call veccpy
+    li t0, 0
+    sw t0, 488(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 484(sp)
+    lw t0, 488(sp)
+    slli t0, t0, 2
+    sw t0, 480(sp)
+    lw t0, 484(sp)
+    lw t1, 480(sp)
+    add t2, t0, t1
+    sw t2, 476(sp)
+    lw t6, 476(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 472(sp)
+    li t0, 1
+    sw t0, 468(sp)
+    lw t0, 472(sp)
+    lw t1, 468(sp)
+    sub t2, t0, t1
+    sw t2, 464(sp)
+    lui a0, %hi(intersection_point)
+    lw a0, %lo(intersection_point)(a0)
+    lw a1, 464(sp)
+    call setup_startp_constants
+    li t0, 0
+    sw t0, 460(sp)
+    lui t6, %hi(n_reflections)
+    flw ft11, %lo(n_reflections)(t6)
+    fsw ft11, 456(sp)
+    lw t0, 460(sp)
+    slli t0, t0, 2
+    sw t0, 452(sp)
+    lw t0, 456(sp)
+    lw t1, 452(sp)
+    add t2, t0, t1
+    sw t2, 448(sp)
+    lw t6, 448(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 444(sp)
+    li t0, 1
+    sw t0, 440(sp)
+    lw t0, 444(sp)
+    lw t1, 440(sp)
+    sub t2, t0, t1
+    sw t2, 436(sp)
+    lw a0, 436(sp)
+    flw fa0, 1124(sp)
+    flw fa1, 804(sp)
+    lw a1, 1272(sp)
+    call trace_reflections
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 432(sp)
+    flw ft0, 432(sp)
+    flw ft1, 1276(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 428(sp)
+    lw t0, 428(sp)
+    beqz t0, .9145_Lelse_J
+    li t0, 4
+    sw t0, 424(sp)
+    lw t0, 1280(sp)
+    lw t1, 424(sp)
+    slt t2, t0, t1
+    sw t2, 420(sp)
+    lw t0, 420(sp)
+    beqz t0, .9147_Lelse_J
+    li t0, 1
+    sw t0, 416(sp)
+    lw t0, 1280(sp)
+    lw t1, 416(sp)
+    add t2, t0, t1
+    sw t2, 412(sp)
+    li t0, 1
+    sw t0, 408(sp)
+    lw t0, 408(sp)
+    neg t0, t0
+    sw t0, 404(sp)
+    lw t0, 412(sp)
+    slli t0, t0, 2
+    sw t0, 400(sp)
+    lw t0, 1260(sp)
+    lw t1, 400(sp)
+    add t2, t0, t1
+    sw t2, 396(sp)
+    lw t6, 396(sp)
+    flw ft11, 404(sp)
+    fsw ft11, 0(t6)
+.9147_Lelse_J:
+.9148_Lendif_J:
+    li t0, 2
+    sw t0, 392(sp)
+    lw t0, 1176(sp)
+    lw t1, 392(sp)
+    xor t2, t0, t1
+    sw t2, 388(sp)
+    lw t0, 388(sp)
+    seqz t0, t0
+    sw t0, 384(sp)
+    lw t0, 384(sp)
+    beqz t0, .9149_Lelse_J
+    lui t6, 260096 # 0x3f800
+    sw t6, 380(sp)
+    flw ft11, 380(sp)
+    fsw ft11, 376(sp)
+    li t0, 0
+    sw t0, 372(sp)
+    lw t0, 372(sp)
+    slli t0, t0, 2
+    sw t0, 368(sp)
+    lw t0, 1156(sp)
+    lw t1, 368(sp)
+    add t2, t0, t1
+    sw t2, 364(sp)
+    lw t6, 364(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 360(sp)
+    flw ft0, 376(sp)
+    flw ft1, 360(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 356(sp)
+    flw ft0, 1276(sp)
+    flw ft1, 356(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 352(sp)
+    li t0, 1
+    sw t0, 348(sp)
+    lw t0, 1280(sp)
+    lw t1, 348(sp)
+    add t2, t0, t1
+    sw t2, 344(sp)
+    li t0, 0
+    sw t0, 340(sp)
+    lui t6, %hi(tmin)
+    flw ft11, %lo(tmin)(t6)
+    fsw ft11, 336(sp)
+    lw t0, 340(sp)
+    slli t0, t0, 2
+    sw t0, 332(sp)
+    lw t0, 336(sp)
+    lw t1, 332(sp)
+    add t2, t0, t1
+    sw t2, 328(sp)
+    lw t6, 328(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 324(sp)
+    flw ft0, 1236(sp)
+    flw ft1, 324(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 320(sp)
+    lw a0, 344(sp)
+    flw fa0, 352(sp)
+    lw a1, 1272(sp)
+    lw a2, 1268(sp)
+    lw a3, 1264(sp)
+    lw a4, 1260(sp)
+    lw a5, 1256(sp)
+    lw a6, 1252(sp)
+    lw a7, 1248(sp)
+    flw ft11, 1244(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 1240(sp)
+    fsw ft11, -4(sp)
+    flw fa1, 320(sp)
+    call trace_ray
+.9149_Lelse_J:
+.9150_Lendif_J:
+.9145_Lelse_J:
+.9146_Lendif_J:
+    j .9140_Lendif_J
+.9139_Lelse_J:
+    li t0, 1
+    sw t0, 316(sp)
+    lw t0, 316(sp)
+    neg t0, t0
+    sw t0, 312(sp)
+    lw t0, 1280(sp)
+    slli t0, t0, 2
+    sw t0, 308(sp)
+    lw t0, 1260(sp)
+    lw t1, 308(sp)
+    add t2, t0, t1
+    sw t2, 304(sp)
+    lw t6, 304(sp)
+    flw ft11, 312(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 300(sp)
+    lw t0, 1280(sp)
+    lw t1, 300(sp)
+    xor t2, t0, t1
+    sw t2, 296(sp)
+    lw t0, 296(sp)
+    beqz t0, .9151_Lelse_J
+    li t0, 0
+    sw t0, 292(sp)
+    lw t0, 292(sp)
+    slli t0, t0, 2
+    sw t0, 288(sp)
+    lw t0, 1272(sp)
+    lw t1, 288(sp)
+    add t2, t0, t1
+    sw t2, 284(sp)
+    lw t6, 284(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 280(sp)
+    li t0, 0
+    sw t0, 276(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 272(sp)
+    lw t0, 276(sp)
+    slli t0, t0, 2
+    sw t0, 268(sp)
+    lw t0, 272(sp)
+    lw t1, 268(sp)
+    add t2, t0, t1
+    sw t2, 264(sp)
+    lw t6, 264(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 260(sp)
+    flw ft0, 280(sp)
+    flw ft1, 260(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 256(sp)
+    li t0, 1
+    sw t0, 252(sp)
+    lw t0, 252(sp)
+    slli t0, t0, 2
+    sw t0, 248(sp)
+    lw t0, 1272(sp)
+    lw t1, 248(sp)
+    add t2, t0, t1
+    sw t2, 244(sp)
+    lw t6, 244(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 240(sp)
+    li t0, 1
+    sw t0, 236(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 232(sp)
+    lw t0, 236(sp)
+    slli t0, t0, 2
+    sw t0, 228(sp)
+    lw t0, 232(sp)
+    lw t1, 228(sp)
+    add t2, t0, t1
+    sw t2, 224(sp)
+    lw t6, 224(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 220(sp)
+    flw ft0, 240(sp)
+    flw ft1, 220(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 216(sp)
+    flw ft0, 256(sp)
+    flw ft1, 216(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 212(sp)
+    li t0, 2
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 1272(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    li t0, 2
+    sw t0, 192(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 188(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 188(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 196(sp)
+    flw ft1, 176(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    flw ft0, 212(sp)
+    flw ft1, 172(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 168(sp)
+    flw ft0, 168(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 164(sp)
+    sw zero, 160(sp)
+    flw ft0, 160(sp)
+    flw ft1, 164(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 156(sp)
+    lw t0, 156(sp)
+    beqz t0, .9153_Lelse_J
+    flw ft0, 164(sp)
+    flw ft1, 164(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 152(sp)
+    flw ft0, 152(sp)
+    flw ft1, 164(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    flw ft0, 148(sp)
+    flw ft1, 1276(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 144(sp)
+    li t0, 0
+    sw t0, 140(sp)
+    lui t6, %hi(beam)
+    flw ft11, %lo(beam)(t6)
+    fsw ft11, 136(sp)
+    lw t0, 140(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 136(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 124(sp)
+    flw ft0, 144(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 120(sp)
+    li t0, 0
+    sw t0, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 108(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 108(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    flw ft0, 96(sp)
+    flw ft1, 120(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 92(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 88(sp)
+    lw t0, 116(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 88(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 92(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 76(sp)
+    li t0, 1
+    sw t0, 72(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    flw ft0, 56(sp)
+    flw ft1, 120(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 48(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 48(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 36(sp)
+    li t0, 2
+    sw t0, 32(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 16(sp)
+    flw ft1, 120(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 8(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+.9153_Lelse_J:
+.9154_Lendif_J:
+.9151_Lelse_J:
+.9152_Lendif_J:
+.9140_Lendif_J:
+.9137_Lelse_J:
+.9138_Lendif_J:
+    lw ra, 1284(sp)
+    addi sp, sp, 1296
+    ret
+
+.section .text
+.type trace_diffuse_ray, @function
+.globl trace_diffuse_ray
+trace_diffuse_ray:
+    addi sp, sp, -320
+    sw ra, 316(sp) 	# trace_diffuse_ray
+    sw a0, 312(sp)
+    sw a1, 308(sp)
+    fsw fa0, 304(sp)
+    lw a0, 312(sp)
+    lw a1, 308(sp)
+    call judge_intersection_fast
+    sw a0, 300(sp)
+    lw t0, 300(sp)
+    beqz t0, .9155_Lelse_J
+    li t0, 0
+    sw t0, 296(sp)
+    lui t6, %hi(intersected_object_id)
+    flw ft11, %lo(intersected_object_id)(t6)
+    fsw ft11, 292(sp)
+    lw t0, 296(sp)
+    slli t0, t0, 2
+    sw t0, 288(sp)
+    lw t0, 292(sp)
+    lw t1, 288(sp)
+    add t2, t0, t1
+    sw t2, 284(sp)
+    lw t6, 284(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 280(sp)
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 276(sp)
+    lw t0, 280(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 272(sp)
+    lw t0, 276(sp)
+    lw t1, 272(sp)
+    add t2, t0, t1
+    sw t2, 268(sp)
+    lw t6, 268(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 264(sp)
+    lw t6, 268(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 260(sp)
+    lw t6, 268(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 256(sp)
+    lw t6, 268(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 252(sp)
+    lw t6, 268(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 248(sp)
+    lw t6, 268(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 244(sp)
+    lw t6, 268(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 240(sp)
+    lw t6, 268(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 236(sp)
+    lw t6, 268(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 232(sp)
+    lw t6, 268(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 228(sp)
+    lw t6, 268(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 224(sp)
+    lw a0, 264(sp)
+    lw a1, 260(sp)
+    lw a2, 256(sp)
+    lw a3, 252(sp)
+    lw a4, 248(sp)
+    lw a5, 244(sp)
+    lw a6, 240(sp)
+    lw a7, 236(sp)
+    flw ft11, 232(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 228(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 224(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 312(sp)
+    fsw ft11, -4(sp)
+    call get_nvector
+    lw a0, 264(sp)
+    lw a1, 260(sp)
+    lw a2, 256(sp)
+    lw a3, 252(sp)
+    lw a4, 248(sp)
+    lw a5, 244(sp)
+    lw a6, 240(sp)
+    lw a7, 236(sp)
+    flw ft11, 232(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 228(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 224(sp)
+    fsw ft11, -8(sp)
+    lui t6, %hi(intersection_point)
+    flw ft11, %lo(intersection_point)(t6)
+    fsw ft11, -4(sp)
+    call utexture
+    li t0, 0
+    sw t0, 220(sp)
+    li t0, 0
+    sw t0, 216(sp)
+    lui t6, %hi(or_net)
+    flw ft11, %lo(or_net)(t6)
+    fsw ft11, 212(sp)
+    lw t0, 216(sp)
+    slli t0, t0, 2
+    sw t0, 208(sp)
+    lw t0, 212(sp)
+    lw t1, 208(sp)
+    add t2, t0, t1
+    sw t2, 204(sp)
+    lw t6, 204(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 200(sp)
+    lw a0, 220(sp)
+    lw a1, 200(sp)
+    call shadow_check_one_or_matrix
+    sw a0, 196(sp)
+    lw t0, 196(sp)
+    seqz t0, t0
+    sw t0, 192(sp)
+    lw t0, 192(sp)
+    beqz t0, .9157_Lelse_J
+    li t0, 0
+    sw t0, 188(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 184(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 180(sp)
+    lw t0, 184(sp)
+    lw t1, 180(sp)
+    add t2, t0, t1
+    sw t2, 176(sp)
+    lw t6, 176(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 172(sp)
+    li t0, 0
+    sw t0, 168(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 164(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 164(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 172(sp)
+    flw ft1, 152(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 1
+    sw t0, 144(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 140(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 140(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    li t0, 1
+    sw t0, 124(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 120(sp)
+    lw t0, 124(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 120(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    flw ft0, 128(sp)
+    flw ft1, 108(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 104(sp)
+    flw ft0, 148(sp)
+    flw ft1, 104(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    li t0, 2
+    sw t0, 96(sp)
+    lui t6, %hi(nvector)
+    flw ft11, %lo(nvector)(t6)
+    fsw ft11, 92(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 92(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    li t0, 2
+    sw t0, 76(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 72(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 72(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    flw ft0, 80(sp)
+    flw ft1, 60(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    flw ft0, 100(sp)
+    flw ft1, 56(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    flw ft0, 52(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 48(sp)
+    sw zero, 44(sp)
+    flw ft0, 44(sp)
+    flw ft1, 48(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 40(sp)
+    lw t0, 40(sp)
+    beqz t0, .9159_Lelse_J
+    flw ft11, 48(sp)
+    fsw ft11, 36(sp)
+    j .9160_Lendif_J
+.9159_Lelse_J:
+    sw zero, 36(sp)
+.9160_Lendif_J:
+    flw ft0, 304(sp)
+    flw ft1, 36(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    li t0, 0
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 236(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    flw ft0, 32(sp)
+    flw ft1, 16(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    flw fa0, 12(sp)
+    lui a1, %hi(texture_color)
+    lw a1, %lo(texture_color)(a1)
+    call vecaccum
+.9157_Lelse_J:
+.9158_Lendif_J:
+.9155_Lelse_J:
+.9156_Lendif_J:
+    lw ra, 316(sp)
+    addi sp, sp, 320
+    ret
+
+.section .text
+.type iter_trace_diffuse_rays, @function
+.globl iter_trace_diffuse_rays
+iter_trace_diffuse_rays:
+    addi sp, sp, -240
+    sw ra, 236(sp) 	# iter_trace_diffuse_rays
+    sw a0, 232(sp)
+    sw a1, 228(sp)
+    sw a2, 224(sp)
+    sw a3, 220(sp)
+    li t0, 0
+    sw t0, 216(sp)
+    lw t0, 220(sp)
+    lw t1, 216(sp)
+    slt t2, t0, t1
+    sw t2, 212(sp)
+    lw t0, 212(sp)
+    seqz t0, t0
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    beqz t0, .9161_Lelse_J
+    lw t0, 220(sp)
+    slli t0, t0, 3
+    sw t0, 204(sp)
+    lw t0, 232(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    lw t6, 200(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 192(sp)
+    li t0, 0
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 196(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    li t0, 0
+    sw t0, 172(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 2
+    sw t0, 168(sp)
+    lw t0, 228(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    flw ft0, 176(sp)
+    flw ft1, 160(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 156(sp)
+    li t0, 1
+    sw t0, 152(sp)
+    lw t0, 152(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 196(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    li t0, 1
+    sw t0, 136(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 132(sp)
+    lw t0, 228(sp)
+    lw t1, 132(sp)
+    add t2, t0, t1
+    sw t2, 128(sp)
+    lw t6, 128(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 124(sp)
+    flw ft0, 140(sp)
+    flw ft1, 124(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 120(sp)
+    flw ft0, 156(sp)
+    flw ft1, 120(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 116(sp)
+    li t0, 2
+    sw t0, 112(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 108(sp)
+    lw t0, 196(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    li t0, 2
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 228(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    flw ft0, 100(sp)
+    flw ft1, 84(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 80(sp)
+    flw ft0, 116(sp)
+    flw ft1, 80(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    sw zero, 72(sp)
+    flw ft0, 76(sp)
+    flw ft1, 72(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 68(sp)
+    lw t0, 68(sp)
+    beqz t0, .9163_Lelse_J
+    li t0, 1
+    sw t0, 64(sp)
+    lw t0, 220(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    slli t0, t0, 3
+    sw t0, 56(sp)
+    lw t0, 232(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    lw t6, 52(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 44(sp)
+    lui t6, %hi(.8057_L.LC20_J)
+    flw ft11, %lo(.8057_L.LC20_J)(t6)
+    fsw ft11, 40(sp)
+    flw ft0, 40(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 36(sp)
+    flw ft0, 76(sp)
+    flw ft1, 36(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    lw a0, 48(sp)
+    lw a1, 44(sp)
+    flw fa0, 32(sp)
+    call trace_diffuse_ray
+    j .9164_Lendif_J
+.9163_Lelse_J:
+    lw t0, 220(sp)
+    slli t0, t0, 3
+    sw t0, 28(sp)
+    lw t0, 232(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    lw t6, 24(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 16(sp)
+    lui t6, %hi(.8057_L.LC20_J)
+    flw ft11, %lo(.8057_L.LC20_J)(t6)
+    fsw ft11, 12(sp)
+    flw ft0, 76(sp)
+    flw ft1, 12(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 8(sp)
+    lw a0, 20(sp)
+    lw a1, 16(sp)
+    flw fa0, 8(sp)
+    call trace_diffuse_ray
+.9164_Lendif_J:
+    li t0, 2
+    sw t0, 4(sp)
+    lw t0, 220(sp)
+    lw t1, 4(sp)
+    sub t2, t0, t1
+    sw t2, 0(sp)
+    lw a0, 232(sp)
+    lw a1, 228(sp)
+    lw a2, 224(sp)
+    lw a3, 0(sp)
+    call iter_trace_diffuse_rays
+.9161_Lelse_J:
+.9162_Lendif_J:
+    lw ra, 236(sp)
+    addi sp, sp, 240
+    ret
+
+.section .text
+.type trace_diffuse_rays, @function
+.globl trace_diffuse_rays
+trace_diffuse_rays:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# trace_diffuse_rays
+    sw a0, 40(sp)
+    sw a1, 36(sp)
+    sw a2, 32(sp)
+    lui a0, %hi(startp_fast)
+    lw a0, %lo(startp_fast)(a0)
+    lw a1, 32(sp)
+    call veccpy
+    li t0, 0
+    sw t0, 28(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 24(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 24(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 12(sp)
+    lw t1, 8(sp)
+    sub t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 32(sp)
+    lw a1, 4(sp)
+    call setup_startp_constants
+    li t0, 118
+    sw t0, 0(sp)
+    lw a0, 40(sp)
+    lw a1, 36(sp)
+    lw a2, 32(sp)
+    lw a3, 0(sp)
+    call iter_trace_diffuse_rays
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type trace_diffuse_ray_80percent, @function
+.globl trace_diffuse_ray_80percent
+trace_diffuse_ray_80percent:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# trace_diffuse_ray_80percent
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    sw a2, 144(sp)
+    li t0, 0
+    sw t0, 140(sp)
+    lw t0, 152(sp)
+    lw t1, 140(sp)
+    xor t2, t0, t1
+    sw t2, 136(sp)
+    lw t0, 136(sp)
+    beqz t0, .9165_Lelse_J
+    li t0, 0
+    sw t0, 132(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 128(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 128(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    lw a0, 116(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    call trace_diffuse_rays
+.9165_Lelse_J:
+.9166_Lendif_J:
+    li t0, 1
+    sw t0, 112(sp)
+    lw t0, 152(sp)
+    lw t1, 112(sp)
+    xor t2, t0, t1
+    sw t2, 108(sp)
+    lw t0, 108(sp)
+    beqz t0, .9167_Lelse_J
+    li t0, 1
+    sw t0, 104(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    lw a0, 88(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    call trace_diffuse_rays
+.9167_Lelse_J:
+.9168_Lendif_J:
+    li t0, 2
+    sw t0, 84(sp)
+    lw t0, 152(sp)
+    lw t1, 84(sp)
+    xor t2, t0, t1
+    sw t2, 80(sp)
+    lw t0, 80(sp)
+    beqz t0, .9169_Lelse_J
+    li t0, 2
+    sw t0, 76(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 72(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 72(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    lw a0, 60(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    call trace_diffuse_rays
+.9169_Lelse_J:
+.9170_Lendif_J:
+    li t0, 3
+    sw t0, 56(sp)
+    lw t0, 152(sp)
+    lw t1, 56(sp)
+    xor t2, t0, t1
+    sw t2, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .9171_Lelse_J
+    li t0, 3
+    sw t0, 48(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 44(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 44(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    lw a0, 32(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    call trace_diffuse_rays
+.9171_Lelse_J:
+.9172_Lendif_J:
+    li t0, 4
+    sw t0, 28(sp)
+    lw t0, 152(sp)
+    lw t1, 28(sp)
+    xor t2, t0, t1
+    sw t2, 24(sp)
+    lw t0, 24(sp)
+    beqz t0, .9173_Lelse_J
+    li t0, 4
+    sw t0, 20(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    lw a0, 4(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    call trace_diffuse_rays
+.9173_Lelse_J:
+.9174_Lendif_J:
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type calc_diffuse_using_1point, @function
+.globl calc_diffuse_using_1point
+calc_diffuse_using_1point:
+    addi sp, sp, -112
+    sw ra, 104(sp) 	# calc_diffuse_using_1point
+    sw a0, 100(sp)
+    sw a1, 96(sp)
+    sw a2, 92(sp)
+    sw a3, 88(sp)
+    sw a4, 84(sp)
+    sw a5, 80(sp)
+    sw a6, 76(sp)
+    sw a7, 72(sp)
+    flw ft11, 108(sp)
+    fsw ft11, 68(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 80(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 56(sp)
+    call veccpy
+    li t0, 0
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 76(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 72(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 96(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    lw a0, 40(sp)
+    lw a1, 28(sp)
+    lw a2, 16(sp)
+    call trace_diffuse_ray_80percent
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 84(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 4(sp)
+    lui a0, %hi(rgb)
+    lw a0, %lo(rgb)(a0)
+    lw a1, 4(sp)
+    lui a2, %hi(diffuse_ray)
+    lw a2, %lo(diffuse_ray)(a2)
+    call vecaccumv
+    lw ra, 104(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type calc_diffuse_using_5points, @function
+.globl calc_diffuse_using_5points
+calc_diffuse_using_5points:
+    addi sp, sp, -352
+    sw ra, 348(sp) 	# calc_diffuse_using_5points
+    sw a0, 344(sp)
+    sw a1, 340(sp)
+    sw a2, 336(sp)
+    sw a3, 332(sp)
+    sw a4, 328(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 5
+    sw t0, 324(sp)
+    lw t0, 340(sp)
+    lw t1, 324(sp)
+    add t2, t0, t1
+    sw t2, 320(sp)
+    lw t6, 320(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 316(sp)
+    lw t6, 320(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 312(sp)
+    lw t6, 320(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 308(sp)
+    lw t6, 320(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 304(sp)
+    lw t6, 320(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 300(sp)
+    lw t6, 320(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 296(sp)
+    lw t6, 320(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 292(sp)
+    lw t6, 320(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 288(sp)
+    li t0, 1
+    sw t0, 284(sp)
+    lw t0, 344(sp)
+    lw t1, 284(sp)
+    sub t2, t0, t1
+    sw t2, 280(sp)
+    lw t0, 280(sp)
+    slli t0, t0, 5
+    sw t0, 276(sp)
+    lw t0, 336(sp)
+    lw t1, 276(sp)
+    add t2, t0, t1
+    sw t2, 272(sp)
+    lw t6, 272(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 268(sp)
+    lw t6, 272(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 264(sp)
+    lw t6, 272(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 260(sp)
+    lw t6, 272(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 256(sp)
+    lw t6, 272(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 252(sp)
+    lw t6, 272(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 248(sp)
+    lw t6, 272(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 244(sp)
+    lw t6, 272(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 240(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 5
+    sw t0, 236(sp)
+    lw t0, 336(sp)
+    lw t1, 236(sp)
+    add t2, t0, t1
+    sw t2, 232(sp)
+    lw t6, 232(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 228(sp)
+    lw t6, 232(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 224(sp)
+    lw t6, 232(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 220(sp)
+    lw t6, 232(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 216(sp)
+    lw t6, 232(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 212(sp)
+    lw t6, 232(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 208(sp)
+    lw t6, 232(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 204(sp)
+    lw t6, 232(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 200(sp)
+    li t0, 1
+    sw t0, 196(sp)
+    lw t0, 344(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 5
+    sw t0, 188(sp)
+    lw t0, 336(sp)
+    lw t1, 188(sp)
+    add t2, t0, t1
+    sw t2, 184(sp)
+    lw t6, 184(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 180(sp)
+    lw t6, 184(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 176(sp)
+    lw t6, 184(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 172(sp)
+    lw t6, 184(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 168(sp)
+    lw t6, 184(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 164(sp)
+    lw t6, 184(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 160(sp)
+    lw t6, 184(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 156(sp)
+    lw t6, 184(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 152(sp)
+    lw t0, 344(sp)
+    slli t0, t0, 5
+    sw t0, 148(sp)
+    lw t0, 332(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    lw t6, 144(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 136(sp)
+    lw t6, 144(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 132(sp)
+    lw t6, 144(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 128(sp)
+    lw t6, 144(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 124(sp)
+    lw t6, 144(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 120(sp)
+    lw t6, 144(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 116(sp)
+    lw t6, 144(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 112(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 108(sp)
+    lw t0, 296(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 100(sp)
+    call veccpy
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 248(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 88(sp)
+    call vecadd
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 208(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 76(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 76(sp)
+    call vecadd
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 160(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 64(sp)
+    call vecadd
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 120(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    lw a1, 52(sp)
+    call vecadd
+    lw t0, 344(sp)
+    slli t0, t0, 5
+    sw t0, 48(sp)
+    lw t0, 336(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    lw t6, 44(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 36(sp)
+    lw t6, 44(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 32(sp)
+    lw t6, 44(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 28(sp)
+    lw t6, 44(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 24(sp)
+    lw t6, 44(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 20(sp)
+    lw t6, 44(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 16(sp)
+    lw t6, 44(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 12(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 2
+    sw t0, 8(sp)
+    lw t0, 24(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw t6, 4(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 0(sp)
+    lui a0, %hi(rgb)
+    lw a0, %lo(rgb)(a0)
+    lw a1, 0(sp)
+    lui a2, %hi(diffuse_ray)
+    lw a2, %lo(diffuse_ray)(a2)
+    call vecaccumv
+    lw ra, 348(sp)
+    addi sp, sp, 352
+    ret
+
+.section .text
+.type do_without_neighbors, @function
+.globl do_without_neighbors
+do_without_neighbors:
+    addi sp, sp, -112
+    sw ra, 104(sp) 	# do_without_neighbors
+    sw a0, 100(sp)
+    sw a1, 96(sp)
+    sw a2, 92(sp)
+    sw a3, 88(sp)
+    sw a4, 84(sp)
+    sw a5, 80(sp)
+    sw a6, 76(sp)
+    sw a7, 72(sp)
+    flw ft11, 108(sp)
+    fsw ft11, 68(sp)
+    li t0, 4
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    lw t1, 68(sp)
+    slt t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    seqz t0, t0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9175_Lelse_J
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 52(sp)
+    lw t0, 92(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    li t0, 0
+    sw t0, 40(sp)
+    lw t0, 44(sp)
+    lw t1, 40(sp)
+    slt t2, t0, t1
+    sw t2, 36(sp)
+    lw t0, 36(sp)
+    seqz t0, t0
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    beqz t0, .9177_Lelse_J
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 88(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .9179_Lelse_J
+    lw a0, 100(sp)
+    lw a1, 96(sp)
+    lw a2, 92(sp)
+    lw a3, 88(sp)
+    lw a4, 84(sp)
+    lw a5, 80(sp)
+    lw a6, 76(sp)
+    lw a7, 72(sp)
+    flw ft11, 68(sp)
+    fsw ft11, -4(sp)
+    call calc_diffuse_using_1point
+.9179_Lelse_J:
+.9180_Lendif_J:
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 68(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 100(sp)
+    lw a1, 96(sp)
+    lw a2, 92(sp)
+    lw a3, 88(sp)
+    lw a4, 84(sp)
+    lw a5, 80(sp)
+    lw a6, 76(sp)
+    lw a7, 72(sp)
+    flw ft11, 12(sp)
+    fsw ft11, -4(sp)
+    call do_without_neighbors
+.9177_Lelse_J:
+.9178_Lendif_J:
+.9175_Lelse_J:
+.9176_Lendif_J:
+    lw ra, 104(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type neighbors_exist, @function
+.globl neighbors_exist
+neighbors_exist:
+    addi sp, sp, -112
+    sw ra, 108(sp) 	# neighbors_exist
+    sw a0, 104(sp)
+    sw a1, 100(sp)
+    sw a2, 96(sp)
+    li t0, 1
+    sw t0, 92(sp)
+    lw t0, 100(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    li t0, 1
+    sw t0, 84(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 80(sp)
+    lw t0, 84(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 80(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    lw t0, 88(sp)
+    lw t1, 68(sp)
+    slt t2, t0, t1
+    sw t2, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .9181_Lelse_J
+    li t0, 0
+    sw t0, 60(sp)
+    lw t0, 60(sp)
+    lw t1, 100(sp)
+    slt t2, t0, t1
+    sw t2, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9183_Lelse_J
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 104(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    li t0, 0
+    sw t0, 44(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 40(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    lw t0, 48(sp)
+    lw t1, 28(sp)
+    slt t2, t0, t1
+    sw t2, 24(sp)
+    lw t0, 24(sp)
+    beqz t0, .9185_Lelse_J
+    li t0, 0
+    sw t0, 20(sp)
+    lw t0, 20(sp)
+    lw t1, 104(sp)
+    slt t2, t0, t1
+    sw t2, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .9187_Lelse_J
+    li t0, 1
+    sw t0, 12(sp)
+    j .9188_Lendif_J
+.9187_Lelse_J:
+    li t0, 0
+    sw t0, 12(sp)
+.9188_Lendif_J:
+    j .9186_Lendif_J
+.9185_Lelse_J:
+    li t0, 0
+    sw t0, 12(sp)
+.9186_Lendif_J:
+    j .9184_Lendif_J
+.9183_Lelse_J:
+    li t0, 0
+    sw t0, 12(sp)
+.9184_Lendif_J:
+    j .9182_Lendif_J
+.9181_Lelse_J:
+    li t0, 0
+    sw t0, 12(sp)
+.9182_Lendif_J:
+    lw a0, 12(sp)
+    lw ra, 108(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type get_surface_id, @function
+.globl get_surface_id
+get_surface_id:
+    addi sp, sp, -64
+    sw ra, 56(sp) 	# get_surface_id
+    sw a0, 52(sp)
+    sw a1, 48(sp)
+    sw a2, 44(sp)
+    sw a3, 40(sp)
+    sw a4, 36(sp)
+    sw a5, 32(sp)
+    sw a6, 28(sp)
+    sw a7, 24(sp)
+    flw ft11, 60(sp)
+    fsw ft11, 20(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 44(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 8(sp)
+    lw a0, 8(sp)
+    lw ra, 56(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type neighbors_are_available, @function
+.globl neighbors_are_available
+neighbors_are_available:
+    addi sp, sp, -336
+    sw ra, 332(sp) 	# neighbors_are_available
+    sw a0, 328(sp)
+    sw a1, 324(sp)
+    sw a2, 320(sp)
+    sw a3, 316(sp)
+    sw a4, 312(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 5
+    sw t0, 308(sp)
+    lw t0, 320(sp)
+    lw t1, 308(sp)
+    add t2, t0, t1
+    sw t2, 304(sp)
+    lw t6, 304(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 300(sp)
+    lw t6, 304(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 296(sp)
+    lw t6, 304(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 292(sp)
+    lw t6, 304(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 288(sp)
+    lw t6, 304(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 284(sp)
+    lw t6, 304(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 280(sp)
+    lw t6, 304(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 276(sp)
+    lw t6, 304(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 272(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 268(sp)
+    lw t0, 292(sp)
+    lw t1, 268(sp)
+    add t2, t0, t1
+    sw t2, 264(sp)
+    lw t6, 264(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 260(sp)
+    lw t0, 328(sp)
+    slli t0, t0, 5
+    sw t0, 256(sp)
+    lw t0, 324(sp)
+    lw t1, 256(sp)
+    add t2, t0, t1
+    sw t2, 252(sp)
+    lw t6, 252(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 248(sp)
+    lw t6, 252(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 244(sp)
+    lw t6, 252(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 240(sp)
+    lw t6, 252(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 236(sp)
+    lw t6, 252(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 232(sp)
+    lw t6, 252(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 228(sp)
+    lw t6, 252(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 224(sp)
+    lw t6, 252(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 220(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 216(sp)
+    lw t0, 240(sp)
+    lw t1, 216(sp)
+    add t2, t0, t1
+    sw t2, 212(sp)
+    lw t6, 212(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 208(sp)
+    lw t0, 208(sp)
+    lw t1, 260(sp)
+    xor t2, t0, t1
+    sw t2, 204(sp)
+    lw t0, 204(sp)
+    seqz t0, t0
+    sw t0, 200(sp)
+    lw t0, 200(sp)
+    beqz t0, .9189_Lelse_J
+    lw t0, 328(sp)
+    slli t0, t0, 5
+    sw t0, 196(sp)
+    lw t0, 316(sp)
+    lw t1, 196(sp)
+    add t2, t0, t1
+    sw t2, 192(sp)
+    lw t6, 192(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 188(sp)
+    lw t6, 192(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 184(sp)
+    lw t6, 192(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 180(sp)
+    lw t6, 192(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 176(sp)
+    lw t6, 192(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 172(sp)
+    lw t6, 192(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 168(sp)
+    lw t6, 192(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 164(sp)
+    lw t6, 192(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 160(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 156(sp)
+    lw t0, 180(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 148(sp)
+    lw t0, 148(sp)
+    lw t1, 260(sp)
+    xor t2, t0, t1
+    sw t2, 144(sp)
+    lw t0, 144(sp)
+    seqz t0, t0
+    sw t0, 140(sp)
+    lw t0, 140(sp)
+    beqz t0, .9191_Lelse_J
+    li t0, 1
+    sw t0, 136(sp)
+    lw t0, 328(sp)
+    lw t1, 136(sp)
+    sub t2, t0, t1
+    sw t2, 132(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 5
+    sw t0, 128(sp)
+    lw t0, 320(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    lw t6, 124(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 116(sp)
+    lw t6, 124(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 112(sp)
+    lw t6, 124(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 108(sp)
+    lw t6, 124(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 104(sp)
+    lw t6, 124(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 100(sp)
+    lw t6, 124(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 96(sp)
+    lw t6, 124(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 92(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 112(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    lw t0, 80(sp)
+    lw t1, 260(sp)
+    xor t2, t0, t1
+    sw t2, 76(sp)
+    lw t0, 76(sp)
+    seqz t0, t0
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    beqz t0, .9193_Lelse_J
+    li t0, 1
+    sw t0, 68(sp)
+    lw t0, 328(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t0, 64(sp)
+    slli t0, t0, 5
+    sw t0, 60(sp)
+    lw t0, 320(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lw t6, 56(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 48(sp)
+    lw t6, 56(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 44(sp)
+    lw t6, 56(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 40(sp)
+    lw t6, 56(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 36(sp)
+    lw t6, 56(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 32(sp)
+    lw t6, 56(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 28(sp)
+    lw t6, 56(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 24(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 44(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    lw t0, 12(sp)
+    lw t1, 260(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .9195_Lelse_J
+    li t0, 1
+    sw t0, 0(sp)
+    j .9196_Lendif_J
+.9195_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.9196_Lendif_J:
+    j .9194_Lendif_J
+.9193_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.9194_Lendif_J:
+    j .9192_Lendif_J
+.9191_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.9192_Lendif_J:
+    j .9190_Lendif_J
+.9189_Lelse_J:
+    li t0, 0
+    sw t0, 0(sp)
+.9190_Lendif_J:
+    lw a0, 0(sp)
+    lw ra, 332(sp)
+    addi sp, sp, 336
+    ret
+
+.section .text
+.type try_exploit_neighbors, @function
+.globl try_exploit_neighbors
+try_exploit_neighbors:
+    addi sp, sp, -176
+    sw ra, 172(sp) 	# try_exploit_neighbors
+    sw a0, 168(sp)
+    sw a1, 164(sp)
+    sw a2, 160(sp)
+    sw a3, 156(sp)
+    sw a4, 152(sp)
+    sw a5, 148(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 5
+    sw t0, 144(sp)
+    lw t0, 156(sp)
+    lw t1, 144(sp)
+    add t2, t0, t1
+    sw t2, 140(sp)
+    lw t6, 140(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 136(sp)
+    lw t6, 140(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 132(sp)
+    lw t6, 140(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 128(sp)
+    lw t6, 140(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 124(sp)
+    lw t6, 140(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 120(sp)
+    lw t6, 140(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 116(sp)
+    lw t6, 140(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 112(sp)
+    lw t6, 140(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 108(sp)
+    li t0, 4
+    sw t0, 104(sp)
+    lw t0, 104(sp)
+    lw t1, 148(sp)
+    slt t2, t0, t1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    seqz t0, t0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9197_Lelse_J
+    lw t0, 148(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 128(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    li t0, 0
+    sw t0, 80(sp)
+    lw t0, 84(sp)
+    lw t1, 80(sp)
+    slt t2, t0, t1
+    sw t2, 76(sp)
+    lw t0, 76(sp)
+    seqz t0, t0
+    sw t0, 72(sp)
+    lw t0, 72(sp)
+    beqz t0, .9199_Lelse_J
+    lw a0, 168(sp)
+    lw a1, 160(sp)
+    lw a2, 156(sp)
+    lw a3, 152(sp)
+    lw a4, 148(sp)
+    call neighbors_are_available
+    sw a0, 68(sp)
+    lw t0, 68(sp)
+    beqz t0, .9201_Lelse_J
+    lw t0, 148(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 124(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9203_Lelse_J
+    lw a0, 168(sp)
+    lw a1, 160(sp)
+    lw a2, 156(sp)
+    lw a3, 152(sp)
+    lw a4, 148(sp)
+    call calc_diffuse_using_5points
+.9203_Lelse_J:
+.9204_Lendif_J:
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 148(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw a0, 168(sp)
+    lw a1, 164(sp)
+    lw a2, 160(sp)
+    lw a3, 156(sp)
+    lw a4, 152(sp)
+    lw a5, 48(sp)
+    call try_exploit_neighbors
+    j .9202_Lendif_J
+.9201_Lelse_J:
+    lw t0, 168(sp)
+    slli t0, t0, 5
+    sw t0, 44(sp)
+    lw t0, 156(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    lw t6, 40(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 32(sp)
+    lw t6, 40(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 28(sp)
+    lw t6, 40(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 24(sp)
+    lw t6, 40(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 20(sp)
+    lw t6, 40(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 16(sp)
+    lw t6, 40(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 12(sp)
+    lw t6, 40(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 8(sp)
+    lw a0, 36(sp)
+    lw a1, 32(sp)
+    lw a2, 28(sp)
+    lw a3, 24(sp)
+    lw a4, 20(sp)
+    lw a5, 16(sp)
+    lw a6, 12(sp)
+    lw a7, 8(sp)
+    flw ft11, 148(sp)
+    fsw ft11, -4(sp)
+    call do_without_neighbors
+.9202_Lendif_J:
+.9199_Lelse_J:
+.9200_Lendif_J:
+.9197_Lelse_J:
+.9198_Lendif_J:
+    lw ra, 172(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type write_ppm_header, @function
+.globl write_ppm_header
+write_ppm_header:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# write_ppm_header
+    sw a0, 72(sp)
+    li t0, 80
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    mv a0, t0
+    call putchar
+    li t0, 48
+    sw t0, 64(sp)
+    lw t0, 64(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    mv a0, t0
+    call putchar
+    li t0, 10
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    mv a0, t0
+    call putchar
+    li t0, 0
+    sw t0, 52(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 48(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 48(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    lw a0, 36(sp)
+    call print_int
+    li t0, 32
+    sw t0, 32(sp)
+    lw t0, 32(sp)
+    mv a0, t0
+    call putchar
+    li t0, 1
+    sw t0, 28(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 24(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 24(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    lw a0, 12(sp)
+    call print_int
+    li t0, 32
+    sw t0, 8(sp)
+    lw t0, 8(sp)
+    mv a0, t0
+    call putchar
+    li t0, 255
+    sw t0, 4(sp)
+    lw a0, 4(sp)
+    call print_int
+    li t0, 10
+    sw t0, 0(sp)
+    lw t0, 0(sp)
+    mv a0, t0
+    call putchar
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type write_rgb_element_int, @function
+.globl write_rgb_element_int
+write_rgb_element_int:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# write_rgb_element_int
+    fsw fa0, 24(sp)
+    flw ft0, 24(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 20(sp)
+    li t0, 255
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    lw t1, 20(sp)
+    slt t2, t0, t1
+    sw t2, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9205_Lelse_J
+    li t0, 255
+    sw t0, 8(sp)
+    j .9206_Lendif_J
+.9205_Lelse_J:
+    li t0, 0
+    sw t0, 4(sp)
+    lw t0, 20(sp)
+    lw t1, 4(sp)
+    slt t2, t0, t1
+    sw t2, 0(sp)
+    lw t0, 0(sp)
+    beqz t0, .9207_Lelse_J
+    li t0, 0
+    sw t0, 8(sp)
+    j .9208_Lendif_J
+.9207_Lelse_J:
+    flw ft11, 20(sp)
+    fsw ft11, 8(sp)
+.9208_Lendif_J:
+.9206_Lendif_J:
+    lw a0, 8(sp)
+    call print_int
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type write_rgb_element_char, @function
+.globl write_rgb_element_char
+write_rgb_element_char:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# write_rgb_element_char
+    fsw fa0, 24(sp)
+    flw ft0, 24(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 20(sp)
+    li t0, 255
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    lw t1, 20(sp)
+    slt t2, t0, t1
+    sw t2, 12(sp)
+    lw t0, 12(sp)
+    beqz t0, .9209_Lelse_J
+    li t0, 255
+    sw t0, 8(sp)
+    j .9210_Lendif_J
+.9209_Lelse_J:
+    li t0, 0
+    sw t0, 4(sp)
+    lw t0, 20(sp)
+    lw t1, 4(sp)
+    slt t2, t0, t1
+    sw t2, 0(sp)
+    lw t0, 0(sp)
+    beqz t0, .9211_Lelse_J
+    li t0, 0
+    sw t0, 8(sp)
+    j .9212_Lendif_J
+.9211_Lelse_J:
+    flw ft11, 20(sp)
+    fsw ft11, 8(sp)
+.9212_Lendif_J:
+.9210_Lendif_J:
+    lw t0, 8(sp)
+    mv a0, t0
+    call putchar
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type write_rgb, @function
+.globl write_rgb
+write_rgb:
+    addi sp, sp, -304
+    sw ra, 300(sp) 	# write_rgb
+    sw a0, 296(sp)
+    li t0, 3
+    sw t0, 292(sp)
+    lw t0, 296(sp)
+    lw t1, 292(sp)
+    xor t2, t0, t1
+    sw t2, 288(sp)
+    lw t0, 288(sp)
+    seqz t0, t0
+    sw t0, 284(sp)
+    lw t0, 284(sp)
+    beqz t0, .9213_Lelse_J
+    li t0, 0
+    sw t0, 280(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 276(sp)
+    lw t0, 280(sp)
+    slli t0, t0, 2
+    sw t0, 272(sp)
+    lw t0, 276(sp)
+    lw t1, 272(sp)
+    add t2, t0, t1
+    sw t2, 268(sp)
+    lw t6, 268(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 264(sp)
+    flw ft0, 264(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 260(sp)
+    li t0, 255
+    sw t0, 256(sp)
+    lw t0, 256(sp)
+    lw t1, 260(sp)
+    slt t2, t0, t1
+    sw t2, 252(sp)
+    lw t0, 252(sp)
+    beqz t0, .9215_Lelse_J
+    li t0, 255
+    sw t0, 248(sp)
+    j .9216_Lendif_J
+.9215_Lelse_J:
+    li t0, 0
+    sw t0, 244(sp)
+    lw t0, 260(sp)
+    lw t1, 244(sp)
+    slt t2, t0, t1
+    sw t2, 240(sp)
+    lw t0, 240(sp)
+    beqz t0, .9217_Lelse_J
+    li t0, 0
+    sw t0, 248(sp)
+    j .9218_Lendif_J
+.9217_Lelse_J:
+    flw ft11, 260(sp)
+    fsw ft11, 248(sp)
+.9218_Lendif_J:
+.9216_Lendif_J:
+    lw a0, 248(sp)
+    call print_int
+    li t0, 32
+    sw t0, 236(sp)
+    lw t0, 236(sp)
+    mv a0, t0
+    call putchar
+    li t0, 1
+    sw t0, 232(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 228(sp)
+    lw t0, 232(sp)
+    slli t0, t0, 2
+    sw t0, 224(sp)
+    lw t0, 228(sp)
+    lw t1, 224(sp)
+    add t2, t0, t1
+    sw t2, 220(sp)
+    lw t6, 220(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 216(sp)
+    flw ft0, 216(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 212(sp)
+    li t0, 255
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    lw t1, 212(sp)
+    slt t2, t0, t1
+    sw t2, 204(sp)
+    lw t0, 204(sp)
+    beqz t0, .9219_Lelse_J
+    li t0, 255
+    sw t0, 200(sp)
+    j .9220_Lendif_J
+.9219_Lelse_J:
+    li t0, 0
+    sw t0, 196(sp)
+    lw t0, 212(sp)
+    lw t1, 196(sp)
+    slt t2, t0, t1
+    sw t2, 192(sp)
+    lw t0, 192(sp)
+    beqz t0, .9221_Lelse_J
+    li t0, 0
+    sw t0, 200(sp)
+    j .9222_Lendif_J
+.9221_Lelse_J:
+    flw ft11, 212(sp)
+    fsw ft11, 200(sp)
+.9222_Lendif_J:
+.9220_Lendif_J:
+    lw a0, 200(sp)
+    call print_int
+    li t0, 32
+    sw t0, 188(sp)
+    lw t0, 188(sp)
+    mv a0, t0
+    call putchar
+    li t0, 2
+    sw t0, 184(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 180(sp)
+    lw t0, 184(sp)
+    slli t0, t0, 2
+    sw t0, 176(sp)
+    lw t0, 180(sp)
+    lw t1, 176(sp)
+    add t2, t0, t1
+    sw t2, 172(sp)
+    lw t6, 172(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 168(sp)
+    flw ft0, 168(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 164(sp)
+    li t0, 255
+    sw t0, 160(sp)
+    lw t0, 160(sp)
+    lw t1, 164(sp)
+    slt t2, t0, t1
+    sw t2, 156(sp)
+    lw t0, 156(sp)
+    beqz t0, .9223_Lelse_J
+    li t0, 255
+    sw t0, 152(sp)
+    j .9224_Lendif_J
+.9223_Lelse_J:
+    li t0, 0
+    sw t0, 148(sp)
+    lw t0, 164(sp)
+    lw t1, 148(sp)
+    slt t2, t0, t1
+    sw t2, 144(sp)
+    lw t0, 144(sp)
+    beqz t0, .9225_Lelse_J
+    li t0, 0
+    sw t0, 152(sp)
+    j .9226_Lendif_J
+.9225_Lelse_J:
+    flw ft11, 164(sp)
+    fsw ft11, 152(sp)
+.9226_Lendif_J:
+.9224_Lendif_J:
+    lw a0, 152(sp)
+    call print_int
+    li t0, 10
+    sw t0, 140(sp)
+    lw t0, 140(sp)
+    mv a0, t0
+    call putchar
+    j .9214_Lendif_J
+.9213_Lelse_J:
+    li t0, 0
+    sw t0, 136(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 132(sp)
+    lw t0, 136(sp)
+    slli t0, t0, 2
+    sw t0, 128(sp)
+    lw t0, 132(sp)
+    lw t1, 128(sp)
+    add t2, t0, t1
+    sw t2, 124(sp)
+    lw t6, 124(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 120(sp)
+    flw ft0, 120(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 116(sp)
+    li t0, 255
+    sw t0, 112(sp)
+    lw t0, 112(sp)
+    lw t1, 116(sp)
+    slt t2, t0, t1
+    sw t2, 108(sp)
+    lw t0, 108(sp)
+    beqz t0, .9227_Lelse_J
+    li t0, 255
+    sw t0, 104(sp)
+    j .9228_Lendif_J
+.9227_Lelse_J:
+    li t0, 0
+    sw t0, 100(sp)
+    lw t0, 116(sp)
+    lw t1, 100(sp)
+    slt t2, t0, t1
+    sw t2, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9229_Lelse_J
+    li t0, 0
+    sw t0, 104(sp)
+    j .9230_Lendif_J
+.9229_Lelse_J:
+    flw ft11, 116(sp)
+    fsw ft11, 104(sp)
+.9230_Lendif_J:
+.9228_Lendif_J:
+    lw t0, 104(sp)
+    mv a0, t0
+    call putchar
+    li t0, 1
+    sw t0, 92(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 88(sp)
+    lw t0, 92(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 88(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 76(sp)
+    flw ft0, 76(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 72(sp)
+    li t0, 255
+    sw t0, 68(sp)
+    lw t0, 68(sp)
+    lw t1, 72(sp)
+    slt t2, t0, t1
+    sw t2, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .9231_Lelse_J
+    li t0, 255
+    sw t0, 60(sp)
+    j .9232_Lendif_J
+.9231_Lelse_J:
+    li t0, 0
+    sw t0, 56(sp)
+    lw t0, 72(sp)
+    lw t1, 56(sp)
+    slt t2, t0, t1
+    sw t2, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .9233_Lelse_J
+    li t0, 0
+    sw t0, 60(sp)
+    j .9234_Lendif_J
+.9233_Lelse_J:
+    flw ft11, 72(sp)
+    fsw ft11, 60(sp)
+.9234_Lendif_J:
+.9232_Lendif_J:
+    lw t0, 60(sp)
+    mv a0, t0
+    call putchar
+    li t0, 2
+    sw t0, 48(sp)
+    lui t6, %hi(rgb)
+    flw ft11, %lo(rgb)(t6)
+    fsw ft11, 44(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 44(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    flw ft0, 32(sp)
+    fcvt.w.s t0, ft0
+    sw t0, 28(sp)
+    li t0, 255
+    sw t0, 24(sp)
+    lw t0, 24(sp)
+    lw t1, 28(sp)
+    slt t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    beqz t0, .9235_Lelse_J
+    li t0, 255
+    sw t0, 16(sp)
+    j .9236_Lendif_J
+.9235_Lelse_J:
+    li t0, 0
+    sw t0, 12(sp)
+    lw t0, 28(sp)
+    lw t1, 12(sp)
+    slt t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    beqz t0, .9237_Lelse_J
+    li t0, 0
+    sw t0, 16(sp)
+    j .9238_Lendif_J
+.9237_Lelse_J:
+    flw ft11, 28(sp)
+    fsw ft11, 16(sp)
+.9238_Lendif_J:
+.9236_Lendif_J:
+    lw t0, 16(sp)
+    mv a0, t0
+    call putchar
+.9214_Lendif_J:
+    lw ra, 300(sp)
+    addi sp, sp, 304
+    ret
+
+.section .text
+.type pretrace_diffuse_rays, @function
+.globl pretrace_diffuse_rays
+pretrace_diffuse_rays:
+    addi sp, sp, -176
+    sw ra, 168(sp) 	# pretrace_diffuse_rays
+    sw a0, 164(sp)
+    sw a1, 160(sp)
+    sw a2, 156(sp)
+    sw a3, 152(sp)
+    sw a4, 148(sp)
+    sw a5, 144(sp)
+    sw a6, 140(sp)
+    sw a7, 136(sp)
+    flw ft11, 172(sp)
+    fsw ft11, 132(sp)
+    li t0, 4
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    lw t1, 132(sp)
+    slt t2, t0, t1
+    sw t2, 124(sp)
+    lw t0, 124(sp)
+    seqz t0, t0
+    sw t0, 120(sp)
+    lw t0, 120(sp)
+    beqz t0, .9239_Lelse_J
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 116(sp)
+    lw t0, 156(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    li t0, 0
+    sw t0, 104(sp)
+    lw t0, 108(sp)
+    lw t1, 104(sp)
+    slt t2, t0, t1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    seqz t0, t0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9241_Lelse_J
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 92(sp)
+    lw t0, 152(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    lw t6, 88(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 84(sp)
+    lw t0, 84(sp)
+    beqz t0, .9243_Lelse_J
+    li t0, 0
+    sw t0, 80(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 76(sp)
+    lw t0, 140(sp)
+    lw t1, 76(sp)
+    add t2, t0, t1
+    sw t2, 72(sp)
+    lw t6, 72(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 68(sp)
+    sw zero, 64(sp)
+    lui a0, %hi(diffuse_ray)
+    lw a0, %lo(diffuse_ray)(a0)
+    flw fa0, 64(sp)
+    call vecfill
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 60(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 56(sp)
+    lw t0, 60(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 136(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 160(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    lw a0, 48(sp)
+    lw a1, 36(sp)
+    lw a2, 24(sp)
+    call trace_diffuse_rays
+    lw t0, 132(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 144(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    lw a0, 12(sp)
+    lui a1, %hi(diffuse_ray)
+    lw a1, %lo(diffuse_ray)(a1)
+    call veccpy
+.9243_Lelse_J:
+.9244_Lendif_J:
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 132(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 164(sp)
+    lw a1, 160(sp)
+    lw a2, 156(sp)
+    lw a3, 152(sp)
+    lw a4, 148(sp)
+    lw a5, 144(sp)
+    lw a6, 140(sp)
+    lw a7, 136(sp)
+    flw ft11, 4(sp)
+    fsw ft11, -4(sp)
+    call pretrace_diffuse_rays
+.9241_Lelse_J:
+.9242_Lendif_J:
+.9239_Lelse_J:
+.9240_Lendif_J:
+    lw ra, 168(sp)
+    addi sp, sp, 176
+    ret
+
+.section .text
+.type pretrace_pixels, @function
+.globl pretrace_pixels
+pretrace_pixels:
+    addi sp, sp, -448
+    sw ra, 444(sp) 	# pretrace_pixels
+    sw a0, 440(sp)
+    sw a1, 436(sp)
+    sw a2, 432(sp)
+    fsw fa0, 428(sp)
+    fsw fa1, 424(sp)
+    fsw fa2, 420(sp)
+    li t0, 0
+    sw t0, 416(sp)
+    lw t0, 436(sp)
+    lw t1, 416(sp)
+    slt t2, t0, t1
+    sw t2, 412(sp)
+    lw t0, 412(sp)
+    seqz t0, t0
+    sw t0, 408(sp)
+    lw t0, 408(sp)
+    beqz t0, .9245_Lelse_J
+    li t0, 0
+    sw t0, 404(sp)
+    lui t6, %hi(scan_pitch)
+    flw ft11, %lo(scan_pitch)(t6)
+    fsw ft11, 400(sp)
+    lw t0, 404(sp)
+    slli t0, t0, 2
+    sw t0, 396(sp)
+    lw t0, 400(sp)
+    lw t1, 396(sp)
+    add t2, t0, t1
+    sw t2, 392(sp)
+    lw t6, 392(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 388(sp)
+    li t0, 0
+    sw t0, 384(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 380(sp)
+    lw t0, 384(sp)
+    slli t0, t0, 2
+    sw t0, 376(sp)
+    lw t0, 380(sp)
+    lw t1, 376(sp)
+    add t2, t0, t1
+    sw t2, 372(sp)
+    lw t6, 372(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 368(sp)
+    lw t0, 436(sp)
+    lw t1, 368(sp)
+    sub t2, t0, t1
+    sw t2, 364(sp)
+    lw t0, 364(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 360(sp)
+    flw ft0, 388(sp)
+    flw ft1, 360(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 356(sp)
+    li t0, 0
+    sw t0, 352(sp)
+    li t0, 0
+    sw t0, 348(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 344(sp)
+    lw t0, 348(sp)
+    slli t0, t0, 2
+    sw t0, 340(sp)
+    lw t0, 344(sp)
+    lw t1, 340(sp)
+    add t2, t0, t1
+    sw t2, 336(sp)
+    lw t6, 336(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 332(sp)
+    flw ft0, 356(sp)
+    flw ft1, 332(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 328(sp)
+    flw ft0, 328(sp)
+    flw ft1, 428(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 324(sp)
+    lui t6, %hi(ptrace_dirvec)
+    flw ft11, %lo(ptrace_dirvec)(t6)
+    fsw ft11, 320(sp)
+    lw t0, 352(sp)
+    slli t0, t0, 2
+    sw t0, 316(sp)
+    lw t0, 320(sp)
+    lw t1, 316(sp)
+    add t2, t0, t1
+    sw t2, 312(sp)
+    lw t6, 312(sp)
+    flw ft11, 324(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 308(sp)
+    li t0, 1
+    sw t0, 304(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 300(sp)
+    lw t0, 304(sp)
+    slli t0, t0, 2
+    sw t0, 296(sp)
+    lw t0, 300(sp)
+    lw t1, 296(sp)
+    add t2, t0, t1
+    sw t2, 292(sp)
+    lw t6, 292(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 288(sp)
+    flw ft0, 356(sp)
+    flw ft1, 288(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 284(sp)
+    flw ft0, 284(sp)
+    flw ft1, 424(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 280(sp)
+    lui t6, %hi(ptrace_dirvec)
+    flw ft11, %lo(ptrace_dirvec)(t6)
+    fsw ft11, 276(sp)
+    lw t0, 308(sp)
+    slli t0, t0, 2
+    sw t0, 272(sp)
+    lw t0, 276(sp)
+    lw t1, 272(sp)
+    add t2, t0, t1
+    sw t2, 268(sp)
+    lw t6, 268(sp)
+    flw ft11, 280(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 264(sp)
+    li t0, 2
+    sw t0, 260(sp)
+    lui t6, %hi(screenx_dir)
+    flw ft11, %lo(screenx_dir)(t6)
+    fsw ft11, 256(sp)
+    lw t0, 260(sp)
+    slli t0, t0, 2
+    sw t0, 252(sp)
+    lw t0, 256(sp)
+    lw t1, 252(sp)
+    add t2, t0, t1
+    sw t2, 248(sp)
+    lw t6, 248(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 244(sp)
+    flw ft0, 356(sp)
+    flw ft1, 244(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 240(sp)
+    flw ft0, 240(sp)
+    flw ft1, 420(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    lui t6, %hi(ptrace_dirvec)
+    flw ft11, %lo(ptrace_dirvec)(t6)
+    fsw ft11, 232(sp)
+    lw t0, 264(sp)
+    slli t0, t0, 2
+    sw t0, 228(sp)
+    lw t0, 232(sp)
+    lw t1, 228(sp)
+    add t2, t0, t1
+    sw t2, 224(sp)
+    lw t6, 224(sp)
+    flw ft11, 236(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 220(sp)
+    lui a0, %hi(ptrace_dirvec)
+    lw a0, %lo(ptrace_dirvec)(a0)
+    lw a1, 220(sp)
+    call vecunit_sgn
+    sw zero, 216(sp)
+    lui a0, %hi(rgb)
+    lw a0, %lo(rgb)(a0)
+    flw fa0, 216(sp)
+    call vecfill
+    lui a0, %hi(startp)
+    lw a0, %lo(startp)(a0)
+    lui a1, %hi(viewpoint)
+    lw a1, %lo(viewpoint)(a1)
+    call veccpy
+    li t0, 0
+    sw t0, 212(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 208(sp)
+    flw ft11, 208(sp)
+    fsw ft11, 204(sp)
+    lw t0, 436(sp)
+    slli t0, t0, 5
+    sw t0, 200(sp)
+    lw t0, 440(sp)
+    lw t1, 200(sp)
+    add t2, t0, t1
+    sw t2, 196(sp)
+    lw t6, 196(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 192(sp)
+    lw t6, 196(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 188(sp)
+    lw t6, 196(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 184(sp)
+    lw t6, 196(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 180(sp)
+    lw t6, 196(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 176(sp)
+    lw t6, 196(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 172(sp)
+    lw t6, 196(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 168(sp)
+    lw t6, 196(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 164(sp)
+    sw zero, 160(sp)
+    lw a0, 212(sp)
+    flw fa0, 204(sp)
+    lui a1, %hi(ptrace_dirvec)
+    lw a1, %lo(ptrace_dirvec)(a1)
+    lw a2, 192(sp)
+    lw a3, 188(sp)
+    lw a4, 184(sp)
+    lw a5, 180(sp)
+    lw a6, 176(sp)
+    lw a7, 172(sp)
+    flw ft11, 168(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 164(sp)
+    fsw ft11, -4(sp)
+    flw fa1, 160(sp)
+    call trace_ray
+    lw t0, 436(sp)
+    slli t0, t0, 5
+    sw t0, 156(sp)
+    lw t0, 440(sp)
+    lw t1, 156(sp)
+    add t2, t0, t1
+    sw t2, 152(sp)
+    lw t6, 152(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 148(sp)
+    lw t6, 152(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 144(sp)
+    lw t6, 152(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 140(sp)
+    lw t6, 152(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 136(sp)
+    lw t6, 152(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 132(sp)
+    lw t6, 152(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 128(sp)
+    lw t6, 152(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 124(sp)
+    lw t6, 152(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 120(sp)
+    lw a0, 148(sp)
+    lui a1, %hi(rgb)
+    lw a1, %lo(rgb)(a1)
+    call veccpy
+    lw t0, 436(sp)
+    slli t0, t0, 5
+    sw t0, 116(sp)
+    lw t0, 440(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    lw t6, 112(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 104(sp)
+    lw t6, 112(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 100(sp)
+    lw t6, 112(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 96(sp)
+    lw t6, 112(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 92(sp)
+    lw t6, 112(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 88(sp)
+    lw t6, 112(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 84(sp)
+    lw t6, 112(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 80(sp)
+    li t0, 0
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 84(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 432(sp)
+    fsw ft11, 0(t6)
+    lw t0, 436(sp)
+    slli t0, t0, 5
+    sw t0, 64(sp)
+    lw t0, 440(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lw t6, 60(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 52(sp)
+    lw t6, 60(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 48(sp)
+    lw t6, 60(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 44(sp)
+    lw t6, 60(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 40(sp)
+    lw t6, 60(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 36(sp)
+    lw t6, 60(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 32(sp)
+    lw t6, 60(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 28(sp)
+    li t0, 0
+    sw t0, 24(sp)
+    lw a0, 56(sp)
+    lw a1, 52(sp)
+    lw a2, 48(sp)
+    lw a3, 44(sp)
+    lw a4, 40(sp)
+    lw a5, 36(sp)
+    lw a6, 32(sp)
+    lw a7, 28(sp)
+    flw ft11, 24(sp)
+    fsw ft11, -4(sp)
+    call pretrace_diffuse_rays
+    li t0, 1
+    sw t0, 20(sp)
+    lw t0, 436(sp)
+    lw t1, 20(sp)
+    sub t2, t0, t1
+    sw t2, 16(sp)
+    li t0, 1
+    sw t0, 12(sp)
+    lw a0, 432(sp)
+    lw a1, 12(sp)
+    call add_mod5
+    sw a0, 8(sp)
+    lw a0, 440(sp)
+    lw a1, 16(sp)
+    lw a2, 8(sp)
+    flw fa0, 428(sp)
+    flw fa1, 424(sp)
+    flw fa2, 420(sp)
+    call pretrace_pixels
+.9245_Lelse_J:
+.9246_Lendif_J:
+    lw ra, 444(sp)
+    addi sp, sp, 448
+    ret
+
+.section .text
+.type pretrace_line, @function
+.globl pretrace_line
+pretrace_line:
+    addi sp, sp, -240
+    sw ra, 236(sp) 	# pretrace_line
+    sw a0, 232(sp)
+    sw a1, 228(sp)
+    sw a2, 224(sp)
+    li t0, 0
+    sw t0, 220(sp)
+    lui t6, %hi(scan_pitch)
+    flw ft11, %lo(scan_pitch)(t6)
+    fsw ft11, 216(sp)
+    lw t0, 220(sp)
+    slli t0, t0, 2
+    sw t0, 212(sp)
+    lw t0, 216(sp)
+    lw t1, 212(sp)
+    add t2, t0, t1
+    sw t2, 208(sp)
+    lw t6, 208(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 204(sp)
+    li t0, 1
+    sw t0, 200(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 196(sp)
+    lw t0, 200(sp)
+    slli t0, t0, 2
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 184(sp)
+    lw t0, 228(sp)
+    lw t1, 184(sp)
+    sub t2, t0, t1
+    sw t2, 180(sp)
+    lw t0, 180(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 176(sp)
+    flw ft0, 204(sp)
+    flw ft1, 176(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 172(sp)
+    li t0, 0
+    sw t0, 168(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 164(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 164(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 172(sp)
+    flw ft1, 152(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 148(sp)
+    li t0, 0
+    sw t0, 144(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 140(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 140(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    flw ft0, 148(sp)
+    flw ft1, 128(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 124(sp)
+    li t0, 1
+    sw t0, 120(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 116(sp)
+    lw t0, 120(sp)
+    slli t0, t0, 2
+    sw t0, 112(sp)
+    lw t0, 116(sp)
+    lw t1, 112(sp)
+    add t2, t0, t1
+    sw t2, 108(sp)
+    lw t6, 108(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 104(sp)
+    flw ft0, 172(sp)
+    flw ft1, 104(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 100(sp)
+    li t0, 1
+    sw t0, 96(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 92(sp)
+    lw t0, 96(sp)
+    slli t0, t0, 2
+    sw t0, 88(sp)
+    lw t0, 92(sp)
+    lw t1, 88(sp)
+    add t2, t0, t1
+    sw t2, 84(sp)
+    lw t6, 84(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 100(sp)
+    flw ft1, 80(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    li t0, 2
+    sw t0, 72(sp)
+    lui t6, %hi(screeny_dir)
+    flw ft11, %lo(screeny_dir)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    flw ft0, 172(sp)
+    flw ft1, 56(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    li t0, 2
+    sw t0, 48(sp)
+    lui t6, %hi(screenz_dir)
+    flw ft11, %lo(screenz_dir)(t6)
+    fsw ft11, 44(sp)
+    lw t0, 48(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 44(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    flw ft0, 52(sp)
+    flw ft1, 32(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 28(sp)
+    li t0, 0
+    sw t0, 24(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 20(sp)
+    lw t0, 24(sp)
+    slli t0, t0, 2
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 8(sp)
+    li t0, 1
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    sub t2, t0, t1
+    sw t2, 0(sp)
+    lw a0, 232(sp)
+    lw a1, 0(sp)
+    lw a2, 224(sp)
+    flw fa0, 124(sp)
+    flw fa1, 76(sp)
+    flw fa2, 28(sp)
+    call pretrace_pixels
+    lw ra, 236(sp)
+    addi sp, sp, 240
+    ret
+
+.section .text
+.type scan_pixel, @function
+.globl scan_pixel
+scan_pixel:
+    addi sp, sp, -160
+    sw ra, 156(sp) 	# scan_pixel
+    sw a0, 152(sp)
+    sw a1, 148(sp)
+    sw a2, 144(sp)
+    sw a3, 140(sp)
+    sw a4, 136(sp)
+    sw a5, 132(sp)
+    li t0, 0
+    sw t0, 128(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 124(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 120(sp)
+    lw t0, 124(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    lw t6, 116(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 112(sp)
+    lw t0, 152(sp)
+    lw t1, 112(sp)
+    slt t2, t0, t1
+    sw t2, 108(sp)
+    lw t0, 108(sp)
+    beqz t0, .9247_Lelse_J
+    lw t0, 152(sp)
+    slli t0, t0, 5
+    sw t0, 104(sp)
+    lw t0, 140(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    lw t6, 100(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 92(sp)
+    lw t6, 100(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 88(sp)
+    lw t6, 100(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 84(sp)
+    lw t6, 100(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 80(sp)
+    lw t6, 100(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 76(sp)
+    lw t6, 100(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 72(sp)
+    lw t6, 100(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 68(sp)
+    lui a0, %hi(rgb)
+    lw a0, %lo(rgb)(a0)
+    lw a1, 96(sp)
+    call veccpy
+    lw a0, 152(sp)
+    lw a1, 148(sp)
+    lw a2, 136(sp)
+    call neighbors_exist
+    sw a0, 64(sp)
+    lw t0, 64(sp)
+    beqz t0, .9249_Lelse_J
+    li t0, 0
+    sw t0, 60(sp)
+    lw a0, 152(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    lw a4, 136(sp)
+    lw a5, 60(sp)
+    call try_exploit_neighbors
+    j .9250_Lendif_J
+.9249_Lelse_J:
+    lw t0, 152(sp)
+    slli t0, t0, 5
+    sw t0, 56(sp)
+    lw t0, 140(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    lw t6, 52(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 48(sp)
+    lw t6, 52(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 44(sp)
+    lw t6, 52(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 40(sp)
+    lw t6, 52(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 36(sp)
+    lw t6, 52(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 32(sp)
+    lw t6, 52(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 28(sp)
+    lw t6, 52(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 24(sp)
+    lw t6, 52(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    lw a0, 48(sp)
+    lw a1, 44(sp)
+    lw a2, 40(sp)
+    lw a3, 36(sp)
+    lw a4, 32(sp)
+    lw a5, 28(sp)
+    lw a6, 24(sp)
+    lw a7, 20(sp)
+    flw ft11, 16(sp)
+    fsw ft11, -4(sp)
+    call do_without_neighbors
+.9250_Lendif_J:
+    lw a0, 132(sp)
+    call write_rgb
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 152(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 8(sp)
+    lw a1, 148(sp)
+    lw a2, 144(sp)
+    lw a3, 140(sp)
+    lw a4, 136(sp)
+    lw a5, 132(sp)
+    call scan_pixel
+.9247_Lelse_J:
+.9248_Lendif_J:
+    lw ra, 156(sp)
+    addi sp, sp, 160
+    ret
+
+.section .text
+.type scan_line, @function
+.globl scan_line
+scan_line:
+    addi sp, sp, -112
+    sw ra, 108(sp) 	# scan_line
+    sw a0, 104(sp)
+    sw a1, 100(sp)
+    sw a2, 96(sp)
+    sw a3, 92(sp)
+    sw a4, 88(sp)
+    sw a5, 84(sp)
+    li t0, 1
+    sw t0, 80(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 76(sp)
+    lw t0, 80(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 76(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    lw t0, 104(sp)
+    lw t1, 64(sp)
+    slt t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    beqz t0, .9251_Lelse_J
+    li t0, 1
+    sw t0, 56(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 52(sp)
+    lw t0, 56(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 52(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    li t0, 1
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    sub t2, t0, t1
+    sw t2, 32(sp)
+    lw t0, 104(sp)
+    lw t1, 32(sp)
+    slt t2, t0, t1
+    sw t2, 28(sp)
+    lw t0, 28(sp)
+    beqz t0, .9253_Lelse_J
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 104(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw a0, 92(sp)
+    lw a1, 20(sp)
+    lw a2, 88(sp)
+    call pretrace_line
+.9253_Lelse_J:
+.9254_Lendif_J:
+    li t0, 0
+    sw t0, 16(sp)
+    lw a0, 16(sp)
+    lw a1, 104(sp)
+    lw a2, 100(sp)
+    lw a3, 96(sp)
+    lw a4, 92(sp)
+    lw a5, 84(sp)
+    call scan_pixel
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 104(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    li t0, 2
+    sw t0, 4(sp)
+    lw a0, 88(sp)
+    lw a1, 4(sp)
+    call add_mod5
+    sw a0, 0(sp)
+    lw a0, 8(sp)
+    lw a1, 96(sp)
+    lw a2, 92(sp)
+    lw a3, 100(sp)
+    lw a4, 0(sp)
+    lw a5, 84(sp)
+    call scan_line
+.9251_Lelse_J:
+.9252_Lendif_J:
+    lw ra, 108(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type create_float5x3array, @function
+.globl create_float5x3array
+create_float5x3array:
+    addi sp, sp, -128
+    sw ra, 124(sp) 	# create_float5x3array
+    li t0, 3
+    sw t0, 120(sp)
+    sw zero, 116(sp)
+    lw a0, 120(sp)
+    flw fa0, 116(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 112(sp)
+    li t0, 5
+    sw t0, 108(sp)
+    lw a0, 108(sp)
+    lw a1, 112(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 104(sp)
+    li t0, 1
+    sw t0, 100(sp)
+    li t0, 3
+    sw t0, 96(sp)
+    sw zero, 92(sp)
+    lw a0, 96(sp)
+    flw fa0, 92(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 88(sp)
+    lw t0, 100(sp)
+    slli t0, t0, 2
+    sw t0, 84(sp)
+    lw t0, 104(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    lw t6, 80(sp)
+    flw ft11, 88(sp)
+    fsw ft11, 0(t6)
+    li t0, 2
+    sw t0, 76(sp)
+    li t0, 3
+    sw t0, 72(sp)
+    sw zero, 68(sp)
+    lw a0, 72(sp)
+    flw fa0, 68(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 64(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 104(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 64(sp)
+    fsw ft11, 0(t6)
+    li t0, 3
+    sw t0, 52(sp)
+    li t0, 3
+    sw t0, 48(sp)
+    sw zero, 44(sp)
+    lw a0, 48(sp)
+    flw fa0, 44(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 40(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 104(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 40(sp)
+    fsw ft11, 0(t6)
+    li t0, 4
+    sw t0, 28(sp)
+    li t0, 3
+    sw t0, 24(sp)
+    sw zero, 20(sp)
+    lw a0, 24(sp)
+    flw fa0, 20(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 16(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 104(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 16(sp)
+    fsw ft11, 0(t6)
+    lw a0, 104(sp)
+    lw ra, 124(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type create_pixel, @function
+.globl create_pixel
+create_pixel:
+    addi sp, sp, -96
+    sw ra, 68(sp) 	# create_pixel
+    li t0, 3
+    sw t0, 64(sp)
+    sw zero, 60(sp)
+    lw a0, 64(sp)
+    flw fa0, 60(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 56(sp)
+    call create_float5x3array
+    sw a0, 52(sp)
+    li t0, 5
+    sw t0, 48(sp)
+    li t0, 0
+    sw t0, 44(sp)
+    lw a0, 48(sp)
+    lw a1, 44(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 40(sp)
+    li t0, 5
+    sw t0, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lw a0, 36(sp)
+    lw a1, 32(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 28(sp)
+    call create_float5x3array
+    sw a0, 24(sp)
+    call create_float5x3array
+    sw a0, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    li t0, 0
+    sw t0, 12(sp)
+    lw a0, 16(sp)
+    lw a1, 12(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 8(sp)
+    call create_float5x3array
+    sw a0, 4(sp)
+    lw a0, 56(sp)
+    lw a1, 52(sp)
+    flw ft11, 40(sp)
+    fsw ft11, 72(sp)
+    flw ft11, 28(sp)
+    fsw ft11, 76(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 80(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 84(sp)
+    flw ft11, 8(sp)
+    fsw ft11, 88(sp)
+    flw ft11, 4(sp)
+    fsw ft11, 92(sp)
+    lw ra, 68(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type init_line_elements, @function
+.globl init_line_elements
+init_line_elements:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# init_line_elements
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    li t0, 0
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    slt t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    seqz t0, t0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9255_Lelse_J
+    call create_pixel
+    sw a0, 52(sp)
+    sw a1, 48(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 44(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 40(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 36(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 32(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 28(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 24(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 5
+    sw t0, 20(sp)
+    lw t0, 72(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 52(sp)
+    fsw ft11, 0(t6)
+    lw t6, 16(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 4(t6)
+    lw t6, 16(sp)
+    flw ft11, 44(sp)
+    fsw ft11, 8(t6)
+    lw t6, 16(sp)
+    flw ft11, 40(sp)
+    fsw ft11, 12(t6)
+    lw t6, 16(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 16(t6)
+    lw t6, 16(sp)
+    flw ft11, 32(sp)
+    fsw ft11, 20(t6)
+    lw t6, 16(sp)
+    flw ft11, 28(sp)
+    fsw ft11, 24(t6)
+    lw t6, 16(sp)
+    flw ft11, 24(sp)
+    fsw ft11, 28(t6)
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 68(sp)
+    lw t1, 12(sp)
+    sub t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 72(sp)
+    lw a1, 8(sp)
+    call init_line_elements
+    sw a0, 4(sp)
+    j .9256_Lendif_J
+.9255_Lelse_J:
+    flw ft11, 72(sp)
+    fsw ft11, 4(sp)
+.9256_Lendif_J:
+    lw a0, 4(sp)
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type create_pixelline, @function
+.globl create_pixelline
+create_pixelline:
+    addi sp, sp, -96
+    sw ra, 92(sp) 	# create_pixelline
+    li t0, 0
+    sw t0, 88(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 84(sp)
+    lw t0, 88(sp)
+    slli t0, t0, 2
+    sw t0, 80(sp)
+    lw t0, 84(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t6, 76(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 72(sp)
+    call create_pixel
+    sw a0, 68(sp)
+    sw a1, 64(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 60(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 56(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 52(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 48(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 44(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 40(sp)
+    lw a0, 72(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    lw a3, 60(sp)
+    lw a4, 56(sp)
+    lw a5, 52(sp)
+    lw a6, 48(sp)
+    lw a7, 44(sp)
+    flw ft11, 40(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 36(sp)
+    li t0, 0
+    sw t0, 32(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 28(sp)
+    lw t0, 32(sp)
+    slli t0, t0, 2
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lw t6, 20(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 16(sp)
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    sub t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 36(sp)
+    lw a1, 8(sp)
+    call init_line_elements
+    sw a0, 4(sp)
+    lw a0, 4(sp)
+    lw ra, 92(sp)
+    addi sp, sp, 96
+    ret
+
+.section .text
+.type tan, @function
+.globl tan
+tan:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# tan
+    fsw fa0, 24(sp)
+    flw fa0, 24(sp)
+    call mincaml_sin
+    fsw fa0, 20(sp)
+    flw fa0, 24(sp)
+    call mincaml_cos
+    fsw fa0, 16(sp)
+    flw ft0, 20(sp)
+    flw ft1, 16(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 12(sp)
+    flw fa0, 12(sp)
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type adjust_position, @function
+.globl adjust_position
+adjust_position:
+    addi sp, sp, -64
+    sw ra, 60(sp) 	# adjust_position
+    fsw fa0, 56(sp)
+    fsw fa1, 52(sp)
+    flw ft0, 56(sp)
+    flw ft1, 56(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 48(sp)
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 44(sp)
+    flw ft0, 48(sp)
+    flw ft1, 44(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    flw ft0, 40(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 36(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 32(sp)
+    flw ft11, 32(sp)
+    fsw ft11, 28(sp)
+    flw ft0, 28(sp)
+    flw ft1, 36(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 24(sp)
+    flw fa0, 24(sp)
+    call mincaml_atan
+    fsw fa0, 20(sp)
+    flw ft0, 20(sp)
+    flw ft1, 52(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 16(sp)
+    flw fa0, 16(sp)
+    call mincaml_sin
+    fsw fa0, 12(sp)
+    flw fa0, 16(sp)
+    call mincaml_cos
+    fsw fa0, 8(sp)
+    flw ft0, 12(sp)
+    flw ft1, 8(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 4(sp)
+    flw ft0, 4(sp)
+    flw ft1, 36(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 0(sp)
+    flw fa0, 0(sp)
+    lw ra, 60(sp)
+    addi sp, sp, 64
+    ret
+
+.section .text
+.type calc_dirvec, @function
+.globl calc_dirvec
+calc_dirvec:
+    addi sp, sp, -304
+    sw ra, 300(sp) 	# calc_dirvec
+    sw a0, 296(sp)
+    fsw fa0, 292(sp)
+    fsw fa1, 288(sp)
+    fsw fa2, 284(sp)
+    fsw fa3, 280(sp)
+    sw a1, 276(sp)
+    sw a2, 272(sp)
+    li t0, 5
+    sw t0, 268(sp)
+    lw t0, 296(sp)
+    lw t1, 268(sp)
+    slt t2, t0, t1
+    sw t2, 264(sp)
+    lw t0, 264(sp)
+    seqz t0, t0
+    sw t0, 260(sp)
+    lw t0, 260(sp)
+    beqz t0, .9257_Lelse_J
+    flw ft0, 292(sp)
+    flw ft1, 292(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 256(sp)
+    flw ft0, 288(sp)
+    flw ft1, 288(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 252(sp)
+    flw ft0, 256(sp)
+    flw ft1, 252(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 248(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 244(sp)
+    flw ft11, 244(sp)
+    fsw ft11, 240(sp)
+    flw ft0, 248(sp)
+    flw ft1, 240(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    flw ft0, 236(sp)
+    fsqrt.s ft0, ft0
+    fsw ft0, 232(sp)
+    flw ft0, 292(sp)
+    flw ft1, 232(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 228(sp)
+    flw ft0, 288(sp)
+    flw ft1, 232(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 224(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 220(sp)
+    flw ft11, 220(sp)
+    fsw ft11, 216(sp)
+    flw ft0, 216(sp)
+    flw ft1, 232(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 212(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 208(sp)
+    lw t0, 276(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 208(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 3
+    sw t0, 192(sp)
+    lw t0, 196(sp)
+    lw t1, 192(sp)
+    add t2, t0, t1
+    sw t2, 188(sp)
+    lw t6, 188(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 184(sp)
+    lw t6, 188(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 180(sp)
+    lw a0, 184(sp)
+    flw fa0, 228(sp)
+    flw fa1, 224(sp)
+    flw fa2, 212(sp)
+    call vecset
+    li t0, 40
+    sw t0, 176(sp)
+    lw t0, 272(sp)
+    lw t1, 176(sp)
+    add t2, t0, t1
+    sw t2, 172(sp)
+    lw t0, 172(sp)
+    slli t0, t0, 3
+    sw t0, 168(sp)
+    lw t0, 196(sp)
+    lw t1, 168(sp)
+    add t2, t0, t1
+    sw t2, 164(sp)
+    lw t6, 164(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 160(sp)
+    lw t6, 164(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 156(sp)
+    flw ft0, 224(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 152(sp)
+    lw a0, 160(sp)
+    flw fa0, 228(sp)
+    flw fa1, 212(sp)
+    flw fa2, 152(sp)
+    call vecset
+    li t0, 80
+    sw t0, 148(sp)
+    lw t0, 272(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 3
+    sw t0, 140(sp)
+    lw t0, 196(sp)
+    lw t1, 140(sp)
+    add t2, t0, t1
+    sw t2, 136(sp)
+    lw t6, 136(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 132(sp)
+    lw t6, 136(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 128(sp)
+    flw ft0, 228(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 124(sp)
+    flw ft0, 224(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 120(sp)
+    lw a0, 132(sp)
+    flw fa0, 212(sp)
+    flw fa1, 124(sp)
+    flw fa2, 120(sp)
+    call vecset
+    li t0, 1
+    sw t0, 116(sp)
+    lw t0, 272(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 3
+    sw t0, 108(sp)
+    lw t0, 196(sp)
+    lw t1, 108(sp)
+    add t2, t0, t1
+    sw t2, 104(sp)
+    lw t6, 104(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 100(sp)
+    lw t6, 104(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 96(sp)
+    flw ft0, 228(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 92(sp)
+    flw ft0, 224(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 88(sp)
+    flw ft0, 212(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 84(sp)
+    lw a0, 100(sp)
+    flw fa0, 92(sp)
+    flw fa1, 88(sp)
+    flw fa2, 84(sp)
+    call vecset
+    li t0, 41
+    sw t0, 80(sp)
+    lw t0, 272(sp)
+    lw t1, 80(sp)
+    add t2, t0, t1
+    sw t2, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 3
+    sw t0, 72(sp)
+    lw t0, 196(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    lw t6, 68(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 60(sp)
+    flw ft0, 228(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 56(sp)
+    flw ft0, 212(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 52(sp)
+    lw a0, 64(sp)
+    flw fa0, 56(sp)
+    flw fa1, 52(sp)
+    flw fa2, 224(sp)
+    call vecset
+    li t0, 81
+    sw t0, 48(sp)
+    lw t0, 272(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 3
+    sw t0, 40(sp)
+    lw t0, 196(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 32(sp)
+    lw t6, 36(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 28(sp)
+    flw ft0, 212(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 24(sp)
+    lw a0, 32(sp)
+    flw fa0, 24(sp)
+    flw fa1, 228(sp)
+    flw fa2, 224(sp)
+    call vecset
+    j .9258_Lendif_J
+.9257_Lelse_J:
+    flw fa0, 288(sp)
+    flw fa1, 284(sp)
+    call adjust_position
+    fsw fa0, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 296(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    flw fa0, 20(sp)
+    flw fa1, 280(sp)
+    call adjust_position
+    fsw fa0, 8(sp)
+    lw a0, 12(sp)
+    flw fa0, 20(sp)
+    flw fa1, 8(sp)
+    flw fa2, 284(sp)
+    flw fa3, 280(sp)
+    lw a1, 276(sp)
+    lw a2, 272(sp)
+    call calc_dirvec
+.9258_Lendif_J:
+    lw ra, 300(sp)
+    addi sp, sp, 304
+    ret
+
+.section .text
+.type calc_dirvecs, @function
+.globl calc_dirvecs
+calc_dirvecs:
+    addi sp, sp, -128
+    sw ra, 124(sp) 	# calc_dirvecs
+    sw a0, 120(sp)
+    fsw fa0, 116(sp)
+    sw a1, 112(sp)
+    sw a2, 108(sp)
+    li t0, 0
+    sw t0, 104(sp)
+    lw t0, 120(sp)
+    lw t1, 104(sp)
+    slt t2, t0, t1
+    sw t2, 100(sp)
+    lw t0, 100(sp)
+    seqz t0, t0
+    sw t0, 96(sp)
+    lw t0, 96(sp)
+    beqz t0, .9259_Lelse_J
+    lw t0, 120(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 92(sp)
+    lui t6, %hi(.7342_L.LC3_J)
+    flw ft11, %lo(.7342_L.LC3_J)(t6)
+    fsw ft11, 88(sp)
+    flw ft0, 92(sp)
+    flw ft1, 88(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    lui t6, %hi(.8545_L.LC21_J)
+    flw ft11, %lo(.8545_L.LC21_J)(t6)
+    fsw ft11, 80(sp)
+    flw ft0, 84(sp)
+    flw ft1, 80(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 76(sp)
+    li t0, 0
+    sw t0, 72(sp)
+    sw zero, 68(sp)
+    sw zero, 64(sp)
+    lw a0, 72(sp)
+    flw fa0, 68(sp)
+    flw fa1, 64(sp)
+    flw fa2, 76(sp)
+    flw fa3, 116(sp)
+    lw a1, 112(sp)
+    lw a2, 108(sp)
+    call calc_dirvec
+    lw t0, 120(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 60(sp)
+    lui t6, %hi(.7342_L.LC3_J)
+    flw ft11, %lo(.7342_L.LC3_J)(t6)
+    fsw ft11, 56(sp)
+    flw ft0, 60(sp)
+    flw ft1, 56(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 52(sp)
+    lui t6, %hi(.7393_L.LC5_J)
+    flw ft11, %lo(.7393_L.LC5_J)(t6)
+    fsw ft11, 48(sp)
+    flw ft0, 52(sp)
+    flw ft1, 48(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 44(sp)
+    li t0, 0
+    sw t0, 40(sp)
+    sw zero, 36(sp)
+    sw zero, 32(sp)
+    li t0, 2
+    sw t0, 28(sp)
+    lw t0, 108(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw a0, 40(sp)
+    flw fa0, 36(sp)
+    flw fa1, 32(sp)
+    flw fa2, 44(sp)
+    flw fa3, 116(sp)
+    lw a1, 112(sp)
+    lw a2, 24(sp)
+    call calc_dirvec
+    li t0, 1
+    sw t0, 20(sp)
+    lw t0, 120(sp)
+    lw t1, 20(sp)
+    sub t2, t0, t1
+    sw t2, 16(sp)
+    li t0, 1
+    sw t0, 12(sp)
+    lw a0, 112(sp)
+    lw a1, 12(sp)
+    call add_mod5
+    sw a0, 8(sp)
+    lw a0, 16(sp)
+    flw fa0, 116(sp)
+    lw a1, 8(sp)
+    lw a2, 108(sp)
+    call calc_dirvecs
+.9259_Lelse_J:
+.9260_Lendif_J:
+    lw ra, 124(sp)
+    addi sp, sp, 128
+    ret
+
+.section .text
+.type calc_dirvec_rows, @function
+.globl calc_dirvec_rows
+calc_dirvec_rows:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# calc_dirvec_rows
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    sw a2, 64(sp)
+    li t0, 0
+    sw t0, 60(sp)
+    lw t0, 72(sp)
+    lw t1, 60(sp)
+    slt t2, t0, t1
+    sw t2, 56(sp)
+    lw t0, 56(sp)
+    seqz t0, t0
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    beqz t0, .9261_Lelse_J
+    lw t0, 72(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 48(sp)
+    lui t6, %hi(.7342_L.LC3_J)
+    flw ft11, %lo(.7342_L.LC3_J)(t6)
+    fsw ft11, 44(sp)
+    flw ft0, 48(sp)
+    flw ft1, 44(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 40(sp)
+    lui t6, %hi(.8545_L.LC21_J)
+    flw ft11, %lo(.8545_L.LC21_J)(t6)
+    fsw ft11, 36(sp)
+    flw ft0, 40(sp)
+    flw ft1, 36(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    li t0, 4
+    sw t0, 28(sp)
+    lw a0, 28(sp)
+    flw fa0, 32(sp)
+    lw a1, 68(sp)
+    lw a2, 64(sp)
+    call calc_dirvecs
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 72(sp)
+    lw t1, 24(sp)
+    sub t2, t0, t1
+    sw t2, 20(sp)
+    li t0, 2
+    sw t0, 16(sp)
+    lw a0, 68(sp)
+    lw a1, 16(sp)
+    call add_mod5
+    sw a0, 12(sp)
+    li t0, 4
+    sw t0, 8(sp)
+    lw t0, 64(sp)
+    lw t1, 8(sp)
+    add t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 20(sp)
+    lw a1, 12(sp)
+    lw a2, 4(sp)
+    call calc_dirvec_rows
+.9261_Lelse_J:
+.9262_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type create_dirvec, @function
+.globl create_dirvec
+create_dirvec:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# create_dirvec
+    li t0, 3
+    sw t0, 40(sp)
+    sw zero, 36(sp)
+    lw a0, 40(sp)
+    flw fa0, 36(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 32(sp)
+    li t0, 0
+    sw t0, 28(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 24(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 24(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    lw a0, 12(sp)
+    lw a1, 32(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 8(sp)
+    lw a0, 32(sp)
+    lw a1, 8(sp)
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type create_dirvec_elements, @function
+.globl create_dirvec_elements
+create_dirvec_elements:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# create_dirvec_elements
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    li t0, 0
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    slt t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    seqz t0, t0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9263_Lelse_J
+    li t0, 3
+    sw t0, 52(sp)
+    sw zero, 48(sp)
+    lw a0, 52(sp)
+    flw fa0, 48(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 44(sp)
+    li t0, 0
+    sw t0, 40(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 36(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 36(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    lw a0, 24(sp)
+    lw a1, 44(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 20(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 3
+    sw t0, 16(sp)
+    lw t0, 72(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lw t6, 12(sp)
+    flw ft11, 44(sp)
+    fsw ft11, 0(t6)
+    lw t6, 12(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 4(t6)
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 68(sp)
+    lw t1, 8(sp)
+    sub t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 72(sp)
+    lw a1, 4(sp)
+    call create_dirvec_elements
+.9263_Lelse_J:
+.9264_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type create_dirvecs, @function
+.globl create_dirvecs
+create_dirvecs:
+    addi sp, sp, -112
+    sw ra, 108(sp) 	# create_dirvecs
+    sw a0, 104(sp)
+    li t0, 0
+    sw t0, 100(sp)
+    lw t0, 104(sp)
+    lw t1, 100(sp)
+    slt t2, t0, t1
+    sw t2, 96(sp)
+    lw t0, 96(sp)
+    seqz t0, t0
+    sw t0, 92(sp)
+    lw t0, 92(sp)
+    beqz t0, .9265_Lelse_J
+    li t0, 120
+    sw t0, 88(sp)
+    li t0, 3
+    sw t0, 84(sp)
+    sw zero, 80(sp)
+    lw a0, 84(sp)
+    flw fa0, 80(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 76(sp)
+    li t0, 0
+    sw t0, 72(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    lw a0, 56(sp)
+    lw a1, 76(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 52(sp)
+    lw a0, 88(sp)
+    lw a1, 76(sp)
+    lw a2, 52(sp)
+    call .5650_Lcreate_array_00_0_J
+    sw a0, 48(sp)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 44(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 40(sp)
+    lw t0, 44(sp)
+    lw t1, 40(sp)
+    add t2, t0, t1
+    sw t2, 36(sp)
+    lw t6, 36(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 0(t6)
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    li t0, 118
+    sw t0, 16(sp)
+    lw a0, 20(sp)
+    lw a1, 16(sp)
+    call create_dirvec_elements
+    li t0, 1
+    sw t0, 12(sp)
+    lw t0, 104(sp)
+    lw t1, 12(sp)
+    sub t2, t0, t1
+    sw t2, 8(sp)
+    lw a0, 8(sp)
+    call create_dirvecs
+.9265_Lelse_J:
+.9266_Lendif_J:
+    lw ra, 108(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type init_dirvec_constants, @function
+.globl init_dirvec_constants
+init_dirvec_constants:
+    addi sp, sp, -80
+    sw ra, 76(sp) 	# init_dirvec_constants
+    sw a0, 72(sp)
+    sw a1, 68(sp)
+    li t0, 0
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    slt t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    seqz t0, t0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9267_Lelse_J
+    lw t0, 68(sp)
+    slli t0, t0, 3
+    sw t0, 52(sp)
+    lw t0, 72(sp)
+    lw t1, 52(sp)
+    add t2, t0, t1
+    sw t2, 48(sp)
+    lw t6, 48(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 44(sp)
+    lw t6, 48(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 40(sp)
+    li t0, 0
+    sw t0, 36(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 32(sp)
+    lw t0, 36(sp)
+    slli t0, t0, 2
+    sw t0, 28(sp)
+    lw t0, 32(sp)
+    lw t1, 28(sp)
+    add t2, t0, t1
+    sw t2, 24(sp)
+    lw t6, 24(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 20(sp)
+    li t0, 1
+    sw t0, 16(sp)
+    lw t0, 20(sp)
+    lw t1, 16(sp)
+    sub t2, t0, t1
+    sw t2, 12(sp)
+    lw a0, 44(sp)
+    lw a1, 40(sp)
+    lw a2, 12(sp)
+    call iter_setup_dirvec_constants
+    li t0, 1
+    sw t0, 8(sp)
+    lw t0, 68(sp)
+    lw t1, 8(sp)
+    sub t2, t0, t1
+    sw t2, 4(sp)
+    lw a0, 72(sp)
+    lw a1, 4(sp)
+    call init_dirvec_constants
+.9267_Lelse_J:
+.9268_Lendif_J:
+    lw ra, 76(sp)
+    addi sp, sp, 80
+    ret
+
+.section .text
+.type init_vecset_constants, @function
+.globl init_vecset_constants
+init_vecset_constants:
+    addi sp, sp, -48
+    sw ra, 44(sp) 	# init_vecset_constants
+    sw a0, 40(sp)
+    li t0, 0
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    slt t2, t0, t1
+    sw t2, 32(sp)
+    lw t0, 32(sp)
+    seqz t0, t0
+    sw t0, 28(sp)
+    lw t0, 28(sp)
+    beqz t0, .9269_Lelse_J
+    lui t6, %hi(dirvecs)
+    flw ft11, %lo(dirvecs)(t6)
+    fsw ft11, 24(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 20(sp)
+    lw t0, 24(sp)
+    lw t1, 20(sp)
+    add t2, t0, t1
+    sw t2, 16(sp)
+    lw t6, 16(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 12(sp)
+    li t0, 119
+    sw t0, 8(sp)
+    lw a0, 12(sp)
+    lw a1, 8(sp)
+    call init_dirvec_constants
+    li t0, 1
+    sw t0, 4(sp)
+    lw t0, 40(sp)
+    lw t1, 4(sp)
+    sub t2, t0, t1
+    sw t2, 0(sp)
+    lw a0, 0(sp)
+    call init_vecset_constants
+.9269_Lelse_J:
+.9270_Lendif_J:
+    lw ra, 44(sp)
+    addi sp, sp, 48
+    ret
+
+.section .text
+.type init_dirvecs, @function
+.globl init_dirvecs
+init_dirvecs:
+    addi sp, sp, -32
+    sw ra, 28(sp) 	# init_dirvecs
+    li t0, 4
+    sw t0, 24(sp)
+    lw a0, 24(sp)
+    call create_dirvecs
+    li t0, 9
+    sw t0, 20(sp)
+    li t0, 0
+    sw t0, 16(sp)
+    li t0, 0
+    sw t0, 12(sp)
+    lw a0, 20(sp)
+    lw a1, 16(sp)
+    lw a2, 12(sp)
+    call calc_dirvec_rows
+    li t0, 4
+    sw t0, 8(sp)
+    lw a0, 8(sp)
+    call init_vecset_constants
+    lw ra, 28(sp)
+    addi sp, sp, 32
+    ret
+
+.section .text
+.type add_reflection, @function
+.globl add_reflection
+add_reflection:
+    addi sp, sp, -112
+    sw ra, 108(sp) 	# add_reflection
+    sw a0, 104(sp)
+    sw a1, 100(sp)
+    fsw fa0, 96(sp)
+    fsw fa1, 92(sp)
+    fsw fa2, 88(sp)
+    fsw fa3, 84(sp)
+    li t0, 3
+    sw t0, 80(sp)
+    sw zero, 76(sp)
+    lw a0, 80(sp)
+    flw fa0, 76(sp)
+    call .5644_Lcreate_array_1_0_J
+    sw a0, 72(sp)
+    li t0, 0
+    sw t0, 68(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 64(sp)
+    lw t0, 68(sp)
+    slli t0, t0, 2
+    sw t0, 60(sp)
+    lw t0, 64(sp)
+    lw t1, 60(sp)
+    add t2, t0, t1
+    sw t2, 56(sp)
+    lw t6, 56(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 52(sp)
+    lw a0, 52(sp)
+    lw a1, 72(sp)
+    call .5641_Lcreate_array_0_0_J
+    sw a0, 48(sp)
+    lw a0, 72(sp)
+    flw fa0, 92(sp)
+    flw fa1, 88(sp)
+    flw fa2, 84(sp)
+    call vecset
+    li t0, 0
+    sw t0, 44(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 40(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    sub t2, t0, t1
+    sw t2, 20(sp)
+    lw a0, 72(sp)
+    lw a1, 48(sp)
+    lw a2, 20(sp)
+    call iter_setup_dirvec_constants
+    lui t6, %hi(reflections)
+    flw ft11, %lo(reflections)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 4
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 100(sp)
+    fsw ft11, 0(t6)
+    lw t6, 8(sp)
+    flw ft11, 72(sp)
+    fsw ft11, 4(t6)
+    lw t6, 8(sp)
+    flw ft11, 48(sp)
+    fsw ft11, 8(t6)
+    lw t6, 8(sp)
+    flw ft11, 96(sp)
+    fsw ft11, 12(t6)
+    lw ra, 108(sp)
+    addi sp, sp, 112
+    ret
+
+.section .text
+.type setup_rect_reflection, @function
+.globl setup_rect_reflection
+setup_rect_reflection:
+    addi sp, sp, -320
+    sw ra, 300(sp) 	# setup_rect_reflection
+    sw a0, 296(sp)
+    sw a1, 292(sp)
+    sw a2, 288(sp)
+    sw a3, 284(sp)
+    sw a4, 280(sp)
+    sw a5, 276(sp)
+    sw a6, 272(sp)
+    sw a7, 268(sp)
+    flw ft11, 304(sp)
+    fsw ft11, 264(sp)
+    flw ft11, 308(sp)
+    fsw ft11, 260(sp)
+    flw ft11, 312(sp)
+    fsw ft11, 256(sp)
+    flw ft11, 316(sp)
+    fsw ft11, 252(sp)
+    li t0, 4
+    sw t0, 248(sp)
+    lw t0, 296(sp)
+    slli t2, t0, 2
+    sw t2, 244(sp)
+    li t0, 0
+    sw t0, 240(sp)
+    lui t6, %hi(n_reflections)
+    flw ft11, %lo(n_reflections)(t6)
+    fsw ft11, 236(sp)
+    lw t0, 240(sp)
+    slli t0, t0, 2
+    sw t0, 232(sp)
+    lw t0, 236(sp)
+    lw t1, 232(sp)
+    add t2, t0, t1
+    sw t2, 228(sp)
+    lw t6, 228(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 224(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 220(sp)
+    flw ft11, 220(sp)
+    fsw ft11, 216(sp)
+    li t0, 0
+    sw t0, 212(sp)
+    lw t0, 212(sp)
+    slli t0, t0, 2
+    sw t0, 208(sp)
+    lw t0, 264(sp)
+    lw t1, 208(sp)
+    add t2, t0, t1
+    sw t2, 204(sp)
+    lw t6, 204(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 200(sp)
+    flw ft0, 216(sp)
+    flw ft1, 200(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 196(sp)
+    li t0, 0
+    sw t0, 192(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 188(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 188(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    flw ft0, 176(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 172(sp)
+    li t0, 1
+    sw t0, 168(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 164(sp)
+    lw t0, 168(sp)
+    slli t0, t0, 2
+    sw t0, 160(sp)
+    lw t0, 164(sp)
+    lw t1, 160(sp)
+    add t2, t0, t1
+    sw t2, 156(sp)
+    lw t6, 156(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 152(sp)
+    flw ft0, 152(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 148(sp)
+    li t0, 2
+    sw t0, 144(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 140(sp)
+    lw t0, 144(sp)
+    slli t0, t0, 2
+    sw t0, 136(sp)
+    lw t0, 140(sp)
+    lw t1, 136(sp)
+    add t2, t0, t1
+    sw t2, 132(sp)
+    lw t6, 132(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 128(sp)
+    flw ft0, 128(sp)
+    fneg.s ft0, ft0
+    fsw ft0, 124(sp)
+    li t0, 1
+    sw t0, 120(sp)
+    lw t0, 244(sp)
+    lw t1, 120(sp)
+    add t2, t0, t1
+    sw t2, 116(sp)
+    li t0, 0
+    sw t0, 112(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 108(sp)
+    lw t0, 112(sp)
+    slli t0, t0, 2
+    sw t0, 104(sp)
+    lw t0, 108(sp)
+    lw t1, 104(sp)
+    add t2, t0, t1
+    sw t2, 100(sp)
+    lw t6, 100(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 96(sp)
+    lw a0, 224(sp)
+    lw a1, 116(sp)
+    flw fa0, 196(sp)
+    flw fa1, 96(sp)
+    flw fa2, 148(sp)
+    flw fa3, 124(sp)
+    call add_reflection
+    li t0, 1
+    sw t0, 92(sp)
+    lw t0, 224(sp)
+    lw t1, 92(sp)
+    add t2, t0, t1
+    sw t2, 88(sp)
+    li t0, 2
+    sw t0, 84(sp)
+    lw t0, 244(sp)
+    lw t1, 84(sp)
+    add t2, t0, t1
+    sw t2, 80(sp)
+    li t0, 1
+    sw t0, 76(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 72(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 68(sp)
+    lw t0, 72(sp)
+    lw t1, 68(sp)
+    add t2, t0, t1
+    sw t2, 64(sp)
+    lw t6, 64(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 60(sp)
+    lw a0, 88(sp)
+    lw a1, 80(sp)
+    flw fa0, 196(sp)
+    flw fa1, 172(sp)
+    flw fa2, 60(sp)
+    flw fa3, 124(sp)
+    call add_reflection
+    li t0, 2
+    sw t0, 56(sp)
+    lw t0, 224(sp)
+    lw t1, 56(sp)
+    add t2, t0, t1
+    sw t2, 52(sp)
+    li t0, 3
+    sw t0, 48(sp)
+    lw t0, 244(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    li t0, 2
+    sw t0, 40(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 36(sp)
+    lw t0, 40(sp)
+    slli t0, t0, 2
+    sw t0, 32(sp)
+    lw t0, 36(sp)
+    lw t1, 32(sp)
+    add t2, t0, t1
+    sw t2, 28(sp)
+    lw t6, 28(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 24(sp)
+    lw a0, 52(sp)
+    lw a1, 44(sp)
+    flw fa0, 196(sp)
+    flw fa1, 172(sp)
+    flw fa2, 148(sp)
+    flw fa3, 24(sp)
+    call add_reflection
+    li t0, 0
+    sw t0, 20(sp)
+    li t0, 3
+    sw t0, 16(sp)
+    lw t0, 224(sp)
+    lw t1, 16(sp)
+    add t2, t0, t1
+    sw t2, 12(sp)
+    lui t6, %hi(n_reflections)
+    flw ft11, %lo(n_reflections)(t6)
+    fsw ft11, 8(sp)
+    lw t0, 20(sp)
+    slli t0, t0, 2
+    sw t0, 4(sp)
+    lw t0, 8(sp)
+    lw t1, 4(sp)
+    add t2, t0, t1
+    sw t2, 0(sp)
+    lw t6, 0(sp)
+    flw ft11, 12(sp)
+    fsw ft11, 0(t6)
+    lw ra, 300(sp)
+    addi sp, sp, 320
+    ret
+
+.section .text
+.type setup_surface_reflection, @function
+.globl setup_surface_reflection
+setup_surface_reflection:
+    addi sp, sp, -448
+    sw ra, 428(sp) 	# setup_surface_reflection
+    sw a0, 424(sp)
+    sw a1, 420(sp)
+    sw a2, 416(sp)
+    sw a3, 412(sp)
+    sw a4, 408(sp)
+    sw a5, 404(sp)
+    sw a6, 400(sp)
+    sw a7, 396(sp)
+    flw ft11, 432(sp)
+    fsw ft11, 392(sp)
+    flw ft11, 436(sp)
+    fsw ft11, 388(sp)
+    flw ft11, 440(sp)
+    fsw ft11, 384(sp)
+    flw ft11, 444(sp)
+    fsw ft11, 380(sp)
+    li t0, 4
+    sw t0, 376(sp)
+    lw t0, 424(sp)
+    lw t1, 376(sp)
+    slli t2, t0, 2
+    sw t2, 372(sp)
+    li t0, 1
+    sw t0, 368(sp)
+    lw t0, 372(sp)
+    lw t1, 368(sp)
+    add t2, t0, t1
+    sw t2, 364(sp)
+    li t0, 0
+    sw t0, 360(sp)
+    lui t6, %hi(n_reflections)
+    flw ft11, %lo(n_reflections)(t6)
+    fsw ft11, 356(sp)
+    lw t0, 360(sp)
+    slli t0, t0, 2
+    sw t0, 352(sp)
+    lw t0, 356(sp)
+    lw t1, 352(sp)
+    add t2, t0, t1
+    sw t2, 348(sp)
+    lw t6, 348(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 344(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 340(sp)
+    flw ft11, 340(sp)
+    fsw ft11, 336(sp)
+    li t0, 0
+    sw t0, 332(sp)
+    lw t0, 332(sp)
+    slli t0, t0, 2
+    sw t0, 328(sp)
+    lw t0, 392(sp)
+    lw t1, 328(sp)
+    add t2, t0, t1
+    sw t2, 324(sp)
+    lw t6, 324(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 320(sp)
+    flw ft0, 336(sp)
+    flw ft1, 320(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 316(sp)
+    li t0, 0
+    sw t0, 312(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 308(sp)
+    lw t0, 312(sp)
+    slli t0, t0, 2
+    sw t0, 304(sp)
+    lw t0, 308(sp)
+    lw t1, 304(sp)
+    add t2, t0, t1
+    sw t2, 300(sp)
+    lw t6, 300(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 296(sp)
+    li t0, 0
+    sw t0, 292(sp)
+    lw t0, 292(sp)
+    slli t0, t0, 2
+    sw t0, 288(sp)
+    lw t0, 404(sp)
+    lw t1, 288(sp)
+    add t2, t0, t1
+    sw t2, 284(sp)
+    lw t6, 284(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 280(sp)
+    flw ft0, 296(sp)
+    flw ft1, 280(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 276(sp)
+    li t0, 1
+    sw t0, 272(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 268(sp)
+    lw t0, 272(sp)
+    slli t0, t0, 2
+    sw t0, 264(sp)
+    lw t0, 268(sp)
+    lw t1, 264(sp)
+    add t2, t0, t1
+    sw t2, 260(sp)
+    lw t6, 260(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 256(sp)
+    li t0, 1
+    sw t0, 252(sp)
+    lw t0, 252(sp)
+    slli t0, t0, 2
+    sw t0, 248(sp)
+    lw t0, 404(sp)
+    lw t1, 248(sp)
+    add t2, t0, t1
+    sw t2, 244(sp)
+    lw t6, 244(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 240(sp)
+    flw ft0, 256(sp)
+    flw ft1, 240(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 236(sp)
+    flw ft0, 276(sp)
+    flw ft1, 236(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 232(sp)
+    li t0, 2
+    sw t0, 228(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 224(sp)
+    lw t0, 228(sp)
+    slli t0, t0, 2
+    sw t0, 220(sp)
+    lw t0, 224(sp)
+    lw t1, 220(sp)
+    add t2, t0, t1
+    sw t2, 216(sp)
+    lw t6, 216(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 212(sp)
+    li t0, 2
+    sw t0, 208(sp)
+    lw t0, 208(sp)
+    slli t0, t0, 2
+    sw t0, 204(sp)
+    lw t0, 404(sp)
+    lw t1, 204(sp)
+    add t2, t0, t1
+    sw t2, 200(sp)
+    lw t6, 200(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 196(sp)
+    flw ft0, 212(sp)
+    flw ft1, 196(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 192(sp)
+    flw ft0, 232(sp)
+    flw ft1, 192(sp)
+    fadd.s ft2, ft0, ft1
+    fsw ft2, 188(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 184(sp)
+    li t0, 0
+    sw t0, 180(sp)
+    lw t0, 180(sp)
+    slli t0, t0, 2
+    sw t0, 176(sp)
+    lw t0, 404(sp)
+    lw t1, 176(sp)
+    add t2, t0, t1
+    sw t2, 172(sp)
+    lw t6, 172(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 168(sp)
+    flw ft0, 184(sp)
+    flw ft1, 168(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 164(sp)
+    flw ft0, 164(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 160(sp)
+    li t0, 0
+    sw t0, 156(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 152(sp)
+    lw t0, 156(sp)
+    slli t0, t0, 2
+    sw t0, 148(sp)
+    lw t0, 152(sp)
+    lw t1, 148(sp)
+    add t2, t0, t1
+    sw t2, 144(sp)
+    lw t6, 144(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 140(sp)
+    flw ft0, 160(sp)
+    flw ft1, 140(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 136(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 132(sp)
+    li t0, 1
+    sw t0, 128(sp)
+    lw t0, 128(sp)
+    slli t0, t0, 2
+    sw t0, 124(sp)
+    lw t0, 404(sp)
+    lw t1, 124(sp)
+    add t2, t0, t1
+    sw t2, 120(sp)
+    lw t6, 120(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 116(sp)
+    flw ft0, 132(sp)
+    flw ft1, 116(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 112(sp)
+    flw ft0, 112(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 108(sp)
+    li t0, 1
+    sw t0, 104(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    flw ft0, 108(sp)
+    flw ft1, 88(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 84(sp)
+    lui t6, %hi(.6440_L.LC2_J)
+    flw ft11, %lo(.6440_L.LC2_J)(t6)
+    fsw ft11, 80(sp)
+    li t0, 2
+    sw t0, 76(sp)
+    lw t0, 76(sp)
+    slli t0, t0, 2
+    sw t0, 72(sp)
+    lw t0, 404(sp)
+    lw t1, 72(sp)
+    add t2, t0, t1
+    sw t2, 68(sp)
+    lw t6, 68(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 64(sp)
+    flw ft0, 80(sp)
+    flw ft1, 64(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 60(sp)
+    flw ft0, 60(sp)
+    flw ft1, 188(sp)
+    fmul.s ft2, ft0, ft1
+    fsw ft2, 56(sp)
+    li t0, 2
+    sw t0, 52(sp)
+    lui t6, %hi(light)
+    flw ft11, %lo(light)(t6)
+    fsw ft11, 48(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 44(sp)
+    lw t0, 48(sp)
+    lw t1, 44(sp)
+    add t2, t0, t1
+    sw t2, 40(sp)
+    lw t6, 40(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 36(sp)
+    flw ft0, 56(sp)
+    flw ft1, 36(sp)
+    fsub.s ft2, ft0, ft1
+    fsw ft2, 32(sp)
+    lw a0, 344(sp)
+    lw a1, 364(sp)
+    flw fa0, 316(sp)
+    flw fa1, 136(sp)
+    flw fa2, 84(sp)
+    flw fa3, 32(sp)
+    call add_reflection
+    li t0, 0
+    sw t0, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 344(sp)
+    lw t1, 24(sp)
+    add t2, t0, t1
+    sw t2, 20(sp)
+    lui t6, %hi(n_reflections)
+    flw ft11, %lo(n_reflections)(t6)
+    fsw ft11, 16(sp)
+    lw t0, 28(sp)
+    slli t0, t0, 2
+    sw t0, 12(sp)
+    lw t0, 16(sp)
+    lw t1, 12(sp)
+    add t2, t0, t1
+    sw t2, 8(sp)
+    lw t6, 8(sp)
+    flw ft11, 20(sp)
+    fsw ft11, 0(t6)
+    lw ra, 428(sp)
+    addi sp, sp, 448
+    ret
+
+.section .text
+.type setup_reflections, @function
+.globl setup_reflections
+setup_reflections:
+    addi sp, sp, -144
+    sw ra, 140(sp) 	# setup_reflections
+    sw a0, 136(sp)
+    li t0, 0
+    sw t0, 132(sp)
+    lw t0, 136(sp)
+    lw t1, 132(sp)
+    slt t2, t0, t1
+    sw t2, 128(sp)
+    lw t0, 128(sp)
+    seqz t0, t0
+    sw t0, 124(sp)
+    lw t0, 124(sp)
+    beqz t0, .9271_Lelse_J
+    lui t6, %hi(objects)
+    flw ft11, %lo(objects)(t6)
+    fsw ft11, 120(sp)
+    lw t0, 136(sp)
+    mv t5, t0
+    slli t0, t5, 5
+    slli t6, t5, 3
+    add t0, t0, t6
+    slli t6, t5, 2
+    add t0, t0, t6
+    sw t0, 116(sp)
+    lw t0, 120(sp)
+    lw t1, 116(sp)
+    add t2, t0, t1
+    sw t2, 112(sp)
+    lw t6, 112(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 108(sp)
+    lw t6, 112(sp)
+    flw ft11, 4(t6)
+    fsw ft11, 104(sp)
+    lw t6, 112(sp)
+    flw ft11, 8(t6)
+    fsw ft11, 100(sp)
+    lw t6, 112(sp)
+    flw ft11, 12(t6)
+    fsw ft11, 96(sp)
+    lw t6, 112(sp)
+    flw ft11, 16(t6)
+    fsw ft11, 92(sp)
+    lw t6, 112(sp)
+    flw ft11, 20(t6)
+    fsw ft11, 88(sp)
+    lw t6, 112(sp)
+    flw ft11, 24(t6)
+    fsw ft11, 84(sp)
+    lw t6, 112(sp)
+    flw ft11, 28(t6)
+    fsw ft11, 80(sp)
+    lw t6, 112(sp)
+    flw ft11, 32(t6)
+    fsw ft11, 76(sp)
+    lw t6, 112(sp)
+    flw ft11, 36(t6)
+    fsw ft11, 72(sp)
+    lw t6, 112(sp)
+    flw ft11, 40(t6)
+    fsw ft11, 68(sp)
+    li t0, 2
+    sw t0, 64(sp)
+    lw t0, 100(sp)
+    lw t1, 64(sp)
+    xor t2, t0, t1
+    sw t2, 60(sp)
+    lw t0, 60(sp)
+    seqz t0, t0
+    sw t0, 56(sp)
+    lw t0, 56(sp)
+    beqz t0, .9273_Lelse_J
+    li t0, 0
+    sw t0, 52(sp)
+    lw t0, 52(sp)
+    slli t0, t0, 2
+    sw t0, 48(sp)
+    lw t0, 80(sp)
+    lw t1, 48(sp)
+    add t2, t0, t1
+    sw t2, 44(sp)
+    lw t6, 44(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 40(sp)
+    lui t6, 260096 # 0x3f800
+    sw t6, 36(sp)
+    flw ft11, 36(sp)
+    fsw ft11, 32(sp)
+    flw ft0, 40(sp)
+    flw ft1, 32(sp)
+    flt.s t2, ft0, ft1
+    sw t2, 28(sp)
+    lw t0, 28(sp)
+    beqz t0, .9275_Lelse_J
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 104(sp)
+    lw t1, 24(sp)
+    xor t2, t0, t1
+    sw t2, 20(sp)
+    lw t0, 20(sp)
+    seqz t0, t0
+    sw t0, 16(sp)
+    lw t0, 16(sp)
+    beqz t0, .9277_Lelse_J
+    lw a0, 136(sp)
+    lw a1, 108(sp)
+    lw a2, 104(sp)
+    lw a3, 100(sp)
+    lw a4, 96(sp)
+    lw a5, 92(sp)
+    lw a6, 88(sp)
+    lw a7, 84(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 72(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 68(sp)
+    fsw ft11, -4(sp)
+    call setup_rect_reflection
+    j .9278_Lendif_J
+.9277_Lelse_J:
+    li t0, 2
+    sw t0, 12(sp)
+    lw t0, 104(sp)
+    lw t1, 12(sp)
+    xor t2, t0, t1
+    sw t2, 8(sp)
+    lw t0, 8(sp)
+    seqz t0, t0
+    sw t0, 4(sp)
+    lw t0, 4(sp)
+    beqz t0, .9279_Lelse_J
+    lw a0, 136(sp)
+    lw a1, 108(sp)
+    lw a2, 104(sp)
+    lw a3, 100(sp)
+    lw a4, 96(sp)
+    lw a5, 92(sp)
+    lw a6, 88(sp)
+    lw a7, 84(sp)
+    flw ft11, 80(sp)
+    fsw ft11, -16(sp)
+    flw ft11, 76(sp)
+    fsw ft11, -12(sp)
+    flw ft11, 72(sp)
+    fsw ft11, -8(sp)
+    flw ft11, 68(sp)
+    fsw ft11, -4(sp)
+    call setup_surface_reflection
+.9279_Lelse_J:
+.9280_Lendif_J:
+.9278_Lendif_J:
+.9275_Lelse_J:
+.9276_Lendif_J:
+.9273_Lelse_J:
+.9274_Lendif_J:
+.9271_Lelse_J:
+.9272_Lendif_J:
+    lw ra, 140(sp)
+    addi sp, sp, 144
+    ret
+
+.section .text
+.type rt, @function
+.globl rt
+rt:
+    addi sp, sp, -464
+    sw ra, 460(sp) 	# rt
+    sw a0, 456(sp)
+    sw a1, 452(sp)
+    sw a2, 448(sp)
+    li t0, 0
+    sw t0, 444(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 440(sp)
+    lw t0, 444(sp)
+    slli t0, t0, 2
+    sw t0, 436(sp)
+    lw t0, 440(sp)
+    lw t1, 436(sp)
+    add t2, t0, t1
+    sw t2, 432(sp)
+    lw t6, 432(sp)
+    flw ft11, 456(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 428(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 424(sp)
+    lw t0, 428(sp)
+    slli t0, t0, 2
+    sw t0, 420(sp)
+    lw t0, 424(sp)
+    lw t1, 420(sp)
+    add t2, t0, t1
+    sw t2, 416(sp)
+    lw t6, 416(sp)
+    flw ft11, 452(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 412(sp)
+    li t0, 2
+    sw t0, 408(sp)
+    lw t0, 456(sp)
+    srai t2, t0, 1
+    sw t2, 404(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 400(sp)
+    lw t0, 412(sp)
+    slli t0, t0, 2
+    sw t0, 396(sp)
+    lw t0, 400(sp)
+    lw t1, 396(sp)
+    add t2, t0, t1
+    sw t2, 392(sp)
+    lw t6, 392(sp)
+    flw ft11, 404(sp)
+    fsw ft11, 0(t6)
+    li t0, 1
+    sw t0, 388(sp)
+    li t0, 2
+    sw t0, 384(sp)
+    lw t0, 452(sp)
+    srai t2, t0, 1
+    sw t2, 380(sp)
+    lui t6, %hi(image_center)
+    flw ft11, %lo(image_center)(t6)
+    fsw ft11, 376(sp)
+    lw t0, 388(sp)
+    slli t0, t0, 2
+    sw t0, 372(sp)
+    lw t0, 376(sp)
+    lw t1, 372(sp)
+    add t2, t0, t1
+    sw t2, 368(sp)
+    lw t6, 368(sp)
+    flw ft11, 380(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 364(sp)
+    lui t6, %hi(.8720_L.LC22_J)
+    flw ft11, %lo(.8720_L.LC22_J)(t6)
+    fsw ft11, 360(sp)
+    lw t0, 456(sp)
+    fcvt.s.w ft0, t0
+    fsw ft0, 356(sp)
+    flw ft0, 360(sp)
+    flw ft1, 356(sp)
+    fdiv.s ft2, ft0, ft1
+    fsw ft2, 352(sp)
+    lui t6, %hi(scan_pitch)
+    flw ft11, %lo(scan_pitch)(t6)
+    fsw ft11, 348(sp)
+    lw t0, 364(sp)
+    slli t0, t0, 2
+    sw t0, 344(sp)
+    lw t0, 348(sp)
+    lw t1, 344(sp)
+    add t2, t0, t1
+    sw t2, 340(sp)
+    lw t6, 340(sp)
+    flw ft11, 352(sp)
+    fsw ft11, 0(t6)
+    li t0, 0
+    sw t0, 336(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 332(sp)
+    lw t0, 336(sp)
+    slli t0, t0, 2
+    sw t0, 328(sp)
+    lw t0, 332(sp)
+    lw t1, 328(sp)
+    add t2, t0, t1
+    sw t2, 324(sp)
+    lw t6, 324(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 320(sp)
+    call create_pixel
+    sw a0, 316(sp)
+    sw a1, 312(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 308(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 304(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 300(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 296(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 292(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 288(sp)
+    lw a0, 320(sp)
+    lw a1, 316(sp)
+    lw a2, 312(sp)
+    lw a3, 308(sp)
+    lw a4, 304(sp)
+    lw a5, 300(sp)
+    lw a6, 296(sp)
+    lw a7, 292(sp)
+    flw ft11, 288(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 284(sp)
+    li t0, 0
+    sw t0, 280(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 276(sp)
+    lw t0, 280(sp)
+    slli t0, t0, 2
+    sw t0, 272(sp)
+    lw t0, 276(sp)
+    lw t1, 272(sp)
+    add t2, t0, t1
+    sw t2, 268(sp)
+    lw t6, 268(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 264(sp)
+    li t0, 2
+    sw t0, 260(sp)
+    lw t0, 264(sp)
+    lw t1, 260(sp)
+    sub t2, t0, t1
+    sw t2, 256(sp)
+    lw a0, 284(sp)
+    lw a1, 256(sp)
+    call init_line_elements
+    sw a0, 252(sp)
+    li t0, 0
+    sw t0, 248(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 244(sp)
+    lw t0, 248(sp)
+    slli t0, t0, 2
+    sw t0, 240(sp)
+    lw t0, 244(sp)
+    lw t1, 240(sp)
+    add t2, t0, t1
+    sw t2, 236(sp)
+    lw t6, 236(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 232(sp)
+    call create_pixel
+    sw a0, 228(sp)
+    sw a1, 224(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 220(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 216(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 212(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 208(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 204(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 200(sp)
+    lw a0, 232(sp)
+    lw a1, 228(sp)
+    lw a2, 224(sp)
+    lw a3, 220(sp)
+    lw a4, 216(sp)
+    lw a5, 212(sp)
+    lw a6, 208(sp)
+    lw a7, 204(sp)
+    flw ft11, 200(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 196(sp)
+    li t0, 0
+    sw t0, 192(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 188(sp)
+    lw t0, 192(sp)
+    slli t0, t0, 2
+    sw t0, 184(sp)
+    lw t0, 188(sp)
+    lw t1, 184(sp)
+    add t2, t0, t1
+    sw t2, 180(sp)
+    lw t6, 180(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 176(sp)
+    li t0, 2
+    sw t0, 172(sp)
+    lw t0, 176(sp)
+    lw t1, 172(sp)
+    sub t2, t0, t1
+    sw t2, 168(sp)
+    lw a0, 196(sp)
+    lw a1, 168(sp)
+    call init_line_elements
+    sw a0, 164(sp)
+    li t0, 0
+    sw t0, 160(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 156(sp)
+    lw t0, 160(sp)
+    slli t0, t0, 2
+    sw t0, 152(sp)
+    lw t0, 156(sp)
+    lw t1, 152(sp)
+    add t2, t0, t1
+    sw t2, 148(sp)
+    lw t6, 148(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 144(sp)
+    call create_pixel
+    sw a0, 140(sp)
+    sw a1, 136(sp)
+    flw ft11, -24(sp)
+    fsw ft11, 132(sp)
+    flw ft11, -20(sp)
+    fsw ft11, 128(sp)
+    flw ft11, -16(sp)
+    fsw ft11, 124(sp)
+    flw ft11, -12(sp)
+    fsw ft11, 120(sp)
+    flw ft11, -8(sp)
+    fsw ft11, 116(sp)
+    flw ft11, -4(sp)
+    fsw ft11, 112(sp)
+    lw a0, 144(sp)
+    lw a1, 140(sp)
+    lw a2, 136(sp)
+    lw a3, 132(sp)
+    lw a4, 128(sp)
+    lw a5, 124(sp)
+    lw a6, 120(sp)
+    lw a7, 116(sp)
+    flw ft11, 112(sp)
+    fsw ft11, -4(sp)
+    call .5656_Lcreate_array_0000000_1_J
+    sw a0, 108(sp)
+    li t0, 0
+    sw t0, 104(sp)
+    lui t6, %hi(image_size)
+    flw ft11, %lo(image_size)(t6)
+    fsw ft11, 100(sp)
+    lw t0, 104(sp)
+    slli t0, t0, 2
+    sw t0, 96(sp)
+    lw t0, 100(sp)
+    lw t1, 96(sp)
+    add t2, t0, t1
+    sw t2, 92(sp)
+    lw t6, 92(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 88(sp)
+    li t0, 2
+    sw t0, 84(sp)
+    lw t0, 88(sp)
+    lw t1, 84(sp)
+    sub t2, t0, t1
+    sw t2, 80(sp)
+    lw a0, 108(sp)
+    lw a1, 80(sp)
+    call init_line_elements
+    sw a0, 76(sp)
+    call read_parameter
+    lw a0, 448(sp)
+    call write_ppm_header
+    call init_dirvecs
+    lui a0, %hi(light_dirvec)
+    lw a0, %lo(light_dirvec)(a0)
+    lui a1, %hi(light)
+    lw a1, %lo(light)(a1)
+    call veccpy
+    li t0, 0
+    sw t0, 72(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 68(sp)
+    lw t0, 72(sp)
+    slli t0, t0, 2
+    sw t0, 64(sp)
+    lw t0, 68(sp)
+    lw t1, 64(sp)
+    add t2, t0, t1
+    sw t2, 60(sp)
+    lw t6, 60(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 56(sp)
+    li t0, 1
+    sw t0, 52(sp)
+    lw t0, 56(sp)
+    lw t1, 52(sp)
+    sub t2, t0, t1
+    sw t2, 48(sp)
+    lui a0, %hi(light_dirvec)
+    lw a0, %lo(light_dirvec)(a0)
+    lui a1, %hi(light_dirvec)
+    addi a1, a1, 4
+    lw a1, %lo(light_dirvec)(a1)
+    lw a2, 48(sp)
+    call iter_setup_dirvec_constants
+    li t0, 0
+    sw t0, 44(sp)
+    lui t6, %hi(n_objects)
+    flw ft11, %lo(n_objects)(t6)
+    fsw ft11, 40(sp)
+    lw t0, 44(sp)
+    slli t0, t0, 2
+    sw t0, 36(sp)
+    lw t0, 40(sp)
+    lw t1, 36(sp)
+    add t2, t0, t1
+    sw t2, 32(sp)
+    lw t6, 32(sp)
+    flw ft11, 0(t6)
+    fsw ft11, 28(sp)
+    li t0, 1
+    sw t0, 24(sp)
+    lw t0, 28(sp)
+    lw t1, 24(sp)
+    sub t2, t0, t1
+    sw t2, 20(sp)
+    lw a0, 20(sp)
+    call setup_reflections
+    li t0, 0
+    sw t0, 16(sp)
+    li t0, 0
+    sw t0, 12(sp)
+    lw a0, 164(sp)
+    lw a1, 16(sp)
+    lw a2, 12(sp)
+    call pretrace_line
+    li t0, 0
+    sw t0, 8(sp)
+    li t0, 2
+    sw t0, 4(sp)
+    lw a0, 8(sp)
+    lw a1, 252(sp)
+    lw a2, 164(sp)
+    lw a3, 76(sp)
+    lw a4, 4(sp)
+    lw a5, 448(sp)
+    call scan_line
+    lw ra, 460(sp)
+    addi sp, sp, 464
+    ret
+
+.section .text
+.type .5641_Lcreate_array_0_0_J, @function
+.globl .5641_Lcreate_array_0_0_J
+.5641_Lcreate_array_0_0_J:
+    mv t0, tp
+.5643_Lloop_J:
+    beqz a0, .9281_Lelse_J
+    sw a1, 0(tp)
+    addi tp, tp, 4
+    addi a0, a0, -1
+    j .5643_Lloop_J
+.9281_Lelse_J:
+.9282_Lendif_J:
+    mv a0, t0
+    ret
+
+.section .text
+.type .5644_Lcreate_array_1_0_J, @function
+.globl .5644_Lcreate_array_1_0_J
+.5644_Lcreate_array_1_0_J:
+    mv t0, tp
+.5646_Lloop_J:
+    beqz a0, .9283_Lelse_J
+    fsw fa0, 0(tp)
+    addi tp, tp, 4
+    addi a0, a0, -1
+    j .5646_Lloop_J
+.9283_Lelse_J:
+.9284_Lendif_J:
+    mv a0, t0
+    ret
+
+.section .text
+.type .5647_Lcreate_array_0000000_4_J, @function
+.globl .5647_Lcreate_array_0000000_4_J
+.5647_Lcreate_array_0000000_4_J:
+    addi sp, sp, -16
+    mv t0, tp
+    lw t1, 0(sp)
+    lw t2, 4(sp)
+    lw t3, 8(sp)
+    lw t4, 12(sp)
+.5649_Lloop_J:
+    beqz a0, .9285_Lelse_J
+    sw a1, 0(tp)
+    sw a2, 4(tp)
+    sw a3, 8(tp)
+    sw a4, 12(tp)
+    sw a5, 16(tp)
+    sw a6, 20(tp)
+    sw a7, 24(tp)
+    sw t1, 28(tp)
+    sw t2, 32(tp)
+    sw t3, 36(tp)
+    sw t4, 40(tp)
+    addi tp, tp, 44
+    addi a0, a0, -1
+    j .5649_Lloop_J
+.9285_Lelse_J:
+.9286_Lendif_J:
+    mv a0, t0
+    addi sp, sp, 16
+    ret
+
+.section .text
+.type .5650_Lcreate_array_00_0_J, @function
+.globl .5650_Lcreate_array_00_0_J
+.5650_Lcreate_array_00_0_J:
+    mv t0, tp
+.5652_Lloop_J:
+    beqz a0, .9287_Lelse_J
+    sw a1, 0(tp)
+    sw a2, 4(tp)
+    addi tp, tp, 8
+    addi a0, a0, -1
+    j .5652_Lloop_J
+.9287_Lelse_J:
+.9288_Lendif_J:
+    mv a0, t0
+    ret
+
+.section .text
+.type .5653_Lcreate_array_0001_0_J, @function
+.globl .5653_Lcreate_array_0001_0_J
+.5653_Lcreate_array_0001_0_J:
+    mv t0, tp
+.5655_Lloop_J:
+    beqz a0, .9289_Lelse_J
+    sw a1, 0(tp)
+    sw a2, 4(tp)
+    sw a3, 8(tp)
+    fsw fa0, 12(tp)
+    addi tp, tp, 16
+    addi a0, a0, -1
+    j .5655_Lloop_J
+.9289_Lelse_J:
+.9290_Lendif_J:
+    mv a0, t0
+    ret
+
+.section .text
+.type .5656_Lcreate_array_0000000_1_J, @function
+.globl .5656_Lcreate_array_0000000_1_J
+.5656_Lcreate_array_0000000_1_J:
+    addi sp, sp, -16
+    mv t0, tp
+    lw t1, 12(sp)
+.5658_Lloop_J:
+    beqz a0, .9291_Lelse_J
+    sw a1, 0(tp)
+    sw a2, 4(tp)
+    sw a3, 8(tp)
+    sw a4, 12(tp)
+    sw a5, 16(tp)
+    sw a6, 20(tp)
+    sw a7, 24(tp)
+    sw t1, 28(tp)
+    addi tp, tp, 32
+    addi a0, a0, -1
+    j .5658_Lloop_J
+.9291_Lelse_J:
+.9292_Lendif_J:
+    mv a0, t0
+    addi sp, sp, 16
+    ret
+
+.data
+n_objects:
+    .zero 4
+objects:
+    .zero 4
+screen:
+    .zero 4
+viewpoint:
+    .zero 4
+light:
+    .zero 4
+beam:
+    .zero 4
+and_net:
+    .zero 4
+or_net:
+    .zero 4
+solver_dist:
+    .zero 4
+intsec_rectside:
+    .zero 4
+tmin:
+    .zero 4
+intersection_point:
+    .zero 4
+intersected_object_id:
+    .zero 4
+nvector:
+    .zero 4
+texture_color:
+    .zero 4
+diffuse_ray:
+    .zero 4
+rgb:
+    .zero 4
+image_size:
+    .zero 4
+image_center:
+    .zero 4
+scan_pitch:
+    .zero 4
+startp:
+    .zero 4
+startp_fast:
+    .zero 4
+screenx_dir:
+    .zero 4
+screeny_dir:
+    .zero 4
+screenz_dir:
+    .zero 4
+ptrace_dirvec:
+    .zero 4
+dirvecs:
+    .zero 4
+light_dirvec:
+    .zero 8
+reflections:
+    .zero 4
+n_reflections:
+    .zero 4
+.6339_L.LC0_J:
+    .float 0.01745329238474369
+.6349_L.LC1_J:
+    .float 200.0
+.6440_L.LC2_J:
+    .float 2.0
+.7342_L.LC3_J:
+    .float 0.20000000298023224
+.7343_L.LC4_J:
+    .float 0.009999999776482582
+.7393_L.LC5_J:
+    .float 0.10000000149011612
+.7459_L.LC6_J:
+    .float 1000000000.0
+.7469_L.LC7_J:
+    .float 100000000.0
+.7699_L.LC8_J:
+    .float 0.05000000074505806
+.7700_L.LC9_J:
+    .float 20.0
+.7701_L.LC10_J:
+    .float 10.0
+.7706_L.LC11_J:
+    .float 255.0
+.7713_L.LC12_J:
+    .float 0.25
+.7730_L.LC13_J:
+    .float 3.1415927410125732
+.7751_L.LC14_J:
+    .float 9.999999747378752e-05
+.7752_L.LC15_J:
+    .float 15.0
+.7753_L.LC16_J:
+    .float 30.0
+.7760_L.LC17_J:
+    .float 0.15000000596046448
+.7764_L.LC18_J:
+    .float 0.30000001192092896
+.7882_L.LC19_J:
+    .float 256.0
+.8057_L.LC20_J:
+    .float 150.0
+.8545_L.LC21_J:
+    .float 0.8999999761581421
+.8720_L.LC22_J:
+    .float 128.0
+
+
+.globl mincaml_floor
+mincaml_floor:
+        fmv.x.s a4,fa0
+        li      a2,22
+        srai    a5,a4,23
+        andi    a5,a5,255
+        addi    a5,a5,-127
+        mv      a3,a4
+        bgt     a5,a2,.L9
+        blt     a5,zero,.L19
+        lui     a1,0x00800
+        addi    a2,a1,-1
+        sra     a2,a2,a5
+        and     a0,a2,a4
+        beq     a0,zero,.L12
+        bge     a4,zero,.L13
+        sra     a1,a1,a5
+        add     a3,a4,a1
+.L13:
+        not     a2,a2
+        and     a4,a2,a3
+.L12:
+        fmv.s.x fa0,a4
+        ret
+.L19:
+        mv      a4,zero
+        bge     a3,zero,.L12
+        slli    a3,a3,1
+        beq     a3,zero,.L20
+        lui     a4,0xbf800
+        j       .L12
+.L9:
+        li      a3,128
+        bne     a5,a3,.L12
+        fadd.s  fa5,fa0,fa0
+        fmv.x.s a4,fa5
+        j       .L12
+.L20:
+        li      a4,-1
+        srli    a4,a4,1
+        j       .L12
+
+.globl print_int
+print_int:
+    mv a3, ra
+    bgt a0, zero, print_positive
+    beq a0, zero, print_zero
+    li a1, 45
+    out a1
+    lui a2, 0x80000
+    beq a0, a2, print_INT_MIN
+    neg a0, a0
+print_positive:
+    call divmod_10
+    beq a1, zero, print_positive_end_1
+    fmv.w.x ft1, a0
+
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_2
+    fmv.w.x ft2, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_3
+    fmv.w.x ft3, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_4
+    fmv.w.x ft4, a0
+
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_5
+    fmv.w.x ft5, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_6
+    fmv.w.x ft6, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_7
+    fmv.w.x ft7, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_8
+    fmv.w.x ft8, a0
+    
+    mv a0, a1
+    call divmod_10
+    beq a1, zero, print_positive_end_9
+    addi a1, a1, 48
+    out a1
+print_positive_end_9:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft8
+print_positive_end_8:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft7
+print_positive_end_7:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft6
+print_positive_end_6:
+    addi a0, a0, 48
+    out a0
+    
+    fmv.x.w a0, ft5
+print_positive_end_5:
+    addi a0, a0, 48
+    out a0
+    
+    fmv.x.w a0, ft4
+print_positive_end_4:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft3
+print_positive_end_3:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft2
+print_positive_end_2:
+    addi a0, a0, 48
+    out a0
+
+    fmv.x.w a0, ft1
+print_positive_end_1:
+    addi a0, a0, 48
+    out a0
+    jr a3
+
+print_zero:
+    li a0, 48
+    out a0
+    jr a3
+
+print_INT_MIN:
+    li a0, 50 # '2'
+    out a0
+    li a0, 49 # '1'
+    out a0
+    li a0, 52 # '4'
+    out a0
+    li a0, 55 # '7'
+    out a0
+    li a0, 52 # '4'
+    out a0
+    li a0, 56 # '8'
+    out a0
+    li a0, 51 # '3'
+    out a0
+    li a0, 54 # '6'
+    out a0
+    li a0, 52 # '4'
+    out a0
+    li a0, 56 # '8'
+    out a0
+    jr a3
+    
+divmod_10: # a0: dividend; 0 <= a0 <= 2^31 - 1
+    li t0, 10
+    li t2, 5
+    mv t1, zero
+divmod_10_loop:
+    bge t0, a0, divmod_10_loop_end
+    slli t0, t0, 1
+    slli t2, t2, 1
+    addi t1, t1, 1
+    ble t0, zero, overflow
+    j divmod_10_loop
+overflow:
+    addi t1, t1, -1
+    mv t0, t2
+divmod_10_loop_end:
+    mv a1, zero
+divmod_10_loop2:
+    blt t1, zero, divmod_10_loop2_end
+    blt a0, t0, divmod_10_else
+    sub a0, a0, t0
+    srli t0, t0, 1
+    slli a1, a1, 1
+    ori a1, a1, 1
+    addi t1, t1, -1
+    j divmod_10_loop2
+divmod_10_else:
+    srli t0, t0, 1
+    slli a1, a1, 1
+    addi t1, t1, -1
+    j divmod_10_loop2
+divmod_10_loop2_end:
+    # a0: remainder; a1: quotient
+    ret
+
 	.text
 	.attribute	4, 16
 	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
-	.file	"min-rt.ll"
-	.globl	caml_main                       # -- Begin function caml_main
+	.file	"trigonometric.c"
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function mincaml_atan
+.LCPI0_0:
+	.word	0xbdb7d66e                      # float -0.0897644609
+.LCPI0_1:
+	.word	0x3d75e7c5                      # float 0.0600354858
+.LCPI0_2:
+	.word	0x3de38e38                      # float 0.111111104
+.LCPI0_3:
+	.word	0xbe124925                      # float -0.142857149
+.LCPI0_4:
+	.word	0x3e4ccccd                      # float 0.200000003
+.LCPI0_5:
+	.word	0xbeaaaaaa                      # float -0.333333313
+.LCPI0_6:
+	.word	0xbfc90fdb                      # float -1.57079637
+.LCPI0_7:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI0_8:
+	.word	0xbf490fdb                      # float -0.785398185
+.LCPI0_9:
+	.word	0x3f490fdb                      # float 0.785398185
+	.text
+	.globl	mincaml_atan
 	.p2align	2
-	.type	caml_main,@function
-caml_main:                              # @caml_main
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	lui	a0, %hi(size)
-	lw	a0, %lo(size)(a0)
-	lui	a1, %hi(dbg)
-	lw	a1, %lo(dbg)(a1)
-	li	a2, 256                     .#parameter
-	sw	a2, 0(a0)
-	sw	a2, 4(a0)
-	sw	zero, 0(a1)
-	call	read_parameter@plt
-	call	scan_start@plt
-	li	a0, 0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
+	.type	mincaml_atan,@function
+mincaml_atan:                           # @mincaml_atan
+# %bb.0:
+	fabs.s	fa5, fa0
+	fmv.x.w	a1, fa5
+	lui	a0, 257536
+	addi	a0, a0, -1
+	blt	a0, a1, .LBB0_2
+# %bb.1:
+	lui	a0, %hi(.LCPI0_0)
+	flw	fa5, %lo(.LCPI0_0)(a0)
+	lui	a0, %hi(.LCPI0_1)
+	flw	fa4, %lo(.LCPI0_1)(a0)
+	lui	a0, %hi(.LCPI0_2)
+	flw	fa3, %lo(.LCPI0_2)(a0)
+	fmul.s	fa2, fa0, fa0
+	fmadd.s	fa5, fa2, fa4, fa5
+	fmadd.s	fa5, fa2, fa5, fa3
+	lui	a0, %hi(.LCPI0_3)
+	flw	fa4, %lo(.LCPI0_3)(a0)
+	lui	a0, %hi(.LCPI0_4)
+	flw	fa3, %lo(.LCPI0_4)(a0)
+	lui	a0, %hi(.LCPI0_5)
+	flw	fa1, %lo(.LCPI0_5)(a0)
+	fmadd.s	fa5, fa2, fa5, fa4
+	fmadd.s	fa5, fa2, fa5, fa3
+	fmul.s	fa4, fa2, fa0
+	fmadd.s	fa5, fa2, fa5, fa1
+	fmadd.s	fa0, fa4, fa5, fa0
+	ret
+.LBB0_2:
+	lui	a0, 262592
+	addi	a2, a0, -1
+	fmv.x.w	a0, fa0
+	bltu	a2, a1, .LBB0_5
+# %bb.3:
+	lui	a1, 784384
+	fmv.w.x	fa4, a1
+	fadd.s	fa4, fa5, fa4
+	lui	a1, 260096
+	fmv.w.x	fa3, a1
+	fadd.s	fa5, fa5, fa3
+	lui	a1, %hi(.LCPI0_0)
+	flw	fa3, %lo(.LCPI0_0)(a1)
+	lui	a1, %hi(.LCPI0_1)
+	flw	fa2, %lo(.LCPI0_1)(a1)
+	lui	a1, %hi(.LCPI0_2)
+	flw	fa1, %lo(.LCPI0_2)(a1)
+	fdiv.s	fa5, fa4, fa5
+	fmul.s	fa4, fa5, fa5
+	fmadd.s	fa3, fa4, fa2, fa3
+	fmadd.s	fa3, fa4, fa3, fa1
+	lui	a1, %hi(.LCPI0_3)
+	flw	fa2, %lo(.LCPI0_3)(a1)
+	lui	a1, %hi(.LCPI0_4)
+	flw	fa1, %lo(.LCPI0_4)(a1)
+	lui	a1, %hi(.LCPI0_5)
+	flw	fa0, %lo(.LCPI0_5)(a1)
+	fmadd.s	fa3, fa4, fa3, fa2
+	fmadd.s	fa3, fa4, fa3, fa1
+	fmul.s	fa2, fa5, fa4
+	fmadd.s	fa4, fa4, fa3, fa0
+	fmadd.s	fa5, fa2, fa4, fa5
+	bltz	a0, .LBB0_7
+# %bb.4:
+	lui	a0, %hi(.LCPI0_9)
+	flw	fa4, %lo(.LCPI0_9)(a0)
+	fadd.s	fa0, fa5, fa4
+	ret
+.LBB0_5:
+	lui	a1, 260096
+	fmv.w.x	fa4, a1
+	lui	a1, %hi(.LCPI0_0)
+	flw	fa3, %lo(.LCPI0_0)(a1)
+	lui	a1, %hi(.LCPI0_1)
+	flw	fa2, %lo(.LCPI0_1)(a1)
+	lui	a1, %hi(.LCPI0_2)
+	flw	fa1, %lo(.LCPI0_2)(a1)
+	fdiv.s	fa5, fa4, fa5
+	fmul.s	fa4, fa5, fa5
+	fmadd.s	fa3, fa4, fa2, fa3
+	fmadd.s	fa3, fa4, fa3, fa1
+	lui	a1, %hi(.LCPI0_3)
+	flw	fa2, %lo(.LCPI0_3)(a1)
+	lui	a1, %hi(.LCPI0_4)
+	flw	fa1, %lo(.LCPI0_4)(a1)
+	lui	a1, %hi(.LCPI0_5)
+	flw	fa0, %lo(.LCPI0_5)(a1)
+	fmadd.s	fa3, fa4, fa3, fa2
+	fmadd.s	fa3, fa4, fa3, fa1
+	fmul.s	fa2, fa5, fa4
+	fmadd.s	fa4, fa4, fa3, fa0
+	fmadd.s	fa5, fa2, fa4, fa5
+	bltz	a0, .LBB0_8
+# %bb.6:
+	lui	a0, %hi(.LCPI0_7)
+	flw	fa4, %lo(.LCPI0_7)(a0)
+	fsub.s	fa0, fa4, fa5
+	ret
+.LBB0_7:
+	lui	a0, %hi(.LCPI0_8)
+	flw	fa4, %lo(.LCPI0_8)(a0)
+	fsub.s	fa0, fa4, fa5
+	ret
+.LBB0_8:
+	lui	a0, %hi(.LCPI0_6)
+	flw	fa4, %lo(.LCPI0_6)(a0)
+	fadd.s	fa0, fa5, fa4
 	ret
 .Lfunc_end0:
-	.size	caml_main, .Lfunc_end0-caml_main
-	.cfi_endproc
+	.size	mincaml_atan, .Lfunc_end0-mincaml_atan
                                         # -- End function
-	.globl	xor                             # -- Begin function xor
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function mincaml_sin
+.LCPI1_0:
+	.word	0x40c90fdb                      # float 6.28318548
+.LCPI1_1:
+	.word	0x40490fdb                      # float 3.14159274
+.LCPI1_2:
+	.word	0xc0490fdb                      # float -3.14159274
+.LCPI1_3:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI1_4:
+	.word	0x3f490fdb                      # float 0.785398185
+.LCPI1_5:
+	.word	0x3c088666                      # float 0.00833282433
+.LCPI1_6:
+	.word	0xb94d64b6                      # float -1.95878412E-4
+.LCPI1_7:
+	.word	0xbe2aaaac                      # float -0.166666687
+.LCPI1_8:
+	.word	0x3d2aa789                      # float 0.0416636802
+.LCPI1_9:
+	.word	0xbab38106                      # float -0.00136950682
+	.text
+	.globl	mincaml_sin
 	.p2align	2
-	.type	xor,@function
-xor:                                    # @xor
-	.cfi_startproc
-# %bb.0:                                # %entry
-	andi	a2, a0, 1
-	mv	a0, a1
-	bnez	a2, .LBB1_2
-# %bb.1:                                # %entry.endif
-	ret
-.LBB1_2:                                # %entry.if
-	tail	min_caml_not@plt
-.Lfunc_end1:
-	.size	xor, .Lfunc_end1-xor
-	.cfi_endproc
-                                        # -- End function
-	.globl	fsqr                            # -- Begin function fsqr
-	.p2align	2
-	.type	fsqr,@function
-fsqr:                                   # @fsqr
-# %bb.0:                                # %entry
-	fmv.w.x	fa5, a0
+	.type	mincaml_sin,@function
+mincaml_sin:                            # @mincaml_sin
+# %bb.0:
+	lui	a0, %hi(.LCPI1_0)
+	flw	fa4, %lo(.LCPI1_0)(a0)
+	fabs.s	fa5, fa0
+	fle.s	a0, fa4, fa5
+	bnez	a0, .LBB1_9
+.LBB1_1:
+	lui	a0, %hi(.LCPI1_1)
+	flw	fa4, %lo(.LCPI1_1)(a0)
+	fle.s	a0, fa4, fa5
+	fmv.x.w	a1, fa0
+	beqz	a0, .LBB1_3
+# %bb.2:
+	lui	a2, %hi(.LCPI1_2)
+	flw	fa3, %lo(.LCPI1_2)(a2)
+	fadd.s	fa5, fa5, fa3
+.LBB1_3:
+	lui	a2, %hi(.LCPI1_3)
+	flw	fa3, %lo(.LCPI1_3)(a2)
+	fle.s	a2, fa3, fa5
+	srai	a1, a1, 31
+	beqz	a2, .LBB1_5
+# %bb.4:
+	fsub.s	fa5, fa4, fa5
+.LBB1_5:
+	lui	a2, %hi(.LCPI1_4)
+	flw	fa4, %lo(.LCPI1_4)(a2)
+	fle.s	a2, fa5, fa4
+	xor	a0, a1, a0
+	bnez	a2, .LBB1_14
+# %bb.6:
+	lui	a1, %hi(.LCPI1_3)
+	flw	fa4, %lo(.LCPI1_3)(a1)
+	lui	a1, %hi(.LCPI1_8)
+	flw	fa3, %lo(.LCPI1_8)(a1)
+	lui	a1, %hi(.LCPI1_9)
+	flw	fa2, %lo(.LCPI1_9)(a1)
+	fsub.s	fa5, fa4, fa5
 	fmul.s	fa5, fa5, fa5
-	fmv.x.w	a0, fa5
+	fmadd.s	fa4, fa5, fa2, fa3
+	lui	a1, 782336
+	fmv.w.x	fa3, a1
+	fmadd.s	fa4, fa5, fa4, fa3
+	lui	a1, 260096
+	fmv.w.x	fa3, a1
+	fmadd.s	fa0, fa5, fa4, fa3
+	beqz	a0, .LBB1_8
+.LBB1_7:
+	fneg.s	fa0, fa0
+.LBB1_8:
+	ret
+.LBB1_9:                                # =>This Inner Loop Header: Depth=1
+	fadd.s	fa4, fa4, fa4
+	fle.s	a0, fa4, fa5
+	bnez	a0, .LBB1_9
+# %bb.10:
+	lui	a0, %hi(.LCPI1_0)
+	flw	fa3, %lo(.LCPI1_0)(a0)
+	fmv.w.x	fa2, zero
+	lui	a0, 258048
+	fmv.w.x	fa1, a0
+	j	.LBB1_12
+.LBB1_11:                               #   in Loop: Header=BB1_12 Depth=1
+	fsub.s	fa5, fa5, ft0
+	fle.s	a0, fa3, fa5
+	fmul.s	fa4, fa4, fa1
+	beqz	a0, .LBB1_1
+.LBB1_12:                               # =>This Inner Loop Header: Depth=1
+	fle.s	a0, fa4, fa5
+	fmv.s	ft0, fa2
+	beqz	a0, .LBB1_11
+# %bb.13:                               #   in Loop: Header=BB1_12 Depth=1
+	fmv.s	ft0, fa4
+	j	.LBB1_11
+.LBB1_14:
+	lui	a1, %hi(.LCPI1_5)
+	flw	fa4, %lo(.LCPI1_5)(a1)
+	lui	a1, %hi(.LCPI1_6)
+	flw	fa3, %lo(.LCPI1_6)(a1)
+	lui	a1, %hi(.LCPI1_7)
+	flw	fa2, %lo(.LCPI1_7)(a1)
+	fmul.s	fa1, fa5, fa5
+	fmul.s	fa0, fa5, fa1
+	fmadd.s	fa4, fa1, fa3, fa4
+	fmadd.s	fa4, fa1, fa4, fa2
+	fmadd.s	fa0, fa0, fa4, fa5
+	bnez	a0, .LBB1_7
+	j	.LBB1_8
+.Lfunc_end1:
+	.size	mincaml_sin, .Lfunc_end1-mincaml_sin
+                                        # -- End function
+	.section	.sdata,"aw",@progbits
+	.p2align	2, 0x0                          # -- Begin function mincaml_cos
+.LCPI2_0:
+	.word	0x40c90fdb                      # float 6.28318548
+.LCPI2_1:
+	.word	0x40490fdb                      # float 3.14159274
+.LCPI2_2:
+	.word	0xc0490fdb                      # float -3.14159274
+.LCPI2_3:
+	.word	0x3fc90fdb                      # float 1.57079637
+.LCPI2_4:
+	.word	0x3f490fdb                      # float 0.785398185
+.LCPI2_5:
+	.word	0x3d2aa789                      # float 0.0416636802
+.LCPI2_6:
+	.word	0xbab38106                      # float -0.00136950682
+.LCPI2_7:
+	.word	0x3c088666                      # float 0.00833282433
+.LCPI2_8:
+	.word	0xb94d64b6                      # float -1.95878412E-4
+.LCPI2_9:
+	.word	0xbe2aaaac                      # float -0.166666687
+	.text
+	.globl	mincaml_cos
+	.p2align	2
+	.type	mincaml_cos,@function
+mincaml_cos:                            # @mincaml_cos
+# %bb.0:
+	lui	a0, %hi(.LCPI2_0)
+	flw	fa4, %lo(.LCPI2_0)(a0)
+	fabs.s	fa5, fa0
+	fle.s	a0, fa4, fa5
+	bnez	a0, .LBB2_5
+.LBB2_1:
+	lui	a0, %hi(.LCPI2_1)
+	flw	fa3, %lo(.LCPI2_1)(a0)
+	fle.s	a0, fa3, fa5
+	bnez	a0, .LBB2_10
+# %bb.2:
+	fmv.s	fa4, fa5
+	lui	a0, %hi(.LCPI2_3)
+	flw	fa2, %lo(.LCPI2_3)(a0)
+	fle.s	a0, fa2, fa5
+	beqz	a0, .LBB2_11
+.LBB2_3:
+	fsub.s	fa3, fa3, fa4
+	lui	a0, %hi(.LCPI2_4)
+	flw	fa2, %lo(.LCPI2_4)(a0)
+	fle.s	a0, fa3, fa2
+	beqz	a0, .LBB2_12
+.LBB2_4:
+	lui	a0, %hi(.LCPI2_5)
+	flw	fa2, %lo(.LCPI2_5)(a0)
+	lui	a0, %hi(.LCPI2_6)
+	flw	fa1, %lo(.LCPI2_6)(a0)
+	fmul.s	fa3, fa3, fa3
+	fmadd.s	fa2, fa3, fa1, fa2
+	lui	a0, 782336
+	fmv.w.x	fa1, a0
+	fmadd.s	fa2, fa3, fa2, fa1
+	lui	a0, 260096
+	fmv.w.x	fa1, a0
+	fmadd.s	fa0, fa3, fa2, fa1
+	j	.LBB2_13
+.LBB2_5:                                # =>This Inner Loop Header: Depth=1
+	fadd.s	fa4, fa4, fa4
+	fle.s	a0, fa4, fa5
+	bnez	a0, .LBB2_5
+# %bb.6:
+	lui	a0, %hi(.LCPI2_0)
+	flw	fa3, %lo(.LCPI2_0)(a0)
+	fmv.w.x	fa2, zero
+	lui	a0, 258048
+	fmv.w.x	fa1, a0
+	j	.LBB2_8
+.LBB2_7:                                #   in Loop: Header=BB2_8 Depth=1
+	fsub.s	fa5, fa5, fa0
+	fle.s	a0, fa3, fa5
+	fmul.s	fa4, fa4, fa1
+	beqz	a0, .LBB2_1
+.LBB2_8:                                # =>This Inner Loop Header: Depth=1
+	fle.s	a0, fa4, fa5
+	fmv.s	fa0, fa2
+	beqz	a0, .LBB2_7
+# %bb.9:                                #   in Loop: Header=BB2_8 Depth=1
+	fmv.s	fa0, fa4
+	j	.LBB2_7
+.LBB2_10:
+	lui	a0, %hi(.LCPI2_2)
+	flw	fa4, %lo(.LCPI2_2)(a0)
+	fadd.s	fa4, fa5, fa4
+	lui	a0, %hi(.LCPI2_3)
+	flw	fa2, %lo(.LCPI2_3)(a0)
+	fle.s	a0, fa2, fa4
+	bnez	a0, .LBB2_3
+.LBB2_11:
+	fmv.s	fa3, fa4
+	lui	a0, %hi(.LCPI2_4)
+	flw	fa2, %lo(.LCPI2_4)(a0)
+	fle.s	a0, fa4, fa2
+	bnez	a0, .LBB2_4
+.LBB2_12:
+	lui	a0, %hi(.LCPI2_3)
+	flw	fa2, %lo(.LCPI2_3)(a0)
+	fsub.s	fa3, fa2, fa3
+	lui	a0, %hi(.LCPI2_7)
+	flw	fa2, %lo(.LCPI2_7)(a0)
+	lui	a0, %hi(.LCPI2_8)
+	flw	fa1, %lo(.LCPI2_8)(a0)
+	lui	a0, %hi(.LCPI2_9)
+	flw	fa0, %lo(.LCPI2_9)(a0)
+	fmul.s	ft0, fa3, fa3
+	fmul.s	ft1, fa3, ft0
+	fmadd.s	fa2, ft0, fa1, fa2
+	fmadd.s	fa2, ft0, fa2, fa0
+	fmadd.s	fa0, ft1, fa2, fa3
+.LBB2_13:
+	lui	a0, %hi(.LCPI2_3)
+	flw	fa3, %lo(.LCPI2_3)(a0)
+	lui	a0, %hi(.LCPI2_1)
+	flw	fa2, %lo(.LCPI2_1)(a0)
+	fle.s	a0, fa3, fa4
+	fle.s	a1, fa2, fa5
+	beq	a1, a0, .LBB2_15
+# %bb.14:
+	fneg.s	fa0, fa0
+.LBB2_15:
 	ret
 .Lfunc_end2:
-	.size	fsqr, .Lfunc_end2-fsqr
+	.size	mincaml_cos, .Lfunc_end2-mincaml_cos
                                         # -- End function
-	.globl	fhalf                           # -- Begin function fhalf
-	.p2align	2
-	.type	fhalf,@function
-fhalf:                                  # @fhalf
-# %bb.0:                                # %entry
-	fmv.w.x	fa5, a0
-	lui	a0, 258048
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end3:
-	.size	fhalf, .Lfunc_end3-fhalf
-                                        # -- End function
-	.globl	o_texturetype                   # -- Begin function o_texturetype
-	.p2align	2
-	.type	o_texturetype,@function
-o_texturetype:                          # @o_texturetype
-# %bb.0:                                # %entry
-	ret
-.Lfunc_end4:
-	.size	o_texturetype, .Lfunc_end4-o_texturetype
-                                        # -- End function
-	.globl	o_form                          # -- Begin function o_form
-	.p2align	2
-	.type	o_form,@function
-o_form:                                 # @o_form
-# %bb.0:                                # %entry
-	mv	a0, a1
-	ret
-.Lfunc_end5:
-	.size	o_form, .Lfunc_end5-o_form
-                                        # -- End function
-	.globl	o_reflectiontype                # -- Begin function o_reflectiontype
-	.p2align	2
-	.type	o_reflectiontype,@function
-o_reflectiontype:                       # @o_reflectiontype
-# %bb.0:                                # %entry
-	mv	a0, a2
-	ret
-.Lfunc_end6:
-	.size	o_reflectiontype, .Lfunc_end6-o_reflectiontype
-                                        # -- End function
-	.globl	o_isinvert                      # -- Begin function o_isinvert
-	.p2align	2
-	.type	o_isinvert,@function
-o_isinvert:                             # @o_isinvert
-# %bb.0:                                # %entry
-	mv	a0, a6
-	ret
-.Lfunc_end7:
-	.size	o_isinvert, .Lfunc_end7-o_isinvert
-                                        # -- End function
-	.globl	o_isrot                         # -- Begin function o_isrot
-	.p2align	2
-	.type	o_isrot,@function
-o_isrot:                                # @o_isrot
-# %bb.0:                                # %entry
-	mv	a0, a3
-	ret
-.Lfunc_end8:
-	.size	o_isrot, .Lfunc_end8-o_isrot
-                                        # -- End function
-	.globl	o_param_a                       # -- Begin function o_param_a
-	.p2align	2
-	.type	o_param_a,@function
-o_param_a:                              # @o_param_a
-# %bb.0:                                # %entry
-	lw	a0, 0(a4)
-	ret
-.Lfunc_end9:
-	.size	o_param_a, .Lfunc_end9-o_param_a
-                                        # -- End function
-	.globl	o_param_b                       # -- Begin function o_param_b
-	.p2align	2
-	.type	o_param_b,@function
-o_param_b:                              # @o_param_b
-# %bb.0:                                # %entry
-	lw	a0, 4(a4)
-	ret
-.Lfunc_end10:
-	.size	o_param_b, .Lfunc_end10-o_param_b
-                                        # -- End function
-	.globl	o_param_c                       # -- Begin function o_param_c
-	.p2align	2
-	.type	o_param_c,@function
-o_param_c:                              # @o_param_c
-# %bb.0:                                # %entry
-	lw	a0, 8(a4)
-	ret
-.Lfunc_end11:
-	.size	o_param_c, .Lfunc_end11-o_param_c
-                                        # -- End function
-	.globl	o_param_x                       # -- Begin function o_param_x
-	.p2align	2
-	.type	o_param_x,@function
-o_param_x:                              # @o_param_x
-# %bb.0:                                # %entry
-	lw	a0, 0(a5)
-	ret
-.Lfunc_end12:
-	.size	o_param_x, .Lfunc_end12-o_param_x
-                                        # -- End function
-	.globl	o_param_y                       # -- Begin function o_param_y
-	.p2align	2
-	.type	o_param_y,@function
-o_param_y:                              # @o_param_y
-# %bb.0:                                # %entry
-	lw	a0, 4(a5)
-	ret
-.Lfunc_end13:
-	.size	o_param_y, .Lfunc_end13-o_param_y
-                                        # -- End function
-	.globl	o_param_z                       # -- Begin function o_param_z
-	.p2align	2
-	.type	o_param_z,@function
-o_param_z:                              # @o_param_z
-# %bb.0:                                # %entry
-	lw	a0, 8(a5)
-	ret
-.Lfunc_end14:
-	.size	o_param_z, .Lfunc_end14-o_param_z
-                                        # -- End function
-	.globl	o_diffuse                       # -- Begin function o_diffuse
-	.p2align	2
-	.type	o_diffuse,@function
-o_diffuse:                              # @o_diffuse
-# %bb.0:                                # %entry
-	lw	a0, 0(a7)
-	ret
-.Lfunc_end15:
-	.size	o_diffuse, .Lfunc_end15-o_diffuse
-                                        # -- End function
-	.globl	o_hilight                       # -- Begin function o_hilight
-	.p2align	2
-	.type	o_hilight,@function
-o_hilight:                              # @o_hilight
-# %bb.0:                                # %entry
-	lw	a0, 4(a7)
-	ret
-.Lfunc_end16:
-	.size	o_hilight, .Lfunc_end16-o_hilight
-                                        # -- End function
-	.globl	o_color_red                     # -- Begin function o_color_red
-	.p2align	2
-	.type	o_color_red,@function
-o_color_red:                            # @o_color_red
-# %bb.0:                                # %entry
-	lw	a0, 0(sp)
-	lw	a0, 0(a0)
-	ret
-.Lfunc_end17:
-	.size	o_color_red, .Lfunc_end17-o_color_red
-                                        # -- End function
-	.globl	o_color_green                   # -- Begin function o_color_green
-	.p2align	2
-	.type	o_color_green,@function
-o_color_green:                          # @o_color_green
-# %bb.0:                                # %entry
-	lw	a0, 0(sp)
-	lw	a0, 4(a0)
-	ret
-.Lfunc_end18:
-	.size	o_color_green, .Lfunc_end18-o_color_green
-                                        # -- End function
-	.globl	o_color_blue                    # -- Begin function o_color_blue
-	.p2align	2
-	.type	o_color_blue,@function
-o_color_blue:                           # @o_color_blue
-# %bb.0:                                # %entry
-	lw	a0, 0(sp)
-	lw	a0, 8(a0)
-	ret
-.Lfunc_end19:
-	.size	o_color_blue, .Lfunc_end19-o_color_blue
-                                        # -- End function
-	.globl	o_param_r1                      # -- Begin function o_param_r1
-	.p2align	2
-	.type	o_param_r1,@function
-o_param_r1:                             # @o_param_r1
-# %bb.0:                                # %entry
-	lw	a0, 4(sp)
-	lw	a0, 0(a0)
-	ret
-.Lfunc_end20:
-	.size	o_param_r1, .Lfunc_end20-o_param_r1
-                                        # -- End function
-	.globl	o_param_r2                      # -- Begin function o_param_r2
-	.p2align	2
-	.type	o_param_r2,@function
-o_param_r2:                             # @o_param_r2
-# %bb.0:                                # %entry
-	lw	a0, 4(sp)
-	lw	a0, 4(a0)
-	ret
-.Lfunc_end21:
-	.size	o_param_r2, .Lfunc_end21-o_param_r2
-                                        # -- End function
-	.globl	o_param_r3                      # -- Begin function o_param_r3
-	.p2align	2
-	.type	o_param_r3,@function
-o_param_r3:                             # @o_param_r3
-# %bb.0:                                # %entry
-	lw	a0, 4(sp)
-	lw	a0, 8(a0)
-	ret
-.Lfunc_end22:
-	.size	o_param_r3, .Lfunc_end22-o_param_r3
-                                        # -- End function
-	.globl	normalize_vector                # -- Begin function normalize_vector
-	.p2align	2
-	.type	normalize_vector,@function
-normalize_vector:                       # @normalize_vector
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	mv	s0, a0
-	flw	fa5, 0(a0)
-	flw	fa4, 4(a0)
-	mv	s1, a1
-	flw	fa3, 8(a0)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa3
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	andi	s1, s1, 1
-	fmv.w.x	fa5, a0
-	beqz	s1, .LBB23_2
-# %bb.1:                                # %entry
-	fneg.s	fa5, fa5
-.LBB23_2:                               # %entry
-	flw	fa4, 0(s0)
-	flw	fa3, 4(s0)
-	fdiv.s	fa4, fa4, fa5
-	flw	fa2, 8(s0)
-	fsw	fa4, 0(s0)
-	fdiv.s	fa4, fa3, fa5
-	fsw	fa4, 4(s0)
-	fdiv.s	fa5, fa2, fa5
-	fsw	fa5, 8(s0)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end23:
-	.size	normalize_vector, .Lfunc_end23-normalize_vector
-	.cfi_endproc
-                                        # -- End function
-	.globl	sgn                             # -- Begin function sgn
-	.p2align	2
-	.type	sgn,@function
-sgn:                                    # @sgn
-# %bb.0:                                # %entry
-	fmv.w.x	fa5, a0
-	fmv.w.x	fa4, zero
-	flt.s	a0, fa4, fa5
-	bnez	a0, .LBB24_2
-# %bb.1:                                # %entry
-	lui	a0, 784384
-	j	.LBB24_3
-.LBB24_2:
-	lui	a0, 260096
-.LBB24_3:                               # %entry
-	fmv.w.x	fa5, a0
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end24:
-	.size	sgn, .Lfunc_end24-sgn
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function rad
-.LCPI25_0:
-	.word	0x3c8efa35                      # float 0.0174532924
-	.text
-	.globl	rad
-	.p2align	2
-	.type	rad,@function
-rad:                                    # @rad
-# %bb.0:                                # %entry
-	lui	a1, %hi(.LCPI25_0)
-	flw	fa5, %lo(.LCPI25_0)(a1)
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end25:
-	.size	rad, .Lfunc_end25-rad
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function read_environ
-.LCPI26_0:
-	.word	0x3c8efa35                      # float 0.0174532924
-	.text
-	.globl	read_environ
-	.p2align	2
-	.type	read_environ,@function
-read_environ:                           # @read_environ
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	sw	s3, 12(sp)                      # 4-byte Folded Spill
-	sw	s4, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	call	min_caml_read_float@plt
-	lui	a1, %hi(screen)
-	lw	s1, %lo(screen)(a1)
-	sw	a0, 0(s1)
-	call	min_caml_read_float@plt
-	sw	a0, 4(s1)
-	call	min_caml_read_float@plt
-	sw	a0, 8(s1)
-	call	min_caml_read_float@plt
-	lui	a1, %hi(.LCPI26_0)
-	flw	fa4, %lo(.LCPI26_0)(a1)
-	fsw	fa4, 4(sp)                      # 4-byte Folded Spill
-	fmv.w.x	fa5, a0
-	fmul.s	fa5, fa5, fa4
-	fmv.x.w	s0, fa5
-	mv	a0, s0
-	call	min_caml_cos@plt
-	lui	a1, %hi(cos_v)
-	lw	s2, %lo(cos_v)(a1)
-	sw	a0, 0(s2)
-	mv	a0, s0
-	call	min_caml_sin@plt
-	lui	a1, %hi(sin_v)
-	lw	s3, %lo(sin_v)(a1)
-	sw	a0, 0(s3)
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	fmv.x.w	s0, fa5
-	mv	a0, s0
-	call	min_caml_cos@plt
-	sw	a0, 4(s2)
-	mv	a0, s0
-	call	min_caml_sin@plt
-	sw	a0, 4(s3)
-	call	min_caml_read_float@plt
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	fmv.x.w	s0, fa5
-	mv	a0, s0
-	call	min_caml_sin@plt
-	lui	a1, %hi(light)
-	lw	s4, %lo(light)(a1)
-	lui	a1, 524288
-	xor	a0, a0, a1
-	sw	a0, 4(s4)
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 0(sp)                      # 4-byte Folded Spill
-	mv	a0, s0
-	call	min_caml_cos@plt
-	fmv.w.x	fa5, a0
-	fsw	fa5, 4(sp)                      # 4-byte Folded Spill
-	flw	fa5, 0(sp)                      # 4-byte Folded Reload
-	fmv.x.w	s0, fa5
-	mv	a0, s0
-	call	min_caml_sin@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa4, fa5
-	fsw	fa5, 0(s4)
-	mv	a0, s0
-	call	min_caml_cos@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa4, fa5
-	fsw	fa5, 8(s4)
-	call	min_caml_read_float@plt
-	lui	a1, %hi(beam)
-	lw	a1, %lo(beam)(a1)
-	sw	a0, 0(a1)
-	flw	fa5, 0(s2)
-	flw	fa4, 4(s3)
-	fmul.s	fa5, fa5, fa4
-	lui	a0, %hi(vp)
-	lw	a0, %lo(vp)(a0)
-	lui	a1, 799872
-	fmv.w.x	fa4, a1
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 0(a0)
-	flw	fa3, 0(s3)
-	lui	a1, 275584
-	fmv.w.x	fa2, a1
-	fmul.s	fa3, fa3, fa2
-	fsw	fa3, 4(a0)
-	flw	fa3, 0(s2)
-	flw	fa2, 4(s2)
-	fmul.s	fa3, fa3, fa2
-	fmul.s	fa4, fa3, fa4
-	fsw	fa4, 8(a0)
-	flw	fa4, 0(s1)
-	lui	a1, %hi(view)
-	lw	a1, %lo(view)(a1)
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 0(a1)
-	flw	fa5, 4(a0)
-	flw	fa4, 4(s1)
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 4(a1)
-	flw	fa5, 8(a0)
-	flw	fa4, 8(s1)
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 8(a1)
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	lw	s3, 12(sp)                      # 4-byte Folded Reload
-	lw	s4, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end26:
-	.size	read_environ, .Lfunc_end26-read_environ
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function read_nth_object
-.LCPI27_0:
-	.word	0x3c8efa35                      # float 0.0174532924
-	.text
-	.globl	read_nth_object
-	.p2align	2
-	.type	read_nth_object,@function
-read_nth_object:                        # @read_nth_object
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -80
-	.cfi_def_cfa_offset 80
-	sw	ra, 76(sp)                      # 4-byte Folded Spill
-	sw	s0, 72(sp)                      # 4-byte Folded Spill
-	sw	s1, 68(sp)                      # 4-byte Folded Spill
-	sw	s2, 64(sp)                      # 4-byte Folded Spill
-	sw	s3, 60(sp)                      # 4-byte Folded Spill
-	sw	s4, 56(sp)                      # 4-byte Folded Spill
-	sw	s5, 52(sp)                      # 4-byte Folded Spill
-	sw	s6, 48(sp)                      # 4-byte Folded Spill
-	sw	s7, 44(sp)                      # 4-byte Folded Spill
-	sw	s8, 40(sp)                      # 4-byte Folded Spill
-	sw	s9, 36(sp)                      # 4-byte Folded Spill
-	sw	s10, 32(sp)                     # 4-byte Folded Spill
-	sw	s11, 28(sp)                     # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	.cfi_offset s11, -52
-	addi	s0, sp, 80
-	.cfi_def_cfa s0, 0
-	mv	s5, a0
-	call	min_caml_read_int@plt
-	li	a1, -1
-	beq	a0, a1, .LBB27_9
-# %bb.1:                                # %entry.if
-	mv	s6, a0
-	call	min_caml_read_int@plt
-	mv	s4, a0
-	call	min_caml_read_int@plt
-	sw	a0, -60(s0)                     # 4-byte Folded Spill
-	call	min_caml_read_int@plt
-	mv	s3, a0
-	li	a0, 3
-	li	a1, 0
-	call	min_caml_create_array_float@plt
-	mv	s1, a0
-	call	min_caml_read_float@plt
-	sw	a0, 0(s1)
-	call	min_caml_read_float@plt
-	sw	a0, 4(s1)
-	call	min_caml_read_float@plt
-	sw	a0, 8(s1)
-	li	a0, 3
-	li	a1, 0
-	call	min_caml_create_array_float@plt
-	mv	s8, a0
-	call	min_caml_read_float@plt
-	sw	a0, 0(s8)
-	call	min_caml_read_float@plt
-	sw	a0, 4(s8)
-	call	min_caml_read_float@plt
-	sw	a0, 8(s8)
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	fsw	fa5, -64(s0)                    # 4-byte Folded Spill
-	fmv.w.x	fa5, zero
-	fsw	fa5, -56(s0)                    # 4-byte Folded Spill
-	li	a0, 2
-	li	s7, 2
-	li	a1, 0
-	call	min_caml_create_array_float@plt
-	mv	s9, a0
-	call	min_caml_read_float@plt
-	sw	a0, 0(s9)
-	call	min_caml_read_float@plt
-	sw	a0, 4(s9)
-	li	a0, 3
-	li	a1, 0
-	call	min_caml_create_array_float@plt
-	mv	s10, a0
-	call	min_caml_read_float@plt
-	sw	a0, 0(s10)
-	call	min_caml_read_float@plt
-	sw	a0, 4(s10)
-	call	min_caml_read_float@plt
-	sw	a0, 8(s10)
-	li	a0, 3
-	li	a1, 0
-	call	min_caml_create_array_float@plt
-	mv	s2, a0
-	beqz	s3, .LBB27_3
-# %bb.2:                                # %entry.if.if
-	call	min_caml_read_float@plt
-	lui	a1, %hi(.LCPI27_0)
-	flw	fa4, %lo(.LCPI27_0)(a1)
-	fsw	fa4, -68(s0)                    # 4-byte Folded Spill
-	fmv.w.x	fa5, a0
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 0(s2)
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, -68(s0)                    # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 4(s2)
-	call	min_caml_read_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, -68(s0)                    # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 8(s2)
-.LBB27_3:                               # %entry.if.endif
-	flw	fa5, -56(s0)                    # 4-byte Folded Reload
-	flw	fa4, -64(s0)                    # 4-byte Folded Reload
-	flt.s	s11, fa4, fa5
-	mv	a0, s11
-	bne	s4, s7, .LBB27_5
-# %bb.4:                                # %entry.if.endif
-	li	a0, 1
-.LBB27_5:                               # %entry.if.endif
-	mv	a1, sp
-	addi	s7, a1, -48
-	mv	sp, s7
-	sw	s6, -48(a1)
-	sw	s4, -44(a1)
-	lw	a2, -60(s0)                     # 4-byte Folded Reload
-	sw	a2, -40(a1)
-	sw	s3, -36(a1)
-	sw	s1, -32(a1)
-	sw	s8, -28(a1)
-	sw	a0, -24(a1)
-	lui	a0, %hi(objects)
-	lw	s6, %lo(objects)(a0)
-	sw	s9, -20(a1)
-	sw	s10, -16(a1)
-	sw	s2, -12(a1)
-	li	a1, 40
-	mv	a0, s5
-	call	__mulsi3@plt
-	add	a0, s6, a0
-	li	a2, 40
-	mv	a1, s7
-	call	memcpy@plt
-	li	a0, 3
-	bne	s4, a0, .LBB27_10
-# %bb.6:                                # %entry.if.endif.endif.if
-	flw	fa5, 0(s1)
-	flw	fa3, -56(s0)                    # 4-byte Folded Reload
-	feq.s	a0, fa5, fa3
-	fmv.s	fa4, fa3
-	bnez	a0, .LBB27_16
-# %bb.7:                                # %entry.if.endif.endif.if.else
-	fmv.w.x	fa4, zero
-	flt.s	a0, fa4, fa5
-	bnez	a0, .LBB27_14
-# %bb.8:                                # %entry.if.endif.endif.if.else
-	lui	a0, 784384
-	j	.LBB27_15
-.LBB27_9:
-	li	s4, 0
-	j	.LBB27_29
-.LBB27_10:                              # %entry.if.endif.endif.else
-	li	a0, 2
-	bne	s4, a0, .LBB27_27
-# %bb.11:                               # %entry.if.endif.endif.else.if
-	mv	a0, s11
-	call	min_caml_not@plt
-	flw	fa5, 0(s1)
-	flw	fa4, 4(s1)
-	mv	s4, a0
-	flw	fa3, 8(s1)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa3
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	andi	a1, s4, 1
-	fmv.w.x	fa5, a0
-	beqz	a1, .LBB27_13
-# %bb.12:                               # %entry.if.endif.endif.else.if
-	fneg.s	fa5, fa5
-.LBB27_13:                              # %entry.if.endif.endif.else.if
-	flw	fa4, 0(s1)
-	flw	fa3, 4(s1)
-	fdiv.s	fa4, fa4, fa5
-	flw	fa2, 8(s1)
-	fsw	fa4, 0(s1)
-	fdiv.s	fa4, fa3, fa5
-	fsw	fa4, 4(s1)
-	fdiv.s	fa3, fa2, fa5
-	j	.LBB27_26
-.LBB27_14:
-	lui	a0, 260096
-.LBB27_15:                              # %entry.if.endif.endif.if.else
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa5
-	fdiv.s	fa4, fa4, fa5
-.LBB27_16:                              # %entry.if.endif.endif.if.endif
-	flw	fa5, 4(s1)
-	feq.s	a0, fa5, fa3
-	fsw	fa4, 0(s1)
-	fmv.s	fa4, fa3
-	bnez	a0, .LBB27_21
-# %bb.17:                               # %entry.if.endif.endif.if.endif.else
-	fmv.w.x	fa4, zero
-	flt.s	a0, fa4, fa5
-	bnez	a0, .LBB27_19
-# %bb.18:                               # %entry.if.endif.endif.if.endif.else
-	lui	a0, 784384
-	j	.LBB27_20
-.LBB27_19:
-	lui	a0, 260096
-.LBB27_20:                              # %entry.if.endif.endif.if.endif.else
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa5
-	fdiv.s	fa4, fa4, fa5
-.LBB27_21:                              # %entry.if.endif.endif.if.endif.endif
-	flw	fa5, 8(s1)
-	feq.s	a0, fa5, fa3
-	fsw	fa4, 4(s1)
-	bnez	a0, .LBB27_26
-# %bb.22:                               # %entry.if.endif.endif.if.endif.endif.else
-	fmv.w.x	fa4, zero
-	flt.s	a0, fa4, fa5
-	bnez	a0, .LBB27_24
-# %bb.23:                               # %entry.if.endif.endif.if.endif.endif.else
-	lui	a0, 784384
-	j	.LBB27_25
-.LBB27_24:
-	lui	a0, 260096
-.LBB27_25:                              # %entry.if.endif.endif.if.endif.endif.else
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa5
-	fdiv.s	fa3, fa4, fa5
-.LBB27_26:                              # %entry.if.endif.endif.endif.sink.split
-	fsw	fa3, 8(s1)
-.LBB27_27:                              # %entry.if.endif.endif.endif
-	li	s4, 1
-	beqz	s3, .LBB27_29
-# %bb.28:                               # %entry.if.endif.endif.endif.if
-	lw	a0, 0(s2)
-	call	min_caml_cos@plt
-	lui	a1, %hi(cs_temp)
-	lw	s3, %lo(cs_temp)(a1)
-	sw	a0, 40(s3)
-	lw	a0, 0(s2)
-	call	min_caml_sin@plt
-	sw	a0, 44(s3)
-	lw	a0, 4(s2)
-	call	min_caml_cos@plt
-	sw	a0, 48(s3)
-	lw	a0, 4(s2)
-	call	min_caml_sin@plt
-	sw	a0, 52(s3)
-	lw	a0, 8(s2)
-	call	min_caml_cos@plt
-	sw	a0, 56(s3)
-	lw	a0, 8(s2)
-	call	min_caml_sin@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 48(s3)
-	flw	fa3, 56(s3)
-	sw	a0, 60(s3)
-	flw	fa2, 44(s3)
-	flw	fa1, 52(s3)
-	fmul.s	fa0, fa4, fa3
-	flw	ft0, 40(s3)
-	fsw	fa0, 0(s3)
-	fmul.s	ft1, fa2, fa1
-	fmul.s	ft2, fa3, ft1
-	fmul.s	ft3, fa5, ft0
-	fsub.s	ft2, ft2, ft3
-	fsw	ft2, 4(s3)
-	fmul.s	ft2, fa1, ft0
-	fmul.s	ft3, fa3, ft2
-	fmul.s	ft4, fa5, fa2
-	fadd.s	ft3, ft4, ft3
-	fsw	ft3, 8(s3)
-	fmul.s	ft3, fa5, fa4
-	fsw	ft3, 12(s3)
-	fmul.s	ft1, fa5, ft1
-	fmul.s	ft4, fa3, ft0
-	fadd.s	ft1, ft1, ft4
-	fsw	ft1, 16(s3)
-	fmul.s	fa5, fa5, ft2
-	fmul.s	fa3, fa3, fa2
-	fsub.s	fa5, fa5, fa3
-	fsw	fa5, 20(s3)
-	fneg.s	fa5, fa1
-	fsw	fa5, 24(s3)
-	fmul.s	fa5, fa4, fa2
-	fsw	fa5, 28(s3)
-	fmul.s	fa5, fa4, ft0
-	fsw	fa5, 32(s3)
-	flw	fa3, 0(s1)
-	flw	fa4, 4(s1)
-	flw	fa5, 8(s1)
-	fmul.s	fa2, fa0, fa0
-	fmul.s	fa2, fa2, fa3
-	fmul.s	fa0, ft3, ft3
-	fmul.s	fa0, fa0, fa4
-	fadd.s	fa2, fa2, fa0
-	fmul.s	fa1, fa1, fa1
-	fmul.s	fa1, fa1, fa5
-	fadd.s	fa2, fa2, fa1
-	fsw	fa2, 0(s1)
-	flw	fa2, 4(s3)
-	flw	fa1, 16(s3)
-	fmul.s	fa2, fa2, fa2
-	fmul.s	fa2, fa3, fa2
-	flw	fa0, 28(s3)
-	fmul.s	fa1, fa1, fa1
-	fmul.s	fa1, fa4, fa1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa1, fa0, fa0
-	fmul.s	fa1, fa5, fa1
-	fadd.s	fa2, fa2, fa1
-	fsw	fa2, 4(s1)
-	flw	fa2, 8(s3)
-	flw	fa1, 20(s3)
-	fmul.s	fa2, fa2, fa2
-	fmul.s	fa2, fa3, fa2
-	flw	fa0, 32(s3)
-	fmul.s	fa1, fa1, fa1
-	fmul.s	fa1, fa4, fa1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa1, fa0, fa0
-	fmul.s	fa1, fa5, fa1
-	fadd.s	fa2, fa2, fa1
-	fsw	fa2, 8(s1)
-	flw	fa2, 4(s3)
-	flw	fa1, 8(s3)
-	flw	fa0, 16(s3)
-	fmul.s	fa2, fa3, fa2
-	fmul.s	fa2, fa2, fa1
-	flw	fa1, 20(s3)
-	fmul.s	fa0, fa4, fa0
-	flw	ft0, 28(s3)
-	flw	ft1, 32(s3)
-	fmul.s	fa1, fa0, fa1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa1, fa5, ft0
-	fmul.s	fa1, fa1, ft1
-	fadd.s	fa2, fa2, fa1
-	fadd.s	fa2, fa2, fa2
-	fsw	fa2, 0(s2)
-	flw	fa2, 0(s3)
-	flw	fa1, 8(s3)
-	flw	fa0, 12(s3)
-	fmul.s	fa2, fa3, fa2
-	fmul.s	fa2, fa2, fa1
-	flw	fa1, 20(s3)
-	fmul.s	fa0, fa4, fa0
-	flw	ft0, 24(s3)
-	flw	ft1, 32(s3)
-	fmul.s	fa1, fa0, fa1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa1, fa5, ft0
-	fmul.s	fa1, fa1, ft1
-	fadd.s	fa2, fa2, fa1
-	fadd.s	fa2, fa2, fa2
-	fsw	fa2, 4(s2)
-	flw	fa2, 0(s3)
-	flw	fa1, 4(s3)
-	flw	fa0, 12(s3)
-	fmul.s	fa3, fa3, fa2
-	fmul.s	fa3, fa3, fa1
-	flw	fa2, 16(s3)
-	fmul.s	fa4, fa4, fa0
-	flw	fa1, 24(s3)
-	flw	fa0, 28(s3)
-	fmul.s	fa4, fa4, fa2
-	fadd.s	fa4, fa3, fa4
-	fmul.s	fa5, fa5, fa1
-	fmul.s	fa5, fa5, fa0
-	fadd.s	fa5, fa4, fa5
-	fadd.s	fa5, fa5, fa5
-	fsw	fa5, 8(s2)
-.LBB27_29:                              # %entry.endif
-	mv	a0, s4
-	addi	sp, s0, -80
-	lw	ra, 76(sp)                      # 4-byte Folded Reload
-	lw	s0, 72(sp)                      # 4-byte Folded Reload
-	lw	s1, 68(sp)                      # 4-byte Folded Reload
-	lw	s2, 64(sp)                      # 4-byte Folded Reload
-	lw	s3, 60(sp)                      # 4-byte Folded Reload
-	lw	s4, 56(sp)                      # 4-byte Folded Reload
-	lw	s5, 52(sp)                      # 4-byte Folded Reload
-	lw	s6, 48(sp)                      # 4-byte Folded Reload
-	lw	s7, 44(sp)                      # 4-byte Folded Reload
-	lw	s8, 40(sp)                      # 4-byte Folded Reload
-	lw	s9, 36(sp)                      # 4-byte Folded Reload
-	lw	s10, 32(sp)                     # 4-byte Folded Reload
-	lw	s11, 28(sp)                     # 4-byte Folded Reload
-	addi	sp, sp, 80
-	ret
-.Lfunc_end27:
-	.size	read_nth_object, .Lfunc_end27-read_nth_object
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_object                     # -- Begin function read_object
-	.p2align	2
-	.type	read_object,@function
-read_object:                            # @read_object
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	li	s1, 60
-	blt	s1, a0, .LBB28_3
-.LBB28_1:                               # %entry.if
-                                        # =>This Inner Loop Header: Depth=1
-	mv	s0, a0
-	call	read_nth_object@plt
-	andi	a0, a0, 255
-	beqz	a0, .LBB28_3
-# %bb.2:                                # %entry.if
-                                        #   in Loop: Header=BB28_1 Depth=1
-	addi	a0, s0, 1
-	bne	s0, s1, .LBB28_1
-.LBB28_3:                               # %entry.endif
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end28:
-	.size	read_object, .Lfunc_end28-read_object
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_all_object                 # -- Begin function read_all_object
-	.p2align	2
-	.type	read_all_object,@function
-read_all_object:                        # @read_all_object
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	li	a0, 0
-	li	s1, 60
-.LBB29_1:                               # %entry.if.i
-                                        # =>This Inner Loop Header: Depth=1
-	mv	s0, a0
-	call	read_nth_object@plt
-	andi	a0, a0, 255
-	beqz	a0, .LBB29_3
-# %bb.2:                                # %entry.if.i
-                                        #   in Loop: Header=BB29_1 Depth=1
-	addi	a0, s0, 1
-	bne	s0, s1, .LBB29_1
-.LBB29_3:                               # %read_object.exit
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end29:
-	.size	read_all_object, .Lfunc_end29-read_all_object
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_net_item                   # -- Begin function read_net_item
-	.p2align	2
-	.type	read_net_item,@function
-read_net_item:                          # @read_net_item
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	mv	s0, a0
-	call	min_caml_read_int@plt
-	mv	s1, a0
-	li	a1, -1
-	addi	a0, s0, 1
-	beq	s1, a1, .LBB30_2
-# %bb.1:                                # %entry.else
-	call	read_net_item@plt
-	slli	s0, s0, 2
-	add	s0, a0, s0
-	sw	s1, 0(s0)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.LBB30_2:                               # %entry.if
-	li	a1, -1
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_create_array_int@plt
-.Lfunc_end30:
-	.size	read_net_item, .Lfunc_end30-read_net_item
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_or_network                 # -- Begin function read_or_network
-	.p2align	2
-	.type	read_or_network,@function
-read_or_network:                        # @read_or_network
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	mv	s0, a0
-	li	a0, 0
-	call	read_net_item@plt
-	mv	s1, a0
-	lw	a1, 0(a0)
-	li	a2, -1
-	addi	a0, s0, 1
-	beq	a1, a2, .LBB31_2
-# %bb.1:                                # %entry.else
-	call	read_or_network@plt
-	slli	s0, s0, 2
-	add	s0, a0, s0
-	sw	s1, 0(s0)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.LBB31_2:                               # %entry.if
-	mv	a1, s1
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_create_array_int_array@plt
-.Lfunc_end31:
-	.size	read_or_network, .Lfunc_end31-read_or_network
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_and_network                # -- Begin function read_and_network
-	.p2align	2
-	.type	read_and_network,@function
-read_and_network:                       # @read_and_network
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	mv	s0, a0
-	li	a0, 0
-	call	read_net_item@plt
-	lw	a1, 0(a0)
-	li	s1, -1
-	beq	a1, s1, .LBB32_3
-# %bb.1:                                # %entry.else.lr.ph
-	lui	a1, %hi(and_net)
-	lw	a1, %lo(and_net)(a1)
-	slli	s0, s0, 2
-	add	s0, a1, s0
-.LBB32_2:                               # %entry.else
-                                        # =>This Inner Loop Header: Depth=1
-	sw	a0, 0(s0)
-	li	a0, 0
-	call	read_net_item@plt
-	lw	a1, 0(a0)
-	addi	s0, s0, 4
-	bne	a1, s1, .LBB32_2
-.LBB32_3:                               # %entry.endif
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end32:
-	.size	read_and_network, .Lfunc_end32-read_and_network
-	.cfi_endproc
-                                        # -- End function
-	.globl	read_parameter                  # -- Begin function read_parameter
-	.p2align	2
-	.type	read_parameter,@function
-read_parameter:                         # @read_parameter
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	call	read_environ@plt
-	li	a0, 0
-	li	s1, 60
-.LBB33_1:                               # %entry.if.i.i
-                                        # =>This Inner Loop Header: Depth=1
-	mv	s0, a0
-	call	read_nth_object@plt
-	andi	a0, a0, 255
-	beqz	a0, .LBB33_3
-# %bb.2:                                # %entry.if.i.i
-                                        #   in Loop: Header=BB33_1 Depth=1
-	addi	a0, s0, 1
-	bne	s0, s1, .LBB33_1
-.LBB33_3:                               # %read_all_object.exit
-	li	a0, 0
-	call	read_net_item@plt
-	lw	a1, 0(a0)
-	li	s0, -1
-	beq	a1, s0, .LBB33_6
-# %bb.4:                                # %entry.else.lr.ph.i
-	lui	a1, %hi(and_net)
-	lw	s1, %lo(and_net)(a1)
-.LBB33_5:                               # %entry.else.i
-                                        # =>This Inner Loop Header: Depth=1
-	sw	a0, 0(s1)
-	li	a0, 0
-	call	read_net_item@plt
-	lw	a1, 0(a0)
-	addi	s1, s1, 4
-	bne	a1, s0, .LBB33_5
-.LBB33_6:                               # %read_and_network.exit
-	li	a0, 0
-	call	read_or_network@plt
-	lui	a1, %hi(or_net)
-	lw	a1, %lo(or_net)(a1)
-	sw	a0, 0(a1)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end33:
-	.size	read_parameter, .Lfunc_end33-read_parameter
-	.cfi_endproc
-                                        # -- End function
-	.globl	solver_rect                     # -- Begin function solver_rect
-	.p2align	2
-	.type	solver_rect,@function
-solver_rect:                            # @solver_rect
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	sw	s3, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	lw	s2, 40(sp)
-	flw	fa5, 0(s2)
-	fmv.w.x	fa4, zero
-	feq.s	a0, fa5, fa4
-	mv	s1, a6
-	mv	s0, a4
-	bnez	a0, .LBB34_7
-# %bb.1:                                # %entry.else
-	andi	a1, s1, 1
-	flt.s	a0, fa5, fa4
-	fsw	fa4, 4(sp)                      # 4-byte Folded Spill
-	beqz	a1, .LBB34_3
-# %bb.2:                                # %entry.if.i
-	call	min_caml_not@plt
-.LBB34_3:                               # %xor.exit
-	flw	fa5, 0(s0)
-	andi	a0, a0, 1
-	bnez	a0, .LBB34_5
-# %bb.4:
-	fneg.s	fa5, fa5
-.LBB34_5:                               # %xor.exit
-	lui	a0, %hi(solver_w_vec)
-	lw	s3, %lo(solver_w_vec)(a0)
-	flw	fa4, 0(s3)
-	flw	fa3, 0(s2)
-	flw	fa2, 4(s2)
-	flw	fa1, 4(s3)
-	fsub.s	fa5, fa5, fa4
-	fdiv.s	fa5, fa5, fa3
-	fsw	fa5, 8(sp)                      # 4-byte Folded Spill
-	fmul.s	fa5, fa5, fa2
-	fadd.s	fa5, fa5, fa1
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 4(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	bnez	a0, .LBB34_7
-# %bb.6:                                # %entry.else.endif.if
-	flw	fa5, 8(s2)
-	flw	fa4, 8(s3)
-	flw	fa3, 8(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa3, fa5
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 8(s0)
-	fmv.w.x	fa4, a0
-	flt.s	a1, fa4, fa5
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	li	a0, 1
-	bnez	a1, .LBB34_21
-.LBB34_7:                               # %entry.endif.else
-	flw	fa5, 4(s2)
-	feq.s	a0, fa5, fa4
-	bnez	a0, .LBB34_14
-# %bb.8:                                # %entry.endif.else.else
-	andi	a1, s1, 1
-	flt.s	a0, fa5, fa4
-	fsw	fa4, 4(sp)                      # 4-byte Folded Spill
-	beqz	a1, .LBB34_10
-# %bb.9:                                # %entry.if.i11
-	call	min_caml_not@plt
-.LBB34_10:                              # %xor.exit14
-	flw	fa5, 4(s0)
-	andi	a0, a0, 1
-	bnez	a0, .LBB34_12
-# %bb.11:
-	fneg.s	fa5, fa5
-.LBB34_12:                              # %xor.exit14
-	lui	a0, %hi(solver_w_vec)
-	lw	s3, %lo(solver_w_vec)(a0)
-	flw	fa4, 4(s3)
-	flw	fa3, 4(s2)
-	flw	fa2, 8(s2)
-	flw	fa1, 8(s3)
-	fsub.s	fa5, fa5, fa4
-	fdiv.s	fa5, fa5, fa3
-	fsw	fa5, 8(sp)                      # 4-byte Folded Spill
-	fmul.s	fa5, fa5, fa2
-	fadd.s	fa5, fa5, fa1
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 8(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	bnez	a0, .LBB34_14
-# %bb.13:                               # %entry.endif.else.else.endif.if
-	flw	fa5, 0(s2)
-	flw	fa4, 0(s3)
-	flw	fa3, 8(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa3, fa5
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 0(s0)
-	fmv.w.x	fa4, a0
-	flt.s	a1, fa4, fa5
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	li	a0, 2
-	bnez	a1, .LBB34_21
-.LBB34_14:                              # %entry.endif.else.endif.else
-	flw	fa5, 8(s2)
-	feq.s	a0, fa5, fa4
-	bnez	a0, .LBB34_22
-# %bb.15:                               # %entry.endif.else.endif.else.else
-	andi	s1, s1, 1
-	flt.s	a0, fa5, fa4
-	beqz	s1, .LBB34_17
-# %bb.16:                               # %entry.if.i28
-	call	min_caml_not@plt
-.LBB34_17:                              # %xor.exit31
-	flw	fa5, 8(s0)
-	andi	a0, a0, 1
-	bnez	a0, .LBB34_19
-# %bb.18:
-	fneg.s	fa5, fa5
-.LBB34_19:                              # %xor.exit31
-	lui	a0, %hi(solver_w_vec)
-	lw	s1, %lo(solver_w_vec)(a0)
-	flw	fa4, 8(s1)
-	flw	fa3, 8(s2)
-	flw	fa2, 0(s2)
-	flw	fa1, 0(s1)
-	fsub.s	fa5, fa5, fa4
-	fdiv.s	fa5, fa5, fa3
-	fsw	fa5, 8(sp)                      # 4-byte Folded Spill
-	fmul.s	fa5, fa5, fa2
-	fadd.s	fa5, fa5, fa1
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 0(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB34_22
-# %bb.20:                               # %entry.endif.else.endif.else.else.endif.if
-	flw	fa5, 4(s2)
-	flw	fa4, 4(s1)
-	flw	fa3, 8(sp)                      # 4-byte Folded Reload
-	fmul.s	fa5, fa3, fa5
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 4(s0)
-	fmv.w.x	fa4, a0
-	flt.s	a1, fa4, fa5
-	li	a0, 3
-	beqz	a1, .LBB34_22
-.LBB34_21:                              # %entry.endif.endif.sink.split
-	lui	a1, %hi(solver_dist)
-	lw	a1, %lo(solver_dist)(a1)
-	flw	fa5, 8(sp)                      # 4-byte Folded Reload
-	fsw	fa5, 0(a1)
-	j	.LBB34_23
-.LBB34_22:
-	li	a0, 0
-.LBB34_23:                              # %entry.endif.endif
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	lw	s3, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end34:
-	.size	solver_rect, .Lfunc_end34-solver_rect
-	.cfi_endproc
-                                        # -- End function
-	.globl	solver_surface                  # -- Begin function solver_surface
-	.p2align	2
-	.type	solver_surface,@function
-solver_surface:                         # @solver_surface
-# %bb.0:                                # %entry
-	lw	a0, 8(sp)
-	flw	fa4, 0(a0)
-	flw	fa5, 0(a4)
-	flw	fa1, 4(a0)
-	flw	fa3, 4(a4)
-	flw	fa0, 8(a0)
-	flw	fa2, 8(a4)
-	fmul.s	fa4, fa4, fa5
-	fmul.s	fa1, fa1, fa3
-	fadd.s	fa4, fa4, fa1
-	fmul.s	fa1, fa0, fa2
-	fadd.s	fa4, fa4, fa1
-	fmv.w.x	fa1, zero
-	fle.s	a0, fa4, fa1
-	bnez	a0, .LBB35_2
-# %bb.1:                                # %entry.if
-	lui	a0, %hi(solver_w_vec)
-	lw	a0, %lo(solver_w_vec)(a0)
-	flw	fa1, 0(a0)
-	flw	fa0, 4(a0)
-	flw	ft0, 8(a0)
-	fmul.s	fa5, fa5, fa1
-	fmul.s	fa3, fa3, fa0
-	fadd.s	fa5, fa5, fa3
-	fmul.s	fa3, fa2, ft0
-	lui	a0, %hi(solver_dist)
-	lw	a0, %lo(solver_dist)(a0)
-	fadd.s	fa5, fa5, fa3
-	fneg.s	fa5, fa5
-	fdiv.s	fa5, fa5, fa4
-	fsw	fa5, 0(a0)
-	li	a0, 1
-	ret
-.LBB35_2:
-	li	a0, 0
-	ret
-.Lfunc_end35:
-	.size	solver_surface, .Lfunc_end35-solver_surface
-                                        # -- End function
-	.globl	in_prod_sqr_obj                 # -- Begin function in_prod_sqr_obj
-	.p2align	2
-	.type	in_prod_sqr_obj,@function
-in_prod_sqr_obj:                        # @in_prod_sqr_obj
-# %bb.0:                                # %entry
-	lw	a0, 8(sp)
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a4)
-	flw	fa3, 4(a0)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa5, fa5, fa4
-	flw	fa4, 4(a4)
-	fmul.s	fa3, fa3, fa3
-	flw	fa2, 8(a0)
-	flw	fa1, 8(a4)
-	fmul.s	fa4, fa3, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa2, fa2
-	fmul.s	fa4, fa4, fa1
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end36:
-	.size	in_prod_sqr_obj, .Lfunc_end36-in_prod_sqr_obj
-                                        # -- End function
-	.globl	in_prod_co_objrot               # -- Begin function in_prod_co_objrot
-	.p2align	2
-	.type	in_prod_co_objrot,@function
-in_prod_co_objrot:                      # @in_prod_co_objrot
-# %bb.0:                                # %entry
-	lw	a0, 8(sp)
-	lw	a1, 4(sp)
-	flw	fa5, 4(a0)
-	flw	fa4, 8(a0)
-	flw	fa3, 0(a1)
-	flw	fa2, 0(a0)
-	fmul.s	fa1, fa5, fa4
-	flw	fa0, 4(a1)
-	fmul.s	fa3, fa1, fa3
-	fmul.s	fa4, fa4, fa2
-	flw	fa1, 8(a1)
-	fmul.s	fa4, fa4, fa0
-	fadd.s	fa4, fa3, fa4
-	fmul.s	fa5, fa5, fa2
-	fmul.s	fa5, fa5, fa1
-	fadd.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end37:
-	.size	in_prod_co_objrot, .Lfunc_end37-in_prod_co_objrot
-                                        # -- End function
-	.globl	solver2nd_mul_b                 # -- Begin function solver2nd_mul_b
-	.p2align	2
-	.type	solver2nd_mul_b,@function
-solver2nd_mul_b:                        # @solver2nd_mul_b
-# %bb.0:                                # %entry
-	lui	a0, %hi(solver_w_vec)
-	lw	a0, %lo(solver_w_vec)(a0)
-	lw	a1, 8(sp)
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a1)
-	flw	fa3, 0(a4)
-	flw	fa2, 4(a0)
-	flw	fa1, 4(a1)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa5, fa5, fa3
-	fmul.s	fa4, fa2, fa1
-	flw	fa3, 4(a4)
-	flw	fa2, 8(a0)
-	flw	fa1, 8(a1)
-	flw	fa0, 8(a4)
-	fmul.s	fa4, fa4, fa3
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa2, fa1
-	fmul.s	fa4, fa4, fa0
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end38:
-	.size	solver2nd_mul_b, .Lfunc_end38-solver2nd_mul_b
-                                        # -- End function
-	.globl	solver2nd_rot_b                 # -- Begin function solver2nd_rot_b
-	.p2align	2
-	.type	solver2nd_rot_b,@function
-solver2nd_rot_b:                        # @solver2nd_rot_b
-# %bb.0:                                # %entry
-	lui	a0, %hi(solver_w_vec)
-	lw	a0, %lo(solver_w_vec)(a0)
-	lw	a1, 8(sp)
-	flw	fa5, 8(a0)
-	flw	fa4, 4(a1)
-	flw	fa3, 4(a0)
-	flw	fa2, 8(a1)
-	lw	a2, 4(sp)
-	fmul.s	fa1, fa5, fa4
-	fmul.s	fa0, fa3, fa2
-	flw	ft0, 0(a2)
-	fadd.s	fa1, fa1, fa0
-	flw	fa0, 0(a0)
-	flw	ft1, 0(a1)
-	fmul.s	fa1, ft0, fa1
-	flw	ft0, 4(a2)
-	fmul.s	fa2, fa2, fa0
-	fmul.s	fa5, fa5, ft1
-	fadd.s	fa5, fa2, fa5
-	fmul.s	fa5, ft0, fa5
-	fadd.s	fa5, fa1, fa5
-	flw	fa2, 8(a2)
-	fmul.s	fa4, fa4, fa0
-	fmul.s	fa3, fa3, ft1
-	fadd.s	fa4, fa4, fa3
-	fmul.s	fa4, fa4, fa2
-	fadd.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end39:
-	.size	solver2nd_rot_b, .Lfunc_end39-solver2nd_rot_b
-                                        # -- End function
-	.globl	solver_second                   # -- Begin function solver_second
-	.p2align	2
-	.type	solver_second,@function
-solver_second:                          # @solver_second
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	lw	a2, 24(sp)
-	flw	fa1, 0(a2)
-	flw	fa4, 0(a4)
-	lw	a0, 20(sp)
-	flw	fa0, 4(a2)
-	fmul.s	fa5, fa1, fa1
-	fmul.s	fa5, fa5, fa4
-	flw	fa3, 4(a4)
-	fmul.s	ft0, fa0, fa0
-	flw	ft2, 8(a2)
-	flw	fa2, 8(a4)
-	fmul.s	ft0, ft0, fa3
-	fadd.s	fa5, fa5, ft0
-	fmul.s	ft0, ft2, ft2
-	fmul.s	ft0, ft0, fa2
-	fadd.s	ft7, fa5, ft0
-	beqz	a3, .LBB40_2
-# %bb.1:                                # %entry.if
-	flw	fa5, 0(a0)
-	fmul.s	ft0, fa0, ft2
-	flw	ft1, 4(a0)
-	fmul.s	fa5, ft0, fa5
-	fmul.s	ft0, fa1, ft2
-	flw	ft3, 8(a0)
-	fmul.s	ft0, ft0, ft1
-	fadd.s	fa5, fa5, ft0
-	fmul.s	ft0, fa1, fa0
-	fmul.s	ft0, ft0, ft3
-	fadd.s	fa5, fa5, ft0
-	fadd.s	ft7, ft7, fa5
-.LBB40_2:                               # %entry.endif
-	fmv.w.x	fa5, zero
-	feq.s	a2, ft7, fa5
-	bnez	a2, .LBB40_13
-# %bb.3:                                # %entry.endif.else
-	lui	a2, %hi(solver_w_vec)
-	lw	a2, %lo(solver_w_vec)(a2)
-	flw	ft0, 0(a2)
-	flw	ft1, 4(a2)
-	fmul.s	ft3, fa1, ft0
-	fmul.s	ft4, fa4, ft3
-	flw	ft3, 8(a2)
-	fmul.s	ft5, fa0, ft1
-	fmul.s	ft5, fa3, ft5
-	fadd.s	ft4, ft4, ft5
-	fmul.s	ft5, ft2, ft3
-	fmul.s	ft5, fa2, ft5
-	fadd.s	ft4, ft4, ft5
-	fadd.s	fa6, ft4, ft4
-	beqz	a3, .LBB40_5
-# %bb.4:                                # %entry.endif.else.if
-	flw	ft4, 0(a0)
-	fmul.s	ft5, fa0, ft3
-	fmul.s	ft6, ft2, ft1
-	fadd.s	ft5, ft6, ft5
-	fmul.s	ft4, ft5, ft4
-	flw	ft5, 4(a0)
-	fmul.s	ft2, ft2, ft0
-	fmul.s	ft6, fa1, ft3
-	fadd.s	ft2, ft2, ft6
-	fmul.s	ft2, ft2, ft5
-	fadd.s	ft2, ft4, ft2
-	flw	ft4, 8(a0)
-	fmul.s	fa0, fa0, ft0
-	fmul.s	fa1, fa1, ft1
-	fadd.s	fa1, fa0, fa1
-	fmul.s	fa1, fa1, ft4
-	fadd.s	fa1, fa1, ft2
-	fadd.s	fa6, fa6, fa1
-.LBB40_5:                               # %entry.endif.else.endif
-	fmul.s	fa1, ft0, ft0
-	fmul.s	fa4, fa4, fa1
-	fmul.s	fa1, ft1, ft1
-	fmul.s	fa3, fa3, fa1
-	fadd.s	fa4, fa4, fa3
-	fmul.s	fa3, ft3, ft3
-	fmul.s	fa3, fa2, fa3
-	fadd.s	fa4, fa4, fa3
-	beqz	a3, .LBB40_7
-# %bb.6:                                # %entry.endif.else.endif.if
-	flw	fa3, 0(a0)
-	fmul.s	fa2, ft1, ft3
-	flw	fa1, 4(a0)
-	fmul.s	fa3, fa2, fa3
-	fmul.s	fa2, ft0, ft3
-	flw	fa0, 8(a0)
-	fmul.s	fa2, fa2, fa1
-	fadd.s	fa3, fa3, fa2
-	fmul.s	fa2, ft0, ft1
-	fmul.s	fa2, fa2, fa0
-	fadd.s	fa3, fa3, fa2
-	fadd.s	fa4, fa4, fa3
-.LBB40_7:                               # %entry.endif.else.endif.endif
-	li	a0, 3
-	bne	a1, a0, .LBB40_9
-# %bb.8:
-	lui	a0, 784384
-	fmv.w.x	fa3, a0
-	fadd.s	fa4, fa4, fa3
-.LBB40_9:                               # %entry.endif.else.endif.endif
-	lui	a0, 788480
-	fmv.w.x	fa3, a0
-	fmul.s	fa3, ft7, fa3
-	fmul.s	fa4, fa3, fa4
-	fmul.s	fa3, fa6, fa6
-	fadd.s	fa4, fa3, fa4
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB40_13
-# %bb.10:                               # %entry.endif.else.endif.endif.endif.if
-	fsw	fa6, 0(sp)                      # 4-byte Folded Spill
-	fsw	ft7, 4(sp)                      # 4-byte Folded Spill
-	fmv.x.w	a0, fa4
-	mv	s0, a6
-	call	min_caml_sqrt@plt
-	andi	s0, s0, 1
-	fmv.w.x	fa5, a0
-	bnez	s0, .LBB40_12
-# %bb.11:
-	fneg.s	fa5, fa5
-.LBB40_12:                              # %entry.endif.else.endif.endif.endif.if
-	flw	fa3, 4(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(sp)                      # 4-byte Folded Reload
-	fsub.s	fa5, fa5, fa4
-	lui	a0, 258048
-	lui	a1, %hi(solver_dist)
-	lw	a1, %lo(solver_dist)(a1)
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa4
-	fdiv.s	fa5, fa5, fa3
-	fsw	fa5, 0(a1)
-	li	a0, 1
-	j	.LBB40_14
-.LBB40_13:
-	li	a0, 0
-.LBB40_14:                              # %entry.endif.endif
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end40:
-	.size	solver_second, .Lfunc_end40-solver_second
-	.cfi_endproc
-                                        # -- End function
-	.globl	solver                          # -- Begin function solver
-	.p2align	2
-	.type	solver,@function
-solver:                                 # @solver
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	lui	a3, %hi(objects)
-	lw	s2, %lo(objects)(a3)
-	mv	s1, a2
-	mv	s0, a1
-	li	a1, 40
-	call	__mulsi3@plt
-	add	a0, s2, a0
-	lw	t0, 36(a0)
-	lw	t1, 32(a0)
-	lw	a7, 28(a0)
-	lw	a6, 24(a0)
-	lw	a4, 16(a0)
-	lw	a5, 20(a0)
-	lw	a3, 12(a0)
-	lw	a2, 8(a0)
-	flw	fa5, 0(s1)
-	flw	fa4, 0(a5)
-	lui	a1, %hi(solver_w_vec)
-	lw	t2, %lo(solver_w_vec)(a1)
-	lw	a1, 4(a0)
-	lw	a0, 0(a0)
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 0(t2)
-	flw	fa4, 4(s1)
-	flw	fa3, 4(a5)
-	fsub.s	fa4, fa4, fa3
-	fsw	fa4, 4(t2)
-	flw	fa3, 8(s1)
-	flw	fa2, 8(a5)
-	fsub.s	fa3, fa3, fa2
-	li	t3, 2
-	fsw	fa3, 8(t2)
-	beq	a1, t3, .LBB41_3
-# %bb.1:                                # %entry
-	li	t2, 1
-	bne	a1, t2, .LBB41_5
-# %bb.2:                                # %entry.if
-	sw	s0, 8(sp)
-	sw	t1, 0(sp)
-	sw	t0, 4(sp)
-	call	solver_rect@plt
-	j	.LBB41_7
-.LBB41_3:                               # %entry.else.if
-	flw	fa1, 0(s0)
-	flw	fa2, 0(a4)
-	flw	ft1, 4(s0)
-	flw	fa0, 4(a4)
-	flw	ft2, 8(s0)
-	flw	ft0, 8(a4)
-	fmul.s	fa1, fa1, fa2
-	fmul.s	ft1, ft1, fa0
-	fadd.s	fa1, fa1, ft1
-	fmul.s	ft1, ft2, ft0
-	fadd.s	fa1, fa1, ft1
-	fmv.w.x	ft1, zero
-	fle.s	a0, fa1, ft1
-	bnez	a0, .LBB41_6
-# %bb.4:                                # %entry.if.i
-	fmul.s	fa5, fa5, fa2
-	fmul.s	fa4, fa4, fa0
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, ft0
-	lui	a0, %hi(solver_dist)
-	lw	a0, %lo(solver_dist)(a0)
-	fadd.s	fa5, fa5, fa4
-	fneg.s	fa5, fa5
-	fdiv.s	fa5, fa5, fa1
-	fsw	fa5, 0(a0)
-	li	a0, 1
-	j	.LBB41_7
-.LBB41_5:                               # %entry.else.else
-	sw	s0, 8(sp)
-	sw	t1, 0(sp)
-	sw	t0, 4(sp)
-	call	solver_second@plt
-	j	.LBB41_7
-.LBB41_6:
-	li	a0, 0
-.LBB41_7:                               # %entry.endif
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end41:
-	.size	solver, .Lfunc_end41-solver
-	.cfi_endproc
-                                        # -- End function
-	.globl	is_rect_outside                 # -- Begin function is_rect_outside
-	.p2align	2
-	.type	is_rect_outside,@function
-is_rect_outside:                        # @is_rect_outside
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	sw	s2, 0(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	lui	a0, %hi(isoutside_q)
-	lw	s2, %lo(isoutside_q)(a0)
-	lw	a0, 0(s2)
-	mv	s0, a6
-	mv	s1, a4
-	call	min_caml_abs_float@plt
-	flw	fa5, 0(s1)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB42_4
-# %bb.1:                                # %entry.if
-	lw	a0, 4(s2)
-	call	min_caml_abs_float@plt
-	flw	fa5, 4(s1)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB42_4
-# %bb.2:                                # %entry.if.if
-	lw	a0, 8(s2)
-	call	min_caml_abs_float@plt
-	flw	fa5, 8(s1)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB42_4
-# %bb.3:                                # %entry.endif.if
-	mv	a0, s0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.LBB42_4:                               # %entry.endif.else
-	mv	a0, s0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_not@plt
-.Lfunc_end42:
-	.size	is_rect_outside, .Lfunc_end42-is_rect_outside
-	.cfi_endproc
-                                        # -- End function
-	.globl	is_plane_outside                # -- Begin function is_plane_outside
-	.p2align	2
-	.type	is_plane_outside,@function
-is_plane_outside:                       # @is_plane_outside
-	.cfi_startproc
-# %bb.0:                                # %entry
-	lui	a0, %hi(isoutside_q)
-	lw	a0, %lo(isoutside_q)(a0)
-	flw	fa5, 0(a4)
-	flw	fa4, 0(a0)
-	flw	fa3, 4(a4)
-	flw	fa2, 4(a0)
-	flw	fa1, 8(a4)
-	flw	fa0, 8(a0)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa2
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa1, fa0
-	fadd.s	fa5, fa5, fa4
-	fmv.w.x	fa4, zero
-	andi	a1, a6, 1
-	flt.s	a0, fa5, fa4
-	beqz	a1, .LBB43_2
-# %bb.1:                                # %entry.if.i
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	call	min_caml_not@plt
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
-.LBB43_2:                               # %xor.exit
-	tail	min_caml_not@plt
-.Lfunc_end43:
-	.size	is_plane_outside, .Lfunc_end43-is_plane_outside
-	.cfi_endproc
-                                        # -- End function
-	.globl	is_second_outside               # -- Begin function is_second_outside
-	.p2align	2
-	.type	is_second_outside,@function
-is_second_outside:                      # @is_second_outside
-	.cfi_startproc
-# %bb.0:                                # %entry
-	lui	a0, %hi(isoutside_q)
-	lw	a0, %lo(isoutside_q)(a0)
-	flw	fa5, 0(a0)
-	flw	fa3, 0(a4)
-	flw	fa4, 4(a0)
-	fmul.s	fa2, fa5, fa5
-	fmul.s	fa3, fa2, fa3
-	flw	fa1, 4(a4)
-	fmul.s	fa0, fa4, fa4
-	flw	fa2, 8(a0)
-	flw	ft0, 8(a4)
-	fmul.s	fa1, fa0, fa1
-	fadd.s	fa3, fa3, fa1
-	fmul.s	fa1, fa2, fa2
-	fmul.s	fa1, fa1, ft0
-	li	a0, 3
-	fadd.s	fa3, fa3, fa1
-	bne	a1, a0, .LBB44_2
-# %bb.1:
-	lui	a0, 784384
-	fmv.w.x	fa1, a0
-	fadd.s	fa3, fa3, fa1
-.LBB44_2:                               # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	beqz	a3, .LBB44_4
-# %bb.3:                                # %entry.endif.if
-	lw	a0, 20(sp)
-	flw	fa1, 0(a0)
-	fmul.s	fa0, fa4, fa2
-	flw	ft0, 4(a0)
-	fmul.s	fa1, fa0, fa1
-	fmul.s	fa2, fa5, fa2
-	flw	fa0, 8(a0)
-	fmul.s	fa2, fa2, ft0
-	fadd.s	fa2, fa1, fa2
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa5, fa5, fa0
-	fadd.s	fa5, fa2, fa5
-	fadd.s	fa3, fa3, fa5
-.LBB44_4:                               # %entry.endif.endif
-	fmv.w.x	fa5, zero
-	andi	a1, a6, 1
-	flt.s	a0, fa3, fa5
-	beqz	a1, .LBB44_6
-# %bb.5:                                # %entry.if.i
-	call	min_caml_not@plt
-.LBB44_6:                               # %xor.exit
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_not@plt
-.Lfunc_end44:
-	.size	is_second_outside, .Lfunc_end44-is_second_outside
-	.cfi_endproc
-                                        # -- End function
-	.globl	is_outside                      # -- Begin function is_outside
-	.p2align	2
-	.type	is_outside,@function
-is_outside:                             # @is_outside
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	sw	s2, 0(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	lui	a0, %hi(chkinside_p)
-	lw	a2, %lo(chkinside_p)(a0)
-	flw	fa5, 0(a2)
-	flw	fa4, 0(a5)
-	lui	a0, %hi(isoutside_q)
-	lw	s2, %lo(isoutside_q)(a0)
-	lw	a0, 20(sp)
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 0(s2)
-	flw	fa4, 4(a2)
-	flw	fa3, 4(a5)
-	fsub.s	fa4, fa4, fa3
-	fsw	fa4, 4(s2)
-	flw	fa3, 8(a2)
-	flw	fa2, 8(a5)
-	mv	s0, a4
-	fsub.s	fa3, fa3, fa2
-	li	a2, 2
-	fsw	fa3, 8(s2)
-	beq	a1, a2, .LBB45_6
-# %bb.1:                                # %entry
-	li	a2, 1
-	bne	a1, a2, .LBB45_7
-# %bb.2:                                # %entry.if
-	mv	s1, a6
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	flw	fa5, 0(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB45_13
-# %bb.3:                                # %entry.if.i
-	lw	a0, 4(s2)
-	call	min_caml_abs_float@plt
-	flw	fa5, 4(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB45_13
-# %bb.4:                                # %entry.if.if.i
-	lw	a0, 8(s2)
-	call	min_caml_abs_float@plt
-	flw	fa5, 8(s0)
-	fmv.w.x	fa4, a0
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB45_13
-# %bb.5:                                # %entry.endif.if.i
-	mv	a0, s1
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.LBB45_6:                               # %entry.else.if
-	flw	fa2, 0(s0)
-	flw	fa1, 4(s0)
-	flw	fa0, 8(s0)
-	fmul.s	fa5, fa5, fa2
-	fmul.s	fa4, fa4, fa1
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa0
-	fadd.s	fa5, fa5, fa4
-	fmv.w.x	fa4, zero
-	andi	a1, a6, 1
-	flt.s	a0, fa5, fa4
-	bnez	a1, .LBB45_12
-	j	.LBB45_14
-.LBB45_7:                               # %entry.else.else
-	flw	fa2, 0(s0)
-	fmul.s	fa1, fa5, fa5
-	flw	fa0, 4(s0)
-	fmul.s	fa2, fa1, fa2
-	fmul.s	fa1, fa4, fa4
-	flw	ft0, 8(s0)
-	fmul.s	fa1, fa1, fa0
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa1, fa3, fa3
-	fmul.s	fa1, fa1, ft0
-	li	a2, 3
-	fadd.s	fa2, fa2, fa1
-	bne	a1, a2, .LBB45_9
-# %bb.8:
-	lui	a1, 784384
-	fmv.w.x	fa1, a1
-	fadd.s	fa2, fa2, fa1
-.LBB45_9:                               # %entry.else.else
-	beqz	a3, .LBB45_11
-# %bb.10:                               # %entry.endif.if.i19
-	flw	fa1, 0(a0)
-	fmul.s	fa0, fa4, fa3
-	flw	ft0, 4(a0)
-	fmul.s	fa1, fa0, fa1
-	fmul.s	fa3, fa5, fa3
-	flw	fa0, 8(a0)
-	fmul.s	fa3, fa3, ft0
-	fadd.s	fa3, fa1, fa3
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa5, fa5, fa0
-	fadd.s	fa5, fa3, fa5
-	fadd.s	fa2, fa2, fa5
-.LBB45_11:                              # %entry.endif.endif.i
-	fmv.w.x	fa5, zero
-	andi	a1, a6, 1
-	flt.s	a0, fa2, fa5
-	beqz	a1, .LBB45_14
-.LBB45_12:                              # %entry.if.i.i
-	call	min_caml_not@plt
-	j	.LBB45_14
-.LBB45_13:                              # %entry.endif.else.i
-	mv	a0, s1
-.LBB45_14:                              # %is_plane_outside.exit
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_not@plt
-.Lfunc_end45:
-	.size	is_outside, .Lfunc_end45-is_outside
-	.cfi_endproc
-                                        # -- End function
-	.globl	check_all_inside                # -- Begin function check_all_inside
-	.p2align	2
-	.type	check_all_inside,@function
-check_all_inside:                       # @check_all_inside
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	sw	s3, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	slli	a0, a0, 2
-	add	a1, a1, a0
-	lw	a0, 0(a1)
-	li	s1, -1
-	li	s0, 1
-	beq	a0, s1, .LBB46_5
-# %bb.1:                                # %entry.else.lr.ph
-	lui	a2, %hi(objects)
-	lw	s2, %lo(objects)(a2)
-	addi	s3, a1, 4
-.LBB46_2:                               # %entry.else
-                                        # =>This Inner Loop Header: Depth=1
-	li	a1, 40
-	call	__mulsi3@plt
-	add	a6, s2, a0
-	lw	a7, 28(a6)
-	lw	a5, 20(a6)
-	lw	a4, 16(a6)
-	lw	a3, 12(a6)
-	lw	a2, 8(a6)
-	lw	a1, 4(a6)
-	lw	a0, 0(a6)
-	lw	t0, 32(a6)
-	lw	t1, 36(a6)
-	lw	a6, 24(a6)
-	sw	t1, 4(sp)
-	sw	t0, 0(sp)
-	call	is_outside@plt
-	andi	a0, a0, 1
-	bnez	a0, .LBB46_4
-# %bb.3:                                # %tailrecurse
-                                        #   in Loop: Header=BB46_2 Depth=1
-	lw	a0, 0(s3)
-	addi	s3, s3, 4
-	bne	a0, s1, .LBB46_2
-	j	.LBB46_5
-.LBB46_4:
-	li	s0, 0
-.LBB46_5:                               # %entry.endif
-	mv	a0, s0
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	lw	s3, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end46:
-	.size	check_all_inside, .Lfunc_end46-check_all_inside
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function shadow_check_and_group
-.LCPI47_0:
-	.word	0xbe4ccccd                      # float -0.200000003
-.LCPI47_1:
-	.word	0x3c23d70a                      # float 0.00999999977
-	.text
-	.globl	shadow_check_and_group
-	.p2align	2
-	.type	shadow_check_and_group,@function
-shadow_check_and_group:                 # @shadow_check_and_group
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sw	ra, 60(sp)                      # 4-byte Folded Spill
-	sw	s0, 56(sp)                      # 4-byte Folded Spill
-	sw	s1, 52(sp)                      # 4-byte Folded Spill
-	sw	s2, 48(sp)                      # 4-byte Folded Spill
-	sw	s3, 44(sp)                      # 4-byte Folded Spill
-	sw	s4, 40(sp)                      # 4-byte Folded Spill
-	sw	s5, 36(sp)                      # 4-byte Folded Spill
-	sw	s6, 32(sp)                      # 4-byte Folded Spill
-	sw	s7, 28(sp)                      # 4-byte Folded Spill
-	sw	s8, 24(sp)                      # 4-byte Folded Spill
-	sw	s9, 20(sp)                      # 4-byte Folded Spill
-	sw	s10, 16(sp)                     # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	mv	s1, a0
-	slli	a0, a0, 2
-	add	a0, a1, a0
-	lw	s4, 0(a0)
-	li	s5, -1
-	beq	s4, s5, .LBB47_9
-# %bb.1:                                # %entry.else.lr.ph
-	mv	s0, a1
-	mv	s2, a2
-	lui	a0, %hi(light)
-	lw	s3, %lo(light)(a0)
-	lui	a0, %hi(solver_dist)
-	lw	s6, %lo(solver_dist)(a0)
-	lui	a0, %hi(objects)
-	lw	s7, %lo(objects)(a0)
-	lui	a0, %hi(chkinside_p)
-	lw	s8, %lo(chkinside_p)(a0)
-	lui	a0, %hi(.LCPI47_0)
-	flw	fa5, %lo(.LCPI47_0)(a0)
-	fsw	fa5, 12(sp)                     # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI47_1)
-	flw	fa5, %lo(.LCPI47_1)(a0)
-	fsw	fa5, 8(sp)                      # 4-byte Folded Spill
-	addi	s9, a1, 4
-.LBB47_2:                               # %entry.else
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB47_5 Depth 2
-	mv	a0, s4
-	mv	a1, s3
-	mv	a2, s2
-	call	solver@plt
-	beqz	a0, .LBB47_7
-# %bb.3:                                # %entry.else
-                                        #   in Loop: Header=BB47_2 Depth=1
-	flw	fa5, 0(s6)
-	flw	fa4, 12(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa5, fa4
-	beqz	a0, .LBB47_7
-# %bb.4:                                # %entry.else.endif.if
-                                        #   in Loop: Header=BB47_2 Depth=1
-	flw	fa4, 0(s3)
-	flw	fa3, 0(s2)
-	flw	fa2, 8(sp)                      # 4-byte Folded Reload
-	fadd.s	fa5, fa5, fa2
-	fmul.s	fa4, fa5, fa4
-	fadd.s	fa4, fa4, fa3
-	fsw	fa4, 0(s8)
-	flw	fa4, 4(s3)
-	flw	fa3, 4(s2)
-	fmul.s	fa4, fa5, fa4
-	fadd.s	fa4, fa4, fa3
-	fsw	fa4, 4(s8)
-	flw	fa4, 8(s3)
-	flw	fa3, 8(s2)
-	fmul.s	fa5, fa5, fa4
-	fadd.s	fa5, fa5, fa3
-	fsw	fa5, 8(s8)
-	lw	a0, 0(s0)
-	li	s4, 1
-	mv	s10, s9
-	beq	a0, s5, .LBB47_10
-.LBB47_5:                               # %entry.else.i
-                                        #   Parent Loop BB47_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	li	a1, 40
-	call	__mulsi3@plt
-	add	a6, s7, a0
-	lw	a7, 28(a6)
-	lw	a5, 20(a6)
-	lw	a4, 16(a6)
-	lw	a3, 12(a6)
-	lw	a2, 8(a6)
-	lw	a1, 4(a6)
-	lw	a0, 0(a6)
-	lw	t0, 32(a6)
-	lw	t1, 36(a6)
-	lw	a6, 24(a6)
-	sw	t1, 4(sp)
-	sw	t0, 0(sp)
-	call	is_outside@plt
-	andi	a0, a0, 1
-	bnez	a0, .LBB47_8
-# %bb.6:                                # %tailrecurse.i
-                                        #   in Loop: Header=BB47_5 Depth=2
-	lw	a0, 0(s10)
-	addi	s10, s10, 4
-	bne	a0, s5, .LBB47_5
-	j	.LBB47_10
-.LBB47_7:                               # %entry.else.endif.else
-                                        #   in Loop: Header=BB47_2 Depth=1
-	li	a1, 40
-	mv	a0, s4
-	call	__mulsi3@plt
-	add	a0, s7, a0
-	lw	a0, 24(a0)
-	andi	a0, a0, 1
-	beqz	a0, .LBB47_9
-.LBB47_8:                               # %tailrecurse.backedge
-                                        #   in Loop: Header=BB47_2 Depth=1
-	addi	s1, s1, 1
-	slli	a0, s1, 2
-	add	a0, s0, a0
-	lw	s4, 0(a0)
-	bne	s4, s5, .LBB47_2
-.LBB47_9:
-	li	s4, 0
-.LBB47_10:                              # %entry.endif
-	mv	a0, s4
-	lw	ra, 60(sp)                      # 4-byte Folded Reload
-	lw	s0, 56(sp)                      # 4-byte Folded Reload
-	lw	s1, 52(sp)                      # 4-byte Folded Reload
-	lw	s2, 48(sp)                      # 4-byte Folded Reload
-	lw	s3, 44(sp)                      # 4-byte Folded Reload
-	lw	s4, 40(sp)                      # 4-byte Folded Reload
-	lw	s5, 36(sp)                      # 4-byte Folded Reload
-	lw	s6, 32(sp)                      # 4-byte Folded Reload
-	lw	s7, 28(sp)                      # 4-byte Folded Reload
-	lw	s8, 24(sp)                      # 4-byte Folded Reload
-	lw	s9, 20(sp)                      # 4-byte Folded Reload
-	lw	s10, 16(sp)                     # 4-byte Folded Reload
-	addi	sp, sp, 64
-	ret
-.Lfunc_end47:
-	.size	shadow_check_and_group, .Lfunc_end47-shadow_check_and_group
-	.cfi_endproc
-                                        # -- End function
-	.globl	shadow_check_one_or_group       # -- Begin function shadow_check_one_or_group
-	.p2align	2
-	.type	shadow_check_one_or_group,@function
-shadow_check_one_or_group:              # @shadow_check_one_or_group
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	sw	s3, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	slli	a0, a0, 2
-	add	a1, a1, a0
-	lw	a0, 0(a1)
-	li	s1, -1
-	beq	a0, s1, .LBB48_4
-# %bb.1:                                # %entry.else.lr.ph
-	mv	s0, a2
-	lui	a2, %hi(and_net)
-	lw	s2, %lo(and_net)(a2)
-	addi	s3, a1, 4
-.LBB48_2:                               # %entry.else
-                                        # =>This Inner Loop Header: Depth=1
-	slli	a0, a0, 2
-	add	a0, s2, a0
-	lw	a1, 0(a0)
-	li	a0, 0
-	mv	a2, s0
-	call	shadow_check_and_group@plt
-	andi	a0, a0, 255
-	bnez	a0, .LBB48_5
-# %bb.3:                                # %tailrecurse
-                                        #   in Loop: Header=BB48_2 Depth=1
-	lw	a0, 0(s3)
-	addi	s3, s3, 4
-	bne	a0, s1, .LBB48_2
-.LBB48_4:
-	li	a0, 0
-	j	.LBB48_6
-.LBB48_5:
-	li	a0, 1
-.LBB48_6:                               # %entry.endif
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	lw	s3, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end48:
-	.size	shadow_check_one_or_group, .Lfunc_end48-shadow_check_one_or_group
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function shadow_check_one_or_matrix
-.LCPI49_0:
-	.word	0xbdcccccd                      # float -0.100000001
-	.text
-	.globl	shadow_check_one_or_matrix
-	.p2align	2
-	.type	shadow_check_one_or_matrix,@function
-shadow_check_one_or_matrix:             # @shadow_check_one_or_matrix
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sw	ra, 44(sp)                      # 4-byte Folded Spill
-	sw	s0, 40(sp)                      # 4-byte Folded Spill
-	sw	s1, 36(sp)                      # 4-byte Folded Spill
-	sw	s2, 32(sp)                      # 4-byte Folded Spill
-	sw	s3, 28(sp)                      # 4-byte Folded Spill
-	sw	s4, 24(sp)                      # 4-byte Folded Spill
-	sw	s5, 20(sp)                      # 4-byte Folded Spill
-	sw	s6, 16(sp)                      # 4-byte Folded Spill
-	sw	s7, 12(sp)                      # 4-byte Folded Spill
-	sw	s8, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	lui	a3, %hi(and_net)
-	lw	s4, %lo(and_net)(a3)
-	lui	a3, %hi(light)
-	lw	s0, %lo(light)(a3)
-	lui	a3, %hi(solver_dist)
-	lw	s5, %lo(solver_dist)(a3)
-	lui	a3, %hi(.LCPI49_0)
-	flw	fa5, %lo(.LCPI49_0)(a3)
-	fsw	fa5, 4(sp)                      # 4-byte Folded Spill
-	mv	s1, a2
-	mv	s2, a1
-	mv	s3, a0
-	li	s6, 99
-	li	s7, -1
-	j	.LBB49_2
-.LBB49_1:                               # %tailrecurse.backedge
-                                        #   in Loop: Header=BB49_2 Depth=1
-	addi	s3, s3, 1
-.LBB49_2:                               # %tailrecurse
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB49_8 Depth 2
-                                        #     Child Loop BB49_12 Depth 2
-	slli	a0, s3, 2
-	add	a0, s2, a0
-	lw	s8, 0(a0)
-	lw	a0, 0(s8)
-	beq	a0, s6, .LBB49_10
-# %bb.3:                                # %tailrecurse
-                                        #   in Loop: Header=BB49_2 Depth=1
-	beq	a0, s7, .LBB49_16
-# %bb.4:                                # %entry.else.else
-                                        #   in Loop: Header=BB49_2 Depth=1
-	mv	a1, s0
-	mv	a2, s1
-	call	solver@plt
-	beqz	a0, .LBB49_1
-# %bb.5:                                # %entry.else.else.if
-                                        #   in Loop: Header=BB49_2 Depth=1
-	flw	fa5, 0(s5)
-	flw	fa4, 4(sp)                      # 4-byte Folded Reload
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB49_1
-# %bb.6:                                # %entry.else.else.if.if
-                                        #   in Loop: Header=BB49_2 Depth=1
-	lw	a0, 4(s8)
-	beq	a0, s7, .LBB49_1
-# %bb.7:                                # %entry.else.i6.preheader
-                                        #   in Loop: Header=BB49_2 Depth=1
-	addi	s8, s8, 8
-.LBB49_8:                               # %entry.else.i6
-                                        #   Parent Loop BB49_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	slli	a0, a0, 2
-	add	a0, s4, a0
-	lw	a1, 0(a0)
-	li	a0, 0
-	mv	a2, s1
-	call	shadow_check_and_group@plt
-	andi	a0, a0, 255
-	bnez	a0, .LBB49_14
-# %bb.9:                                # %tailrecurse.i14
-                                        #   in Loop: Header=BB49_8 Depth=2
-	lw	a0, 0(s8)
-	addi	s8, s8, 4
-	bne	a0, s7, .LBB49_8
-	j	.LBB49_1
-.LBB49_10:                              # %entry.else.if
-                                        #   in Loop: Header=BB49_2 Depth=1
-	lw	a0, 4(s8)
-	beq	a0, s7, .LBB49_1
-# %bb.11:                               # %entry.else.i.preheader
-                                        #   in Loop: Header=BB49_2 Depth=1
-	addi	s8, s8, 8
-.LBB49_12:                              # %entry.else.i
-                                        #   Parent Loop BB49_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	slli	a0, a0, 2
-	add	a0, s4, a0
-	lw	a1, 0(a0)
-	li	a0, 0
-	mv	a2, s1
-	call	shadow_check_and_group@plt
-	andi	a0, a0, 255
-	bnez	a0, .LBB49_14
-# %bb.13:                               # %tailrecurse.i
-                                        #   in Loop: Header=BB49_12 Depth=2
-	lw	a0, 0(s8)
-	addi	s8, s8, 4
-	bne	a0, s7, .LBB49_12
-	j	.LBB49_1
-.LBB49_14:
-	li	a0, 1
-.LBB49_15:                              # %entry.endif
-	lw	ra, 44(sp)                      # 4-byte Folded Reload
-	lw	s0, 40(sp)                      # 4-byte Folded Reload
-	lw	s1, 36(sp)                      # 4-byte Folded Reload
-	lw	s2, 32(sp)                      # 4-byte Folded Reload
-	lw	s3, 28(sp)                      # 4-byte Folded Reload
-	lw	s4, 24(sp)                      # 4-byte Folded Reload
-	lw	s5, 20(sp)                      # 4-byte Folded Reload
-	lw	s6, 16(sp)                      # 4-byte Folded Reload
-	lw	s7, 12(sp)                      # 4-byte Folded Reload
-	lw	s8, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 48
-	ret
-.LBB49_16:                              # %entry.endif.loopexit39
-	li	a0, 0
-	j	.LBB49_15
-.Lfunc_end49:
-	.size	shadow_check_one_or_matrix, .Lfunc_end49-shadow_check_one_or_matrix
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function solve_each_element
-.LCPI50_0:
-	.word	0xbdcccccd                      # float -0.100000001
-.LCPI50_1:
-	.word	0x3c23d70a                      # float 0.00999999977
-	.text
-	.globl	solve_each_element
-	.p2align	2
-	.type	solve_each_element,@function
-solve_each_element:                     # @solve_each_element
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -96
-	.cfi_def_cfa_offset 96
-	sw	ra, 92(sp)                      # 4-byte Folded Spill
-	sw	s0, 88(sp)                      # 4-byte Folded Spill
-	sw	s1, 84(sp)                      # 4-byte Folded Spill
-	sw	s2, 80(sp)                      # 4-byte Folded Spill
-	sw	s3, 76(sp)                      # 4-byte Folded Spill
-	sw	s4, 72(sp)                      # 4-byte Folded Spill
-	sw	s5, 68(sp)                      # 4-byte Folded Spill
-	sw	s6, 64(sp)                      # 4-byte Folded Spill
-	sw	s7, 60(sp)                      # 4-byte Folded Spill
-	sw	s8, 56(sp)                      # 4-byte Folded Spill
-	sw	s9, 52(sp)                      # 4-byte Folded Spill
-	sw	s10, 48(sp)                     # 4-byte Folded Spill
-	sw	s11, 44(sp)                     # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	.cfi_offset s11, -52
-	mv	s1, a0
-	slli	a0, a0, 2
-	add	a0, a1, a0
-	lw	s4, 0(a0)
-	li	s6, -1
-	beq	s4, s6, .LBB50_13
-# %bb.1:                                # %entry.else.lr.ph
-	mv	s0, a1
-	lui	a0, %hi(vscan)
-	lw	s2, %lo(vscan)(a0)
-	lui	a0, %hi(viewpoint)
-	lw	s3, %lo(viewpoint)(a0)
-	lui	a0, %hi(solver_dist)
-	lw	s7, %lo(solver_dist)(a0)
-	lui	a0, %hi(tmin)
-	lw	a0, %lo(tmin)(a0)
-	sw	a0, 36(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(chkinside_p)
-	lw	s9, %lo(chkinside_p)(a0)
-	lui	a0, %hi(objects)
-	lw	s10, %lo(objects)(a0)
-	lui	a0, %hi(crashed_point)
-	lw	a0, %lo(crashed_point)(a0)
-	sw	a0, 20(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(intsec_rectside)
-	lw	a0, %lo(intsec_rectside)(a0)
-	sw	a0, 16(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(crashed_object)
-	lw	a0, %lo(crashed_object)(a0)
-	sw	a0, 12(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(end_flag)
-	lw	s11, %lo(end_flag)(a0)
-	lui	a0, %hi(.LCPI50_0)
-	flw	fa5, %lo(.LCPI50_0)(a0)
-	fsw	fa5, 40(sp)                     # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI50_1)
-	flw	fa5, %lo(.LCPI50_1)(a0)
-	fsw	fa5, 28(sp)                     # 4-byte Folded Spill
-	addi	a0, a1, 4
-	sw	a0, 24(sp)                      # 4-byte Folded Spill
-.LBB50_2:                               # %entry.else
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB50_6 Depth 2
-	mv	a0, s4
-	mv	a1, s2
-	mv	a2, s3
-	call	solver@plt
-	beqz	a0, .LBB50_9
-# %bb.3:                                # %entry.else.if
-                                        #   in Loop: Header=BB50_2 Depth=1
-	mv	s5, a0
-	flw	fa5, 0(s7)
-	flw	fa4, 40(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa4, fa5
-	beqz	a0, .LBB50_11
-# %bb.4:                                # %entry.else.if.if
-                                        #   in Loop: Header=BB50_2 Depth=1
-	lw	a0, 36(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB50_11
-# %bb.5:                                # %entry.else.if.if.if
-                                        #   in Loop: Header=BB50_2 Depth=1
-	flw	fa4, 0(s2)
-	flw	fa3, 0(s3)
-	flw	fa2, 28(sp)                     # 4-byte Folded Reload
-	fadd.s	fa2, fa5, fa2
-	fmul.s	fa5, fa2, fa4
-	fadd.s	fa5, fa5, fa3
-	fsw	fa5, 0(s9)
-	flw	fa5, 4(s2)
-	flw	fa4, 4(s3)
-	fmul.s	fa5, fa2, fa5
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 4(s9)
-	flw	fa5, 8(s2)
-	flw	fa4, 8(s3)
-	fsw	fa2, 32(sp)                     # 4-byte Folded Spill
-	fmul.s	fa5, fa2, fa5
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 8(s9)
-	lw	a0, 0(s0)
-	lw	s8, 24(sp)                      # 4-byte Folded Reload
-	beq	a0, s6, .LBB50_8
-.LBB50_6:                               # %entry.else.i
-                                        #   Parent Loop BB50_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	li	a1, 40
-	call	__mulsi3@plt
-	add	a6, s10, a0
-	lw	a7, 28(a6)
-	lw	a5, 20(a6)
-	lw	a4, 16(a6)
-	lw	a3, 12(a6)
-	lw	a2, 8(a6)
-	lw	a1, 4(a6)
-	lw	a0, 0(a6)
-	lw	t0, 32(a6)
-	lw	t1, 36(a6)
-	lw	a6, 24(a6)
-	sw	t1, 4(sp)
-	sw	t0, 0(sp)
-	call	is_outside@plt
-	andi	a0, a0, 1
-	bnez	a0, .LBB50_11
-# %bb.7:                                # %tailrecurse.i
-                                        #   in Loop: Header=BB50_6 Depth=2
-	lw	a0, 0(s8)
-	addi	s8, s8, 4
-	bne	a0, s6, .LBB50_6
-.LBB50_8:                               # %entry.else.if.if.if.if
-                                        #   in Loop: Header=BB50_2 Depth=1
-	lw	a0, 36(sp)                      # 4-byte Folded Reload
-	flw	fa5, 32(sp)                     # 4-byte Folded Reload
-	fsw	fa5, 0(a0)
-	flw	fa5, 0(s9)
-	lw	a0, 20(sp)                      # 4-byte Folded Reload
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(s9)
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(s9)
-	fsw	fa5, 8(a0)
-	lw	a0, 16(sp)                      # 4-byte Folded Reload
-	sw	s5, 0(a0)
-	lw	a0, 12(sp)                      # 4-byte Folded Reload
-	sw	s4, 0(a0)
-	j	.LBB50_11
-.LBB50_9:                               # %entry.else.else
-                                        #   in Loop: Header=BB50_2 Depth=1
-	li	a1, 40
-	mv	a0, s4
-	call	__mulsi3@plt
-	add	a0, s10, a0
-	lw	a0, 24(a0)
-	andi	a0, a0, 1
-	bnez	a0, .LBB50_11
-# %bb.10:                               # %entry.else.else.else
-                                        #   in Loop: Header=BB50_2 Depth=1
-	li	a0, 1
-	sw	a0, 0(s11)
-.LBB50_11:                              # %entry.else.endif
-                                        #   in Loop: Header=BB50_2 Depth=1
-	lw	a0, 0(s11)
-	call	min_caml_not@plt
-	andi	a0, a0, 1
-	beqz	a0, .LBB50_13
-# %bb.12:                               # %tailrecurse
-                                        #   in Loop: Header=BB50_2 Depth=1
-	addi	s1, s1, 1
-	slli	a0, s1, 2
-	add	a0, s0, a0
-	lw	s4, 0(a0)
-	bne	s4, s6, .LBB50_2
-.LBB50_13:                              # %entry.endif
-	lw	ra, 92(sp)                      # 4-byte Folded Reload
-	lw	s0, 88(sp)                      # 4-byte Folded Reload
-	lw	s1, 84(sp)                      # 4-byte Folded Reload
-	lw	s2, 80(sp)                      # 4-byte Folded Reload
-	lw	s3, 76(sp)                      # 4-byte Folded Reload
-	lw	s4, 72(sp)                      # 4-byte Folded Reload
-	lw	s5, 68(sp)                      # 4-byte Folded Reload
-	lw	s6, 64(sp)                      # 4-byte Folded Reload
-	lw	s7, 60(sp)                      # 4-byte Folded Reload
-	lw	s8, 56(sp)                      # 4-byte Folded Reload
-	lw	s9, 52(sp)                      # 4-byte Folded Reload
-	lw	s10, 48(sp)                     # 4-byte Folded Reload
-	lw	s11, 44(sp)                     # 4-byte Folded Reload
-	addi	sp, sp, 96
-	ret
-.Lfunc_end50:
-	.size	solve_each_element, .Lfunc_end50-solve_each_element
-	.cfi_endproc
-                                        # -- End function
-	.globl	solve_one_or_network            # -- Begin function solve_one_or_network
-	.p2align	2
-	.type	solve_one_or_network,@function
-solve_one_or_network:                   # @solve_one_or_network
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sw	ra, 28(sp)                      # 4-byte Folded Spill
-	sw	s0, 24(sp)                      # 4-byte Folded Spill
-	sw	s1, 20(sp)                      # 4-byte Folded Spill
-	sw	s2, 16(sp)                      # 4-byte Folded Spill
-	sw	s3, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	slli	a0, a0, 2
-	add	a1, a1, a0
-	lw	a0, 0(a1)
-	li	s0, -1
-	beq	a0, s0, .LBB51_3
-# %bb.1:                                # %entry.else.lr.ph
-	lui	a2, %hi(and_net)
-	lw	s1, %lo(and_net)(a2)
-	lui	a2, %hi(end_flag)
-	lw	s2, %lo(end_flag)(a2)
-	addi	s3, a1, 4
-.LBB51_2:                               # %entry.else
-                                        # =>This Inner Loop Header: Depth=1
-	slli	a0, a0, 2
-	add	a0, s1, a0
-	lw	a1, 0(a0)
-	sw	zero, 0(s2)
-	li	a0, 0
-	call	solve_each_element@plt
-	lw	a0, 0(s3)
-	addi	s3, s3, 4
-	bne	a0, s0, .LBB51_2
-.LBB51_3:                               # %entry.endif
-	lw	ra, 28(sp)                      # 4-byte Folded Reload
-	lw	s0, 24(sp)                      # 4-byte Folded Reload
-	lw	s1, 20(sp)                      # 4-byte Folded Reload
-	lw	s2, 16(sp)                      # 4-byte Folded Reload
-	lw	s3, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 32
-	ret
-.Lfunc_end51:
-	.size	solve_one_or_network, .Lfunc_end51-solve_one_or_network
-	.cfi_endproc
-                                        # -- End function
-	.globl	trace_or_matrix                 # -- Begin function trace_or_matrix
-	.p2align	2
-	.type	trace_or_matrix,@function
-trace_or_matrix:                        # @trace_or_matrix
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sw	ra, 44(sp)                      # 4-byte Folded Spill
-	sw	s0, 40(sp)                      # 4-byte Folded Spill
-	sw	s1, 36(sp)                      # 4-byte Folded Spill
-	sw	s2, 32(sp)                      # 4-byte Folded Spill
-	sw	s3, 28(sp)                      # 4-byte Folded Spill
-	sw	s4, 24(sp)                      # 4-byte Folded Spill
-	sw	s5, 20(sp)                      # 4-byte Folded Spill
-	sw	s6, 16(sp)                      # 4-byte Folded Spill
-	sw	s7, 12(sp)                      # 4-byte Folded Spill
-	sw	s8, 8(sp)                       # 4-byte Folded Spill
-	sw	s9, 4(sp)                       # 4-byte Folded Spill
-	sw	s10, 0(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	lui	a2, %hi(and_net)
-	lw	s4, %lo(and_net)(a2)
-	lui	a2, %hi(end_flag)
-	lw	s5, %lo(end_flag)(a2)
-	lui	a2, %hi(vscan)
-	lw	s0, %lo(vscan)(a2)
-	lui	a2, %hi(viewpoint)
-	lw	s1, %lo(viewpoint)(a2)
-	lui	a2, %hi(solver_dist)
-	lw	s6, %lo(solver_dist)(a2)
-	lui	a2, %hi(tmin)
-	lw	s7, %lo(tmin)(a2)
-	mv	s2, a1
-	mv	s3, a0
-	li	s8, 99
-	li	s9, -1
-	j	.LBB52_2
-.LBB52_1:                               # %entry.else.endif
-                                        #   in Loop: Header=BB52_2 Depth=1
-	addi	s3, s3, 1
-.LBB52_2:                               # %tailrecurse
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB52_8 Depth 2
-                                        #     Child Loop BB52_11 Depth 2
-	slli	a0, s3, 2
-	add	a0, s2, a0
-	lw	s10, 0(a0)
-	lw	a0, 0(s10)
-	beq	a0, s8, .LBB52_9
-# %bb.3:                                # %tailrecurse
-                                        #   in Loop: Header=BB52_2 Depth=1
-	beq	a0, s9, .LBB52_12
-# %bb.4:                                # %entry.else.else
-                                        #   in Loop: Header=BB52_2 Depth=1
-	mv	a1, s0
-	mv	a2, s1
-	call	solver@plt
-	beqz	a0, .LBB52_1
-# %bb.5:                                # %entry.else.else.if
-                                        #   in Loop: Header=BB52_2 Depth=1
-	flw	fa5, 0(s6)
-	flw	fa4, 0(s7)
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB52_1
-# %bb.6:                                # %entry.else.else.if.if
-                                        #   in Loop: Header=BB52_2 Depth=1
-	lw	a0, 4(s10)
-	beq	a0, s9, .LBB52_1
-# %bb.7:                                # %entry.else.i7.preheader
-                                        #   in Loop: Header=BB52_2 Depth=1
-	addi	s10, s10, 8
-.LBB52_8:                               # %entry.else.i7
-                                        #   Parent Loop BB52_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	slli	a0, a0, 2
-	add	a0, s4, a0
-	lw	a1, 0(a0)
-	sw	zero, 0(s5)
-	li	a0, 0
-	call	solve_each_element@plt
-	lw	a0, 0(s10)
-	addi	s10, s10, 4
-	bne	a0, s9, .LBB52_8
-	j	.LBB52_1
-.LBB52_9:                               # %entry.else.if
-                                        #   in Loop: Header=BB52_2 Depth=1
-	lw	a0, 4(s10)
-	beq	a0, s9, .LBB52_1
-# %bb.10:                               # %entry.else.i.preheader
-                                        #   in Loop: Header=BB52_2 Depth=1
-	addi	s10, s10, 8
-.LBB52_11:                              # %entry.else.i
-                                        #   Parent Loop BB52_2 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	slli	a0, a0, 2
-	add	a0, s4, a0
-	lw	a1, 0(a0)
-	sw	zero, 0(s5)
-	li	a0, 0
-	call	solve_each_element@plt
-	lw	a0, 0(s10)
-	addi	s10, s10, 4
-	bne	a0, s9, .LBB52_11
-	j	.LBB52_1
-.LBB52_12:                              # %entry.endif
-	lw	ra, 44(sp)                      # 4-byte Folded Reload
-	lw	s0, 40(sp)                      # 4-byte Folded Reload
-	lw	s1, 36(sp)                      # 4-byte Folded Reload
-	lw	s2, 32(sp)                      # 4-byte Folded Reload
-	lw	s3, 28(sp)                      # 4-byte Folded Reload
-	lw	s4, 24(sp)                      # 4-byte Folded Reload
-	lw	s5, 20(sp)                      # 4-byte Folded Reload
-	lw	s6, 16(sp)                      # 4-byte Folded Reload
-	lw	s7, 12(sp)                      # 4-byte Folded Reload
-	lw	s8, 8(sp)                       # 4-byte Folded Reload
-	lw	s9, 4(sp)                       # 4-byte Folded Reload
-	lw	s10, 0(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 48
-	ret
-.Lfunc_end52:
-	.size	trace_or_matrix, .Lfunc_end52-trace_or_matrix
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function tracer
-.LCPI53_0:
-	.word	0xbdcccccd                      # float -0.100000001
-.LCPI53_1:
-	.word	0x4cbebc20                      # float 1.0E+8
-	.text
-	.globl	tracer
-	.p2align	2
-	.type	tracer,@function
-tracer:                                 # @tracer
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	lui	a0, %hi(tmin)
-	lw	s0, %lo(tmin)(a0)
-	lui	a0, %hi(or_net)
-	lw	a0, %lo(or_net)(a0)
-	lui	a1, 321255
-	addi	a1, a1, -1240
-	sw	a1, 0(s0)
-	lw	a1, 0(a0)
-	li	a0, 0
-	call	trace_or_matrix@plt
-	flw	fa5, 0(s0)
-	lui	a0, %hi(.LCPI53_0)
-	flw	fa4, %lo(.LCPI53_0)(a0)
-	lui	a0, %hi(.LCPI53_1)
-	flw	fa3, %lo(.LCPI53_1)(a0)
-	flt.s	a0, fa4, fa5
-	flt.s	a1, fa5, fa3
-	and	a0, a0, a1
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end53:
-	.size	tracer, .Lfunc_end53-tracer
-	.cfi_endproc
-                                        # -- End function
-	.globl	get_nvector_rect                # -- Begin function get_nvector_rect
-	.p2align	2
-	.type	get_nvector_rect,@function
-get_nvector_rect:                       # @get_nvector_rect
-# %bb.0:                                # %entry
-	lui	a0, %hi(intsec_rectside)
-	lw	a0, %lo(intsec_rectside)(a0)
-	lw	a0, 0(a0)
-	li	a1, 3
-	beq	a0, a1, .LBB54_7
-# %bb.1:                                # %entry
-	li	a1, 2
-	beq	a0, a1, .LBB54_5
-# %bb.2:                                # %entry
-	li	a1, 1
-	bne	a0, a1, .LBB54_16
-# %bb.3:                                # %entry.if
-	lui	a0, %hi(vscan)
-	lw	a0, %lo(vscan)(a0)
-	flw	fa4, 0(a0)
-	fmv.w.x	fa5, zero
-	flt.s	a0, fa5, fa4
-	bnez	a0, .LBB54_13
-# %bb.4:                                # %entry.if
-	lui	a0, 784384
-	j	.LBB54_14
-.LBB54_5:                               # %entry.else.if
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	lui	a1, %hi(vscan)
-	lw	a1, %lo(vscan)(a1)
-	sw	zero, 0(a0)
-	flw	fa4, 4(a1)
-	fmv.w.x	fa5, zero
-	flt.s	a1, fa5, fa4
-	bnez	a1, .LBB54_9
-# %bb.6:                                # %entry.else.if
-	lui	a1, 784384
-	j	.LBB54_10
-.LBB54_7:                               # %entry.else.else.if
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	lui	a1, %hi(vscan)
-	lw	a1, %lo(vscan)(a1)
-	sw	zero, 0(a0)
-	sw	zero, 4(a0)
-	flw	fa5, 8(a1)
-	fmv.w.x	fa4, zero
-	flt.s	a1, fa4, fa5
-	bnez	a1, .LBB54_11
-# %bb.8:                                # %entry.else.else.if
-	lui	a1, 784384
-	j	.LBB54_12
-.LBB54_9:
-	lui	a1, 260096
-.LBB54_10:                              # %entry.else.if
-	fmv.w.x	fa4, a1
-	fneg.s	fa4, fa4
-	fsw	fa4, 4(a0)
-	j	.LBB54_15
-.LBB54_11:
-	lui	a1, 260096
-.LBB54_12:                              # %entry.else.else.if
-	fmv.w.x	fa5, a1
-	fneg.s	fa5, fa5
-	j	.LBB54_15
-.LBB54_13:
-	lui	a0, 260096
-.LBB54_14:                              # %entry.if
-	fmv.w.x	fa4, a0
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	fneg.s	fa4, fa4
-	fsw	fa4, 0(a0)
-	sw	zero, 4(a0)
-.LBB54_15:                              # %entry.endif.sink.split
-	fsw	fa5, 8(a0)
-.LBB54_16:                              # %entry.endif
-	ret
-.Lfunc_end54:
-	.size	get_nvector_rect, .Lfunc_end54-get_nvector_rect
-                                        # -- End function
-	.globl	get_nvector_plane               # -- Begin function get_nvector_plane
-	.p2align	2
-	.type	get_nvector_plane,@function
-get_nvector_plane:                      # @get_nvector_plane
-# %bb.0:                                # %entry
-	flw	fa5, 0(a4)
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	fneg.s	fa5, fa5
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(a4)
-	fneg.s	fa5, fa5
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(a4)
-	fneg.s	fa5, fa5
-	fsw	fa5, 8(a0)
-	ret
-.Lfunc_end55:
-	.size	get_nvector_plane, .Lfunc_end55-get_nvector_plane
-                                        # -- End function
-	.globl	get_nvector_second_norot        # -- Begin function get_nvector_second_norot
-	.p2align	2
-	.type	get_nvector_second_norot,@function
-get_nvector_second_norot:               # @get_nvector_second_norot
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	lw	a0, 24(sp)
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a5)
-	flw	fa3, 0(a4)
-	lui	a1, %hi(nvector)
-	lw	s1, %lo(nvector)(a1)
-	fsub.s	fa5, fa5, fa4
-	fmul.s	fa5, fa5, fa3
-	fsw	fa5, 0(s1)
-	flw	fa4, 4(a0)
-	flw	fa3, 4(a5)
-	flw	fa2, 4(a4)
-	fsub.s	fa4, fa4, fa3
-	fmul.s	fa4, fa4, fa2
-	fsw	fa4, 4(s1)
-	flw	fa3, 8(a0)
-	flw	fa2, 8(a5)
-	flw	fa1, 8(a4)
-	mv	s0, a6
-	fsub.s	fa3, fa3, fa2
-	fmul.s	fa3, fa3, fa1
-	fsw	fa3, 8(s1)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa3
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	andi	s0, s0, 1
-	fmv.w.x	fa5, a0
-	beqz	s0, .LBB56_2
-# %bb.1:                                # %entry
-	fneg.s	fa5, fa5
-.LBB56_2:                               # %entry
-	flw	fa4, 0(s1)
-	flw	fa3, 4(s1)
-	fdiv.s	fa4, fa4, fa5
-	flw	fa2, 8(s1)
-	fsw	fa4, 0(s1)
-	fdiv.s	fa4, fa3, fa5
-	fsw	fa4, 4(s1)
-	fdiv.s	fa5, fa2, fa5
-	fsw	fa5, 8(s1)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end56:
-	.size	get_nvector_second_norot, .Lfunc_end56-get_nvector_second_norot
-	.cfi_endproc
-                                        # -- End function
-	.globl	get_nvector_second_rot          # -- Begin function get_nvector_second_rot
-	.p2align	2
-	.type	get_nvector_second_rot,@function
-get_nvector_second_rot:                 # @get_nvector_second_rot
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	lw	a0, 24(sp)
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a5)
-	lui	a1, %hi(nvector_w)
-	lw	a1, %lo(nvector_w)(a1)
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 0(a1)
-	flw	fa4, 4(a0)
-	flw	fa3, 4(a5)
-	fsub.s	fa4, fa4, fa3
-	fsw	fa4, 4(a1)
-	flw	fa3, 8(a0)
-	flw	fa2, 8(a5)
-	lw	a0, 20(sp)
-	fsub.s	fa3, fa3, fa2
-	fsw	fa3, 8(a1)
-	flw	fa2, 0(a4)
-	flw	fa1, 8(a0)
-	flw	fa0, 4(a0)
-	fmul.s	fa5, fa5, fa2
-	fmul.s	fa4, fa4, fa1
-	fmul.s	fa3, fa3, fa0
-	fadd.s	fa4, fa4, fa3
-	lui	a2, 258048
-	lui	a3, %hi(nvector)
-	lw	s1, %lo(nvector)(a3)
-	fmv.w.x	fa3, a2
-	fmul.s	fa4, fa4, fa3
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 0(s1)
-	flw	fa4, 4(a1)
-	flw	fa2, 4(a4)
-	flw	fa1, 0(a1)
-	flw	fa0, 8(a0)
-	flw	ft0, 8(a1)
-	flw	ft1, 0(a0)
-	fmul.s	fa4, fa4, fa2
-	fmul.s	fa2, fa1, fa0
-	fmul.s	fa1, ft0, ft1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa2, fa2, fa3
-	fadd.s	fa4, fa4, fa2
-	fsw	fa4, 4(s1)
-	flw	fa2, 8(a1)
-	flw	fa1, 8(a4)
-	flw	fa0, 0(a1)
-	flw	ft0, 4(a0)
-	flw	ft1, 4(a1)
-	flw	ft2, 0(a0)
-	mv	s0, a6
-	fmul.s	fa2, fa2, fa1
-	fmul.s	fa1, fa0, ft0
-	fmul.s	fa0, ft1, ft2
-	fadd.s	fa1, fa1, fa0
-	fmul.s	fa3, fa1, fa3
-	fadd.s	fa3, fa2, fa3
-	fsw	fa3, 8(s1)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa3
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	andi	s0, s0, 1
-	fmv.w.x	fa5, a0
-	beqz	s0, .LBB57_2
-# %bb.1:                                # %entry
-	fneg.s	fa5, fa5
-.LBB57_2:                               # %entry
-	flw	fa4, 0(s1)
-	flw	fa3, 4(s1)
-	fdiv.s	fa4, fa4, fa5
-	flw	fa2, 8(s1)
-	fsw	fa4, 0(s1)
-	fdiv.s	fa4, fa3, fa5
-	fsw	fa4, 4(s1)
-	fdiv.s	fa5, fa2, fa5
-	fsw	fa5, 8(s1)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.Lfunc_end57:
-	.size	get_nvector_second_rot, .Lfunc_end57-get_nvector_second_rot
-	.cfi_endproc
-                                        # -- End function
-	.globl	get_nvector                     # -- Begin function get_nvector
-	.p2align	2
-	.type	get_nvector,@function
-get_nvector:                            # @get_nvector
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	li	a0, 2
-	beq	a1, a0, .LBB58_7
-# %bb.1:                                # %entry
-	li	a0, 1
-	bne	a1, a0, .LBB58_10
-# %bb.2:                                # %entry.if
-	lui	a0, %hi(intsec_rectside)
-	lw	a0, %lo(intsec_rectside)(a0)
-	lw	a0, 0(a0)
-	li	a1, 3
-	beq	a0, a1, .LBB58_19
-# %bb.3:                                # %entry.if
-	li	a1, 2
-	beq	a0, a1, .LBB58_17
-# %bb.4:                                # %entry.if
-	li	a1, 1
-	bne	a0, a1, .LBB58_16
-# %bb.5:                                # %entry.if.i
-	lui	a0, %hi(vscan)
-	lw	a0, %lo(vscan)(a0)
-	flw	fa4, 0(a0)
-	fmv.w.x	fa5, zero
-	flt.s	a0, fa5, fa4
-	bnez	a0, .LBB58_25
-# %bb.6:                                # %entry.if.i
-	lui	a0, 784384
-	j	.LBB58_26
-.LBB58_7:                               # %entry.else.if
-	flw	fa5, 0(a4)
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	fneg.s	fa5, fa5
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(a4)
-	fneg.s	fa5, fa5
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(a4)
-.LBB58_8:                               # %entry.else.else.if.i
-	fneg.s	fa5, fa5
-.LBB58_9:                               # %entry.endif
-	fsw	fa5, 8(a0)
-	j	.LBB58_16
-.LBB58_10:                              # %entry.else.else
-	mv	s0, a6
-	lw	a0, 24(sp)
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a5)
-	fsub.s	fa5, fa5, fa4
-	beqz	a3, .LBB58_12
-# %bb.11:                               # %entry.else.else.if
-	lui	a1, %hi(nvector_w)
-	lw	a1, %lo(nvector_w)(a1)
-	fsw	fa5, 0(a1)
-	flw	fa4, 4(a0)
-	flw	fa3, 4(a5)
-	fsub.s	fa4, fa4, fa3
-	fsw	fa4, 4(a1)
-	flw	fa3, 8(a0)
-	flw	fa2, 8(a5)
-	lw	a0, 20(sp)
-	fsub.s	fa3, fa3, fa2
-	fsw	fa3, 8(a1)
-	flw	fa2, 0(a4)
-	flw	fa1, 8(a0)
-	flw	fa0, 4(a0)
-	fmul.s	fa5, fa5, fa2
-	fmul.s	fa4, fa4, fa1
-	fmul.s	fa3, fa3, fa0
-	fadd.s	fa4, fa4, fa3
-	lui	a2, 258048
-	lui	a3, %hi(nvector)
-	lw	s1, %lo(nvector)(a3)
-	fmv.w.x	fa3, a2
-	fmul.s	fa4, fa4, fa3
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 0(s1)
-	flw	fa4, 4(a1)
-	flw	fa2, 4(a4)
-	flw	fa1, 0(a1)
-	flw	fa0, 8(a0)
-	flw	ft0, 8(a1)
-	flw	ft1, 0(a0)
-	fmul.s	fa4, fa4, fa2
-	fmul.s	fa2, fa1, fa0
-	fmul.s	fa1, ft0, ft1
-	fadd.s	fa2, fa2, fa1
-	fmul.s	fa2, fa2, fa3
-	fadd.s	fa4, fa4, fa2
-	fsw	fa4, 4(s1)
-	flw	fa2, 8(a1)
-	flw	fa1, 8(a4)
-	flw	fa0, 0(a1)
-	flw	ft0, 4(a0)
-	flw	ft1, 4(a1)
-	flw	ft2, 0(a0)
-	fmul.s	fa2, fa2, fa1
-	fmul.s	fa1, fa0, ft0
-	fmul.s	fa0, ft1, ft2
-	fadd.s	fa1, fa1, fa0
-	fmul.s	fa3, fa1, fa3
-	fadd.s	fa3, fa2, fa3
-	j	.LBB58_13
-.LBB58_12:                              # %entry.else.else.else
-	flw	fa4, 0(a4)
-	lui	a1, %hi(nvector)
-	lw	s1, %lo(nvector)(a1)
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 0(s1)
-	flw	fa4, 4(a0)
-	flw	fa3, 4(a5)
-	flw	fa2, 4(a4)
-	fsub.s	fa4, fa4, fa3
-	fmul.s	fa4, fa4, fa2
-	fsw	fa4, 4(s1)
-	flw	fa3, 8(a0)
-	flw	fa2, 8(a5)
-	flw	fa1, 8(a4)
-	fsub.s	fa3, fa3, fa2
-	fmul.s	fa3, fa3, fa1
-.LBB58_13:                              # %entry.else.else.if
-	fsw	fa3, 8(s1)
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa3
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	andi	s0, s0, 1
-	fmv.w.x	fa5, a0
-	beqz	s0, .LBB58_15
-# %bb.14:                               # %entry.else.else.if
-	fneg.s	fa5, fa5
-.LBB58_15:                              # %entry.else.else.if
-	flw	fa4, 0(s1)
-	flw	fa3, 4(s1)
-	fdiv.s	fa4, fa4, fa5
-	flw	fa2, 8(s1)
-	fsw	fa4, 0(s1)
-	fdiv.s	fa4, fa3, fa5
-	fsw	fa4, 4(s1)
-	fdiv.s	fa5, fa2, fa5
-	fsw	fa5, 8(s1)
-.LBB58_16:                              # %entry.endif
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.LBB58_17:                              # %entry.else.if.i
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	lui	a1, %hi(vscan)
-	lw	a1, %lo(vscan)(a1)
-	sw	zero, 0(a0)
-	flw	fa4, 4(a1)
-	fmv.w.x	fa5, zero
-	flt.s	a1, fa5, fa4
-	bnez	a1, .LBB58_21
-# %bb.18:                               # %entry.else.if.i
-	lui	a1, 784384
-	j	.LBB58_22
-.LBB58_19:                              # %entry.else.else.if.i
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	lui	a1, %hi(vscan)
-	lw	a1, %lo(vscan)(a1)
-	sw	zero, 0(a0)
-	sw	zero, 4(a0)
-	flw	fa5, 8(a1)
-	fmv.w.x	fa4, zero
-	flt.s	a1, fa4, fa5
-	bnez	a1, .LBB58_23
-# %bb.20:                               # %entry.else.else.if.i
-	lui	a1, 784384
-	j	.LBB58_24
-.LBB58_21:
-	lui	a1, 260096
-.LBB58_22:                              # %entry.else.if.i
-	fmv.w.x	fa4, a1
-	fneg.s	fa4, fa4
-	fsw	fa4, 4(a0)
-	j	.LBB58_9
-.LBB58_23:
-	lui	a1, 260096
-.LBB58_24:                              # %entry.else.else.if.i
-	fmv.w.x	fa5, a1
-	j	.LBB58_8
-.LBB58_25:
-	lui	a0, 260096
-.LBB58_26:                              # %entry.if.i
-	fmv.w.x	fa4, a0
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	fneg.s	fa4, fa4
-	fsw	fa4, 0(a0)
-	sw	zero, 4(a0)
-	j	.LBB58_9
-.Lfunc_end58:
-	.size	get_nvector, .Lfunc_end58-get_nvector
-	.cfi_endproc
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function utexture
-.LCPI59_0:
-	.word	0x38d1b717                      # float 9.99999974E-5
-.LCPI59_1:
-	.word	0x4118c9eb                      # float 9.54929637
-.LCPI59_2:
-	.word	0x3e19999a                      # float 0.150000006
-.LCPI59_3:
-	.word	0x44547fff                      # float 849.999938
-.LCPI59_4:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI59_5:
-	.word	0x3d4ccccd                      # float 0.0500000007
-	.text
-	.globl	utexture
-	.p2align	2
-	.type	utexture,@function
-utexture:                               # @utexture
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sw	ra, 60(sp)                      # 4-byte Folded Spill
-	sw	s0, 56(sp)                      # 4-byte Folded Spill
-	sw	s1, 52(sp)                      # 4-byte Folded Spill
-	sw	s2, 48(sp)                      # 4-byte Folded Spill
-	sw	s3, 44(sp)                      # 4-byte Folded Spill
-	sw	s4, 40(sp)                      # 4-byte Folded Spill
-	sw	s5, 36(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	lw	a1, 64(sp)
-	flw	fa5, 0(a1)
-	lui	a2, %hi(texture_color)
-	lw	s3, %lo(texture_color)(a2)
-	fsw	fa5, 0(s3)
-	flw	fa5, 4(a1)
-	fsw	fa5, 4(s3)
-	flw	fa5, 8(a1)
-	lw	s4, 72(sp)
-	mv	s0, a5
-	li	a1, 2
-	fsw	fa5, 8(s3)
-	blt	a1, a0, .LBB59_4
-# %bb.1:                                # %entry
-	li	a1, 1
-	beq	a0, a1, .LBB59_13
-# %bb.2:                                # %entry
-	li	a1, 2
-	bne	a0, a1, .LBB59_19
-# %bb.3:                                # %entry.else.if
-	flw	fa5, 4(s4)
-	lui	a0, 256000
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sin@plt
-	fmv.w.x	fa5, a0
-	fmul.s	fa5, fa5, fa5
-	lui	a0, 276464
-	fmv.w.x	fa4, a0
-	fmul.s	fa3, fa5, fa4
-	fsw	fa3, 0(s3)
-	lui	a0, 260096
-	fmv.w.x	fa3, a0
-	fsub.s	fa5, fa3, fa5
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 4(s3)
-	j	.LBB59_19
-.LBB59_4:                               # %entry
-	li	a1, 3
-	beq	a0, a1, .LBB59_15
-# %bb.5:                                # %entry
-	li	a1, 4
-	bne	a0, a1, .LBB59_19
-# %bb.6:                                # %entry.else.else.else.if
-	flw	fa5, 0(s4)
-	flw	fa4, 0(s0)
-	lw	a0, 0(a4)
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 32(sp)                     # 4-byte Folded Spill
-	mv	s1, a4
-	call	min_caml_sqrt@plt
-	flw	fa5, 8(s4)
-	flw	fa4, 8(s0)
-	mv	s5, s1
-	lw	a1, 8(s1)
-	fmv.w.x	fa3, a0
-	flw	fa2, 32(sp)                     # 4-byte Folded Reload
-	fmul.s	fa3, fa2, fa3
-	fsw	fa3, 32(sp)                     # 4-byte Folded Spill
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 28(sp)                     # 4-byte Folded Spill
-	mv	a0, a1
-	call	min_caml_sqrt@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 28(sp)                     # 4-byte Folded Reload
-	fmul.s	fa4, fa4, fa5
-	flw	fa5, 32(sp)                     # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa5
-	fsw	fa4, 20(sp)                     # 4-byte Folded Spill
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	mv	s1, a0
-	flw	fa5, 32(sp)                     # 4-byte Folded Reload
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	lui	a1, %hi(.LCPI59_0)
-	flw	fa4, %lo(.LCPI59_0)(a1)
-	fmv.w.x	fa5, a0
-	fsw	fa4, 24(sp)                     # 4-byte Folded Spill
-	flt.s	a0, fa5, fa4
-	lui	a1, 268032
-	fmv.w.x	fa5, a1
-	fsw	fa5, 28(sp)                     # 4-byte Folded Spill
-	bnez	a0, .LBB59_8
-# %bb.7:                                # %entry.else.else.else.if.else
-	flw	fa5, 32(sp)                     # 4-byte Folded Reload
-	flw	fa4, 20(sp)                     # 4-byte Folded Reload
-	fdiv.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	call	min_caml_atan@plt
-	lui	a1, %hi(.LCPI59_1)
-	flw	fa5, %lo(.LCPI59_1)(a1)
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa4, fa5
-.LBB59_8:                               # %entry.else.else.else.if.endif
-	fsw	fa5, 32(sp)                     # 4-byte Folded Spill
-	fmv.x.w	s2, fa5
-	mv	a0, s2
-	call	min_caml_floor@plt
-	flw	fa5, 4(s4)
-	fsw	fa5, 16(sp)                     # 4-byte Folded Spill
-	flw	fa5, 4(s0)
-	fsw	fa5, 12(sp)                     # 4-byte Folded Spill
-	lw	a1, 4(s5)
-	fmv.w.x	fa5, a0
-	fsw	fa5, 20(sp)                     # 4-byte Folded Spill
-	mv	a0, a1
-	call	min_caml_sqrt@plt
-	mv	s0, a0
-	mv	a0, s2
-	call	min_caml_abs_float@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 24(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa5, fa4
-	bnez	a0, .LBB59_10
-# %bb.9:                                # %entry.else.else.else.if.endif.else
-	fmv.w.x	fa5, s1
-	fmv.w.x	fa4, s0
-	flw	fa3, 16(sp)                     # 4-byte Folded Reload
-	flw	fa2, 12(sp)                     # 4-byte Folded Reload
-	fsub.s	fa3, fa3, fa2
-	fmul.s	fa4, fa3, fa4
-	fdiv.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	call	min_caml_abs_float@plt
-	call	min_caml_atan@plt
-	lui	a1, %hi(.LCPI59_1)
-	flw	fa5, %lo(.LCPI59_1)(a1)
-	fmv.w.x	fa4, a0
-	fmul.s	fa5, fa4, fa5
-	fsw	fa5, 28(sp)                     # 4-byte Folded Spill
-.LBB59_10:                              # %entry.else.else.else.if.endif.endif
-	flw	fa5, 28(sp)                     # 4-byte Folded Reload
-	fmv.x.w	a0, fa5
-	call	min_caml_floor@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 32(sp)                     # 4-byte Folded Reload
-	flw	fa3, 20(sp)                     # 4-byte Folded Reload
-	fsub.s	fa4, fa3, fa4
-	lui	a0, %hi(.LCPI59_2)
-	flw	fa3, %lo(.LCPI59_2)(a0)
-	lui	a0, 258048
-	fmv.w.x	fa2, a0
-	fadd.s	fa4, fa4, fa2
-	fmul.s	fa4, fa4, fa4
-	fsub.s	fa4, fa3, fa4
-	flw	fa3, 28(sp)                     # 4-byte Folded Reload
-	fsub.s	fa5, fa5, fa3
-	fadd.s	fa5, fa5, fa2
-	fmul.s	fa5, fa5, fa5
-	fsub.s	fa4, fa4, fa5
-	fmv.w.x	fa5, zero
-	flt.s	a0, fa5, fa4
-	beqz	a0, .LBB59_12
-# %bb.11:
-	lui	a0, %hi(.LCPI59_3)
-	flw	fa5, %lo(.LCPI59_3)(a0)
-	fmul.s	fa5, fa4, fa5
-.LBB59_12:                              # %entry.else.else.else.if.endif.endif
-	fsw	fa5, 8(s3)
-	j	.LBB59_19
-.LBB59_13:                              # %entry.if
-	flw	fa5, 0(s4)
-	flw	fa4, 0(s0)
-	lui	a0, %hi(.LCPI59_5)
-	flw	fa3, %lo(.LCPI59_5)(a0)
-	fsw	fa3, 32(sp)                     # 4-byte Folded Spill
-	fsub.s	fa5, fa5, fa4
-	fsw	fa5, 24(sp)                     # 4-byte Folded Spill
-	fmul.s	fa5, fa5, fa3
-	fmv.x.w	a0, fa5
-	call	min_caml_floor@plt
-	fmv.w.x	fa5, a0
-	lui	a0, 268800
-	fmv.w.x	fa4, a0
-	fsw	fa4, 28(sp)                     # 4-byte Folded Spill
-	fmul.s	fa5, fa5, fa4
-	flw	fa4, 24(sp)                     # 4-byte Folded Reload
-	fsub.s	fa5, fa4, fa5
-	flw	fa4, 8(s4)
-	flw	fa3, 8(s0)
-	lui	a0, 266752
-	fmv.w.x	fa2, a0
-	fsw	fa2, 24(sp)                     # 4-byte Folded Spill
-	flt.s	s0, fa5, fa2
-	fsub.s	fa4, fa4, fa3
-	fsw	fa4, 20(sp)                     # 4-byte Folded Spill
-	flw	fa5, 32(sp)                     # 4-byte Folded Reload
-	fmul.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	call	min_caml_floor@plt
-	fmv.w.x	fa5, a0
-	flw	fa4, 28(sp)                     # 4-byte Folded Reload
-	fmul.s	fa5, fa5, fa4
-	flw	fa4, 20(sp)                     # 4-byte Folded Reload
-	fsub.s	fa5, fa4, fa5
-	flw	fa4, 24(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa5, fa4
-	lui	a1, 276464
-	fmv.w.x	fa5, a1
-	fmv.w.x	fa3, zero
-	bnez	a0, .LBB59_16
-# %bb.14:                               # %entry.if
-	fmv.s	fa4, fa3
-	beqz	s0, .LBB59_17
-	j	.LBB59_18
-.LBB59_15:                              # %entry.else.else.if
-	flw	fa5, 0(s4)
-	flw	fa4, 0(s0)
-	flw	fa3, 8(s4)
-	flw	fa2, 8(s0)
-	fsub.s	fa5, fa5, fa4
-	fsub.s	fa4, fa3, fa2
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa4, fa4, fa4
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	fmv.w.x	fa5, a0
-	lui	a0, 266752
-	fmv.w.x	fa4, a0
-	fdiv.s	fa5, fa5, fa4
-	fsw	fa5, 32(sp)                     # 4-byte Folded Spill
-	fmv.x.w	a0, fa5
-	call	min_caml_floor@plt
-	lui	a1, %hi(.LCPI59_4)
-	flw	fa5, %lo(.LCPI59_4)(a1)
-	fmv.w.x	fa4, a0
-	flw	fa3, 32(sp)                     # 4-byte Folded Reload
-	fsub.s	fa4, fa3, fa4
-	fmul.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	call	min_caml_cos@plt
-	fmv.w.x	fa5, a0
-	fmul.s	fa5, fa5, fa5
-	lui	a0, 276464
-	fmv.w.x	fa4, a0
-	fmul.s	fa3, fa5, fa4
-	fsw	fa3, 4(s3)
-	lui	a0, 260096
-	fmv.w.x	fa3, a0
-	fsub.s	fa5, fa3, fa5
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 8(s3)
-	j	.LBB59_19
-.LBB59_16:
-	fmv.s	fa4, fa5
-	fmv.s	fa5, fa3
-	bnez	s0, .LBB59_18
-.LBB59_17:                              # %entry.if
-	fmv.s	fa4, fa5
-.LBB59_18:                              # %entry.if
-	fsw	fa4, 4(s3)
-.LBB59_19:                              # %entry.endif
-	lw	ra, 60(sp)                      # 4-byte Folded Reload
-	lw	s0, 56(sp)                      # 4-byte Folded Reload
-	lw	s1, 52(sp)                      # 4-byte Folded Reload
-	lw	s2, 48(sp)                      # 4-byte Folded Reload
-	lw	s3, 44(sp)                      # 4-byte Folded Reload
-	lw	s4, 40(sp)                      # 4-byte Folded Reload
-	lw	s5, 36(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 64
-	ret
-.Lfunc_end59:
-	.size	utexture, .Lfunc_end59-utexture
-	.cfi_endproc
-                                        # -- End function
-	.globl	in_prod                         # -- Begin function in_prod
-	.p2align	2
-	.type	in_prod,@function
-in_prod:                                # @in_prod
-# %bb.0:                                # %entry
-	flw	fa5, 0(a0)
-	flw	fa4, 0(a1)
-	flw	fa3, 4(a0)
-	flw	fa2, 4(a1)
-	flw	fa1, 8(a0)
-	flw	fa0, 8(a1)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa2
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa1, fa0
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	ret
-.Lfunc_end60:
-	.size	in_prod, .Lfunc_end60-in_prod
-                                        # -- End function
-	.globl	accumulate_vec_mul              # -- Begin function accumulate_vec_mul
-	.p2align	2
-	.type	accumulate_vec_mul,@function
-accumulate_vec_mul:                     # @accumulate_vec_mul
-# %bb.0:                                # %entry
-	flw	fa5, 0(a1)
-	flw	fa4, 0(a0)
-	fmv.w.x	fa3, a2
-	fmul.s	fa5, fa5, fa3
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(a1)
-	flw	fa4, 4(a0)
-	fmul.s	fa5, fa5, fa3
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(a1)
-	flw	fa4, 8(a0)
-	fmul.s	fa5, fa5, fa3
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 8(a0)
-	ret
-.Lfunc_end61:
-	.size	accumulate_vec_mul, .Lfunc_end61-accumulate_vec_mul
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function raytracing
-.LCPI62_0:
-	.word	0xbdcccccd                      # float -0.100000001
-.LCPI62_1:
-	.word	0x4cbebc20                      # float 1.0E+8
-.LCPI62_2:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI62_3:
-	.word	0x3dcccccd                      # float 0.100000001
-	.text
-	.globl	raytracing
-	.p2align	2
-	.type	raytracing,@function
-raytracing:                             # @raytracing
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -160
-	.cfi_def_cfa_offset 160
-	sw	ra, 156(sp)                     # 4-byte Folded Spill
-	sw	s0, 152(sp)                     # 4-byte Folded Spill
-	sw	s1, 148(sp)                     # 4-byte Folded Spill
-	sw	s2, 144(sp)                     # 4-byte Folded Spill
-	sw	s3, 140(sp)                     # 4-byte Folded Spill
-	sw	s4, 136(sp)                     # 4-byte Folded Spill
-	sw	s5, 132(sp)                     # 4-byte Folded Spill
-	sw	s6, 128(sp)                     # 4-byte Folded Spill
-	sw	s7, 124(sp)                     # 4-byte Folded Spill
-	sw	s8, 120(sp)                     # 4-byte Folded Spill
-	sw	s9, 116(sp)                     # 4-byte Folded Spill
-	sw	s10, 112(sp)                    # 4-byte Folded Spill
-	sw	s11, 108(sp)                    # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	.cfi_offset s11, -52
-	mv	s0, a0
-	fmv.w.x	fa5, a1
-	fsw	fa5, 104(sp)                    # 4-byte Folded Spill
-	lui	a0, %hi(tmin)
-	lw	a0, %lo(tmin)(a0)
-	sw	a0, 72(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(or_net)
-	lw	a0, %lo(or_net)(a0)
-	sw	a0, 96(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(vscan)
-	lw	s11, %lo(vscan)(a0)
-	lui	a0, %hi(light)
-	lw	a0, %lo(light)(a0)
-	sw	a0, 28(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(beam)
-	lw	a0, %lo(beam)(a0)
-	sw	a0, 20(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(rgb)
-	lw	a0, %lo(rgb)(a0)
-	sw	a0, 76(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(crashed_object)
-	lw	a0, %lo(crashed_object)(a0)
-	sw	a0, 56(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(objects)
-	lw	a0, %lo(objects)(a0)
-	sw	a0, 52(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(crashed_point)
-	lw	a1, %lo(crashed_point)(a0)
-	lui	a0, %hi(nvector)
-	lw	a0, %lo(nvector)(a0)
-	sw	a0, 80(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(texture_color)
-	lw	a0, %lo(texture_color)(a0)
-	sw	a0, 48(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(viewpoint)
-	lw	a0, %lo(viewpoint)(a0)
-	sw	a0, 36(sp)                      # 4-byte Folded Spill
-	lui	a0, 321255
-	addi	a0, a0, -1240
-	sw	a0, 68(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI62_0)
-	flw	fa5, %lo(.LCPI62_0)(a0)
-	fsw	fa5, 64(sp)                     # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI62_1)
-	flw	fa5, %lo(.LCPI62_1)(a0)
-	fsw	fa5, 60(sp)                     # 4-byte Folded Spill
-	fmv.w.x	fa5, zero
-	fsw	fa5, 92(sp)                     # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI62_2)
-	flw	fa5, %lo(.LCPI62_2)(a0)
-	fsw	fa5, 24(sp)                     # 4-byte Folded Spill
-	lui	a0, %hi(.LCPI62_3)
-	flw	fa5, %lo(.LCPI62_3)(a0)
-	fsw	fa5, 44(sp)                     # 4-byte Folded Spill
-	lui	a0, 786432
-	fmv.w.x	fa5, a0
-	fsw	fa5, 40(sp)                     # 4-byte Folded Spill
-	lui	a0, 260096
-	fmv.w.x	fa5, a0
-	fsw	fa5, 32(sp)                     # 4-byte Folded Spill
-	sw	a1, 100(sp)                     # 4-byte Folded Spill
-.LBB62_1:                               # %tailrecurse
-                                        # =>This Inner Loop Header: Depth=1
-	lw	s1, 72(sp)                      # 4-byte Folded Reload
-	lw	a0, 68(sp)                      # 4-byte Folded Reload
-	sw	a0, 0(s1)
-	lw	a0, 96(sp)                      # 4-byte Folded Reload
-	lw	a1, 0(a0)
-	li	a0, 0
-	call	trace_or_matrix@plt
-	flw	fa5, 0(s1)
-	flw	fa4, 64(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa4, fa5
-	flw	fa4, 60(sp)                     # 4-byte Folded Reload
-	flt.s	a1, fa5, fa4
-	and	s2, a0, a1
-	mv	a0, s2
-	call	min_caml_not@plt
-	beqz	s0, .LBB62_5
-# %bb.2:                                # %tailrecurse
-                                        #   in Loop: Header=BB62_1 Depth=1
-	andi	a0, a0, 1
-	beqz	a0, .LBB62_5
-# %bb.3:                                # %entry.if.if
-                                        #   in Loop: Header=BB62_1 Depth=1
-	flw	fa5, 0(s11)
-	lw	a0, 28(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	flw	fa3, 4(s11)
-	flw	fa2, 4(a0)
-	flw	fa1, 8(s11)
-	flw	fa0, 8(a0)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa2
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa1, fa0
-	fadd.s	fa5, fa5, fa4
-	flw	fa4, 92(sp)                     # 4-byte Folded Reload
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB62_5
-# %bb.4:                                # %entry.if.if.if
-                                        #   in Loop: Header=BB62_1 Depth=1
-	fneg.s	fa4, fa5
-	fmul.s	fa5, fa5, fa5
-	lw	a0, 20(sp)                      # 4-byte Folded Reload
-	flw	fa3, 0(a0)
-	fmul.s	fa5, fa5, fa4
-	lw	a0, 76(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	flw	fa2, 104(sp)                    # 4-byte Folded Reload
-	fmul.s	fa5, fa2, fa5
-	fmul.s	fa5, fa5, fa3
-	flw	fa3, 4(a0)
-	fadd.s	fa4, fa5, fa4
-	flw	fa2, 8(a0)
-	fsw	fa4, 0(a0)
-	fadd.s	fa4, fa5, fa3
-	fsw	fa4, 4(a0)
-	fadd.s	fa5, fa5, fa2
-	fsw	fa5, 8(a0)
-.LBB62_5:                               # %entry.endif
-                                        #   in Loop: Header=BB62_1 Depth=1
-	beqz	s2, .LBB62_18
-# %bb.6:                                # %entry.endif.if
-                                        #   in Loop: Header=BB62_1 Depth=1
-	sw	s0, 88(sp)                      # 4-byte Folded Spill
-	lw	a0, 56(sp)                      # 4-byte Folded Reload
-	lw	a0, 0(a0)
-	li	a1, 40
-	call	__mulsi3@plt
-	lw	a1, 52(sp)                      # 4-byte Folded Reload
-	add	a0, a1, a0
-	lw	s2, 28(a0)
-	lw	s4, 24(a0)
-	lw	s5, 20(a0)
-	lw	s6, 16(a0)
-	lw	s7, 12(a0)
-	lw	s3, 8(a0)
-	lw	s8, 4(a0)
-	lw	s9, 0(a0)
-	lw	s1, 32(a0)
-	lw	s0, 36(a0)
-	lw	s10, 100(sp)                    # 4-byte Folded Reload
-	sw	s10, 8(sp)
-	sw	s0, 4(sp)
-	sw	s1, 0(sp)
-	mv	a0, s9
-	mv	a1, s8
-	mv	a2, s3
-	mv	a3, s7
-	mv	a4, s6
-	mv	a5, s5
-	mv	a6, s4
-	mv	a7, s2
-	call	get_nvector@plt
-	lw	a0, 96(sp)                      # 4-byte Folded Reload
-	lw	a1, 0(a0)
-	li	a0, 0
-	mv	a2, s10
-	call	shadow_check_one_or_matrix@plt
-	andi	a0, a0, 255
-	flw	fa5, 92(sp)                     # 4-byte Folded Reload
-	bnez	a0, .LBB62_10
-# %bb.7:                                # %entry.endif.if.else
-                                        #   in Loop: Header=BB62_1 Depth=1
-	lw	a1, 80(sp)                      # 4-byte Folded Reload
-	flw	fa5, 0(a1)
-	lw	a0, 28(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	flw	fa3, 4(a1)
-	flw	fa2, 4(a0)
-	flw	fa1, 8(a1)
-	flw	fa0, 8(a0)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa4, fa3, fa2
-	fadd.s	fa5, fa5, fa4
-	fmul.s	fa4, fa1, fa0
-	fadd.s	fa4, fa5, fa4
-	flw	fa5, 92(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa5, fa4
-	flw	fa5, 24(sp)                     # 4-byte Folded Reload
-	bnez	a0, .LBB62_9
-# %bb.8:                                # %entry.endif.if.else
-                                        #   in Loop: Header=BB62_1 Depth=1
-	flw	fa5, 24(sp)                     # 4-byte Folded Reload
-	fsub.s	fa5, fa5, fa4
-.LBB62_9:                               # %entry.endif.if.else
-                                        #   in Loop: Header=BB62_1 Depth=1
-	flw	fa4, 0(s2)
-	flw	fa3, 104(sp)                    # 4-byte Folded Reload
-	fmul.s	fa5, fa3, fa5
-	fmul.s	fa5, fa4, fa5
-	lw	s10, 100(sp)                    # 4-byte Folded Reload
-.LBB62_10:                              # %entry.endif.if.endif
-                                        #   in Loop: Header=BB62_1 Depth=1
-	fsw	fa5, 84(sp)                     # 4-byte Folded Spill
-	sw	s10, 8(sp)
-	sw	s1, 0(sp)
-	sw	s0, 4(sp)
-	mv	a0, s9
-	mv	a1, s8
-	mv	a2, s3
-	mv	a3, s7
-	mv	a4, s6
-	mv	a5, s5
-	mv	a6, s4
-	mv	a7, s2
-	call	utexture@plt
-	flw	ft2, 84(sp)                     # 4-byte Folded Reload
-	lw	a1, 48(sp)                      # 4-byte Folded Reload
-	flw	fa5, 0(a1)
-	lw	a0, 76(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	fmul.s	fa5, ft2, fa5
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(a1)
-	flw	fa4, 4(a0)
-	fmul.s	fa5, ft2, fa5
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(a1)
-	flw	fa4, 8(a0)
-	fmul.s	fa5, ft2, fa5
-	fadd.s	fa5, fa4, fa5
-	fsw	fa5, 8(a0)
-	lw	s0, 88(sp)                      # 4-byte Folded Reload
-	li	a0, 4
-	blt	a0, s0, .LBB62_18
-# %bb.11:                               # %entry.endif.if.endif
-                                        #   in Loop: Header=BB62_1 Depth=1
-	flw	fa5, 104(sp)                    # 4-byte Folded Reload
-	flw	fa4, 44(sp)                     # 4-byte Folded Reload
-	flt.s	a0, fa4, fa5
-	beqz	a0, .LBB62_18
-# %bb.12:                               # %entry.endif.if.endif.else.if
-                                        #   in Loop: Header=BB62_1 Depth=1
-	flw	fa5, 0(s11)
-	lw	a0, 80(sp)                      # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	flw	fa3, 4(s11)
-	flw	fa2, 4(a0)
-	flw	fa1, 8(s11)
-	flw	fa0, 8(a0)
-	fmul.s	ft0, fa5, fa4
-	fmul.s	fa2, fa3, fa2
-	fadd.s	fa2, ft0, fa2
-	fmul.s	fa0, fa1, fa0
-	fadd.s	fa2, fa2, fa0
-	flw	fa0, 40(sp)                     # 4-byte Folded Reload
-	fmul.s	fa2, fa2, fa0
-	fmul.s	fa4, fa4, fa2
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 0(s11)
-	flw	fa4, 4(a0)
-	fmul.s	fa4, fa4, fa2
-	fadd.s	fa3, fa3, fa4
-	fsw	fa3, 4(s11)
-	flw	fa4, 8(a0)
-	fmul.s	fa4, fa2, fa4
-	fadd.s	fa2, fa1, fa4
-	fsw	fa2, 8(s11)
-	li	a0, 2
-	bne	s3, a0, .LBB62_14
-# %bb.13:                               # %entry.endif.if.endif.else.if.else.if
-                                        #   in Loop: Header=BB62_1 Depth=1
-	lw	a1, 100(sp)                     # 4-byte Folded Reload
-	flw	fa5, 0(a1)
-	lw	a0, 36(sp)                      # 4-byte Folded Reload
-	fsw	fa5, 0(a0)
-	flw	fa5, 4(a1)
-	fsw	fa5, 4(a0)
-	flw	fa5, 8(a1)
-	fsw	fa5, 8(a0)
-	flw	fa5, 0(s2)
-	flw	fa4, 32(sp)                     # 4-byte Folded Reload
-	fsub.s	fa5, fa4, fa5
-	flw	fa4, 104(sp)                    # 4-byte Folded Reload
-	fmul.s	fa4, fa4, fa5
-	fsw	fa4, 104(sp)                    # 4-byte Folded Spill
-	addi	s0, s0, 1
-	j	.LBB62_1
-.LBB62_14:                              # %entry.endif.if.endif.else.if
-	li	a0, 1
-	bne	s3, a0, .LBB62_18
-# %bb.15:                               # %entry.endif.if.endif.else.if.if
-	flw	fa4, 4(s2)
-	fmv.w.x	fa1, zero
-	feq.s	a0, fa4, fa1
-	bnez	a0, .LBB62_18
-# %bb.16:                               # %entry.endif.if.endif.else.if.if.else
-	lw	a0, 28(sp)                      # 4-byte Folded Reload
-	flw	fa0, 0(a0)
-	flw	ft0, 4(a0)
-	flw	ft1, 8(a0)
-	fmul.s	fa5, fa5, fa0
-	fmul.s	fa3, fa3, ft0
-	fadd.s	fa5, fa5, fa3
-	fmul.s	fa3, fa2, ft1
-	fadd.s	fa5, fa5, fa3
-	fle.s	a0, fa1, fa5
-	bnez	a0, .LBB62_18
-# %bb.17:                               # %entry.endif.if.endif.else.if.if.else.if
-	fmul.s	fa5, fa5, fa5
-	fmul.s	fa5, fa5, fa5
-	flw	fa3, 104(sp)                    # 4-byte Folded Reload
-	fmul.s	fa5, fa3, fa5
-	lw	a0, 76(sp)                      # 4-byte Folded Reload
-	flw	fa3, 0(a0)
-	fmul.s	fa5, ft2, fa5
-	fmul.s	fa5, fa4, fa5
-	flw	fa4, 4(a0)
-	fadd.s	fa3, fa5, fa3
-	flw	fa2, 8(a0)
-	fsw	fa3, 0(a0)
-	fadd.s	fa4, fa5, fa4
-	fsw	fa4, 4(a0)
-	fadd.s	fa5, fa5, fa2
-	fsw	fa5, 8(a0)
-.LBB62_18:                              # %entry.endif.endif
-	lw	ra, 156(sp)                     # 4-byte Folded Reload
-	lw	s0, 152(sp)                     # 4-byte Folded Reload
-	lw	s1, 148(sp)                     # 4-byte Folded Reload
-	lw	s2, 144(sp)                     # 4-byte Folded Reload
-	lw	s3, 140(sp)                     # 4-byte Folded Reload
-	lw	s4, 136(sp)                     # 4-byte Folded Reload
-	lw	s5, 132(sp)                     # 4-byte Folded Reload
-	lw	s6, 128(sp)                     # 4-byte Folded Reload
-	lw	s7, 124(sp)                     # 4-byte Folded Reload
-	lw	s8, 120(sp)                     # 4-byte Folded Reload
-	lw	s9, 116(sp)                     # 4-byte Folded Reload
-	lw	s10, 112(sp)                    # 4-byte Folded Reload
-	lw	s11, 108(sp)                    # 4-byte Folded Reload
-	addi	sp, sp, 160
-	ret
-.Lfunc_end62:
-	.size	raytracing, .Lfunc_end62-raytracing
-	.cfi_endproc
-                                        # -- End function
-	.globl	write_rgb                       # -- Begin function write_rgb
-	.p2align	2
-	.type	write_rgb,@function
-write_rgb:                              # @write_rgb
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	lui	a0, %hi(rgb)
-	lw	s0, %lo(rgb)(a0)
-	lw	a0, 0(s0)
-	call	min_caml_int_of_float@plt
-	li	s1, 255
-	blt	a0, s1, .LBB63_2
-# %bb.1:                                # %entry
-	li	a0, 255
-.LBB63_2:                               # %entry
-	call	min_caml_print_byte@plt
-	lw	a0, 4(s0)
-	call	min_caml_int_of_float@plt
-	blt	a0, s1, .LBB63_4
-# %bb.3:                                # %entry
-	li	a0, 255
-.LBB63_4:                               # %entry
-	call	min_caml_print_byte@plt
-	lw	a0, 8(s0)
-	call	min_caml_int_of_float@plt
-	blt	a0, s1, .LBB63_6
-# %bb.5:                                # %entry
-	li	a0, 255
-.LBB63_6:                               # %entry
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_print_byte@plt
-.Lfunc_end63:
-	.size	write_rgb, .Lfunc_end63-write_rgb
-	.cfi_endproc
-                                        # -- End function
-	.globl	write_ppm_header                # -- Begin function write_ppm_header
-	.p2align	2
-	.type	write_ppm_header,@function
-write_ppm_header:                       # @write_ppm_header
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	li	a0, 80
-	call	min_caml_print_byte@plt
-	li	a0, 54
-	call	min_caml_print_byte@plt
-	li	a0, 10
-	call	min_caml_print_byte@plt
-	lui	a0, %hi(size)
-	lw	s0, %lo(size)(a0)
-	lw	a0, 0(s0)
-	call	min_caml_print_int@plt
-	li	a0, 32
-	call	min_caml_print_byte@plt
-	lw	a0, 4(s0)
-	call	min_caml_print_int@plt
-	li	a0, 10
-	call	min_caml_print_byte@plt
-	li	a0, 255
-	call	min_caml_print_int@plt
-	li	a0, 10
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	min_caml_print_byte@plt
-.Lfunc_end64:
-	.size	write_ppm_header, .Lfunc_end64-write_ppm_header
-	.cfi_endproc
-                                        # -- End function
-	.globl	scan_point                      # -- Begin function scan_point
-	.p2align	2
-	.type	scan_point,@function
-scan_point:                             # @scan_point
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sw	ra, 60(sp)                      # 4-byte Folded Spill
-	sw	s0, 56(sp)                      # 4-byte Folded Spill
-	sw	s1, 52(sp)                      # 4-byte Folded Spill
-	sw	s2, 48(sp)                      # 4-byte Folded Spill
-	sw	s3, 44(sp)                      # 4-byte Folded Spill
-	sw	s4, 40(sp)                      # 4-byte Folded Spill
-	sw	s5, 36(sp)                      # 4-byte Folded Spill
-	sw	s6, 32(sp)                      # 4-byte Folded Spill
-	sw	s7, 28(sp)                      # 4-byte Folded Spill
-	sw	s8, 24(sp)                      # 4-byte Folded Spill
-	sw	s9, 20(sp)                      # 4-byte Folded Spill
-	sw	s10, 16(sp)                     # 4-byte Folded Spill
-	sw	s11, 12(sp)                     # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	.cfi_offset s10, -48
-	.cfi_offset s11, -52
-	lui	a1, %hi(size)
-	lw	a1, %lo(size)(a1)
-	sw	a1, 8(sp)                       # 4-byte Folded Spill
-	lw	a1, 0(a1)
-	bge	a0, a1, .LBB65_9
-# %bb.1:                                # %entry.else.lr.ph
-	mv	s0, a0
-	lui	a0, %hi(scan_offset)
-	lw	a0, %lo(scan_offset)(a0)
-	sw	a0, 4(sp)                       # 4-byte Folded Spill
-	lui	a0, %hi(scan_d)
-	lw	a0, %lo(scan_d)(a0)
-	sw	a0, 0(sp)                       # 4-byte Folded Spill
-	lui	a0, %hi(cos_v)
-	lw	s4, %lo(cos_v)(a0)
-	lui	a0, %hi(wscan)
-	lw	s5, %lo(wscan)(a0)
-	lui	a0, %hi(vscan)
-	lw	s6, %lo(vscan)(a0)
-	lui	a0, %hi(scan_sscany)
-	lw	s7, %lo(scan_sscany)(a0)
-	lui	a0, %hi(vp)
-	lw	s8, %lo(vp)(a0)
-	lui	a0, %hi(sin_v)
-	lw	s9, %lo(sin_v)(a0)
-	lui	a0, %hi(scan_met1)
-	lw	s10, %lo(scan_met1)(a0)
-	lui	a0, %hi(view)
-	lw	s11, %lo(view)(a0)
-	lui	a0, %hi(viewpoint)
-	lw	s2, %lo(viewpoint)(a0)
-	lui	a0, %hi(rgb)
-	lw	s3, %lo(rgb)(a0)
-	li	s1, 255
-	j	.LBB65_3
-.LBB65_2:                               # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	call	min_caml_print_byte@plt
-	lw	a0, 8(sp)                       # 4-byte Folded Reload
-	lw	a0, 0(a0)
-	addi	s0, s0, 1
-	bge	s0, a0, .LBB65_9
-.LBB65_3:                               # %entry.else
-                                        # =>This Inner Loop Header: Depth=1
-	mv	a0, s0
-	call	min_caml_float_of_int@plt
-	fmv.w.x	fa5, a0
-	lw	a0, 4(sp)                       # 4-byte Folded Reload
-	flw	fa4, 0(a0)
-	lw	a0, 0(sp)                       # 4-byte Folded Reload
-	flw	fa3, 0(a0)
-	flw	fa2, 4(s4)
-	flw	fa1, 0(s5)
-	fsub.s	fa5, fa5, fa4
-	fmul.s	fa5, fa5, fa3
-	fmul.s	fa4, fa5, fa2
-	fadd.s	fa4, fa4, fa1
-	fsw	fa4, 0(s6)
-	flw	fa4, 0(s7)
-	flw	fa3, 0(s4)
-	flw	fa2, 4(s8)
-	fmul.s	fa4, fa4, fa3
-	fsub.s	fa4, fa4, fa2
-	fsw	fa4, 4(s6)
-	flw	fa4, 4(s9)
-	flw	fa3, 8(s5)
-	fmul.s	fa4, fa5, fa4
-	fsub.s	fa4, fa3, fa4
-	fsw	fa4, 8(s6)
-	flw	fa4, 0(s10)
-	fmul.s	fa5, fa5, fa5
-	fadd.s	fa5, fa5, fa4
-	fmv.x.w	a0, fa5
-	call	min_caml_sqrt@plt
-	flw	fa5, 0(s6)
-	fmv.w.x	fa4, a0
-	flw	fa3, 4(s6)
-	fdiv.s	fa5, fa5, fa4
-	flw	fa2, 8(s6)
-	fsw	fa5, 0(s6)
-	fdiv.s	fa5, fa3, fa4
-	fsw	fa5, 4(s6)
-	fdiv.s	fa5, fa2, fa4
-	fsw	fa5, 8(s6)
-	flw	fa5, 0(s11)
-	fsw	fa5, 0(s2)
-	flw	fa5, 4(s11)
-	fsw	fa5, 4(s2)
-	flw	fa5, 8(s11)
-	fsw	fa5, 8(s2)
-	sw	zero, 0(s3)
-	sw	zero, 4(s3)
-	sw	zero, 8(s3)
-	lui	a1, 260096
-	li	a0, 0
-	call	raytracing@plt
-	lw	a0, 0(s3)
-	call	min_caml_int_of_float@plt
-	blt	a0, s1, .LBB65_5
-# %bb.4:                                # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	li	a0, 255
-.LBB65_5:                               # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	call	min_caml_print_byte@plt
-	lw	a0, 4(s3)
-	call	min_caml_int_of_float@plt
-	blt	a0, s1, .LBB65_7
-# %bb.6:                                # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	li	a0, 255
-.LBB65_7:                               # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	call	min_caml_print_byte@plt
-	lw	a0, 8(s3)
-	call	min_caml_int_of_float@plt
-	blt	a0, s1, .LBB65_2
-# %bb.8:                                # %entry.else
-                                        #   in Loop: Header=BB65_3 Depth=1
-	li	a0, 255
-	j	.LBB65_2
-.LBB65_9:                               # %entry.endif
-	lw	ra, 60(sp)                      # 4-byte Folded Reload
-	lw	s0, 56(sp)                      # 4-byte Folded Reload
-	lw	s1, 52(sp)                      # 4-byte Folded Reload
-	lw	s2, 48(sp)                      # 4-byte Folded Reload
-	lw	s3, 44(sp)                      # 4-byte Folded Reload
-	lw	s4, 40(sp)                      # 4-byte Folded Reload
-	lw	s5, 36(sp)                      # 4-byte Folded Reload
-	lw	s6, 32(sp)                      # 4-byte Folded Reload
-	lw	s7, 28(sp)                      # 4-byte Folded Reload
-	lw	s8, 24(sp)                      # 4-byte Folded Reload
-	lw	s9, 20(sp)                      # 4-byte Folded Reload
-	lw	s10, 16(sp)                     # 4-byte Folded Reload
-	lw	s11, 12(sp)                     # 4-byte Folded Reload
-	addi	sp, sp, 64
-	ret
-.Lfunc_end65:
-	.size	scan_point, .Lfunc_end65-scan_point
-	.cfi_endproc
-                                        # -- End function
-	.globl	scan_line                       # -- Begin function scan_line
-	.p2align	2
-	.type	scan_line,@function
-scan_line:                              # @scan_line
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sw	ra, 60(sp)                      # 4-byte Folded Spill
-	sw	s0, 56(sp)                      # 4-byte Folded Spill
-	sw	s1, 52(sp)                      # 4-byte Folded Spill
-	sw	s2, 48(sp)                      # 4-byte Folded Spill
-	sw	s3, 44(sp)                      # 4-byte Folded Spill
-	sw	s4, 40(sp)                      # 4-byte Folded Spill
-	sw	s5, 36(sp)                      # 4-byte Folded Spill
-	sw	s6, 32(sp)                      # 4-byte Folded Spill
-	sw	s7, 28(sp)                      # 4-byte Folded Spill
-	sw	s8, 24(sp)                      # 4-byte Folded Spill
-	sw	s9, 20(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	.cfi_offset s1, -12
-	.cfi_offset s2, -16
-	.cfi_offset s3, -20
-	.cfi_offset s4, -24
-	.cfi_offset s5, -28
-	.cfi_offset s6, -32
-	.cfi_offset s7, -36
-	.cfi_offset s8, -40
-	.cfi_offset s9, -44
-	lui	a1, %hi(size)
-	lw	s1, %lo(size)(a1)
-	lw	a1, 0(s1)
-	bge	a0, a1, .LBB66_3
-# %bb.1:                                # %entry.if.lr.ph
-	mv	s0, a0
-	lui	a0, %hi(scan_offset)
-	lw	s2, %lo(scan_offset)(a0)
-	lui	a0, %hi(scan_d)
-	lw	s3, %lo(scan_d)(a0)
-	lui	a0, %hi(scan_sscany)
-	lw	s4, %lo(scan_sscany)(a0)
-	lui	a0, %hi(scan_met1)
-	lw	s5, %lo(scan_met1)(a0)
-	lui	a0, %hi(sin_v)
-	lw	s6, %lo(sin_v)(a0)
-	lui	a0, %hi(vp)
-	lw	s7, %lo(vp)(a0)
-	lui	a0, %hi(wscan)
-	lw	s8, %lo(wscan)(a0)
-	lui	a0, %hi(cos_v)
-	lw	s9, %lo(cos_v)(a0)
-	lui	a0, 784384
-	fmv.w.x	fa5, a0
-	fsw	fa5, 12(sp)                     # 4-byte Folded Spill
-	lui	a0, 291268
-	fmv.w.x	fa5, a0
-	fsw	fa5, 8(sp)                      # 4-byte Folded Spill
-.LBB66_2:                               # %entry.if
-                                        # =>This Inner Loop Header: Depth=1
-	flw	fa5, 0(s2)
-	flw	fa4, 12(sp)                     # 4-byte Folded Reload
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 16(sp)                     # 4-byte Folded Spill
-	mv	a0, s0
-	call	min_caml_float_of_int@plt
-	flw	fa5, 0(s3)
-	fmv.w.x	fa4, a0
-	flw	fa3, 16(sp)                     # 4-byte Folded Reload
-	fsub.s	fa4, fa3, fa4
-	fmul.s	fa5, fa4, fa5
-	fsw	fa5, 0(s4)
-	fmul.s	fa5, fa5, fa5
-	flw	fa4, 8(sp)                      # 4-byte Folded Reload
-	fadd.s	fa5, fa5, fa4
-	fsw	fa5, 0(s5)
-	flw	fa5, 0(s4)
-	flw	fa4, 0(s6)
-	flw	fa3, 4(s6)
-	flw	fa2, 0(s7)
-	fmul.s	fa5, fa5, fa4
-	fmul.s	fa4, fa5, fa3
-	fsub.s	fa4, fa4, fa2
-	fsw	fa4, 0(s8)
-	flw	fa4, 4(s9)
-	flw	fa3, 8(s7)
-	fmul.s	fa5, fa5, fa4
-	fsub.s	fa5, fa5, fa3
-	fsw	fa5, 8(s8)
-	li	a0, 0
-	call	scan_point@plt
-	lw	a0, 0(s1)
-	addi	s0, s0, 1
-	blt	s0, a0, .LBB66_2
-.LBB66_3:                               # %entry.endif
-	lw	ra, 60(sp)                      # 4-byte Folded Reload
-	lw	s0, 56(sp)                      # 4-byte Folded Reload
-	lw	s1, 52(sp)                      # 4-byte Folded Reload
-	lw	s2, 48(sp)                      # 4-byte Folded Reload
-	lw	s3, 44(sp)                      # 4-byte Folded Reload
-	lw	s4, 40(sp)                      # 4-byte Folded Reload
-	lw	s5, 36(sp)                      # 4-byte Folded Reload
-	lw	s6, 32(sp)                      # 4-byte Folded Reload
-	lw	s7, 28(sp)                      # 4-byte Folded Reload
-	lw	s8, 24(sp)                      # 4-byte Folded Reload
-	lw	s9, 20(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 64
-	ret
-.Lfunc_end66:
-	.size	scan_line, .Lfunc_end66-scan_line
-	.cfi_endproc
-                                        # -- End function
-	.globl	scan_start                      # -- Begin function scan_start
-	.p2align	2
-	.type	scan_start,@function
-scan_start:                             # @scan_start
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	.cfi_offset s0, -8
-	li	a0, 80
-	call	min_caml_print_byte@plt
-	li	a0, 54
-	call	min_caml_print_byte@plt
-	li	a0, 10
-	call	min_caml_print_byte@plt
-	lui	a0, %hi(size)
-	lw	s0, %lo(size)(a0)
-	lw	a0, 0(s0)
-	call	min_caml_print_int@plt
-	li	a0, 32
-	call	min_caml_print_byte@plt
-	lw	a0, 4(s0)
-	call	min_caml_print_int@plt
-	li	a0, 10
-	call	min_caml_print_byte@plt
-	li	a0, 255
-	call	min_caml_print_int@plt
-	li	a0, 10
-	call	min_caml_print_byte@plt
-	lw	a0, 0(s0)
-	call	min_caml_float_of_int@plt
-	fmv.w.x	fa5, a0
-	lui	a0, %hi(scan_d)
-	lw	a0, %lo(scan_d)(a0)
-	lui	a1, 274432
-	fmv.w.x	fa4, a1
-	fdiv.s	fa4, fa4, fa5
-	fsw	fa4, 0(a0)
-	lui	a0, %hi(scan_offset)
-	lw	a0, %lo(scan_offset)(a0)
-	lui	a1, 258048
-	fmv.w.x	fa4, a1
-	fmul.s	fa5, fa5, fa4
-	fsw	fa5, 0(a0)
-	li	a0, 0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	scan_line@plt
-.Lfunc_end67:
-	.size	scan_start, .Lfunc_end67-scan_start
-	.cfi_endproc
-                                        # -- End function
-	.globl	rt                              # -- Begin function rt
-	.p2align	2
-	.type	rt,@function
-rt:                                     # @rt
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	.cfi_offset ra, -4
-	lui	a3, %hi(size)
-	lw	a3, %lo(size)(a3)
-	lui	a4, %hi(dbg)
-	lw	a4, %lo(dbg)(a4)
-	sw	a0, 0(a3)
-	sw	a1, 4(a3)
-	sw	a2, 0(a4)
-	call	read_parameter@plt
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
-	tail	scan_start@plt
-.Lfunc_end68:
-	.size	rt, .Lfunc_end68-rt
-	.cfi_endproc
-                                        # -- End function
+	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
 	.section	".note.GNU-stack","",@progbits
-	.addrsig
-
-# -----------------------------------------------
-	.globl	calloc                             # -- Begin function calloc
-	.p2align	1
-	.type	calloc,@function
-calloc:                                    # @calloc
-# %bb.0:                                # %entry
-	slli a1, a0, 2 # a0 = a0 * 4
-    mv a0, tp
-    add tp, tp, a1
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end100:
-	.size	calloc, .Myfunc_end100-calloc
-                                        # -- End function
-# -----------------------------------------------
 
 # -----------------------------------------------
 	.globl	putchar                             # -- Begin function putchar
@@ -4792,1584 +22366,35 @@ putchar:                                    # @putchar
 	out a0 # out a0
 # %bb.1:                                # %entry.endif
 	ret
-.LLvLfunc_end101:
-	.size	putchar, .LLvLfunc_end101-putchar
+.LLLfunc_end101:
+	.size	putchar, .LLLfunc_end101-putchar
                                         # -- End function
 # -----------------------------------------------
 
 # -----------------------------------------------
-	.globl	sqrtf                             # -- Begin function sqrtf
+	.globl	read_float                             # -- Begin function read_float
 	.p2align	1
-	.type	sqrtf,@function
-sqrtf:                                    # @sqrtf
+	.type	read_float,@function
+read_float:                                    # @read_float
 # %bb.0:                                # %entry
-	fmv.w.x	fa5, a0
-    fsqrt.s	fa5, fa5
-    fmv.x.w	a0, fa5
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end107:
-	.size	sqrtf, .Myfunc_end107-sqrtf
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	scanf_float                             # -- Begin function scanf_float
-	.p2align	1
-	.type	scanf_float,@function
-scanf_float:                                    # @scanf_float
-# %bb.0:                                # %entry
-	cin.float fa5 # Cin_float fa5
-    fsw fa5, 0(a1)
+	cin.float fa0 # Cin_float fa5
 # %bb.1:                                # %entry.endif
 	ret
 .Myfunc_end108:
-	.size	scanf_float, .Myfunc_end108-scanf_float
+	.size	read_float, .Myfunc_end108-read_float
                                         # -- End function
 # -----------------------------------------------
 
 # -----------------------------------------------
-	.globl	scanf_int                             # -- Begin function scanf_int
+	.globl	read_int                             # -- Begin function read_int
 	.p2align	1
-	.type	scanf_int,@function
-scanf_int:                                    # @scanf_int
+	.type	read_int,@function
+read_int:                                    # @read_int
 # %bb.0:                                # %entry
 	cin.int a0 # Cin_int a0
-    sw a0, 0(a1)
 # %bb.1:                                # %entry.endif
 	ret
 .Myfunc_end109:
-	.size	scanf_int, .Myfunc_end109-scanf_int
+	.size	read_int, .Myfunc_end109-read_int
                                         # -- End function
 # -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	memcpy                             # -- Begin function memcpy
-	.p2align	1
-	.type	memcpy,@function
-memcpy:
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        sw      a1,-40(s0)
-        sw      a2,-44(s0)
-        lw      a5,-40(s0)
-        sw      a5,-20(s0)
-        lw      a5,-36(s0)
-        sw      a5,-24(s0)
-        j       .L2
-.L3:
-        lw      a4,-20(s0)
-        addi    a5,a4,4
-        sw      a5,-20(s0)
-        lw      a5,-24(s0)
-        addi    a3,a5,4
-        sw      a3,-24(s0)
-        lw      a4,0(a4)
-        sw      a4,0(a5)
-        lw      a5,-44(s0)
-        addi    a5,a5,-4
-        sw      a5,-44(s0)
-.L2:
-        lw      a5,-44(s0)
-        bne     a5,zero,.L3
-        lw      a5,-40(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end110:
-	.size	memcpy, .Myfunc_end110-memcpy
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	__mulsi3                             # -- Begin function __mulsi3
-	.p2align	1
-	.type	__mulsi3,@function
-__mulsi3:                                    # @__mulsi3
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        sw      a1,-40(s0)
-        sw      zero,-20(s0)
-        sw      zero,-24(s0)
-        j       .L4
-.L6:
-        lw      a5,-24(s0)
-        lw      a4,-40(s0)
-        sra     a5,a4,a5
-        andi    a5,a5,1
-        beq     a5,zero,.L5
-        lw      a5,-24(s0)
-        lw      a4,-36(s0)
-        sll     a5,a4,a5
-        lw      a4,-20(s0)
-        add     a5,a4,a5
-        sw      a5,-20(s0)
-.L5:
-        lw      a5,-24(s0)
-        addi    a5,a5,1
-        sw      a5,-24(s0)
-.L4:
-        lw      a4,-24(s0)
-        li      a5,12
-        ble     a4,a5,.L6
-        lw      a5,-20(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end99:
-	.size	__mulsi3, .Myfunc_end99-__mulsi3
-                                        # -- End function
-# -----------------------------------------------
-
-# -----------------------------------------------
-	.globl	__udivsi3                             # -- Begin function __udivsi3
-	.p2align	1
-	.type	__udivsi3,@function
-__udivsi3:                                    # @__udivsi3
-        addi    sp,sp,-48
-        sw      ra,44(sp)
-        sw      s0,40(sp)
-        addi    s0,sp,48
-        sw      a0,-36(s0)
-        lw      a5,-36(s0)
-        srai    a4,a5,3
-        lw      a5,-36(s0)
-        add     a5,a4,a5
-        srai    a4,a5,1
-        lw      a5,-36(s0)
-        add     a5,a4,a5
-        srai    a5,a5,4
-        sw      a5,-20(s0)
-.L19:
-        lw      a5,-20(s0)
-        slli    a4,a5,2
-        lw      a5,-20(s0)
-        add     a5,a4,a5
-        slli    a5,a5,1
-        lw      a4,-36(s0)
-        sub     a5,a4,a5
-        addi    a5,a5,1
-        sw      a5,-24(s0)
-        lw      a5,-24(s0)
-        srai    a4,a5,3
-        lw      a5,-24(s0)
-        add     a5,a4,a5
-        srai    a4,a5,1
-        lw      a5,-24(s0)
-        add     a5,a4,a5
-        srai    a5,a5,4
-        lw      a4,-20(s0)
-        add     a5,a4,a5
-        sw      a5,-20(s0)
-        lw      a4,-24(s0)
-        li      a5,10
-        bgt     a4,a5,.L19
-        lw      a5,-20(s0)
-        mv      a0,a5
-        lw      ra,44(sp)
-        lw      s0,40(sp)
-        addi    sp,sp,48
-        jr      ra
-# %bb.1:                                # %entry.endif
-	ret
-.Myfunc_end97:
-	.size	__udivsi3, .Myfunc_end97-__udivsi3
-                                        # -- End function
-# -----------------------------------------------
-
-	.text
-	.attribute	4, 16
-	.attribute	5, "rv32i2p1_f2p2_zicsr2p0"
-	.file	"lib.c"
-	.globl	init                            # -- Begin function init
-	.p2align	2
-	.type	init,@function
-init:                                   # @init
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	sw	s2, 0(sp)                       # 4-byte Folded Spill
-	li	a0, 50
-	li	a1, 4
-	li	s1, 4
-	call	calloc
-	mv	s0, a0
-	lui	s2, %hi(and_net)
-	sw	a0, %lo(and_net)(s2)
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	sw	a0, 0(s0)
-	lui	a1, 784384
-	sw	a1, 0(a0)
-	li	a0, 200
-.LBB0_1:                                # =>This Inner Loop Header: Depth=1
-	lw	a1, %lo(and_net)(s2)
-	lw	a2, 0(a1)
-	add	a1, a1, s1
-	addi	s1, s1, 4
-	sw	a2, 0(a1)
-	bne	s1, a0, .LBB0_1
-# %bb.2:
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	mv	s0, a0
-	lui	a0, %hi(or_net)
-	sw	s0, %lo(or_net)(a0)
-	li	a0, 1
-	li	a1, 4
-	call	calloc
-	lui	a1, %hi(and_net)
-	lw	a1, %lo(and_net)(a1)
-	sw	a0, 0(s0)
-	lw	a1, 0(a1)
-	sw	a1, 0(a0)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	lw	s2, 0(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end0:
-	.size	init, .vLfunc_end0-init
-                                        # -- End function
-	.globl	min_caml_not                    # -- Begin function min_caml_not
-	.p2align	2
-	.type	min_caml_not,@function
-min_caml_not:                           # @min_caml_not
-# %bb.0:
-	seqz	a0, a0
-	ret
-.vLfunc_end1:
-	.size	min_caml_not, .vLfunc_end1-min_caml_not
-                                        # -- End function
-	.globl	min_caml_print_byte             # -- Begin function min_caml_print_byte
-	.p2align	2
-	.type	min_caml_print_byte,@function
-min_caml_print_byte:                    # @min_caml_print_byte
-# %bb.0:
-	tail	putchar
-.vLfunc_end2:
-	.size	min_caml_print_byte, .vLfunc_end2-min_caml_print_byte
-                                        # -- End function
-	.globl	min_caml_print_int              # -- Begin function min_caml_print_int
-	.p2align	2
-	.type	min_caml_print_int,@function
-min_caml_print_int:                     # @min_caml_print_int
-# %bb.0:
-	beqz	a0, .LBB3_8
-# %bb.1:
-	addi	sp, sp, -80
-	sw	ra, 76(sp)                      # 4-byte Folded Spill
-	sw	s0, 72(sp)                      # 4-byte Folded Spill
-	sw	s1, 68(sp)                      # 4-byte Folded Spill
-	sw	s2, 64(sp)                      # 4-byte Folded Spill
-	sw	s3, 60(sp)                      # 4-byte Folded Spill
-	sw	s4, 56(sp)                      # 4-byte Folded Spill
-	sw	s5, 52(sp)                      # 4-byte Folded Spill
-	mv	s0, a0
-	bgez	a0, .LBB3_3
-# %bb.2:
-	li	a0, 45
-	call	putchar
-	neg	s0, s0
-.LBB3_3:
-	li	s2, 1
-	mv	s3, sp
-	li	s4, 9
-.LBB3_4:                                # =>This Inner Loop Header: Depth=1
-	mv	s1, s0
-	mv	s5, s3
-	li	a1, 10
-	mv	a0, s0
-	call	__udivsi3@plt
-	mv	s0, a0
-	li	a1, 10
-	call	__mulsi3@plt
-	sub	a0, s1, a0
-	ori	a0, a0, 48
-	addi	s3, s3, 4
-	sw	a0, 4(s5)
-	addi	s2, s2, 1
-	bltu	s4, s1, .LBB3_4
-# %bb.5:
-	li	s0, 1
-.LBB3_6:                                # =>This Inner Loop Header: Depth=1
-	lw	a0, 0(s3)
-	call	putchar
-	addi	s2, s2, -1
-	addi	s3, s3, -4
-	bltu	s0, s2, .LBB3_6
-# %bb.7:
-	lw	ra, 76(sp)                      # 4-byte Folded Reload
-	lw	s0, 72(sp)                      # 4-byte Folded Reload
-	lw	s1, 68(sp)                      # 4-byte Folded Reload
-	lw	s2, 64(sp)                      # 4-byte Folded Reload
-	lw	s3, 60(sp)                      # 4-byte Folded Reload
-	lw	s4, 56(sp)                      # 4-byte Folded Reload
-	lw	s5, 52(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 80
-	ret
-.LBB3_8:
-	li	a0, 48
-	tail	putchar
-.vLfunc_end3:
-	.size	min_caml_print_int, .vLfunc_end3-min_caml_print_int
-                                        # -- End function
-	.globl	min_caml_read_int               # -- Begin function min_caml_read_int
-	.p2align	2
-	.type	min_caml_read_int,@function
-min_caml_read_int:                      # @min_caml_read_int
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(.L.str)
-	addi	a0, a0, %lo(.L.str)
-	addi	a1, sp, 8
-	call	scanf_int
-	lw	a0, 8(sp)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end4:
-	.size	min_caml_read_int, .vLfunc_end4-min_caml_read_int
-                                        # -- End function
-	.globl	min_caml_float_of_int           # -- Begin function min_caml_float_of_int
-	.p2align	2
-	.type	min_caml_float_of_int,@function
-min_caml_float_of_int:                  # @min_caml_float_of_int
-# %bb.0:
-	fcvt.s.w	fa5, a0
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end5:
-	.size	min_caml_float_of_int, .vLfunc_end5-min_caml_float_of_int
-                                        # -- End function
-	.globl	min_caml_abs_float              # -- Begin function min_caml_abs_float
-	.p2align	2
-	.type	min_caml_abs_float,@function
-min_caml_abs_float:                     # @min_caml_abs_float
-# %bb.0:
-	slli	a0, a0, 1
-	srli	a0, a0, 1
-	ret
-.vLfunc_end6:
-	.size	min_caml_abs_float, .vLfunc_end6-min_caml_abs_float
-                                        # -- End function
-	.globl	min_caml_int_of_float           # -- Begin function min_caml_int_of_float
-	.p2align	2
-	.type	min_caml_int_of_float,@function
-min_caml_int_of_float:                  # @min_caml_int_of_float
-# %bb.0:
-	fmv.w.x	fa5, a0
-	fcvt.w.s	a0, fa5, rtz
-	ret
-.vLfunc_end7:
-	.size	min_caml_int_of_float, .vLfunc_end7-min_caml_int_of_float
-                                        # -- End function
-	.globl	min_caml_create_array_int_array # -- Begin function min_caml_create_array_int_array
-	.p2align	2
-	.type	min_caml_create_array_int_array,@function
-min_caml_create_array_int_array:        # @min_caml_create_array_int_array
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	mv	s0, a1
-	mv	s1, a0
-	li	a1, 4
-	call	calloc
-	blez	s1, .LBB8_3
-# %bb.1:
-	mv	a1, a0
-.LBB8_2:                                # =>This Inner Loop Header: Depth=1
-	sw	s0, 0(a1)
-	addi	s1, s1, -1
-	addi	a1, a1, 4
-	bnez	s1, .LBB8_2
-.LBB8_3:
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end8:
-	.size	min_caml_create_array_int_array, .vLfunc_end8-min_caml_create_array_int_array
-                                        # -- End function
-	.globl	min_caml_create_array_int       # -- Begin function min_caml_create_array_int
-	.p2align	2
-	.type	min_caml_create_array_int,@function
-min_caml_create_array_int:              # @min_caml_create_array_int
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	mv	s0, a1
-	mv	s1, a0
-	li	a1, 4
-	call	calloc
-	blez	s1, .LBB9_3
-# %bb.1:
-	mv	a1, a0
-.LBB9_2:                                # =>This Inner Loop Header: Depth=1
-	sw	s0, 0(a1)
-	addi	s1, s1, -1
-	addi	a1, a1, 4
-	bnez	s1, .LBB9_2
-.LBB9_3:
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end9:
-	.size	min_caml_create_array_int, .vLfunc_end9-min_caml_create_array_int
-                                        # -- End function
-	.globl	min_caml_create_array_float     # -- Begin function min_caml_create_array_float
-	.p2align	2
-	.type	min_caml_create_array_float,@function
-min_caml_create_array_float:            # @min_caml_create_array_float
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	sw	s1, 4(sp)                       # 4-byte Folded Spill
-	mv	s1, a1
-	mv	s0, a0
-	li	a1, 4
-	call	calloc
-	blez	s0, .LBB10_3
-# %bb.1:
-	fmv.w.x	fa5, s1
-	mv	a1, a0
-.LBB10_2:                               # =>This Inner Loop Header: Depth=1
-	fsw	fa5, 0(a1)
-	addi	s0, s0, -1
-	addi	a1, a1, 4
-	bnez	s0, .LBB10_2
-.LBB10_3:
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	lw	s1, 4(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end10:
-	.size	min_caml_create_array_float, .vLfunc_end10-min_caml_create_array_float
-                                        # -- End function
-	.globl	min_caml_read_float             # -- Begin function min_caml_read_float
-	.p2align	2
-	.type	min_caml_read_float,@function
-min_caml_read_float:                    # @min_caml_read_float
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	lui	a0, %hi(.L.str.32)
-	addi	a0, a0, %lo(.L.str.32)
-	addi	a1, sp, 8
-	call	scanf_float
-	lw	a0, 8(sp)
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end11:
-	.size	min_caml_read_float, .vLfunc_end11-min_caml_read_float
-                                        # -- End function
-	.globl	min_caml_print_newline          # -- Begin function min_caml_print_newline
-	.p2align	2
-	.type	min_caml_print_newline,@function
-min_caml_print_newline:                 # @min_caml_print_newline
-# %bb.0:
-	li	a0, 10
-	tail	putchar
-.vLfunc_end12:
-	.size	min_caml_print_newline, .vLfunc_end12-min_caml_print_newline
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function sin2
-.LCPI13_0:
-	.word	0xbe2aaaab                      # float -0.166666672
-.LCPI13_1:
-	.word	0xbd4ccccd                      # float -0.0500000007
-.LCPI13_2:
-	.word	0xbcc30c31                      # float -0.0238095243
-.LCPI13_3:
-	.word	0xbc638e39                      # float -0.013888889
-	.text
-	.globl	sin2
-	.p2align	2
-	.type	sin2,@function
-sin2:                                   # @sin2
-# %bb.0:
-	fmv.w.x	fa5, a0
-	fmul.s	fa4, fa5, fa5
-	fmv.w.x	fa3, zero
-	lui	a0, %hi(.LCPI13_0)
-	flw	fa2, %lo(.LCPI13_0)(a0)
-	fadd.s	fa3, fa5, fa3
-	lui	a0, %hi(.LCPI13_1)
-	flw	fa1, %lo(.LCPI13_1)(a0)
-	fmul.s	fa2, fa4, fa2
-	fmul.s	fa5, fa2, fa5
-	fadd.s	fa3, fa3, fa5
-	fmul.s	fa2, fa4, fa1
-	fmul.s	fa5, fa5, fa2
-	lui	a0, %hi(.LCPI13_2)
-	flw	fa2, %lo(.LCPI13_2)(a0)
-	fadd.s	fa3, fa3, fa5
-	lui	a0, %hi(.LCPI13_3)
-	flw	fa1, %lo(.LCPI13_3)(a0)
-	fmul.s	fa2, fa4, fa2
-	fmul.s	fa5, fa5, fa2
-	fadd.s	fa3, fa3, fa5
-	fmul.s	fa4, fa4, fa1
-	fmul.s	fa5, fa5, fa4
-	fadd.s	fa5, fa3, fa5
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end13:
-	.size	sin2, .vLfunc_end13-sin2
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function cos2
-.LCPI14_0:
-	.word	0xbdaaaaab                      # float -0.0833333358
-.LCPI14_1:
-	.word	0xbd088889                      # float -0.0333333351
-.LCPI14_2:
-	.word	0xbc924925                      # float -0.0178571437
-	.text
-	.globl	cos2
-	.p2align	2
-	.type	cos2,@function
-cos2:                                   # @cos2
-# %bb.0:
-	fmv.w.x	fa5, a0
-	fmul.s	fa5, fa5, fa5
-	lui	a0, 782336
-	fmv.w.x	fa4, a0
-	fmul.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI14_0)
-	flw	fa3, %lo(.LCPI14_0)(a0)
-	lui	a0, 260096
-	fmv.w.x	fa2, a0
-	fadd.s	fa2, fa4, fa2
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa4, fa3
-	lui	a0, %hi(.LCPI14_1)
-	flw	fa3, %lo(.LCPI14_1)(a0)
-	fadd.s	fa2, fa2, fa4
-	lui	a0, %hi(.LCPI14_2)
-	flw	fa1, %lo(.LCPI14_2)(a0)
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa4, fa3
-	fadd.s	fa3, fa2, fa4
-	fmul.s	fa5, fa5, fa1
-	fmul.s	fa5, fa4, fa5
-	fadd.s	fa5, fa3, fa5
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end14:
-	.size	cos2, .vLfunc_end14-cos2
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function min_caml_sin
-.LCPI15_0:
-	.word	0x40c90fdb                      # float 6.28318548
-.LCPI15_1:
-	.word	0xc0c90fdb                      # float -6.28318548
-.LCPI15_2:
-	.word	0x3f490fdb                      # float 0.785398185
-.LCPI15_3:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI15_4:
-	.word	0x40490fdb                      # float 3.14159274
-.LCPI15_5:
-	.word	0x4096cbe4                      # float 4.71238899
-.LCPI15_6:
-	.word	0xc096cbe4                      # float -4.71238899
-.LCPI15_7:
-	.word	0xbdaaaaab                      # float -0.0833333358
-.LCPI15_8:
-	.word	0xbd088889                      # float -0.0333333351
-.LCPI15_9:
-	.word	0xbc924925                      # float -0.0178571437
-.LCPI15_10:
-	.word	0xbfc90fdb                      # float -1.57079637
-.LCPI15_11:
-	.word	0xbe2aaaab                      # float -0.166666672
-.LCPI15_12:
-	.word	0xbd4ccccd                      # float -0.0500000007
-.LCPI15_13:
-	.word	0xbcc30c31                      # float -0.0238095243
-.LCPI15_14:
-	.word	0xbc638e39                      # float -0.013888889
-	.text
-	.globl	min_caml_sin
-	.p2align	2
-	.type	min_caml_sin,@function
-min_caml_sin:                           # @min_caml_sin
-# %bb.0:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	fmv.w.x	fa5, a0
-	fmv.w.x	fa4, zero
-	fle.s	a0, fa4, fa5
-	bnez	a0, .LBB15_2
-# %bb.1:
-	fmv.x.w	a0, fa5
-	lui	s0, 524288
-	xor	a0, a0, s0
-	call	min_caml_sin
-	xor	a0, a0, s0
-	fmv.w.x	fa5, a0
-	j	.LBB15_16
-.LBB15_2:
-	lui	a0, %hi(.LCPI15_0)
-	flw	fa3, %lo(.LCPI15_0)(a0)
-	flt.s	a0, fa3, fa5
-	beqz	a0, .LBB15_5
-# %bb.3:
-	lui	a0, %hi(.LCPI15_1)
-	flw	fa2, %lo(.LCPI15_1)(a0)
-.LBB15_4:                               # =>This Inner Loop Header: Depth=1
-	fadd.s	fa5, fa5, fa2
-	flt.s	a0, fa3, fa5
-	bnez	a0, .LBB15_4
-.LBB15_5:
-	lui	a0, %hi(.LCPI15_2)
-	flw	fa3, %lo(.LCPI15_2)(a0)
-	flt.s	a0, fa5, fa3
-	beqz	a0, .LBB15_7
-# %bb.6:
-	fmul.s	fa3, fa5, fa5
-	lui	a0, %hi(.LCPI15_11)
-	flw	fa2, %lo(.LCPI15_11)(a0)
-	fadd.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI15_12)
-	flw	fa1, %lo(.LCPI15_12)(a0)
-	fmul.s	fa2, fa3, fa2
-	fmul.s	fa5, fa5, fa2
-	fadd.s	fa4, fa4, fa5
-	fmul.s	fa2, fa3, fa1
-	fmul.s	fa5, fa2, fa5
-	lui	a0, %hi(.LCPI15_13)
-	flw	fa2, %lo(.LCPI15_13)(a0)
-	fadd.s	fa4, fa4, fa5
-	lui	a0, %hi(.LCPI15_14)
-	flw	fa1, %lo(.LCPI15_14)(a0)
-	fmul.s	fa2, fa3, fa2
-	fmul.s	fa5, fa2, fa5
-	fadd.s	fa4, fa4, fa5
-	fmul.s	fa3, fa3, fa1
-	fmul.s	fa5, fa3, fa5
-	fadd.s	fa5, fa4, fa5
-	j	.LBB15_16
-.LBB15_7:
-	lui	a0, %hi(.LCPI15_3)
-	flw	fa4, %lo(.LCPI15_3)(a0)
-	flt.s	a0, fa5, fa4
-	beqz	a0, .LBB15_9
-# %bb.8:
-	fsub.s	fa5, fa4, fa5
-	j	.LBB15_11
-.LBB15_9:
-	lui	a0, %hi(.LCPI15_4)
-	flw	fa4, %lo(.LCPI15_4)(a0)
-	flt.s	a0, fa5, fa4
-	beqz	a0, .LBB15_12
-# %bb.10:
-	lui	a0, %hi(.LCPI15_10)
-	flw	fa4, %lo(.LCPI15_10)(a0)
-	fadd.s	fa5, fa5, fa4
-.LBB15_11:
-	fmul.s	fa5, fa5, fa5
-	lui	a0, 782336
-	fmv.w.x	fa4, a0
-	fmul.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI15_7)
-	flw	fa3, %lo(.LCPI15_7)(a0)
-	lui	a0, 260096
-	fmv.w.x	fa2, a0
-	fadd.s	fa2, fa4, fa2
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa4, fa3
-	lui	a0, %hi(.LCPI15_8)
-	flw	fa3, %lo(.LCPI15_8)(a0)
-	fadd.s	fa2, fa2, fa4
-	lui	a0, %hi(.LCPI15_9)
-	flw	fa1, %lo(.LCPI15_9)(a0)
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa3, fa4
-	fadd.s	fa3, fa2, fa4
-	fmul.s	fa5, fa5, fa1
-	fmul.s	fa5, fa5, fa4
-	fadd.s	fa5, fa3, fa5
-	j	.LBB15_16
-.LBB15_12:
-	lui	a0, %hi(.LCPI15_5)
-	flw	fa4, %lo(.LCPI15_5)(a0)
-	flt.s	a0, fa5, fa4
-	beqz	a0, .LBB15_14
-# %bb.13:
-	fsub.s	fa5, fa4, fa5
-	j	.LBB15_15
-.LBB15_14:
-	lui	a0, %hi(.LCPI15_6)
-	flw	fa4, %lo(.LCPI15_6)(a0)
-	fadd.s	fa5, fa5, fa4
-.LBB15_15:
-	fmul.s	fa5, fa5, fa5
-	lui	a0, 782336
-	fmv.w.x	fa4, a0
-	fmul.s	fa4, fa5, fa4
-	lui	a0, %hi(.LCPI15_7)
-	flw	fa3, %lo(.LCPI15_7)(a0)
-	lui	a0, 260096
-	fmv.w.x	fa2, a0
-	fadd.s	fa2, fa4, fa2
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa4, fa3
-	lui	a0, %hi(.LCPI15_8)
-	flw	fa3, %lo(.LCPI15_8)(a0)
-	fadd.s	fa2, fa2, fa4
-	lui	a0, %hi(.LCPI15_9)
-	flw	fa1, %lo(.LCPI15_9)(a0)
-	fmul.s	fa3, fa5, fa3
-	fmul.s	fa4, fa3, fa4
-	fadd.s	fa3, fa2, fa4
-	fmul.s	fa5, fa5, fa1
-	fmul.s	fa5, fa5, fa4
-	fadd.s	fa5, fa3, fa5
-	fneg.s	fa5, fa5
-.LBB15_16:
-	fmv.x.w	a0, fa5
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	ret
-.vLfunc_end15:
-	.size	min_caml_sin, .vLfunc_end15-min_caml_sin
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function min_caml_cos
-.LCPI16_0:
-	.word	0x3fc90fdb                      # float 1.57079637
-	.text
-	.globl	min_caml_cos
-	.p2align	2
-	.type	min_caml_cos,@function
-min_caml_cos:                           # @min_caml_cos
-# %bb.0:
-	lui	a1, %hi(.LCPI16_0)
-	flw	fa5, %lo(.LCPI16_0)(a1)
-	fmv.w.x	fa4, a0
-	fadd.s	fa5, fa4, fa5
-	fmv.x.w	a0, fa5
-	tail	min_caml_sin
-.vLfunc_end16:
-	.size	min_caml_cos, .vLfunc_end16-min_caml_cos
-                                        # -- End function
-	.globl	min_caml_sqrt                   # -- Begin function min_caml_sqrt
-	.p2align	2
-	.type	min_caml_sqrt,@function
-min_caml_sqrt:                          # @min_caml_sqrt
-# %bb.0:
-	fmv.w.x	fa5, a0
-	fsqrt.s	fa4, fa5
-	feq.s	a0, fa4, fa4
-	beqz	a0, .LBB17_2
-# %bb.1:
-	fmv.x.w	a0, fa4
-	ret
-.LBB17_2:
-	fmv.x.w	a0, fa5
-	tail	sqrtf
-.vLfunc_end17:
-	.size	min_caml_sqrt, .vLfunc_end17-min_caml_sqrt
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function arctan2
-.LCPI18_0:
-	.word	0xbeaaaaab                      # float -0.333333343
-.LCPI18_1:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI18_2:
-	.word	0xbe124925                      # float -0.142857149
-.LCPI18_3:
-	.word	0x3de38e39                      # float 0.111111112
-.LCPI18_4:
-	.word	0xbdba2e8c                      # float -0.0909090936
-.LCPI18_5:
-	.word	0x3d9d89d9                      # float 0.0769230798
-.LCPI18_6:
-	.word	0xbd888889                      # float -0.0666666701
-.LCPI18_7:
-	.word	0x3d70f0f1                      # float 0.0588235296
-.LCPI18_8:
-	.word	0xbd579436                      # float -0.0526315793
-	.text
-	.globl	arctan2
-	.p2align	2
-	.type	arctan2,@function
-arctan2:                                # @arctan2
-# %bb.0:
-	fmv.w.x	fa5, a0
-	fmul.s	fa4, fa5, fa5
-	lui	a0, %hi(.LCPI18_0)
-	flw	fa3, %lo(.LCPI18_0)(a0)
-	fmv.w.x	fa2, zero
-	fadd.s	fa2, fa5, fa2
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa3, fa2
-	lui	a0, %hi(.LCPI18_1)
-	flw	fa2, %lo(.LCPI18_1)(a0)
-	lui	a0, %hi(.LCPI18_2)
-	flw	fa1, %lo(.LCPI18_2)(a0)
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa2, fa3
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa1, fa3
-	lui	a0, %hi(.LCPI18_3)
-	flw	fa2, %lo(.LCPI18_3)(a0)
-	lui	a0, %hi(.LCPI18_4)
-	flw	fa1, %lo(.LCPI18_4)(a0)
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa2, fa3
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa1, fa3
-	lui	a0, %hi(.LCPI18_5)
-	flw	fa2, %lo(.LCPI18_5)(a0)
-	lui	a0, %hi(.LCPI18_6)
-	flw	fa1, %lo(.LCPI18_6)(a0)
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa2, fa3
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa1, fa3
-	lui	a0, %hi(.LCPI18_7)
-	flw	fa2, %lo(.LCPI18_7)(a0)
-	lui	a0, %hi(.LCPI18_8)
-	flw	fa1, %lo(.LCPI18_8)(a0)
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa3, fa5, fa2, fa3
-	fmul.s	fa5, fa4, fa5
-	fmadd.s	fa5, fa5, fa1, fa3
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end18:
-	.size	arctan2, .vLfunc_end18-arctan2
-                                        # -- End function
-	.section	.sdata,"aw",@progbits
-	.p2align	2, 0x0                          # -- Begin function min_caml_atan
-.LCPI19_0:
-	.word	0x3ed413cd                      # float 0.414213568
-.LCPI19_1:
-	.word	0x401a827a                      # float 2.41421366
-.LCPI19_2:
-	.word	0xbeaaaaab                      # float -0.333333343
-.LCPI19_3:
-	.word	0x3e4ccccd                      # float 0.200000003
-.LCPI19_4:
-	.word	0xbe124925                      # float -0.142857149
-.LCPI19_5:
-	.word	0x3de38e39                      # float 0.111111112
-.LCPI19_6:
-	.word	0xbdba2e8c                      # float -0.0909090936
-.LCPI19_7:
-	.word	0x3d9d89d9                      # float 0.0769230798
-.LCPI19_8:
-	.word	0xbd888889                      # float -0.0666666701
-.LCPI19_9:
-	.word	0x3d70f0f1                      # float 0.0588235296
-.LCPI19_10:
-	.word	0xbd579436                      # float -0.0526315793
-.LCPI19_11:
-	.word	0x3fc90fdb                      # float 1.57079637
-.LCPI19_12:
-	.word	0x3f490fdb                      # float 0.785398185
-	.text
-	.globl	min_caml_atan
-	.p2align	2
-	.type	min_caml_atan,@function
-min_caml_atan:                          # @min_caml_atan
-# %bb.0:
-	fmv.w.x	fa4, a0
-	fmv.w.x	fa5, zero
-	fle.s	a0, fa5, fa4
-	bnez	a0, .LBB19_2
-# %bb.1:
-	addi	sp, sp, -16
-	sw	ra, 12(sp)                      # 4-byte Folded Spill
-	sw	s0, 8(sp)                       # 4-byte Folded Spill
-	fmv.x.w	a0, fa4
-	lui	s0, 524288
-	xor	a0, a0, s0
-	call	min_caml_atan
-	xor	a0, a0, s0
-	fmv.w.x	fa5, a0
-	lw	ra, 12(sp)                      # 4-byte Folded Reload
-	lw	s0, 8(sp)                       # 4-byte Folded Reload
-	addi	sp, sp, 16
-	fmv.x.w	a0, fa5
-	ret
-.LBB19_2:
-	lui	a0, %hi(.LCPI19_0)
-	flw	fa3, %lo(.LCPI19_0)(a0)
-	flt.s	a0, fa4, fa3
-	beqz	a0, .LBB19_4
-# %bb.3:
-	lui	a0, %hi(.LCPI19_2)
-	flw	fa3, %lo(.LCPI19_2)(a0)
-	fmul.s	fa2, fa4, fa4
-	fadd.s	fa5, fa4, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	lui	a0, %hi(.LCPI19_3)
-	flw	fa3, %lo(.LCPI19_3)(a0)
-	lui	a0, %hi(.LCPI19_4)
-	flw	fa1, %lo(.LCPI19_4)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_5)
-	flw	fa3, %lo(.LCPI19_5)(a0)
-	lui	a0, %hi(.LCPI19_6)
-	flw	fa1, %lo(.LCPI19_6)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_7)
-	flw	fa3, %lo(.LCPI19_7)(a0)
-	lui	a0, %hi(.LCPI19_8)
-	flw	fa1, %lo(.LCPI19_8)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_9)
-	flw	fa3, %lo(.LCPI19_9)(a0)
-	lui	a0, %hi(.LCPI19_10)
-	flw	fa1, %lo(.LCPI19_10)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	fmv.x.w	a0, fa5
-	ret
-.LBB19_4:
-	lui	a0, 260096
-	fmv.w.x	fa3, a0
-	flt.s	a0, fa4, fa3
-	beqz	a0, .LBB19_6
-# %bb.5:
-	lui	a0, 784384
-	fmv.w.x	fa2, a0
-	fadd.s	fa2, fa4, fa2
-	fadd.s	fa4, fa4, fa3
-	fdiv.s	fa4, fa2, fa4
-	lui	a0, %hi(.LCPI19_2)
-	flw	fa3, %lo(.LCPI19_2)(a0)
-	fmul.s	fa2, fa4, fa4
-	fadd.s	fa5, fa4, fa5
-	fmul.s	fa4, fa4, fa2
-	fmadd.s	fa5, fa4, fa3, fa5
-	lui	a0, %hi(.LCPI19_3)
-	flw	fa3, %lo(.LCPI19_3)(a0)
-	lui	a0, %hi(.LCPI19_4)
-	flw	fa1, %lo(.LCPI19_4)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_5)
-	flw	fa3, %lo(.LCPI19_5)(a0)
-	lui	a0, %hi(.LCPI19_6)
-	flw	fa1, %lo(.LCPI19_6)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_7)
-	flw	fa3, %lo(.LCPI19_7)(a0)
-	lui	a0, %hi(.LCPI19_8)
-	flw	fa1, %lo(.LCPI19_8)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	fmul.s	fa4, fa2, fa4
-	lui	a0, %hi(.LCPI19_9)
-	flw	fa3, %lo(.LCPI19_9)(a0)
-	lui	a0, %hi(.LCPI19_10)
-	flw	fa1, %lo(.LCPI19_10)(a0)
-	lui	a0, %hi(.LCPI19_12)
-	flw	fa0, %lo(.LCPI19_12)(a0)
-	j	.LBB19_10
-.LBB19_6:
-	lui	a0, %hi(.LCPI19_1)
-	flw	fa3, %lo(.LCPI19_1)(a0)
-	flt.s	a0, fa4, fa3
-	beqz	a0, .LBB19_8
-# %bb.7:
-	lui	a0, 784384
-	fmv.w.x	fa3, a0
-	fadd.s	fa3, fa4, fa3
-	lui	a0, 260096
-	fmv.w.x	fa2, a0
-	fadd.s	fa4, fa4, fa2
-	j	.LBB19_9
-.LBB19_8:
-	lui	a0, 784384
-	fmv.w.x	fa3, a0
-.LBB19_9:
-	fdiv.s	fa4, fa3, fa4
-	lui	a0, %hi(.LCPI19_2)
-	flw	fa3, %lo(.LCPI19_2)(a0)
-	fmul.s	fa2, fa4, fa4
-	fadd.s	fa5, fa4, fa5
-	fmul.s	fa4, fa4, fa2
-	fmadd.s	fa5, fa4, fa3, fa5
-	lui	a0, %hi(.LCPI19_3)
-	flw	fa3, %lo(.LCPI19_3)(a0)
-	lui	a0, %hi(.LCPI19_4)
-	flw	fa1, %lo(.LCPI19_4)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_5)
-	flw	fa3, %lo(.LCPI19_5)(a0)
-	lui	a0, %hi(.LCPI19_6)
-	flw	fa1, %lo(.LCPI19_6)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	lui	a0, %hi(.LCPI19_7)
-	flw	fa3, %lo(.LCPI19_7)(a0)
-	lui	a0, %hi(.LCPI19_8)
-	flw	fa1, %lo(.LCPI19_8)(a0)
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	fmul.s	fa4, fa2, fa4
-	lui	a0, %hi(.LCPI19_9)
-	flw	fa3, %lo(.LCPI19_9)(a0)
-	lui	a0, %hi(.LCPI19_10)
-	flw	fa1, %lo(.LCPI19_10)(a0)
-	lui	a0, %hi(.LCPI19_11)
-	flw	fa0, %lo(.LCPI19_11)(a0)
-.LBB19_10:
-	fmadd.s	fa5, fa4, fa3, fa5
-	fmul.s	fa4, fa2, fa4
-	fmadd.s	fa5, fa4, fa1, fa5
-	fadd.s	fa5, fa5, fa0
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end19:
-	.size	min_caml_atan, .vLfunc_end19-min_caml_atan
-                                        # -- End function
-	.globl	min_caml_floor                  # -- Begin function min_caml_floor
-	.p2align	2
-	.type	min_caml_floor,@function
-min_caml_floor:                         # @min_caml_floor
-# %bb.0:
-	fmv.w.x	fa4, a0
-	fcvt.w.s	a0, fa4, rtz
-	fcvt.s.w	fa5, a0
-	flt.s	a1, fa4, fa5
-	beqz	a1, .LBB20_2
-# %bb.1:
-	addi	a0, a0, -1
-	fcvt.s.w	fa5, a0
-.LBB20_2:
-	fmv.x.w	a0, fa5
-	ret
-.vLfunc_end20:
-	.size	min_caml_floor, .vLfunc_end20-min_caml_floor
-                                        # -- End function
-
-	.type	.compoundliteral,@object        # @.compoundliteral
-	.local	.compoundliteral
-	.comm	.compoundliteral,2400,4
-	.type	objects,@object                 # @objects
-	.section	.sdata,"aw",@progbits
-	.globl	objects
-	.p2align	2, 0x0
-objects:
-	.word	.compoundliteral
-	.size	objects, 4
-
-	.type	.compoundliteral.1,@object      # @.compoundliteral.1
-	.p2align	2, 0x0
-.compoundliteral.1:
-	.word	128                             # 0x80
-	.word	128                             # 0x80
-	.size	.compoundliteral.1, 8
-
-	.type	size,@object                    # @size
-	.globl	size
-	.p2align	2, 0x0
-size:
-	.word	.compoundliteral.1
-	.size	size, 4
-
-	.type	.compoundliteral.2,@object      # @.compoundliteral.2
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.2:
-	.zero	4
-	.size	.compoundliteral.2, 4
-
-	.type	dbg,@object                     # @dbg
-	.section	.sdata,"aw",@progbits
-	.globl	dbg
-	.p2align	2, 0x0
-dbg:
-	.word	.compoundliteral.2
-	.size	dbg, 4
-
-	.type	.compoundliteral.3,@object      # @.compoundliteral.3
-	.local	.compoundliteral.3
-	.comm	.compoundliteral.3,12,4
-	.type	screen,@object                  # @screen
-	.globl	screen
-	.p2align	2, 0x0
-screen:
-	.word	.compoundliteral.3
-	.size	screen, 4
-
-	.type	.compoundliteral.4,@object      # @.compoundliteral.4
-	.local	.compoundliteral.4
-	.comm	.compoundliteral.4,12,4
-	.type	vp,@object                      # @vp
-	.globl	vp
-	.p2align	2, 0x0
-vp:
-	.word	.compoundliteral.4
-	.size	vp, 4
-
-	.type	.compoundliteral.5,@object      # @.compoundliteral.5
-	.local	.compoundliteral.5
-	.comm	.compoundliteral.5,12,4
-	.type	view,@object                    # @view
-	.globl	view
-	.p2align	2, 0x0
-view:
-	.word	.compoundliteral.5
-	.size	view, 4
-
-	.type	.compoundliteral.6,@object      # @.compoundliteral.6
-	.local	.compoundliteral.6
-	.comm	.compoundliteral.6,12,4
-	.type	light,@object                   # @light
-	.globl	light
-	.p2align	2, 0x0
-light:
-	.word	.compoundliteral.6
-	.size	light, 4
-
-	.type	.compoundliteral.7,@object      # @.compoundliteral.7
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.7:
-	.zero	8
-	.size	.compoundliteral.7, 8
-
-	.type	cos_v,@object                   # @cos_v
-	.section	.sdata,"aw",@progbits
-	.globl	cos_v
-	.p2align	2, 0x0
-cos_v:
-	.word	.compoundliteral.7
-	.size	cos_v, 4
-
-	.type	.compoundliteral.8,@object      # @.compoundliteral.8
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.8:
-	.zero	8
-	.size	.compoundliteral.8, 8
-
-	.type	sin_v,@object                   # @sin_v
-	.section	.sdata,"aw",@progbits
-	.globl	sin_v
-	.p2align	2, 0x0
-sin_v:
-	.word	.compoundliteral.8
-	.size	sin_v, 4
-
-	.type	.compoundliteral.9,@object      # @.compoundliteral.9
-	.p2align	2, 0x0
-.compoundliteral.9:
-	.word	0x437f0000                      # float 255
-	.size	.compoundliteral.9, 4
-
-	.type	beam,@object                    # @beam
-	.globl	beam
-	.p2align	2, 0x0
-beam:
-	.word	.compoundliteral.9
-	.size	beam, 4
-
-	.type	.compoundliteral.10,@object     # @.compoundliteral.10
-	.local	.compoundliteral.10
-	.comm	.compoundliteral.10,56,4
-	.type	temp,@object                    # @temp
-	.globl	temp
-	.p2align	2, 0x0
-temp:
-	.word	.compoundliteral.10
-	.size	temp, 4
-
-	.type	.compoundliteral.11,@object     # @.compoundliteral.11
-	.local	.compoundliteral.11
-	.comm	.compoundliteral.11,64,4
-	.type	cs_temp,@object                 # @cs_temp
-	.globl	cs_temp
-	.p2align	2, 0x0
-cs_temp:
-	.word	.compoundliteral.11
-	.size	cs_temp, 4
-
-	.type	and_net,@object                 # @and_net
-	.section	.swss,"aw",@nobits
-	.globl	and_net
-	.p2align	2, 0x0
-and_net:
-	.word	0
-	.size	and_net, 4
-
-	.type	or_net,@object                  # @or_net
-	.globl	or_net
-	.p2align	2, 0x0
-or_net:
-	.word	0
-	.size	or_net, 4
-
-	.type	.compoundliteral.12,@object     # @.compoundliteral.12
-	.p2align	2, 0x0
-.compoundliteral.12:
-	.zero	4
-	.size	.compoundliteral.12, 4
-
-	.type	solver_dist,@object             # @solver_dist
-	.section	.sdata,"aw",@progbits
-	.globl	solver_dist
-	.p2align	2, 0x0
-solver_dist:
-	.word	.compoundliteral.12
-	.size	solver_dist, 4
-
-	.type	.compoundliteral.13,@object     # @.compoundliteral.13
-	.local	.compoundliteral.13
-	.comm	.compoundliteral.13,12,4
-	.type	vscan,@object                   # @vscan
-	.globl	vscan
-	.p2align	2, 0x0
-vscan:
-	.word	.compoundliteral.13
-	.size	vscan, 4
-
-	.type	.compoundliteral.14,@object     # @.compoundliteral.14
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.14:
-	.zero	4
-	.size	.compoundliteral.14, 4
-
-	.type	intsec_rectside,@object         # @intsec_rectside
-	.section	.sdata,"aw",@progbits
-	.globl	intsec_rectside
-	.p2align	2, 0x0
-intsec_rectside:
-	.word	.compoundliteral.14
-	.size	intsec_rectside, 4
-
-	.type	.compoundliteral.15,@object     # @.compoundliteral.15
-	.p2align	2, 0x0
-.compoundliteral.15:
-	.word	0x4e6e6b28                      # float 1.0E+9
-	.size	.compoundliteral.15, 4
-
-	.type	tmin,@object                    # @tmin
-	.globl	tmin
-	.p2align	2, 0x0
-tmin:
-	.word	.compoundliteral.15
-	.size	tmin, 4
-
-	.type	.compoundliteral.16,@object     # @.compoundliteral.16
-	.local	.compoundliteral.16
-	.comm	.compoundliteral.16,12,4
-	.type	crashed_point,@object           # @crashed_point
-	.globl	crashed_point
-	.p2align	2, 0x0
-crashed_point:
-	.word	.compoundliteral.16
-	.size	crashed_point, 4
-
-	.type	.compoundliteral.17,@object     # @.compoundliteral.17
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.17:
-	.zero	4
-	.size	.compoundliteral.17, 4
-
-	.type	crashed_object,@object          # @crashed_object
-	.section	.sdata,"aw",@progbits
-	.globl	crashed_object
-	.p2align	2, 0x0
-crashed_object:
-	.word	.compoundliteral.17
-	.size	crashed_object, 4
-
-	.type	.compoundliteral.18,@object     # @.compoundliteral.18
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.18:
-	.zero	4
-	.size	.compoundliteral.18, 4
-
-	.type	end_flag,@object                # @end_flag
-	.section	.sdata,"aw",@progbits
-	.globl	end_flag
-	.p2align	2, 0x0
-end_flag:
-	.word	.compoundliteral.18
-	.size	end_flag, 4
-
-	.type	.compoundliteral.19,@object     # @.compoundliteral.19
-	.local	.compoundliteral.19
-	.comm	.compoundliteral.19,12,4
-	.type	viewpoint,@object               # @viewpoint
-	.globl	viewpoint
-	.p2align	2, 0x0
-viewpoint:
-	.word	.compoundliteral.19
-	.size	viewpoint, 4
-
-	.type	.compoundliteral.20,@object     # @.compoundliteral.20
-	.local	.compoundliteral.20
-	.comm	.compoundliteral.20,12,4
-	.type	nvector,@object                 # @nvector
-	.globl	nvector
-	.p2align	2, 0x0
-nvector:
-	.word	.compoundliteral.20
-	.size	nvector, 4
-
-	.type	.compoundliteral.21,@object     # @.compoundliteral.21
-	.local	.compoundliteral.21
-	.comm	.compoundliteral.21,12,4
-	.type	rgb,@object                     # @rgb
-	.globl	rgb
-	.p2align	2, 0x0
-rgb:
-	.word	.compoundliteral.21
-	.size	rgb, 4
-
-	.type	.compoundliteral.22,@object     # @.compoundliteral.22
-	.local	.compoundliteral.22
-	.comm	.compoundliteral.22,12,4
-	.type	texture_color,@object           # @texture_color
-	.globl	texture_color
-	.p2align	2, 0x0
-texture_color:
-	.word	.compoundliteral.22
-	.size	texture_color, 4
-
-	.type	.compoundliteral.23,@object     # @.compoundliteral.23
-	.local	.compoundliteral.23
-	.comm	.compoundliteral.23,12,4
-	.type	solver_w_vec,@object            # @solver_w_vec
-	.globl	solver_w_vec
-	.p2align	2, 0x0
-solver_w_vec:
-	.word	.compoundliteral.23
-	.size	solver_w_vec, 4
-
-	.type	.compoundliteral.24,@object     # @.compoundliteral.24
-	.local	.compoundliteral.24
-	.comm	.compoundliteral.24,12,4
-	.type	chkinside_p,@object             # @chkinside_p
-	.globl	chkinside_p
-	.p2align	2, 0x0
-chkinside_p:
-	.word	.compoundliteral.24
-	.size	chkinside_p, 4
-
-	.type	.compoundliteral.25,@object     # @.compoundliteral.25
-	.local	.compoundliteral.25
-	.comm	.compoundliteral.25,12,4
-	.type	isoutside_q,@object             # @isoutside_q
-	.globl	isoutside_q
-	.p2align	2, 0x0
-isoutside_q:
-	.word	.compoundliteral.25
-	.size	isoutside_q, 4
-
-	.type	.compoundliteral.26,@object     # @.compoundliteral.26
-	.local	.compoundliteral.26
-	.comm	.compoundliteral.26,12,4
-	.type	nvector_w,@object               # @nvector_w
-	.globl	nvector_w
-	.p2align	2, 0x0
-nvector_w:
-	.word	.compoundliteral.26
-	.size	nvector_w, 4
-
-	.type	.compoundliteral.27,@object     # @.compoundliteral.27
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.27:
-	.zero	4
-	.size	.compoundliteral.27, 4
-
-	.type	scan_d,@object                  # @scan_d
-	.section	.sdata,"aw",@progbits
-	.globl	scan_d
-	.p2align	2, 0x0
-scan_d:
-	.word	.compoundliteral.27
-	.size	scan_d, 4
-
-	.type	.compoundliteral.28,@object     # @.compoundliteral.28
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.28:
-	.zero	4
-	.size	.compoundliteral.28, 4
-
-	.type	scan_offset,@object             # @scan_offset
-	.section	.sdata,"aw",@progbits
-	.globl	scan_offset
-	.p2align	2, 0x0
-scan_offset:
-	.word	.compoundliteral.28
-	.size	scan_offset, 4
-
-	.type	.compoundliteral.29,@object     # @.compoundliteral.29
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.29:
-	.zero	4
-	.size	.compoundliteral.29, 4
-
-	.type	scan_sscany,@object             # @scan_sscany
-	.section	.sdata,"aw",@progbits
-	.globl	scan_sscany
-	.p2align	2, 0x0
-scan_sscany:
-	.word	.compoundliteral.29
-	.size	scan_sscany, 4
-
-	.type	.compoundliteral.30,@object     # @.compoundliteral.30
-	.section	.swss,"aw",@nobits
-	.p2align	2, 0x0
-.compoundliteral.30:
-	.zero	4
-	.size	.compoundliteral.30, 4
-
-	.type	scan_met1,@object               # @scan_met1
-	.section	.sdata,"aw",@progbits
-	.globl	scan_met1
-	.p2align	2, 0x0
-scan_met1:
-	.word	.compoundliteral.30
-	.size	scan_met1, 4
-
-	.type	.compoundliteral.31,@object     # @.compoundliteral.31
-	.local	.compoundliteral.31
-	.comm	.compoundliteral.31,12,4
-	.type	wscan,@object                   # @wscan
-	.globl	wscan
-	.p2align	2, 0x0
-wscan:
-	.word	.compoundliteral.31
-	.size	wscan, 4
-
-	.type	buffer_pos,@object              # @buffer_pos
-	.section	.swss,"aw",@nobits
-	.globl	buffer_pos
-	.p2align	2, 0x0
-buffer_pos:
-	.word	0                               # 0x0
-	.size	buffer_pos, 4
-
-	.type	.L.str,@object                  # @.str
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str:
-	.asciz	"%d"
-	.size	.L.str, 3
-
-	.type	.L.str.32,@object               # @.str.32
-.L.str.32:
-	.asciz	"%f"
-	.size	.L.str.32, 3
-
-	.type	pi,@object                      # @pi
-	.section	.rodata,"a",@progbits
-	.globl	pi
-	.p2align	2, 0x0
-pi:
-	.word	0x40490fdb                      # float 3.14159274
-	.size	pi, 4
-
-	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
-	.section	".note.GNU-stack","",@progbits
-	.addrsig
-	.addrsig_sym .compoundliteral
-	.addrsig_sym .compoundliteral.1
-	.addrsig_sym .compoundliteral.2
-	.addrsig_sym .compoundliteral.3
-	.addrsig_sym .compoundliteral.4
-	.addrsig_sym .compoundliteral.5
-	.addrsig_sym .compoundliteral.6
-	.addrsig_sym .compoundliteral.7
-	.addrsig_sym .compoundliteral.8
-	.addrsig_sym .compoundliteral.9
-	.addrsig_sym .compoundliteral.10
-	.addrsig_sym .compoundliteral.11
-	.addrsig_sym .compoundliteral.12
-	.addrsig_sym .compoundliteral.13
-	.addrsig_sym .compoundliteral.14
-	.addrsig_sym .compoundliteral.15
-	.addrsig_sym .compoundliteral.16
-	.addrsig_sym .compoundliteral.17
-	.addrsig_sym .compoundliteral.18
-	.addrsig_sym .compoundliteral.19
-	.addrsig_sym .compoundliteral.20
-	.addrsig_sym .compoundliteral.21
-	.addrsig_sym .compoundliteral.22
-	.addrsig_sym .compoundliteral.23
-	.addrsig_sym .compoundliteral.24
-	.addrsig_sym .compoundliteral.25
-	.addrsig_sym .compoundliteral.26
-	.addrsig_sym .compoundliteral.27
-	.addrsig_sym .compoundliteral.28
-	.addrsig_sym .compoundliteral.29
-	.addrsig_sym .compoundliteral.30
-	.addrsig_sym .compoundliteral.31

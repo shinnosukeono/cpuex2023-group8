@@ -353,18 +353,20 @@ int main()
 		cout << "flush: " << vm.flush_count << endl;
 	}
 
+	ofstream pc_counts("pc_counts.txt");
+	map<int, int> pc_map_sorted;
+	for (auto p:vm.pc_map){
+		pc_map_sorted[p.first] = p.second;
+	}
+	for (auto p:pc_map_sorted){
+		pc_counts << "pc: " << p.first << " count: " << p.second << endl;
+	}
+	pc_counts.close();
+
 	if (vm.print_mode > 0){
 		vm.outputFile << "cycle : " << vm.cycle << endl;
 		vm.outputFile << "hit: " << vm.mem.cache.hit_count << endl;
 		vm.outputFile << "miss: " << vm.mem.cache.miss_count << endl;
-
-		map<int, int> pc_map_sorted;
-		for (auto p:vm.pc_map){
-			pc_map_sorted[p.first] = p.second;
-		}
-		for (auto p:pc_map_sorted){
-			vm.outputFile << "pc: " << p.first << " count: " << p.second << endl;
-		}
 		vm.outputFile.close();
 	}
 

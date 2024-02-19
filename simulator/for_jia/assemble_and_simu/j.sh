@@ -18,5 +18,7 @@ cd ../simulator
 cp output.ppm ../out.ppm
 cp inst.txt ../core_inst.txt
 cp last_pc.txt ../find_line/last_pc_input.txt
+cp pc_counts.txt ../find_line/pc_counts.txt
 cd ../find_line
 ./a.out < last_pc_input.txt
+cp line_counts.txt ../line_counts.txt

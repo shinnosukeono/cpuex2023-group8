@@ -1,71 +1,7 @@
-.section .text # param 437,439
+.section .text # parameter is 373
 .type main, @function
 .globl main
 main:
-	li zero, 0
-	li ra, -1
-	li sp, 0x4000000
-	li gp, 0
-	li tp, 0x1000000
-	li t0, 0
-	li t1, 0
-	li t2, 0
-	li s0, 0
-	li s1, 0
-	li a0, 0
-	li a1, 0
-	li a2, 0
-	li a3, 0
-	li a4, 0
-	li a5, 0
-	li a6, 0
-	li a7, 0
-	li s2, 0
-	li s3, 0
-	li s4, 0
-	li s5, 0
-	li s6, 0
-	li s7, 0
-	li s8, 0
-	li s9, 0
-	li s10, 0
-	li s11, 0
-    li t3, 0
-    li t4, 0
-    li t5, 0
-    li t6, 0
-    fmv.w.x fa0, zero
-    fmv.w.x fa1, zero
-    fmv.w.x fa2, zero
-    fmv.w.x fa3, zero
-    fmv.w.x fa4, zero
-    fmv.w.x fa5, zero
-    fmv.w.x fa6, zero
-    fmv.w.x fa7, zero
-    fmv.w.x fs0, zero
-    fmv.w.x fs1, zero
-    fmv.w.x fs2, zero
-    fmv.w.x fs3, zero
-    fmv.w.x fs4, zero
-    fmv.w.x fs5, zero
-    fmv.w.x fs6, zero
-    fmv.w.x fs7, zero
-    fmv.w.x fs8, zero
-    fmv.w.x fs9, zero
-    fmv.w.x fs10, zero
-    fmv.w.x fs11, zero
-    fmv.w.x ft0, zero
-    fmv.w.x ft1, zero
-    fmv.w.x ft2, zero
-    fmv.w.x ft3, zero
-    fmv.w.x ft4, zero
-    fmv.w.x ft5, zero
-    fmv.w.x ft6, zero
-    fmv.w.x ft7, zero
-    fmv.w.x ft8, zero
-    fmv.w.x ft9, zero
-    fmv.w.x ft10, zero
-    fmv.w.x ft11, zero
     addi sp, sp, -848
     sw ra, 844(sp) 	# main
     li t0, 1
@@ -434,9 +370,9 @@ main:
     call .5641_Lcreate_array_0_0_J
     lui t6, %hi(n_reflections)
     sw a0, %lo(n_reflections)(t6)
-    li t0, 16
+    li t0, 4
     sw t0, 464(sp)
-    li t0, 16
+    li t0, 4
     sw t0, 460(sp)
     li t0, 3
     sw t0, 456(sp)
@@ -14356,6 +14292,7 @@ trace_reflections:
     li t0, 4
     sw t0, 344(sp)
     lw t0, 348(sp)
+    lw t1, 344(sp)
     slli t2, t0, 2
     sw t2, 340(sp)
     li t0, 0
@@ -14675,7 +14612,7 @@ trace_ray:
     sw t0, 1224(sp)
     lw t0, 1224(sp)
     bnez t0, next
-    j .9137_Lelse_J
+	j .9137_Lelse_J
 next:
     lw a0, 1272(sp)
     call judge_intersection
@@ -14804,6 +14741,7 @@ next:
     li t0, 4
     sw t0, 1120(sp)
     lw t0, 1200(sp)
+    lw t1, 1120(sp)
     slli t2, t0, 2
     sw t2, 1116(sp)
     li t0, 0
@@ -20427,6 +20365,7 @@ setup_rect_reflection:
     li t0, 4
     sw t0, 248(sp)
     lw t0, 296(sp)
+    lw t1, 248(sp)
     slli t2, t0, 2
     sw t2, 244(sp)
     li t0, 0
@@ -21181,6 +21120,7 @@ rt:
     li t0, 2
     sw t0, 408(sp)
     lw t0, 456(sp)
+    lw t1, 408(sp)
     srai t2, t0, 1
     sw t2, 404(sp)
     lui t6, %hi(image_center)
@@ -21201,6 +21141,7 @@ rt:
     li t0, 2
     sw t0, 384(sp)
     lw t0, 452(sp)
+    lw t1, 384(sp)
     srai t2, t0, 1
     sw t2, 380(sp)
     lui t6, %hi(image_center)

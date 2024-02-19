@@ -595,3 +595,45 @@ mincaml_cos:                            # @mincaml_cos
                                         # -- End function
 	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
 	.section	".note.GNU-stack","",@progbits
+
+# -----------------------------------------------
+	.globl	putchar                             # -- Begin function putchar
+	.p2align	1
+	.type	putchar,@function
+putchar:                                    # @putchar
+# %bb.0:                                # %entry
+	out a0 # out a0
+# %bb.1:                                # %entry.endif
+	ret
+.LLLfunc_end101:
+	.size	putchar, .LLLfunc_end101-putchar
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	read_float                             # -- Begin function read_float
+	.p2align	1
+	.type	read_float,@function
+read_float:                                    # @read_float
+# %bb.0:                                # %entry
+	cin.float fa0 # Cin_float fa5
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end108:
+	.size	read_float, .Myfunc_end108-read_float
+                                        # -- End function
+# -----------------------------------------------
+
+# -----------------------------------------------
+	.globl	read_int                             # -- Begin function read_int
+	.p2align	1
+	.type	read_int,@function
+read_int:                                    # @read_int
+# %bb.0:                                # %entry
+	cin.int a0 # Cin_int a0
+# %bb.1:                                # %entry.endif
+	ret
+.Myfunc_end109:
+	.size	read_int, .Myfunc_end109-read_int
+                                        # -- End function
+# -----------------------------------------------

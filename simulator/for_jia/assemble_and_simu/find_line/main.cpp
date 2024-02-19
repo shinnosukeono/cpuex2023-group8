@@ -69,8 +69,9 @@ int main()
                 line_data.push_back(s);
             }
             if (line_data[1] == "-1") continue;
+            int pc = stoi(line_data[1]);
             
-            ofs2 << "Line: " << pc_to_line[stoi(line_data[1])] << " " << line_data[0] << " " << line_data[1] << " " << line_data[2] << " " << line_data[3] << endl;
+            ofs2 << "Line: " << pc_to_line[stoi(line_data[1])] << " " << line_data[0] << " " << line_data[1] << "(" << hex << pc << dec << ")" << " " << line_data[2] << " " << line_data[3] << endl;
         }
     }
 

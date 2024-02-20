@@ -18,8 +18,8 @@ module alu_decoder (
                     3'b001: alu_control = 4'b0001;  // subtract (bne)
                     3'b100: alu_control = 4'b0101;  // set less than (blt)
                     3'b101: alu_control = 4'b0101;  // set less than (bge)
-                    3'b110: alu_control = 4'b0100;  // set less than unsigned (bltu)
-                    3'b111: alu_control = 4'b0100;  // set less than unsigned (bgeu)
+                    3'b110: alu_control = 4'b0111;  // set less than unsigned (bltu)
+                    3'b111: alu_control = 4'b0111;  // set less than unsigned (bgeu)
                     default: alu_control = 4'bxxxx;  // error
                 endcase
             end

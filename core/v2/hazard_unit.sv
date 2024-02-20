@@ -67,8 +67,10 @@ module hazard_unit (
         .en(input_en_e),
         .valid(input_valid),
         .stall(input_stall),
-        .en_pulse(input_req)
+        .en_pulse()
     );
+
+    assign input_req = input_en_e & input_stall;
 
     stall_gen short_fpu_stall_gen (
         .clk(clk),

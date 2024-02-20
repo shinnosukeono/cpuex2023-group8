@@ -32,7 +32,7 @@ module io_top (
 
     output wire [7:0] sdata_debug
 );
-    localparam DATA_SECTION_BASE_ADDR = 32'h10000;
+    localparam DATA_SECTION_BASE_ADDR = 32'h40000;
 
     wire [31:0] rdata_buf;
     wire rdata_buf_ready;

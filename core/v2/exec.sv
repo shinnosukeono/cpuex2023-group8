@@ -59,7 +59,7 @@ module exec (
     assign fpu_rd3_forward = forward_fpu_rd3 ? result : data_dispatch_if.fpu_rd3;
 
     // ALU
-    assign src_a = rd1_forward;
+    assign src_a = (control_dispatch_if.alu_op_and) ? data_dispatch_if.pc : rd1_forward;  // auipc or the others
     assign src_b = (control_dispatch_if.alu_src) ? data_dispatch_if.imm_ext : rd2_forward;
 
     alu i_alu (

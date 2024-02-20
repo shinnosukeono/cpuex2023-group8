@@ -47,8 +47,8 @@ module main_decoder (
             7'b1100011: controls = 22'b0_000_0011_01_010_0_0_0_0_0_0000;
             7'b0010011: begin  // I instruction
                 case (funct3)
-                    3'b001: controls = 22'b0_000_0001_10_001_1_0_1_0_0_0000;  // uimm
-                    3'b101: controls = 22'b0_000_0001_10_001_1_0_1_0_0_0000;  // uimm
+                    3'b001: controls = 22'b0_000_0001_10_100_1_0_1_0_0_0000;  // uimm
+                    3'b101: controls = 22'b0_000_0001_10_100_1_0_1_0_0_0000;  // uimm
                     default: controls = 22'b0_000_0001_10_000_1_0_1_0_0_0000;  // imm
                 endcase
             end

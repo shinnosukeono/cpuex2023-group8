@@ -4,12 +4,15 @@ module core_top (
     // instr memory
     input wire [31:0] instr,
     output wire [31:0] instr_addr,
+    output wire instr_en,
 
     // cache memory
     input wire [31:0] cache_rdata,
     input wire cache_valid,
     output wire [31:0] cache_addr,
     output wire [31:0] cache_wdata,
+    output wire cache_re,
+    output wire cache_we,
 
     // FPU unit
     input wire [31:0] short_fpu_result,
@@ -19,8 +22,8 @@ module core_top (
     output wire [31:0] fpu_rd1,
     output wire [31:0] fpu_rd2,
     output wire [31:0] fpu_rd3,
-    output wire fpu_rm,
-    output wire fpu_funct5,
+    output wire [2:0] fpu_rm,
+    output wire [4:0] fpu_funct5,
     output wire short_fpu_en,
     output wire long_fpu_en,
 
@@ -109,6 +112,8 @@ module core_top (
         .cache_rdata(cache_rdata),
         .cache_addr(cache_addr),
         .cache_wdata(cache_wdata),
+        .cache_re(cache_re),
+        .cache_we(cache_we),
         .short_fpu_result(short_fpu_result),
         .long_fpu_result(long_fpu_result),
         .fpu_rd1(fpu_rd1),
@@ -210,4 +215,6 @@ module core_top (
         .reg_write_w(reg_write_w),
         .fpu_reg_write_w(fpu_reg_write_w)
     );
+
+    assign instr_en = ~stall;
 endmodule

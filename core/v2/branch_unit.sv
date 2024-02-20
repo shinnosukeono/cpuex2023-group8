@@ -62,6 +62,6 @@ module branch_unit (
         endcase
     end
 
-    assign pc_target = (jump && alu_op_and) ? (rd1 + imm_ext) : (pc + imm_ext);  // jalr or the others
+    assign pc_target = (jump && ~alu_op_and) ? (rd1 + imm_ext) : (pc + imm_ext);  // jalr or the others
     assign pc_src = (branch_en & branch_taken) | jump;
 endmodule

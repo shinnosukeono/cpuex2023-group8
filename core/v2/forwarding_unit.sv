@@ -54,30 +54,30 @@ module forwarding_unit (
     // fpu_rd1
     always_comb begin : fpu_rd1_dp
         if ((rs1_dp == rd_w) && rs_fpu_dp[2] && fpu_reg_write_w) begin
-            forward_fpu_rd1_e = 1'b1;  // use result_w
+            forward_fpu_rd1_dp = 1'b1;  // use result_w
         end
         else begin
-            forward_fpu_rd1_e = 1'b0;  // use the current value
+            forward_fpu_rd1_dp = 1'b0;  // use the current value
         end
     end
 
     // fpu_rd2
     always_comb begin : fpu_rd2_dp
         if ((rs2_dp == rd_w) && rs_fpu_dp[1] && fpu_reg_write_w) begin
-            forward_fpu_rd2_e = 1'b1;  // use result_w
+            forward_fpu_rd2_dp = 1'b1;  // use result_w
         end
         else begin
-            forward_fpu_rd2_e = 1'b0;  // use the current value
+            forward_fpu_rd2_dp = 1'b0;  // use the current value
         end
     end
 
     // fpu_rd3
     always_comb begin : fpu_rd3_dp
         if ((rs3_dp == rd_w) && rs_fpu_dp[0] && fpu_reg_write_w) begin
-            forward_fpu_rd3_e = 1'b1;  // use result_w
+            forward_fpu_rd3_dp = 1'b1;  // use result_w
         end
         else begin
-            forward_fpu_rd3_e = 1'b0;  // use the current value
+            forward_fpu_rd3_dp = 1'b0;  // use the current value
         end
     end
 

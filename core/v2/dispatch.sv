@@ -61,7 +61,6 @@ module dispatch (
     assign data_dispatch_if.rs2 = data_decode_if.rs2;
     assign data_dispatch_if.rs3 = data_decode_if.rs3;
     assign data_dispatch_if.rd = data_decode_if.rd;
-    assign data_dispatch_if.imm_ext = data_decode_if.imm_ext;
     assign data_dispatch_if.pc_plus4 = data_decode_if.pc_plus4;
     assign data_dispatch_if.fpu_rd1 = (forward_fpu_rd1_dp) ? result_w : data_decode_if.fpu_rd1;
     assign data_dispatch_if.fpu_rd2 = (forward_fpu_rd2_dp) ? result_w : data_decode_if.fpu_rd2;

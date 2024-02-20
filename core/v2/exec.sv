@@ -11,6 +11,8 @@ module exec (
     input wire [31:0] cache_rdata,
     output wire [31:0] cache_addr,
     output wire [31:0] cache_wdata,
+    output wire cache_re,
+    output wire cache_we,
 
     // FPU unit
     input wire [31:0] short_fpu_result,
@@ -87,13 +89,16 @@ module exec (
     );
 
     // cache_memory
-    agu i_agu (
-        .a(src_a),
-        .b(data_dispatch_if.imm_ext),
-        .sub(control_dispatch_if.alu_control[0]),
-        .result(cache_addr)
-    );
+    // agu i_agu (
+    //     .a(src_a),
+    //     .b(data_dispatch_if.imm_ext),
+    //     .sub(control_dispatch_if.alu_control[0]),
+    //     .result(cache_addr)
+    // );
+    assign cache_addr = src_a + data_dispatch_if.imm_ext;
     assign cache_wdata = (control_dispatch_if.store_src) ? fpu_rd2_forward : rd2_forward;
+    assign cache_re = control_dispatch_if.cache_re;
+    assign cache_we = control_dispatch_if.cache_we;
 
     // FPU
     assign fpu_rd1 = (data_dispatch_if.funct5 == 5'b11010) ? rd1_forward : fpu_rd1_forward;  // fcvt.s.w or the others

@@ -604,11 +604,11 @@ float FPUfmsub(int x, int y, int z){
 }
 
 float FPUfnmadd(int x, int y, int z){
-    return -FPUfmadd(x, y, z);
+    return -FPUfmsub(x, y, z);
 }
 
 float FPUfnmsub(int x, int y, int z){
-    return -FPUfmsub(x, y, z);
+    return -FPUfmadd(x, y, z);
 }
 
 float FPUfmin(int x, int y){

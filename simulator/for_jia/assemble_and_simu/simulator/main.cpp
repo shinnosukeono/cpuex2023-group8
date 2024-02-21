@@ -375,6 +375,9 @@ int main()
 	last_pc_file << last_pc << endl;
 	last_pc_file.close();
 
+	cout << "Max_stack: " << hex << vm.max_stack << endl;
+	cout << "Max_heap: " << vm.max_heap << dec << endl;
+
 	cout << "Mips: " << (double)vm.cycle / (double)nsec * 1000000000.0 / 1000000.0 << endl;
 
 	cout << endl;

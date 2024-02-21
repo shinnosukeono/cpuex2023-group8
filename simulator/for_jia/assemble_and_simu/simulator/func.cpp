@@ -459,6 +459,8 @@ public:
 	bool load_flag = false;
 	long long forwarding_flag_int = 0;
 	long long forwarding_flag_float = 0;
+	int max_stack = Dsize;
+	int max_heap = Dsize/4;
 	
 	Data ReadIntRegisters(int i)
 	{
@@ -631,6 +633,9 @@ public:
 					last_pc_file << pc << endl;
 					exit(0);
 				}
+
+				max_stack = min(max_stack, get<int>(VirtualIntRegisters_EX[2]));
+				max_heap = max(max_heap, get<int>(VirtualIntRegisters_EX[4]));
 
 				if (VirtualIntRegisters_EX[2] < VirtualIntRegisters_EX[4]){
 					cerr << "heap is overwrited by stack" << endl;
@@ -1004,6 +1009,9 @@ public:
 					last_pc_file << pc << endl;
 					exit(0);
 				}
+
+				max_stack = min(max_stack, get<int>(VirtualIntRegisters_EX[2]));
+				max_heap = max(max_heap, get<int>(VirtualIntRegisters_EX[4]));
 
 				if (VirtualIntRegisters_EX[2] < VirtualIntRegisters_EX[4]){
 					cerr << "heap is overwrited by stack" << endl;

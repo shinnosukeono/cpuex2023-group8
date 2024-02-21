@@ -63,7 +63,7 @@
     fmv.w.x ft9, zero
     fmv.w.x ft10, zero
     fmv.w.x ft11, zero
-.section .text #param is 373, 375
+.section .text
 .type main, @function
 .globl main
 main:
@@ -435,11 +435,11 @@ main:
     call .5641_Lcreate_array_0_0_J
     lui t6, %hi(n_reflections)
     sw a0, %lo(n_reflections)(t6)
-    li t0, 4
+    li t0, 64
     sw t0, 464(sp)
-    li t0, 4
+    li t0, 64
     sw t0, 460(sp)
-    li t0, 3
+    li t0, 6
     sw t0, 456(sp)
     li t0, 0
     sw t0, 452(sp)

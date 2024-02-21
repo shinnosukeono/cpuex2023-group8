@@ -63,7 +63,8 @@
     fmv.w.x ft9, zero
     fmv.w.x ft10, zero
     fmv.w.x ft11, zero
-.section .text
+
+.section .text #parameter is 
 .type main, @function
 .globl main
 main:
@@ -22567,6 +22568,7 @@ n_reflections:
 .8720_L.LC22_J:
     .float 128.0
 
+
 .globl mincaml_floor
 mincaml_floor:
         fmv.x.s a4,fa0
@@ -23174,3 +23176,4 @@ mincaml_cos:                            # @mincaml_cos
                                         # -- End function
 	.ident	"clang version 18.0.0git (https://github.com/llvm/llvm-project.git 7fbc1de9896029636dd572a692ee90ba88285943)"
 	.section	".note.GNU-stack","",@progbits
+

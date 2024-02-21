@@ -1,4 +1,4 @@
-.section .text
+.section .text #parameter is 
 .type main, @function
 .globl main
 main:

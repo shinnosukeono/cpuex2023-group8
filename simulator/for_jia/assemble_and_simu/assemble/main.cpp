@@ -4504,7 +4504,13 @@ int main(){
 	while (getline(ifs, line)) {
 		line_number++;
 		// 1行ずつ出力
-		long long result = assemble(line,RFnames);
+		long long result = 0;
+		try{
+			result = assemble(line,RFnames);
+		}catch (std::out_of_range e){
+			cerr << "\n\nInvalid register argument. Line: " << line_number << endl;
+			exit(1);
+		};
 		if (result == 0) continue;
 		// 0埋めして16進数で出力
 		if (result & 0xffffffff00000000ll){

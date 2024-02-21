@@ -3,8 +3,11 @@
 set -e
 
 cp main_init.s ./assemble/a.s
+printf "\n" >> ./assemble/a.s
 cat main.s >> ./assemble/a.s
+printf "\n" >> ./assemble/a.s
 cat main_lib.s >> ./assemble/a.s
+printf "\n" >> ./assemble/a.s
 cd assemble
 ./a.out < a.txt
 cp a.s ../core.s

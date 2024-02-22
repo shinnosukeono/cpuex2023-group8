@@ -12,11 +12,11 @@ module instr_mem (
 );
 
     wire [31:0] addr;
-    wire [12:0] addra;
+    wire [14:0] addra;
 
     assign addr = io_sel ? addr_io : addr_proc;
 
-    assign addra = addr[14:2];
+    assign addra = addr[16:2];
 
     blk_mem_gen_0 i_instr_mem (
         .clka(clk),

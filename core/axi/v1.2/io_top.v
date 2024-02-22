@@ -41,6 +41,7 @@ module io_top (
     wire instr_mem_ready;
     wire cache_buf_ready;
     wire cache_ready;
+    wire _cache_rdata_buf_ready;
 
     wire [31:0] cache_buf_rdata_buf;
     wire cache_buf_rdata_ready;
@@ -69,16 +70,25 @@ module io_top (
     end
 
     // cache write addr generation
+    reg cache_write_waiting;
     always @(posedge clk) begin
         if (cache_ready) begin
             if (cache_rdata_buf_ready) begin
+                cache_write_waiting <= 1'b1;
+            end
+            if (cache_write_waiting && cache_valid) begin
+                cache_write_waiting <= 1'b0;
                 cache_write_addr <= cache_write_addr + 32'h4;
             end
         end
         else begin
             cache_write_addr <= DATA_SECTION_BASE_ADDR;
+            cache_write_waiting <= 1'b0;
         end
     end
+
+    // cache we generation
+    assign cache_rdata_buf_ready = _cache_rdata_buf_ready | cache_write_waiting;
 
     IO_fsm i_io_fsm (
         .clk(clk),
@@ -108,7 +118,7 @@ module io_top (
         .we(cache_buf_rdata_ready),
         .cache_valid(cache_valid),
         .input_data(cache_rdata_buf),
-        .input_data_ready(cache_rdata_buf_ready),
+        .input_data_ready(_cache_rdata_buf_ready),
         .cache_write_done(cache_write_done)
     );
 

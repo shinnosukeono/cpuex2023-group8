@@ -1,14 +1,12 @@
 module instr_decode (
-    input logic clk, rst,
+    input logic clk, rstn,
 
-    // input
     data_fetch_io.out data_fetch_if,
 
-    // output
     control_decode_io.in control_decode_if,
     data_decode_io.in data_decode_if,
 
-    // from write back stage
+    // WB stage
     input logic [4:0] rd_w,
     input logic [31:0] result_w,
     input logic reg_write_w,
@@ -27,7 +25,7 @@ module instr_decode (
 
     regfile_bram i_regfile (
         .clk(~clk),
-        .rst(rst),
+        .rst(~rstn),
         .we3(reg_write_w),
         .ena(1'b1),
         .enb(1'b1),
@@ -44,7 +42,7 @@ module instr_decode (
     // FPU register file
     fpu_regfile_bram i_fpu_regfile (
         .clk(~clk),
-        .rst(rst),
+        .rst(~rstn),
         .we3(fpu_reg_write_w),
         .ena(1'b1),
         .enb(1'b1),
@@ -62,9 +60,6 @@ module instr_decode (
     );
 
     assign control_decode_if.op_5_xor_6 = data_fetch_if.instr[5] ^ data_fetch_if.instr[6];
-
-    // control register file
-    assign data_decode_if.status = c_reg_write;
 
     assign data_decode_if.pc = data_fetch_if.pc;
     assign data_decode_if.instr = data_fetch_if.instr;

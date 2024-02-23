@@ -5,19 +5,14 @@ module comparator (
     output wire sltu,
     output wire zero
 );
-    wire [31:0] b_after_mux;
     wire [31:0] sum;
-    wire c_in;
     wire c_out;
     wire overflow_flag;
     wire add_sub;
     wire opposite_sign;
     wire overflow_possible;
 
-    assign c_in = alu_control[0] ? 1 : 0;
-
-    mux #(.DATAW(32)) b_mux (.data_in({~b, b}), .sel_in(alu_control[0]), .data_out(b_after_mux));
-    adder #(.DATAW(32)) i_adder (.a(a), .b(b_after_mux), .c_in(c_in), .s(sum), .c_out(c_out));
+    adder #(.DATAW(32)) i_adder (.a(a), .b(~b), .c_in(1), .s(sum), .c_out(c_out));
 
     assign add_sub = ~alu_control[1];
     assign opposite_sign = sum[31] ^ a[31];

@@ -17,12 +17,12 @@ module fpu_long_wrapper
     fpu_long u0 (
         .clk(clk),
         .rstn(rstn),
-        .en(en),
-        .x(x),
-        .y(y),
-        .z(z),
-        .funct5(funct5),
-        .rm(rm),
+        .en_wire(en),
+        .x_wire(x),
+        .y_wire(y),
+        .z_wire(z),
+        .funct5_wire(funct5),
+        .rm_wire(rm),
         .res(res),
         .valid(valid)
     );

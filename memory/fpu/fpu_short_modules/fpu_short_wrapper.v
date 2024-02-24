@@ -16,11 +16,11 @@ module fpu_short_wrapper
     fpu_short u0(
         .clk(clk),
         .rstn(rstn),
-        .en(en),
-        .x(x),
-        .y(y),
-        .funct5(funct5),
-        .rm(rm),
+        .en_wire(en),
+        .x_wire(x),
+        .y_wire(y),
+        .funct5_wire(funct5),
+        .rm_wire(rm),
         .res(res),
         .valid(valid)
     );

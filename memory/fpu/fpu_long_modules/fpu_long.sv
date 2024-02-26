@@ -4,14 +4,14 @@ module fpu_long
     (
         input wire clk,
         input wire rstn,
-        input wire en,
-        input wire [31:0] x,
-        input wire [31:0] y,
-        input wire [31:0] z,
-        input wire [4:0] funct5,
-        input wire [2:0] rm,
-        output wire [31:0] res,
-        output wire valid
+        input wire en_wire,
+        input wire [31:0] x_wire,
+        input wire [31:0] y_wire,
+        input wire [31:0] z_wire,
+        input wire [4:0] funct5_wire,
+        input wire [2:0] rm_wire,
+        output reg [31:0] res,
+        output reg valid
     );
 
     localparam FDIV   = 5'b00011,
@@ -26,7 +26,13 @@ module fpu_long
                 res_fmadd,
                 res_fmsub,
                 res_fnmadd,
-                res_fnmsub;
+                res_fnmsub,
+                res_wire;
+
+    reg [31:0] x, y, z;
+    reg [4:0] funct5;
+    reg [2:0] rm;
+    reg en;
 
     reg [31:0] res_fmadd_reg,
                res_fmsub_reg,
@@ -36,7 +42,26 @@ module fpu_long
     reg valid_reg[4:0];
     reg [4:0] funct5_reg[4:0];
     reg [2:0] rm_reg[4:0];
-    assign valid = valid_reg[4];
+
+    always @(posedge clk) begin
+        if (~rstn) begin
+            x <= 32'b0;
+            y <= 32'b0;
+            z <= 32'b0;
+            funct5 <= 5'b0;
+            rm <= 3'b0;
+            en <= 1'b0;
+        end
+        else begin
+            x <= x_wire;
+            y <= y_wire;
+            z <= z_wire;
+            funct5 <= funct5_wire;
+            rm <= rm_wire;
+            en <= en_wire;
+        end
+    end
+
     always @(posedge clk) begin
         if (~rstn) begin
             valid_reg[0] <= '0;
@@ -80,12 +105,23 @@ module fpu_long
         end
     end
 
-    assign res = ~|(funct5_reg[4] ^ FDIV)   ? res_fdiv       :
-                 ~|(funct5_reg[4] ^ FSQRT)  ? res_fsqrt      :
-                 ~|(funct5_reg[4] ^ FMADD)  ? res_fmadd_reg  :
-                 ~|(funct5_reg[4] ^ FMSUB)  ? res_fmsub_reg  :
-                 ~|(funct5_reg[4] ^ FNMADD) ? res_fnmadd_reg :
-                                              res_fnmsub_reg;
+    always @(posedge clk) begin
+        if (~rstn) begin
+            res <= 32'b0;
+            valid <= 1'b0;
+        end
+        else begin
+            res <= res_wire;
+            valid <= valid_reg[4];
+        end
+    end
+
+    assign res_wire = ~|(funct5_reg[4] ^ FDIV)   ? res_fdiv       :
+                      ~|(funct5_reg[4] ^ FSQRT)  ? res_fsqrt      :
+                      ~|(funct5_reg[4] ^ FMADD)  ? res_fmadd_reg  :
+                      ~|(funct5_reg[4] ^ FMSUB)  ? res_fmsub_reg  :
+                      ~|(funct5_reg[4] ^ FNMADD) ? res_fnmadd_reg :
+                                                   res_fnmsub_reg;
 
     fdiv_pipe u_fdiv_pipe(.*, .res(res_fdiv));
     fsqrt_pipe u_fsqrt_pipe(.*, .res(res_fsqrt));

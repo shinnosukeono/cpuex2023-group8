@@ -4,7 +4,6 @@ module core_top_wrapper (
     // instr memory
     input wire [31:0] instr,
     output wire [31:0] instr_addr,
-    output wire instr_en,
 
     // cache memory
     input wire [31:0] cache_rdata,
@@ -40,7 +39,6 @@ module core_top_wrapper (
         .rstn(rstn),
         .instr(instr),
         .instr_addr(instr_addr),
-        .instr_en(instr_en),
         .cache_rdata(cache_rdata),
         .cache_valid(cache_valid),
         .cache_addr(cache_addr),

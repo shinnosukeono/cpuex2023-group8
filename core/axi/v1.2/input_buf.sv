@@ -9,10 +9,10 @@ module InputBuf(
     output reg [31:0] input_data,
     output reg input_data_ready
     );
-    
-    (* ram_style = "BLOCK" *) reg [31:0] input_ram [1023:0];  // 4 KB (1 BRAM Tiles)
-    reg [9:0] ok_idx;
-    reg [9:0] now_idx;
+
+    (* ram_style = "BLOCK" *) reg [31:0] input_ram [511:0];
+    reg [8:0] ok_idx;
+    reg [8:0] now_idx;
 
     always_ff @( posedge clk ) begin
         if (~rstn) begin
@@ -20,7 +20,7 @@ module InputBuf(
             now_idx <= 0;
             input_data_ready <= 0;
         end
-        
+
         if (we) begin
             input_ram[ok_idx] <= wd;
             ok_idx <= ok_idx + 1;

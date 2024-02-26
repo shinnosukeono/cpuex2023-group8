@@ -4,7 +4,6 @@ module core_top (
     // instr memory
     input wire [31:0] instr,
     output wire [31:0] instr_addr,
-    output wire instr_en,
 
     // cache memory
     input wire [31:0] cache_rdata,
@@ -75,7 +74,8 @@ module core_top (
     instr_fetch i_instr_fetch (
         .data_back_if(data_back_if_out.out),
         .data_fetch_if(data_fetch_if_in.in),
-        .instr(instr)
+        .instr(instr),
+        .instr_addr(instr_addr)
     );
 
     instr_decode i_instr_decode (
@@ -138,7 +138,6 @@ module core_top (
         .control_exec_if(control_exec_if_out.out),
         .data_exec_if(data_exec_if_out.out),
         .data_back_if(data_back_if_in.in),
-        .instr_addr(instr_addr),
         .pc_plus4_f(data_fetch_if_in.pc_plus4),
         .reg_write(reg_write_w),
         .fpu_reg_write(fpu_reg_write_w),
@@ -215,6 +214,4 @@ module core_top (
         .reg_write_w(reg_write_w),
         .fpu_reg_write_w(fpu_reg_write_w)
     );
-
-    assign instr_en = ~stall;
 endmodule

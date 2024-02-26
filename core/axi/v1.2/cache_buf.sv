@@ -12,9 +12,9 @@ module CacheBuf(
     output reg cache_write_done
     );
 
-    (* ram_style = "BLOCK" *) reg [31:0] input_ram [1023:0];  // 4 KB
-    reg [9:0] ok_idx;  // 書き込み末尾
-    reg [9:0] now_idx;  // 読み出し先頭
+    (* ram_style = "BLOCK" *) reg [31:0] input_ram [127:0];
+    reg [6:0] ok_idx;  // 書き込み末尾
+    reg [6:0] now_idx;  // 読み出し先頭
 
     always_ff @( posedge clk ) begin
         if (~rstn) begin

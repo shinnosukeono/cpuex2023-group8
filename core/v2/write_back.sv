@@ -4,9 +4,6 @@ module write_back (
 
     data_back_io.in data_back_if,
 
-    // instr memory
-    output logic [31:0] instr_addr,
-
     // IF stage
     input logic [31:0] pc_plus4_f,
 
@@ -39,5 +36,4 @@ module write_back (
     end
 
     assign data_back_if.pc = (pc_src) ? pc_target : pc_plus4_f;
-    assign instr_addr = data_back_if.pc;
 endmodule

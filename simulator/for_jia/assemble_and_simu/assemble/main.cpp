@@ -25,6 +25,11 @@ using namespace std;
 
 int line_number = 0;
 
+void exitHandler()
+{
+	cerr << "Last line: " << line_number << endl;
+}
+
 struct Int12
 {
 	int v : 12;
@@ -4480,6 +4485,7 @@ void init(unordered_map<string,int> &RFnames);
 int main(){
 	unordered_map<string, int> RFnames;
 	init(RFnames);
+	atexit(exitHandler);
 	
 	cerr << "mode? {1,2: inst.txt 3,4: a.s}" << endl;
 	cin >> mode;
@@ -4683,6 +4689,8 @@ int main(){
 		cerr << "Error" << endl;
 		exit(1);
 	}
+
+	cerr << "Success" << endl;
 
 	return 0;
 }

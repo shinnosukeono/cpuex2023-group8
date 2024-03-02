@@ -1,0 +1,83 @@
+4*4
+
+time : 4175108540 nsec, 4175 msec
+pc : -1
+EX_count : 8584216
+sec_of_data : 1.3652 sec
+cycle_of_data_section : 582 cycle
+cycle (No Dependency Optimization) : 18185089
+(Estimated execution time : 0.227883 sec)
+(Estimated sum of time: 1.59308 sec)
+hit: 3692766
+miss: 21029
+hit rate: 0.994338
+stall: 0
+flush: 857381
+Return Code : 4
+Max_stack: 3fff520
+Max_heap: 10444a4
+Mips: 4.3556
+
+64*64
+
+time : 415331788430 nsec, 415331 msec
+pc : -1
+EX_count : 1307318698
+sec_of_data : 1.3652 sec
+cycle_of_data_section : 582 cycle
+cycle (No Dependency Optimization) : 2673122431
+(Estimated execution time : 33.4978 sec)
+(Estimated sum of time: 34.863 sec)
+hit: 593734904
+miss: 2975944
+hit rate: 0.995013
+stall: 0
+flush: 108586669
+Return Code : 64
+Max_stack: 3ffe5d0
+Max_heap: 1056384
+Mips: 6.43611
+
+128*128
+
+time : 1263002495395 nsec, 1263002 msec
+pc : -1
+EX_count : 4004676653
+sec_of_data : 1.3652 sec
+cycle_of_data_section : 582 cycle
+cycle (No Dependency Optimization) : 8189142019
+(Estimated execution time : 102.621 sec)
+(Estimated sum of time: 103.986 sec)
+hit: 1819055630
+miss: 9136651
+hit rate: 0.995002
+stall: 0
+flush: 331955300
+Return Code : 128
+Max_stack: 3ffd4f0
+Max_heap: 1069584
+Mips: 6.48387
+
+Done.
+
+256*256
+
+time : 4248389201826 nsec, 4248389 msec
+pc : -1
+EX_count : 12982203035
+sec_of_data : 1.3652 sec
+cycle_of_data_section : 582 cycle
+cycle (No Dependency Optimization) : 26556427588
+(Estimated execution time : 332.787 sec)
+(Estimated sum of time: 334.153 sec)
+hit: 5897585136
+miss: 29796953
+hit rate: 0.994973
+stall: 0
+flush: 1075020768
+Return Code : 256
+Max_stack: 3ffad40
+Max_heap: 108f984
+Mips: 6.25094
+
+Done.

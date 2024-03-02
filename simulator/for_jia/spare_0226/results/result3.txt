@@ -1,0 +1,19 @@
+64*64
+
+time : 453761396767 nsec, 453761 msec
+pc : -1
+EX_count : 1112601635
+sec_of_data : 1.38477 sec
+cycle_of_data_section : 582 cycle
+cycle (No Dependency Optimization) : 2321906576
+(Estimated execution time : 29.0966 sec)
+(Estimated sum of time: 30.4813 sec)
+hit: 480890151
+miss: 2880288
+hit rate: 0.994046
+stall: 0
+flush: 100808655
+Return Code : 64
+Max_stack: 3fff640
+Max_heap: 1056384
+Mips: 5.11702

@@ -1,0 +1,6 @@
+main 0
+ackermann 60
+.L4 77
+.L6 86
+.L5 98
+call_num 65536

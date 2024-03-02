@@ -1,0 +1,123 @@
+256*256
+
+time : 2761556557487 nsec, 2761556 msec
+pc : -1
+EX_count : 9097128998
+sec_of_data : 3.26719 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.29323e-06 sec
+stall_cycle_of_cin : 2077223 cycle
+sec_of_stall_of_cin : 0.0260304 sec
+
+cycle (Dependency Optimization) : 14044711300
+(Estimated execution time : 175.999 sec)
+(Estimated sum of time: 179.266 sec)
+stall (Dependency Optimization) : 827890914
+
+cycle (No Dependency Optimization) : 20134187233
+(Estimated execution time : 252.308 sec)
+(Estimated sum of time: 255.575 sec)
+stall (No Dependency Optimization) : 4923644961
+
+hit: 3806055028
+miss: 28662150
+hit rate: 0.992526
+flush: 870495809
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 108f984
+Mips: 3.2942 Mips
+clock_rate: 5.0858 MHz
+
+Done.
+
+Last line: 1498
+
+4*4
+
+time : 823543503 nsec, 823 msec
+pc : -1
+EX_count : 6003367
+sec_of_data : 3.26719 sec
+Return Code : 6
+Max_stack: 3fffe10
+Max_heap: 10444a4
+Mips: 7.28968 Mips
+
+time : 1910654768 nsec, 1910 msec
+pc : -1
+EX_count : 6003367
+sec_of_data : 3.26719 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.29323e-06 sec
+stall_cycle_of_cin : 4200786 cycle
+sec_of_stall_of_cin : 0.0526414 sec
+
+cycle (Dependency Optimization) : 10316853
+(Estimated execution time : 0.129284 sec)
+(Estimated sum of time: 3.39648 sec)
+stall (Dependency Optimization) : 853536
+
+cycle (No Dependency Optimization) : 18321702
+(Estimated execution time : 0.229595 sec)
+(Estimated sum of time: 3.49679 sec)
+stall (No Dependency Optimization) : 3124340
+
+hit: 2311291
+miss: 20554
+hit rate: 0.991186
+flush: 713826
+Return Code : 6
+Max_stack: 3fffe10
+Max_heap: 10444a4
+Mips: 3.14205 Mips
+clock_rate: 5.39964 MHz
+
+Done.
+
+Last line: 1497
+
+1*1
+
+time : 640728070 nsec, 640 msec
+pc : -1
+EX_count : 1479782
+sec_of_data : 3.26719 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.29323e-06 sec
+stall_cycle_of_cin : 4224471 cycle
+sec_of_stall_of_cin : 0.0529382 sec
+
+cycle (Dependency Optimization) : 3020036
+(Estimated execution time : 0.0378451 sec)
+(Estimated sum of time: 3.30504 sec)
+stall (Dependency Optimization) : 201606
+
+cycle (No Dependency Optimization) : 8289997
+(Estimated execution time : 0.103885 sec)
+(Estimated sum of time: 3.37108 sec)
+stall (No Dependency Optimization) : 688791
+
+hit: 420043
+miss: 5618
+hit rate: 0.986802
+flush: 275530
+Return Code : 1
+Max_stack: 3fffe40
+Max_heap: 104364c
+Mips: 2.30953 Mips
+clock_rate: 4.71344 MHz
+
+1*1
+
+pc : -1
+EX_count : 1479782
+sec_of_data : 3.26719 sec
+Return Code : 1
+Max_stack: 3fffe40
+Max_heap: 104364c
+Mips: 7.73952 Mips
+
+Done.
+
+Last line: 1497

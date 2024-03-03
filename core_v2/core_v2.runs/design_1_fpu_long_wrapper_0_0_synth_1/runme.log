@@ -1,0 +1,498 @@
+
+*** Running vivado
+    with args -log design_1_fpu_long_wrapper_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_fpu_long_wrapper_0_0.tcl
+
+
+
+****** Vivado v2020.2.2 (64-bit)
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source design_1_fpu_long_wrapper_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 1026.027 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/repos'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_fpu_long_wrapper_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'design_1_fpu_long_wrapper_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 215340
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1026.027 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_fpu_long_wrapper_0_0' [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_fpu_long_wrapper_0_0/synth/design_1_fpu_long_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'fpu_long_wrapper' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fpu_long_wrapper.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fpu_long' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fpu_long.sv:3]
+	Parameter FDIV bound to: 5'b00011 
+	Parameter FSQRT bound to: 5'b01011 
+	Parameter FMADD bound to: 5'b10000 
+	Parameter FMSUB bound to: 5'b10001 
+	Parameter FNMADD bound to: 5'b10011 
+	Parameter FNMSUB bound to: 5'b10010 
+INFO: [Synth 8-6157] synthesizing module 'fdiv_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fdiv_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'finv_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/finv_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: a_approx.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'a_approx.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (1#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized0' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: b_approx.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'b_approx.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized0' (1#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmul_of_finv_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmul_of_finv_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fmul_of_finv_pipe' (2#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmul_of_finv_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fadd_of_finv' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fadd_of_finv.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'fadd_of_finv' (3#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fadd_of_finv.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'finv_pipe' (4#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/finv_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmul_of_fdiv_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmul_of_fdiv_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fmul_of_fdiv_pipe' (5#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmul_of_fdiv_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fdiv_pipe' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fdiv_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fsqrt_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fsqrt_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized1' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: fsqrt_a_1.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fsqrt_a_1.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized1' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized2' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: fsqrt_b_1.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fsqrt_b_1.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized2' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized3' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: fsqrt_a_2.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fsqrt_a_2.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized3' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized4' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+	Parameter MEM_INIT_FILE bound to: fsqrt_b_2.mem - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fsqrt_b_2.mem' is read successfully [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized4' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/rom.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmul_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fmul_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fmul_pipe' (7#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fmul_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fadd_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fadd_pipe.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'lzc' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/lzc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'lzc' (8#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/lzc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fadd_pipe' (9#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fadd_pipe.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'fsqrt_pipe' (10#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fsqrt_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmadd_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmadd_pipe.sv:3]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'fmadd_fadd'. This will prevent further optimization [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmadd_pipe.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'fmadd_pipe' (11#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmadd_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmsub_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmsub_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fmsub_pipe' (12#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fmsub_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fnmadd_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fnmadd_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fnmadd_pipe' (13#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fnmadd_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fnmsub_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fnmsub_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fnmsub_pipe' (14#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fnmsub_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fpu_long' (15#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fpu_long.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fpu_long_wrapper' (16#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_long_modules/fpu_long_wrapper.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_fpu_long_wrapper_0_0' (17#1) [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_fpu_long_wrapper_0_0/synth/design_1_fpu_long_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1026.027 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1026.027 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1026.027 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1026.027 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1102.488 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1102.703 ; gain = 0.215
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1102.703 ; gain = 76.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1102.703 ; gain = 76.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1102.703 ; gain = 76.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:25 . Memory (MB): peak = 1102.703 ; gain = 76.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   28 Bit       Adders := 5     
+	   3 Input   26 Bit       Adders := 11    
+	   3 Input   25 Bit       Adders := 1     
+	   2 Input   25 Bit       Adders := 6     
+	   3 Input   10 Bit       Adders := 8     
+	   2 Input   10 Bit       Adders := 5     
+	   3 Input    9 Bit       Adders := 10    
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 12    
+	   3 Input    8 Bit       Adders := 5     
++---XORs : 
+	   2 Input      5 Bit         XORs := 5     
+	   2 Input      1 Bit         XORs := 11    
++---Registers : 
+	               32 Bit    Registers := 37    
+	               28 Bit    Registers := 5     
+	               27 Bit    Registers := 6     
+	               25 Bit    Registers := 13    
+	               24 Bit    Registers := 7     
+	               23 Bit    Registers := 6     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 10    
+	                8 Bit    Registers := 27    
+	                5 Bit    Registers := 11    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 57    
++---ROMs : 
+	                    ROMs := 6     
++---Muxes : 
+	   2 Input   50 Bit        Muxes := 5     
+	   2 Input   35 Bit        Muxes := 6     
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   28 Bit        Muxes := 5     
+	   2 Input   25 Bit        Muxes := 36    
+	   2 Input   23 Bit        Muxes := 29    
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 61    
+	   2 Input    7 Bit        Muxes := 3     
+	  25 Input    5 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 22    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP fdiv_finv/finv_fmul/hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fdiv_finv/finv_fmul/hylx_reg_reg is absorbed into DSP fdiv_finv/finv_fmul/hylx_reg_reg.
+DSP Report: operator fdiv_finv/finv_fmul/hylx is absorbed into DSP fdiv_finv/finv_fmul/hylx_reg_reg.
+DSP Report: Generating DSP fdiv_finv/finv_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fdiv_finv/finv_fmul/hxhy_reg_reg is absorbed into DSP fdiv_finv/finv_fmul/hxhy_reg_reg.
+DSP Report: operator fdiv_finv/finv_fmul/hxhy is absorbed into DSP fdiv_finv/finv_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP fdiv_finv/finv_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator fdiv_finv/finv_fmul/m_res_long is absorbed into DSP fdiv_finv/finv_fmul/m_res_long.
+DSP Report: Generating DSP fdiv_finv/finv_fmul/hxly_reg_reg, operation Mode is: (A*B2)'.
+DSP Report: register fdiv_finv/m_reg_reg is absorbed into DSP fdiv_finv/finv_fmul/hxly_reg_reg.
+DSP Report: register fdiv_finv/finv_fmul/hxly_reg_reg is absorbed into DSP fdiv_finv/finv_fmul/hxly_reg_reg.
+DSP Report: operator fdiv_finv/finv_fmul/hxly is absorbed into DSP fdiv_finv/finv_fmul/hxly_reg_reg.
+DSP Report: Generating DSP fdiv_fmul/hylx_reg_reg, operation Mode is: (A*B'')'.
+DSP Report: register mx_reg_reg[2] is absorbed into DSP fdiv_fmul/hylx_reg_reg.
+DSP Report: register mx_reg_reg[3] is absorbed into DSP fdiv_fmul/hylx_reg_reg.
+DSP Report: register fdiv_fmul/hylx_reg_reg is absorbed into DSP fdiv_fmul/hylx_reg_reg.
+DSP Report: operator fdiv_fmul/hylx is absorbed into DSP fdiv_fmul/hylx_reg_reg.
+DSP Report: Generating DSP fdiv_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fdiv_fmul/hxhy_reg_reg is absorbed into DSP fdiv_fmul/hxhy_reg_reg.
+DSP Report: operator fdiv_fmul/hxhy is absorbed into DSP fdiv_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP fdiv_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator fdiv_fmul/m_res_long is absorbed into DSP fdiv_fmul/m_res_long.
+DSP Report: Generating DSP fdiv_fmul/hxly_reg_reg, operation Mode is: (A*B2)'.
+DSP Report: register my_inv_reg_reg is absorbed into DSP fdiv_fmul/hxly_reg_reg.
+DSP Report: register fdiv_fmul/hxly_reg_reg is absorbed into DSP fdiv_fmul/hxly_reg_reg.
+DSP Report: operator fdiv_fmul/hxly is absorbed into DSP fdiv_fmul/hxly_reg_reg.
+DSP Report: Generating DSP hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hylx_reg_reg is absorbed into DSP hylx_reg_reg.
+DSP Report: operator hylx is absorbed into DSP hylx_reg_reg.
+DSP Report: Generating DSP hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hxhy_reg_reg is absorbed into DSP hxhy_reg_reg.
+DSP Report: operator hxhy is absorbed into DSP hxhy_reg_reg.
+DSP Report: Generating DSP m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator m_res_long is absorbed into DSP m_res_long.
+DSP Report: Generating DSP hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hxly_reg_reg is absorbed into DSP hxly_reg_reg.
+DSP Report: operator hxly is absorbed into DSP hxly_reg_reg.
+DSP Report: Generating DSP fmadd_fmul/hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fmadd_fmul/hylx_reg_reg is absorbed into DSP fmadd_fmul/hylx_reg_reg.
+DSP Report: operator fmadd_fmul/hylx is absorbed into DSP fmadd_fmul/hylx_reg_reg.
+DSP Report: Generating DSP fmadd_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fmadd_fmul/hxhy_reg_reg is absorbed into DSP fmadd_fmul/hxhy_reg_reg.
+DSP Report: operator fmadd_fmul/hxhy is absorbed into DSP fmadd_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP fmadd_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator fmadd_fmul/m_res_long is absorbed into DSP fmadd_fmul/m_res_long.
+DSP Report: Generating DSP fmadd_fmul/hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register fmadd_fmul/hxly_reg_reg is absorbed into DSP fmadd_fmul/hxly_reg_reg.
+DSP Report: operator fmadd_fmul/hxly is absorbed into DSP fmadd_fmul/hxly_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hylx_reg_reg is absorbed into DSP u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hylx is absorbed into DSP u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hxhy_reg_reg is absorbed into DSP u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hxhy is absorbed into DSP u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator u0/fmadd_fmul/m_res_long is absorbed into DSP u0/fmadd_fmul/m_res_long.
+DSP Report: Generating DSP u0/fmadd_fmul/hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hxly_reg_reg is absorbed into DSP u0/fmadd_fmul/hxly_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hxly is absorbed into DSP u0/fmadd_fmul/hxly_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hylx_reg_reg is absorbed into DSP u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hylx is absorbed into DSP u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hxhy_reg_reg is absorbed into DSP u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hxhy is absorbed into DSP u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP u0/fmadd_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator u0/fmadd_fmul/m_res_long is absorbed into DSP u0/fmadd_fmul/m_res_long.
+DSP Report: Generating DSP u0/fmadd_fmul/hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/fmadd_fmul/hxly_reg_reg is absorbed into DSP u0/fmadd_fmul/hxly_reg_reg.
+DSP Report: operator u0/fmadd_fmul/hxly is absorbed into DSP u0/fmadd_fmul/hxly_reg_reg.
+DSP Report: Generating DSP u0/u0/fmadd_fmul/hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/u0/fmadd_fmul/hylx_reg_reg is absorbed into DSP u0/u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: operator u0/u0/fmadd_fmul/hylx is absorbed into DSP u0/u0/fmadd_fmul/hylx_reg_reg.
+DSP Report: Generating DSP u0/u0/fmadd_fmul/hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/u0/fmadd_fmul/hxhy_reg_reg is absorbed into DSP u0/u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: operator u0/u0/fmadd_fmul/hxhy is absorbed into DSP u0/u0/fmadd_fmul/hxhy_reg_reg.
+DSP Report: Generating DSP u0/u0/fmadd_fmul/m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator u0/u0/fmadd_fmul/m_res_long is absorbed into DSP u0/u0/fmadd_fmul/m_res_long.
+DSP Report: Generating DSP u0/u0/fmadd_fmul/hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register u0/u0/fmadd_fmul/hxly_reg_reg is absorbed into DSP u0/u0/fmadd_fmul/hxly_reg_reg.
+DSP Report: operator u0/u0/fmadd_fmul/hxly is absorbed into DSP u0/u0/fmadd_fmul/hxly_reg_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1102.703 ; gain = 76.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+-----------------+---------------+----------------+
+|Module Name | RTL Object      | Depth x Width | Implemented As | 
++------------+-----------------+---------------+----------------+
+|finv_pipe   | a_table/q_reg   | 1024x27       | Block RAM      | 
+|finv_pipe   | b_table/q_reg   | 1024x25       | Block RAM      | 
+|fsqrt_pipe  | b_table_2/q_reg | 1024x25       | Block RAM      | 
+|fsqrt_pipe  | b_table_1/q_reg | 512x24        | Block RAM      | 
+|fsqrt_pipe  | a_table_2/q_reg | 1024x24       | Block RAM      | 
+|fsqrt_pipe  | a_table_1/q_reg | 512x25        | Block RAM      | 
++------------+-----------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping	Report (see note below)
++------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fmul_of_finv_pipe | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_of_finv_pipe | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fdiv_pipe         | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fdiv_pipe         | (A*B2)'                | 13     | 11     | -      | -      | 24     | 0    | 1    | -    | -    | -     | 1    | 0    | 
+|fdiv_pipe         | (A*B'')'               | 13     | 11     | -      | -      | 24     | 0    | 2    | -    | -    | -     | 1    | 0    | 
+|fmul_of_fdiv_pipe | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fdiv_pipe         | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fdiv_pipe         | (A*B2)'                | 13     | 11     | -      | -      | 24     | 0    | 1    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmadd_pipe        | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmsub_pipe        | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fnmadd_pipe       | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fnmsub_pipe       | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe         | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:47 . Memory (MB): peak = 1161.156 ; gain = 135.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:48 . Memory (MB): peak = 1165.930 ; gain = 139.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fdiv_pipe/fdiv_finv/a_table/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/b_table_2/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/b_table_1/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/b_table_1/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/a_table_2/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/a_table_1/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/u0/u_fsqrt_pipe/a_table_1/q_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1204.801 ; gain = 178.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                   | RTL Name                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|design_1_fpu_long_wrapper_0_0 | inst/u0/u_fdiv_pipe/genblk1[3].ey_reg_reg[4][7]        | 4      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|design_1_fpu_long_wrapper_0_0 | inst/u0/u_fsqrt_pipe/genblk2[3].e_actual_reg_reg[4][8] | 5      | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|design_1_fpu_long_wrapper_0_0 | inst/u0/u_fsqrt_pipe/genblk2[3].sx_reg_reg[4]          | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|design_1_fpu_long_wrapper_0_0 | inst/u0/genblk1[3].funct5_reg_reg[4][4]                | 6      | 5     | YES          | NO                 | YES               | 5      | 0       | 
+|design_1_fpu_long_wrapper_0_0 | inst/u0/valid_reg                                      | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------------------------+--------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   274|
+|2     |DSP48E1  |    28|
+|6     |LUT1     |    67|
+|7     |LUT2     |   480|
+|8     |LUT3     |   797|
+|9     |LUT4     |   312|
+|10    |LUT5     |   520|
+|11    |LUT6     |  1627|
+|12    |RAMB18E1 |     2|
+|14    |RAMB36E1 |     4|
+|18    |SRL16E   |    31|
+|19    |FDRE     |  1878|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:49 . Memory (MB): peak = 1220.367 ; gain = 117.664
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1220.367 ; gain = 194.340
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1232.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 308 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1236.688 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+75 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 1236.688 ; gain = 210.660
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_fpu_long_wrapper_0_0_synth_1/design_1_fpu_long_wrapper_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 32 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_fpu_long_wrapper_0_0_synth_1/design_1_fpu_long_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_fpu_long_wrapper_0_0_utilization_synth.rpt -pb design_1_fpu_long_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 23:01:44 2024...

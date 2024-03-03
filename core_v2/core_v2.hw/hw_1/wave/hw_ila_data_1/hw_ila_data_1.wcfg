@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Projects/core_v2/core_v2.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="6fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="604"></NameColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="design_1_i/core_top_wrapper_0_instr_addr" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/core_top_wrapper_0_instr_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">core_top_wrapper_0_instr_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0_cache_rdata_buf" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0_cache_rdata_buf[31:0]</obj_property>
+      <obj_property name="ObjectShortName">io_top_0_cache_rdata_buf[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0_cache_write_addr" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0_cache_write_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">io_top_0_cache_write_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0_io_stall" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0_io_stall</obj_property>
+      <obj_property name="ObjectShortName">io_top_0_io_stall</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0/inst/_cache_rdata_buf_ready" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0/inst/_cache_rdata_buf_ready</obj_property>
+      <obj_property name="ObjectShortName">_cache_rdata_buf_ready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0/inst/cache_write_waiting" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0/inst/cache_write_waiting</obj_property>
+      <obj_property name="ObjectShortName">cache_write_waiting</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/io_top_0_cache_rdata_buf_ready" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/io_top_0_cache_rdata_buf_ready</obj_property>
+      <obj_property name="ObjectShortName">io_top_0_cache_rdata_buf_ready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/cache_v_5_1_0_io_data_valid" type="logic">
+      <obj_property name="ElementShortName">design_1_i/cache_v_5_1_0_io_data_valid</obj_property>
+      <obj_property name="ObjectShortName">cache_v_5_1_0_io_data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/cache_v_5_1_0_io_init_complete" type="logic">
+      <obj_property name="ElementShortName">design_1_i/cache_v_5_1_0_io_init_complete</obj_property>
+      <obj_property name="ObjectShortName">cache_v_5_1_0_io_init_complete</obj_property>
+   </wvobject>
+</wave_config>

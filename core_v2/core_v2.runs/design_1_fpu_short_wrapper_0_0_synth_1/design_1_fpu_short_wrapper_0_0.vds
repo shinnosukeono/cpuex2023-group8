@@ -1,0 +1,323 @@
+#-----------------------------------------------------------
+# Vivado v2020.2.2 (64-bit)
+# SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+# IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+# Start of session at: Mon Feb 26 22:56:46 2024
+# Process ID: 213880
+# Current directory: C:/Projects/core_v2/core_v2.runs/design_1_fpu_short_wrapper_0_0_synth_1
+# Command line: vivado.exe -log design_1_fpu_short_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_fpu_short_wrapper_0_0.tcl
+# Log file: C:/Projects/core_v2/core_v2.runs/design_1_fpu_short_wrapper_0_0_synth_1/design_1_fpu_short_wrapper_0_0.vds
+# Journal file: C:/Projects/core_v2/core_v2.runs/design_1_fpu_short_wrapper_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_fpu_short_wrapper_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 1027.250 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/repos'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_fpu_short_wrapper_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'design_1_fpu_short_wrapper_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 216876
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1027.250 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_fpu_short_wrapper_0_0' [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_fpu_short_wrapper_0_0/synth/design_1_fpu_short_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'fpu_short_wrapper' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fpu_short_wrapper.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fpu_short' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fpu_short.sv:3]
+	Parameter FADD bound to: 5'b00000 
+	Parameter FSUB bound to: 5'b00001 
+	Parameter FMUL bound to: 5'b00010 
+	Parameter FSGNJ bound to: 5'b00100 
+	Parameter FTOI bound to: 5'b11000 
+	Parameter FCMP bound to: 5'b10100 
+	Parameter ITOF bound to: 5'b11010 
+INFO: [Synth 8-6157] synthesizing module 'fadd_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fadd_pipe.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'lzc' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/lzc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'lzc' (1#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/lzc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fadd_pipe' (2#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fadd_pipe.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'fsub_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsub_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fsub_pipe' (3#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsub_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fmul_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fmul_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fmul_pipe' (4#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fmul_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'ftoi_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/ftoi_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ftoi_pipe' (5#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/ftoi_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'itof_pipe' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/itof_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'shift_counter' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/shift_counter.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'shift_counter' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/shift_counter.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'itof_pipe' (7#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/itof_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fsgnj' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnj.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fsgnj' (8#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnj.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fsgnjn' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnjn.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fsgnjn' (9#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnjn.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fsgnjx' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnjx.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fsgnjx' (10#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fsgnjx.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'feq' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/feq.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'feq' (11#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/feq.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'flt' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/flt.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'flt' (12#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/flt.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'fle' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fle.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fle' (13#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fle.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fpu_short' (14#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fpu_short.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'fpu_short_wrapper' (15#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/memory/fpu/fpu_short_modules/fpu_short_wrapper.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_fpu_short_wrapper_0_0' (16#1) [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_fpu_short_wrapper_0_0/synth/design_1_fpu_short_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1027.250 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1027.250 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1027.250 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1027.250 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1096.453 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1096.457 ; gain = 0.004
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1096.457 ; gain = 69.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1096.457 ; gain = 69.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1096.457 ; gain = 69.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1096.457 ; gain = 69.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 2     
+	   3 Input   28 Bit       Adders := 2     
+	   3 Input   26 Bit       Adders := 4     
+	   2 Input   25 Bit       Adders := 2     
+	   3 Input   24 Bit       Adders := 2     
+	   2 Input   23 Bit       Adders := 1     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   3 Input    9 Bit       Adders := 6     
+	   2 Input    9 Bit       Adders := 1     
+	   3 Input    8 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 5     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 2     
+	   2 Input      5 Bit         XORs := 5     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               32 Bit    Registers := 22    
+	               28 Bit    Registers := 2     
+	               27 Bit    Registers := 2     
+	               25 Bit    Registers := 4     
+	               24 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                5 Bit    Registers := 7     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input   50 Bit        Muxes := 2     
+	   2 Input   35 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 5     
+	   3 Input   32 Bit        Muxes := 1     
+	   2 Input   31 Bit        Muxes := 2     
+	   2 Input   28 Bit        Muxes := 2     
+	   2 Input   25 Bit        Muxes := 12    
+	   2 Input   23 Bit        Muxes := 8     
+	   2 Input    8 Bit        Muxes := 18    
+	  25 Input    5 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 17    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP hylx_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hylx_reg_reg is absorbed into DSP hylx_reg_reg.
+DSP Report: operator hylx is absorbed into DSP hylx_reg_reg.
+DSP Report: Generating DSP hxhy_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hxhy_reg_reg is absorbed into DSP hxhy_reg_reg.
+DSP Report: operator hxhy is absorbed into DSP hxhy_reg_reg.
+DSP Report: Generating DSP m_res_long, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator m_res_long is absorbed into DSP m_res_long.
+DSP Report: Generating DSP hxly_reg_reg, operation Mode is: (A*B)'.
+DSP Report: register hxly_reg_reg is absorbed into DSP hxly_reg_reg.
+DSP Report: operator hxly is absorbed into DSP hxly_reg_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 1096.457 ; gain = 69.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fmul_pipe   | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe   | (A*B)'                 | 13     | 13     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|fmul_pipe   | PCIN+(A:0x0):B+(C:0x2) | 30     | 13     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|fmul_pipe   | (A*B)'                 | 13     | 11     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 1124.379 ; gain = 97.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 1126.859 ; gain = 99.609
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 1173.379 ; gain = 146.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   134|
+|2     |DSP48E1 |     4|
+|5     |LUT1    |    58|
+|6     |LUT2    |   200|
+|7     |LUT3    |   374|
+|8     |LUT4    |   147|
+|9     |LUT5    |   339|
+|10    |LUT6    |   769|
+|11    |FDRE    |   713|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1187.199 ; gain = 159.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1187.199 ; gain = 90.742
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1187.199 ; gain = 159.949
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1199.250 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 138 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1199.250 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:50 . Memory (MB): peak = 1199.250 ; gain = 172.000
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_fpu_short_wrapper_0_0_synth_1/design_1_fpu_short_wrapper_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 8 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_fpu_short_wrapper_0_0_synth_1/design_1_fpu_short_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_fpu_short_wrapper_0_0_utilization_synth.rpt -pb design_1_fpu_short_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 23:01:38 2024...

@@ -1,0 +1,386 @@
+
+*** Running vivado
+    with args -log design_1_core_top_wrapper_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_core_top_wrapper_0_0.tcl
+
+
+
+****** Vivado v2020.2.2 (64-bit)
+  **** SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+  **** IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source design_1_core_top_wrapper_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 1027.316 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/repos'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_core_top_wrapper_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'design_1_core_top_wrapper_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 218524
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1027.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_core_top_wrapper_0_0' [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_core_top_wrapper_0_0/synth/design_1_core_top_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'core_top_wrapper' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/core_top_wrapper.v:1]
+INFO: [Synth 8-6157] synthesizing module 'core_top' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/core_top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_decode_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_decode_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_decode_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_decode_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_dispatch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'control_dispatch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'control_dispatch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'control_dispatch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'control_exec_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:108]
+INFO: [Synth 8-6155] done synthesizing module 'control_exec_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:108]
+INFO: [Synth 8-6157] synthesizing module 'control_exec_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:108]
+INFO: [Synth 8-6155] done synthesizing module 'control_exec_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/control_signal.sv:108]
+INFO: [Synth 8-6157] synthesizing module 'data_fetch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'data_fetch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'data_fetch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'data_fetch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'data_decode_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'data_decode_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'data_decode_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'data_decode_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'data_dispatch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:66]
+INFO: [Synth 8-6155] done synthesizing module 'data_dispatch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:66]
+INFO: [Synth 8-6157] synthesizing module 'data_dispatch_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:66]
+INFO: [Synth 8-6155] done synthesizing module 'data_dispatch_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:66]
+INFO: [Synth 8-6157] synthesizing module 'data_exec_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:115]
+INFO: [Synth 8-6155] done synthesizing module 'data_exec_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:115]
+INFO: [Synth 8-6157] synthesizing module 'data_exec_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:115]
+INFO: [Synth 8-6155] done synthesizing module 'data_exec_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:115]
+INFO: [Synth 8-6157] synthesizing module 'data_back_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:149]
+INFO: [Synth 8-6155] done synthesizing module 'data_back_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:149]
+INFO: [Synth 8-6157] synthesizing module 'data_back_io' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:149]
+INFO: [Synth 8-6155] done synthesizing module 'data_back_io' (0#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/if/data_signal.sv:149]
+INFO: [Synth 8-6157] synthesizing module 'instr_fetch' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/instr_fetch.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'instr_fetch' (1#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/instr_fetch.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'instr_decode' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/instr_decode.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/control_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'main_decoder' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/main_decoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'main_decoder' (2#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/main_decoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (3#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/control_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'regfile_bram' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rams_sdp_one_clock' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/rams_sdp_one_clock.v:3]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_DEPTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rams_sdp_one_clock' (4#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/rams_sdp_one_clock.v:3]
+WARNING: [Synth 8-7071] port 'hwrst' of module 'rams_sdp_one_clock' is unconnected for instance 'i_regfile1' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:16]
+WARNING: [Synth 8-7023] instance 'i_regfile1' of module 'rams_sdp_one_clock' has 10 connections declared, but only 9 given [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:16]
+WARNING: [Synth 8-7071] port 'hwrst' of module 'rams_sdp_one_clock' is unconnected for instance 'i_regfile2' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:32]
+WARNING: [Synth 8-7023] instance 'i_regfile2' of module 'rams_sdp_one_clock' has 10 connections declared, but only 9 given [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_bram' (5#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/regfile_bram.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'fpu_regfile_bram' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rams_sdp_one_clock_no_initial' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/tams_sdp_one_clock_no_initial.v:3]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_DEPTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rams_sdp_one_clock_no_initial' (6#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/tams_sdp_one_clock_no_initial.v:3]
+WARNING: [Synth 8-7071] port 'hwrst' of module 'rams_sdp_one_clock_no_initial' is unconnected for instance 'i_regfile1' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:16]
+WARNING: [Synth 8-7023] instance 'i_regfile1' of module 'rams_sdp_one_clock_no_initial' has 10 connections declared, but only 9 given [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:16]
+WARNING: [Synth 8-7071] port 'hwrst' of module 'rams_sdp_one_clock_no_initial' is unconnected for instance 'i_regfile2' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:32]
+WARNING: [Synth 8-7023] instance 'i_regfile2' of module 'rams_sdp_one_clock_no_initial' has 10 connections declared, but only 9 given [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:32]
+WARNING: [Synth 8-7071] port 'hwrst' of module 'rams_sdp_one_clock_no_initial' is unconnected for instance 'i_regfile_3' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:48]
+WARNING: [Synth 8-7023] instance 'i_regfile_3' of module 'rams_sdp_one_clock_no_initial' has 10 connections declared, but only 9 given [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:48]
+INFO: [Synth 8-6155] done synthesizing module 'fpu_regfile_bram' (7#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/fpu_regfile_bram.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'instr_decode' (8#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/instr_decode.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'dispatch' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/dispatch.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'extend' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/extend.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'extend' (9#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/extend.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'alu_decoder' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/alu_decoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu_decoder' (10#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/alu_decoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'dispatch' (11#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/dispatch.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'exec' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/exec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/alu.sv:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adder' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/adder.sv:1]
+	Parameter DATAW bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder' (12#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/adder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (13#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/alu.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_unit' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/branch_unit.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'comparator' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/branch_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/mux.sv:3]
+	Parameter DATAW bound to: 32 - type: integer 
+	Parameter N bound to: 2 - type: integer 
+	Parameter LN bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux' (14#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/lib/mux.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'comparator' (15#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/branch_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'branch_unit' (16#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/branch_unit.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'exec' (17#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/exec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'write_back' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/write_back.sv:1]
+INFO: [Synth 8-226] default block is never used [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/write_back.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'write_back' (18#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/write_back.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_register' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/pipeline_register.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_register' (19#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/pipeline_register.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/hazard_unit.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'stall_gen' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/hazard_unit.sv:1]
+	Parameter IDLE bound to: 1'b0 
+	Parameter BUSY bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'stall_gen' (20#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/hazard_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (21#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/hazard_unit.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'forwarding_unit' [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/forwarding_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'forwarding_unit' (22#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/forwarding_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'core_top' (23#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/core_top.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'core_top_wrapper' (24#1) [C:/Projects/core_v2/core_v2.srcs/sources_1/imports/cpuex2023-group8/core/v2/core_top_wrapper.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_core_top_wrapper_0_0' (25#1) [c:/Projects/core_v2/core_v2.gen/sources_1/bd/design_1/ip/design_1_core_top_wrapper_0_0/synth/design_1_core_top_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1027.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1027.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1027.316 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1027.316 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1095.512 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 1095.512 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1095.512 ; gain = 68.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1095.512 ; gain = 68.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1095.512 ; gain = 68.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1095.512 ; gain = 68.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 8     
+	   3 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 33    
+	                5 Bit    Registers := 11    
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 28    
++---RAMs : 
+	             1024 Bit	(32 X 32 bit)          RAMs := 5     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 25    
+	  21 Input   22 Bit        Muxes := 1     
+	  14 Input   21 Bit        Muxes := 1     
+	   3 Input   15 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	  10 Input    4 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1095.734 ; gain = 68.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                   | RTL Object                                                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_regfile/i_regfile1/ram_reg      | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_regfile/i_regfile2/ram_reg      | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile1/ram_reg  | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile2/ram_reg  | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile_3/ram_reg | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1095.734 ; gain = 68.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:39 . Memory (MB): peak = 1095.734 ; gain = 68.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                   | RTL Object                                                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_regfile/i_regfile1/ram_reg      | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_regfile/i_regfile2/ram_reg      | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile1/ram_reg  | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile2/ram_reg  | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|design_1_core_top_wrapper_0_0 | inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile_3/ram_reg | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------------------------+------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/i_core_top/i_instr_decode/i_regfile/i_regfile1/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/i_core_top/i_instr_decode/i_regfile/i_regfile2/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile1/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile2/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/i_core_top/i_instr_decode/i_fpu_regfile/i_regfile_3/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1111.867 ; gain = 84.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.715 ; gain = 98.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.715 ; gain = 98.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.715 ; gain = 98.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.715 ; gain = 98.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.734 ; gain = 98.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.734 ; gain = 98.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    42|
+|2     |LUT1     |     3|
+|3     |LUT2     |    61|
+|4     |LUT3     |   323|
+|5     |LUT4     |   120|
+|6     |LUT5     |   341|
+|7     |LUT6     |   546|
+|8     |MUXF7    |    33|
+|9     |RAMB18E1 |     5|
+|10    |FDRE     |   977|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1125.734 ; gain = 98.418
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:39 . Memory (MB): peak = 1125.734 ; gain = 30.223
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1125.734 ; gain = 98.418
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1137.859 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'design_1_core_top_wrapper_0_0' is not ideal for floorplanning, since the cellview 'pipeline_register' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 10 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1137.859 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+105 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:51 . Memory (MB): peak = 1137.859 ; gain = 110.543
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_core_top_wrapper_0_0_synth_1/design_1_core_top_wrapper_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 24 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Projects/core_v2/core_v2.runs/design_1_core_top_wrapper_0_0_synth_1/design_1_core_top_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_core_top_wrapper_0_0_utilization_synth.rpt -pb design_1_core_top_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 23:01:37 2024...

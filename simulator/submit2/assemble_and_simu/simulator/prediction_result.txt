@@ -1,0 +1,1241 @@
+Bimodal result
+[<83> Jal ra(x1), 76756]: hit 0, miss 1, hit rate 0
+[<89> Jal ra(x1), 76772]: hit 0, miss 1, hit rate 0
+[<103> Jal ra(x1), 76756]: hit 0, miss 1, hit rate 0
+[<109> Jal ra(x1), 76692]: hit 0, miss 1, hit rate 0
+[<115> Jal ra(x1), 76668]: hit 0, miss 1, hit rate 0
+[<121> Jal ra(x1), 76644]: hit 0, miss 1, hit rate 0
+[<128> Jal ra(x1), 76616]: hit 0, miss 1, hit rate 0
+[<133> Jal ra(x1), 76556]: hit 0, miss 1, hit rate 0
+[<137> Jal ra(x1), 76540]: hit 0, miss 1, hit rate 0
+[<145> Jal ra(x1), 76508]: hit 0, miss 1, hit rate 0
+[<149> Jal ra(x1), 76492]: hit 0, miss 1, hit rate 0
+[<155> Jal ra(x1), 76508]: hit 0, miss 1, hit rate 0
+[<160> Jal ra(x1), 76448]: hit 0, miss 1, hit rate 0
+[<167> Jal ra(x1), 76460]: hit 0, miss 1, hit rate 0
+[<173> Jal ra(x1), 76436]: hit 0, miss 1, hit rate 0
+[<178> Jal ra(x1), 76376]: hit 0, miss 1, hit rate 0
+[<184> Jal ra(x1), 76392]: hit 0, miss 1, hit rate 0
+[<190> Jal ra(x1), 76368]: hit 0, miss 1, hit rate 0
+[<196> Jal ra(x1), 76344]: hit 0, miss 1, hit rate 0
+[<202> Jal ra(x1), 76320]: hit 0, miss 1, hit rate 0
+[<207> Jal ra(x1), 76260]: hit 0, miss 1, hit rate 0
+[<212> Jal ra(x1), 76240]: hit 0, miss 1, hit rate 0
+[<218> Jal ra(x1), 76256]: hit 0, miss 1, hit rate 0
+[<224> Jal ra(x1), 76232]: hit 0, miss 1, hit rate 0
+[<230> Jal ra(x1), 76208]: hit 0, miss 1, hit rate 0
+[<236> Jal ra(x1), 76184]: hit 0, miss 1, hit rate 0
+[<242> Jal ra(x1), 76160]: hit 0, miss 1, hit rate 0
+[<248> Jal ra(x1), 76136]: hit 0, miss 1, hit rate 0
+[<254> Jal ra(x1), 76112]: hit 0, miss 1, hit rate 0
+[<260> Jal ra(x1), 76088]: hit 0, miss 1, hit rate 0
+[<264> Jal ra(x1), 76032]: hit 0, miss 1, hit rate 0
+[<269> Jal ra(x1), 76196]: hit 0, miss 1, hit rate 0
+[<273> Jal ra(x1), 75996]: hit 0, miss 1, hit rate 0
+[<279> Jal ra(x1), 76012]: hit 0, miss 1, hit rate 0
+[<284> Jal ra(x1), 75992]: hit 0, miss 1, hit rate 0
+[<288> Jal ra(x1), 75936]: hit 0, miss 1, hit rate 0
+[<297> Jal ra(x1), 75940]: hit 0, miss 1, hit rate 0
+[<301> Jal ra(x1), 75884]: hit 0, miss 1, hit rate 0
+[<309> Jal ra(x1), 76080]: hit 0, miss 1, hit rate 0
+[<314> Jal ra(x1), 75832]: hit 0, miss 1, hit rate 0
+[<340> Jal ra(x1), 75768]: hit 0, miss 1, hit rate 0
+[<345> Jal ra(x1), 75748]: hit 0, miss 1, hit rate 0
+[<349> Jal ra(x1), 75692]: hit 0, miss 1, hit rate 0
+[<354> Jal ra(x1), 75712]: hit 0, miss 1, hit rate 0
+[<359> Jal ra(x1), 75692]: hit 0, miss 1, hit rate 0
+[<364> Jal ra(x1), 75672]: hit 0, miss 1, hit rate 0
+[<369> Jal ra(x1), 75652]: hit 0, miss 1, hit rate 0
+[<373> Jal ra(x1), 75596]: hit 0, miss 1, hit rate 0
+[<377> Jal ra(x1), 75580]: hit 0, miss 1, hit rate 0
+[<382> Jal ra(x1), 75600]: hit 0, miss 1, hit rate 0
+[<386> Jal ra(x1), 75544]: hit 0, miss 1, hit rate 0
+[<391> Jal ra(x1), 75564]: hit 0, miss 1, hit rate 0
+[<396> Jal ra(x1), 75544]: hit 0, miss 1, hit rate 0
+[<401> Jal ra(x1), 75524]: hit 0, miss 1, hit rate 0
+[<406> Jal ra(x1), 75504]: hit 0, miss 1, hit rate 0
+[<411> Jal ra(x1), 75484]: hit 0, miss 1, hit rate 0
+[<415> Jal ra(x1), 75428]: hit 0, miss 1, hit rate 0
+[<420> Jal ra(x1), 75448]: hit 0, miss 1, hit rate 0
+[<425> Jal ra(x1), 75428]: hit 0, miss 1, hit rate 0
+[<430> Jal ra(x1), 75408]: hit 0, miss 1, hit rate 0
+[<435> Jal ra(x1), 75388]: hit 0, miss 1, hit rate 0
+[<439> Jal ra(x1), 75332]: hit 0, miss 1, hit rate 0
+[<444> Jal ra(x1), 75352]: hit 0, miss 1, hit rate 0
+[<448> Jal ra(x1), 75296]: hit 0, miss 1, hit rate 0
+[<453> Jal ra(x1), 75316]: hit 0, miss 1, hit rate 0
+[<458> Jal ra(x1), 75296]: hit 0, miss 1, hit rate 0
+[<463> Jal ra(x1), 75276]: hit 0, miss 1, hit rate 0
+[<468> Jal ra(x1), 75256]: hit 0, miss 1, hit rate 0
+[<479> Jal ra(x1), 75452]: hit 0, miss 1, hit rate 0
+[<483> Bge s4(x20), zero(x0), 8]: hit 0, miss 1, hit rate 0
+[<489> Jal ra(x1), 75172]: hit 0, miss 1, hit rate 0
+[<494> Jal ra(x1), 75152]: hit 0, miss 1, hit rate 0
+[<498> Jal ra(x1), 75096]: hit 0, miss 1, hit rate 0
+[<503> Jal ra(x1), 75116]: hit 0, miss 1, hit rate 0
+[<508> Jal ra(x1), 75096]: hit 0, miss 1, hit rate 0
+[<513> Jal ra(x1), 75076]: hit 0, miss 1, hit rate 0
+[<518> Jal ra(x1), 75056]: hit 0, miss 1, hit rate 0
+[<522> Jal ra(x1), 75000]: hit 0, miss 1, hit rate 0
+[<526> Jal ra(x1), 74984]: hit 0, miss 1, hit rate 0
+[<531> Jal ra(x1), 75004]: hit 0, miss 1, hit rate 0
+[<535> Jal ra(x1), 74948]: hit 0, miss 1, hit rate 0
+[<540> Jal ra(x1), 74968]: hit 0, miss 1, hit rate 0
+[<545> Jal ra(x1), 74948]: hit 0, miss 1, hit rate 0
+[<550> Jal ra(x1), 74928]: hit 0, miss 1, hit rate 0
+[<555> Jal ra(x1), 74908]: hit 0, miss 1, hit rate 0
+[<560> Jal ra(x1), 74888]: hit 0, miss 1, hit rate 0
+[<564> Jal ra(x1), 74832]: hit 0, miss 1, hit rate 0
+[<569> Jal ra(x1), 74852]: hit 0, miss 1, hit rate 0
+[<574> Jal ra(x1), 74832]: hit 0, miss 1, hit rate 0
+[<579> Jal ra(x1), 74812]: hit 0, miss 1, hit rate 0
+[<584> Jal ra(x1), 74792]: hit 0, miss 1, hit rate 0
+[<588> Jal ra(x1), 74736]: hit 0, miss 1, hit rate 0
+[<593> Jal ra(x1), 74756]: hit 0, miss 1, hit rate 0
+[<597> Jal ra(x1), 74700]: hit 0, miss 1, hit rate 0
+[<603> Jal ra(x1), 74716]: hit 0, miss 1, hit rate 0
+[<608> Jal ra(x1), 74696]: hit 0, miss 1, hit rate 0
+[<613> Jal ra(x1), 74676]: hit 0, miss 1, hit rate 0
+[<618> Jal ra(x1), 74656]: hit 0, miss 1, hit rate 0
+[<633> Jal ra(x1), 15544]: hit 0, miss 1, hit rate 0
+[<639> Jal ra(x1), 74572]: hit 0, miss 1, hit rate 0
+[<644> Jal ra(x1), 74552]: hit 0, miss 1, hit rate 0
+[<648> Jal ra(x1), 74496]: hit 0, miss 1, hit rate 0
+[<653> Jal ra(x1), 74516]: hit 0, miss 1, hit rate 0
+[<658> Jal ra(x1), 74496]: hit 0, miss 1, hit rate 0
+[<663> Jal ra(x1), 74476]: hit 0, miss 1, hit rate 0
+[<668> Jal ra(x1), 74456]: hit 0, miss 1, hit rate 0
+[<672> Jal ra(x1), 74400]: hit 0, miss 1, hit rate 0
+[<676> Jal ra(x1), 74384]: hit 0, miss 1, hit rate 0
+[<681> Jal ra(x1), 74404]: hit 0, miss 1, hit rate 0
+[<685> Jal ra(x1), 74348]: hit 0, miss 1, hit rate 0
+[<690> Jal ra(x1), 74368]: hit 0, miss 1, hit rate 0
+[<695> Jal ra(x1), 74348]: hit 0, miss 1, hit rate 0
+[<700> Jal ra(x1), 74328]: hit 0, miss 1, hit rate 0
+[<705> Jal ra(x1), 74308]: hit 0, miss 1, hit rate 0
+[<710> Jal ra(x1), 74288]: hit 0, miss 1, hit rate 0
+[<714> Jal ra(x1), 74232]: hit 0, miss 1, hit rate 0
+[<719> Jal ra(x1), 74252]: hit 0, miss 1, hit rate 0
+[<724> Jal ra(x1), 74232]: hit 0, miss 1, hit rate 0
+[<729> Jal ra(x1), 74212]: hit 0, miss 1, hit rate 0
+[<734> Jal ra(x1), 74192]: hit 0, miss 1, hit rate 0
+[<738> Jal ra(x1), 74136]: hit 0, miss 1, hit rate 0
+[<743> Jal ra(x1), 74156]: hit 0, miss 1, hit rate 0
+[<747> Jal ra(x1), 74100]: hit 0, miss 1, hit rate 0
+[<752> Jal ra(x1), 74120]: hit 0, miss 1, hit rate 0
+[<757> Jal ra(x1), 74100]: hit 0, miss 1, hit rate 0
+[<762> Jal ra(x1), 74080]: hit 0, miss 1, hit rate 0
+[<767> Jal ra(x1), 74060]: hit 0, miss 1, hit rate 0
+[<778> Jal ra(x1), 74256]: hit 0, miss 1, hit rate 0
+[<787> Jal ra(x1), 73980]: hit 0, miss 1, hit rate 0
+[<792> Jal ra(x1), 73960]: hit 0, miss 1, hit rate 0
+[<796> Jal ra(x1), 73904]: hit 0, miss 1, hit rate 0
+[<801> Jal ra(x1), 73924]: hit 0, miss 1, hit rate 0
+[<806> Jal ra(x1), 73904]: hit 0, miss 1, hit rate 0
+[<811> Jal ra(x1), 73884]: hit 0, miss 1, hit rate 0
+[<816> Jal ra(x1), 73864]: hit 0, miss 1, hit rate 0
+[<820> Jal ra(x1), 73808]: hit 0, miss 1, hit rate 0
+[<824> Jal ra(x1), 73792]: hit 0, miss 1, hit rate 0
+[<829> Jal ra(x1), 73812]: hit 0, miss 1, hit rate 0
+[<833> Jal ra(x1), 73756]: hit 0, miss 1, hit rate 0
+[<838> Jal ra(x1), 73776]: hit 0, miss 1, hit rate 0
+[<843> Jal ra(x1), 73756]: hit 0, miss 1, hit rate 0
+[<848> Jal ra(x1), 73736]: hit 0, miss 1, hit rate 0
+[<853> Jal ra(x1), 73716]: hit 0, miss 1, hit rate 0
+[<858> Jal ra(x1), 73696]: hit 0, miss 1, hit rate 0
+[<862> Jal ra(x1), 73640]: hit 0, miss 1, hit rate 0
+[<867> Jal ra(x1), 73660]: hit 0, miss 1, hit rate 0
+[<872> Jal ra(x1), 73640]: hit 0, miss 1, hit rate 0
+[<877> Jal ra(x1), 73620]: hit 0, miss 1, hit rate 0
+[<882> Jal ra(x1), 73600]: hit 0, miss 1, hit rate 0
+[<886> Jal ra(x1), 73544]: hit 0, miss 1, hit rate 0
+[<891> Jal ra(x1), 73564]: hit 0, miss 1, hit rate 0
+[<895> Jal ra(x1), 73508]: hit 0, miss 1, hit rate 0
+[<901> Jal ra(x1), 73524]: hit 0, miss 1, hit rate 0
+[<906> Jal ra(x1), 73504]: hit 0, miss 1, hit rate 0
+[<911> Jal ra(x1), 73484]: hit 0, miss 1, hit rate 0
+[<916> Jal ra(x1), 73464]: hit 0, miss 1, hit rate 0
+[<931> Jal ra(x1), 14352]: hit 0, miss 1, hit rate 0
+[<937> Jal ra(x1), 73380]: hit 0, miss 1, hit rate 0
+[<942> Jal ra(x1), 73360]: hit 0, miss 1, hit rate 0
+[<946> Jal ra(x1), 73304]: hit 0, miss 1, hit rate 0
+[<951> Jal ra(x1), 73324]: hit 0, miss 1, hit rate 0
+[<956> Jal ra(x1), 73304]: hit 0, miss 1, hit rate 0
+[<961> Jal ra(x1), 73284]: hit 0, miss 1, hit rate 0
+[<966> Jal ra(x1), 73264]: hit 0, miss 1, hit rate 0
+[<970> Jal ra(x1), 73208]: hit 0, miss 1, hit rate 0
+[<974> Jal ra(x1), 73192]: hit 0, miss 1, hit rate 0
+[<979> Jal ra(x1), 73212]: hit 0, miss 1, hit rate 0
+[<983> Jal ra(x1), 73156]: hit 0, miss 1, hit rate 0
+[<988> Jal ra(x1), 73176]: hit 0, miss 1, hit rate 0
+[<993> Jal ra(x1), 73156]: hit 0, miss 1, hit rate 0
+[<998> Jal ra(x1), 73136]: hit 0, miss 1, hit rate 0
+[<1003> Jal ra(x1), 73116]: hit 0, miss 1, hit rate 0
+[<1008> Jal ra(x1), 73096]: hit 0, miss 1, hit rate 0
+[<1012> Jal ra(x1), 73040]: hit 0, miss 1, hit rate 0
+[<1017> Jal ra(x1), 73060]: hit 0, miss 1, hit rate 0
+[<1022> Jal ra(x1), 73040]: hit 0, miss 1, hit rate 0
+[<1027> Jal ra(x1), 73020]: hit 0, miss 1, hit rate 0
+[<1032> Jal ra(x1), 73000]: hit 0, miss 1, hit rate 0
+[<1036> Jal ra(x1), 72944]: hit 0, miss 1, hit rate 0
+[<1041> Jal ra(x1), 72964]: hit 0, miss 1, hit rate 0
+[<1045> Jal ra(x1), 72908]: hit 0, miss 1, hit rate 0
+[<1050> Jal ra(x1), 72928]: hit 0, miss 1, hit rate 0
+[<1055> Jal ra(x1), 72908]: hit 0, miss 1, hit rate 0
+[<1060> Jal ra(x1), 72888]: hit 0, miss 1, hit rate 0
+[<1065> Jal ra(x1), 72868]: hit 0, miss 1, hit rate 0
+[<1076> Jal ra(x1), 73064]: hit 0, miss 1, hit rate 0
+[<1085> Jal ra(x1), 72788]: hit 0, miss 1, hit rate 0
+[<1090> Jal ra(x1), 72768]: hit 0, miss 1, hit rate 0
+[<1094> Jal ra(x1), 72712]: hit 0, miss 1, hit rate 0
+[<1099> Jal ra(x1), 72732]: hit 0, miss 1, hit rate 0
+[<1104> Jal ra(x1), 72712]: hit 0, miss 1, hit rate 0
+[<1109> Jal ra(x1), 72692]: hit 0, miss 1, hit rate 0
+[<1114> Jal ra(x1), 72672]: hit 0, miss 1, hit rate 0
+[<1118> Jal ra(x1), 72616]: hit 0, miss 1, hit rate 0
+[<1122> Jal ra(x1), 72600]: hit 0, miss 1, hit rate 0
+[<1127> Jal ra(x1), 72620]: hit 0, miss 1, hit rate 0
+[<1131> Jal ra(x1), 72564]: hit 0, miss 1, hit rate 0
+[<1136> Jal ra(x1), 72584]: hit 0, miss 1, hit rate 0
+[<1141> Jal ra(x1), 72564]: hit 0, miss 1, hit rate 0
+[<1146> Jal ra(x1), 72544]: hit 0, miss 1, hit rate 0
+[<1151> Jal ra(x1), 72524]: hit 0, miss 1, hit rate 0
+[<1156> Jal ra(x1), 72504]: hit 0, miss 1, hit rate 0
+[<1160> Jal ra(x1), 72448]: hit 0, miss 1, hit rate 0
+[<1165> Jal ra(x1), 72468]: hit 0, miss 1, hit rate 0
+[<1170> Jal ra(x1), 72448]: hit 0, miss 1, hit rate 0
+[<1175> Jal ra(x1), 72428]: hit 0, miss 1, hit rate 0
+[<1180> Jal ra(x1), 72408]: hit 0, miss 1, hit rate 0
+[<1184> Jal ra(x1), 72352]: hit 0, miss 1, hit rate 0
+[<1189> Jal ra(x1), 72372]: hit 0, miss 1, hit rate 0
+[<1193> Jal ra(x1), 72316]: hit 0, miss 1, hit rate 0
+[<1199> Jal ra(x1), 72332]: hit 0, miss 1, hit rate 0
+[<1204> Jal ra(x1), 72312]: hit 0, miss 1, hit rate 0
+[<1209> Jal ra(x1), 72292]: hit 0, miss 1, hit rate 0
+[<1214> Jal ra(x1), 72272]: hit 0, miss 1, hit rate 0
+[<1229> Jal ra(x1), 13160]: hit 0, miss 1, hit rate 0
+[<1231> Jal ra(x1), 27232]: hit 0, miss 1, hit rate 0
+[<1241> Jal ra(x1), 72620]: hit 0, miss 1, hit rate 0
+[<1246> Jal ra(x1), 72600]: hit 0, miss 1, hit rate 0
+[<1251> Jal ra(x1), 72580]: hit 0, miss 1, hit rate 0
+[<1254> Jal ra(x1), 11388]: hit 0, miss 1, hit rate 0
+[<1295> Bne t1(x6), t0(x5), 976]: hit 0, miss 1, hit rate 0
+[<1325> Jal ra(x1), 15316]: hit 0, miss 1, hit rate 0
+[<1358> Bne a2(x12), s4(x20), 436]: hit 0, miss 1, hit rate 0
+[<1396> Jal ra(x1), 23892]: hit 0, miss 1, hit rate 0
+[<1428> Jal ra(x1), 23764]: hit 0, miss 1, hit rate 0
+[<1435> Jal ra(x1), 33812]: hit 0, miss 1, hit rate 0
+[<1440> Blt t1(x6), t2(x7), 96]: hit 0, miss 1, hit rate 0
+[<1448> Jal ra(x1), 33416]: hit 0, miss 1, hit rate 0
+[<1463> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<1464> Jal zero(x0), -88]: hit 0, miss 1, hit rate 0
+[<1476> Jal ra(x1), 41012]: hit 0, miss 1, hit rate 0
+[<1477> Jal zero(x0), -440]: hit 0, miss 1, hit rate 0
+[<1545> Jal ra(x1), 70948]: hit 0, miss 1, hit rate 0
+[<1580> Jal zero(x0), -1036]: hit 0, miss 1, hit rate 0
+[<2346> Jalr zero(x0), ra(x1), 0]: hit 40607, miss 1, hit rate 0.999975
+[<2364> Blt s0/fp(x8), t0(x5), 8]: hit 499, miss 101, hit rate 0.831667
+[<2365> Jal zero(x0), 164]: hit 99, miss 1, hit rate 0.99
+[<2375> Jal ra(x1), 68588]: hit 499, miss 1, hit rate 0.998
+[<2378> Jal ra(x1), 68968]: hit 499, miss 1, hit rate 0.998
+[<2381> Jal ra(x1), 69248]: hit 499, miss 1, hit rate 0.998
+[<2394> Jal ra(x1), 68512]: hit 499, miss 1, hit rate 0.998
+[<2397> Jal ra(x1), 68892]: hit 499, miss 1, hit rate 0.998
+[<2400> Jal ra(x1), 69172]: hit 499, miss 1, hit rate 0.998
+[<2405> Jal zero(x0), -168]: hit 499, miss 1, hit rate 0.998
+[<2490> Jalr zero(x0), ra(x1), 0]: hit 0, miss 100, hit rate 0
+[<2501> Blt s0/fp(x8), zero(x0), 272]: hit 9, miss 1, hit rate 0.9
+[<2527> Jal ra(x1), -720]: hit 8, miss 1, hit rate 0.888889
+[<2545> Jal ra(x1), -792]: hit 8, miss 1, hit rate 0.888889
+[<2549> Blt t1(x6), t2(x7), 72]: hit 5, miss 4, hit rate 0.555556
+[<2555> Jal ra(x1), 88]: hit 8, miss 1, hit rate 0.888889
+[<2559> Blt t1(x6), t2(x7), 28]: hit 2, miss 7, hit rate 0.222222
+[<2565> Jal zero(x0), -256]: hit 8, miss 1, hit rate 0.888889
+[<2566> Jal zero(x0), -20]: hit 4, miss 1, hit rate 0.8
+[<2567> Jal zero(x0), -64]: hit 6, miss 1, hit rate 0.857143
+[<2576> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<2587> Blt s0/fp(x8), zero(x0), 180]: hit 40, miss 10, hit rate 0.8
+[<2604> Jal ra(x1), -1028]: hit 39, miss 1, hit rate 0.975
+[<2622> Jal ra(x1), -1100]: hit 39, miss 1, hit rate 0.975
+[<2626> Blt t1(x6), t2(x7), 20]: hit 31, miss 9, hit rate 0.775
+[<2630> Jal zero(x0), -172]: hit 39, miss 1, hit rate 0.975
+[<2631> Jal zero(x0), -12]: hit 31, miss 1, hit rate 0.96875
+[<2638> Jalr zero(x0), ra(x1), 0]: hit 8, miss 2, hit rate 0.8
+[<2646> Bne t0(x5), t1(x6), 8]: hit 5277233, miss 2381827, hit rate 0.689018
+[<2647> Jal zero(x0), 452]: hit 3305139, miss 1, hit rate 1
+[<2676> Bne t1(x6), t0(x5), 100]: hit 4353919, miss 1, hit rate 1
+[<2689> Beq a2(x12), zero(x0), 8]: hit 2832662, miss 1521258, hit rate 0.6506
+[<2690> Jal zero(x0), 260]: hit 1375148, miss 1, hit rate 0.999999
+[<2693> Jal zero(x0), -204]: hit 2978770, miss 1, hit rate 1
+[<2702> Bne t1(x6), t0(x5), 60]: hit 4087912, miss 266008, hit rate 0.938904
+[<2716> Jal zero(x0), -108]: hit 4353919, miss 1, hit rate 1
+[<2738> Jal zero(x0), -92]: hit 4087912, miss 1, hit rate 1
+[<2759> Jalr zero(x0), ra(x1), 0]: hit 526793, miss 848356, hit rate 0.383081
+[<2764> Jalr zero(x0), ra(x1), 0]: hit 2246838, miss 1058302, hit rate 0.679801
+[<2793> Blt s1(x9), zero(x0), 76]: hit 590, miss 5, hit rate 0.991597
+[<2797> Jal ra(x1), 65940]: hit 589, miss 1, hit rate 0.998305
+[<2804> Jal ra(x1), 65872]: hit 589, miss 1, hit rate 0.998305
+[<2811> Jal zero(x0), -72]: hit 589, miss 1, hit rate 0.998305
+[<2817> Jalr zero(x0), ra(x1), 0]: hit 3, miss 2, hit rate 0.6
+[<2826> Blt s0/fp(x8), zero(x0), 184]: hit 4, miss 1, hit rate 0.8
+[<2830> Jal ra(x1), 65808]: hit 3, miss 1, hit rate 0.75
+[<2837> Jal ra(x1), 65740]: hit 3, miss 1, hit rate 0.75
+[<2842> Jal ra(x1), 65904]: hit 3, miss 1, hit rate 0.75
+[<2856> Jal ra(x1), 65704]: hit 3, miss 1, hit rate 0.75
+[<2861> Jal ra(x1), 65644]: hit 3, miss 1, hit rate 0.75
+[<2867> Jal ra(x1), -324]: hit 3, miss 1, hit rate 0.75
+[<2870> Jal zero(x0), -176]: hit 3, miss 1, hit rate 0.75
+[<2879> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<3442> Blt t0(x5), zero(x0), 216]: hit 5111, miss 317, hit rate 0.941599
+[<3446> Beq t0(x5), zero(x0), 196]: hit 278, miss 26, hit rate 0.914474
+[<3468> Jal ra(x1), 49504]: hit 280, miss 1, hit rate 0.996441
+[<3494> Jal zero(x0), -228]: hit 303, miss 1, hit rate 0.996711
+[<3495> Jal zero(x0), -12]: hit 22, miss 1, hit rate 0.956522
+[<3507> Jalr zero(x0), ra(x1), 0]: hit 4414, miss 710, hit rate 0.861436
+[<3528> Bne a1(x11), t0(x5), 144]: hit 1832057, miss 321235, hit rate 0.850817
+[<3546> Beq t0(x5), zero(x0), 36]: hit 389980, miss 1, hit rate 0.999997
+[<3554> Jalr zero(x0), ra(x1), 0]: hit 304201, miss 85780, hit rate 0.780041
+[<3557> Beq t0(x5), zero(x0), 16]: hit 359044, miss 30937, hit rate 0.92067
+[<3560> Jal zero(x0), -48]: hit 389980, miss 1, hit rate 0.999997
+[<3563> Jal zero(x0), -12]: hit 298901, miss 1, hit rate 0.999997
+[<3565> Bne a1(x11), t0(x5), 60]: hit 1471588, miss 291723, hit rate 0.83456
+[<3579> Jalr zero(x0), ra(x1), 0]: hit 1099689, miss 221101, hit rate 0.832599
+[<3616> Beq t1(x6), zero(x0), 60]: hit 442520, miss 1, hit rate 0.999998
+[<3630> Jalr zero(x0), ra(x1), 0]: hit 371554, miss 70967, hit rate 0.83963
+[<3631> Beq a6(x16), zero(x0), 20]: hit 407895, miss 34626, hit rate 0.921753
+[<3635> Jal zero(x0), -64]: hit 442520, miss 1, hit rate 0.999998
+[<3639> Jal zero(x0), -16]: hit 346936, miss 1, hit rate 0.999997
+[<3835> Blt s1(x9), zero(x0), 1016]: hit 595, miss 5, hit rate 0.991667
+[<3867> Bne t1(x6), t0(x5), 316]: hit 594, miss 1, hit rate 0.998319
+[<3897> Jal ra(x1), 5028]: hit 594, miss 1, hit rate 0.998319
+[<3900> Jal zero(x0), -260]: hit 594, miss 1, hit rate 0.998319
+[<3951> Jal ra(x1), 61324]: hit 594, miss 1, hit rate 0.998319
+[<3965> Beq t0(x5), zero(x0), 84]: hit 150, miss 445, hit rate 0.252101
+[<3985> Jal zero(x0), -368]: hit 594, miss 1, hit rate 0.998319
+[<3988> Jal zero(x0), -24]: hit 294, miss 1, hit rate 0.99661
+[<4100> Jalr zero(x0), ra(x1), 0]: hit 3, miss 2, hit rate 0.6
+[<4119> Jal ra(x1), 60652]: hit 0, miss 1, hit rate 0
+[<4126> Jal ra(x1), 60584]: hit 0, miss 1, hit rate 0
+[<4131> Jal ra(x1), 60748]: hit 0, miss 1, hit rate 0
+[<4141> Jal ra(x1), 60564]: hit 0, miss 1, hit rate 0
+[<4146> Jal ra(x1), 60504]: hit 0, miss 1, hit rate 0
+[<4152> Jal ra(x1), -5464]: hit 0, miss 1, hit rate 0
+[<4155> Jal ra(x1), -5348]: hit 0, miss 1, hit rate 0
+[<4183> Jal ra(x1), -7344]: hit 0, miss 1, hit rate 0
+[<4201> Jal ra(x1), -7416]: hit 0, miss 1, hit rate 0
+[<4205> Blt t1(x6), t2(x7), 1236]: hit 0, miss 1, hit rate 0
+[<4211> Jal ra(x1), -6536]: hit 0, miss 1, hit rate 0
+[<4215> Blt t1(x6), t2(x7), 1192]: hit 0, miss 1, hit rate 0
+[<4221> Jal ra(x1), -6920]: hit 0, miss 1, hit rate 0
+[<4258> Bne t1(x6), t0(x5), 388]: hit 0, miss 1, hit rate 0
+[<4288> Jal ra(x1), 3464]: hit 0, miss 1, hit rate 0
+[<4292> Jal ra(x1), -1880]: hit 0, miss 1, hit rate 0
+[<4295> Jal ra(x1), 1596]: hit 0, miss 1, hit rate 0
+[<4309> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<4360> Jal ra(x1), 59688]: hit 0, miss 1, hit rate 0
+[<4374> Beq t0(x5), zero(x0), 84]: hit 0, miss 1, hit rate 0
+[<4394> Jal zero(x0), -440]: hit 0, miss 1, hit rate 0
+[<4397> Jal zero(x0), -24]: hit 0, miss 1, hit rate 0
+[<4513> Jal zero(x0), -1184]: hit 0, miss 1, hit rate 0
+[<4514> Jal zero(x0), -1228]: hit 0, miss 1, hit rate 0
+[<4533> Blt s1(x9), zero(x0), 588]: hit 762, miss 3, hit rate 0.996078
+[<4537> Jal ra(x1), 58980]: hit 761, miss 1, hit rate 0.998688
+[<4542> Jal ra(x1), 58960]: hit 761, miss 1, hit rate 0.998688
+[<4546> Jal ra(x1), 58904]: hit 761, miss 1, hit rate 0.998688
+[<4551> Jal ra(x1), 58924]: hit 761, miss 1, hit rate 0.998688
+[<4556> Jal ra(x1), 58904]: hit 761, miss 1, hit rate 0.998688
+[<4561> Jal ra(x1), 58884]: hit 761, miss 1, hit rate 0.998688
+[<4566> Jal ra(x1), 58864]: hit 761, miss 1, hit rate 0.998688
+[<4570> Jal ra(x1), 58808]: hit 761, miss 1, hit rate 0.998688
+[<4574> Jal ra(x1), 58792]: hit 761, miss 1, hit rate 0.998688
+[<4579> Jal ra(x1), 58812]: hit 761, miss 1, hit rate 0.998688
+[<4583> Jal ra(x1), 58756]: hit 761, miss 1, hit rate 0.998688
+[<4588> Jal ra(x1), 58776]: hit 761, miss 1, hit rate 0.998688
+[<4593> Jal ra(x1), 58756]: hit 761, miss 1, hit rate 0.998688
+[<4598> Jal ra(x1), 58736]: hit 761, miss 1, hit rate 0.998688
+[<4603> Jal ra(x1), 58716]: hit 761, miss 1, hit rate 0.998688
+[<4608> Jal ra(x1), 58696]: hit 761, miss 1, hit rate 0.998688
+[<4612> Jal ra(x1), 58640]: hit 761, miss 1, hit rate 0.998688
+[<4617> Jal ra(x1), 58660]: hit 761, miss 1, hit rate 0.998688
+[<4622> Jal ra(x1), 58640]: hit 761, miss 1, hit rate 0.998688
+[<4627> Jal ra(x1), 58620]: hit 761, miss 1, hit rate 0.998688
+[<4632> Jal ra(x1), 58600]: hit 761, miss 1, hit rate 0.998688
+[<4636> Jal ra(x1), 58544]: hit 761, miss 1, hit rate 0.998688
+[<4641> Jal ra(x1), 58564]: hit 761, miss 1, hit rate 0.998688
+[<4645> Jal ra(x1), 58508]: hit 761, miss 1, hit rate 0.998688
+[<4650> Jal ra(x1), 58528]: hit 761, miss 1, hit rate 0.998688
+[<4655> Jal ra(x1), 58508]: hit 761, miss 1, hit rate 0.998688
+[<4660> Jal ra(x1), 58488]: hit 761, miss 1, hit rate 0.998688
+[<4665> Jal ra(x1), 58468]: hit 761, miss 1, hit rate 0.998688
+[<4679> Jal zero(x0), -584]: hit 761, miss 1, hit rate 0.998688
+[<4693> Jalr zero(x0), ra(x1), 0]: hit 0, miss 3, hit rate 0
+[<4707> Blt s0/fp(x8), zero(x0), 1056]: hit 4, miss 1, hit rate 0.8
+[<4744> Bne t1(x6), t0(x5), 332]: hit 3, miss 1, hit rate 0.75
+[<4774> Jal ra(x1), 1520]: hit 3, miss 1, hit rate 0.75
+[<4778> Jal ra(x1), -3824]: hit 3, miss 1, hit rate 0.75
+[<4781> Jal zero(x0), -296]: hit 3, miss 1, hit rate 0.75
+[<4832> Jal ra(x1), 57800]: hit 3, miss 1, hit rate 0.75
+[<4846> Beq t0(x5), zero(x0), 84]: hit 3, miss 1, hit rate 0.75
+[<4866> Jal zero(x0), -384]: hit 3, miss 1, hit rate 0.75
+[<4869> Jal zero(x0), -24]: hit 3, miss 1, hit rate 0.75
+[<4983> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<5166> Blt s2(x18), zero(x0), 956]: hit 9632, miss 602, hit rate 0.941176
+[<5189> Bne t1(x6), t0(x5), 296]: hit 4815, miss 4817, hit rate 0.499896
+[<5193> Jal ra(x1), 56356]: hit 3611, miss 1, hit rate 0.999723
+[<5197> Beq t0(x5), zero(x0), 204]: hit 3611, miss 1, hit rate 0.999723
+[<5203> Beq t0(x5), zero(x0), 120]: hit 3611, miss 1, hit rate 0.999723
+[<5209> Beq t0(x5), zero(x0), 36]: hit 3611, miss 1, hit rate 0.999723
+[<5217> Jal zero(x0), -204]: hit 9631, miss 1, hit rate 0.999896
+[<5223> Beq t0(x5), zero(x0), 32]: hit 2454, miss 1158, hit rate 0.679402
+[<5230> Jal zero(x0), -72]: hit 3611, miss 1, hit rate 0.999723
+[<5232> Jal zero(x0), -32]: hit 1811, miss 1, hit rate 0.999448
+[<5238> Beq t0(x5), zero(x0), 32]: hit 2627, miss 985, hit rate 0.727298
+[<5245> Jal zero(x0), -156]: hit 3611, miss 1, hit rate 0.999723
+[<5247> Jal zero(x0), -32]: hit 1805, miss 1, hit rate 0.999446
+[<5253> Beq t0(x5), zero(x0), 32]: hit 2808, miss 804, hit rate 0.777409
+[<5260> Jal zero(x0), -240]: hit 3611, miss 1, hit rate 0.999723
+[<5262> Jal zero(x0), -32]: hit 1805, miss 1, hit rate 0.999446
+[<5264> Bne t1(x6), t0(x5), 168]: hit 5417, miss 603, hit rate 0.899834
+[<5268> Jal ra(x1), 56056]: hit 601, miss 1, hit rate 0.998339
+[<5282> Beq t0(x5), zero(x0), 84]: hit 60, miss 542, hit rate 0.0996678
+[<5302> Jal zero(x0), -348]: hit 601, miss 1, hit rate 0.998339
+[<5305> Jal zero(x0), -24]: hit 300, miss 1, hit rate 0.996678
+[<5309> Jal ra(x1), 55892]: hit 5417, miss 1, hit rate 0.999815
+[<5338> Beq s3(x19), zero(x0), 196]: hit 5417, miss 1, hit rate 0.999815
+[<5385> Jal zero(x0), -680]: hit 5417, miss 1, hit rate 0.999815
+[<5390> Jal zero(x0), -60]: hit 5417, miss 1, hit rate 0.999815
+[<5414> Jalr zero(x0), ra(x1), 0]: hit 594, miss 8, hit rate 0.986711
+[<5434> Bge s2(x18), zero(x0), 8]: hit 3632279, miss 60539, hit rate 0.983606
+[<5435> Jal zero(x0), 4896]: hit 60537, miss 1, hit rate 0.999983
+[<5453> Beq t0(x5), zero(x0), 2436]: hit 2811042, miss 821238, hit rate 0.773906
+[<5464> Jal ra(x1), 5268]: hit 1661808, miss 1, hit rate 0.999999
+[<5465> Beq a0(x10), zero(x0), 2368]: hit 1302705, miss 359104, hit rate 0.783908
+[<5509> Jal ra(x1), -7936]: hit 725819, miss 1, hit rate 0.999999
+[<5525> Jal ra(x1), 52836]: hit 725819, miss 1, hit rate 0.999999
+[<5532> Bne t0(x5), t1(x6), 208]: hit 725819, miss 1, hit rate 0.999999
+[<5534> Bne t0(x5), zero(x0), 196]: hit 637543, miss 88277, hit rate 0.878376
+[<5553> Beq t0(x5), zero(x0), 112]: hit 592571, miss 772, hit rate 0.998699
+[<5580> Jal zero(x0), -584]: hit 3632279, miss 1, hit rate 1
+[<5582> Jal zero(x0), -112]: hit 709, miss 1, hit rate 0.998592
+[<5583> Jal zero(x0), -28]: hit 132476, miss 1, hit rate 0.999992
+[<5585> Bne t0(x5), t1(x6), 944]: hit 725819, miss 1, hit rate 0.999999
+[<5587> Beq t0(x5), zero(x0), 912]: hit 640115, miss 85705, hit rate 0.88192
+[<5590> Bne t0(x5), t1(x6), 44]: hit 130080, miss 1, hit rate 0.999992
+[<5594> Jal zero(x0), -240]: hit 725819, miss 1, hit rate 0.999999
+[<5608> Bne t0(x5), t1(x6), 48]: hit 130080, miss 1, hit rate 0.999992
+[<5610> Beq t0(x5), zero(x0), 12]: hit 112712, miss 17369, hit rate 0.866476
+[<5612> Jal zero(x0), -80]: hit 130080, miss 1, hit rate 0.999992
+[<5617> Jal ra(x1), 27020]: hit 80438, miss 1, hit rate 0.999988
+[<5619> Jal zero(x0), -28]: hit 80438, miss 1, hit rate 0.999988
+[<5630> Jal ra(x1), 33744]: hit 130080, miss 1, hit rate 0.999992
+[<5634> Beq a0(x10), zero(x0), 708]: hit 106083, miss 23998, hit rate 0.815515
+[<5638> Beq t0(x5), zero(x0), 576]: hit 105421, miss 24660, hit rate 0.810426
+[<5658> Bne t0(x5), t1(x6), 44]: hit 80873, miss 1, hit rate 0.999988
+[<5660> Beq t0(x5), zero(x0), 12]: hit 73062, miss 7812, hit rate 0.903405
+[<5662> Jal zero(x0), -208]: hit 130080, miss 1, hit rate 0.999992
+[<5666> Jal ra(x1), 25896]: hit 71625, miss 1, hit rate 0.999986
+[<5668> Jal zero(x0), -24]: hit 71625, miss 1, hit rate 0.999986
+[<5704> Beq t0(x5), zero(x0), 80]: hit 80863, miss 11, hit rate 0.999864
+[<5708> Beq t0(x5), zero(x0), 52]: hit 80863, miss 11, hit rate 0.999864
+[<5709> Beq a1(x11), zero(x0), 12]: hit 80862, miss 12, hit rate 0.999852
+[<5711> Jal zero(x0), -204]: hit 80873, miss 1, hit rate 0.999988
+[<5718> Jal ra(x1), -12316]: hit 80862, miss 1, hit rate 0.999988
+[<5720> Jal zero(x0), -36]: hit 80862, miss 1, hit rate 0.999988
+[<5723> Jal zero(x0), -56]: hit 10, miss 1, hit rate 0.909091
+[<5725> Jal zero(x0), -68]: hit 10, miss 1, hit rate 0.909091
+[<5802> Beq t1(x6), zero(x0), 28]: hit 49206, miss 1, hit rate 0.99998
+[<5808> Jal zero(x0), -584]: hit 49206, miss 1, hit rate 0.99998
+[<5810> Jal zero(x0), -12]: hit 49206, miss 1, hit rate 0.99998
+[<5814> Jal zero(x0), -704]: hit 48094, miss 1, hit rate 0.999979
+[<5818> Jal ra(x1), 27204]: hit 595738, miss 1, hit rate 0.999998
+[<5820> Jal zero(x0), -904]: hit 595738, miss 1, hit rate 0.999998
+[<5831> Jal ra(x1), 32940]: hit 725819, miss 1, hit rate 0.999999
+[<5832> Beq a0(x10), zero(x0), 892]: hit 570869, miss 154951, hit rate 0.786516
+[<5839> Beq t0(x5), zero(x0), 856]: hit 254133, miss 21003, hit rate 0.923663
+[<5842> Bne t0(x5), t1(x6), 32]: hit 256777, miss 1, hit rate 0.999996
+[<5844> Beq t0(x5), zero(x0), 16]: hit 214009, miss 42769, hit rate 0.83344
+[<5847> Jal zero(x0), -1040]: hit 725819, miss 1, hit rate 0.999999
+[<5849> Jal zero(x0), -12]: hit 126696, miss 1, hit rate 0.999992
+[<5857> Bne t0(x5), t1(x6), 48]: hit 256777, miss 1, hit rate 0.999996
+[<5859> Beq t0(x5), zero(x0), 12]: hit 228989, miss 27789, hit rate 0.891778
+[<5861> Jal zero(x0), -68]: hit 256777, miss 1, hit rate 0.999996
+[<5866> Jal ra(x1), 26024]: hit 207135, miss 1, hit rate 0.999995
+[<5868> Jal zero(x0), -28]: hit 207135, miss 1, hit rate 0.999995
+[<5874> Jal ra(x1), 32768]: hit 256777, miss 1, hit rate 0.999996
+[<5876> Beq a0(x10), zero(x0), 700]: hit 216134, miss 40644, hit rate 0.841715
+[<5880> Beq t0(x5), zero(x0), 572]: hit 217352, miss 39426, hit rate 0.846459
+[<5900> Bne t0(x5), t1(x6), 44]: hit 119742, miss 1, hit rate 0.999992
+[<5902> Beq t0(x5), zero(x0), 12]: hit 111958, miss 7785, hit rate 0.934986
+[<5904> Jal zero(x0), -180]: hit 256777, miss 1, hit rate 0.999996
+[<5908> Jal ra(x1), 24928]: hit 110494, miss 1, hit rate 0.999991
+[<5910> Jal zero(x0), -24]: hit 110494, miss 1, hit rate 0.999991
+[<5941> Beq t0(x5), zero(x0), 104]: hit 119741, miss 2, hit rate 0.999983
+[<5945> Beq t0(x5), zero(x0), 80]: hit 119728, miss 13, hit rate 0.999891
+[<5949> Beq t0(x5), zero(x0), 52]: hit 119728, miss 15, hit rate 0.999875
+[<5950> Beq a2(x12), zero(x0), 12]: hit 119727, miss 16, hit rate 0.999866
+[<5952> Jal zero(x0), -200]: hit 119742, miss 1, hit rate 0.999992
+[<5959> Jal ra(x1), -13280]: hit 119727, miss 1, hit rate 0.999992
+[<5961> Jal zero(x0), -36]: hit 119727, miss 1, hit rate 0.999992
+[<5964> Jal zero(x0), -56]: hit 14, miss 1, hit rate 0.933333
+[<5966> Jal zero(x0), -68]: hit 12, miss 1, hit rate 0.923077
+[<5968> Jal zero(x0), -76]: hit 1, miss 1, hit rate 0.5
+[<6042> Beq t1(x6), zero(x0), 28]: hit 137034, miss 1, hit rate 0.999993
+[<6048> Jal zero(x0), -576]: hit 137034, miss 1, hit rate 0.999993
+[<6050> Jal zero(x0), -12]: hit 137034, miss 1, hit rate 0.999993
+[<6052> Jal zero(x0), -688]: hit 125886, miss 1, hit rate 0.999992
+[<6054> Jal zero(x0), -832]: hit 18357, miss 1, hit rate 0.999946
+[<6056> Jal zero(x0), -840]: hit 450683, miss 1, hit rate 0.999998
+[<6061> Jal zero(x0), -1940]: hit 935988, miss 1, hit rate 0.999999
+[<6072> Jal ra(x1), 2836]: hit 1970470, miss 1, hit rate 0.999999
+[<6073> Beq a0(x10), zero(x0), 2328]: hit 1618309, miss 352162, hit rate 0.82128
+[<6115> Jal ra(x1), -10360]: hit 1353498, miss 1, hit rate 0.999999
+[<6131> Jal ra(x1), 50412]: hit 1353498, miss 1, hit rate 0.999999
+[<6138> Bne t0(x5), t1(x6), 200]: hit 1353498, miss 1, hit rate 0.999999
+[<6140> Bne t0(x5), zero(x0), 184]: hit 1190503, miss 162996, hit rate 0.879574
+[<6159> Beq t0(x5), zero(x0), 100]: hit 1104669, miss 1545, hit rate 0.998603
+[<6183> Jal zero(x0), -2428]: hit 1106213, miss 1, hit rate 0.999999
+[<6185> Jal zero(x0), -100]: hit 1449, miss 1, hit rate 0.99931
+[<6187> Jal zero(x0), -2444]: hit 247284, miss 1, hit rate 0.999996
+[<6189> Bne t0(x5), t1(x6), 928]: hit 1353498, miss 1, hit rate 0.999999
+[<6191> Beq t0(x5), zero(x0), 896]: hit 1200603, miss 152896, hit rate 0.887036
+[<6194> Bne t0(x5), t1(x6), 44]: hit 236719, miss 1, hit rate 0.999996
+[<6198> Jal zero(x0), -232]: hit 1353498, miss 1, hit rate 0.999999
+[<6212> Bne t0(x5), t1(x6), 48]: hit 236719, miss 1, hit rate 0.999996
+[<6214> Beq t0(x5), zero(x0), 12]: hit 200969, miss 35751, hit rate 0.848973
+[<6216> Jal zero(x0), -80]: hit 236719, miss 1, hit rate 0.999996
+[<6221> Jal ra(x1), 24604]: hit 159824, miss 1, hit rate 0.999994
+[<6223> Jal zero(x0), -28]: hit 159824, miss 1, hit rate 0.999994
+[<6234> Jal ra(x1), 31328]: hit 236719, miss 1, hit rate 0.999996
+[<6238> Beq a0(x10), zero(x0), 700]: hit 193456, miss 43264, hit rate 0.817236
+[<6242> Beq t0(x5), zero(x0), 572]: hit 191855, miss 44865, hit rate 0.810472
+[<6262> Bne t0(x5), t1(x6), 44]: hit 115134, miss 1, hit rate 0.999991
+[<6264> Beq t0(x5), zero(x0), 12]: hit 91738, miss 23397, hit rate 0.796786
+[<6266> Jal zero(x0), -208]: hit 236719, miss 1, hit rate 0.999996
+[<6270> Jal ra(x1), 23480]: hit 82767, miss 1, hit rate 0.999988
+[<6272> Jal zero(x0), -24]: hit 82767, miss 1, hit rate 0.999988
+[<6303> Beq t0(x5), zero(x0), 104]: hit 115134, miss 1, hit rate 0.999991
+[<6307> Beq t0(x5), zero(x0), 80]: hit 115100, miss 34, hit rate 0.999705
+[<6311> Beq t0(x5), zero(x0), 52]: hit 115100, miss 35, hit rate 0.999696
+[<6312> Beq a1(x11), zero(x0), 12]: hit 115099, miss 36, hit rate 0.999687
+[<6314> Jal zero(x0), -200]: hit 115134, miss 1, hit rate 0.999991
+[<6321> Jal ra(x1), -14728]: hit 115099, miss 1, hit rate 0.999991
+[<6323> Jal zero(x0), -36]: hit 115099, miss 1, hit rate 0.999991
+[<6326> Jal zero(x0), -56]: hit 34, miss 1, hit rate 0.971429
+[<6328> Jal zero(x0), -68]: hit 33, miss 1, hit rate 0.970588
+[<6330> Jal zero(x0), -76]: hit 0, miss 1, hit rate 0
+[<6404> Beq t1(x6), zero(x0), 28]: hit 121584, miss 1, hit rate 0.999992
+[<6410> Jal zero(x0), -576]: hit 121584, miss 1, hit rate 0.999992
+[<6412> Jal zero(x0), -12]: hit 121584, miss 1, hit rate 0.999992
+[<6414> Jal zero(x0), -688]: hit 118444, miss 1, hit rate 0.999992
+[<6418> Jal ra(x1), 24804]: hit 1116778, miss 1, hit rate 0.999999
+[<6420> Jal zero(x0), -888]: hit 1116778, miss 1, hit rate 0.999999
+[<6430> Jal ra(x1), 30544]: hit 1353498, miss 1, hit rate 0.999999
+[<6431> Beq a0(x10), zero(x0), 888]: hit 1130380, miss 223119, hit rate 0.835154
+[<6438> Beq t0(x5), zero(x0), 852]: hit 358840, miss 2752, hit rate 0.992389
+[<6441> Bne t0(x5), t1(x6), 28]: hit 359273, miss 1, hit rate 0.999997
+[<6443> Beq t0(x5), zero(x0), 12]: hit 262983, miss 96291, hit rate 0.731985
+[<6445> Jal zero(x0), -1016]: hit 1353498, miss 1, hit rate 0.999999
+[<6447> Jal zero(x0), -8]: hit 122553, miss 1, hit rate 0.999992
+[<6455> Bne t0(x5), t1(x6), 48]: hit 359273, miss 1, hit rate 0.999997
+[<6457> Beq t0(x5), zero(x0), 12]: hit 317654, miss 41620, hit rate 0.884155
+[<6459> Jal zero(x0), -64]: hit 359273, miss 1, hit rate 0.999997
+[<6464> Jal ra(x1), 23632]: hit 282378, miss 1, hit rate 0.999996
+[<6466> Jal zero(x0), -28]: hit 282378, miss 1, hit rate 0.999996
+[<6472> Jal ra(x1), 30376]: hit 359273, miss 1, hit rate 0.999997
+[<6474> Beq a0(x10), zero(x0), 700]: hit 280560, miss 78714, hit rate 0.780908
+[<6478> Beq t0(x5), zero(x0), 572]: hit 292528, miss 66746, hit rate 0.81422
+[<6498> Bne t0(x5), t1(x6), 44]: hit 141821, miss 1, hit rate 0.999993
+[<6500> Beq t0(x5), zero(x0), 12]: hit 117505, miss 24317, hit rate 0.828539
+[<6502> Jal zero(x0), -180]: hit 359273, miss 1, hit rate 0.999997
+[<6506> Jal ra(x1), 22536]: hit 109454, miss 1, hit rate 0.999991
+[<6508> Jal zero(x0), -24]: hit 109454, miss 1, hit rate 0.999991
+[<6539> Beq t0(x5), zero(x0), 104]: hit 141821, miss 1, hit rate 0.999993
+[<6543> Beq t0(x5), zero(x0), 80]: hit 141781, miss 40, hit rate 0.999718
+[<6547> Beq t0(x5), zero(x0), 52]: hit 141781, miss 41, hit rate 0.999711
+[<6548> Beq a2(x12), zero(x0), 12]: hit 141780, miss 42, hit rate 0.999704
+[<6550> Jal zero(x0), -200]: hit 141821, miss 1, hit rate 0.999993
+[<6557> Jal ra(x1), -15672]: hit 141780, miss 1, hit rate 0.999993
+[<6559> Jal zero(x0), -36]: hit 141780, miss 1, hit rate 0.999993
+[<6562> Jal zero(x0), -56]: hit 40, miss 1, hit rate 0.97561
+[<6564> Jal zero(x0), -68]: hit 39, miss 1, hit rate 0.975
+[<6566> Jal zero(x0), -76]: hit 0, miss 1, hit rate 0
+[<6640> Beq t1(x6), zero(x0), 28]: hit 217451, miss 1, hit rate 0.999995
+[<6646> Jal zero(x0), -576]: hit 217451, miss 1, hit rate 0.999995
+[<6648> Jal zero(x0), -12]: hit 217451, miss 1, hit rate 0.999995
+[<6650> Jal zero(x0), -688]: hit 193283, miss 1, hit rate 0.999995
+[<6652> Jal zero(x0), -828]: hit 2317, miss 1, hit rate 0.999569
+[<6654> Jal zero(x0), -836]: hit 991906, miss 1, hit rate 0.999999
+[<6658> Jal zero(x0), -4328]: hit 616971, miss 1, hit rate 0.999998
+[<6675> Jalr zero(x0), ra(x1), 0]: hit 44358, miss 16180, hit rate 0.73273
+[<6694> Bne t0(x5), t1(x6), 100]: hit 94914, miss 1, hit rate 0.999989
+[<6710> Jalr zero(x0), ra(x1), 0]: hit 94914, miss 1, hit rate 0.999989
+[<6720> Bne t0(x5), t1(x6), 104]: hit 94914, miss 1, hit rate 0.999989
+[<6743> Jal ra(x1), 39328]: hit 94914, miss 1, hit rate 0.999989
+[<6744> Jal zero(x0), -196]: hit 94914, miss 1, hit rate 0.999989
+[<6751> Jal ra(x1), 27792]: hit 94914, miss 1, hit rate 0.999989
+[<6752> Beq a0(x10), zero(x0), 112]: hit 84622, miss 10293, hit rate 0.891556
+[<6770> Jal ra(x1), 25480]: hit 27184, miss 1, hit rate 0.999963
+[<6776> Jal ra(x1), 27428]: hit 27184, miss 1, hit rate 0.999963
+[<6777> Jal zero(x0), -152]: hit 27184, miss 1, hit rate 0.999963
+[<6780> Jal zero(x0), -164]: hit 67729, miss 1, hit rate 0.999985
+[<6801> Bne t0(x5), t1(x6), 108]: hit 3706252, miss 1, hit rate 1
+[<6818> Jalr zero(x0), ra(x1), 0]: hit 2560328, miss 1145925, hit rate 0.690813
+[<6829> Bne t0(x5), t1(x6), 116]: hit 3706252, miss 1, hit rate 1
+[<6855> Jal ra(x1), 39216]: hit 3706252, miss 1, hit rate 1
+[<6856> Jal zero(x0), -216]: hit 3706252, miss 1, hit rate 1
+[<6861> Jal ra(x1), 29848]: hit 3706252, miss 1, hit rate 1
+[<6862> Beq a0(x10), zero(x0), 120]: hit 3324176, miss 382077, hit rate 0.89691
+[<6881> Jal ra(x1), 26020]: hit 2168067, miss 1, hit rate 1
+[<6888> Jal ra(x1), 27104]: hit 2168067, miss 1, hit rate 1
+[<6889> Jal zero(x0), -156]: hit 2168067, miss 1, hit rate 1
+[<6892> Jal zero(x0), -168]: hit 1538184, miss 1, hit rate 0.999999
+[<7155> Blt t0(x5), zero(x0), 588]: hit 73973, miss 65536, hit rate 0.530238
+[<7159> Beq t0(x5), zero(x0), 568]: hit 64786, miss 9187, hit rate 0.875806
+[<7241> Jal ra(x1), 17556]: hit 44593, miss 1, hit rate 0.999978
+[<7246> Jal ra(x1), -7324]: hit 44593, miss 1, hit rate 0.999978
+[<7258> Jal zero(x0), -432]: hit 73972, miss 1, hit rate 0.999986
+[<7301> Jal zero(x0), -180]: hit 29378, miss 1, hit rate 0.999966
+[<7315> Jalr zero(x0), ra(x1), 0]: hit 65535, miss 1, hit rate 0.999985
+[<7384> Blt s1(x9), zero(x0), 588]: hit 65536, miss 256, hit rate 0.996109
+[<7421> Beq t0(x5), zero(x0), 404]: hit 65535, miss 1, hit rate 0.999985
+[<7469> Jal ra(x1), 37116]: hit 65535, miss 1, hit rate 0.999985
+[<7512> Jal ra(x1), -1528]: hit 65535, miss 1, hit rate 0.999985
+[<7516> Blt t1(x6), t2(x7), 20]: hit 52428, miss 13108, hit rate 0.799988
+[<7520> Jal zero(x0), -544]: hit 65535, miss 1, hit rate 0.999985
+[<7521> Jal zero(x0), -12]: hit 52428, miss 1, hit rate 0.999981
+[<7522> Beq zero(x0), zero(x0), 20]: hit 65535, miss 1, hit rate 0.999985
+[<7526> Jal zero(x0), -408]: hit 65535, miss 1, hit rate 0.999985
+[<7530> Jal zero(x0), -16]: hit 65535, miss 1, hit rate 0.999985
+[<7540> Jalr zero(x0), ra(x1), 0]: hit 253, miss 3, hit rate 0.988281
+[<7613> Bne s1(x9), t0(x5), 68]: hit 8, miss 2, hit rate 0.8
+[<7617> Jal ra(x1), 46620]: hit 0, miss 1, hit rate 0
+[<7620> Bne t0(x5), t1(x6), 8]: hit 8, miss 2, hit rate 0.8
+[<7621> Jal zero(x0), 56]: hit 0, miss 1, hit rate 0
+[<7629> Jal zero(x0), -76]: hit 8, miss 1, hit rate 0.888889
+[<7632> Jal ra(x1), 196]: hit 8, miss 1, hit rate 0.888889
+[<7634> Jal zero(x0), -64]: hit 8, miss 1, hit rate 0.888889
+[<7639> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<7689> Bne s1(x9), t0(x5), 40]: hit 18, miss 11, hit rate 0.62069
+[<7693> Jal ra(x1), 46316]: hit 11, miss 1, hit rate 0.916667
+[<7698> Jalr zero(x0), ra(x1), 0]: hit 6, miss 6, hit rate 0.5
+[<7701> Jal ra(x1), -80]: hit 16, miss 1, hit rate 0.941176
+[<7709> Jalr zero(x0), ra(x1), 0]: hit 7, miss 10, hit rate 0.411765
+[<7728> Beq s1(x9), t0(x5), 916]: hit 17, miss 1, hit rate 0.944444
+[<7738> Jal ra(x1), 46176]: hit 16, miss 1, hit rate 0.941176
+[<7749> Jal ra(x1), 46132]: hit 16, miss 1, hit rate 0.941176
+[<7763> Jal ra(x1), 46076]: hit 16, miss 1, hit rate 0.941176
+[<7772> Jal ra(x1), 46040]: hit 16, miss 1, hit rate 0.941176
+[<7783> Jal ra(x1), 45996]: hit 16, miss 1, hit rate 0.941176
+[<7785> Beq s4(x20), zero(x0), 684]: hit 16, miss 1, hit rate 0.941176
+[<7802> Bne s2(x18), t0(x5), 608]: hit 14, miss 3, hit rate 0.823529
+[<7807> Jal ra(x1), 45900]: hit 16, miss 1, hit rate 0.941176
+[<7830> Bne s2(x18), t0(x5), 352]: hit 6, miss 11, hit rate 0.352941
+[<7834> Beq t0(x5), zero(x0), 272]: hit 4, miss 5, hit rate 0.444444
+[<7840> Beq t0(x5), zero(x0), 184]: hit 8, miss 1, hit rate 0.888889
+[<7846> Beq t0(x5), zero(x0), 96]: hit 8, miss 1, hit rate 0.888889
+[<7849> Beq s4(x20), zero(x0), 80]: hit 16, miss 1, hit rate 0.941176
+[<7868> Jalr zero(x0), ra(x1), 0]: hit 15, miss 2, hit rate 0.882353
+[<7869> Jal zero(x0), -64]: hit 16, miss 1, hit rate 0.941176
+[<7872> Beq t0(x5), zero(x0), 20]: hit 8, miss 1, hit rate 0.888889
+[<7876> Jal zero(x0), -112]: hit 8, miss 1, hit rate 0.888889
+[<7882> Jal zero(x0), -32]: hit 8, miss 1, hit rate 0.888889
+[<7888> Beq t0(x5), zero(x0), 20]: hit 8, miss 1, hit rate 0.888889
+[<7892> Jal zero(x0), -200]: hit 8, miss 1, hit rate 0.888889
+[<7898> Jal zero(x0), -32]: hit 8, miss 1, hit rate 0.888889
+[<7904> Beq t0(x5), zero(x0), 20]: hit 6, miss 1, hit rate 0.857143
+[<7908> Jal zero(x0), -288]: hit 6, miss 1, hit rate 0.857143
+[<7914> Jal zero(x0), -32]: hit 6, miss 1, hit rate 0.857143
+[<7919> Bne s2(x18), t0(x5), 136]: hit 5, miss 3, hit rate 0.625
+[<7931> Beq t0(x5), zero(x0), 52]: hit 1, miss 1, hit rate 0.5
+[<7943> Jal zero(x0), -376]: hit 1, miss 1, hit rate 0.5
+[<7948> Jal zero(x0), -56]: hit 1, miss 1, hit rate 0.5
+[<7953> Jal zero(x0), -416]: hit 5, miss 1, hit rate 0.833333
+[<7955> Jal zero(x0), -604]: hit 14, miss 1, hit rate 0.933333
+[<7956> Jal zero(x0), -620]: hit 16, miss 1, hit rate 0.941176
+[<7972> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<7980> Jal ra(x1), -1080]: hit 16, miss 1, hit rate 0.941176
+[<7981> Beq a0(x10), zero(x0), 16]: hit 16, miss 1, hit rate 0.941176
+[<7984> Jal zero(x0), -28]: hit 15, miss 1, hit rate 0.9375
+[<7991> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<8004> Bne s1(x9), t0(x5), 116]: hit 0, miss 2, hit rate 0
+[<8008> Jal ra(x1), 45056]: hit 0, miss 1, hit rate 0
+[<8012> Bne t0(x5), t1(x6), 40]: hit 0, miss 2, hit rate 0
+[<8016> Jal ra(x1), 45024]: hit 0, miss 1, hit rate 0
+[<8021> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<8024> Jal ra(x1), -112]: hit 0, miss 1, hit rate 0
+[<8032> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<8035> Jal ra(x1), -1416]: hit 0, miss 1, hit rate 0
+[<8038> Jal zero(x0), -112]: hit 0, miss 1, hit rate 0
+[<8044> Jal ra(x1), 412]: hit 0, miss 1, hit rate 0
+[<8051> Jal ra(x1), 46276]: hit 0, miss 1, hit rate 0
+[<8061> Jal ra(x1), 46528]: hit 0, miss 1, hit rate 0
+[<8064> Jal ra(x1), 46224]: hit 0, miss 1, hit rate 0
+[<8068> Jal ra(x1), 46500]: hit 0, miss 1, hit rate 0
+[<8078> Jal ra(x1), -1472]: hit 0, miss 1, hit rate 0
+[<8082> Jal ra(x1), -436]: hit 0, miss 1, hit rate 0
+[<8086> Bne s0/fp(x8), t0(x5), 204]: hit 0, miss 1, hit rate 0
+[<8093> Bne t0(x5), t1(x6), 148]: hit 0, miss 1, hit rate 0
+[<8097> Bne s0/fp(x8), t0(x5), 108]: hit 0, miss 1, hit rate 0
+[<8105> Bne t0(x5), t1(x6), 56]: hit 0, miss 1, hit rate 0
+[<8118> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<8121> Jal ra(x1), -500]: hit 0, miss 1, hit rate 0
+[<8123> Jal zero(x0), -52]: hit 0, miss 1, hit rate 0
+[<8126> Jal ra(x1), -1780]: hit 0, miss 1, hit rate 0
+[<8129> Jal zero(x0), -104]: hit 0, miss 1, hit rate 0
+[<8135> Jal ra(x1), -2120]: hit 0, miss 1, hit rate 0
+[<8136> Jal zero(x0), -168]: hit 0, miss 1, hit rate 0
+[<8139> Jal ra(x1), -1832]: hit 0, miss 1, hit rate 0
+[<8141> Jal zero(x0), -200]: hit 0, miss 1, hit rate 0
+[<8167> Jal ra(x1), 46104]: hit 0, miss 1, hit rate 0
+[<8170> Jal ra(x1), 45800]: hit 0, miss 1, hit rate 0
+[<8177> Jal ra(x1), 46064]: hit 0, miss 1, hit rate 0
+[<8180> Jal ra(x1), 45760]: hit 0, miss 1, hit rate 0
+[<8235> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<9819> Bge s0/fp(x8), t1(x6), 240]: hit 255, miss 1, hit rate 0.996094
+[<9822> Bge s0/fp(x8), t1(x6), 224]: hit 254, miss 1, hit rate 0.996078
+[<9857> Jal ra(x1), -9952]: hit 253, miss 1, hit rate 0.996063
+[<9864> Jal ra(x1), 96]: hit 254, miss 1, hit rate 0.996078
+[<9868> Blt t1(x6), t2(x7), 36]: hit 150, miss 105, hit rate 0.588235
+[<9876> Jal zero(x0), -240]: hit 254, miss 1, hit rate 0.996078
+[<9877> Jal zero(x0), -28]: hit 152, miss 1, hit rate 0.993464
+[<9878> Jal zero(x0), -80]: hit 0, miss 1, hit rate 0
+[<9887> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<9911> Bge s0/fp(x8), t1(x6), 544]: hit 65536, miss 256, hit rate 0.996109
+[<9932> Bge t1(x6), t2(x7), 444]: hit 65534, miss 2, hit rate 0.999969
+[<9933> Bge zero(x0), s1(x9), 424]: hit 65277, miss 3, hit rate 0.999954
+[<9936> Bge t1(x6), t0(x5), 396]: hit 64770, miss 254, hit rate 0.996094
+[<9937> Bge zero(x0), s0/fp(x8), 376]: hit 64515, miss 255, hit rate 0.996063
+[<9939> Beq t0(x5), zero(x0), 52]: hit 64772, miss 764, hit rate 0.988342
+[<9946> Jal ra(x1), 34072]: hit 64515, miss 1, hit rate 0.999984
+[<9948> Jal ra(x1), 36840]: hit 65535, miss 1, hit rate 0.999985
+[<9951> Jal zero(x0), -172]: hit 65535, miss 1, hit rate 0.999985
+[<9967> Beq a0(x10), zero(x0), 204]: hit 907, miss 113, hit rate 0.889216
+[<9985> Jal ra(x1), 23436]: hit 292, miss 1, hit rate 0.996587
+[<10015> Jal ra(x1), -26388]: hit 1019, miss 1, hit rate 0.99902
+[<10017> Jal zero(x0), -280]: hit 1019, miss 1, hit rate 0.99902
+[<10026> Jal zero(x0), -84]: hit 726, miss 1, hit rate 0.998624
+[<10034> Jal zero(x0), -380]: hit 253, miss 1, hit rate 0.996063
+[<10038> Jal zero(x0), -396]: hit 253, miss 1, hit rate 0.996063
+[<10042> Jal zero(x0), -412]: hit 255, miss 1, hit rate 0.996094
+[<10046> Jal zero(x0), -428]: hit 255, miss 1, hit rate 0.996094
+[<10061> Jalr zero(x0), ra(x1), 0]: hit 254, miss 2, hit rate 0.992188
+[<11633> Blt a1(x11), zero(x0), 368]: hit 2152176, miss 134511, hit rate 0.941176
+[<11668> Bne t1(x6), s1(x9), 64]: hit 2017664, miss 134512, hit rate 0.9375
+[<11683> Jal zero(x0), -200]: hit 2152175, miss 1, hit rate 1
+[<11685> Bge s1(x9), t1(x6), 156]: hit 807066, miss 1210599, hit rate 0.4
+[<11707> Jal zero(x0), -104]: hit 1210598, miss 1, hit rate 0.999999
+[<11724> Jal zero(x0), -172]: hit 807065, miss 1, hit rate 0.999999
+[<11728> Jalr zero(x0), ra(x1), 0]: hit 50707, miss 83804, hit rate 0.376973
+[<11792> Jal ra(x1), 29960]: hit 0, miss 1, hit rate 0
+[<11799> Jal ra(x1), 29892]: hit 0, miss 1, hit rate 0
+[<11829> Bne t1(x6), t0(x5), 412]: hit 0, miss 1, hit rate 0
+[<11859> Jal ra(x1), -26820]: hit 0, miss 1, hit rate 0
+[<11886> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<11937> Jal ra(x1), 29380]: hit 0, miss 1, hit rate 0
+[<11971> Jal zero(x0), -464]: hit 0, miss 1, hit rate 0
+[<12153> Bne t0(x5), t1(x6), 8]: hit 2317880, miss 742410, hit rate 0.757405
+[<12154> Jal zero(x0), 836]: hit 2048466, miss 1, hit rate 1
+[<12169> Jal ra(x1), 7588]: hit 1011822, miss 1, hit rate 0.999999
+[<12173> Beq a0(x10), zero(x0), 680]: hit 942630, miss 69193, hit rate 0.931616
+[<12177> Beq t0(x5), zero(x0), 564]: hit 696566, miss 315257, hit rate 0.688427
+[<12197> Bne t0(x5), t1(x6), 28]: hit 654611, miss 1, hit rate 0.999998
+[<12199> Beq t0(x5), zero(x0), 8]: hit 492762, miss 161850, hit rate 0.752754
+[<12200> Jal zero(x0), 580]: hit 391807, miss 1, hit rate 0.999997
+[<12203> Jal zero(x0), -216]: hit 262803, miss 1, hit rate 0.999996
+[<12236> Beq t0(x5), zero(x0), 104]: hit 526380, miss 128232, hit rate 0.80411
+[<12240> Beq t0(x5), zero(x0), 80]: hit 460441, miss 19138, hit rate 0.960094
+[<12244> Beq t0(x5), zero(x0), 52]: hit 510079, miss 144533, hit rate 0.779208
+[<12245> Beq a2(x12), zero(x0), 12]: hit 510078, miss 144534, hit rate 0.779207
+[<12247> Jal zero(x0), -192]: hit 654611, miss 1, hit rate 0.999998
+[<12254> Jal ra(x1), -38460]: hit 455369, miss 1, hit rate 0.999998
+[<12256> Jal zero(x0), -36]: hit 455369, miss 1, hit rate 0.999998
+[<12259> Jal zero(x0), -56]: hit 199241, miss 1, hit rate 0.999995
+[<12261> Jal zero(x0), -68]: hit 17541, miss 1, hit rate 0.999943
+[<12263> Jal zero(x0), -76]: hit 175032, miss 1, hit rate 0.999994
+[<12339> Beq t1(x6), zero(x0), 60]: hit 307156, miss 50055, hit rate 0.859873
+[<12342> Jal zero(x0), -772]: hit 217993, miss 1, hit rate 0.999995
+[<12344> Jal zero(x0), -668]: hit 79055, miss 1, hit rate 0.999987
+[<12353> Jalr zero(x0), ra(x1), 0]: hit 202773, miss 189035, hit rate 0.517532
+[<12362> Jalr zero(x0), ra(x1), 0]: hit 98845, miss 40372, hit rate 0.710007
+[<12371> Jalr zero(x0), ra(x1), 0]: hit 1796701, miss 251766, hit rate 0.877095
+[<12386> Bne t0(x5), t1(x6), 8]: hit 7822455, miss 2076828, hit rate 0.790204
+[<12387> Jal zero(x0), 888]: hit 2076826, miss 1, hit rate 1
+[<12395> Bne t0(x5), t1(x6), 28]: hit 7822455, miss 1, hit rate 1
+[<12397> Beq t0(x5), zero(x0), 8]: hit 7314533, miss 507923, hit rate 0.935069
+[<12398> Jal zero(x0), 804]: hit 497457, miss 1, hit rate 0.999998
+[<12401> Jal zero(x0), -76]: hit 7324997, miss 1, hit rate 1
+[<12414> Jal ra(x1), 6608]: hit 7822455, miss 1, hit rate 1
+[<12418> Beq a0(x10), zero(x0), 716]: hit 5864328, miss 1958128, hit rate 0.749679
+[<12422> Beq t0(x5), zero(x0), 580]: hit 7159221, miss 663235, hit rate 0.915214
+[<12442> Bne t0(x5), t1(x6), 44]: hit 649212, miss 1, hit rate 0.999998
+[<12444> Beq t0(x5), zero(x0), 12]: hit 444049, miss 205164, hit rate 0.68398
+[<12446> Jal zero(x0), -196]: hit 7822455, miss 1, hit rate 1
+[<12450> Jal ra(x1), -1240]: hit 371558, miss 1, hit rate 0.999997
+[<12452> Jal zero(x0), -24]: hit 371558, miss 1, hit rate 0.999997
+[<12481> Bne t1(x6), t0(x5), 128]: hit 579498, miss 69715, hit rate 0.892616
+[<12485> Beq t0(x5), zero(x0), 104]: hit 579878, miss 2, hit rate 0.999997
+[<12489> Beq t0(x5), zero(x0), 80]: hit 579874, miss 4, hit rate 0.999993
+[<12493> Beq t0(x5), zero(x0), 52]: hit 579872, miss 8, hit rate 0.999986
+[<12494> Beq a2(x12), zero(x0), 12]: hit 649204, miss 9, hit rate 0.999986
+[<12496> Jal zero(x0), -208]: hit 649212, miss 1, hit rate 0.999998
+[<12503> Jal ra(x1), -39456]: hit 649204, miss 1, hit rate 0.999998
+[<12505> Jal zero(x0), -36]: hit 649204, miss 1, hit rate 0.999998
+[<12508> Jal zero(x0), -56]: hit 7, miss 1, hit rate 0.875
+[<12510> Jal zero(x0), -68]: hit 3, miss 1, hit rate 0.75
+[<12512> Jal zero(x0), -76]: hit 1, miss 1, hit rate 0.5
+[<12514> Bne t1(x6), t0(x5), 60]: hit 69332, miss 1, hit rate 0.999986
+[<12528> Jal zero(x0), -136]: hit 69332, miss 1, hit rate 0.999986
+[<12550> Jal zero(x0), -92]: hit 69332, miss 1, hit rate 0.999986
+[<12588> Beq t1(x6), zero(x0), 28]: hit 7173242, miss 1, hit rate 1
+[<12594> Jal zero(x0), -592]: hit 7173242, miss 1, hit rate 1
+[<12596> Jal zero(x0), -12]: hit 7173242, miss 1, hit rate 1
+[<12598> Jal zero(x0), -704]: hit 5971381, miss 1, hit rate 1
+[<12608> Jalr zero(x0), ra(x1), 0]: hit 4609, miss 492849, hit rate 0.0092651
+[<12618> Jalr zero(x0), ra(x1), 0]: hit 1807419, miss 269408, hit rate 0.870279
+[<12638> Bne t0(x5), t1(x6), 8]: hit 1811159, miss 1824793, hit rate 0.498125
+[<12639> Jal zero(x0), 1948]: hit 1811143, miss 1, hit rate 0.999999
+[<12646> Bne t0(x5), t1(x6), 28]: hit 1824807, miss 1, hit rate 0.999999
+[<12648> Beq t0(x5), zero(x0), 8]: hit 1810486, miss 14322, hit rate 0.992152
+[<12649> Jal zero(x0), 1852]: hit 13663, miss 1, hit rate 0.999927
+[<12652> Jal zero(x0), -76]: hit 1811143, miss 1, hit rate 0.999999
+[<12660> Bne t0(x5), t1(x6), 48]: hit 1824807, miss 1, hit rate 0.999999
+[<12662> Beq t0(x5), zero(x0), 12]: hit 1824807, miss 1, hit rate 0.999999
+[<12664> Jal zero(x0), -64]: hit 1824807, miss 1, hit rate 0.999999
+[<12669> Jal ra(x1), -1188]: hit 1824807, miss 1, hit rate 0.999999
+[<12671> Jal zero(x0), -28]: hit 1824807, miss 1, hit rate 0.999999
+[<12684> Jal ra(x1), 5528]: hit 1824807, miss 1, hit rate 0.999999
+[<12692> Beq t0(x5), zero(x0), 580]: hit 1824807, miss 1, hit rate 0.999999
+[<12716> Jal zero(x0), -216]: hit 1824807, miss 1, hit rate 0.999999
+[<12862> Jal ra(x1), -2888]: hit 1824807, miss 1, hit rate 0.999999
+[<12864> Jal zero(x0), -592]: hit 1824807, miss 1, hit rate 0.999999
+[<13125> Jalr zero(x0), ra(x1), 0]: hit 11693, miss 1971, hit rate 0.855752
+[<13139> Jalr zero(x0), ra(x1), 0]: hit 1369744, miss 441400, hit rate 0.756287
+[<13160> Bne s3(x19), t0(x5), 8]: hit 599482, miss 174010, hit rate 0.775033
+[<13161> Jal zero(x0), 844]: hit 174007, miss 1, hit rate 0.999994
+[<13167> Jal ra(x1), 2128]: hit 599483, miss 1, hit rate 0.999998
+[<13169> Beq s5(x21), zero(x0), 656]: hit 376704, miss 222780, hit rate 0.62838
+[<13175> Beq t0(x5), zero(x0), 628]: hit 190582, miss 2731, hit rate 0.985873
+[<13180> Beq t0(x5), zero(x0), 604]: hit 137565, miss 52277, hit rate 0.724629
+[<13198> Bne t0(x5), t1(x6), 76]: hit 143075, miss 1, hit rate 0.999993
+[<13200> Beq t0(x5), zero(x0), 64]: hit 114757, miss 28319, hit rate 0.80207
+[<13215> Jal zero(x0), -236]: hit 193312, miss 1, hit rate 0.999995
+[<13216> Jal zero(x0), -12]: hit 42332, miss 1, hit rate 0.999976
+[<13245> Bne t1(x6), t0(x5), 128]: hit 106818, miss 36258, hit rate 0.746582
+[<13249> Beq t0(x5), zero(x0), 104]: hit 73446, miss 12767, hit rate 0.851913
+[<13253> Beq t0(x5), zero(x0), 80]: hit 70412, miss 1779, hit rate 0.975357
+[<13257> Beq t0(x5), zero(x0), 52]: hit 70369, miss 15844, hit rate 0.816223
+[<13258> Beq a2(x12), zero(x0), 12]: hit 126065, miss 17011, hit rate 0.881105
+[<13260> Jal zero(x0), -240]: hit 143075, miss 1, hit rate 0.999993
+[<13267> Jal ra(x1), -42512]: hit 126369, miss 1, hit rate 0.999992
+[<13269> Jal zero(x0), -36]: hit 126369, miss 1, hit rate 0.999992
+[<13272> Jal zero(x0), -56]: hit 16702, miss 1, hit rate 0.99994
+[<13274> Jal zero(x0), -68]: hit 1708, miss 1, hit rate 0.999415
+[<13276> Jal zero(x0), -76]: hit 14021, miss 1, hit rate 0.999929
+[<13278> Bne t1(x6), t0(x5), 60]: hit 54009, miss 2854, hit rate 0.949809
+[<13292> Jal zero(x0), -136]: hit 56862, miss 1, hit rate 0.999982
+[<13314> Jal zero(x0), -92]: hit 3579, miss 1, hit rate 0.999721
+[<13331> Jal zero(x0), -472]: hit 46765, miss 1, hit rate 0.999979
+[<13332> Jal zero(x0), -476]: hit 3470, miss 1, hit rate 0.999712
+[<13354> Beq t1(x6), zero(x0), 16]: hit 368352, miss 37819, hit rate 0.906889
+[<13357> Jal zero(x0), -804]: hit 37408, miss 1, hit rate 0.999973
+[<13371> Jalr zero(x0), ra(x1), 0]: hit 351085, miss 17677, hit rate 0.952064
+[<13385> Jalr zero(x0), ra(x1), 0]: hit 101361, miss 72647, hit rate 0.582508
+[<13407> Bne s4(x20), t0(x5), 8]: hit 33711010, miss 10636149, hit rate 0.760162
+[<13408> Jal zero(x0), 844]: hit 10636146, miss 1, hit rate 1
+[<13412> Jal ra(x1), 3644]: hit 33711011, miss 1, hit rate 1
+[<13414> Beq s5(x21), zero(x0), 664]: hit 19041151, miss 14669861, hit rate 0.564835
+[<13420> Beq t0(x5), zero(x0), 636]: hit 9271679, miss 4264759, hit rate 0.684942
+[<13425> Beq t0(x5), zero(x0), 612]: hit 3739913, miss 792858, hit rate 0.825083
+[<13445> Bne t0(x5), t1(x6), 76]: hit 3844024, miss 1, hit rate 1
+[<13447> Beq t0(x5), zero(x0), 64]: hit 2453691, miss 1390334, hit rate 0.638313
+[<13462> Jal zero(x0), -236]: hit 13536437, miss 1, hit rate 1
+[<13463> Jal zero(x0), -12]: hit 1393135, miss 1, hit rate 0.999999
+[<13492> Bne t1(x6), t0(x5), 128]: hit 2838754, miss 1005271, hit rate 0.738485
+[<13496> Beq t0(x5), zero(x0), 104]: hit 1667718, miss 581152, hit rate 0.74158
+[<13500> Beq t0(x5), zero(x0), 80]: hit 1432159, miss 198684, hit rate 0.878171
+[<13504> Beq t0(x5), zero(x0), 52]: hit 1412743, miss 836127, hit rate 0.628201
+[<13505> Beq a2(x12), zero(x0), 12]: hit 2890075, miss 953950, hit rate 0.751836
+[<13507> Jal zero(x0), -240]: hit 3844024, miss 1, hit rate 1
+[<13514> Jal ra(x1), -43500]: hit 2982275, miss 1, hit rate 1
+[<13516> Jal zero(x0), -36]: hit 2982275, miss 1, hit rate 1
+[<13519> Jal zero(x0), -56]: hit 861747, miss 1, hit rate 0.999999
+[<13521> Jal zero(x0), -68]: hit 184417, miss 1, hit rate 0.999995
+[<13523> Jal zero(x0), -76]: hit 618026, miss 1, hit rate 0.999998
+[<13525> Bne t1(x6), t0(x5), 60]: hit 1483235, miss 111920, hit rate 0.929838
+[<13539> Jal zero(x0), -136]: hit 1595154, miss 1, hit rate 0.999999
+[<13561> Jal zero(x0), -92]: hit 126183, miss 1, hit rate 0.999992
+[<13578> Jal zero(x0), -472]: hit 688745, miss 1, hit rate 0.999999
+[<13579> Jal zero(x0), -476]: hit 9003666, miss 1, hit rate 1
+[<13601> Beq t1(x6), zero(x0), 16]: hit 17130017, miss 3044557, hit rate 0.849089
+[<13604> Jal zero(x0), -804]: hit 2977300, miss 1, hit rate 1
+[<13618> Jalr zero(x0), ra(x1), 0]: hit 16150198, miss 1047075, hit rate 0.939114
+[<13632> Jalr zero(x0), ra(x1), 0]: hit 5093416, miss 5542731, hit rate 0.478878
+[<13645> Beq t0(x5), t1(x6), 52]: hit 420670, miss 122100, hit rate 0.775043
+[<13654> Jal ra(x1), -2056]: hit 420669, miss 1, hit rate 0.999998
+[<13657> Jal zero(x0), -64]: hit 420669, miss 1, hit rate 0.999998
+[<13663> Jalr zero(x0), ra(x1), 0]: hit 94914, miss 27186, hit rate 0.777346
+[<13678> Beq t0(x5), t1(x6), 56]: hit 21959099, miss 5874321, hit rate 0.788947
+[<13688> Jal ra(x1), -1208]: hit 21959098, miss 1, hit rate 1
+[<13691> Jal zero(x0), -68]: hit 21959098, miss 1, hit rate 1
+[<13698> Jalr zero(x0), ra(x1), 0]: hit 3706252, miss 2168069, hit rate 0.630924
+[<13735> Bne t1(x6), t0(x5), 596]: hit 314895, miss 379504, hit rate 0.453478
+[<13739> Beq t0(x5), zero(x0), 444]: hit 298569, miss 1, hit rate 0.999997
+[<13741> Beq t0(x5), zero(x0), 32]: hit 259039, miss 39531, hit rate 0.867599
+[<13748> Jalr zero(x0), ra(x1), 0]: hit 18456, miss 12704, hit rate 0.592298
+[<13752> Beq t0(x5), zero(x0), 256]: hit 267409, miss 1, hit rate 0.999996
+[<13754> Beq t0(x5), zero(x0), 32]: hit 212683, miss 54727, hit rate 0.795344
+[<13761> Jalr zero(x0), ra(x1), 0]: hit 49845, miss 2341, hit rate 0.955141
+[<13765> Beq t0(x5), zero(x0), 68]: hit 215223, miss 1, hit rate 0.999995
+[<13767> Beq t0(x5), zero(x0), 32]: hit 192113, miss 23111, hit rate 0.892619
+[<13774> Jalr zero(x0), ra(x1), 0]: hit 12810, miss 8077, hit rate 0.6133
+[<13781> Jalr zero(x0), ra(x1), 0]: hit 137687, miss 56650, hit rate 0.708496
+[<13787> Beq t0(x5), zero(x0), 108]: hit 137566, miss 77658, hit rate 0.639176
+[<13797> Beq t0(x5), zero(x0), 60]: hit 150119, miss 65105, hit rate 0.697501
+[<13804> Beq t0(x5), zero(x0), 24]: hit 65676, miss 13502, hit rate 0.829473
+[<13809> Jal zero(x0), -168]: hit 215223, miss 1, hit rate 0.999995
+[<13811> Jal zero(x0), -8]: hit 58290, miss 1, hit rate 0.999983
+[<13813> Jal zero(x0), -16]: hit 136045, miss 1, hit rate 0.999993
+[<13815> Jal zero(x0), -108]: hit 148568, miss 1, hit rate 0.999993
+[<13821> Beq t0(x5), zero(x0), 108]: hit 266706, miss 704, hit rate 0.997367
+[<13831> Beq t0(x5), zero(x0), 60]: hit 183888, miss 83522, hit rate 0.687663
+[<13838> Beq t0(x5), zero(x0), 24]: hit 70758, miss 17829, hit rate 0.79874
+[<13843> Jal zero(x0), -356]: hit 267409, miss 1, hit rate 0.999996
+[<13845> Jal zero(x0), -8]: hit 36400, miss 1, hit rate 0.999973
+[<13847> Jal zero(x0), -16]: hit 178822, miss 1, hit rate 0.999994
+[<13849> Jal zero(x0), -108]: hit 1026, miss 1, hit rate 0.999026
+[<13855> Beq t0(x5), zero(x0), 108]: hit 296429, miss 2141, hit rate 0.992829
+[<13865> Beq t0(x5), zero(x0), 60]: hit 199562, miss 99008, hit rate 0.668393
+[<13872> Beq t0(x5), zero(x0), 24]: hit 61752, miss 12823, hit rate 0.828052
+[<13877> Jal zero(x0), -544]: hit 298569, miss 1, hit rate 0.999997
+[<13879> Jal zero(x0), -8]: hit 43414, miss 1, hit rate 0.999977
+[<13881> Jal zero(x0), -16]: hit 223994, miss 1, hit rate 0.999996
+[<13883> Jal zero(x0), -108]: hit 295005, miss 1, hit rate 0.999997
+[<13885> Bne t1(x6), t0(x5), 168]: hit 297146, miss 98683, hit rate 0.750693
+[<13899> Beq t0(x5), zero(x0), 84]: hit 69238, miss 29443, hit rate 0.701635
+[<13919> Jalr zero(x0), ra(x1), 0]: hit 68624, miss 1, hit rate 0.999985
+[<13926> Jalr zero(x0), ra(x1), 0]: hit 30055, miss 1, hit rate 0.999967
+[<13944> Beq t0(x5), zero(x0), 32]: hit 297147, miss 1, hit rate 0.999997
+[<13989> Beq t0(x5), zero(x0), 68]: hit 244808, miss 52340, hit rate 0.823859
+[<13991> Beq a0(x10), zero(x0), 52]: hit 36608, miss 11032, hit rate 0.76843
+[<14003> Jalr zero(x0), ra(x1), 0]: hit 47639, miss 1, hit rate 0.999979
+[<14005> Jal zero(x0), -52]: hit 36608, miss 1, hit rate 0.999973
+[<14012> Jalr zero(x0), ra(x1), 0]: hit 249507, miss 1, hit rate 0.999996
+[<14103> Bne t1(x6), s1(x9), 444]: hit 6448001, miss 7411343, hit rate 0.465246
+[<14114> Beq t1(x6), zero(x0), 392]: hit 4663420, miss 2084813, hit rate 0.691058
+[<14121> Beq t1(x6), zero(x0), 356]: hit 1575886, miss 483322, hit rate 0.765287
+[<14126> Beq t1(x6), zero(x0), 36]: hit 5338578, miss 1409655, hit rate 0.791108
+[<14134> Jalr zero(x0), ra(x1), 0]: hit 355243, miss 989261, hit rate 0.264219
+[<14145> Beq t1(x6), zero(x0), 252]: hit 3795757, miss 1607972, hit rate 0.702433
+[<14152> Beq t1(x6), zero(x0), 216]: hit 1400512, miss 451714, hit rate 0.756124
+[<14157> Beq t1(x6), zero(x0), 36]: hit 4145635, miss 1258094, hit rate 0.76718
+[<14165> Jalr zero(x0), ra(x1), 0]: hit 964977, miss 307792, hit rate 0.758171
+[<14176> Beq t1(x6), zero(x0), 112]: hit 3659642, miss 471318, hit rate 0.885906
+[<14183> Beq t1(x6), zero(x0), 76]: hit 357114, miss 172292, hit rate 0.674556
+[<14188> Beq t0(x5), zero(x0), 36]: hit 3859127, miss 271833, hit rate 0.934196
+[<14196> Jalr zero(x0), ra(x1), 0]: hit 112599, miss 132772, hit rate 0.458893
+[<14201> Jalr zero(x0), ra(x1), 0]: hit 1703772, miss 2181817, hit rate 0.438485
+[<14203> Jal zero(x0), -60]: hit 284034, miss 1, hit rate 0.999996
+[<14205> Jal zero(x0), -68]: hit 3601553, miss 1, hit rate 1
+[<14207> Jal zero(x0), -200]: hit 579456, miss 1, hit rate 0.999998
+[<14209> Jal zero(x0), -208]: hit 3551502, miss 1, hit rate 1
+[<14211> Jal zero(x0), -340]: hit 714703, miss 1, hit rate 0.999999
+[<14213> Jal zero(x0), -348]: hit 4689024, miss 1, hit rate 1
+[<14215> Bne t1(x6), s1(x9), 104]: hit 5248410, miss 1862701, hit rate 0.738058
+[<14219> Beq t1(x6), zero(x0), 68]: hit 1825650, miss 37049, hit rate 0.98011
+[<14235> Jalr zero(x0), ra(x1), 0]: hit 1824807, miss 1, hit rate 0.999999
+[<14240> Jalr zero(x0), ra(x1), 0]: hit 37890, miss 1, hit rate 0.999974
+[<14244> Beq s1(x9), zero(x0), 24]: hit 5248411, miss 1, hit rate 1
+[<14280> Beq t1(x6), zero(x0), 88]: hit 4513944, miss 734468, hit rate 0.860059
+[<14281> Beq a4(x14), zero(x0), 52]: hit 876607, miss 211887, hit rate 0.805339
+[<14293> Jalr zero(x0), ra(x1), 0]: hit 934134, miss 154360, hit rate 0.858189
+[<14301> Jal zero(x0), -48]: hit 876607, miss 1, hit rate 0.999999
+[<14306> Jalr zero(x0), ra(x1), 0]: hit 4114074, miss 45844, hit rate 0.98898
+[<14354> Bne t1(x6), a0(x10), 444]: hit 17881917, miss 19535348, hit rate 0.477906
+[<14365> Beq t0(x5), zero(x0), 392]: hit 10536858, miss 5547920, hit rate 0.655083
+[<14372> Beq t0(x5), zero(x0), 356]: hit 2909672, miss 1320090, hit rate 0.687904
+[<14377> Beq t0(x5), zero(x0), 36]: hit 12767743, miss 3317035, hit rate 0.793778
+[<14385> Jalr zero(x0), ra(x1), 0]: hit 1490892, miss 1160869, hit rate 0.562227
+[<14396> Beq t0(x5), zero(x0), 252]: hit 8359750, miss 5073267, hit rate 0.622329
+[<14403> Beq t0(x5), zero(x0), 216]: hit 4805435, miss 2051375, hit rate 0.700827
+[<14408> Beq t0(x5), zero(x0), 36]: hit 8517761, miss 4915256, hit rate 0.634091
+[<14416> Jalr zero(x0), ra(x1), 0]: hit 3932614, miss 711384, hit rate 0.846816
+[<14427> Beq t0(x5), zero(x0), 112]: hit 6654394, miss 2134625, hit rate 0.757126
+[<14434> Beq t0(x5), zero(x0), 76]: hit 1454839, miss 971917, hit rate 0.599499
+[<14439> Beq t0(x5), zero(x0), 36]: hit 7234337, miss 1554682, hit rate 0.823111
+[<14447> Jalr zero(x0), ra(x1), 0]: hit 821502, miss 440768, hit rate 0.650813
+[<14452> Jalr zero(x0), ra(x1), 0]: hit 6815033, miss 711716, hit rate 0.905442
+[<14454> Jal zero(x0), -60]: hit 1164485, miss 1, hit rate 0.999999
+[<14456> Jal zero(x0), -68]: hit 6362262, miss 1, hit rate 1
+[<14458> Jal zero(x0), -200]: hit 2212811, miss 1, hit rate 1
+[<14460> Jal zero(x0), -208]: hit 6576206, miss 1, hit rate 1
+[<14462> Jal zero(x0), -340]: hit 1578000, miss 1, hit rate 0.999999
+[<14464> Jal zero(x0), -348]: hit 11855015, miss 1, hit rate 1
+[<14466> Bne t1(x6), t2(x7), 84]: hit 17283538, miss 4048949, hit rate 0.810198
+[<14470> Beq t1(x6), zero(x0), 48]: hit 3015545, miss 1033402, hit rate 0.744773
+[<14481> Jalr zero(x0), ra(x1), 0]: hit 1954356, miss 1, hit rate 0.999999
+[<14486> Jalr zero(x0), ra(x1), 0]: hit 2094589, miss 1, hit rate 1
+[<14490> Beq t1(x6), zero(x0), 24]: hit 17283539, miss 1, hit rate 1
+[<14510> Beq t0(x5), zero(x0), 88]: hit 11453953, miss 5829587, hit rate 0.662709
+[<14511> Beq s0/fp(x8), zero(x0), 52]: hit 3901373, miss 1290747, hit rate 0.751403
+[<14523> Jalr zero(x0), ra(x1), 0]: hit 5192119, miss 1, hit rate 1
+[<14531> Jal zero(x0), -48]: hit 3901373, miss 1, hit rate 1
+[<14536> Jalr zero(x0), ra(x1), 0]: hit 12091419, miss 1, hit rate 1
+[<15853> Beq s0/fp(x8), zero(x0), 2384]: hit 3114, miss 872, hit rate 0.781234
+[<15920> Jal ra(x1), -17160]: hit 3179, miss 1, hit rate 0.999686
+[<15925> Jal ra(x1), -42040]: hit 3179, miss 1, hit rate 0.999686
+[<15927> Beq s0/fp(x8), t0(x5), 1916]: hit 3127, miss 859, hit rate 0.784496
+[<15994> Jal ra(x1), -17456]: hit 3189, miss 1, hit rate 0.999687
+[<15999> Jal ra(x1), -42336]: hit 3189, miss 1, hit rate 0.999687
+[<16001> Beq s0/fp(x8), t0(x5), 1448]: hit 3160, miss 826, hit rate 0.792775
+[<16068> Jal ra(x1), -17752]: hit 3203, miss 1, hit rate 0.999688
+[<16073> Jal ra(x1), -42632]: hit 3203, miss 1, hit rate 0.999688
+[<16075> Beq s0/fp(x8), t0(x5), 980]: hit 3135, miss 851, hit rate 0.786503
+[<16142> Jal ra(x1), -18048]: hit 3187, miss 1, hit rate 0.999686
+[<16147> Jal ra(x1), -42928]: hit 3187, miss 1, hit rate 0.999686
+[<16149> Beq s0/fp(x8), t0(x5), 488]: hit 3127, miss 859, hit rate 0.784496
+[<16216> Jal ra(x1), -18344]: hit 3181, miss 1, hit rate 0.999686
+[<16221> Jal ra(x1), -43224]: hit 3181, miss 1, hit rate 0.999686
+[<16228> Jalr zero(x0), ra(x1), 0]: hit 2846, miss 336, hit rate 0.894406
+[<16277> Jalr zero(x0), ra(x1), 0]: hit 706, miss 98, hit rate 0.878109
+[<16320> Jal zero(x0), -688]: hit 797, miss 1, hit rate 0.998747
+[<16363> Jal zero(x0), -1156]: hit 781, miss 1, hit rate 0.998721
+[<16406> Jal zero(x0), -1624]: hit 795, miss 1, hit rate 0.998744
+[<16449> Jal zero(x0), -2092]: hit 805, miss 1, hit rate 0.998759
+[<16589> Bne t0(x5), t1(x6), 8]: hit 0, miss 189830, hit rate 0
+[<16590> Jal zero(x0), 248]: hit 94914, miss 1, hit rate 0.999989
+[<16604> Jal ra(x1), -13856]: hit 94914, miss 1, hit rate 0.999989
+[<16610> Jal ra(x1), -11908]: hit 94914, miss 1, hit rate 0.999989
+[<16613> Jal zero(x0), -116]: hit 94914, miss 1, hit rate 0.999989
+[<16658> Jalr zero(x0), ra(x1), 0]: hit 94914, miss 1, hit rate 0.999989
+[<16675> Bne t0(x5), t1(x6), 8]: hit 0, miss 7412506, hit rate 0
+[<16676> Jal zero(x0), 256]: hit 3706252, miss 1, hit rate 1
+[<16691> Jal ra(x1), -13220]: hit 3706252, miss 1, hit rate 1
+[<16698> Jal ra(x1), -12136]: hit 3706252, miss 1, hit rate 1
+[<16701> Jal zero(x0), -124]: hit 3706252, miss 1, hit rate 1
+[<16747> Jalr zero(x0), ra(x1), 0]: hit 3706252, miss 1, hit rate 1
+[<16779> Bge t0(x5), s0/fp(x8), 8]: hit 94914, miss 1, hit rate 0.999989
+[<16782> Jal ra(x1), -40424]: hit 94914, miss 1, hit rate 0.999989
+[<16783> Beq a0(x10), zero(x0), 3768]: hit 73973, miss 20942, hit rate 0.77936
+[<16832> Jal ra(x1), -53228]: hit 73972, miss 1, hit rate 0.999986
+[<16856> Jal ra(x1), 7512]: hit 73972, miss 1, hit rate 0.999986
+[<16878> Beq t0(x5), zero(x0), 3012]: hit 64787, miss 9186, hit rate 0.87582
+[<16922> Bne t0(x5), t1(x6), 872]: hit 73972, miss 1, hit rate 0.999986
+[<16924> Bne t0(x5), zero(x0), 856]: hit 71369, miss 2604, hit rate 0.964798
+[<16954> Beq t0(x5), zero(x0), 728]: hit 70143, miss 6, hit rate 0.999914
+[<16976> Beq t0(x5), zero(x0), 632]: hit 66821, miss 3328, hit rate 0.952558
+[<17053> Jal ra(x1), -21692]: hit 73972, miss 1, hit rate 0.999986
+[<17062> Jal ra(x1), 3124]: hit 73972, miss 1, hit rate 0.999986
+[<17075> Bne s11(x27), t0(x5), 2448]: hit 64787, miss 9186, hit rate 0.87582
+[<17090> Jal zero(x0), -1248]: hit 29378, miss 1, hit rate 0.999966
+[<17135> Jal zero(x0), -576]: hit 44459, miss 1, hit rate 0.999978
+[<17137> Jal zero(x0), -652]: hit 5, miss 1, hit rate 0.833333
+[<17139> Jal zero(x0), -592]: hit 3823, miss 1, hit rate 0.999738
+[<17142> Bne t0(x5), t1(x6), 968]: hit 73972, miss 1, hit rate 0.999986
+[<17144> Beq t0(x5), zero(x0), 920]: hit 71930, miss 2043, hit rate 0.972382
+[<17147> Bne t0(x5), t1(x6), 48]: hit 3120, miss 1, hit rate 0.99968
+[<17152> Jal zero(x0), -912]: hit 73972, miss 1, hit rate 0.999986
+[<17166> Bne t1(x6), t2(x7), 48]: hit 3120, miss 1, hit rate 0.99968
+[<17168> Beq t0(x5), zero(x0), 12]: hit 2824, miss 297, hit rate 0.904838
+[<17170> Jal zero(x0), -84]: hit 3120, miss 1, hit rate 0.99968
+[<17175> Jal ra(x1), -19212]: hit 1632, miss 1, hit rate 0.999388
+[<17177> Jal zero(x0), -28]: hit 1632, miss 1, hit rate 0.999388
+[<17191> Jal ra(x1), -12500]: hit 3120, miss 1, hit rate 0.99968
+[<17195> Beq a0(x10), zero(x0), 708]: hit 2855, miss 266, hit rate 0.914771
+[<17199> Beq t0(x5), zero(x0), 580]: hit 2824, miss 297, hit rate 0.904838
+[<17219> Bne t0(x5), t1(x6), 52]: hit 1850, miss 1, hit rate 0.99946
+[<17221> Beq t0(x5), zero(x0), 20]: hit 1680, miss 171, hit rate 0.907618
+[<17225> Jal zero(x0), -228]: hit 3120, miss 1, hit rate 0.99968
+[<17229> Jal ra(x1), -20356]: hit 1442, miss 1, hit rate 0.999307
+[<17231> Jal zero(x0), -32]: hit 1442, miss 1, hit rate 0.999307
+[<17271> Beq a2(x12), zero(x0), 12]: hit 1850, miss 1, hit rate 0.99946
+[<17273> Jal zero(x0), -208]: hit 1850, miss 1, hit rate 0.99946
+[<17280> Jal ra(x1), -58564]: hit 1850, miss 1, hit rate 0.99946
+[<17282> Jal zero(x0), -36]: hit 1850, miss 1, hit rate 0.99946
+[<17363> Beq t1(x6), zero(x0), 28]: hit 1269, miss 1, hit rate 0.999213
+[<17369> Jal zero(x0), -584]: hit 1269, miss 1, hit rate 0.999213
+[<17371> Jal zero(x0), -12]: hit 1269, miss 1, hit rate 0.999213
+[<17373> Jal zero(x0), -696]: hit 1248, miss 1, hit rate 0.999199
+[<17379> Jal ra(x1), -19040]: hit 70851, miss 1, hit rate 0.999986
+[<17383> Jal zero(x0), -928]: hit 70851, miss 1, hit rate 0.999986
+[<17395> Jal ra(x1), -13316]: hit 73972, miss 1, hit rate 0.999986
+[<17396> Beq a0(x10), zero(x0), 924]: hit 68987, miss 4986, hit rate 0.932597
+[<17403> Beq t1(x6), zero(x0), 880]: hit 19956, miss 431, hit rate 0.978859
+[<17406> Bne t1(x6), t2(x7), 36]: hit 19552, miss 1, hit rate 0.999949
+[<17408> Beq t0(x5), zero(x0), 20]: hit 18580, miss 973, hit rate 0.950238
+[<17412> Jal zero(x0), -1072]: hit 73972, miss 1, hit rate 0.999986
+[<17414> Jal zero(x0), -16]: hit 16431, miss 1, hit rate 0.999939
+[<17422> Bne t2(x7), a0(x10), 48]: hit 19552, miss 1, hit rate 0.999949
+[<17424> Beq t0(x5), zero(x0), 12]: hit 19070, miss 483, hit rate 0.975298
+[<17426> Jal zero(x0), -72]: hit 19552, miss 1, hit rate 0.999949
+[<17431> Jal ra(x1), -20236]: hit 18064, miss 1, hit rate 0.999945
+[<17433> Jal zero(x0), -28]: hit 18064, miss 1, hit rate 0.999945
+[<17443> Jal ra(x1), -13508]: hit 19552, miss 1, hit rate 0.999949
+[<17445> Beq a0(x10), zero(x0), 704]: hit 18898, miss 655, hit rate 0.966501
+[<17449> Beq t0(x5), zero(x0), 576]: hit 18553, miss 1000, hit rate 0.948857
+[<17469> Bne t0(x5), t1(x6), 48]: hit 7745, miss 1, hit rate 0.999871
+[<17471> Beq t0(x5), zero(x0), 16]: hit 7534, miss 212, hit rate 0.972631
+[<17474> Jal zero(x0), -200]: hit 19552, miss 1, hit rate 0.999949
+[<17478> Jal ra(x1), -21352]: hit 7337, miss 1, hit rate 0.999864
+[<17480> Jal zero(x0), -28]: hit 7337, miss 1, hit rate 0.999864
+[<17515> Beq t0(x5), zero(x0), 80]: hit 7745, miss 1, hit rate 0.999871
+[<17519> Beq t0(x5), zero(x0), 52]: hit 7745, miss 1, hit rate 0.999871
+[<17520> Beq a1(x11), zero(x0), 12]: hit 7744, miss 2, hit rate 0.999742
+[<17522> Jal zero(x0), -204]: hit 7745, miss 1, hit rate 0.999871
+[<17529> Jal ra(x1), -59560]: hit 7744, miss 1, hit rate 0.999871
+[<17531> Jal zero(x0), -36]: hit 7744, miss 1, hit rate 0.999871
+[<17534> Jal zero(x0), -56]: hit 0, miss 1, hit rate 0
+[<17536> Jal zero(x0), -68]: hit 0, miss 1, hit rate 0
+[<17612> Beq t1(x6), zero(x0), 28]: hit 11806, miss 1, hit rate 0.999915
+[<17618> Jal zero(x0), -580]: hit 11806, miss 1, hit rate 0.999915
+[<17620> Jal zero(x0), -12]: hit 11806, miss 1, hit rate 0.999915
+[<17622> Jal zero(x0), -692]: hit 8384, miss 1, hit rate 0.999881
+[<17626> Jal zero(x0), -864]: hit 833, miss 1, hit rate 0.998801
+[<17630> Jal zero(x0), -880]: hit 53585, miss 1, hit rate 0.999981
+[<17686> Jal zero(x0), -3212]: hit 44593, miss 1, hit rate 0.999978
+[<17705> Jalr zero(x0), ra(x1), 0]: hit 44593, miss 1, hit rate 0.999978
+[<17748> Beq t0(x5), zero(x0), 152]: hit 20558, miss 384, hit rate 0.981664
+[<17785> Jalr zero(x0), ra(x1), 0]: hit 7807, miss 1, hit rate 0.999872
+[<17804> Jalr zero(x0), ra(x1), 0]: hit 13133, miss 1, hit rate 0.999924
+[<17863> Blt s0/fp(x8), zero(x0), 2336]: hit 73973, miss 73973, hit rate 0.5
+[<17874> Jal ra(x1), -44372]: hit 73972, miss 1, hit rate 0.999986
+[<17875> Beq a0(x10), zero(x0), 2284]: hit 64772, miss 9201, hit rate 0.875617
+[<17884> Bne t0(x5), s2(x18), 2244]: hit 44210, miss 1029, hit rate 0.977254
+[<17891> Bne t0(x5), t1(x6), 300]: hit 41437, miss 1, hit rate 0.999976
+[<17923> Beq t0(x5), zero(x0), 164]: hit 40432, miss 1006, hit rate 0.975723
+[<17945> Beq t0(x5), zero(x0), 72]: hit 39814, miss 1624, hit rate 0.960809
+[<17962> Jal zero(x0), -396]: hit 73972, miss 1, hit rate 0.999986
+[<17963> Jal zero(x0), -12]: hit 10516, miss 1, hit rate 0.999905
+[<17964> Jal zero(x0), -84]: hit 3902, miss 1, hit rate 0.999744
+[<17967> Bne t0(x5), t1(x6), 952]: hit 41437, miss 1, hit rate 0.999976
+[<17969> Beq t0(x5), zero(x0), 920]: hit 41437, miss 1, hit rate 0.999976
+[<17976> Jal zero(x0), -332]: hit 41437, miss 1, hit rate 0.999976
+[<18202> Jal ra(x1), -22332]: hit 41437, miss 1, hit rate 0.999976
+[<18204> Jal zero(x0), -912]: hit 41437, miss 1, hit rate 0.999976
+[<18216> Jal ra(x1), -16600]: hit 41437, miss 1, hit rate 0.999976
+[<18217> Beq a0(x10), zero(x0), 904]: hit 41437, miss 1, hit rate 0.999976
+[<18231> Jal zero(x0), -1048]: hit 41437, miss 1, hit rate 0.999976
+[<18444> Jal zero(x0), -852]: hit 41437, miss 1, hit rate 0.999976
+[<18445> Jal zero(x0), -1940]: hit 3800, miss 1, hit rate 0.999737
+[<18446> Jal zero(x0), -1944]: hit 28733, miss 1, hit rate 0.999965
+[<18463> Jalr zero(x0), ra(x1), 0]: hit 73972, miss 1, hit rate 0.999986
+[<18496> Blt t0(x5), zero(x0), 848]: hit 72649, miss 60412, hit rate 0.545983
+[<18523> Bne t1(x6), t0(x5), 268]: hit 70968, miss 1681, hit rate 0.976861
+[<18537> Bne t1(x6), t0(x5), 204]: hit 69533, miss 1474, hit rate 0.979241
+[<18552> Bne t1(x6), t0(x5), 136]: hit 69017, miss 530, hit rate 0.992379
+[<18567> Bne t1(x6), t0(x5), 68]: hit 68541, miss 481, hit rate 0.993031
+[<18569> Beq t0(x5), zero(x0), 92]: hit 68380, miss 4269, hit rate 0.941238
+[<18573> Beq t0(x5), zero(x0), 40]: hit 60579, miss 7966, hit rate 0.883784
+[<18579> Jal ra(x1), -65580]: hit 40607, miss 1, hit rate 0.999975
+[<18582> Jal zero(x0), -404]: hit 68544, miss 1, hit rate 0.999985
+[<18583> Jal zero(x0), -12]: hit 27936, miss 1, hit rate 0.999964
+[<18585> Jal zero(x0), -64]: hit 476, miss 1, hit rate 0.997904
+[<18587> Jal zero(x0), -72]: hit 524, miss 1, hit rate 0.998095
+[<18589> Jal zero(x0), -80]: hit 1459, miss 1, hit rate 0.999315
+[<18591> Jal zero(x0), -88]: hit 1641, miss 1, hit rate 0.999391
+[<18611> Beq t0(x5), zero(x0), 280]: hit 3423, miss 681, hit rate 0.834064
+[<18633> Jal ra(x1), -11156]: hit 3411, miss 1, hit rate 0.999707
+[<18667> Jal ra(x1), -60996]: hit 4103, miss 1, hit rate 0.999756
+[<18680> Jalr zero(x0), ra(x1), 0]: hit 4103, miss 1, hit rate 0.999756
+[<18681> Jal zero(x0), -96]: hit 691, miss 1, hit rate 0.998555
+[<18720> Jalr zero(x0), ra(x1), 0]: hit 60411, miss 1, hit rate 0.999983
+[<18754> Bne a0(x10), t0(x5), 216]: hit 1936496, miss 216796, hit rate 0.899319
+[<18763> Jal ra(x1), 2396]: hit 291997, miss 1, hit rate 0.999997
+[<18778> Jal ra(x1), 2336]: hit 291997, miss 1, hit rate 0.999997
+[<18786> Beq s0/fp(x8), zero(x0), 64]: hit 160689, miss 131309, hit rate 0.550309
+[<18787> Beq t0(x5), zero(x0), 52]: hit 76438, miss 60700, hit rate 0.55738
+[<18799> Jalr zero(x0), ra(x1), 0]: hit 248014, miss 43984, hit rate 0.849369
+[<18801> Jal zero(x0), -44]: hit 66222, miss 1, hit rate 0.999985
+[<18802> Beq t0(x5), zero(x0), 12]: hit 86081, miss 68779, hit rate 0.555863
+[<18804> Jal zero(x0), -56]: hit 154859, miss 1, hit rate 0.999994
+[<18807> Jal zero(x0), -12]: hit 74345, miss 1, hit rate 0.999987
+[<18810> Bne a0(x10), t0(x5), 112]: hit 1850994, miss 10300, hit rate 0.994466
+[<18816> Jal ra(x1), 3216]: hit 9983, miss 1, hit rate 0.9999
+[<18837> Jalr zero(x0), ra(x1), 0]: hit 9633, miss 351, hit rate 0.964844
+[<18839> Bne a0(x10), t0(x5), 172]: hit 1851309, miss 1, hit rate 0.999999
+[<18883> Bne a0(x10), t0(x5), 404]: hit 1851309, miss 1, hit rate 0.999999
+[<18992> Jalr zero(x0), ra(x1), 0]: hit 1469109, miss 382201, hit rate 0.793551
+[<19162> Bne a0(x10), t0(x5), 184]: hit 65535, miss 1, hit rate 0.999985
+[<19213> Bge t2(x7), t1(x6), 108]: hit 64025, miss 1511, hit rate 0.976944
+[<19219> Bge t2(x7), t1(x6), 68]: hit 60090, miss 5446, hit rate 0.916901
+[<19225> Bge t1(x6), t0(x5), 28]: hit 64302, miss 1234, hit rate 0.981171
+[<19231> Jalr zero(x0), ra(x1), 0]: hit 65535, miss 1, hit rate 0.999985
+[<19232> Bge t0(x5), zero(x0), 12]: hit 43506, miss 1, hit rate 0.999977
+[<19234> Jal zero(x0), -28]: hit 43506, miss 1, hit rate 0.999977
+[<19235> Jal zero(x0), -4]: hit 43506, miss 1, hit rate 0.999977
+[<19236> Bge t1(x6), zero(x0), 12]: hit 48799, miss 1, hit rate 0.99998
+[<19238> Jal zero(x0), -68]: hit 48799, miss 1, hit rate 0.99998
+[<19239> Jal zero(x0), -4]: hit 48799, miss 1, hit rate 0.99998
+[<19240> Bge t1(x6), zero(x0), 12]: hit 40800, miss 1, hit rate 0.999975
+[<19242> Jal zero(x0), -108]: hit 40800, miss 1, hit rate 0.999975
+[<19243> Jal zero(x0), -4]: hit 40800, miss 1, hit rate 0.999975
+[<19273> Beq a0(x10), zero(x0), 8]: hit 34194, miss 6009, hit rate 0.850534
+[<19274> Jal zero(x0), 8]: hit 34196, miss 1, hit rate 0.999971
+[<19275> Jal zero(x0), 20]: hit 6005, miss 1, hit rate 0.999833
+[<19279> Jal zero(x0), -24]: hit 34196, miss 1, hit rate 0.999971
+[<19281> Jalr zero(x0), ra(x1), 0]: hit 596, miss 5410, hit rate 0.0992341
+[<19283> Beq a0(x10), zero(x0), 8]: hit 104117, miss 27091, hit rate 0.793526
+[<19284> Jal zero(x0), 8]: hit 104119, miss 1, hit rate 0.99999
+[<19285> Jal zero(x0), 20]: hit 27087, miss 1, hit rate 0.999963
+[<19289> Jal zero(x0), -24]: hit 104119, miss 1, hit rate 0.99999
+[<19291> Jalr zero(x0), ra(x1), 0]: hit 3595, miss 23493, hit rate 0.132716
+[<19298> Beq a0(x10), zero(x0), 8]: hit 60, miss 1, hit rate 0.983607
+[<19299> Jal zero(x0), 8]: hit 59, miss 1, hit rate 0.983333
+[<19300> Jal zero(x0), 60]: hit 0, miss 1, hit rate 0
+[<19314> Jal zero(x0), -64]: hit 59, miss 1, hit rate 0.983333
+[<19317> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<19319> Beq a0(x10), zero(x0), 8]: hit 599, miss 7, hit rate 0.988449
+[<19320> Jal zero(x0), 8]: hit 599, miss 1, hit rate 0.998333
+[<19321> Jal zero(x0), 24]: hit 5, miss 1, hit rate 0.833333
+[<19326> Jal zero(x0), -28]: hit 599, miss 1, hit rate 0.998333
+[<19328> Jalr zero(x0), ra(x1), 0]: hit 3, miss 3, hit rate 0.5
+[<19330> Beq a0(x10), zero(x0), 8]: hit 180, miss 1, hit rate 0.994475
+[<19331> Jal zero(x0), 8]: hit 179, miss 1, hit rate 0.994444
+[<19332> Jal zero(x0), 32]: hit 0, miss 1, hit rate 0
+[<19339> Jal zero(x0), -36]: hit 179, miss 1, hit rate 0.994444
+[<19341> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1, hit rate 0
+[<19345> Beq a0(x10), zero(x0), 8]: hit 768, miss 3, hit rate 0.996109
+[<19346> Jal zero(x0), 8]: hit 767, miss 1, hit rate 0.998698
+[<19347> Jal zero(x0), 48]: hit 2, miss 1, hit rate 0.666667
+[<19358> Jal zero(x0), -52]: hit 767, miss 1, hit rate 0.998698
+[<19361> Jalr zero(x0), ra(x1), 0]: hit 0, miss 3, hit rate 0
+[<19369> Blt a5(x15), zero(x0), 52]: hit 485401, miss 98595, hit rate 0.831172
+[<19375> Bge a4(x14), zero(x0), 12]: hit 446958, miss 41121, hit rate 0.915749
+[<19381> Jalr zero(x0), ra(x1), 0]: hit 0, miss 583996, hit rate 0
+[<19383> Bge a3(x13), zero(x0), -12]: hit 72852, miss 23065, hit rate 0.759532
+[<19387> Jal zero(x0), -28]: hit 67222, miss 1, hit rate 0.999985
+[<19397> Blt zero(x0), a0(x10), 28]: hit 2, miss 1, hit rate 0.666667
+[<19404> Jal ra(x1), 372]: hit 2, miss 1, hit rate 0.666667
+[<19408> Jal ra(x1), 356]: hit 2, miss 1, hit rate 0.666667
+[<19412> Jal ra(x1), 340]: hit 2, miss 1, hit rate 0.666667
+[<19413> Beq a1(x11), zero(x0), 180]: hit 2, miss 1, hit rate 0.666667
+[<19466> Jalr zero(x0), a3(x13), 0]: hit 0, miss 3, hit rate 0
+[<19500> Bge t0(x5), a0(x10), 32]: hit 19, miss 11, hit rate 0.633333
+[<19505> Jal zero(x0), -20]: hit 20, miss 1, hit rate 0.952381
+[<19509> Blt t1(x6), zero(x0), 48]: hit 30, miss 9, hit rate 0.769231
+[<19510> Blt a0(x10), t0(x5), 28]: hit 12, miss 18, hit rate 0.4
+[<19516> Jal zero(x0), -28]: hit 11, miss 1, hit rate 0.916667
+[<19520> Jal zero(x0), -44]: hit 17, miss 1, hit rate 0.944444
+[<19521> Jalr zero(x0), ra(x1), 0]: hit 0, miss 9, hit rate 0
+[<19526> Blt a0(x10), a1(x11), 88]: hit 999, miss 1, hit rate 0.999
+[<19551> Bltu a2(x12), a1(x11), 132]: hit 693, miss 307, hit rate 0.693
+[<19583> Jalr zero(x0), ra(x1), 0]: hit 259, miss 197, hit rate 0.567982
+[<19611> Jalr zero(x0), ra(x1), 0]: hit 311, miss 233, hit rate 0.571691
+[<19624> Bne a0(x10), zero(x0), 152]: hit 8751, miss 2237, hit rate 0.796414
+[<19629> Beq a0(x10), zero(x0), 16]: hit 7758, miss 3230, hit rate 0.706043
+[<19637> Beq a2(x12), zero(x0), 8]: hit 7503, miss 3485, hit rate 0.682836
+[<19643> Bne a2(x12), zero(x0), 148]: hit 7008, miss 3980, hit rate 0.637787
+[<19659> Beq a0(x10), zero(x0), 8]: hit 3621, miss 1475, hit rate 0.710557
+[<19661> Jalr zero(x0), ra(x1), 0]: hit 9983, miss 1005, hit rate 0.908537
+[<19664> Bne a0(x10), zero(x0), -8]: hit 7602, miss 859, hit rate 0.898475
+[<19670> Jal zero(x0), 20]: hit 7759, miss 1, hit rate 0.999871
+[<19674> Beq a0(x10), zero(x0), -196]: hit 7760, miss 7760, hit rate 0.5
+[<19677> Beq a0(x10), zero(x0), -24]: hit 0, miss 15520, hit rate 0
+[<19679> Jal zero(x0), -32]: hit 7759, miss 1, hit rate 0.999871
+[<19691> Bne a0(x10), zero(x0), -124]: hit 3799, miss 2093, hit rate 0.644773
+[<19692> Jal zero(x0), -124]: hit 2914, miss 1, hit rate 0.999657
+[<19706> Beq a0(x10), zero(x0), 176]: hit 1003, miss 1, hit rate 0.999004
+[<19724> Jal zero(x0), 180]: hit 705, miss 1, hit rate 0.998584
+[<19754> Bne a0(x10), zero(x0), -168]: hit 681, miss 323, hit rate 0.678287
+[<19775> Beq a1(x11), a0(x10), 8]: hit 1003, miss 1, hit rate 0.999004
+[<19777> Jalr zero(x0), ra(x1), 0]: hit 0, miss 1004, hit rate 0
+Total: hit 897572944, miss 172944368, hit rate 0.838448

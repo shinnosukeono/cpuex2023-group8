@@ -1,0 +1,174 @@
+256*256
+
+time : 3557427885452 nsec, 3557427 msec
+pc : -1
+EX_count : 9097128998
+sec_of_data : 3.26724 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.25686e-06 sec
+stall_cycle_of_cin : 2098023 cycle
+sec_of_stall_of_cin : 0.0261599 sec
+
+cycle (Dependency Optimization) : 14044711300
+(Estimated execution time : 175.121 sec)
+(Estimated sum of time: 178.388 sec)
+stall (Dependency Optimization) : 827890914
+
+cycle (No Dependency Optimization) : 20134208033
+(Estimated execution time : 251.05 sec)
+(Estimated sum of time: 254.317 sec)
+stall (No Dependency Optimization) : 4923644961
+
+hit: 3806055028
+miss: 28662150
+hit rate: 0.992526
+flush: 870495809
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 108f984
+Mips: 2.55722 Mips
+clock_rate: 3.948 MHz
+
+Done.
+
+Last line: 1497
+
+
+128*128
+
+time : 1004288507097 nsec, 1004288 msec
+pc : -1
+EX_count : 2806484716
+sec_of_data : 3.26724 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.25686e-06 sec
+stall_cycle_of_cin : 3184328 cycle
+sec_of_stall_of_cin : 0.0397048 sec
+
+cycle (Dependency Optimization) : 4394224287
+(Estimated execution time : 54.7908 sec)
+(Estimated sum of time: 58.0581 sec)
+stall (Dependency Optimization) : 316594491
+
+cycle (No Dependency Optimization) : 6211034491
+(Estimated execution time : 77.4443 sec)
+(Estimated sum of time: 80.7116 sec)
+stall (No Dependency Optimization) : 1517667001
+
+hit: 1172718610
+miss: 8798301
+hit rate: 0.992553
+flush: 268754419
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 1069584
+Mips: 2.7945 Mips
+clock_rate: 4.37546 MHz
+
+Done.
+
+Last line: 1497
+
+64*64
+
+time : 298157202171 nsec, 298157 msec
+pc : -1
+EX_count : 916598534
+sec_of_data : 3.26724 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.25686e-06 sec
+stall_cycle_of_cin : 3725886 cycle
+sec_of_stall_of_cin : 0.0464574 sec
+
+cycle (Dependency Optimization) : 1467904660
+(Estimated execution time : 18.3031 sec)
+(Estimated sum of time: 21.5703 sec)
+stall (Dependency Optimization) : 134231896
+
+cycle (No Dependency Optimization) : 2031684974
+(Estimated execution time : 25.3327 sec)
+(Estimated sum of time: 28.6 sec)
+stall (No Dependency Optimization) : 495179743
+
+hit: 382572814
+miss: 2882251
+hit rate: 0.992522
+flush: 87937734
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 1056384
+Mips: 3.07421 Mips
+clock_rate: 4.92326 MHz
+
+Done.
+
+Last line: 1497
+
+
+512*512
+
+time : 10226696619382 nsec, 10226696 msec
+pc : -1
+EX_count : 31704361212
+sec_of_data : 3.26724 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.25686e-06 sec
+stall_cycle_of_cin : 0 cycle
+sec_of_stall_of_cin : 0 sec
+
+cycle (Dependency Optimization) : 48718133822
+(Estimated execution time : 607.458 sec)
+(Estimated sum of time: 610.725 sec)
+stall (Dependency Optimization) : 2664315572
+
+cycle (No Dependency Optimization) : 70169731022
+(Estimated execution time : 874.934 sec)
+(Estimated sum of time: 878.202 sec)
+stall (No Dependency Optimization) : 17170426461
+
+hit: 13278119130
+miss: 100051061
+hit rate: 0.992521
+flush: 3032576337
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 10dc184
+Mips: 3.10016 Mips
+clock_rate: 4.76382 MHz
+
+Done.
+
+Last line: 1497
+
+time : 10226696619382 nsec, 10226696 msec
+pc : -1
+EX_count : 31704361212
+sec_of_data : 3.26724 sec
+stall_cycle_of_data_section : 582 cycle
+sec_of_stall_of_data_section : 7.25686e-06 sec
+stall_cycle_of_cin : 0 cycle
+sec_of_stall_of_cin : 0 sec
+
+cycle (Dependency Optimization) : 48718133822
+(Estimated execution time : 607.458 sec)
+(Estimated sum of time: 610.725 sec)
+stall (Dependency Optimization) : 2664315572
+
+cycle (No Dependency Optimization) : 70169731022
+(Estimated execution time : 874.934 sec)
+(Estimated sum of time: 878.202 sec)
+stall (No Dependency Optimization) : 17170426461
+
+hit: 13278119130
+miss: 100051061
+hit rate: 0.992521
+flush: 3032576337
+Return Code : 6
+Max_stack: 3fffde0
+Max_heap: 10dc184
+Mips: 3.10016 Mips
+clock_rate: 4.76382 MHz
+
+Done.
+
+Last line: 1497

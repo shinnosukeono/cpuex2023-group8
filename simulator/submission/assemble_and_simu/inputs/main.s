@@ -255,9 +255,9 @@ B146:
     sw a0, %lo(n_reflections)(t0)
     lui t0, %hi(image_size)
     lw s0, %lo(image_size)(t0)
-    li t0, 256
+    li t0, 512
     sw t0, 0(s0)
-    li t1, 256
+    li t1, 512
     sw t1, 4(s0)
     srai t2, t0, 1
     lui a0, %hi(image_center)

@@ -144,3 +144,35 @@ clock_rate: 4.72332 MHz
 Done.
 
 Last line: 1497
+
+        time : 2762888014774 nsec, 2762888 msec
+        pc : -1
+        EX_count : 9097128998        
+        sec_of_data : 3.26724 sec    
+        stall_cycle_of_data_section : 582 cycle
+        sec_of_stall_of_data_section : 7.25686e-06 sec
+        stall_cycle_of_cin : 2864450 cycle
+        sec_of_stall_of_cin : 0.0357163 sec
+
+        cycle (Dependency Optimization) : 12024760153
+        (Estimated execution time : 149.935 sec)
+        (Estimated sum of time: 153.202 sec)
+        stall (Dependency Optimization) : 842730151
+
+        cycle (No Dependency Optimization) : 17402042636
+        (Estimated execution time : 216.983 sec)
+        (Estimated sum of time: 220.25 sec)
+        stall (No Dependency Optimization) : 4923644961
+
+        total_cache_access: 3834717178
+        cache_hit: 3804992187        
+        cache_miss: 29724991
+        hit rate: 0.992248
+        flush: 172944368
+        Return Code : 6
+        Max_stack: 3fffde0
+        Max_heap: 108f984
+        Mips: 3.29262 Mips
+        clock_rate: 4.35224 MHz      
+
+        Done.

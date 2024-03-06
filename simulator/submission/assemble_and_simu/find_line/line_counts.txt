@@ -1,4 +1,4 @@
-Line: 2 pc: 0(0) count: 1
+Line: 2 pc: 0(0) count: 2
 Line: 3 pc: 4(4) count: 1
 Line: 4 pc: 8(8) count: 1
 Line: 4 pc: 12(c) count: 1

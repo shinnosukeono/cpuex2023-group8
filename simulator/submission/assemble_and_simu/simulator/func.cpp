@@ -21,7 +21,7 @@
 #define maxcount 1e18
 #define AP_max 4
 #define GP_max 4
-#define ways 4
+#define ways 2
 #define clock_rate 80.2
 #define cache_miss_time_wtb (0.6 * clock_rate + 31.7)
 #define cache_miss_time_no_wtb (0.39 * clock_rate + 21)
